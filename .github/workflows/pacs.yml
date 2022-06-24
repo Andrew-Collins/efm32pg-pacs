@@ -21,8 +21,9 @@ jobs:
           profile: minimal
           components: rustfmt
       - name: Build Crates
+        # Exclude PG22 and PG23 for now as theirs SVD files should be patched
         run: |
-          find . -type f -name "Cargo.toml" -execdir cargo test \; -execdir cargo clean \;
+          find . -type f \( -path "*/*pg22*" -o -path "*/*pg23*" \) -prune -o -iname "Cargo.toml" -print -execdir cargo test \; -execdir cargo clean \;
         env:
           RUSTFLAGS: --deny warnings
 
