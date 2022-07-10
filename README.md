@@ -2,27 +2,20 @@
 
 [![PACs](https://github.com/efm32-rs/efm32pg-pacs/actions/workflows/pacs.yml/badge.svg)](https://github.com/efm32-rs/efm32pg-pacs/actions/workflows/pacs.yml)
 
-This repository contains Peripheral Access Crates (PACs) for Silabs' EFM32 series of Cortex-M microcontrollers.
-
+This repository contains Peripheral Access Crates (PACs) for Silabs' EFM32PG series of Cortex-M microcontrollers.
 All these crates are automatically generated using [svd2rust](https://github.com/rust-embedded/svd2rust).
 
 Refer to the [CHANGELOG](CHANGELOG.md) to see what changed in the last releases.
 
 ## Crates
 
-Every EFM32PG chip has its own PAC, listed below:
+Every EFM32G chip has its own PAC, listed below:
 
-| Crate               | Docs                                                                                         | crates.io                                                                                                         | target                      |
-|---------------------|----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|-----------------------------|
-| `efm32pg12b500-pac` | [![docs.rs](https://docs.rs/efm32pg12b500-pac/badge.svg)](https://docs.rs/efm32pg12b500-pac) | [![crates.io](https://img.shields.io/crates/d/efm32pg12b500-pac.svg)](https://crates.io/crates/efm32pg12b500-pac) | `thumbv7em-none-eabihf`     |
-| `efm32pg1b100-pac`  | [![docs.rs](https://docs.rs/efm32pg1b100-pac/badge.svg)](https://docs.rs/efm32pg1b100-pac)   | [![crates.io](https://img.shields.io/crates/d/efm32pg1b100-pac.svg)](https://crates.io/crates/efm32pg1b100-pac)   | `thumbv7em-none-eabihf`     |
-| `efm32pg1b200-pac`  | [![docs.rs](https://docs.rs/efm32pg1b200-pac/badge.svg)](https://docs.rs/efm32pg1b200-pac)   | [![crates.io](https://img.shields.io/crates/d/efm32pg1b200-pac.svg)](https://crates.io/crates/efm32pg1b200-pac)   | `thumbv7em-none-eabihf`     |
-| `efm32pg22c200-pac` | _To be done_                                                                                 | _To be done_                                                                                                      | `thumbv8m.main-none-eabihf` |
-| `efm32pg23b200-pac` | _To be done_                                                                                 | _To be done_                                                                                                      | `thumbv8m.main-none-eabihf` |
-| `efm32pg23b210-pac` | _To be done_                                                                                 | _To be done_                                                                                                      | `thumbv8m.main-none-eabihf` |
-| `efm32pg23b310-pac` | _To be done_                                                                                 | _To be done_                                                                                                      | `thumbv8m.main-none-eabihf` |
-
-Process finished with exit code 0
+| Crate           | Docs                                                                                 | crates.io                                                                                                 | Target               |
+|-----------------|--------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|----------------------|
+| `efm32pg-pac`| [![docs.rs](https://docs.rs/efm32pg-pac/badge.svg)](https://docs.rs/efm32pg-pac)| [![crates.io](https://img.shields.io/crates/d/efm32pg-pac)](https://crates.io/crates/efm32pg-pac)| `thumbv7em-none-eabihf` |
+| `efm32pg22-pac`| [![docs.rs](https://docs.rs/efm32pg22-pac/badge.svg)](https://docs.rs/efm32pg22-pac)| [![crates.io](https://img.shields.io/crates/d/efm32pg22-pac)](https://crates.io/crates/efm32pg22-pac)| `thumbv8m.main-none-eabihf` |
+| `efm32pg23-pac`| [![docs.rs](https://docs.rs/efm32pg23-pac/badge.svg)](https://docs.rs/efm32pg23-pac)| [![crates.io](https://img.shields.io/crates/d/efm32pg23-pac)](https://crates.io/crates/efm32pg23-pac)| `thumbv8m.main-none-eabihf` |
 
 ## Device Reference Manuals from Silabs
 
