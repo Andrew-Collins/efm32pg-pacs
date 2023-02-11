@@ -37,11 +37,11 @@ impl From<crate::W<IEN_SPEC>> for W {
 #[doc = "Field `CURSTABLE` reader - CURSTABLE Interrupt Enable"]
 pub type CURSTABLE_R = crate::BitReader<bool>;
 #[doc = "Field `CURSTABLE` writer - CURSTABLE Interrupt Enable"]
-pub type CURSTABLE_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 0>;
+pub type CURSTABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `APORTCONFLICT` reader - APORTCONFLICT Interrupt Enable"]
 pub type APORTCONFLICT_R = crate::BitReader<bool>;
 #[doc = "Field `APORTCONFLICT` writer - APORTCONFLICT Interrupt Enable"]
-pub type APORTCONFLICT_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 1>;
+pub type APORTCONFLICT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - CURSTABLE Interrupt Enable"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CURSTABLE Interrupt Enable"]
     #[inline(always)]
-    pub fn curstable(&mut self) -> CURSTABLE_W {
+    #[must_use]
+    pub fn curstable(&mut self) -> CURSTABLE_W<0> {
         CURSTABLE_W::new(self)
     }
     #[doc = "Bit 1 - APORTCONFLICT Interrupt Enable"]
     #[inline(always)]
-    pub fn aportconflict(&mut self) -> APORTCONFLICT_W {
+    #[must_use]
+    pub fn aportconflict(&mut self) -> APORTCONFLICT_W<1> {
         APORTCONFLICT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for IEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IEN to value 0"]
 impl crate::Resettable for IEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

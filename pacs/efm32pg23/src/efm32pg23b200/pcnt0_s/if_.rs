@@ -37,23 +37,23 @@ impl From<crate::W<IF_SPEC>> for W {
 #[doc = "Field `UF` reader - Underflow Interrupt Read Flag"]
 pub type UF_R = crate::BitReader<bool>;
 #[doc = "Field `UF` writer - Underflow Interrupt Read Flag"]
-pub type UF_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 0>;
+pub type UF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `OF` reader - Overflow Interrupt Read Flag"]
 pub type OF_R = crate::BitReader<bool>;
 #[doc = "Field `OF` writer - Overflow Interrupt Read Flag"]
-pub type OF_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 1>;
+pub type OF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `DIRCNG` reader - Direction Change Detect Interrupt Flag"]
 pub type DIRCNG_R = crate::BitReader<bool>;
 #[doc = "Field `DIRCNG` writer - Direction Change Detect Interrupt Flag"]
-pub type DIRCNG_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 2>;
+pub type DIRCNG_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `AUXOF` reader - Auxiliary Overflow Interrupt Read Flag"]
 pub type AUXOF_R = crate::BitReader<bool>;
 #[doc = "Field `AUXOF` writer - Auxiliary Overflow Interrupt Read Flag"]
-pub type AUXOF_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 3>;
+pub type AUXOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `OQSTERR` reader - Oversampling Quad State Err Int Flag"]
 pub type OQSTERR_R = crate::BitReader<bool>;
 #[doc = "Field `OQSTERR` writer - Oversampling Quad State Err Int Flag"]
-pub type OQSTERR_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 4>;
+pub type OQSTERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Underflow Interrupt Read Flag"]
     #[inline(always)]
@@ -84,27 +84,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Underflow Interrupt Read Flag"]
     #[inline(always)]
-    pub fn uf(&mut self) -> UF_W {
+    #[must_use]
+    pub fn uf(&mut self) -> UF_W<0> {
         UF_W::new(self)
     }
     #[doc = "Bit 1 - Overflow Interrupt Read Flag"]
     #[inline(always)]
-    pub fn of(&mut self) -> OF_W {
+    #[must_use]
+    pub fn of(&mut self) -> OF_W<1> {
         OF_W::new(self)
     }
     #[doc = "Bit 2 - Direction Change Detect Interrupt Flag"]
     #[inline(always)]
-    pub fn dircng(&mut self) -> DIRCNG_W {
+    #[must_use]
+    pub fn dircng(&mut self) -> DIRCNG_W<2> {
         DIRCNG_W::new(self)
     }
     #[doc = "Bit 3 - Auxiliary Overflow Interrupt Read Flag"]
     #[inline(always)]
-    pub fn auxof(&mut self) -> AUXOF_W {
+    #[must_use]
+    pub fn auxof(&mut self) -> AUXOF_W<3> {
         AUXOF_W::new(self)
     }
     #[doc = "Bit 4 - Oversampling Quad State Err Int Flag"]
     #[inline(always)]
-    pub fn oqsterr(&mut self) -> OQSTERR_W {
+    #[must_use]
+    pub fn oqsterr(&mut self) -> OQSTERR_W<4> {
         OQSTERR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -126,11 +131,10 @@ impl crate::Readable for IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_::W](W) writer structure"]
 impl crate::Writable for IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

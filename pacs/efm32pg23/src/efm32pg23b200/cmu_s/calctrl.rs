@@ -37,13 +37,15 @@ impl From<crate::W<CALCTRL_SPEC>> for W {
 #[doc = "Field `CALTOP` reader - Calibration Counter Top Value"]
 pub type CALTOP_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CALTOP` writer - Calibration Counter Top Value"]
-pub type CALTOP_W<'a> = crate::FieldWriter<'a, u32, CALCTRL_SPEC, u32, u32, 20, 0>;
+pub type CALTOP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALCTRL_SPEC, u32, u32, 20, O>;
 #[doc = "Field `CONT` reader - Continuous Calibration"]
 pub type CONT_R = crate::BitReader<bool>;
 #[doc = "Field `CONT` writer - Continuous Calibration"]
-pub type CONT_W<'a> = crate::BitWriter<'a, u32, CALCTRL_SPEC, bool, 23>;
+pub type CONT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CALCTRL_SPEC, bool, O>;
+#[doc = "Field `UPSEL` reader - Calibration Up-counter Select"]
+pub type UPSEL_R = crate::FieldReader<u8, UPSEL_A>;
 #[doc = "Calibration Up-counter Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UPSEL_A {
     #[doc = "0: Up-counter is not clocked"]
@@ -71,8 +73,6 @@ impl From<UPSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `UPSEL` reader - Calibration Up-counter Select"]
-pub type UPSEL_R = crate::FieldReader<u8, UPSEL_A>;
 impl UPSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -137,8 +137,8 @@ impl UPSEL_R {
     }
 }
 #[doc = "Field `UPSEL` writer - Calibration Up-counter Select"]
-pub type UPSEL_W<'a> = crate::FieldWriter<'a, u32, CALCTRL_SPEC, u8, UPSEL_A, 4, 24>;
-impl<'a> UPSEL_W<'a> {
+pub type UPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALCTRL_SPEC, u8, UPSEL_A, 4, O>;
+impl<'a, const O: u8> UPSEL_W<'a, O> {
     #[doc = "Up-counter is not clocked"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -185,8 +185,10 @@ impl<'a> UPSEL_W<'a> {
         self.variant(UPSEL_A::ULFRCO)
     }
 }
+#[doc = "Field `DOWNSEL` reader - Calibration Down-counter Select"]
+pub type DOWNSEL_R = crate::FieldReader<u8, DOWNSEL_A>;
 #[doc = "Calibration Down-counter Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DOWNSEL_A {
     #[doc = "0: Down-counter is not clocked"]
@@ -216,8 +218,6 @@ impl From<DOWNSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DOWNSEL` reader - Calibration Down-counter Select"]
-pub type DOWNSEL_R = crate::FieldReader<u8, DOWNSEL_A>;
 impl DOWNSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -288,8 +288,9 @@ impl DOWNSEL_R {
     }
 }
 #[doc = "Field `DOWNSEL` writer - Calibration Down-counter Select"]
-pub type DOWNSEL_W<'a> = crate::FieldWriter<'a, u32, CALCTRL_SPEC, u8, DOWNSEL_A, 4, 28>;
-impl<'a> DOWNSEL_W<'a> {
+pub type DOWNSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CALCTRL_SPEC, u8, DOWNSEL_A, 4, O>;
+impl<'a, const O: u8> DOWNSEL_W<'a, O> {
     #[doc = "Down-counter is not clocked"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -345,7 +346,7 @@ impl R {
     #[doc = "Bits 0:19 - Calibration Counter Top Value"]
     #[inline(always)]
     pub fn caltop(&self) -> CALTOP_R {
-        CALTOP_R::new((self.bits & 0x000f_ffff) as u32)
+        CALTOP_R::new(self.bits & 0x000f_ffff)
     }
     #[doc = "Bit 23 - Continuous Calibration"]
     #[inline(always)]
@@ -366,22 +367,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:19 - Calibration Counter Top Value"]
     #[inline(always)]
-    pub fn caltop(&mut self) -> CALTOP_W {
+    #[must_use]
+    pub fn caltop(&mut self) -> CALTOP_W<0> {
         CALTOP_W::new(self)
     }
     #[doc = "Bit 23 - Continuous Calibration"]
     #[inline(always)]
-    pub fn cont(&mut self) -> CONT_W {
+    #[must_use]
+    pub fn cont(&mut self) -> CONT_W<23> {
         CONT_W::new(self)
     }
     #[doc = "Bits 24:27 - Calibration Up-counter Select"]
     #[inline(always)]
-    pub fn upsel(&mut self) -> UPSEL_W {
+    #[must_use]
+    pub fn upsel(&mut self) -> UPSEL_W<24> {
         UPSEL_W::new(self)
     }
     #[doc = "Bits 28:31 - Calibration Down-counter Select"]
     #[inline(always)]
-    pub fn downsel(&mut self) -> DOWNSEL_W {
+    #[must_use]
+    pub fn downsel(&mut self) -> DOWNSEL_W<28> {
         DOWNSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -403,11 +408,10 @@ impl crate::Readable for CALCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [calctrl::W](W) writer structure"]
 impl crate::Writable for CALCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CALCTRL to value 0"]
 impl crate::Resettable for CALCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

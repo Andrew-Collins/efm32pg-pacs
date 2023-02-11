@@ -37,29 +37,34 @@ impl From<crate::W<DCDCMISCCTRL_SPEC>> for W {
 #[doc = "Field `LNFORCECCM` reader - Force DCDC Into CCM Mode in Low Noise Operation"]
 pub type LNFORCECCM_R = crate::BitReader<bool>;
 #[doc = "Field `LNFORCECCM` writer - Force DCDC Into CCM Mode in Low Noise Operation"]
-pub type LNFORCECCM_W<'a> = crate::BitWriter<'a, u32, DCDCMISCCTRL_SPEC, bool, 0>;
+pub type LNFORCECCM_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCMISCCTRL_SPEC, bool, O>;
 #[doc = "Field `PFETCNT` reader - PFET Switch Number Selection"]
 pub type PFETCNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PFETCNT` writer - PFET Switch Number Selection"]
-pub type PFETCNT_W<'a> = crate::FieldWriter<'a, u32, DCDCMISCCTRL_SPEC, u8, u8, 4, 8>;
+pub type PFETCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCMISCCTRL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `NFETCNT` reader - NFET Switch Number Selection"]
 pub type NFETCNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NFETCNT` writer - NFET Switch Number Selection"]
-pub type NFETCNT_W<'a> = crate::FieldWriter<'a, u32, DCDCMISCCTRL_SPEC, u8, u8, 4, 12>;
+pub type NFETCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCMISCCTRL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `BYPLIMSEL` reader - Current Limit in Bypass Mode"]
 pub type BYPLIMSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BYPLIMSEL` writer - Current Limit in Bypass Mode"]
-pub type BYPLIMSEL_W<'a> = crate::FieldWriter<'a, u32, DCDCMISCCTRL_SPEC, u8, u8, 4, 16>;
+pub type BYPLIMSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DCDCMISCCTRL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `LPCLIMILIMSEL` reader - Current Limit Level Selection for Current Limiter in LP Mode"]
 pub type LPCLIMILIMSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LPCLIMILIMSEL` writer - Current Limit Level Selection for Current Limiter in LP Mode"]
-pub type LPCLIMILIMSEL_W<'a> = crate::FieldWriter<'a, u32, DCDCMISCCTRL_SPEC, u8, u8, 3, 20>;
+pub type LPCLIMILIMSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DCDCMISCCTRL_SPEC, u8, u8, 3, O>;
 #[doc = "Field `LNCLIMILIMSEL` reader - Current Limit Level Selection for Current Limiter in LN Mode"]
 pub type LNCLIMILIMSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LNCLIMILIMSEL` writer - Current Limit Level Selection for Current Limiter in LN Mode"]
-pub type LNCLIMILIMSEL_W<'a> = crate::FieldWriter<'a, u32, DCDCMISCCTRL_SPEC, u8, u8, 3, 24>;
+pub type LNCLIMILIMSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DCDCMISCCTRL_SPEC, u8, u8, 3, O>;
+#[doc = "Field `LPCMPBIAS` reader - LP Mode Comparator Bias Selection"]
+pub type LPCMPBIAS_R = crate::FieldReader<u8, LPCMPBIAS_A>;
 #[doc = "LP Mode Comparator Bias Selection\n\nValue on reset: 3"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LPCMPBIAS_A {
     #[doc = "0: Maximum load current less than 75uA."]
@@ -77,8 +82,6 @@ impl From<LPCMPBIAS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LPCMPBIAS` reader - LP Mode Comparator Bias Selection"]
-pub type LPCMPBIAS_R = crate::FieldReader<u8, LPCMPBIAS_A>;
 impl LPCMPBIAS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -113,9 +116,9 @@ impl LPCMPBIAS_R {
     }
 }
 #[doc = "Field `LPCMPBIAS` writer - LP Mode Comparator Bias Selection"]
-pub type LPCMPBIAS_W<'a> =
-    crate::FieldWriterSafe<'a, u32, DCDCMISCCTRL_SPEC, u8, LPCMPBIAS_A, 2, 28>;
-impl<'a> LPCMPBIAS_W<'a> {
+pub type LPCMPBIAS_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, DCDCMISCCTRL_SPEC, u8, LPCMPBIAS_A, 2, O>;
+impl<'a, const O: u8> LPCMPBIAS_W<'a, O> {
     #[doc = "Maximum load current less than 75uA."]
     #[inline(always)]
     pub fn bias0(self) -> &'a mut W {
@@ -177,37 +180,44 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Force DCDC Into CCM Mode in Low Noise Operation"]
     #[inline(always)]
-    pub fn lnforceccm(&mut self) -> LNFORCECCM_W {
+    #[must_use]
+    pub fn lnforceccm(&mut self) -> LNFORCECCM_W<0> {
         LNFORCECCM_W::new(self)
     }
     #[doc = "Bits 8:11 - PFET Switch Number Selection"]
     #[inline(always)]
-    pub fn pfetcnt(&mut self) -> PFETCNT_W {
+    #[must_use]
+    pub fn pfetcnt(&mut self) -> PFETCNT_W<8> {
         PFETCNT_W::new(self)
     }
     #[doc = "Bits 12:15 - NFET Switch Number Selection"]
     #[inline(always)]
-    pub fn nfetcnt(&mut self) -> NFETCNT_W {
+    #[must_use]
+    pub fn nfetcnt(&mut self) -> NFETCNT_W<12> {
         NFETCNT_W::new(self)
     }
     #[doc = "Bits 16:19 - Current Limit in Bypass Mode"]
     #[inline(always)]
-    pub fn byplimsel(&mut self) -> BYPLIMSEL_W {
+    #[must_use]
+    pub fn byplimsel(&mut self) -> BYPLIMSEL_W<16> {
         BYPLIMSEL_W::new(self)
     }
     #[doc = "Bits 20:22 - Current Limit Level Selection for Current Limiter in LP Mode"]
     #[inline(always)]
-    pub fn lpclimilimsel(&mut self) -> LPCLIMILIMSEL_W {
+    #[must_use]
+    pub fn lpclimilimsel(&mut self) -> LPCLIMILIMSEL_W<20> {
         LPCLIMILIMSEL_W::new(self)
     }
     #[doc = "Bits 24:26 - Current Limit Level Selection for Current Limiter in LN Mode"]
     #[inline(always)]
-    pub fn lnclimilimsel(&mut self) -> LNCLIMILIMSEL_W {
+    #[must_use]
+    pub fn lnclimilimsel(&mut self) -> LNCLIMILIMSEL_W<24> {
         LNCLIMILIMSEL_W::new(self)
     }
     #[doc = "Bits 28:29 - LP Mode Comparator Bias Selection"]
     #[inline(always)]
-    pub fn lpcmpbias(&mut self) -> LPCMPBIAS_W {
+    #[must_use]
+    pub fn lpcmpbias(&mut self) -> LPCMPBIAS_W<28> {
         LPCMPBIAS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -229,11 +239,10 @@ impl crate::Readable for DCDCMISCCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [dcdcmiscctrl::W](W) writer structure"]
 impl crate::Writable for DCDCMISCCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DCDCMISCCTRL to value 0x3330_7700"]
 impl crate::Resettable for DCDCMISCCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x3330_7700
-    }
+    const RESET_VALUE: Self::Ux = 0x3330_7700;
 }

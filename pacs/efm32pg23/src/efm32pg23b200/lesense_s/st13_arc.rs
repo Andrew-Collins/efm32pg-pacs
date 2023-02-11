@@ -37,17 +37,19 @@ impl From<crate::W<ST13_ARC_SPEC>> for W {
 #[doc = "Field `SCOMP` reader - Sensor compare value"]
 pub type SCOMP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SCOMP` writer - Sensor compare value"]
-pub type SCOMP_W<'a> = crate::FieldWriter<'a, u32, ST13_ARC_SPEC, u8, u8, 4, 0>;
+pub type SCOMP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ST13_ARC_SPEC, u8, u8, 4, O>;
 #[doc = "Field `SMASK` reader - Sensor mask"]
 pub type SMASK_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SMASK` writer - Sensor mask"]
-pub type SMASK_W<'a> = crate::FieldWriter<'a, u32, ST13_ARC_SPEC, u8, u8, 4, 4>;
+pub type SMASK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ST13_ARC_SPEC, u8, u8, 4, O>;
 #[doc = "Field `CURSTATE` reader - Current State"]
 pub type CURSTATE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CURSTATE` writer - Current State"]
-pub type CURSTATE_W<'a> = crate::FieldWriter<'a, u32, ST13_ARC_SPEC, u8, u8, 5, 8>;
+pub type CURSTATE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ST13_ARC_SPEC, u8, u8, 5, O>;
+#[doc = "Field `PRSACT` reader - Configure transition action in normal mode"]
+pub type PRSACT_R = crate::FieldReader<u8, PRSACT_A>;
 #[doc = "Configure transition action in normal mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSACT_A {
     #[doc = "0: No PRS output generated (if PRSCOUNT == 0), or do not count (if PRSCOUNT == 1)."]
@@ -81,8 +83,6 @@ impl From<PRSACT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRSACT` reader - Configure transition action in normal mode"]
-pub type PRSACT_R = crate::FieldReader<u8, PRSACT_A>;
 impl PRSACT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -165,8 +165,8 @@ impl PRSACT_R {
     }
 }
 #[doc = "Field `PRSACT` writer - Configure transition action in normal mode"]
-pub type PRSACT_W<'a> = crate::FieldWriter<'a, u32, ST13_ARC_SPEC, u8, PRSACT_A, 3, 13>;
-impl<'a> PRSACT_W<'a> {
+pub type PRSACT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ST13_ARC_SPEC, u8, PRSACT_A, 3, O>;
+impl<'a, const O: u8> PRSACT_W<'a, O> {
     #[doc = "No PRS output generated (if PRSCOUNT == 0), or do not count (if PRSCOUNT == 1)."]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -231,11 +231,11 @@ impl<'a> PRSACT_W<'a> {
 #[doc = "Field `NEXTSTATE` reader - Next state index"]
 pub type NEXTSTATE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NEXTSTATE` writer - Next state index"]
-pub type NEXTSTATE_W<'a> = crate::FieldWriter<'a, u32, ST13_ARC_SPEC, u8, u8, 5, 16>;
+pub type NEXTSTATE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ST13_ARC_SPEC, u8, u8, 5, O>;
 #[doc = "Field `SETIF` reader - Set interrupt flag"]
 pub type SETIF_R = crate::BitReader<bool>;
 #[doc = "Field `SETIF` writer - Set interrupt flag"]
-pub type SETIF_W<'a> = crate::BitWriter<'a, u32, ST13_ARC_SPEC, bool, 21>;
+pub type SETIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ST13_ARC_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:3 - Sensor compare value"]
     #[inline(always)]
@@ -271,32 +271,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Sensor compare value"]
     #[inline(always)]
-    pub fn scomp(&mut self) -> SCOMP_W {
+    #[must_use]
+    pub fn scomp(&mut self) -> SCOMP_W<0> {
         SCOMP_W::new(self)
     }
     #[doc = "Bits 4:7 - Sensor mask"]
     #[inline(always)]
-    pub fn smask(&mut self) -> SMASK_W {
+    #[must_use]
+    pub fn smask(&mut self) -> SMASK_W<4> {
         SMASK_W::new(self)
     }
     #[doc = "Bits 8:12 - Current State"]
     #[inline(always)]
-    pub fn curstate(&mut self) -> CURSTATE_W {
+    #[must_use]
+    pub fn curstate(&mut self) -> CURSTATE_W<8> {
         CURSTATE_W::new(self)
     }
     #[doc = "Bits 13:15 - Configure transition action in normal mode"]
     #[inline(always)]
-    pub fn prsact(&mut self) -> PRSACT_W {
+    #[must_use]
+    pub fn prsact(&mut self) -> PRSACT_W<13> {
         PRSACT_W::new(self)
     }
     #[doc = "Bits 16:20 - Next state index"]
     #[inline(always)]
-    pub fn nextstate(&mut self) -> NEXTSTATE_W {
+    #[must_use]
+    pub fn nextstate(&mut self) -> NEXTSTATE_W<16> {
         NEXTSTATE_W::new(self)
     }
     #[doc = "Bit 21 - Set interrupt flag"]
     #[inline(always)]
-    pub fn setif(&mut self) -> SETIF_W {
+    #[must_use]
+    pub fn setif(&mut self) -> SETIF_W<21> {
         SETIF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -318,11 +324,10 @@ impl crate::Readable for ST13_ARC_SPEC {
 #[doc = "`write(|w| ..)` method takes [st13_arc::W](W) writer structure"]
 impl crate::Writable for ST13_ARC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ST13_ARC to value 0"]
 impl crate::Resettable for ST13_ARC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

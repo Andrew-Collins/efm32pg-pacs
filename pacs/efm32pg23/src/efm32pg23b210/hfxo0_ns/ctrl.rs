@@ -37,17 +37,19 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `BUFOUTFREEZE` reader - Freeze BUFOUT Controls"]
 pub type BUFOUTFREEZE_R = crate::BitReader<bool>;
 #[doc = "Field `BUFOUTFREEZE` writer - Freeze BUFOUT Controls"]
-pub type BUFOUTFREEZE_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 0>;
+pub type BUFOUTFREEZE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `KEEPWARM` reader - Keep Warm"]
 pub type KEEPWARM_R = crate::BitReader<bool>;
 #[doc = "Field `KEEPWARM` writer - Keep Warm"]
-pub type KEEPWARM_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 2>;
+pub type KEEPWARM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `EM23ONDEMAND` reader - On-demand During EM23"]
 pub type EM23ONDEMAND_R = crate::BitReader<bool>;
 #[doc = "Field `EM23ONDEMAND` writer - On-demand During EM23"]
-pub type EM23ONDEMAND_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 3>;
+pub type EM23ONDEMAND_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `FORCEXI2GNDANA` reader - Force XI Pin to Ground"]
+pub type FORCEXI2GNDANA_R = crate::BitReader<FORCEXI2GNDANA_A>;
 #[doc = "Force XI Pin to Ground\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FORCEXI2GNDANA_A {
     #[doc = "0: Disabled (not pulled)"]
     DISABLE = 0,
@@ -60,8 +62,6 @@ impl From<FORCEXI2GNDANA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FORCEXI2GNDANA` reader - Force XI Pin to Ground"]
-pub type FORCEXI2GNDANA_R = crate::BitReader<FORCEXI2GNDANA_A>;
 impl FORCEXI2GNDANA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -83,8 +83,9 @@ impl FORCEXI2GNDANA_R {
     }
 }
 #[doc = "Field `FORCEXI2GNDANA` writer - Force XI Pin to Ground"]
-pub type FORCEXI2GNDANA_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, FORCEXI2GNDANA_A, 4>;
-impl<'a> FORCEXI2GNDANA_W<'a> {
+pub type FORCEXI2GNDANA_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CTRL_SPEC, FORCEXI2GNDANA_A, O>;
+impl<'a, const O: u8> FORCEXI2GNDANA_W<'a, O> {
     #[doc = "Disabled (not pulled)"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -96,8 +97,10 @@ impl<'a> FORCEXI2GNDANA_W<'a> {
         self.variant(FORCEXI2GNDANA_A::ENABLE)
     }
 }
+#[doc = "Field `FORCEXO2GNDANA` reader - Force XO Pin to Ground"]
+pub type FORCEXO2GNDANA_R = crate::BitReader<FORCEXO2GNDANA_A>;
 #[doc = "Force XO Pin to Ground\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FORCEXO2GNDANA_A {
     #[doc = "0: Disabled (not pulled)"]
     DISABLE = 0,
@@ -110,8 +113,6 @@ impl From<FORCEXO2GNDANA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FORCEXO2GNDANA` reader - Force XO Pin to Ground"]
-pub type FORCEXO2GNDANA_R = crate::BitReader<FORCEXO2GNDANA_A>;
 impl FORCEXO2GNDANA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -133,8 +134,9 @@ impl FORCEXO2GNDANA_R {
     }
 }
 #[doc = "Field `FORCEXO2GNDANA` writer - Force XO Pin to Ground"]
-pub type FORCEXO2GNDANA_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, FORCEXO2GNDANA_A, 5>;
-impl<'a> FORCEXO2GNDANA_W<'a> {
+pub type FORCEXO2GNDANA_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CTRL_SPEC, FORCEXO2GNDANA_A, O>;
+impl<'a, const O: u8> FORCEXO2GNDANA_W<'a, O> {
     #[doc = "Disabled (not pulled)"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -149,9 +151,11 @@ impl<'a> FORCEXO2GNDANA_W<'a> {
 #[doc = "Field `FORCECTUNEMAX` reader - Force Tuning Cap to Max Value"]
 pub type FORCECTUNEMAX_R = crate::BitReader<bool>;
 #[doc = "Field `FORCECTUNEMAX` writer - Force Tuning Cap to Max Value"]
-pub type FORCECTUNEMAX_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 6>;
+pub type FORCECTUNEMAX_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `PRSSTATUSSEL0` reader - PRS Status 0 Output Select"]
+pub type PRSSTATUSSEL0_R = crate::FieldReader<u8, PRSSTATUSSEL0_A>;
 #[doc = "PRS Status 0 Output Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSTATUSSEL0_A {
     #[doc = "0: PRS mux outputs 0"]
@@ -179,8 +183,6 @@ impl From<PRSSTATUSSEL0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRSSTATUSSEL0` reader - PRS Status 0 Output Select"]
-pub type PRSSTATUSSEL0_R = crate::FieldReader<u8, PRSSTATUSSEL0_A>;
 impl PRSSTATUSSEL0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -245,8 +247,9 @@ impl PRSSTATUSSEL0_R {
     }
 }
 #[doc = "Field `PRSSTATUSSEL0` writer - PRS Status 0 Output Select"]
-pub type PRSSTATUSSEL0_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, PRSSTATUSSEL0_A, 4, 8>;
-impl<'a> PRSSTATUSSEL0_W<'a> {
+pub type PRSSTATUSSEL0_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, PRSSTATUSSEL0_A, 4, O>;
+impl<'a, const O: u8> PRSSTATUSSEL0_W<'a, O> {
     #[doc = "PRS mux outputs 0"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -293,8 +296,10 @@ impl<'a> PRSSTATUSSEL0_W<'a> {
         self.variant(PRSSTATUSSEL0_A::BUFOUTHWREQ)
     }
 }
+#[doc = "Field `PRSSTATUSSEL1` reader - PRS Status 1 Output Select"]
+pub type PRSSTATUSSEL1_R = crate::FieldReader<u8, PRSSTATUSSEL1_A>;
 #[doc = "PRS Status 1 Output Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSTATUSSEL1_A {
     #[doc = "0: PRS mux outputs 0"]
@@ -322,8 +327,6 @@ impl From<PRSSTATUSSEL1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRSSTATUSSEL1` reader - PRS Status 1 Output Select"]
-pub type PRSSTATUSSEL1_R = crate::FieldReader<u8, PRSSTATUSSEL1_A>;
 impl PRSSTATUSSEL1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -388,8 +391,9 @@ impl PRSSTATUSSEL1_R {
     }
 }
 #[doc = "Field `PRSSTATUSSEL1` writer - PRS Status 1 Output Select"]
-pub type PRSSTATUSSEL1_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, PRSSTATUSSEL1_A, 4, 12>;
-impl<'a> PRSSTATUSSEL1_W<'a> {
+pub type PRSSTATUSSEL1_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, PRSSTATUSSEL1_A, 4, O>;
+impl<'a, const O: u8> PRSSTATUSSEL1_W<'a, O> {
     #[doc = "PRS mux outputs 0"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -439,27 +443,27 @@ impl<'a> PRSSTATUSSEL1_W<'a> {
 #[doc = "Field `FORCEEN` reader - Force Digital Clock Request"]
 pub type FORCEEN_R = crate::BitReader<bool>;
 #[doc = "Field `FORCEEN` writer - Force Digital Clock Request"]
-pub type FORCEEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 16>;
+pub type FORCEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `FORCEENPRS` reader - Force PRS Oscillator Request"]
 pub type FORCEENPRS_R = crate::BitReader<bool>;
 #[doc = "Field `FORCEENPRS` writer - Force PRS Oscillator Request"]
-pub type FORCEENPRS_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 17>;
+pub type FORCEENPRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `FORCEENBUFOUT` reader - Force BUFOUT Request"]
 pub type FORCEENBUFOUT_R = crate::BitReader<bool>;
 #[doc = "Field `FORCEENBUFOUT` writer - Force BUFOUT Request"]
-pub type FORCEENBUFOUT_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 18>;
+pub type FORCEENBUFOUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `DISONDEMAND` reader - Disable On-demand For Digital Clock"]
 pub type DISONDEMAND_R = crate::BitReader<bool>;
 #[doc = "Field `DISONDEMAND` writer - Disable On-demand For Digital Clock"]
-pub type DISONDEMAND_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 24>;
+pub type DISONDEMAND_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `DISONDEMANDPRS` reader - Disable On-demand For PRS"]
 pub type DISONDEMANDPRS_R = crate::BitReader<bool>;
 #[doc = "Field `DISONDEMANDPRS` writer - Disable On-demand For PRS"]
-pub type DISONDEMANDPRS_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 25>;
+pub type DISONDEMANDPRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `DISONDEMANDBUFOUT` reader - Disable On-demand For BUFOUT"]
 pub type DISONDEMANDBUFOUT_R = crate::BitReader<bool>;
 #[doc = "Field `DISONDEMANDBUFOUT` writer - Disable On-demand For BUFOUT"]
-pub type DISONDEMANDBUFOUT_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 26>;
+pub type DISONDEMANDBUFOUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Freeze BUFOUT Controls"]
     #[inline(always)]
@@ -535,72 +539,86 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Freeze BUFOUT Controls"]
     #[inline(always)]
-    pub fn bufoutfreeze(&mut self) -> BUFOUTFREEZE_W {
+    #[must_use]
+    pub fn bufoutfreeze(&mut self) -> BUFOUTFREEZE_W<0> {
         BUFOUTFREEZE_W::new(self)
     }
     #[doc = "Bit 2 - Keep Warm"]
     #[inline(always)]
-    pub fn keepwarm(&mut self) -> KEEPWARM_W {
+    #[must_use]
+    pub fn keepwarm(&mut self) -> KEEPWARM_W<2> {
         KEEPWARM_W::new(self)
     }
     #[doc = "Bit 3 - On-demand During EM23"]
     #[inline(always)]
-    pub fn em23ondemand(&mut self) -> EM23ONDEMAND_W {
+    #[must_use]
+    pub fn em23ondemand(&mut self) -> EM23ONDEMAND_W<3> {
         EM23ONDEMAND_W::new(self)
     }
     #[doc = "Bit 4 - Force XI Pin to Ground"]
     #[inline(always)]
-    pub fn forcexi2gndana(&mut self) -> FORCEXI2GNDANA_W {
+    #[must_use]
+    pub fn forcexi2gndana(&mut self) -> FORCEXI2GNDANA_W<4> {
         FORCEXI2GNDANA_W::new(self)
     }
     #[doc = "Bit 5 - Force XO Pin to Ground"]
     #[inline(always)]
-    pub fn forcexo2gndana(&mut self) -> FORCEXO2GNDANA_W {
+    #[must_use]
+    pub fn forcexo2gndana(&mut self) -> FORCEXO2GNDANA_W<5> {
         FORCEXO2GNDANA_W::new(self)
     }
     #[doc = "Bit 6 - Force Tuning Cap to Max Value"]
     #[inline(always)]
-    pub fn forcectunemax(&mut self) -> FORCECTUNEMAX_W {
+    #[must_use]
+    pub fn forcectunemax(&mut self) -> FORCECTUNEMAX_W<6> {
         FORCECTUNEMAX_W::new(self)
     }
     #[doc = "Bits 8:11 - PRS Status 0 Output Select"]
     #[inline(always)]
-    pub fn prsstatussel0(&mut self) -> PRSSTATUSSEL0_W {
+    #[must_use]
+    pub fn prsstatussel0(&mut self) -> PRSSTATUSSEL0_W<8> {
         PRSSTATUSSEL0_W::new(self)
     }
     #[doc = "Bits 12:15 - PRS Status 1 Output Select"]
     #[inline(always)]
-    pub fn prsstatussel1(&mut self) -> PRSSTATUSSEL1_W {
+    #[must_use]
+    pub fn prsstatussel1(&mut self) -> PRSSTATUSSEL1_W<12> {
         PRSSTATUSSEL1_W::new(self)
     }
     #[doc = "Bit 16 - Force Digital Clock Request"]
     #[inline(always)]
-    pub fn forceen(&mut self) -> FORCEEN_W {
+    #[must_use]
+    pub fn forceen(&mut self) -> FORCEEN_W<16> {
         FORCEEN_W::new(self)
     }
     #[doc = "Bit 17 - Force PRS Oscillator Request"]
     #[inline(always)]
-    pub fn forceenprs(&mut self) -> FORCEENPRS_W {
+    #[must_use]
+    pub fn forceenprs(&mut self) -> FORCEENPRS_W<17> {
         FORCEENPRS_W::new(self)
     }
     #[doc = "Bit 18 - Force BUFOUT Request"]
     #[inline(always)]
-    pub fn forceenbufout(&mut self) -> FORCEENBUFOUT_W {
+    #[must_use]
+    pub fn forceenbufout(&mut self) -> FORCEENBUFOUT_W<18> {
         FORCEENBUFOUT_W::new(self)
     }
     #[doc = "Bit 24 - Disable On-demand For Digital Clock"]
     #[inline(always)]
-    pub fn disondemand(&mut self) -> DISONDEMAND_W {
+    #[must_use]
+    pub fn disondemand(&mut self) -> DISONDEMAND_W<24> {
         DISONDEMAND_W::new(self)
     }
     #[doc = "Bit 25 - Disable On-demand For PRS"]
     #[inline(always)]
-    pub fn disondemandprs(&mut self) -> DISONDEMANDPRS_W {
+    #[must_use]
+    pub fn disondemandprs(&mut self) -> DISONDEMANDPRS_W<25> {
         DISONDEMANDPRS_W::new(self)
     }
     #[doc = "Bit 26 - Disable On-demand For BUFOUT"]
     #[inline(always)]
-    pub fn disondemandbufout(&mut self) -> DISONDEMANDBUFOUT_W {
+    #[must_use]
+    pub fn disondemandbufout(&mut self) -> DISONDEMANDBUFOUT_W<26> {
         DISONDEMANDBUFOUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -622,11 +640,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x0700_0040"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0700_0040
-    }
+    const RESET_VALUE: Self::Ux = 0x0700_0040;
 }

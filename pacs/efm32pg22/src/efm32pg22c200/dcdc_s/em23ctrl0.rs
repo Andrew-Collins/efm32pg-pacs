@@ -34,8 +34,10 @@ impl From<crate::W<EM23CTRL0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `IPKVAL` reader - EM23 Peak Current Setting"]
+pub type IPKVAL_R = crate::FieldReader<u8, IPKVAL_A>;
 #[doc = "EM23 Peak Current Setting\n\nValue on reset: 3"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum IPKVAL_A {
     #[doc = "3: Ipeak = 90mA, Iload = 5 mA"]
@@ -49,8 +51,6 @@ impl From<IPKVAL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `IPKVAL` reader - EM23 Peak Current Setting"]
-pub type IPKVAL_R = crate::FieldReader<u8, IPKVAL_A>;
 impl IPKVAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -73,8 +73,9 @@ impl IPKVAL_R {
     }
 }
 #[doc = "Field `IPKVAL` writer - EM23 Peak Current Setting"]
-pub type IPKVAL_W<'a> = crate::FieldWriter<'a, u32, EM23CTRL0_SPEC, u8, IPKVAL_A, 4, 0>;
-impl<'a> IPKVAL_W<'a> {
+pub type IPKVAL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EM23CTRL0_SPEC, u8, IPKVAL_A, 4, O>;
+impl<'a, const O: u8> IPKVAL_W<'a, O> {
     #[doc = "Ipeak = 90mA, Iload = 5 mA"]
     #[inline(always)]
     pub fn load5ma(self) -> &'a mut W {
@@ -86,8 +87,10 @@ impl<'a> IPKVAL_W<'a> {
         self.variant(IPKVAL_A::LOAD10MA)
     }
 }
+#[doc = "Field `DRVSPEED` reader - EM23 Drive Speed Setting"]
+pub type DRVSPEED_R = crate::FieldReader<u8, DRVSPEED_A>;
 #[doc = "EM23 Drive Speed Setting\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DRVSPEED_A {
     #[doc = "0: Lowest Efficiency, Lowest EMI.. Small decrease in efficiency from default setting"]
@@ -105,8 +108,6 @@ impl From<DRVSPEED_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DRVSPEED` reader - EM23 Drive Speed Setting"]
-pub type DRVSPEED_R = crate::FieldReader<u8, DRVSPEED_A>;
 impl DRVSPEED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -141,8 +142,9 @@ impl DRVSPEED_R {
     }
 }
 #[doc = "Field `DRVSPEED` writer - EM23 Drive Speed Setting"]
-pub type DRVSPEED_W<'a> = crate::FieldWriterSafe<'a, u32, EM23CTRL0_SPEC, u8, DRVSPEED_A, 2, 8>;
-impl<'a> DRVSPEED_W<'a> {
+pub type DRVSPEED_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, EM23CTRL0_SPEC, u8, DRVSPEED_A, 2, O>;
+impl<'a, const O: u8> DRVSPEED_W<'a, O> {
     #[doc = "Lowest Efficiency, Lowest EMI.. Small decrease in efficiency from default setting"]
     #[inline(always)]
     pub fn best_emi(self) -> &'a mut W {
@@ -179,12 +181,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - EM23 Peak Current Setting"]
     #[inline(always)]
-    pub fn ipkval(&mut self) -> IPKVAL_W {
+    #[must_use]
+    pub fn ipkval(&mut self) -> IPKVAL_W<0> {
         IPKVAL_W::new(self)
     }
     #[doc = "Bits 8:9 - EM23 Drive Speed Setting"]
     #[inline(always)]
-    pub fn drvspeed(&mut self) -> DRVSPEED_W {
+    #[must_use]
+    pub fn drvspeed(&mut self) -> DRVSPEED_W<8> {
         DRVSPEED_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -206,11 +210,10 @@ impl crate::Readable for EM23CTRL0_SPEC {
 #[doc = "`write(|w| ..)` method takes [em23ctrl0::W](W) writer structure"]
 impl crate::Writable for EM23CTRL0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EM23CTRL0 to value 0x0103"]
 impl crate::Resettable for EM23CTRL0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0103
-    }
+    const RESET_VALUE: Self::Ux = 0x0103;
 }

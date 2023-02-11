@@ -37,7 +37,7 @@ impl From<crate::W<PUSHADDR_SPEC>> for W {
 #[doc = "Field `ADDR` reader - Start address of data block"]
 pub type ADDR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `ADDR` writer - Start address of data block"]
-pub type ADDR_W<'a> = crate::FieldWriter<'a, u32, PUSHADDR_SPEC, u32, u32, 32, 0>;
+pub type ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PUSHADDR_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Start address of data block"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Start address of data block"]
     #[inline(always)]
-    pub fn addr(&mut self) -> ADDR_W {
+    #[must_use]
+    pub fn addr(&mut self) -> ADDR_W<0> {
         ADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for PUSHADDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [pushaddr::W](W) writer structure"]
 impl crate::Writable for PUSHADDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PUSHADDR to value 0"]
 impl crate::Resettable for PUSHADDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

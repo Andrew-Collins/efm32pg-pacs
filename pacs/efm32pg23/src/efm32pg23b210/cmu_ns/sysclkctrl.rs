@@ -34,8 +34,10 @@ impl From<crate::W<SYSCLKCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CLKSEL` reader - Clock Select"]
+pub type CLKSEL_R = crate::FieldReader<u8, CLKSEL_A>;
 #[doc = "Clock Select\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKSEL_A {
     #[doc = "1: FSRCO is clocking SYSCLK"]
@@ -53,8 +55,6 @@ impl From<CLKSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLKSEL` reader - Clock Select"]
-pub type CLKSEL_R = crate::FieldReader<u8, CLKSEL_A>;
 impl CLKSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,9 @@ impl CLKSEL_R {
     }
 }
 #[doc = "Field `CLKSEL` writer - Clock Select"]
-pub type CLKSEL_W<'a> = crate::FieldWriter<'a, u32, SYSCLKCTRL_SPEC, u8, CLKSEL_A, 3, 0>;
-impl<'a> CLKSEL_W<'a> {
+pub type CLKSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SYSCLKCTRL_SPEC, u8, CLKSEL_A, 3, O>;
+impl<'a, const O: u8> CLKSEL_W<'a, O> {
     #[doc = "FSRCO is clocking SYSCLK"]
     #[inline(always)]
     pub fn fsrco(self) -> &'a mut W {
@@ -112,8 +113,10 @@ impl<'a> CLKSEL_W<'a> {
         self.variant(CLKSEL_A::CLKIN0)
     }
 }
+#[doc = "Field `PCLKPRESC` reader - PCLK Prescaler"]
+pub type PCLKPRESC_R = crate::BitReader<PCLKPRESC_A>;
 #[doc = "PCLK Prescaler\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PCLKPRESC_A {
     #[doc = "0: PCLK is HCLK divided by 1"]
     DIV1 = 0,
@@ -126,8 +129,6 @@ impl From<PCLKPRESC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PCLKPRESC` reader - PCLK Prescaler"]
-pub type PCLKPRESC_R = crate::BitReader<PCLKPRESC_A>;
 impl PCLKPRESC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -149,8 +150,8 @@ impl PCLKPRESC_R {
     }
 }
 #[doc = "Field `PCLKPRESC` writer - PCLK Prescaler"]
-pub type PCLKPRESC_W<'a> = crate::BitWriter<'a, u32, SYSCLKCTRL_SPEC, PCLKPRESC_A, 10>;
-impl<'a> PCLKPRESC_W<'a> {
+pub type PCLKPRESC_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYSCLKCTRL_SPEC, PCLKPRESC_A, O>;
+impl<'a, const O: u8> PCLKPRESC_W<'a, O> {
     #[doc = "PCLK is HCLK divided by 1"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -162,8 +163,10 @@ impl<'a> PCLKPRESC_W<'a> {
         self.variant(PCLKPRESC_A::DIV2)
     }
 }
+#[doc = "Field `HCLKPRESC` reader - HCLK Prescaler"]
+pub type HCLKPRESC_R = crate::FieldReader<u8, HCLKPRESC_A>;
 #[doc = "HCLK Prescaler\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HCLKPRESC_A {
     #[doc = "0: HCLK is SYSCLK divided by 1"]
@@ -183,8 +186,6 @@ impl From<HCLKPRESC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HCLKPRESC` reader - HCLK Prescaler"]
-pub type HCLKPRESC_R = crate::FieldReader<u8, HCLKPRESC_A>;
 impl HCLKPRESC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -225,8 +226,9 @@ impl HCLKPRESC_R {
     }
 }
 #[doc = "Field `HCLKPRESC` writer - HCLK Prescaler"]
-pub type HCLKPRESC_W<'a> = crate::FieldWriter<'a, u32, SYSCLKCTRL_SPEC, u8, HCLKPRESC_A, 4, 12>;
-impl<'a> HCLKPRESC_W<'a> {
+pub type HCLKPRESC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SYSCLKCTRL_SPEC, u8, HCLKPRESC_A, 4, O>;
+impl<'a, const O: u8> HCLKPRESC_W<'a, O> {
     #[doc = "HCLK is SYSCLK divided by 1"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -273,17 +275,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Clock Select"]
     #[inline(always)]
-    pub fn clksel(&mut self) -> CLKSEL_W {
+    #[must_use]
+    pub fn clksel(&mut self) -> CLKSEL_W<0> {
         CLKSEL_W::new(self)
     }
     #[doc = "Bit 10 - PCLK Prescaler"]
     #[inline(always)]
-    pub fn pclkpresc(&mut self) -> PCLKPRESC_W {
+    #[must_use]
+    pub fn pclkpresc(&mut self) -> PCLKPRESC_W<10> {
         PCLKPRESC_W::new(self)
     }
     #[doc = "Bits 12:15 - HCLK Prescaler"]
     #[inline(always)]
-    pub fn hclkpresc(&mut self) -> HCLKPRESC_W {
+    #[must_use]
+    pub fn hclkpresc(&mut self) -> HCLKPRESC_W<12> {
         HCLKPRESC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -305,11 +310,10 @@ impl crate::Readable for SYSCLKCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [sysclkctrl::W](W) writer structure"]
 impl crate::Writable for SYSCLKCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SYSCLKCTRL to value 0x01"]
 impl crate::Resettable for SYSCLKCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

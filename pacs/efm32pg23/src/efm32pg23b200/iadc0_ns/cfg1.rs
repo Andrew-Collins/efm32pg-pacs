@@ -34,8 +34,10 @@ impl From<crate::W<CFG1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ADCMODE` reader - ADC Mode"]
+pub type ADCMODE_R = crate::FieldReader<u8, ADCMODE_A>;
 #[doc = "ADC Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCMODE_A {
     #[doc = "0: High speed mode with a maximum CLK_ADC of 10 MHz."]
@@ -47,8 +49,6 @@ impl From<ADCMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ADCMODE` reader - ADC Mode"]
-pub type ADCMODE_R = crate::FieldReader<u8, ADCMODE_A>;
 impl ADCMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -65,16 +65,18 @@ impl ADCMODE_R {
     }
 }
 #[doc = "Field `ADCMODE` writer - ADC Mode"]
-pub type ADCMODE_W<'a> = crate::FieldWriter<'a, u32, CFG1_SPEC, u8, ADCMODE_A, 2, 0>;
-impl<'a> ADCMODE_W<'a> {
+pub type ADCMODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG1_SPEC, u8, ADCMODE_A, 2, O>;
+impl<'a, const O: u8> ADCMODE_W<'a, O> {
     #[doc = "High speed mode with a maximum CLK_ADC of 10 MHz."]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
         self.variant(ADCMODE_A::NORMAL)
     }
 }
+#[doc = "Field `OSRHS` reader - High Speed OSR"]
+pub type OSRHS_R = crate::FieldReader<u8, OSRHS_A>;
 #[doc = "High Speed OSR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OSRHS_A {
     #[doc = "0: High speed over sampling of 2x."]
@@ -96,8 +98,6 @@ impl From<OSRHS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OSRHS` reader - High Speed OSR"]
-pub type OSRHS_R = crate::FieldReader<u8, OSRHS_A>;
 impl OSRHS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -144,8 +144,8 @@ impl OSRHS_R {
     }
 }
 #[doc = "Field `OSRHS` writer - High Speed OSR"]
-pub type OSRHS_W<'a> = crate::FieldWriter<'a, u32, CFG1_SPEC, u8, OSRHS_A, 3, 2>;
-impl<'a> OSRHS_W<'a> {
+pub type OSRHS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG1_SPEC, u8, OSRHS_A, 3, O>;
+impl<'a, const O: u8> OSRHS_W<'a, O> {
     #[doc = "High speed over sampling of 2x."]
     #[inline(always)]
     pub fn hispd2(self) -> &'a mut W {
@@ -177,8 +177,10 @@ impl<'a> OSRHS_W<'a> {
         self.variant(OSRHS_A::HISPD64)
     }
 }
+#[doc = "Field `ANALOGGAIN` reader - Analog Gain"]
+pub type ANALOGGAIN_R = crate::FieldReader<u8, ANALOGGAIN_A>;
 #[doc = "Analog Gain\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ANALOGGAIN_A {
     #[doc = "1: Analog gain of 0.5x."]
@@ -198,8 +200,6 @@ impl From<ANALOGGAIN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ANALOGGAIN` reader - Analog Gain"]
-pub type ANALOGGAIN_R = crate::FieldReader<u8, ANALOGGAIN_A>;
 impl ANALOGGAIN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -240,8 +240,9 @@ impl ANALOGGAIN_R {
     }
 }
 #[doc = "Field `ANALOGGAIN` writer - Analog Gain"]
-pub type ANALOGGAIN_W<'a> = crate::FieldWriter<'a, u32, CFG1_SPEC, u8, ANALOGGAIN_A, 3, 12>;
-impl<'a> ANALOGGAIN_W<'a> {
+pub type ANALOGGAIN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CFG1_SPEC, u8, ANALOGGAIN_A, 3, O>;
+impl<'a, const O: u8> ANALOGGAIN_W<'a, O> {
     #[doc = "Analog gain of 0.5x."]
     #[inline(always)]
     pub fn anagain0p5(self) -> &'a mut W {
@@ -268,8 +269,10 @@ impl<'a> ANALOGGAIN_W<'a> {
         self.variant(ANALOGGAIN_A::ANAGAIN4)
     }
 }
+#[doc = "Field `REFSEL` reader - Reference Select"]
+pub type REFSEL_R = crate::FieldReader<u8, REFSEL_A>;
 #[doc = "Reference Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum REFSEL_A {
     #[doc = "0: Internal 1.21 V reference."]
@@ -287,8 +290,6 @@ impl From<REFSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `REFSEL` reader - Reference Select"]
-pub type REFSEL_R = crate::FieldReader<u8, REFSEL_A>;
 impl REFSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -323,8 +324,8 @@ impl REFSEL_R {
     }
 }
 #[doc = "Field `REFSEL` writer - Reference Select"]
-pub type REFSEL_W<'a> = crate::FieldWriter<'a, u32, CFG1_SPEC, u8, REFSEL_A, 3, 16>;
-impl<'a> REFSEL_W<'a> {
+pub type REFSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG1_SPEC, u8, REFSEL_A, 3, O>;
+impl<'a, const O: u8> REFSEL_W<'a, O> {
     #[doc = "Internal 1.21 V reference."]
     #[inline(always)]
     pub fn vbgr(self) -> &'a mut W {
@@ -346,8 +347,10 @@ impl<'a> REFSEL_W<'a> {
         self.variant(REFSEL_A::VDDX0P8BUF)
     }
 }
+#[doc = "Field `DIGAVG` reader - Digital Averaging"]
+pub type DIGAVG_R = crate::FieldReader<u8, DIGAVG_A>;
 #[doc = "Digital Averaging\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DIGAVG_A {
     #[doc = "0: Collect one output word (no digital averaging)."]
@@ -367,8 +370,6 @@ impl From<DIGAVG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DIGAVG` reader - Digital Averaging"]
-pub type DIGAVG_R = crate::FieldReader<u8, DIGAVG_A>;
 impl DIGAVG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -409,8 +410,8 @@ impl DIGAVG_R {
     }
 }
 #[doc = "Field `DIGAVG` writer - Digital Averaging"]
-pub type DIGAVG_W<'a> = crate::FieldWriter<'a, u32, CFG1_SPEC, u8, DIGAVG_A, 3, 21>;
-impl<'a> DIGAVG_W<'a> {
+pub type DIGAVG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG1_SPEC, u8, DIGAVG_A, 3, O>;
+impl<'a, const O: u8> DIGAVG_W<'a, O> {
     #[doc = "Collect one output word (no digital averaging)."]
     #[inline(always)]
     pub fn avg1(self) -> &'a mut W {
@@ -437,8 +438,10 @@ impl<'a> DIGAVG_W<'a> {
         self.variant(DIGAVG_A::AVG16)
     }
 }
+#[doc = "Field `TWOSCOMPL` reader - Two's Complement"]
+pub type TWOSCOMPL_R = crate::FieldReader<u8, TWOSCOMPL_A>;
 #[doc = "Two's Complement\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TWOSCOMPL_A {
     #[doc = "0: Automatic: Single ended measurements are reported as unipolar and differential measurements are reported as bipolar."]
@@ -454,8 +457,6 @@ impl From<TWOSCOMPL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TWOSCOMPL` reader - Two's Complement"]
-pub type TWOSCOMPL_R = crate::FieldReader<u8, TWOSCOMPL_A>;
 impl TWOSCOMPL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -484,8 +485,9 @@ impl TWOSCOMPL_R {
     }
 }
 #[doc = "Field `TWOSCOMPL` writer - Two's Complement"]
-pub type TWOSCOMPL_W<'a> = crate::FieldWriter<'a, u32, CFG1_SPEC, u8, TWOSCOMPL_A, 2, 28>;
-impl<'a> TWOSCOMPL_W<'a> {
+pub type TWOSCOMPL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CFG1_SPEC, u8, TWOSCOMPL_A, 2, O>;
+impl<'a, const O: u8> TWOSCOMPL_W<'a, O> {
     #[doc = "Automatic: Single ended measurements are reported as unipolar and differential measurements are reported as bipolar."]
     #[inline(always)]
     pub fn auto(self) -> &'a mut W {
@@ -537,32 +539,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - ADC Mode"]
     #[inline(always)]
-    pub fn adcmode(&mut self) -> ADCMODE_W {
+    #[must_use]
+    pub fn adcmode(&mut self) -> ADCMODE_W<0> {
         ADCMODE_W::new(self)
     }
     #[doc = "Bits 2:4 - High Speed OSR"]
     #[inline(always)]
-    pub fn osrhs(&mut self) -> OSRHS_W {
+    #[must_use]
+    pub fn osrhs(&mut self) -> OSRHS_W<2> {
         OSRHS_W::new(self)
     }
     #[doc = "Bits 12:14 - Analog Gain"]
     #[inline(always)]
-    pub fn analoggain(&mut self) -> ANALOGGAIN_W {
+    #[must_use]
+    pub fn analoggain(&mut self) -> ANALOGGAIN_W<12> {
         ANALOGGAIN_W::new(self)
     }
     #[doc = "Bits 16:18 - Reference Select"]
     #[inline(always)]
-    pub fn refsel(&mut self) -> REFSEL_W {
+    #[must_use]
+    pub fn refsel(&mut self) -> REFSEL_W<16> {
         REFSEL_W::new(self)
     }
     #[doc = "Bits 21:23 - Digital Averaging"]
     #[inline(always)]
-    pub fn digavg(&mut self) -> DIGAVG_W {
+    #[must_use]
+    pub fn digavg(&mut self) -> DIGAVG_W<21> {
         DIGAVG_W::new(self)
     }
     #[doc = "Bits 28:29 - Two's Complement"]
     #[inline(always)]
-    pub fn twoscompl(&mut self) -> TWOSCOMPL_W {
+    #[must_use]
+    pub fn twoscompl(&mut self) -> TWOSCOMPL_W<28> {
         TWOSCOMPL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -584,11 +592,10 @@ impl crate::Readable for CFG1_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg1::W](W) writer structure"]
 impl crate::Writable for CFG1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG1 to value 0x2060"]
 impl crate::Resettable for CFG1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x2060
-    }
+    const RESET_VALUE: Self::Ux = 0x2060;
 }

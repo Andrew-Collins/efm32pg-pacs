@@ -34,8 +34,10 @@ impl From<crate::W<CFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CLRSRC` reader - WDOG Clear Source"]
+pub type CLRSRC_R = crate::BitReader<CLRSRC_A>;
 #[doc = "WDOG Clear Source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLRSRC_A {
     #[doc = "0: A write to the clear bit will clear the WDOG counter"]
     SW = 0,
@@ -48,8 +50,6 @@ impl From<CLRSRC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLRSRC` reader - WDOG Clear Source"]
-pub type CLRSRC_R = crate::BitReader<CLRSRC_A>;
 impl CLRSRC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl CLRSRC_R {
     }
 }
 #[doc = "Field `CLRSRC` writer - WDOG Clear Source"]
-pub type CLRSRC_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, CLRSRC_A, 0>;
-impl<'a> CLRSRC_W<'a> {
+pub type CLRSRC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, CLRSRC_A, O>;
+impl<'a, const O: u8> CLRSRC_W<'a, O> {
     #[doc = "A write to the clear bit will clear the WDOG counter"]
     #[inline(always)]
     pub fn sw(self) -> &'a mut W {
@@ -84,8 +84,10 @@ impl<'a> CLRSRC_W<'a> {
         self.variant(CLRSRC_A::PRSSRC0)
     }
 }
+#[doc = "Field `EM2RUN` reader - EM2 Run"]
+pub type EM2RUN_R = crate::BitReader<EM2RUN_A>;
 #[doc = "EM2 Run\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EM2RUN_A {
     #[doc = "0: WDOG timer is frozen in EM2."]
     DISABLE = 0,
@@ -98,8 +100,6 @@ impl From<EM2RUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EM2RUN` reader - EM2 Run"]
-pub type EM2RUN_R = crate::BitReader<EM2RUN_A>;
 impl EM2RUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,8 @@ impl EM2RUN_R {
     }
 }
 #[doc = "Field `EM2RUN` writer - EM2 Run"]
-pub type EM2RUN_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, EM2RUN_A, 1>;
-impl<'a> EM2RUN_W<'a> {
+pub type EM2RUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, EM2RUN_A, O>;
+impl<'a, const O: u8> EM2RUN_W<'a, O> {
     #[doc = "WDOG timer is frozen in EM2."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -134,8 +134,10 @@ impl<'a> EM2RUN_W<'a> {
         self.variant(EM2RUN_A::ENABLE)
     }
 }
+#[doc = "Field `EM3RUN` reader - EM3 Run"]
+pub type EM3RUN_R = crate::BitReader<EM3RUN_A>;
 #[doc = "EM3 Run\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EM3RUN_A {
     #[doc = "0: WDOG timer is frozen in EM3."]
     DISABLE = 0,
@@ -148,8 +150,6 @@ impl From<EM3RUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EM3RUN` reader - EM3 Run"]
-pub type EM3RUN_R = crate::BitReader<EM3RUN_A>;
 impl EM3RUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -171,8 +171,8 @@ impl EM3RUN_R {
     }
 }
 #[doc = "Field `EM3RUN` writer - EM3 Run"]
-pub type EM3RUN_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, EM3RUN_A, 2>;
-impl<'a> EM3RUN_W<'a> {
+pub type EM3RUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, EM3RUN_A, O>;
+impl<'a, const O: u8> EM3RUN_W<'a, O> {
     #[doc = "WDOG timer is frozen in EM3."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -184,8 +184,10 @@ impl<'a> EM3RUN_W<'a> {
         self.variant(EM3RUN_A::ENABLE)
     }
 }
+#[doc = "Field `EM4BLOCK` reader - EM4 Block"]
+pub type EM4BLOCK_R = crate::BitReader<EM4BLOCK_A>;
 #[doc = "EM4 Block\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EM4BLOCK_A {
     #[doc = "0: EM4 can be entered by software. See EMU for detailed description."]
     DISABLE = 0,
@@ -198,8 +200,6 @@ impl From<EM4BLOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EM4BLOCK` reader - EM4 Block"]
-pub type EM4BLOCK_R = crate::BitReader<EM4BLOCK_A>;
 impl EM4BLOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -221,8 +221,8 @@ impl EM4BLOCK_R {
     }
 }
 #[doc = "Field `EM4BLOCK` writer - EM4 Block"]
-pub type EM4BLOCK_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, EM4BLOCK_A, 3>;
-impl<'a> EM4BLOCK_W<'a> {
+pub type EM4BLOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, EM4BLOCK_A, O>;
+impl<'a, const O: u8> EM4BLOCK_W<'a, O> {
     #[doc = "EM4 can be entered by software. See EMU for detailed description."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -234,8 +234,10 @@ impl<'a> EM4BLOCK_W<'a> {
         self.variant(EM4BLOCK_A::ENABLE)
     }
 }
+#[doc = "Field `DEBUGRUN` reader - Debug Mode Run"]
+pub type DEBUGRUN_R = crate::BitReader<DEBUGRUN_A>;
 #[doc = "Debug Mode Run\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DEBUGRUN_A {
     #[doc = "0: WDOG timer is frozen in debug mode"]
     DISABLE = 0,
@@ -248,8 +250,6 @@ impl From<DEBUGRUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DEBUGRUN` reader - Debug Mode Run"]
-pub type DEBUGRUN_R = crate::BitReader<DEBUGRUN_A>;
 impl DEBUGRUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -271,8 +271,8 @@ impl DEBUGRUN_R {
     }
 }
 #[doc = "Field `DEBUGRUN` writer - Debug Mode Run"]
-pub type DEBUGRUN_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, DEBUGRUN_A, 4>;
-impl<'a> DEBUGRUN_W<'a> {
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, DEBUGRUN_A, O>;
+impl<'a, const O: u8> DEBUGRUN_W<'a, O> {
     #[doc = "WDOG timer is frozen in debug mode"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -284,8 +284,10 @@ impl<'a> DEBUGRUN_W<'a> {
         self.variant(DEBUGRUN_A::ENABLE)
     }
 }
+#[doc = "Field `WDOGRSTDIS` reader - WDOG Reset Disable"]
+pub type WDOGRSTDIS_R = crate::BitReader<WDOGRSTDIS_A>;
 #[doc = "WDOG Reset Disable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WDOGRSTDIS_A {
     #[doc = "0: A timeout will cause a WDOG reset"]
     EN = 0,
@@ -298,8 +300,6 @@ impl From<WDOGRSTDIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WDOGRSTDIS` reader - WDOG Reset Disable"]
-pub type WDOGRSTDIS_R = crate::BitReader<WDOGRSTDIS_A>;
 impl WDOGRSTDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -321,8 +321,8 @@ impl WDOGRSTDIS_R {
     }
 }
 #[doc = "Field `WDOGRSTDIS` writer - WDOG Reset Disable"]
-pub type WDOGRSTDIS_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, WDOGRSTDIS_A, 8>;
-impl<'a> WDOGRSTDIS_W<'a> {
+pub type WDOGRSTDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, WDOGRSTDIS_A, O>;
+impl<'a, const O: u8> WDOGRSTDIS_W<'a, O> {
     #[doc = "A timeout will cause a WDOG reset"]
     #[inline(always)]
     pub fn en(self) -> &'a mut W {
@@ -337,13 +337,15 @@ impl<'a> WDOGRSTDIS_W<'a> {
 #[doc = "Field `PRS0MISSRSTEN` reader - PRS Src0 Missing Event WDOG Reset"]
 pub type PRS0MISSRSTEN_R = crate::BitReader<bool>;
 #[doc = "Field `PRS0MISSRSTEN` writer - PRS Src0 Missing Event WDOG Reset"]
-pub type PRS0MISSRSTEN_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 9>;
+pub type PRS0MISSRSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 #[doc = "Field `PRS1MISSRSTEN` reader - PRS Src1 Missing Event WDOG Reset"]
 pub type PRS1MISSRSTEN_R = crate::BitReader<bool>;
 #[doc = "Field `PRS1MISSRSTEN` writer - PRS Src1 Missing Event WDOG Reset"]
-pub type PRS1MISSRSTEN_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 10>;
+pub type PRS1MISSRSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
+#[doc = "Field `PERSEL` reader - WDOG Timeout Period Select"]
+pub type PERSEL_R = crate::FieldReader<u8, PERSEL_A>;
 #[doc = "WDOG Timeout Period Select\n\nValue on reset: 15"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PERSEL_A {
     #[doc = "0: Timeout period of 9 wdog cycles"]
@@ -385,8 +387,6 @@ impl From<PERSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PERSEL` reader - WDOG Timeout Period Select"]
-pub type PERSEL_R = crate::FieldReader<u8, PERSEL_A>;
 impl PERSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -493,8 +493,8 @@ impl PERSEL_R {
     }
 }
 #[doc = "Field `PERSEL` writer - WDOG Timeout Period Select"]
-pub type PERSEL_W<'a> = crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, PERSEL_A, 4, 16>;
-impl<'a> PERSEL_W<'a> {
+pub type PERSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, PERSEL_A, 4, O>;
+impl<'a, const O: u8> PERSEL_W<'a, O> {
     #[doc = "Timeout period of 9 wdog cycles"]
     #[inline(always)]
     pub fn sel0(self) -> &'a mut W {
@@ -576,8 +576,10 @@ impl<'a> PERSEL_W<'a> {
         self.variant(PERSEL_A::SEL15)
     }
 }
+#[doc = "Field `WARNSEL` reader - WDOG Warning Period Select"]
+pub type WARNSEL_R = crate::FieldReader<u8, WARNSEL_A>;
 #[doc = "WDOG Warning Period Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WARNSEL_A {
     #[doc = "0: Disable"]
@@ -595,8 +597,6 @@ impl From<WARNSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WARNSEL` reader - WDOG Warning Period Select"]
-pub type WARNSEL_R = crate::FieldReader<u8, WARNSEL_A>;
 impl WARNSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -631,8 +631,9 @@ impl WARNSEL_R {
     }
 }
 #[doc = "Field `WARNSEL` writer - WDOG Warning Period Select"]
-pub type WARNSEL_W<'a> = crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, WARNSEL_A, 2, 24>;
-impl<'a> WARNSEL_W<'a> {
+pub type WARNSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, WARNSEL_A, 2, O>;
+impl<'a, const O: u8> WARNSEL_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn dis(self) -> &'a mut W {
@@ -654,8 +655,10 @@ impl<'a> WARNSEL_W<'a> {
         self.variant(WARNSEL_A::SEL3)
     }
 }
+#[doc = "Field `WINSEL` reader - WDOG Illegal Window Select"]
+pub type WINSEL_R = crate::FieldReader<u8, WINSEL_A>;
 #[doc = "WDOG Illegal Window Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WINSEL_A {
     #[doc = "0: Disabled."]
@@ -681,8 +684,6 @@ impl From<WINSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WINSEL` reader - WDOG Illegal Window Select"]
-pub type WINSEL_R = crate::FieldReader<u8, WINSEL_A>;
 impl WINSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -741,8 +742,8 @@ impl WINSEL_R {
     }
 }
 #[doc = "Field `WINSEL` writer - WDOG Illegal Window Select"]
-pub type WINSEL_W<'a> = crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, WINSEL_A, 3, 28>;
-impl<'a> WINSEL_W<'a> {
+pub type WINSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, WINSEL_A, 3, O>;
+impl<'a, const O: u8> WINSEL_W<'a, O> {
     #[doc = "Disabled."]
     #[inline(always)]
     pub fn dis(self) -> &'a mut W {
@@ -844,57 +845,68 @@ impl R {
 impl W {
     #[doc = "Bit 0 - WDOG Clear Source"]
     #[inline(always)]
-    pub fn clrsrc(&mut self) -> CLRSRC_W {
+    #[must_use]
+    pub fn clrsrc(&mut self) -> CLRSRC_W<0> {
         CLRSRC_W::new(self)
     }
     #[doc = "Bit 1 - EM2 Run"]
     #[inline(always)]
-    pub fn em2run(&mut self) -> EM2RUN_W {
+    #[must_use]
+    pub fn em2run(&mut self) -> EM2RUN_W<1> {
         EM2RUN_W::new(self)
     }
     #[doc = "Bit 2 - EM3 Run"]
     #[inline(always)]
-    pub fn em3run(&mut self) -> EM3RUN_W {
+    #[must_use]
+    pub fn em3run(&mut self) -> EM3RUN_W<2> {
         EM3RUN_W::new(self)
     }
     #[doc = "Bit 3 - EM4 Block"]
     #[inline(always)]
-    pub fn em4block(&mut self) -> EM4BLOCK_W {
+    #[must_use]
+    pub fn em4block(&mut self) -> EM4BLOCK_W<3> {
         EM4BLOCK_W::new(self)
     }
     #[doc = "Bit 4 - Debug Mode Run"]
     #[inline(always)]
-    pub fn debugrun(&mut self) -> DEBUGRUN_W {
+    #[must_use]
+    pub fn debugrun(&mut self) -> DEBUGRUN_W<4> {
         DEBUGRUN_W::new(self)
     }
     #[doc = "Bit 8 - WDOG Reset Disable"]
     #[inline(always)]
-    pub fn wdogrstdis(&mut self) -> WDOGRSTDIS_W {
+    #[must_use]
+    pub fn wdogrstdis(&mut self) -> WDOGRSTDIS_W<8> {
         WDOGRSTDIS_W::new(self)
     }
     #[doc = "Bit 9 - PRS Src0 Missing Event WDOG Reset"]
     #[inline(always)]
-    pub fn prs0missrsten(&mut self) -> PRS0MISSRSTEN_W {
+    #[must_use]
+    pub fn prs0missrsten(&mut self) -> PRS0MISSRSTEN_W<9> {
         PRS0MISSRSTEN_W::new(self)
     }
     #[doc = "Bit 10 - PRS Src1 Missing Event WDOG Reset"]
     #[inline(always)]
-    pub fn prs1missrsten(&mut self) -> PRS1MISSRSTEN_W {
+    #[must_use]
+    pub fn prs1missrsten(&mut self) -> PRS1MISSRSTEN_W<10> {
         PRS1MISSRSTEN_W::new(self)
     }
     #[doc = "Bits 16:19 - WDOG Timeout Period Select"]
     #[inline(always)]
-    pub fn persel(&mut self) -> PERSEL_W {
+    #[must_use]
+    pub fn persel(&mut self) -> PERSEL_W<16> {
         PERSEL_W::new(self)
     }
     #[doc = "Bits 24:25 - WDOG Warning Period Select"]
     #[inline(always)]
-    pub fn warnsel(&mut self) -> WARNSEL_W {
+    #[must_use]
+    pub fn warnsel(&mut self) -> WARNSEL_W<24> {
         WARNSEL_W::new(self)
     }
     #[doc = "Bits 28:30 - WDOG Illegal Window Select"]
     #[inline(always)]
-    pub fn winsel(&mut self) -> WINSEL_W {
+    #[must_use]
+    pub fn winsel(&mut self) -> WINSEL_W<28> {
         WINSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -916,11 +928,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0x000f_0000"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x000f_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x000f_0000;
 }

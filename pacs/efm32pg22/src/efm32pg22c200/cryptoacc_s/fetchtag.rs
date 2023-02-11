@@ -37,7 +37,7 @@ impl From<crate::W<FETCHTAG_SPEC>> for W {
 #[doc = "Field `TAG` reader - User tag"]
 pub type TAG_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TAG` writer - User tag"]
-pub type TAG_W<'a> = crate::FieldWriter<'a, u32, FETCHTAG_SPEC, u32, u32, 32, 0>;
+pub type TAG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FETCHTAG_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - User tag"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - User tag"]
     #[inline(always)]
-    pub fn tag(&mut self) -> TAG_W {
+    #[must_use]
+    pub fn tag(&mut self) -> TAG_W<0> {
         TAG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for FETCHTAG_SPEC {
 #[doc = "`write(|w| ..)` method takes [fetchtag::W](W) writer structure"]
 impl crate::Writable for FETCHTAG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FETCHTAG to value 0"]
 impl crate::Resettable for FETCHTAG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

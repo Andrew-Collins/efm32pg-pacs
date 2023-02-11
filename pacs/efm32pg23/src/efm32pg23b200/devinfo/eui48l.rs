@@ -21,7 +21,7 @@ impl R {
     #[doc = "Bits 0:23 - Unique ID"]
     #[inline(always)]
     pub fn uniqueid(&self) -> UNIQUEID_R {
-        UNIQUEID_R::new((self.bits & 0x00ff_ffff) as u32)
+        UNIQUEID_R::new(self.bits & 0x00ff_ffff)
     }
     #[doc = "Bits 24:31 - OUI48L"]
     #[inline(always)]
@@ -40,8 +40,5 @@ impl crate::Readable for EUI48L_SPEC {
 }
 #[doc = "`reset()` method sets EUI48L to value 0"]
 impl crate::Resettable for EUI48L_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

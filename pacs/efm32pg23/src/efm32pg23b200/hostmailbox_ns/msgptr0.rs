@@ -37,7 +37,7 @@ impl From<crate::W<MSGPTR0_SPEC>> for W {
 #[doc = "Field `PTR` reader - Pointer"]
 pub type PTR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `PTR` writer - Pointer"]
-pub type PTR_W<'a> = crate::FieldWriter<'a, u32, MSGPTR0_SPEC, u32, u32, 32, 0>;
+pub type PTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MSGPTR0_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Pointer"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Pointer"]
     #[inline(always)]
-    pub fn ptr(&mut self) -> PTR_W {
+    #[must_use]
+    pub fn ptr(&mut self) -> PTR_W<0> {
         PTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for MSGPTR0_SPEC {
 #[doc = "`write(|w| ..)` method takes [msgptr0::W](W) writer structure"]
 impl crate::Writable for MSGPTR0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MSGPTR0 to value 0"]
 impl crate::Resettable for MSGPTR0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

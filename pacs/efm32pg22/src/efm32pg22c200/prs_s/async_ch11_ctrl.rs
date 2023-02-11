@@ -34,8 +34,10 @@ impl From<crate::W<ASYNC_CH11_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SIGSEL` reader - Signal Select"]
+pub type SIGSEL_R = crate::FieldReader<u8, SIGSEL_A>;
 #[doc = "Signal Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SIGSEL_A {
     #[doc = "0: NONE"]
@@ -47,8 +49,6 @@ impl From<SIGSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SIGSEL` reader - Signal Select"]
-pub type SIGSEL_R = crate::FieldReader<u8, SIGSEL_A>;
 impl SIGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -65,8 +65,9 @@ impl SIGSEL_R {
     }
 }
 #[doc = "Field `SIGSEL` writer - Signal Select"]
-pub type SIGSEL_W<'a> = crate::FieldWriter<'a, u32, ASYNC_CH11_CTRL_SPEC, u8, SIGSEL_A, 3, 0>;
-impl<'a> SIGSEL_W<'a> {
+pub type SIGSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ASYNC_CH11_CTRL_SPEC, u8, SIGSEL_A, 3, O>;
+impl<'a, const O: u8> SIGSEL_W<'a, O> {
     #[doc = "NONE"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -76,9 +77,12 @@ impl<'a> SIGSEL_W<'a> {
 #[doc = "Field `SOURCESEL` reader - Source Select"]
 pub type SOURCESEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SOURCESEL` writer - Source Select"]
-pub type SOURCESEL_W<'a> = crate::FieldWriter<'a, u32, ASYNC_CH11_CTRL_SPEC, u8, u8, 7, 8>;
+pub type SOURCESEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ASYNC_CH11_CTRL_SPEC, u8, u8, 7, O>;
+#[doc = "Field `FNSEL` reader - Function Select"]
+pub type FNSEL_R = crate::FieldReader<u8, FNSEL_A>;
 #[doc = "Function Select\n\nValue on reset: 12"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FNSEL_A {
     #[doc = "0: Logical 0"]
@@ -120,8 +124,6 @@ impl From<FNSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FNSEL` reader - Function Select"]
-pub type FNSEL_R = crate::FieldReader<u8, FNSEL_A>;
 impl FNSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -228,8 +230,9 @@ impl FNSEL_R {
     }
 }
 #[doc = "Field `FNSEL` writer - Function Select"]
-pub type FNSEL_W<'a> = crate::FieldWriterSafe<'a, u32, ASYNC_CH11_CTRL_SPEC, u8, FNSEL_A, 4, 16>;
-impl<'a> FNSEL_W<'a> {
+pub type FNSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, ASYNC_CH11_CTRL_SPEC, u8, FNSEL_A, 4, O>;
+impl<'a, const O: u8> FNSEL_W<'a, O> {
     #[doc = "Logical 0"]
     #[inline(always)]
     pub fn logical_zero(self) -> &'a mut W {
@@ -314,7 +317,8 @@ impl<'a> FNSEL_W<'a> {
 #[doc = "Field `AUXSEL` reader - Auxiliary LUT Input Select"]
 pub type AUXSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `AUXSEL` writer - Auxiliary LUT Input Select"]
-pub type AUXSEL_W<'a> = crate::FieldWriter<'a, u32, ASYNC_CH11_CTRL_SPEC, u8, u8, 4, 24>;
+pub type AUXSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ASYNC_CH11_CTRL_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:2 - Signal Select"]
     #[inline(always)]
@@ -340,22 +344,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Signal Select"]
     #[inline(always)]
-    pub fn sigsel(&mut self) -> SIGSEL_W {
+    #[must_use]
+    pub fn sigsel(&mut self) -> SIGSEL_W<0> {
         SIGSEL_W::new(self)
     }
     #[doc = "Bits 8:14 - Source Select"]
     #[inline(always)]
-    pub fn sourcesel(&mut self) -> SOURCESEL_W {
+    #[must_use]
+    pub fn sourcesel(&mut self) -> SOURCESEL_W<8> {
         SOURCESEL_W::new(self)
     }
     #[doc = "Bits 16:19 - Function Select"]
     #[inline(always)]
-    pub fn fnsel(&mut self) -> FNSEL_W {
+    #[must_use]
+    pub fn fnsel(&mut self) -> FNSEL_W<16> {
         FNSEL_W::new(self)
     }
     #[doc = "Bits 24:27 - Auxiliary LUT Input Select"]
     #[inline(always)]
-    pub fn auxsel(&mut self) -> AUXSEL_W {
+    #[must_use]
+    pub fn auxsel(&mut self) -> AUXSEL_W<24> {
         AUXSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -377,11 +385,10 @@ impl crate::Readable for ASYNC_CH11_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [async_ch11_ctrl::W](W) writer structure"]
 impl crate::Writable for ASYNC_CH11_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ASYNC_CH11_CTRL to value 0x000c_0000"]
 impl crate::Resettable for ASYNC_CH11_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x000c_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x000c_0000;
 }

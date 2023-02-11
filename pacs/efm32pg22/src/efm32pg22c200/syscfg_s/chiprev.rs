@@ -37,15 +37,15 @@ impl From<crate::W<CHIPREV_SPEC>> for W {
 #[doc = "Field `MAJOR` reader - Chip Revision Major value"]
 pub type MAJOR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MAJOR` writer - Chip Revision Major value"]
-pub type MAJOR_W<'a> = crate::FieldWriter<'a, u32, CHIPREV_SPEC, u8, u8, 6, 0>;
+pub type MAJOR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHIPREV_SPEC, u8, u8, 6, O>;
 #[doc = "Field `FAMILY` reader - Chip Family value"]
 pub type FAMILY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FAMILY` writer - Chip Family value"]
-pub type FAMILY_W<'a> = crate::FieldWriter<'a, u32, CHIPREV_SPEC, u8, u8, 6, 6>;
+pub type FAMILY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHIPREV_SPEC, u8, u8, 6, O>;
 #[doc = "Field `MINOR` reader - Chip Revision Minor value"]
 pub type MINOR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MINOR` writer - Chip Revision Minor value"]
-pub type MINOR_W<'a> = crate::FieldWriter<'a, u32, CHIPREV_SPEC, u8, u8, 8, 12>;
+pub type MINOR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHIPREV_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:5 - Chip Revision Major value"]
     #[inline(always)]
@@ -66,17 +66,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Chip Revision Major value"]
     #[inline(always)]
-    pub fn major(&mut self) -> MAJOR_W {
+    #[must_use]
+    pub fn major(&mut self) -> MAJOR_W<0> {
         MAJOR_W::new(self)
     }
     #[doc = "Bits 6:11 - Chip Family value"]
     #[inline(always)]
-    pub fn family(&mut self) -> FAMILY_W {
+    #[must_use]
+    pub fn family(&mut self) -> FAMILY_W<6> {
         FAMILY_W::new(self)
     }
     #[doc = "Bits 12:19 - Chip Revision Minor value"]
     #[inline(always)]
-    pub fn minor(&mut self) -> MINOR_W {
+    #[must_use]
+    pub fn minor(&mut self) -> MINOR_W<12> {
         MINOR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for CHIPREV_SPEC {
 #[doc = "`write(|w| ..)` method takes [chiprev::W](W) writer structure"]
 impl crate::Writable for CHIPREV_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CHIPREV to value 0"]
 impl crate::Resettable for CHIPREV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

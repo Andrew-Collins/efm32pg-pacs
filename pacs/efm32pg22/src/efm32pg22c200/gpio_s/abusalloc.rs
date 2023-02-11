@@ -34,8 +34,10 @@ impl From<crate::W<ABUSALLOC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `AEVEN0` reader - A Bus Even 0"]
+pub type AEVEN0_R = crate::FieldReader<u8, AEVEN0_A>;
 #[doc = "A Bus Even 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AEVEN0_A {
     #[doc = "0: The bus is not allocated"]
@@ -49,8 +51,6 @@ impl From<AEVEN0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `AEVEN0` reader - A Bus Even 0"]
-pub type AEVEN0_R = crate::FieldReader<u8, AEVEN0_A>;
 impl AEVEN0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -73,8 +73,9 @@ impl AEVEN0_R {
     }
 }
 #[doc = "Field `AEVEN0` writer - A Bus Even 0"]
-pub type AEVEN0_W<'a> = crate::FieldWriter<'a, u32, ABUSALLOC_SPEC, u8, AEVEN0_A, 4, 0>;
-impl<'a> AEVEN0_W<'a> {
+pub type AEVEN0_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ABUSALLOC_SPEC, u8, AEVEN0_A, 4, O>;
+impl<'a, const O: u8> AEVEN0_W<'a, O> {
     #[doc = "The bus is not allocated"]
     #[inline(always)]
     pub fn tristate(self) -> &'a mut W {
@@ -86,8 +87,10 @@ impl<'a> AEVEN0_W<'a> {
         self.variant(AEVEN0_A::ADC0)
     }
 }
+#[doc = "Field `AEVEN1` reader - A Bus Even 1"]
+pub type AEVEN1_R = crate::FieldReader<u8, AEVEN1_A>;
 #[doc = "A Bus Even 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AEVEN1_A {
     #[doc = "0: The bus is not allocated"]
@@ -101,8 +104,6 @@ impl From<AEVEN1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `AEVEN1` reader - A Bus Even 1"]
-pub type AEVEN1_R = crate::FieldReader<u8, AEVEN1_A>;
 impl AEVEN1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -125,8 +126,9 @@ impl AEVEN1_R {
     }
 }
 #[doc = "Field `AEVEN1` writer - A Bus Even 1"]
-pub type AEVEN1_W<'a> = crate::FieldWriter<'a, u32, ABUSALLOC_SPEC, u8, AEVEN1_A, 4, 8>;
-impl<'a> AEVEN1_W<'a> {
+pub type AEVEN1_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ABUSALLOC_SPEC, u8, AEVEN1_A, 4, O>;
+impl<'a, const O: u8> AEVEN1_W<'a, O> {
     #[doc = "The bus is not allocated"]
     #[inline(always)]
     pub fn tristate(self) -> &'a mut W {
@@ -138,8 +140,10 @@ impl<'a> AEVEN1_W<'a> {
         self.variant(AEVEN1_A::ADC0)
     }
 }
+#[doc = "Field `AODD0` reader - A Bus Odd 0"]
+pub type AODD0_R = crate::FieldReader<u8, AODD0_A>;
 #[doc = "A Bus Odd 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AODD0_A {
     #[doc = "0: The bus is not allocated"]
@@ -153,8 +157,6 @@ impl From<AODD0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `AODD0` reader - A Bus Odd 0"]
-pub type AODD0_R = crate::FieldReader<u8, AODD0_A>;
 impl AODD0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -177,8 +179,8 @@ impl AODD0_R {
     }
 }
 #[doc = "Field `AODD0` writer - A Bus Odd 0"]
-pub type AODD0_W<'a> = crate::FieldWriter<'a, u32, ABUSALLOC_SPEC, u8, AODD0_A, 4, 16>;
-impl<'a> AODD0_W<'a> {
+pub type AODD0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ABUSALLOC_SPEC, u8, AODD0_A, 4, O>;
+impl<'a, const O: u8> AODD0_W<'a, O> {
     #[doc = "The bus is not allocated"]
     #[inline(always)]
     pub fn tristate(self) -> &'a mut W {
@@ -190,8 +192,10 @@ impl<'a> AODD0_W<'a> {
         self.variant(AODD0_A::ADC0)
     }
 }
+#[doc = "Field `AODD1` reader - A Bus Odd 1"]
+pub type AODD1_R = crate::FieldReader<u8, AODD1_A>;
 #[doc = "A Bus Odd 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AODD1_A {
     #[doc = "0: The bus is not allocated"]
@@ -205,8 +209,6 @@ impl From<AODD1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `AODD1` reader - A Bus Odd 1"]
-pub type AODD1_R = crate::FieldReader<u8, AODD1_A>;
 impl AODD1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -229,8 +231,8 @@ impl AODD1_R {
     }
 }
 #[doc = "Field `AODD1` writer - A Bus Odd 1"]
-pub type AODD1_W<'a> = crate::FieldWriter<'a, u32, ABUSALLOC_SPEC, u8, AODD1_A, 4, 24>;
-impl<'a> AODD1_W<'a> {
+pub type AODD1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ABUSALLOC_SPEC, u8, AODD1_A, 4, O>;
+impl<'a, const O: u8> AODD1_W<'a, O> {
     #[doc = "The bus is not allocated"]
     #[inline(always)]
     pub fn tristate(self) -> &'a mut W {
@@ -267,22 +269,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - A Bus Even 0"]
     #[inline(always)]
-    pub fn aeven0(&mut self) -> AEVEN0_W {
+    #[must_use]
+    pub fn aeven0(&mut self) -> AEVEN0_W<0> {
         AEVEN0_W::new(self)
     }
     #[doc = "Bits 8:11 - A Bus Even 1"]
     #[inline(always)]
-    pub fn aeven1(&mut self) -> AEVEN1_W {
+    #[must_use]
+    pub fn aeven1(&mut self) -> AEVEN1_W<8> {
         AEVEN1_W::new(self)
     }
     #[doc = "Bits 16:19 - A Bus Odd 0"]
     #[inline(always)]
-    pub fn aodd0(&mut self) -> AODD0_W {
+    #[must_use]
+    pub fn aodd0(&mut self) -> AODD0_W<16> {
         AODD0_W::new(self)
     }
     #[doc = "Bits 24:27 - A Bus Odd 1"]
     #[inline(always)]
-    pub fn aodd1(&mut self) -> AODD1_W {
+    #[must_use]
+    pub fn aodd1(&mut self) -> AODD1_W<24> {
         AODD1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -304,11 +310,10 @@ impl crate::Readable for ABUSALLOC_SPEC {
 #[doc = "`write(|w| ..)` method takes [abusalloc::W](W) writer structure"]
 impl crate::Writable for ABUSALLOC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ABUSALLOC to value 0"]
 impl crate::Resettable for ABUSALLOC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,9 +37,11 @@ impl From<crate::W<CFG_SPEC>> for W {
 #[doc = "Field `CLKDIV` reader - Clock Divider"]
 pub type CLKDIV_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CLKDIV` writer - Clock Divider"]
-pub type CLKDIV_W<'a> = crate::FieldWriter<'a, u32, CFG_SPEC, u32, u32, 18, 0>;
+pub type CLKDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u32, u32, 18, O>;
+#[doc = "Field `SINGLEPRESS` reader - Single Press"]
+pub type SINGLEPRESS_R = crate::BitReader<SINGLEPRESS_A>;
 #[doc = "Single Press\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SINGLEPRESS_A {
     #[doc = "0: After KEYIF is set and then cleared, scanning will continue. This can give multiple interrupts for the same key press, but allow multiple key presses to be detected. To use this mode for multi-key detection, the ISR should update a section of memory of COLNUM bytes on each interrupt, until key release is detected. After key release, the section of memory where key presses are recorded can be processed."]
     MULTIPRESS = 0,
@@ -52,8 +54,6 @@ impl From<SINGLEPRESS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SINGLEPRESS` reader - Single Press"]
-pub type SINGLEPRESS_R = crate::BitReader<SINGLEPRESS_A>;
 impl SINGLEPRESS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -75,8 +75,8 @@ impl SINGLEPRESS_R {
     }
 }
 #[doc = "Field `SINGLEPRESS` writer - Single Press"]
-pub type SINGLEPRESS_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, SINGLEPRESS_A, 20>;
-impl<'a> SINGLEPRESS_W<'a> {
+pub type SINGLEPRESS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, SINGLEPRESS_A, O>;
+impl<'a, const O: u8> SINGLEPRESS_W<'a, O> {
     #[doc = "After KEYIF is set and then cleared, scanning will continue. This can give multiple interrupts for the same key press, but allow multiple key presses to be detected. To use this mode for multi-key detection, the ISR should update a section of memory of COLNUM bytes on each interrupt, until key release is detected. After key release, the section of memory where key presses are recorded can be processed."]
     #[inline(always)]
     pub fn multipress(self) -> &'a mut W {
@@ -88,8 +88,10 @@ impl<'a> SINGLEPRESS_W<'a> {
         self.variant(SINGLEPRESS_A::SINGLEPRESS)
     }
 }
+#[doc = "Field `AUTOSTART` reader - Automatically Start"]
+pub type AUTOSTART_R = crate::BitReader<AUTOSTART_A>;
 #[doc = "Automatically Start\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AUTOSTART_A {
     #[doc = "0: Auto start is disabled"]
     AUTOSTARTDIS = 0,
@@ -102,8 +104,6 @@ impl From<AUTOSTART_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AUTOSTART` reader - Automatically Start"]
-pub type AUTOSTART_R = crate::BitReader<AUTOSTART_A>;
 impl AUTOSTART_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -125,8 +125,8 @@ impl AUTOSTART_R {
     }
 }
 #[doc = "Field `AUTOSTART` writer - Automatically Start"]
-pub type AUTOSTART_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, AUTOSTART_A, 22>;
-impl<'a> AUTOSTART_W<'a> {
+pub type AUTOSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, AUTOSTART_A, O>;
+impl<'a, const O: u8> AUTOSTART_W<'a, O> {
     #[doc = "Auto start is disabled"]
     #[inline(always)]
     pub fn autostartdis(self) -> &'a mut W {
@@ -138,8 +138,10 @@ impl<'a> AUTOSTART_W<'a> {
         self.variant(AUTOSTART_A::AUTOSTARTEN)
     }
 }
+#[doc = "Field `NUMROWS` reader - Number of Rows"]
+pub type NUMROWS_R = crate::FieldReader<u8, NUMROWS_A>;
 #[doc = "Number of Rows\n\nValue on reset: 5"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum NUMROWS_A {
     #[doc = "0: 1 Row is not supported; defaults to 3 instead"]
@@ -161,8 +163,6 @@ impl From<NUMROWS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `NUMROWS` reader - Number of Rows"]
-pub type NUMROWS_R = crate::FieldReader<u8, NUMROWS_A>;
 impl NUMROWS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -209,8 +209,8 @@ impl NUMROWS_R {
     }
 }
 #[doc = "Field `NUMROWS` writer - Number of Rows"]
-pub type NUMROWS_W<'a> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, NUMROWS_A, 3, 24>;
-impl<'a> NUMROWS_W<'a> {
+pub type NUMROWS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, NUMROWS_A, 3, O>;
+impl<'a, const O: u8> NUMROWS_W<'a, O> {
     #[doc = "1 Row is not supported; defaults to 3 instead"]
     #[inline(always)]
     pub fn rsv1(self) -> &'a mut W {
@@ -245,12 +245,12 @@ impl<'a> NUMROWS_W<'a> {
 #[doc = "Field `NUMCOLS` reader - Number of Columns"]
 pub type NUMCOLS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NUMCOLS` writer - Number of Columns"]
-pub type NUMCOLS_W<'a> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, u8, 3, 28>;
+pub type NUMCOLS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:17 - Clock Divider"]
     #[inline(always)]
     pub fn clkdiv(&self) -> CLKDIV_R {
-        CLKDIV_R::new((self.bits & 0x0003_ffff) as u32)
+        CLKDIV_R::new(self.bits & 0x0003_ffff)
     }
     #[doc = "Bit 20 - Single Press"]
     #[inline(always)]
@@ -276,27 +276,32 @@ impl R {
 impl W {
     #[doc = "Bits 0:17 - Clock Divider"]
     #[inline(always)]
-    pub fn clkdiv(&mut self) -> CLKDIV_W {
+    #[must_use]
+    pub fn clkdiv(&mut self) -> CLKDIV_W<0> {
         CLKDIV_W::new(self)
     }
     #[doc = "Bit 20 - Single Press"]
     #[inline(always)]
-    pub fn singlepress(&mut self) -> SINGLEPRESS_W {
+    #[must_use]
+    pub fn singlepress(&mut self) -> SINGLEPRESS_W<20> {
         SINGLEPRESS_W::new(self)
     }
     #[doc = "Bit 22 - Automatically Start"]
     #[inline(always)]
-    pub fn autostart(&mut self) -> AUTOSTART_W {
+    #[must_use]
+    pub fn autostart(&mut self) -> AUTOSTART_W<22> {
         AUTOSTART_W::new(self)
     }
     #[doc = "Bits 24:26 - Number of Rows"]
     #[inline(always)]
-    pub fn numrows(&mut self) -> NUMROWS_W {
+    #[must_use]
+    pub fn numrows(&mut self) -> NUMROWS_W<24> {
         NUMROWS_W::new(self)
     }
     #[doc = "Bits 28:30 - Number of Columns"]
     #[inline(always)]
-    pub fn numcols(&mut self) -> NUMCOLS_W {
+    #[must_use]
+    pub fn numcols(&mut self) -> NUMCOLS_W<28> {
         NUMCOLS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -318,11 +323,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0x2501_387f"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x2501_387f
-    }
+    const RESET_VALUE: Self::Ux = 0x2501_387f;
 }

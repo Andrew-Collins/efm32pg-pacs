@@ -37,11 +37,11 @@ impl From<crate::W<LETIMER0_ROUTEEN_SPEC>> for W {
 #[doc = "Field `OUT0PEN` reader - OUT0 pin enable control bit"]
 pub type OUT0PEN_R = crate::BitReader<bool>;
 #[doc = "Field `OUT0PEN` writer - OUT0 pin enable control bit"]
-pub type OUT0PEN_W<'a> = crate::BitWriter<'a, u32, LETIMER0_ROUTEEN_SPEC, bool, 0>;
+pub type OUT0PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LETIMER0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `OUT1PEN` reader - OUT1 pin enable control bit"]
 pub type OUT1PEN_R = crate::BitReader<bool>;
 #[doc = "Field `OUT1PEN` writer - OUT1 pin enable control bit"]
-pub type OUT1PEN_W<'a> = crate::BitWriter<'a, u32, LETIMER0_ROUTEEN_SPEC, bool, 1>;
+pub type OUT1PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LETIMER0_ROUTEEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - OUT0 pin enable control bit"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - OUT0 pin enable control bit"]
     #[inline(always)]
-    pub fn out0pen(&mut self) -> OUT0PEN_W {
+    #[must_use]
+    pub fn out0pen(&mut self) -> OUT0PEN_W<0> {
         OUT0PEN_W::new(self)
     }
     #[doc = "Bit 1 - OUT1 pin enable control bit"]
     #[inline(always)]
-    pub fn out1pen(&mut self) -> OUT1PEN_W {
+    #[must_use]
+    pub fn out1pen(&mut self) -> OUT1PEN_W<1> {
         OUT1PEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for LETIMER0_ROUTEEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [letimer0_routeen::W](W) writer structure"]
 impl crate::Writable for LETIMER0_ROUTEEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LETIMER0_ROUTEEN to value 0"]
 impl crate::Resettable for LETIMER0_ROUTEEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

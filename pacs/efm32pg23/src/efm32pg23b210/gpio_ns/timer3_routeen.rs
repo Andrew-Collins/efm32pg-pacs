@@ -37,27 +37,27 @@ impl From<crate::W<TIMER3_ROUTEEN_SPEC>> for W {
 #[doc = "Field `CC0PEN` reader - CC0 pin enable control bit"]
 pub type CC0PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CC0PEN` writer - CC0 pin enable control bit"]
-pub type CC0PEN_W<'a> = crate::BitWriter<'a, u32, TIMER3_ROUTEEN_SPEC, bool, 0>;
+pub type CC0PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMER3_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CC1PEN` reader - CC1 pin enable control bit"]
 pub type CC1PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CC1PEN` writer - CC1 pin enable control bit"]
-pub type CC1PEN_W<'a> = crate::BitWriter<'a, u32, TIMER3_ROUTEEN_SPEC, bool, 1>;
+pub type CC1PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMER3_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CC2PEN` reader - CC2 pin enable control bit"]
 pub type CC2PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CC2PEN` writer - CC2 pin enable control bit"]
-pub type CC2PEN_W<'a> = crate::BitWriter<'a, u32, TIMER3_ROUTEEN_SPEC, bool, 2>;
+pub type CC2PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMER3_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CCC0PEN` reader - CDTI0 pin enable control bit"]
 pub type CCC0PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CCC0PEN` writer - CDTI0 pin enable control bit"]
-pub type CCC0PEN_W<'a> = crate::BitWriter<'a, u32, TIMER3_ROUTEEN_SPEC, bool, 3>;
+pub type CCC0PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMER3_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CCC1PEN` reader - CDTI1 pin enable control bit"]
 pub type CCC1PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CCC1PEN` writer - CDTI1 pin enable control bit"]
-pub type CCC1PEN_W<'a> = crate::BitWriter<'a, u32, TIMER3_ROUTEEN_SPEC, bool, 4>;
+pub type CCC1PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMER3_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CCC2PEN` reader - CDTI2 pin enable control bit"]
 pub type CCC2PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CCC2PEN` writer - CDTI2 pin enable control bit"]
-pub type CCC2PEN_W<'a> = crate::BitWriter<'a, u32, TIMER3_ROUTEEN_SPEC, bool, 5>;
+pub type CCC2PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMER3_ROUTEEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - CC0 pin enable control bit"]
     #[inline(always)]
@@ -93,32 +93,38 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CC0 pin enable control bit"]
     #[inline(always)]
-    pub fn cc0pen(&mut self) -> CC0PEN_W {
+    #[must_use]
+    pub fn cc0pen(&mut self) -> CC0PEN_W<0> {
         CC0PEN_W::new(self)
     }
     #[doc = "Bit 1 - CC1 pin enable control bit"]
     #[inline(always)]
-    pub fn cc1pen(&mut self) -> CC1PEN_W {
+    #[must_use]
+    pub fn cc1pen(&mut self) -> CC1PEN_W<1> {
         CC1PEN_W::new(self)
     }
     #[doc = "Bit 2 - CC2 pin enable control bit"]
     #[inline(always)]
-    pub fn cc2pen(&mut self) -> CC2PEN_W {
+    #[must_use]
+    pub fn cc2pen(&mut self) -> CC2PEN_W<2> {
         CC2PEN_W::new(self)
     }
     #[doc = "Bit 3 - CDTI0 pin enable control bit"]
     #[inline(always)]
-    pub fn ccc0pen(&mut self) -> CCC0PEN_W {
+    #[must_use]
+    pub fn ccc0pen(&mut self) -> CCC0PEN_W<3> {
         CCC0PEN_W::new(self)
     }
     #[doc = "Bit 4 - CDTI1 pin enable control bit"]
     #[inline(always)]
-    pub fn ccc1pen(&mut self) -> CCC1PEN_W {
+    #[must_use]
+    pub fn ccc1pen(&mut self) -> CCC1PEN_W<4> {
         CCC1PEN_W::new(self)
     }
     #[doc = "Bit 5 - CDTI2 pin enable control bit"]
     #[inline(always)]
-    pub fn ccc2pen(&mut self) -> CCC2PEN_W {
+    #[must_use]
+    pub fn ccc2pen(&mut self) -> CCC2PEN_W<5> {
         CCC2PEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -140,11 +146,10 @@ impl crate::Readable for TIMER3_ROUTEEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [timer3_routeen::W](W) writer structure"]
 impl crate::Writable for TIMER3_ROUTEEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TIMER3_ROUTEEN to value 0"]
 impl crate::Resettable for TIMER3_ROUTEEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,35 +37,35 @@ impl From<crate::W<TEST_SPEC>> for W {
 #[doc = "Field `SYNCCLK` reader - Sync Clock"]
 pub type SYNCCLK_R = crate::BitReader<bool>;
 #[doc = "Field `SYNCCLK` writer - Sync Clock"]
-pub type SYNCCLK_W<'a> = crate::BitWriter<'a, u32, TEST_SPEC, bool, 0>;
+pub type SYNCCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEST_SPEC, bool, O>;
 #[doc = "Field `SYNCMODE` reader - Sync Mode"]
 pub type SYNCMODE_R = crate::BitReader<bool>;
 #[doc = "Field `SYNCMODE` writer - Sync Mode"]
-pub type SYNCMODE_W<'a> = crate::BitWriter<'a, u32, TEST_SPEC, bool, 1>;
+pub type SYNCMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEST_SPEC, bool, O>;
 #[doc = "Field `FORCEREQUEST` reader - Force Request"]
 pub type FORCEREQUEST_R = crate::BitReader<bool>;
 #[doc = "Field `FORCEREQUEST` writer - Force Request"]
-pub type FORCEREQUEST_W<'a> = crate::BitWriter<'a, u32, TEST_SPEC, bool, 4>;
+pub type FORCEREQUEST_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEST_SPEC, bool, O>;
 #[doc = "Field `FORCEHICAP` reader - Force high capacitance driver"]
 pub type FORCEHICAP_R = crate::BitReader<bool>;
 #[doc = "Field `FORCEHICAP` writer - Force high capacitance driver"]
-pub type FORCEHICAP_W<'a> = crate::BitWriter<'a, u32, TEST_SPEC, bool, 8>;
+pub type FORCEHICAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEST_SPEC, bool, O>;
 #[doc = "Field `FORCELOCAP` reader - Force low capacitance driver"]
 pub type FORCELOCAP_R = crate::BitReader<bool>;
 #[doc = "Field `FORCELOCAP` writer - Force low capacitance driver"]
-pub type FORCELOCAP_W<'a> = crate::BitWriter<'a, u32, TEST_SPEC, bool, 9>;
+pub type FORCELOCAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEST_SPEC, bool, O>;
 #[doc = "Field `FORCEBOOSTON` reader - Force Boost On"]
 pub type FORCEBOOSTON_R = crate::BitReader<bool>;
 #[doc = "Field `FORCEBOOSTON` writer - Force Boost On"]
-pub type FORCEBOOSTON_W<'a> = crate::BitWriter<'a, u32, TEST_SPEC, bool, 12>;
+pub type FORCEBOOSTON_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEST_SPEC, bool, O>;
 #[doc = "Field `FORCEBOOSTOFF` reader - Force Boost Off"]
 pub type FORCEBOOSTOFF_R = crate::BitReader<bool>;
 #[doc = "Field `FORCEBOOSTOFF` writer - Force Boost Off"]
-pub type FORCEBOOSTOFF_W<'a> = crate::BitWriter<'a, u32, TEST_SPEC, bool, 13>;
+pub type FORCEBOOSTOFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEST_SPEC, bool, O>;
 #[doc = "Field `STATUSEN` reader - Enable write to status bits"]
 pub type STATUSEN_R = crate::BitReader<bool>;
 #[doc = "Field `STATUSEN` writer - Enable write to status bits"]
-pub type STATUSEN_W<'a> = crate::BitWriter<'a, u32, TEST_SPEC, bool, 31>;
+pub type STATUSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEST_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Sync Clock"]
     #[inline(always)]
@@ -111,42 +111,50 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Sync Clock"]
     #[inline(always)]
-    pub fn syncclk(&mut self) -> SYNCCLK_W {
+    #[must_use]
+    pub fn syncclk(&mut self) -> SYNCCLK_W<0> {
         SYNCCLK_W::new(self)
     }
     #[doc = "Bit 1 - Sync Mode"]
     #[inline(always)]
-    pub fn syncmode(&mut self) -> SYNCMODE_W {
+    #[must_use]
+    pub fn syncmode(&mut self) -> SYNCMODE_W<1> {
         SYNCMODE_W::new(self)
     }
     #[doc = "Bit 4 - Force Request"]
     #[inline(always)]
-    pub fn forcerequest(&mut self) -> FORCEREQUEST_W {
+    #[must_use]
+    pub fn forcerequest(&mut self) -> FORCEREQUEST_W<4> {
         FORCEREQUEST_W::new(self)
     }
     #[doc = "Bit 8 - Force high capacitance driver"]
     #[inline(always)]
-    pub fn forcehicap(&mut self) -> FORCEHICAP_W {
+    #[must_use]
+    pub fn forcehicap(&mut self) -> FORCEHICAP_W<8> {
         FORCEHICAP_W::new(self)
     }
     #[doc = "Bit 9 - Force low capacitance driver"]
     #[inline(always)]
-    pub fn forcelocap(&mut self) -> FORCELOCAP_W {
+    #[must_use]
+    pub fn forcelocap(&mut self) -> FORCELOCAP_W<9> {
         FORCELOCAP_W::new(self)
     }
     #[doc = "Bit 12 - Force Boost On"]
     #[inline(always)]
-    pub fn forcebooston(&mut self) -> FORCEBOOSTON_W {
+    #[must_use]
+    pub fn forcebooston(&mut self) -> FORCEBOOSTON_W<12> {
         FORCEBOOSTON_W::new(self)
     }
     #[doc = "Bit 13 - Force Boost Off"]
     #[inline(always)]
-    pub fn forceboostoff(&mut self) -> FORCEBOOSTOFF_W {
+    #[must_use]
+    pub fn forceboostoff(&mut self) -> FORCEBOOSTOFF_W<13> {
         FORCEBOOSTOFF_W::new(self)
     }
     #[doc = "Bit 31 - Enable write to status bits"]
     #[inline(always)]
-    pub fn statusen(&mut self) -> STATUSEN_W {
+    #[must_use]
+    pub fn statusen(&mut self) -> STATUSEN_W<31> {
         STATUSEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -168,11 +176,10 @@ impl crate::Readable for TEST_SPEC {
 #[doc = "`write(|w| ..)` method takes [test::W](W) writer structure"]
 impl crate::Writable for TEST_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TEST to value 0"]
 impl crate::Resettable for TEST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -33,8 +33,5 @@ impl crate::Readable for DECSTATE_SPEC {
 }
 #[doc = "`reset()` method sets DECSTATE to value 0"]
 impl crate::Resettable for DECSTATE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

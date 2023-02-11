@@ -37,7 +37,7 @@ impl From<crate::W<EM4WUPOL_SPEC>> for W {
 #[doc = "Field `EM4WUPOL` reader - EM4 Wake-Up Polarity"]
 pub type EM4WUPOL_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `EM4WUPOL` writer - EM4 Wake-Up Polarity"]
-pub type EM4WUPOL_W<'a> = crate::FieldWriter<'a, u32, EM4WUPOL_SPEC, u16, u16, 12, 16>;
+pub type EM4WUPOL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EM4WUPOL_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 16:27 - EM4 Wake-Up Polarity"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 16:27 - EM4 Wake-Up Polarity"]
     #[inline(always)]
-    pub fn em4wupol(&mut self) -> EM4WUPOL_W {
+    #[must_use]
+    pub fn em4wupol(&mut self) -> EM4WUPOL_W<16> {
         EM4WUPOL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for EM4WUPOL_SPEC {
 #[doc = "`write(|w| ..)` method takes [em4wupol::W](W) writer structure"]
 impl crate::Writable for EM4WUPOL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EM4WUPOL to value 0"]
 impl crate::Resettable for EM4WUPOL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

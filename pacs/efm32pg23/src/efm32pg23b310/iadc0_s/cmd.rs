@@ -20,60 +20,68 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `SINGLESTART` writer - Single Queue Start"]
-pub type SINGLESTART_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 0>;
+pub type SINGLESTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `SINGLESTOP` writer - Single Queue Stop"]
-pub type SINGLESTOP_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 1>;
+pub type SINGLESTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `SCANSTART` writer - Scan Queue Start"]
-pub type SCANSTART_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 3>;
+pub type SCANSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `SCANSTOP` writer - Scan Queue Stop"]
-pub type SCANSTOP_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 4>;
+pub type SCANSTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `TIMEREN` writer - Timer Enable"]
-pub type TIMEREN_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 16>;
+pub type TIMEREN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `TIMERDIS` writer - Timer Disable"]
-pub type TIMERDIS_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 17>;
+pub type TIMERDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `SINGLEFIFOFLUSH` writer - Flush the Single FIFO"]
-pub type SINGLEFIFOFLUSH_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 24>;
+pub type SINGLEFIFOFLUSH_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `SCANFIFOFLUSH` writer - Flush the Scan FIFO"]
-pub type SCANFIFOFLUSH_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 25>;
+pub type SCANFIFOFLUSH_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Single Queue Start"]
     #[inline(always)]
-    pub fn singlestart(&mut self) -> SINGLESTART_W {
+    #[must_use]
+    pub fn singlestart(&mut self) -> SINGLESTART_W<0> {
         SINGLESTART_W::new(self)
     }
     #[doc = "Bit 1 - Single Queue Stop"]
     #[inline(always)]
-    pub fn singlestop(&mut self) -> SINGLESTOP_W {
+    #[must_use]
+    pub fn singlestop(&mut self) -> SINGLESTOP_W<1> {
         SINGLESTOP_W::new(self)
     }
     #[doc = "Bit 3 - Scan Queue Start"]
     #[inline(always)]
-    pub fn scanstart(&mut self) -> SCANSTART_W {
+    #[must_use]
+    pub fn scanstart(&mut self) -> SCANSTART_W<3> {
         SCANSTART_W::new(self)
     }
     #[doc = "Bit 4 - Scan Queue Stop"]
     #[inline(always)]
-    pub fn scanstop(&mut self) -> SCANSTOP_W {
+    #[must_use]
+    pub fn scanstop(&mut self) -> SCANSTOP_W<4> {
         SCANSTOP_W::new(self)
     }
     #[doc = "Bit 16 - Timer Enable"]
     #[inline(always)]
-    pub fn timeren(&mut self) -> TIMEREN_W {
+    #[must_use]
+    pub fn timeren(&mut self) -> TIMEREN_W<16> {
         TIMEREN_W::new(self)
     }
     #[doc = "Bit 17 - Timer Disable"]
     #[inline(always)]
-    pub fn timerdis(&mut self) -> TIMERDIS_W {
+    #[must_use]
+    pub fn timerdis(&mut self) -> TIMERDIS_W<17> {
         TIMERDIS_W::new(self)
     }
     #[doc = "Bit 24 - Flush the Single FIFO"]
     #[inline(always)]
-    pub fn singlefifoflush(&mut self) -> SINGLEFIFOFLUSH_W {
+    #[must_use]
+    pub fn singlefifoflush(&mut self) -> SINGLEFIFOFLUSH_W<24> {
         SINGLEFIFOFLUSH_W::new(self)
     }
     #[doc = "Bit 25 - Flush the Scan FIFO"]
     #[inline(always)]
-    pub fn scanfifoflush(&mut self) -> SCANFIFOFLUSH_W {
+    #[must_use]
+    pub fn scanfifoflush(&mut self) -> SCANFIFOFLUSH_W<25> {
         SCANFIFOFLUSH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -91,11 +99,10 @@ impl crate::RegisterSpec for CMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmd::W](W) writer structure"]
 impl crate::Writable for CMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMD to value 0"]
 impl crate::Resettable for CMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

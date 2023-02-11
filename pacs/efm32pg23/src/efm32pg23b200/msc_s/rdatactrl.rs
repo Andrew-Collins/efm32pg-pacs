@@ -37,11 +37,11 @@ impl From<crate::W<RDATACTRL_SPEC>> for W {
 #[doc = "Field `AFDIS` reader - Automatic Invalidate Disable"]
 pub type AFDIS_R = crate::BitReader<bool>;
 #[doc = "Field `AFDIS` writer - Automatic Invalidate Disable"]
-pub type AFDIS_W<'a> = crate::BitWriter<'a, u32, RDATACTRL_SPEC, bool, 1>;
+pub type AFDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, RDATACTRL_SPEC, bool, O>;
 #[doc = "Field `DOUTBUFEN` reader - Flash dout pipeline buffer enable"]
 pub type DOUTBUFEN_R = crate::BitReader<bool>;
 #[doc = "Field `DOUTBUFEN` writer - Flash dout pipeline buffer enable"]
-pub type DOUTBUFEN_W<'a> = crate::BitWriter<'a, u32, RDATACTRL_SPEC, bool, 12>;
+pub type DOUTBUFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RDATACTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 1 - Automatic Invalidate Disable"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Automatic Invalidate Disable"]
     #[inline(always)]
-    pub fn afdis(&mut self) -> AFDIS_W {
+    #[must_use]
+    pub fn afdis(&mut self) -> AFDIS_W<1> {
         AFDIS_W::new(self)
     }
     #[doc = "Bit 12 - Flash dout pipeline buffer enable"]
     #[inline(always)]
-    pub fn doutbufen(&mut self) -> DOUTBUFEN_W {
+    #[must_use]
+    pub fn doutbufen(&mut self) -> DOUTBUFEN_W<12> {
         DOUTBUFEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for RDATACTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [rdatactrl::W](W) writer structure"]
 impl crate::Writable for RDATACTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RDATACTRL to value 0x1000"]
 impl crate::Resettable for RDATACTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1000
-    }
+    const RESET_VALUE: Self::Ux = 0x1000;
 }

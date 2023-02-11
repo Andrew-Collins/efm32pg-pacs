@@ -34,8 +34,10 @@ impl From<crate::W<CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RISEA` reader - Timer Rising Input Edge Action"]
+pub type RISEA_R = crate::FieldReader<u8, RISEA_A>;
 #[doc = "Timer Rising Input Edge Action\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RISEA_A {
     #[doc = "0: No action"]
@@ -53,8 +55,6 @@ impl From<RISEA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RISEA` reader - Timer Rising Input Edge Action"]
-pub type RISEA_R = crate::FieldReader<u8, RISEA_A>;
 impl RISEA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,8 @@ impl RISEA_R {
     }
 }
 #[doc = "Field `RISEA` writer - Timer Rising Input Edge Action"]
-pub type RISEA_W<'a> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, RISEA_A, 2, 0>;
-impl<'a> RISEA_W<'a> {
+pub type RISEA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, RISEA_A, 2, O>;
+impl<'a, const O: u8> RISEA_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -112,8 +112,10 @@ impl<'a> RISEA_W<'a> {
         self.variant(RISEA_A::RELOADSTART)
     }
 }
+#[doc = "Field `FALLA` reader - Timer Falling Input Edge Action"]
+pub type FALLA_R = crate::FieldReader<u8, FALLA_A>;
 #[doc = "Timer Falling Input Edge Action\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FALLA_A {
     #[doc = "0: No action"]
@@ -131,8 +133,6 @@ impl From<FALLA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FALLA` reader - Timer Falling Input Edge Action"]
-pub type FALLA_R = crate::FieldReader<u8, FALLA_A>;
 impl FALLA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -167,8 +167,8 @@ impl FALLA_R {
     }
 }
 #[doc = "Field `FALLA` writer - Timer Falling Input Edge Action"]
-pub type FALLA_W<'a> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, FALLA_A, 2, 2>;
-impl<'a> FALLA_W<'a> {
+pub type FALLA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, FALLA_A, 2, O>;
+impl<'a, const O: u8> FALLA_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -193,7 +193,7 @@ impl<'a> FALLA_W<'a> {
 #[doc = "Field `X2CNT` reader - 2x Count Mode"]
 pub type X2CNT_R = crate::BitReader<bool>;
 #[doc = "Field `X2CNT` writer - 2x Count Mode"]
-pub type X2CNT_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 4>;
+pub type X2CNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - Timer Rising Input Edge Action"]
     #[inline(always)]
@@ -214,17 +214,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Timer Rising Input Edge Action"]
     #[inline(always)]
-    pub fn risea(&mut self) -> RISEA_W {
+    #[must_use]
+    pub fn risea(&mut self) -> RISEA_W<0> {
         RISEA_W::new(self)
     }
     #[doc = "Bits 2:3 - Timer Falling Input Edge Action"]
     #[inline(always)]
-    pub fn falla(&mut self) -> FALLA_W {
+    #[must_use]
+    pub fn falla(&mut self) -> FALLA_W<2> {
         FALLA_W::new(self)
     }
     #[doc = "Bit 4 - 2x Count Mode"]
     #[inline(always)]
-    pub fn x2cnt(&mut self) -> X2CNT_W {
+    #[must_use]
+    pub fn x2cnt(&mut self) -> X2CNT_W<4> {
         X2CNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -246,11 +249,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

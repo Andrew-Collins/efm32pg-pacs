@@ -34,8 +34,10 @@ impl From<crate::W<PD1PARETCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PD1PARETDIS` reader - Disable PD1 Partial Retention"]
+pub type PD1PARETDIS_R = crate::FieldReader<u16, PD1PARETDIS_A>;
 #[doc = "Disable PD1 Partial Retention\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum PD1PARETDIS_A {
     #[doc = "0: Retain associated registers when in EM2/3"]
@@ -49,8 +51,6 @@ impl From<PD1PARETDIS_A> for u16 {
         variant as _
     }
 }
-#[doc = "Field `PD1PARETDIS` reader - Disable PD1 Partial Retention"]
-pub type PD1PARETDIS_R = crate::FieldReader<u16, PD1PARETDIS_A>;
 impl PD1PARETDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -73,9 +73,9 @@ impl PD1PARETDIS_R {
     }
 }
 #[doc = "Field `PD1PARETDIS` writer - Disable PD1 Partial Retention"]
-pub type PD1PARETDIS_W<'a> =
-    crate::FieldWriter<'a, u32, PD1PARETCTRL_SPEC, u16, PD1PARETDIS_A, 16, 0>;
-impl<'a> PD1PARETDIS_W<'a> {
+pub type PD1PARETDIS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PD1PARETCTRL_SPEC, u16, PD1PARETDIS_A, 16, O>;
+impl<'a, const O: u8> PD1PARETDIS_W<'a, O> {
     #[doc = "Retain associated registers when in EM2/3"]
     #[inline(always)]
     pub fn retain(self) -> &'a mut W {
@@ -97,7 +97,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Disable PD1 Partial Retention"]
     #[inline(always)]
-    pub fn pd1paretdis(&mut self) -> PD1PARETDIS_W {
+    #[must_use]
+    pub fn pd1paretdis(&mut self) -> PD1PARETDIS_W<0> {
         PD1PARETDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -119,11 +120,10 @@ impl crate::Readable for PD1PARETCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [pd1paretctrl::W](W) writer structure"]
 impl crate::Writable for PD1PARETCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PD1PARETCTRL to value 0"]
 impl crate::Resettable for PD1PARETCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

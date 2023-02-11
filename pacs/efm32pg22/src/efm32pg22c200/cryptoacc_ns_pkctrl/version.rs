@@ -40,8 +40,5 @@ impl crate::Readable for VERSION_SPEC {
 }
 #[doc = "`reset()` method sets VERSION to value 0"]
 impl crate::Resettable for VERSION_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - DCDC/Bypass Mode Control"]
+pub type MODE_R = crate::BitReader<MODE_A>;
 #[doc = "DCDC/Bypass Mode Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MODE_A {
     #[doc = "0: DCDC is OFF, bypass switch is enabled"]
     BYPASS = 0,
@@ -48,8 +50,6 @@ impl From<MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MODE` reader - DCDC/Bypass Mode Control"]
-pub type MODE_R = crate::BitReader<MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - DCDC/Bypass Mode Control"]
-pub type MODE_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, MODE_A, 0>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, MODE_A, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "DCDC is OFF, bypass switch is enabled"]
     #[inline(always)]
     pub fn bypass(self) -> &'a mut W {
@@ -87,7 +87,7 @@ impl<'a> MODE_W<'a> {
 #[doc = "Field `IPKTMAXCTRL` reader - Ton_max timeout control"]
 pub type IPKTMAXCTRL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IPKTMAXCTRL` writer - Ton_max timeout control"]
-pub type IPKTMAXCTRL_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 5, 4>;
+pub type IPKTMAXCTRL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bit 0 - DCDC/Bypass Mode Control"]
     #[inline(always)]
@@ -103,12 +103,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - DCDC/Bypass Mode Control"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<0> {
         MODE_W::new(self)
     }
     #[doc = "Bits 4:8 - Ton_max timeout control"]
     #[inline(always)]
-    pub fn ipktmaxctrl(&mut self) -> IPKTMAXCTRL_W {
+    #[must_use]
+    pub fn ipktmaxctrl(&mut self) -> IPKTMAXCTRL_W<4> {
         IPKTMAXCTRL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -130,11 +132,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x0100"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0100
-    }
+    const RESET_VALUE: Self::Ux = 0x0100;
 }

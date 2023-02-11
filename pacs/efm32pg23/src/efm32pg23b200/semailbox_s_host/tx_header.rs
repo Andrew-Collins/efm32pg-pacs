@@ -20,11 +20,12 @@ impl From<crate::W<TX_HEADER_SPEC>> for W {
     }
 }
 #[doc = "Field `TXHEADER` writer - TXHEADER"]
-pub type TXHEADER_W<'a> = crate::FieldWriter<'a, u32, TX_HEADER_SPEC, u32, u32, 32, 0>;
+pub type TXHEADER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TX_HEADER_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - TXHEADER"]
     #[inline(always)]
-    pub fn txheader(&mut self) -> TXHEADER_W {
+    #[must_use]
+    pub fn txheader(&mut self) -> TXHEADER_W<0> {
         TXHEADER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -42,11 +43,10 @@ impl crate::RegisterSpec for TX_HEADER_SPEC {
 #[doc = "`write(|w| ..)` method takes [tx_header::W](W) writer structure"]
 impl crate::Writable for TX_HEADER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TX_HEADER to value 0"]
 impl crate::Resettable for TX_HEADER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

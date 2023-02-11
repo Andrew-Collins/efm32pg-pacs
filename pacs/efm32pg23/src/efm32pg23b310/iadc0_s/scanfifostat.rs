@@ -33,8 +33,5 @@ impl crate::Readable for SCANFIFOSTAT_SPEC {
 }
 #[doc = "`reset()` method sets SCANFIFOSTAT to value 0"]
 impl crate::Resettable for SCANFIFOSTAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

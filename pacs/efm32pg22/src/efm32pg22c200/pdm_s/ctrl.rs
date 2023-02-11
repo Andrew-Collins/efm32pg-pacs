@@ -37,11 +37,11 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `GAIN` reader - Selects Gain factor of DCF"]
 pub type GAIN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `GAIN` writer - Selects Gain factor of DCF"]
-pub type GAIN_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 5, 0>;
+pub type GAIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 5, O>;
 #[doc = "Field `DSR` reader - Down sampling rate of Decimation filter"]
 pub type DSR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DSR` writer - Down sampling rate of Decimation filter"]
-pub type DSR_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u16, u16, 12, 8>;
+pub type DSR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 0:4 - Selects Gain factor of DCF"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Selects Gain factor of DCF"]
     #[inline(always)]
-    pub fn gain(&mut self) -> GAIN_W {
+    #[must_use]
+    pub fn gain(&mut self) -> GAIN_W<0> {
         GAIN_W::new(self)
     }
     #[doc = "Bits 8:19 - Down sampling rate of Decimation filter"]
     #[inline(always)]
-    pub fn dsr(&mut self) -> DSR_W {
+    #[must_use]
+    pub fn dsr(&mut self) -> DSR_W<8> {
         DSR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,11 +37,11 @@ impl From<crate::W<NSIF_SPEC>> for W {
 #[doc = "Field `PPUNSPRIV` reader - PPUNS Privilege Interrupt Flag"]
 pub type PPUNSPRIV_R = crate::BitReader<bool>;
 #[doc = "Field `PPUNSPRIV` writer - PPUNS Privilege Interrupt Flag"]
-pub type PPUNSPRIV_W<'a> = crate::BitWriter<'a, u32, NSIF_SPEC, bool, 0>;
+pub type PPUNSPRIV_W<'a, const O: u8> = crate::BitWriter<'a, u32, NSIF_SPEC, bool, O>;
 #[doc = "Field `PPUNSINST` reader - PPUNS Instruction Interrupt Flag"]
 pub type PPUNSINST_R = crate::BitReader<bool>;
 #[doc = "Field `PPUNSINST` writer - PPUNS Instruction Interrupt Flag"]
-pub type PPUNSINST_W<'a> = crate::BitWriter<'a, u32, NSIF_SPEC, bool, 2>;
+pub type PPUNSINST_W<'a, const O: u8> = crate::BitWriter<'a, u32, NSIF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - PPUNS Privilege Interrupt Flag"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - PPUNS Privilege Interrupt Flag"]
     #[inline(always)]
-    pub fn ppunspriv(&mut self) -> PPUNSPRIV_W {
+    #[must_use]
+    pub fn ppunspriv(&mut self) -> PPUNSPRIV_W<0> {
         PPUNSPRIV_W::new(self)
     }
     #[doc = "Bit 2 - PPUNS Instruction Interrupt Flag"]
     #[inline(always)]
-    pub fn ppunsinst(&mut self) -> PPUNSINST_W {
+    #[must_use]
+    pub fn ppunsinst(&mut self) -> PPUNSINST_W<2> {
         PPUNSINST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for NSIF_SPEC {
 #[doc = "`write(|w| ..)` method takes [nsif::W](W) writer structure"]
 impl crate::Writable for NSIF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets NSIF to value 0"]
 impl crate::Resettable for NSIF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

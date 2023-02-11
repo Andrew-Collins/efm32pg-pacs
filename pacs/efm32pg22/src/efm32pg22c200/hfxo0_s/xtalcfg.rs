@@ -37,21 +37,27 @@ impl From<crate::W<XTALCFG_SPEC>> for W {
 #[doc = "Field `COREBIASSTARTUPI` reader - Intermediate Startup Core Bias Current"]
 pub type COREBIASSTARTUPI_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `COREBIASSTARTUPI` writer - Intermediate Startup Core Bias Current"]
-pub type COREBIASSTARTUPI_W<'a> = crate::FieldWriter<'a, u32, XTALCFG_SPEC, u8, u8, 6, 0>;
+pub type COREBIASSTARTUPI_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, XTALCFG_SPEC, u8, u8, 6, O>;
 #[doc = "Field `COREBIASSTARTUP` reader - Startup Core Bias Current"]
 pub type COREBIASSTARTUP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `COREBIASSTARTUP` writer - Startup Core Bias Current"]
-pub type COREBIASSTARTUP_W<'a> = crate::FieldWriter<'a, u32, XTALCFG_SPEC, u8, u8, 6, 6>;
+pub type COREBIASSTARTUP_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, XTALCFG_SPEC, u8, u8, 6, O>;
 #[doc = "Field `CTUNEXISTARTUP` reader - Startup Tuning Capacitance on XI"]
 pub type CTUNEXISTARTUP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CTUNEXISTARTUP` writer - Startup Tuning Capacitance on XI"]
-pub type CTUNEXISTARTUP_W<'a> = crate::FieldWriter<'a, u32, XTALCFG_SPEC, u8, u8, 4, 12>;
+pub type CTUNEXISTARTUP_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, XTALCFG_SPEC, u8, u8, 4, O>;
 #[doc = "Field `CTUNEXOSTARTUP` reader - Startup Tuning Capacitance on XO"]
 pub type CTUNEXOSTARTUP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CTUNEXOSTARTUP` writer - Startup Tuning Capacitance on XO"]
-pub type CTUNEXOSTARTUP_W<'a> = crate::FieldWriter<'a, u32, XTALCFG_SPEC, u8, u8, 4, 16>;
+pub type CTUNEXOSTARTUP_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, XTALCFG_SPEC, u8, u8, 4, O>;
+#[doc = "Field `TIMEOUTSTEADY` reader - Steady State Timeout"]
+pub type TIMEOUTSTEADY_R = crate::FieldReader<u8, TIMEOUTSTEADY_A>;
 #[doc = "Steady State Timeout\n\nValue on reset: 4"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TIMEOUTSTEADY_A {
     #[doc = "0: The steady state timeout is set to 16 us minimum. The maximum can be +40%."]
@@ -93,8 +99,6 @@ impl From<TIMEOUTSTEADY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TIMEOUTSTEADY` reader - Steady State Timeout"]
-pub type TIMEOUTSTEADY_R = crate::FieldReader<u8, TIMEOUTSTEADY_A>;
 impl TIMEOUTSTEADY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -201,9 +205,9 @@ impl TIMEOUTSTEADY_R {
     }
 }
 #[doc = "Field `TIMEOUTSTEADY` writer - Steady State Timeout"]
-pub type TIMEOUTSTEADY_W<'a> =
-    crate::FieldWriterSafe<'a, u32, XTALCFG_SPEC, u8, TIMEOUTSTEADY_A, 4, 20>;
-impl<'a> TIMEOUTSTEADY_W<'a> {
+pub type TIMEOUTSTEADY_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, XTALCFG_SPEC, u8, TIMEOUTSTEADY_A, 4, O>;
+impl<'a, const O: u8> TIMEOUTSTEADY_W<'a, O> {
     #[doc = "The steady state timeout is set to 16 us minimum. The maximum can be +40%."]
     #[inline(always)]
     pub fn t16us(self) -> &'a mut W {
@@ -285,8 +289,10 @@ impl<'a> TIMEOUTSTEADY_W<'a> {
         self.variant(TIMEOUTSTEADY_A::T7500US)
     }
 }
+#[doc = "Field `TIMEOUTCBLSB` reader - Core Bias LSB Change Timeout"]
+pub type TIMEOUTCBLSB_R = crate::FieldReader<u8, TIMEOUTCBLSB_A>;
 #[doc = "Core Bias LSB Change Timeout\n\nValue on reset: 4"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TIMEOUTCBLSB_A {
     #[doc = "0: The core bias LSB change timeout is set to 8 us minimum. The maximum can be +40%."]
@@ -328,8 +334,6 @@ impl From<TIMEOUTCBLSB_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TIMEOUTCBLSB` reader - Core Bias LSB Change Timeout"]
-pub type TIMEOUTCBLSB_R = crate::FieldReader<u8, TIMEOUTCBLSB_A>;
 impl TIMEOUTCBLSB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -436,9 +440,9 @@ impl TIMEOUTCBLSB_R {
     }
 }
 #[doc = "Field `TIMEOUTCBLSB` writer - Core Bias LSB Change Timeout"]
-pub type TIMEOUTCBLSB_W<'a> =
-    crate::FieldWriterSafe<'a, u32, XTALCFG_SPEC, u8, TIMEOUTCBLSB_A, 4, 24>;
-impl<'a> TIMEOUTCBLSB_W<'a> {
+pub type TIMEOUTCBLSB_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, XTALCFG_SPEC, u8, TIMEOUTCBLSB_A, 4, O>;
+impl<'a, const O: u8> TIMEOUTCBLSB_W<'a, O> {
     #[doc = "The core bias LSB change timeout is set to 8 us minimum. The maximum can be +40%."]
     #[inline(always)]
     pub fn t8us(self) -> &'a mut W {
@@ -555,32 +559,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Intermediate Startup Core Bias Current"]
     #[inline(always)]
-    pub fn corebiasstartupi(&mut self) -> COREBIASSTARTUPI_W {
+    #[must_use]
+    pub fn corebiasstartupi(&mut self) -> COREBIASSTARTUPI_W<0> {
         COREBIASSTARTUPI_W::new(self)
     }
     #[doc = "Bits 6:11 - Startup Core Bias Current"]
     #[inline(always)]
-    pub fn corebiasstartup(&mut self) -> COREBIASSTARTUP_W {
+    #[must_use]
+    pub fn corebiasstartup(&mut self) -> COREBIASSTARTUP_W<6> {
         COREBIASSTARTUP_W::new(self)
     }
     #[doc = "Bits 12:15 - Startup Tuning Capacitance on XI"]
     #[inline(always)]
-    pub fn ctunexistartup(&mut self) -> CTUNEXISTARTUP_W {
+    #[must_use]
+    pub fn ctunexistartup(&mut self) -> CTUNEXISTARTUP_W<12> {
         CTUNEXISTARTUP_W::new(self)
     }
     #[doc = "Bits 16:19 - Startup Tuning Capacitance on XO"]
     #[inline(always)]
-    pub fn ctunexostartup(&mut self) -> CTUNEXOSTARTUP_W {
+    #[must_use]
+    pub fn ctunexostartup(&mut self) -> CTUNEXOSTARTUP_W<16> {
         CTUNEXOSTARTUP_W::new(self)
     }
     #[doc = "Bits 20:23 - Steady State Timeout"]
     #[inline(always)]
-    pub fn timeoutsteady(&mut self) -> TIMEOUTSTEADY_W {
+    #[must_use]
+    pub fn timeoutsteady(&mut self) -> TIMEOUTSTEADY_W<20> {
         TIMEOUTSTEADY_W::new(self)
     }
     #[doc = "Bits 24:27 - Core Bias LSB Change Timeout"]
     #[inline(always)]
-    pub fn timeoutcblsb(&mut self) -> TIMEOUTCBLSB_W {
+    #[must_use]
+    pub fn timeoutcblsb(&mut self) -> TIMEOUTCBLSB_W<24> {
         TIMEOUTCBLSB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -602,11 +612,10 @@ impl crate::Readable for XTALCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [xtalcfg::W](W) writer structure"]
 impl crate::Writable for XTALCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets XTALCFG to value 0x0443_34cb"]
 impl crate::Resettable for XTALCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0443_34cb
-    }
+    const RESET_VALUE: Self::Ux = 0x0443_34cb;
 }

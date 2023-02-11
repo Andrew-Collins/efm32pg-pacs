@@ -96,8 +96,5 @@ impl crate::Readable for ROOTLOCKSTATUS_SPEC {
 }
 #[doc = "`reset()` method sets ROOTLOCKSTATUS to value 0x011f_0107"]
 impl crate::Resettable for ROOTLOCKSTATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x011f_0107
-    }
+    const RESET_VALUE: Self::Ux = 0x011f_0107;
 }

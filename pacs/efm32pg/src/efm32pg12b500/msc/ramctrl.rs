@@ -37,11 +37,11 @@ impl From<crate::W<RAMCTRL_SPEC>> for W {
 #[doc = "Field `RAMCACHEEN` reader - RAM CACHE Enable"]
 pub type RAMCACHEEN_R = crate::BitReader<bool>;
 #[doc = "Field `RAMCACHEEN` writer - RAM CACHE Enable"]
-pub type RAMCACHEEN_W<'a> = crate::BitWriter<'a, u32, RAMCTRL_SPEC, bool, 0>;
+pub type RAMCACHEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RAMCTRL_SPEC, bool, O>;
 #[doc = "Field `RAM1CACHEEN` reader - RAM1 CACHE Enable"]
 pub type RAM1CACHEEN_R = crate::BitReader<bool>;
 #[doc = "Field `RAM1CACHEEN` writer - RAM1 CACHE Enable"]
-pub type RAM1CACHEEN_W<'a> = crate::BitWriter<'a, u32, RAMCTRL_SPEC, bool, 8>;
+pub type RAM1CACHEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RAMCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - RAM CACHE Enable"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - RAM CACHE Enable"]
     #[inline(always)]
-    pub fn ramcacheen(&mut self) -> RAMCACHEEN_W {
+    #[must_use]
+    pub fn ramcacheen(&mut self) -> RAMCACHEEN_W<0> {
         RAMCACHEEN_W::new(self)
     }
     #[doc = "Bit 8 - RAM1 CACHE Enable"]
     #[inline(always)]
-    pub fn ram1cacheen(&mut self) -> RAM1CACHEEN_W {
+    #[must_use]
+    pub fn ram1cacheen(&mut self) -> RAM1CACHEEN_W<8> {
         RAM1CACHEEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for RAMCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ramctrl::W](W) writer structure"]
 impl crate::Writable for RAMCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RAMCTRL to value 0"]
 impl crate::Resettable for RAMCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

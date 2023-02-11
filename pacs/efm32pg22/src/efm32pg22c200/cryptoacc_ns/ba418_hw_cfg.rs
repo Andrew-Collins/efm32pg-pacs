@@ -14,12 +14,12 @@ impl From<crate::R<BA418_HW_CFG_SPEC>> for R {
     }
 }
 #[doc = "Field `g_Sha3CtxtEn` reader - Generic g_Sha3CtxtEn value"]
-pub type G_SHA3CTXTEN_R = crate::BitReader<bool>;
+pub type G_SHA3CTXT_EN_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Generic g_Sha3CtxtEn value"]
     #[inline(always)]
-    pub fn g_sha3ctxt_en(&self) -> G_SHA3CTXTEN_R {
-        G_SHA3CTXTEN_R::new((self.bits & 1) != 0)
+    pub fn g_sha3ctxt_en(&self) -> G_SHA3CTXT_EN_R {
+        G_SHA3CTXT_EN_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "No Description\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ba418_hw_cfg](index.html) module"]
@@ -33,8 +33,5 @@ impl crate::Readable for BA418_HW_CFG_SPEC {
 }
 #[doc = "`reset()` method sets BA418_HW_CFG to value 0x01"]
 impl crate::Resettable for BA418_HW_CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

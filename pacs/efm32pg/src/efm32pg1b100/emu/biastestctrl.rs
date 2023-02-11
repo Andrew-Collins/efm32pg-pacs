@@ -37,7 +37,7 @@ impl From<crate::W<BIASTESTCTRL_SPEC>> for W {
 #[doc = "Field `BIAS_RIP_RESET` reader - Reset Bias Ripple Counter"]
 pub type BIAS_RIP_RESET_R = crate::BitReader<bool>;
 #[doc = "Field `BIAS_RIP_RESET` writer - Reset Bias Ripple Counter"]
-pub type BIAS_RIP_RESET_W<'a> = crate::BitWriter<'a, u32, BIASTESTCTRL_SPEC, bool, 3>;
+pub type BIAS_RIP_RESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASTESTCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 3 - Reset Bias Ripple Counter"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bit 3 - Reset Bias Ripple Counter"]
     #[inline(always)]
-    pub fn bias_rip_reset(&mut self) -> BIAS_RIP_RESET_W {
+    #[must_use]
+    pub fn bias_rip_reset(&mut self) -> BIAS_RIP_RESET_W<3> {
         BIAS_RIP_RESET_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for BIASTESTCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [biastestctrl::W](W) writer structure"]
 impl crate::Writable for BIASTESTCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BIASTESTCTRL to value 0"]
 impl crate::Resettable for BIASTESTCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

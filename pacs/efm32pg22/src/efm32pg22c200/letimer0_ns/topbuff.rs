@@ -37,18 +37,19 @@ impl From<crate::W<TOPBUFF_SPEC>> for W {
 #[doc = "Field `TOPBUFF` reader - Buffered Counter TOP Value"]
 pub type TOPBUFF_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TOPBUFF` writer - Buffered Counter TOP Value"]
-pub type TOPBUFF_W<'a> = crate::FieldWriter<'a, u32, TOPBUFF_SPEC, u32, u32, 24, 0>;
+pub type TOPBUFF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TOPBUFF_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bits 0:23 - Buffered Counter TOP Value"]
     #[inline(always)]
     pub fn topbuff(&self) -> TOPBUFF_R {
-        TOPBUFF_R::new((self.bits & 0x00ff_ffff) as u32)
+        TOPBUFF_R::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - Buffered Counter TOP Value"]
     #[inline(always)]
-    pub fn topbuff(&mut self) -> TOPBUFF_W {
+    #[must_use]
+    pub fn topbuff(&mut self) -> TOPBUFF_W<0> {
         TOPBUFF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for TOPBUFF_SPEC {
 #[doc = "`write(|w| ..)` method takes [topbuff::W](W) writer structure"]
 impl crate::Writable for TOPBUFF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TOPBUFF to value 0"]
 impl crate::Resettable for TOPBUFF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

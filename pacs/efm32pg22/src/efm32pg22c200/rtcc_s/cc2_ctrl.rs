@@ -34,8 +34,10 @@ impl From<crate::W<CC2_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - CC Channel Mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "CC Channel Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Compare/Capture channel turned off"]
@@ -51,8 +53,6 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - CC Channel Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -81,8 +81,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - CC Channel Mode"]
-pub type MODE_W<'a> = crate::FieldWriter<'a, u32, CC2_CTRL_SPEC, u8, MODE_A, 2, 0>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC2_CTRL_SPEC, u8, MODE_A, 2, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Compare/Capture channel turned off"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -99,8 +99,10 @@ impl<'a> MODE_W<'a> {
         self.variant(MODE_A::OUTPUTCOMPARE)
     }
 }
+#[doc = "Field `CMOA` reader - Compare Match Output Action"]
+pub type CMOA_R = crate::FieldReader<u8, CMOA_A>;
 #[doc = "Compare Match Output Action\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CMOA_A {
     #[doc = "0: A single clock cycle pulse is generated on output"]
@@ -118,8 +120,6 @@ impl From<CMOA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CMOA` reader - Compare Match Output Action"]
-pub type CMOA_R = crate::FieldReader<u8, CMOA_A>;
 impl CMOA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -154,8 +154,8 @@ impl CMOA_R {
     }
 }
 #[doc = "Field `CMOA` writer - Compare Match Output Action"]
-pub type CMOA_W<'a> = crate::FieldWriterSafe<'a, u32, CC2_CTRL_SPEC, u8, CMOA_A, 2, 2>;
-impl<'a> CMOA_W<'a> {
+pub type CMOA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CC2_CTRL_SPEC, u8, CMOA_A, 2, O>;
+impl<'a, const O: u8> CMOA_W<'a, O> {
     #[doc = "A single clock cycle pulse is generated on output"]
     #[inline(always)]
     pub fn pulse(self) -> &'a mut W {
@@ -177,8 +177,10 @@ impl<'a> CMOA_W<'a> {
         self.variant(CMOA_A::SET)
     }
 }
+#[doc = "Field `COMPBASE` reader - Capture compare channel comparison base."]
+pub type COMPBASE_R = crate::BitReader<COMPBASE_A>;
 #[doc = "Capture compare channel comparison base.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum COMPBASE_A {
     #[doc = "0: RTCC_CCx_ICVALUE/OCVALUE is compared with CNT register."]
     CNT = 0,
@@ -191,8 +193,6 @@ impl From<COMPBASE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `COMPBASE` reader - Capture compare channel comparison base."]
-pub type COMPBASE_R = crate::BitReader<COMPBASE_A>;
 impl COMPBASE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -214,8 +214,8 @@ impl COMPBASE_R {
     }
 }
 #[doc = "Field `COMPBASE` writer - Capture compare channel comparison base."]
-pub type COMPBASE_W<'a> = crate::BitWriter<'a, u32, CC2_CTRL_SPEC, COMPBASE_A, 4>;
-impl<'a> COMPBASE_W<'a> {
+pub type COMPBASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CC2_CTRL_SPEC, COMPBASE_A, O>;
+impl<'a, const O: u8> COMPBASE_W<'a, O> {
     #[doc = "RTCC_CCx_ICVALUE/OCVALUE is compared with CNT register."]
     #[inline(always)]
     pub fn cnt(self) -> &'a mut W {
@@ -227,8 +227,10 @@ impl<'a> COMPBASE_W<'a> {
         self.variant(COMPBASE_A::PRECNT)
     }
 }
+#[doc = "Field `ICEDGE` reader - Input Capture Edge Select"]
+pub type ICEDGE_R = crate::FieldReader<u8, ICEDGE_A>;
 #[doc = "Input Capture Edge Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ICEDGE_A {
     #[doc = "0: Rising edges detected"]
@@ -246,8 +248,6 @@ impl From<ICEDGE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ICEDGE` reader - Input Capture Edge Select"]
-pub type ICEDGE_R = crate::FieldReader<u8, ICEDGE_A>;
 impl ICEDGE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -282,8 +282,9 @@ impl ICEDGE_R {
     }
 }
 #[doc = "Field `ICEDGE` writer - Input Capture Edge Select"]
-pub type ICEDGE_W<'a> = crate::FieldWriterSafe<'a, u32, CC2_CTRL_SPEC, u8, ICEDGE_A, 2, 5>;
-impl<'a> ICEDGE_W<'a> {
+pub type ICEDGE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CC2_CTRL_SPEC, u8, ICEDGE_A, 2, O>;
+impl<'a, const O: u8> ICEDGE_W<'a, O> {
     #[doc = "Rising edges detected"]
     #[inline(always)]
     pub fn rising(self) -> &'a mut W {
@@ -330,22 +331,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - CC Channel Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<0> {
         MODE_W::new(self)
     }
     #[doc = "Bits 2:3 - Compare Match Output Action"]
     #[inline(always)]
-    pub fn cmoa(&mut self) -> CMOA_W {
+    #[must_use]
+    pub fn cmoa(&mut self) -> CMOA_W<2> {
         CMOA_W::new(self)
     }
     #[doc = "Bit 4 - Capture compare channel comparison base."]
     #[inline(always)]
-    pub fn compbase(&mut self) -> COMPBASE_W {
+    #[must_use]
+    pub fn compbase(&mut self) -> COMPBASE_W<4> {
         COMPBASE_W::new(self)
     }
     #[doc = "Bits 5:6 - Input Capture Edge Select"]
     #[inline(always)]
-    pub fn icedge(&mut self) -> ICEDGE_W {
+    #[must_use]
+    pub fn icedge(&mut self) -> ICEDGE_W<5> {
         ICEDGE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -367,11 +372,10 @@ impl crate::Readable for CC2_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [cc2_ctrl::W](W) writer structure"]
 impl crate::Writable for CC2_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CC2_CTRL to value 0"]
 impl crate::Resettable for CC2_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

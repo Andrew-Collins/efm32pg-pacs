@@ -34,8 +34,10 @@ impl From<crate::W<CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `UDCTRL` reader - Update Data Control"]
+pub type UDCTRL_R = crate::FieldReader<u8, UDCTRL_A>;
 #[doc = "Update Data Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UDCTRL_A {
     #[doc = "0: The data transfer is controlled by SW. Transfer is performed as soon as possible on the next CTRL.PRESCALE clock. This is primarily available for debug only since only some of the new SEGMENT data may be ready by the time of the UPDATE. This should not be used with interrupts since partially updating SEGMENT data may have indeterminant results."]
@@ -53,8 +55,6 @@ impl From<UDCTRL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `UDCTRL` reader - Update Data Control"]
-pub type UDCTRL_R = crate::FieldReader<u8, UDCTRL_A>;
 impl UDCTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,8 @@ impl UDCTRL_R {
     }
 }
 #[doc = "Field `UDCTRL` writer - Update Data Control"]
-pub type UDCTRL_W<'a> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, UDCTRL_A, 2, 1>;
-impl<'a> UDCTRL_W<'a> {
+pub type UDCTRL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, UDCTRL_A, 2, O>;
+impl<'a, const O: u8> UDCTRL_W<'a, O> {
     #[doc = "The data transfer is controlled by SW. Transfer is performed as soon as possible on the next CTRL.PRESCALE clock. This is primarily available for debug only since only some of the new SEGMENT data may be ready by the time of the UPDATE. This should not be used with interrupts since partially updating SEGMENT data may have indeterminant results."]
     #[inline(always)]
     pub fn regular(self) -> &'a mut W {
@@ -112,8 +112,10 @@ impl<'a> UDCTRL_W<'a> {
         self.variant(UDCTRL_A::DISPLAYEVENT)
     }
 }
+#[doc = "Field `DSC` reader - Direct Segment Control"]
+pub type DSC_R = crate::BitReader<DSC_A>;
 #[doc = "Direct Segment Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DSC_A {
     #[doc = "0: DSC disable"]
     DISABLE = 0,
@@ -126,8 +128,6 @@ impl From<DSC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DSC` reader - Direct Segment Control"]
-pub type DSC_R = crate::BitReader<DSC_A>;
 impl DSC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -149,8 +149,8 @@ impl DSC_R {
     }
 }
 #[doc = "Field `DSC` writer - Direct Segment Control"]
-pub type DSC_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, DSC_A, 16>;
-impl<'a> DSC_W<'a> {
+pub type DSC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, DSC_A, O>;
+impl<'a, const O: u8> DSC_W<'a, O> {
     #[doc = "DSC disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -162,8 +162,10 @@ impl<'a> DSC_W<'a> {
         self.variant(DSC_A::ENABLE)
     }
 }
+#[doc = "Field `WARMUPDLY` reader - Warmup Delay"]
+pub type WARMUPDLY_R = crate::FieldReader<u8, WARMUPDLY_A>;
 #[doc = "Warmup Delay\n\nValue on reset: 4"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WARMUPDLY_A {
     #[doc = "0: 1mswarm up"]
@@ -189,8 +191,6 @@ impl From<WARMUPDLY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WARMUPDLY` reader - Warmup Delay"]
-pub type WARMUPDLY_R = crate::FieldReader<u8, WARMUPDLY_A>;
 impl WARMUPDLY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -249,8 +249,9 @@ impl WARMUPDLY_R {
     }
 }
 #[doc = "Field `WARMUPDLY` writer - Warmup Delay"]
-pub type WARMUPDLY_W<'a> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, WARMUPDLY_A, 3, 18>;
-impl<'a> WARMUPDLY_W<'a> {
+pub type WARMUPDLY_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, WARMUPDLY_A, 3, O>;
+impl<'a, const O: u8> WARMUPDLY_W<'a, O> {
     #[doc = "1mswarm up"]
     #[inline(always)]
     pub fn warmup1(self) -> &'a mut W {
@@ -295,7 +296,7 @@ impl<'a> WARMUPDLY_W<'a> {
 #[doc = "Field `PRESCALE` reader - Presclae"]
 pub type PRESCALE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PRESCALE` writer - Presclae"]
-pub type PRESCALE_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 7, 24>;
+pub type PRESCALE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 7, O>;
 impl R {
     #[doc = "Bits 1:2 - Update Data Control"]
     #[inline(always)]
@@ -321,22 +322,26 @@ impl R {
 impl W {
     #[doc = "Bits 1:2 - Update Data Control"]
     #[inline(always)]
-    pub fn udctrl(&mut self) -> UDCTRL_W {
+    #[must_use]
+    pub fn udctrl(&mut self) -> UDCTRL_W<1> {
         UDCTRL_W::new(self)
     }
     #[doc = "Bit 16 - Direct Segment Control"]
     #[inline(always)]
-    pub fn dsc(&mut self) -> DSC_W {
+    #[must_use]
+    pub fn dsc(&mut self) -> DSC_W<16> {
         DSC_W::new(self)
     }
     #[doc = "Bits 18:20 - Warmup Delay"]
     #[inline(always)]
-    pub fn warmupdly(&mut self) -> WARMUPDLY_W {
+    #[must_use]
+    pub fn warmupdly(&mut self) -> WARMUPDLY_W<18> {
         WARMUPDLY_W::new(self)
     }
     #[doc = "Bits 24:30 - Presclae"]
     #[inline(always)]
-    pub fn prescale(&mut self) -> PRESCALE_W {
+    #[must_use]
+    pub fn prescale(&mut self) -> PRESCALE_W<24> {
         PRESCALE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -358,11 +363,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x0010_0000"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0010_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0010_0000;
 }

@@ -37,19 +37,19 @@ impl From<crate::W<DGIF_SPEC>> for W {
 #[doc = "Field `EM23WAKEUPDGIF` reader - EM23 Wake up Interrupt flag"]
 pub type EM23WAKEUPDGIF_R = crate::BitReader<bool>;
 #[doc = "Field `EM23WAKEUPDGIF` writer - EM23 Wake up Interrupt flag"]
-pub type EM23WAKEUPDGIF_W<'a> = crate::BitWriter<'a, u32, DGIF_SPEC, bool, 24>;
+pub type EM23WAKEUPDGIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, DGIF_SPEC, bool, O>;
 #[doc = "Field `TEMPDGIF` reader - Temperature Interrupt flag"]
 pub type TEMPDGIF_R = crate::BitReader<bool>;
 #[doc = "Field `TEMPDGIF` writer - Temperature Interrupt flag"]
-pub type TEMPDGIF_W<'a> = crate::BitWriter<'a, u32, DGIF_SPEC, bool, 29>;
+pub type TEMPDGIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, DGIF_SPEC, bool, O>;
 #[doc = "Field `TEMPLOWDGIF` reader - Temperature low Interrupt flag"]
 pub type TEMPLOWDGIF_R = crate::BitReader<bool>;
 #[doc = "Field `TEMPLOWDGIF` writer - Temperature low Interrupt flag"]
-pub type TEMPLOWDGIF_W<'a> = crate::BitWriter<'a, u32, DGIF_SPEC, bool, 30>;
+pub type TEMPLOWDGIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, DGIF_SPEC, bool, O>;
 #[doc = "Field `TEMPHIGHDGIF` reader - Temperature high Interrupt flag"]
 pub type TEMPHIGHDGIF_R = crate::BitReader<bool>;
 #[doc = "Field `TEMPHIGHDGIF` writer - Temperature high Interrupt flag"]
-pub type TEMPHIGHDGIF_W<'a> = crate::BitWriter<'a, u32, DGIF_SPEC, bool, 31>;
+pub type TEMPHIGHDGIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, DGIF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 24 - EM23 Wake up Interrupt flag"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 24 - EM23 Wake up Interrupt flag"]
     #[inline(always)]
-    pub fn em23wakeupdgif(&mut self) -> EM23WAKEUPDGIF_W {
+    #[must_use]
+    pub fn em23wakeupdgif(&mut self) -> EM23WAKEUPDGIF_W<24> {
         EM23WAKEUPDGIF_W::new(self)
     }
     #[doc = "Bit 29 - Temperature Interrupt flag"]
     #[inline(always)]
-    pub fn tempdgif(&mut self) -> TEMPDGIF_W {
+    #[must_use]
+    pub fn tempdgif(&mut self) -> TEMPDGIF_W<29> {
         TEMPDGIF_W::new(self)
     }
     #[doc = "Bit 30 - Temperature low Interrupt flag"]
     #[inline(always)]
-    pub fn templowdgif(&mut self) -> TEMPLOWDGIF_W {
+    #[must_use]
+    pub fn templowdgif(&mut self) -> TEMPLOWDGIF_W<30> {
         TEMPLOWDGIF_W::new(self)
     }
     #[doc = "Bit 31 - Temperature high Interrupt flag"]
     #[inline(always)]
-    pub fn temphighdgif(&mut self) -> TEMPHIGHDGIF_W {
+    #[must_use]
+    pub fn temphighdgif(&mut self) -> TEMPHIGHDGIF_W<31> {
         TEMPHIGHDGIF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for DGIF_SPEC {
 #[doc = "`write(|w| ..)` method takes [dgif::W](W) writer structure"]
 impl crate::Writable for DGIF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DGIF to value 0"]
 impl crate::Resettable for DGIF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

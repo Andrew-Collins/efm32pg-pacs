@@ -37,23 +37,23 @@ impl From<crate::W<EUSART0_ROUTEEN_SPEC>> for W {
 #[doc = "Field `CSPEN` reader - CS pin enable control bit"]
 pub type CSPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CSPEN` writer - CS pin enable control bit"]
-pub type CSPEN_W<'a> = crate::BitWriter<'a, u32, EUSART0_ROUTEEN_SPEC, bool, 0>;
+pub type CSPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EUSART0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `RTSPEN` reader - RTS pin enable control bit"]
 pub type RTSPEN_R = crate::BitReader<bool>;
 #[doc = "Field `RTSPEN` writer - RTS pin enable control bit"]
-pub type RTSPEN_W<'a> = crate::BitWriter<'a, u32, EUSART0_ROUTEEN_SPEC, bool, 1>;
+pub type RTSPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EUSART0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `RXPEN` reader - RX pin enable control bit"]
 pub type RXPEN_R = crate::BitReader<bool>;
 #[doc = "Field `RXPEN` writer - RX pin enable control bit"]
-pub type RXPEN_W<'a> = crate::BitWriter<'a, u32, EUSART0_ROUTEEN_SPEC, bool, 2>;
+pub type RXPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EUSART0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `SCLKPEN` reader - SCLK pin enable control bit"]
 pub type SCLKPEN_R = crate::BitReader<bool>;
 #[doc = "Field `SCLKPEN` writer - SCLK pin enable control bit"]
-pub type SCLKPEN_W<'a> = crate::BitWriter<'a, u32, EUSART0_ROUTEEN_SPEC, bool, 3>;
+pub type SCLKPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EUSART0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `TXPEN` reader - TX pin enable control bit"]
 pub type TXPEN_R = crate::BitReader<bool>;
 #[doc = "Field `TXPEN` writer - TX pin enable control bit"]
-pub type TXPEN_W<'a> = crate::BitWriter<'a, u32, EUSART0_ROUTEEN_SPEC, bool, 4>;
+pub type TXPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EUSART0_ROUTEEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - CS pin enable control bit"]
     #[inline(always)]
@@ -84,27 +84,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CS pin enable control bit"]
     #[inline(always)]
-    pub fn cspen(&mut self) -> CSPEN_W {
+    #[must_use]
+    pub fn cspen(&mut self) -> CSPEN_W<0> {
         CSPEN_W::new(self)
     }
     #[doc = "Bit 1 - RTS pin enable control bit"]
     #[inline(always)]
-    pub fn rtspen(&mut self) -> RTSPEN_W {
+    #[must_use]
+    pub fn rtspen(&mut self) -> RTSPEN_W<1> {
         RTSPEN_W::new(self)
     }
     #[doc = "Bit 2 - RX pin enable control bit"]
     #[inline(always)]
-    pub fn rxpen(&mut self) -> RXPEN_W {
+    #[must_use]
+    pub fn rxpen(&mut self) -> RXPEN_W<2> {
         RXPEN_W::new(self)
     }
     #[doc = "Bit 3 - SCLK pin enable control bit"]
     #[inline(always)]
-    pub fn sclkpen(&mut self) -> SCLKPEN_W {
+    #[must_use]
+    pub fn sclkpen(&mut self) -> SCLKPEN_W<3> {
         SCLKPEN_W::new(self)
     }
     #[doc = "Bit 4 - TX pin enable control bit"]
     #[inline(always)]
-    pub fn txpen(&mut self) -> TXPEN_W {
+    #[must_use]
+    pub fn txpen(&mut self) -> TXPEN_W<4> {
         TXPEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -126,11 +131,10 @@ impl crate::Readable for EUSART0_ROUTEEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [eusart0_routeen::W](W) writer structure"]
 impl crate::Writable for EUSART0_ROUTEEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EUSART0_ROUTEEN to value 0"]
 impl crate::Resettable for EUSART0_ROUTEEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

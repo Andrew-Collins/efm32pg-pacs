@@ -37,19 +37,19 @@ impl From<crate::W<IEN_SPEC>> for W {
 #[doc = "Field `RDY` reader - LFXO Ready Interrupt Enable"]
 pub type RDY_R = crate::BitReader<bool>;
 #[doc = "Field `RDY` writer - LFXO Ready Interrupt Enable"]
-pub type RDY_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 0>;
+pub type RDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `POSEDGE` reader - Rising Edge Interrupt Enable"]
 pub type POSEDGE_R = crate::BitReader<bool>;
 #[doc = "Field `POSEDGE` writer - Rising Edge Interrupt Enable"]
-pub type POSEDGE_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 1>;
+pub type POSEDGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `NEGEDGE` reader - Falling Edge Interrupt Enable"]
 pub type NEGEDGE_R = crate::BitReader<bool>;
 #[doc = "Field `NEGEDGE` writer - Falling Edge Interrupt Enable"]
-pub type NEGEDGE_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 2>;
+pub type NEGEDGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `FAIL` reader - LFXO Failure Interrupt Enable"]
 pub type FAIL_R = crate::BitReader<bool>;
 #[doc = "Field `FAIL` writer - LFXO Failure Interrupt Enable"]
-pub type FAIL_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 3>;
+pub type FAIL_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - LFXO Ready Interrupt Enable"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - LFXO Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn rdy(&mut self) -> RDY_W {
+    #[must_use]
+    pub fn rdy(&mut self) -> RDY_W<0> {
         RDY_W::new(self)
     }
     #[doc = "Bit 1 - Rising Edge Interrupt Enable"]
     #[inline(always)]
-    pub fn posedge(&mut self) -> POSEDGE_W {
+    #[must_use]
+    pub fn posedge(&mut self) -> POSEDGE_W<1> {
         POSEDGE_W::new(self)
     }
     #[doc = "Bit 2 - Falling Edge Interrupt Enable"]
     #[inline(always)]
-    pub fn negedge(&mut self) -> NEGEDGE_W {
+    #[must_use]
+    pub fn negedge(&mut self) -> NEGEDGE_W<2> {
         NEGEDGE_W::new(self)
     }
     #[doc = "Bit 3 - LFXO Failure Interrupt Enable"]
     #[inline(always)]
-    pub fn fail(&mut self) -> FAIL_W {
+    #[must_use]
+    pub fn fail(&mut self) -> FAIL_W<3> {
         FAIL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for IEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IEN to value 0"]
 impl crate::Resettable for IEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

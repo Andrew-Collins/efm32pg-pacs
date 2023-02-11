@@ -37,17 +37,20 @@ impl From<crate::W<BUFOUTCTRL_SPEC>> for W {
 #[doc = "Field `XOUTBIASANA` reader - Driver Bias Current"]
 pub type XOUTBIASANA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `XOUTBIASANA` writer - Driver Bias Current"]
-pub type XOUTBIASANA_W<'a> = crate::FieldWriter<'a, u32, BUFOUTCTRL_SPEC, u8, u8, 4, 0>;
+pub type XOUTBIASANA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, BUFOUTCTRL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `XOUTCFANA` reader - Buffer Gain"]
 pub type XOUTCFANA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `XOUTCFANA` writer - Buffer Gain"]
-pub type XOUTCFANA_W<'a> = crate::FieldWriter<'a, u32, BUFOUTCTRL_SPEC, u8, u8, 4, 4>;
+pub type XOUTCFANA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BUFOUTCTRL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `XOUTGMANA` reader - No Description"]
 pub type XOUTGMANA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `XOUTGMANA` writer - No Description"]
-pub type XOUTGMANA_W<'a> = crate::FieldWriter<'a, u32, BUFOUTCTRL_SPEC, u8, u8, 4, 8>;
+pub type XOUTGMANA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BUFOUTCTRL_SPEC, u8, u8, 4, O>;
+#[doc = "Field `PEAKDETTHRESANA` reader - Peak Detector Threshold for XOUT"]
+pub type PEAKDETTHRESANA_R = crate::FieldReader<u8, PEAKDETTHRESANA_A>;
 #[doc = "Peak Detector Threshold for XOUT\n\nValue on reset: 3"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PEAKDETTHRESANA_A {
     #[doc = "0: V105MV"]
@@ -89,8 +92,6 @@ impl From<PEAKDETTHRESANA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PEAKDETTHRESANA` reader - Peak Detector Threshold for XOUT"]
-pub type PEAKDETTHRESANA_R = crate::FieldReader<u8, PEAKDETTHRESANA_A>;
 impl PEAKDETTHRESANA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -197,9 +198,9 @@ impl PEAKDETTHRESANA_R {
     }
 }
 #[doc = "Field `PEAKDETTHRESANA` writer - Peak Detector Threshold for XOUT"]
-pub type PEAKDETTHRESANA_W<'a> =
-    crate::FieldWriterSafe<'a, u32, BUFOUTCTRL_SPEC, u8, PEAKDETTHRESANA_A, 4, 12>;
-impl<'a> PEAKDETTHRESANA_W<'a> {
+pub type PEAKDETTHRESANA_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, BUFOUTCTRL_SPEC, u8, PEAKDETTHRESANA_A, 4, O>;
+impl<'a, const O: u8> PEAKDETTHRESANA_W<'a, O> {
     #[doc = "V105MV"]
     #[inline(always)]
     pub fn v105mv(self) -> &'a mut W {
@@ -281,8 +282,10 @@ impl<'a> PEAKDETTHRESANA_W<'a> {
         self.variant(PEAKDETTHRESANA_A::V499MV)
     }
 }
+#[doc = "Field `TIMEOUTCTUNE` reader - Tuning Cap Change Timeout"]
+pub type TIMEOUTCTUNE_R = crate::FieldReader<u8, TIMEOUTCTUNE_A>;
 #[doc = "Tuning Cap Change Timeout\n\nValue on reset: 4"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TIMEOUTCTUNE_A {
     #[doc = "0: The tuning cap change timeout is set to 2 us minimum. The maximum can be +40%."]
@@ -324,8 +327,6 @@ impl From<TIMEOUTCTUNE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TIMEOUTCTUNE` reader - Tuning Cap Change Timeout"]
-pub type TIMEOUTCTUNE_R = crate::FieldReader<u8, TIMEOUTCTUNE_A>;
 impl TIMEOUTCTUNE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -432,9 +433,9 @@ impl TIMEOUTCTUNE_R {
     }
 }
 #[doc = "Field `TIMEOUTCTUNE` writer - Tuning Cap Change Timeout"]
-pub type TIMEOUTCTUNE_W<'a> =
-    crate::FieldWriterSafe<'a, u32, BUFOUTCTRL_SPEC, u8, TIMEOUTCTUNE_A, 4, 16>;
-impl<'a> TIMEOUTCTUNE_W<'a> {
+pub type TIMEOUTCTUNE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, BUFOUTCTRL_SPEC, u8, TIMEOUTCTUNE_A, 4, O>;
+impl<'a, const O: u8> TIMEOUTCTUNE_W<'a, O> {
     #[doc = "The tuning cap change timeout is set to 2 us minimum. The maximum can be +40%."]
     #[inline(always)]
     pub fn t2us(self) -> &'a mut W {
@@ -516,8 +517,10 @@ impl<'a> TIMEOUTCTUNE_W<'a> {
         self.variant(TIMEOUTCTUNE_A::T938US)
     }
 }
+#[doc = "Field `TIMEOUTSTARTUP` reader - Oscillator Startup Timeout"]
+pub type TIMEOUTSTARTUP_R = crate::FieldReader<u8, TIMEOUTSTARTUP_A>;
 #[doc = "Oscillator Startup Timeout\n\nValue on reset: 6"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TIMEOUTSTARTUP_A {
     #[doc = "0: The oscillator startup timeout is set to 42 us minimum. The maximum can be +40%."]
@@ -559,8 +562,6 @@ impl From<TIMEOUTSTARTUP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TIMEOUTSTARTUP` reader - Oscillator Startup Timeout"]
-pub type TIMEOUTSTARTUP_R = crate::FieldReader<u8, TIMEOUTSTARTUP_A>;
 impl TIMEOUTSTARTUP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -667,9 +668,9 @@ impl TIMEOUTSTARTUP_R {
     }
 }
 #[doc = "Field `TIMEOUTSTARTUP` writer - Oscillator Startup Timeout"]
-pub type TIMEOUTSTARTUP_W<'a> =
-    crate::FieldWriterSafe<'a, u32, BUFOUTCTRL_SPEC, u8, TIMEOUTSTARTUP_A, 4, 20>;
-impl<'a> TIMEOUTSTARTUP_W<'a> {
+pub type TIMEOUTSTARTUP_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, BUFOUTCTRL_SPEC, u8, TIMEOUTSTARTUP_A, 4, O>;
+impl<'a, const O: u8> TIMEOUTSTARTUP_W<'a, O> {
     #[doc = "The oscillator startup timeout is set to 42 us minimum. The maximum can be +40%."]
     #[inline(always)]
     pub fn t42us(self) -> &'a mut W {
@@ -754,7 +755,8 @@ impl<'a> TIMEOUTSTARTUP_W<'a> {
 #[doc = "Field `MINIMUMSTARTUPDELAY` reader - Minimum Startup Delay"]
 pub type MINIMUMSTARTUPDELAY_R = crate::BitReader<bool>;
 #[doc = "Field `MINIMUMSTARTUPDELAY` writer - Minimum Startup Delay"]
-pub type MINIMUMSTARTUPDELAY_W<'a> = crate::BitWriter<'a, u32, BUFOUTCTRL_SPEC, bool, 31>;
+pub type MINIMUMSTARTUPDELAY_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, BUFOUTCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:3 - Driver Bias Current"]
     #[inline(always)]
@@ -795,37 +797,44 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Driver Bias Current"]
     #[inline(always)]
-    pub fn xoutbiasana(&mut self) -> XOUTBIASANA_W {
+    #[must_use]
+    pub fn xoutbiasana(&mut self) -> XOUTBIASANA_W<0> {
         XOUTBIASANA_W::new(self)
     }
     #[doc = "Bits 4:7 - Buffer Gain"]
     #[inline(always)]
-    pub fn xoutcfana(&mut self) -> XOUTCFANA_W {
+    #[must_use]
+    pub fn xoutcfana(&mut self) -> XOUTCFANA_W<4> {
         XOUTCFANA_W::new(self)
     }
     #[doc = "Bits 8:11 - No Description"]
     #[inline(always)]
-    pub fn xoutgmana(&mut self) -> XOUTGMANA_W {
+    #[must_use]
+    pub fn xoutgmana(&mut self) -> XOUTGMANA_W<8> {
         XOUTGMANA_W::new(self)
     }
     #[doc = "Bits 12:15 - Peak Detector Threshold for XOUT"]
     #[inline(always)]
-    pub fn peakdetthresana(&mut self) -> PEAKDETTHRESANA_W {
+    #[must_use]
+    pub fn peakdetthresana(&mut self) -> PEAKDETTHRESANA_W<12> {
         PEAKDETTHRESANA_W::new(self)
     }
     #[doc = "Bits 16:19 - Tuning Cap Change Timeout"]
     #[inline(always)]
-    pub fn timeoutctune(&mut self) -> TIMEOUTCTUNE_W {
+    #[must_use]
+    pub fn timeoutctune(&mut self) -> TIMEOUTCTUNE_W<16> {
         TIMEOUTCTUNE_W::new(self)
     }
     #[doc = "Bits 20:23 - Oscillator Startup Timeout"]
     #[inline(always)]
-    pub fn timeoutstartup(&mut self) -> TIMEOUTSTARTUP_W {
+    #[must_use]
+    pub fn timeoutstartup(&mut self) -> TIMEOUTSTARTUP_W<20> {
         TIMEOUTSTARTUP_W::new(self)
     }
     #[doc = "Bit 31 - Minimum Startup Delay"]
     #[inline(always)]
-    pub fn minimumstartupdelay(&mut self) -> MINIMUMSTARTUPDELAY_W {
+    #[must_use]
+    pub fn minimumstartupdelay(&mut self) -> MINIMUMSTARTUPDELAY_W<31> {
         MINIMUMSTARTUPDELAY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -847,11 +856,10 @@ impl crate::Readable for BUFOUTCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [bufoutctrl::W](W) writer structure"]
 impl crate::Writable for BUFOUTCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BUFOUTCTRL to value 0x0064_3c15"]
 impl crate::Resettable for BUFOUTCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0064_3c15
-    }
+    const RESET_VALUE: Self::Ux = 0x0064_3c15;
 }

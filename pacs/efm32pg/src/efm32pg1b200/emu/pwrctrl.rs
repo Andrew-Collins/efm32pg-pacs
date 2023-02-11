@@ -37,7 +37,7 @@ impl From<crate::W<PWRCTRL_SPEC>> for W {
 #[doc = "Field `ANASW` reader - Analog Switch Selection"]
 pub type ANASW_R = crate::BitReader<bool>;
 #[doc = "Field `ANASW` writer - Analog Switch Selection"]
-pub type ANASW_W<'a> = crate::BitWriter<'a, u32, PWRCTRL_SPEC, bool, 5>;
+pub type ANASW_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWRCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 5 - Analog Switch Selection"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bit 5 - Analog Switch Selection"]
     #[inline(always)]
-    pub fn anasw(&mut self) -> ANASW_W {
+    #[must_use]
+    pub fn anasw(&mut self) -> ANASW_W<5> {
         ANASW_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for PWRCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [pwrctrl::W](W) writer structure"]
 impl crate::Writable for PWRCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PWRCTRL to value 0"]
 impl crate::Resettable for PWRCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

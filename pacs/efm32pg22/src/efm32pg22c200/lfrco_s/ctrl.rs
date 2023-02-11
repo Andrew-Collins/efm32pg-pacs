@@ -37,11 +37,11 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `FORCEEN` reader - Force Enable"]
 pub type FORCEEN_R = crate::BitReader<bool>;
 #[doc = "Field `FORCEEN` writer - Force Enable"]
-pub type FORCEEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 0>;
+pub type FORCEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `DISONDEMAND` reader - Disable On-Demand"]
 pub type DISONDEMAND_R = crate::BitReader<bool>;
 #[doc = "Field `DISONDEMAND` writer - Disable On-Demand"]
-pub type DISONDEMAND_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 1>;
+pub type DISONDEMAND_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Force Enable"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Force Enable"]
     #[inline(always)]
-    pub fn forceen(&mut self) -> FORCEEN_W {
+    #[must_use]
+    pub fn forceen(&mut self) -> FORCEEN_W<0> {
         FORCEEN_W::new(self)
     }
     #[doc = "Bit 1 - Disable On-Demand"]
     #[inline(always)]
-    pub fn disondemand(&mut self) -> DISONDEMAND_W {
+    #[must_use]
+    pub fn disondemand(&mut self) -> DISONDEMAND_W<1> {
         DISONDEMAND_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,11 +37,11 @@ impl From<crate::W<SYNCHWEN_SPEC>> for W {
 #[doc = "Field `SYNCSETEN` reader - Hardware Sync Trigger Set Enable"]
 pub type SYNCSETEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SYNCSETEN` writer - Hardware Sync Trigger Set Enable"]
-pub type SYNCSETEN_W<'a> = crate::FieldWriter<'a, u32, SYNCHWEN_SPEC, u8, u8, 8, 0>;
+pub type SYNCSETEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYNCHWEN_SPEC, u8, u8, 8, O>;
 #[doc = "Field `SYNCCLREN` reader - Hardware Sync Trigger Clear Enable"]
 pub type SYNCCLREN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SYNCCLREN` writer - Hardware Sync Trigger Clear Enable"]
-pub type SYNCCLREN_W<'a> = crate::FieldWriter<'a, u32, SYNCHWEN_SPEC, u8, u8, 8, 16>;
+pub type SYNCCLREN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYNCHWEN_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Hardware Sync Trigger Set Enable"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Hardware Sync Trigger Set Enable"]
     #[inline(always)]
-    pub fn syncseten(&mut self) -> SYNCSETEN_W {
+    #[must_use]
+    pub fn syncseten(&mut self) -> SYNCSETEN_W<0> {
         SYNCSETEN_W::new(self)
     }
     #[doc = "Bits 16:23 - Hardware Sync Trigger Clear Enable"]
     #[inline(always)]
-    pub fn syncclren(&mut self) -> SYNCCLREN_W {
+    #[must_use]
+    pub fn syncclren(&mut self) -> SYNCCLREN_W<16> {
         SYNCCLREN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for SYNCHWEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [synchwen::W](W) writer structure"]
 impl crate::Writable for SYNCHWEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SYNCHWEN to value 0"]
 impl crate::Resettable for SYNCHWEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

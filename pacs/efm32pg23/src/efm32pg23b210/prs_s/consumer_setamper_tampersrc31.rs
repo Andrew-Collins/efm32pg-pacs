@@ -37,8 +37,8 @@ impl From<crate::W<CONSUMER_SETAMPER_TAMPERSRC31_SPEC>> for W {
 #[doc = "Field `PRSSEL` reader - TAMPERSRC31 async channel select"]
 pub type PRSSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PRSSEL` writer - TAMPERSRC31 async channel select"]
-pub type PRSSEL_W<'a> =
-    crate::FieldWriter<'a, u32, CONSUMER_SETAMPER_TAMPERSRC31_SPEC, u8, u8, 4, 0>;
+pub type PRSSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CONSUMER_SETAMPER_TAMPERSRC31_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - TAMPERSRC31 async channel select"]
     #[inline(always)]
@@ -49,7 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - TAMPERSRC31 async channel select"]
     #[inline(always)]
-    pub fn prssel(&mut self) -> PRSSEL_W {
+    #[must_use]
+    pub fn prssel(&mut self) -> PRSSEL_W<0> {
         PRSSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -71,11 +72,10 @@ impl crate::Readable for CONSUMER_SETAMPER_TAMPERSRC31_SPEC {
 #[doc = "`write(|w| ..)` method takes [consumer_setamper_tampersrc31::W](W) writer structure"]
 impl crate::Writable for CONSUMER_SETAMPER_TAMPERSRC31_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CONSUMER_SETAMPER_TAMPERSRC31 to value 0"]
 impl crate::Resettable for CONSUMER_SETAMPER_TAMPERSRC31_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

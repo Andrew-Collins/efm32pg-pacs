@@ -37,19 +37,19 @@ impl From<crate::W<POINTER_SPEC>> for W {
 #[doc = "Field `OPPTRA` reader - OpPtrA"]
 pub type OPPTRA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OPPTRA` writer - OpPtrA"]
-pub type OPPTRA_W<'a> = crate::FieldWriter<'a, u32, POINTER_SPEC, u8, u8, 4, 0>;
+pub type OPPTRA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, POINTER_SPEC, u8, u8, 4, O>;
 #[doc = "Field `OPPTRB` reader - OpPtrB"]
 pub type OPPTRB_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OPPTRB` writer - OpPtrB"]
-pub type OPPTRB_W<'a> = crate::FieldWriter<'a, u32, POINTER_SPEC, u8, u8, 4, 8>;
+pub type OPPTRB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, POINTER_SPEC, u8, u8, 4, O>;
 #[doc = "Field `OPPTRC` reader - OpPtrC"]
 pub type OPPTRC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OPPTRC` writer - OpPtrC"]
-pub type OPPTRC_W<'a> = crate::FieldWriter<'a, u32, POINTER_SPEC, u8, u8, 4, 16>;
+pub type OPPTRC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, POINTER_SPEC, u8, u8, 4, O>;
 #[doc = "Field `OPPTRN` reader - OpPtrN"]
 pub type OPPTRN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OPPTRN` writer - OpPtrN"]
-pub type OPPTRN_W<'a> = crate::FieldWriter<'a, u32, POINTER_SPEC, u8, u8, 4, 24>;
+pub type OPPTRN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, POINTER_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - OpPtrA"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - OpPtrA"]
     #[inline(always)]
-    pub fn opptra(&mut self) -> OPPTRA_W {
+    #[must_use]
+    pub fn opptra(&mut self) -> OPPTRA_W<0> {
         OPPTRA_W::new(self)
     }
     #[doc = "Bits 8:11 - OpPtrB"]
     #[inline(always)]
-    pub fn opptrb(&mut self) -> OPPTRB_W {
+    #[must_use]
+    pub fn opptrb(&mut self) -> OPPTRB_W<8> {
         OPPTRB_W::new(self)
     }
     #[doc = "Bits 16:19 - OpPtrC"]
     #[inline(always)]
-    pub fn opptrc(&mut self) -> OPPTRC_W {
+    #[must_use]
+    pub fn opptrc(&mut self) -> OPPTRC_W<16> {
         OPPTRC_W::new(self)
     }
     #[doc = "Bits 24:27 - OpPtrN"]
     #[inline(always)]
-    pub fn opptrn(&mut self) -> OPPTRN_W {
+    #[must_use]
+    pub fn opptrn(&mut self) -> OPPTRN_W<24> {
         OPPTRN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for POINTER_SPEC {
 #[doc = "`write(|w| ..)` method takes [pointer::W](W) writer structure"]
 impl crate::Writable for POINTER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets POINTER to value 0"]
 impl crate::Resettable for POINTER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

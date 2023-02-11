@@ -34,8 +34,10 @@ impl From<crate::W<CFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - Mode Select"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Single input EM23GRPACLK oversampling mode (available in EM0-EM3)."]
@@ -57,8 +59,6 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - Mode Select"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -105,8 +105,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Mode Select"]
-pub type MODE_W<'a> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, MODE_A, 3, 0>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, MODE_A, 3, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Single input EM23GRPACLK oversampling mode (available in EM0-EM3)."]
     #[inline(always)]
     pub fn ovssingle(self) -> &'a mut W {
@@ -138,8 +138,10 @@ impl<'a> MODE_W<'a> {
         self.variant(MODE_A::OVSQUAD4X)
     }
 }
+#[doc = "Field `DEBUGHALT` reader - Debug Mode Halt Enable"]
+pub type DEBUGHALT_R = crate::BitReader<DEBUGHALT_A>;
 #[doc = "Debug Mode Halt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DEBUGHALT_A {
     #[doc = "0: PCNT is running in debug mode."]
     DISABLE = 0,
@@ -152,8 +154,6 @@ impl From<DEBUGHALT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DEBUGHALT` reader - Debug Mode Halt Enable"]
-pub type DEBUGHALT_R = crate::BitReader<DEBUGHALT_A>;
 impl DEBUGHALT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -175,8 +175,8 @@ impl DEBUGHALT_R {
     }
 }
 #[doc = "Field `DEBUGHALT` writer - Debug Mode Halt Enable"]
-pub type DEBUGHALT_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, DEBUGHALT_A, 4>;
-impl<'a> DEBUGHALT_W<'a> {
+pub type DEBUGHALT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, DEBUGHALT_A, O>;
+impl<'a, const O: u8> DEBUGHALT_W<'a, O> {
     #[doc = "PCNT is running in debug mode."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -191,19 +191,19 @@ impl<'a> DEBUGHALT_W<'a> {
 #[doc = "Field `FILTEN` reader - Enable Digital Pulse Width Filter"]
 pub type FILTEN_R = crate::BitReader<bool>;
 #[doc = "Field `FILTEN` writer - Enable Digital Pulse Width Filter"]
-pub type FILTEN_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 5>;
+pub type FILTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 #[doc = "Field `HYST` reader - Enable Hysteresis"]
 pub type HYST_R = crate::BitReader<bool>;
 #[doc = "Field `HYST` writer - Enable Hysteresis"]
-pub type HYST_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 6>;
+pub type HYST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 #[doc = "Field `S0PRSEN` reader - S0IN PRS Enable"]
 pub type S0PRSEN_R = crate::BitReader<bool>;
 #[doc = "Field `S0PRSEN` writer - S0IN PRS Enable"]
-pub type S0PRSEN_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 8>;
+pub type S0PRSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 #[doc = "Field `S1PRSEN` reader - S1IN PRS Enable"]
 pub type S1PRSEN_R = crate::BitReader<bool>;
 #[doc = "Field `S1PRSEN` writer - S1IN PRS Enable"]
-pub type S1PRSEN_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 9>;
+pub type S1PRSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - Mode Select"]
     #[inline(always)]
@@ -239,32 +239,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Mode Select"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<0> {
         MODE_W::new(self)
     }
     #[doc = "Bit 4 - Debug Mode Halt Enable"]
     #[inline(always)]
-    pub fn debughalt(&mut self) -> DEBUGHALT_W {
+    #[must_use]
+    pub fn debughalt(&mut self) -> DEBUGHALT_W<4> {
         DEBUGHALT_W::new(self)
     }
     #[doc = "Bit 5 - Enable Digital Pulse Width Filter"]
     #[inline(always)]
-    pub fn filten(&mut self) -> FILTEN_W {
+    #[must_use]
+    pub fn filten(&mut self) -> FILTEN_W<5> {
         FILTEN_W::new(self)
     }
     #[doc = "Bit 6 - Enable Hysteresis"]
     #[inline(always)]
-    pub fn hyst(&mut self) -> HYST_W {
+    #[must_use]
+    pub fn hyst(&mut self) -> HYST_W<6> {
         HYST_W::new(self)
     }
     #[doc = "Bit 8 - S0IN PRS Enable"]
     #[inline(always)]
-    pub fn s0prsen(&mut self) -> S0PRSEN_W {
+    #[must_use]
+    pub fn s0prsen(&mut self) -> S0PRSEN_W<8> {
         S0PRSEN_W::new(self)
     }
     #[doc = "Bit 9 - S1IN PRS Enable"]
     #[inline(always)]
-    pub fn s1prsen(&mut self) -> S1PRSEN_W {
+    #[must_use]
+    pub fn s1prsen(&mut self) -> S1PRSEN_W<9> {
         S1PRSEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -286,11 +292,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

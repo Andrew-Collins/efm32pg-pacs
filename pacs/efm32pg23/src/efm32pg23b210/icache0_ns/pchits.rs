@@ -33,8 +33,5 @@ impl crate::Readable for PCHITS_SPEC {
 }
 #[doc = "`reset()` method sets PCHITS to value 0"]
 impl crate::Resettable for PCHITS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

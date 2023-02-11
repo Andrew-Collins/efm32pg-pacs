@@ -37,7 +37,8 @@ impl From<crate::W<GRP0_CMP0VALUE_SPEC>> for W {
 #[doc = "Field `CMP0VALUE` reader - Compare 0 Value"]
 pub type CMP0VALUE_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CMP0VALUE` writer - Compare 0 Value"]
-pub type CMP0VALUE_W<'a> = crate::FieldWriter<'a, u32, GRP0_CMP0VALUE_SPEC, u32, u32, 32, 0>;
+pub type CMP0VALUE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, GRP0_CMP0VALUE_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Compare 0 Value"]
     #[inline(always)]
@@ -48,7 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Compare 0 Value"]
     #[inline(always)]
-    pub fn cmp0value(&mut self) -> CMP0VALUE_W {
+    #[must_use]
+    pub fn cmp0value(&mut self) -> CMP0VALUE_W<0> {
         CMP0VALUE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +72,10 @@ impl crate::Readable for GRP0_CMP0VALUE_SPEC {
 #[doc = "`write(|w| ..)` method takes [grp0_cmp0value::W](W) writer structure"]
 impl crate::Writable for GRP0_CMP0VALUE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GRP0_CMP0VALUE to value 0"]
 impl crate::Resettable for GRP0_CMP0VALUE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

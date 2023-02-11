@@ -37,23 +37,23 @@ impl From<crate::W<IF_SPEC>> for W {
 #[doc = "Field `RISE` reader - Rising Edge Triggered Interrupt Flag"]
 pub type RISE_R = crate::BitReader<bool>;
 #[doc = "Field `RISE` writer - Rising Edge Triggered Interrupt Flag"]
-pub type RISE_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 0>;
+pub type RISE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `FALL` reader - Falling Edge Triggered Interrupt Flag"]
 pub type FALL_R = crate::BitReader<bool>;
 #[doc = "Field `FALL` writer - Falling Edge Triggered Interrupt Flag"]
-pub type FALL_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 1>;
+pub type FALL_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `ACMPRDY` reader - ACMP ready Interrupt flag"]
 pub type ACMPRDY_R = crate::BitReader<bool>;
 #[doc = "Field `ACMPRDY` writer - ACMP ready Interrupt flag"]
-pub type ACMPRDY_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 2>;
+pub type ACMPRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `INPUTCONFLICT` reader - Input conflict"]
 pub type INPUTCONFLICT_R = crate::BitReader<bool>;
 #[doc = "Field `INPUTCONFLICT` writer - Input conflict"]
-pub type INPUTCONFLICT_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 3>;
+pub type INPUTCONFLICT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `PORTALLOCERR` reader - Port allocation error"]
 pub type PORTALLOCERR_R = crate::BitReader<bool>;
 #[doc = "Field `PORTALLOCERR` writer - Port allocation error"]
-pub type PORTALLOCERR_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 4>;
+pub type PORTALLOCERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Rising Edge Triggered Interrupt Flag"]
     #[inline(always)]
@@ -84,27 +84,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Rising Edge Triggered Interrupt Flag"]
     #[inline(always)]
-    pub fn rise(&mut self) -> RISE_W {
+    #[must_use]
+    pub fn rise(&mut self) -> RISE_W<0> {
         RISE_W::new(self)
     }
     #[doc = "Bit 1 - Falling Edge Triggered Interrupt Flag"]
     #[inline(always)]
-    pub fn fall(&mut self) -> FALL_W {
+    #[must_use]
+    pub fn fall(&mut self) -> FALL_W<1> {
         FALL_W::new(self)
     }
     #[doc = "Bit 2 - ACMP ready Interrupt flag"]
     #[inline(always)]
-    pub fn acmprdy(&mut self) -> ACMPRDY_W {
+    #[must_use]
+    pub fn acmprdy(&mut self) -> ACMPRDY_W<2> {
         ACMPRDY_W::new(self)
     }
     #[doc = "Bit 3 - Input conflict"]
     #[inline(always)]
-    pub fn inputconflict(&mut self) -> INPUTCONFLICT_W {
+    #[must_use]
+    pub fn inputconflict(&mut self) -> INPUTCONFLICT_W<3> {
         INPUTCONFLICT_W::new(self)
     }
     #[doc = "Bit 4 - Port allocation error"]
     #[inline(always)]
-    pub fn portallocerr(&mut self) -> PORTALLOCERR_W {
+    #[must_use]
+    pub fn portallocerr(&mut self) -> PORTALLOCERR_W<4> {
         PORTALLOCERR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -126,11 +131,10 @@ impl crate::Readable for IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_::W](W) writer structure"]
 impl crate::Writable for IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

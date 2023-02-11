@@ -34,8 +34,10 @@ impl From<crate::W<BANKSWITCHLOCK_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `BANKSWITCHLOCKKEY` reader - Bank Switching Lock"]
+pub type BANKSWITCHLOCKKEY_R = crate::FieldReader<u16, BANKSWITCHLOCKKEY_A>;
 #[doc = "Bank Switching Lock\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum BANKSWITCHLOCKKEY_A {
     #[doc = "0: `0`"]
@@ -49,8 +51,6 @@ impl From<BANKSWITCHLOCKKEY_A> for u16 {
         variant as _
     }
 }
-#[doc = "Field `BANKSWITCHLOCKKEY` reader - Bank Switching Lock"]
-pub type BANKSWITCHLOCKKEY_R = crate::FieldReader<u16, BANKSWITCHLOCKKEY_A>;
 impl BANKSWITCHLOCKKEY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -73,9 +73,9 @@ impl BANKSWITCHLOCKKEY_R {
     }
 }
 #[doc = "Field `BANKSWITCHLOCKKEY` writer - Bank Switching Lock"]
-pub type BANKSWITCHLOCKKEY_W<'a> =
-    crate::FieldWriter<'a, u32, BANKSWITCHLOCK_SPEC, u16, BANKSWITCHLOCKKEY_A, 16, 0>;
-impl<'a> BANKSWITCHLOCKKEY_W<'a> {
+pub type BANKSWITCHLOCKKEY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, BANKSWITCHLOCK_SPEC, u16, BANKSWITCHLOCKKEY_A, 16, O>;
+impl<'a, const O: u8> BANKSWITCHLOCKKEY_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn unlocked(self) -> &'a mut W {
@@ -97,7 +97,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Bank Switching Lock"]
     #[inline(always)]
-    pub fn bankswitchlockkey(&mut self) -> BANKSWITCHLOCKKEY_W {
+    #[must_use]
+    pub fn bankswitchlockkey(&mut self) -> BANKSWITCHLOCKKEY_W<0> {
         BANKSWITCHLOCKKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -119,11 +120,10 @@ impl crate::Readable for BANKSWITCHLOCK_SPEC {
 #[doc = "`write(|w| ..)` method takes [bankswitchlock::W](W) writer structure"]
 impl crate::Writable for BANKSWITCHLOCK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BANKSWITCHLOCK to value 0x01"]
 impl crate::Resettable for BANKSWITCHLOCK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

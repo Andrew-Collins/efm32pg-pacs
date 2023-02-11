@@ -15,8 +15,10 @@ impl From<crate::R<STATUS_SPEC>> for R {
 }
 #[doc = "Field `RUNNING` reader - BURTC running status"]
 pub type RUNNING_R = crate::BitReader<bool>;
+#[doc = "Field `LOCK` reader - Configuration Lock Status"]
+pub type LOCK_R = crate::BitReader<LOCK_A>;
 #[doc = "Configuration Lock Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOCK_A {
     #[doc = "0: All BURTC lockable registers are unlocked."]
     UNLOCKED = 0,
@@ -29,8 +31,6 @@ impl From<LOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOCK` reader - Configuration Lock Status"]
-pub type LOCK_R = crate::BitReader<LOCK_A>;
 impl LOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -74,8 +74,5 @@ impl crate::Readable for STATUS_SPEC {
 }
 #[doc = "`reset()` method sets STATUS to value 0"]
 impl crate::Resettable for STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

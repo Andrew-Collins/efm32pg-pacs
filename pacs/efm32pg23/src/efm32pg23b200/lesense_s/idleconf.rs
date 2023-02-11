@@ -34,8 +34,10 @@ impl From<crate::W<IDLECONF_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CHIDLE0` reader - Channel IDLE configuration"]
+pub type CHIDLE0_R = crate::FieldReader<u8, CHIDLE0_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE0_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -53,8 +55,6 @@ impl From<CHIDLE0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE0` reader - Channel IDLE configuration"]
-pub type CHIDLE0_R = crate::FieldReader<u8, CHIDLE0_A>;
 impl CHIDLE0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,9 @@ impl CHIDLE0_R {
     }
 }
 #[doc = "Field `CHIDLE0` writer - Channel IDLE configuration"]
-pub type CHIDLE0_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE0_A, 2, 0>;
-impl<'a> CHIDLE0_W<'a> {
+pub type CHIDLE0_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE0_A, 2, O>;
+impl<'a, const O: u8> CHIDLE0_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -112,8 +113,10 @@ impl<'a> CHIDLE0_W<'a> {
         self.variant(CHIDLE0_A::DAC)
     }
 }
+#[doc = "Field `CHIDLE1` reader - Channel IDLE configuration"]
+pub type CHIDLE1_R = crate::FieldReader<u8, CHIDLE1_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE1_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -131,8 +134,6 @@ impl From<CHIDLE1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE1` reader - Channel IDLE configuration"]
-pub type CHIDLE1_R = crate::FieldReader<u8, CHIDLE1_A>;
 impl CHIDLE1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -167,8 +168,9 @@ impl CHIDLE1_R {
     }
 }
 #[doc = "Field `CHIDLE1` writer - Channel IDLE configuration"]
-pub type CHIDLE1_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE1_A, 2, 2>;
-impl<'a> CHIDLE1_W<'a> {
+pub type CHIDLE1_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE1_A, 2, O>;
+impl<'a, const O: u8> CHIDLE1_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -190,8 +192,10 @@ impl<'a> CHIDLE1_W<'a> {
         self.variant(CHIDLE1_A::DAC)
     }
 }
+#[doc = "Field `CHIDLE2` reader - Channel IDLE configuration"]
+pub type CHIDLE2_R = crate::FieldReader<u8, CHIDLE2_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE2_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -209,8 +213,6 @@ impl From<CHIDLE2_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE2` reader - Channel IDLE configuration"]
-pub type CHIDLE2_R = crate::FieldReader<u8, CHIDLE2_A>;
 impl CHIDLE2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -245,8 +247,9 @@ impl CHIDLE2_R {
     }
 }
 #[doc = "Field `CHIDLE2` writer - Channel IDLE configuration"]
-pub type CHIDLE2_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE2_A, 2, 4>;
-impl<'a> CHIDLE2_W<'a> {
+pub type CHIDLE2_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE2_A, 2, O>;
+impl<'a, const O: u8> CHIDLE2_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -268,8 +271,10 @@ impl<'a> CHIDLE2_W<'a> {
         self.variant(CHIDLE2_A::DAC)
     }
 }
+#[doc = "Field `CHIDLE3` reader - Channel IDLE configuration"]
+pub type CHIDLE3_R = crate::FieldReader<u8, CHIDLE3_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE3_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -287,8 +292,6 @@ impl From<CHIDLE3_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE3` reader - Channel IDLE configuration"]
-pub type CHIDLE3_R = crate::FieldReader<u8, CHIDLE3_A>;
 impl CHIDLE3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -323,8 +326,9 @@ impl CHIDLE3_R {
     }
 }
 #[doc = "Field `CHIDLE3` writer - Channel IDLE configuration"]
-pub type CHIDLE3_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE3_A, 2, 6>;
-impl<'a> CHIDLE3_W<'a> {
+pub type CHIDLE3_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE3_A, 2, O>;
+impl<'a, const O: u8> CHIDLE3_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -346,8 +350,10 @@ impl<'a> CHIDLE3_W<'a> {
         self.variant(CHIDLE3_A::DAC)
     }
 }
+#[doc = "Field `CHIDLE4` reader - Channel IDLE configuration"]
+pub type CHIDLE4_R = crate::FieldReader<u8, CHIDLE4_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE4_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -365,8 +371,6 @@ impl From<CHIDLE4_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE4` reader - Channel IDLE configuration"]
-pub type CHIDLE4_R = crate::FieldReader<u8, CHIDLE4_A>;
 impl CHIDLE4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -401,8 +405,9 @@ impl CHIDLE4_R {
     }
 }
 #[doc = "Field `CHIDLE4` writer - Channel IDLE configuration"]
-pub type CHIDLE4_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE4_A, 2, 8>;
-impl<'a> CHIDLE4_W<'a> {
+pub type CHIDLE4_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE4_A, 2, O>;
+impl<'a, const O: u8> CHIDLE4_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -424,8 +429,10 @@ impl<'a> CHIDLE4_W<'a> {
         self.variant(CHIDLE4_A::DAC)
     }
 }
+#[doc = "Field `CHIDLE5` reader - Channel IDLE configuration"]
+pub type CHIDLE5_R = crate::FieldReader<u8, CHIDLE5_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE5_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -443,8 +450,6 @@ impl From<CHIDLE5_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE5` reader - Channel IDLE configuration"]
-pub type CHIDLE5_R = crate::FieldReader<u8, CHIDLE5_A>;
 impl CHIDLE5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -479,8 +484,9 @@ impl CHIDLE5_R {
     }
 }
 #[doc = "Field `CHIDLE5` writer - Channel IDLE configuration"]
-pub type CHIDLE5_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE5_A, 2, 10>;
-impl<'a> CHIDLE5_W<'a> {
+pub type CHIDLE5_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE5_A, 2, O>;
+impl<'a, const O: u8> CHIDLE5_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -502,8 +508,10 @@ impl<'a> CHIDLE5_W<'a> {
         self.variant(CHIDLE5_A::DAC)
     }
 }
+#[doc = "Field `CHIDLE6` reader - Channel IDLE configuration"]
+pub type CHIDLE6_R = crate::FieldReader<u8, CHIDLE6_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE6_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -521,8 +529,6 @@ impl From<CHIDLE6_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE6` reader - Channel IDLE configuration"]
-pub type CHIDLE6_R = crate::FieldReader<u8, CHIDLE6_A>;
 impl CHIDLE6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -557,8 +563,9 @@ impl CHIDLE6_R {
     }
 }
 #[doc = "Field `CHIDLE6` writer - Channel IDLE configuration"]
-pub type CHIDLE6_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE6_A, 2, 12>;
-impl<'a> CHIDLE6_W<'a> {
+pub type CHIDLE6_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE6_A, 2, O>;
+impl<'a, const O: u8> CHIDLE6_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -580,8 +587,10 @@ impl<'a> CHIDLE6_W<'a> {
         self.variant(CHIDLE6_A::DAC)
     }
 }
+#[doc = "Field `CHIDLE7` reader - Channel IDLE configuration"]
+pub type CHIDLE7_R = crate::FieldReader<u8, CHIDLE7_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE7_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -599,8 +608,6 @@ impl From<CHIDLE7_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE7` reader - Channel IDLE configuration"]
-pub type CHIDLE7_R = crate::FieldReader<u8, CHIDLE7_A>;
 impl CHIDLE7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -635,8 +642,9 @@ impl CHIDLE7_R {
     }
 }
 #[doc = "Field `CHIDLE7` writer - Channel IDLE configuration"]
-pub type CHIDLE7_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE7_A, 2, 14>;
-impl<'a> CHIDLE7_W<'a> {
+pub type CHIDLE7_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE7_A, 2, O>;
+impl<'a, const O: u8> CHIDLE7_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -658,8 +666,10 @@ impl<'a> CHIDLE7_W<'a> {
         self.variant(CHIDLE7_A::DAC)
     }
 }
+#[doc = "Field `CHIDLE8` reader - Channel IDLE configuration"]
+pub type CHIDLE8_R = crate::FieldReader<u8, CHIDLE8_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE8_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -677,8 +687,6 @@ impl From<CHIDLE8_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE8` reader - Channel IDLE configuration"]
-pub type CHIDLE8_R = crate::FieldReader<u8, CHIDLE8_A>;
 impl CHIDLE8_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -713,8 +721,9 @@ impl CHIDLE8_R {
     }
 }
 #[doc = "Field `CHIDLE8` writer - Channel IDLE configuration"]
-pub type CHIDLE8_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE8_A, 2, 16>;
-impl<'a> CHIDLE8_W<'a> {
+pub type CHIDLE8_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE8_A, 2, O>;
+impl<'a, const O: u8> CHIDLE8_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -736,8 +745,10 @@ impl<'a> CHIDLE8_W<'a> {
         self.variant(CHIDLE8_A::DAC)
     }
 }
+#[doc = "Field `CHIDLE9` reader - Channel IDLE configuration"]
+pub type CHIDLE9_R = crate::FieldReader<u8, CHIDLE9_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE9_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -755,8 +766,6 @@ impl From<CHIDLE9_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE9` reader - Channel IDLE configuration"]
-pub type CHIDLE9_R = crate::FieldReader<u8, CHIDLE9_A>;
 impl CHIDLE9_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -791,8 +800,9 @@ impl CHIDLE9_R {
     }
 }
 #[doc = "Field `CHIDLE9` writer - Channel IDLE configuration"]
-pub type CHIDLE9_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE9_A, 2, 18>;
-impl<'a> CHIDLE9_W<'a> {
+pub type CHIDLE9_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE9_A, 2, O>;
+impl<'a, const O: u8> CHIDLE9_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -814,8 +824,10 @@ impl<'a> CHIDLE9_W<'a> {
         self.variant(CHIDLE9_A::DAC)
     }
 }
+#[doc = "Field `CHIDLE10` reader - Channel IDLE configuration"]
+pub type CHIDLE10_R = crate::FieldReader<u8, CHIDLE10_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE10_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -833,8 +845,6 @@ impl From<CHIDLE10_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE10` reader - Channel IDLE configuration"]
-pub type CHIDLE10_R = crate::FieldReader<u8, CHIDLE10_A>;
 impl CHIDLE10_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -869,8 +879,9 @@ impl CHIDLE10_R {
     }
 }
 #[doc = "Field `CHIDLE10` writer - Channel IDLE configuration"]
-pub type CHIDLE10_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE10_A, 2, 20>;
-impl<'a> CHIDLE10_W<'a> {
+pub type CHIDLE10_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE10_A, 2, O>;
+impl<'a, const O: u8> CHIDLE10_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -892,8 +903,10 @@ impl<'a> CHIDLE10_W<'a> {
         self.variant(CHIDLE10_A::DAC)
     }
 }
+#[doc = "Field `CHIDLE11` reader - Channel IDLE configuration"]
+pub type CHIDLE11_R = crate::FieldReader<u8, CHIDLE11_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE11_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -911,8 +924,6 @@ impl From<CHIDLE11_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE11` reader - Channel IDLE configuration"]
-pub type CHIDLE11_R = crate::FieldReader<u8, CHIDLE11_A>;
 impl CHIDLE11_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -947,8 +958,9 @@ impl CHIDLE11_R {
     }
 }
 #[doc = "Field `CHIDLE11` writer - Channel IDLE configuration"]
-pub type CHIDLE11_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE11_A, 2, 22>;
-impl<'a> CHIDLE11_W<'a> {
+pub type CHIDLE11_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE11_A, 2, O>;
+impl<'a, const O: u8> CHIDLE11_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -970,8 +982,10 @@ impl<'a> CHIDLE11_W<'a> {
         self.variant(CHIDLE11_A::DAC)
     }
 }
+#[doc = "Field `CHIDLE12` reader - Channel IDLE configuration"]
+pub type CHIDLE12_R = crate::FieldReader<u8, CHIDLE12_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE12_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -989,8 +1003,6 @@ impl From<CHIDLE12_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE12` reader - Channel IDLE configuration"]
-pub type CHIDLE12_R = crate::FieldReader<u8, CHIDLE12_A>;
 impl CHIDLE12_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -1025,8 +1037,9 @@ impl CHIDLE12_R {
     }
 }
 #[doc = "Field `CHIDLE12` writer - Channel IDLE configuration"]
-pub type CHIDLE12_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE12_A, 2, 24>;
-impl<'a> CHIDLE12_W<'a> {
+pub type CHIDLE12_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE12_A, 2, O>;
+impl<'a, const O: u8> CHIDLE12_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -1048,8 +1061,10 @@ impl<'a> CHIDLE12_W<'a> {
         self.variant(CHIDLE12_A::DAC)
     }
 }
+#[doc = "Field `CHIDLE13` reader - Channel IDLE configuration"]
+pub type CHIDLE13_R = crate::FieldReader<u8, CHIDLE13_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE13_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -1067,8 +1082,6 @@ impl From<CHIDLE13_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE13` reader - Channel IDLE configuration"]
-pub type CHIDLE13_R = crate::FieldReader<u8, CHIDLE13_A>;
 impl CHIDLE13_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -1103,8 +1116,9 @@ impl CHIDLE13_R {
     }
 }
 #[doc = "Field `CHIDLE13` writer - Channel IDLE configuration"]
-pub type CHIDLE13_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE13_A, 2, 26>;
-impl<'a> CHIDLE13_W<'a> {
+pub type CHIDLE13_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE13_A, 2, O>;
+impl<'a, const O: u8> CHIDLE13_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -1126,8 +1140,10 @@ impl<'a> CHIDLE13_W<'a> {
         self.variant(CHIDLE13_A::DAC)
     }
 }
+#[doc = "Field `CHIDLE14` reader - Channel IDLE configuration"]
+pub type CHIDLE14_R = crate::FieldReader<u8, CHIDLE14_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE14_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -1145,8 +1161,6 @@ impl From<CHIDLE14_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE14` reader - Channel IDLE configuration"]
-pub type CHIDLE14_R = crate::FieldReader<u8, CHIDLE14_A>;
 impl CHIDLE14_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -1181,8 +1195,9 @@ impl CHIDLE14_R {
     }
 }
 #[doc = "Field `CHIDLE14` writer - Channel IDLE configuration"]
-pub type CHIDLE14_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE14_A, 2, 28>;
-impl<'a> CHIDLE14_W<'a> {
+pub type CHIDLE14_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE14_A, 2, O>;
+impl<'a, const O: u8> CHIDLE14_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -1204,8 +1219,10 @@ impl<'a> CHIDLE14_W<'a> {
         self.variant(CHIDLE14_A::DAC)
     }
 }
+#[doc = "Field `CHIDLE15` reader - Channel IDLE configuration"]
+pub type CHIDLE15_R = crate::FieldReader<u8, CHIDLE15_A>;
 #[doc = "Channel IDLE configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHIDLE15_A {
     #[doc = "0: Channel output is disabled in idle phase"]
@@ -1223,8 +1240,6 @@ impl From<CHIDLE15_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHIDLE15` reader - Channel IDLE configuration"]
-pub type CHIDLE15_R = crate::FieldReader<u8, CHIDLE15_A>;
 impl CHIDLE15_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -1259,8 +1274,9 @@ impl CHIDLE15_R {
     }
 }
 #[doc = "Field `CHIDLE15` writer - Channel IDLE configuration"]
-pub type CHIDLE15_W<'a> = crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE15_A, 2, 30>;
-impl<'a> CHIDLE15_W<'a> {
+pub type CHIDLE15_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDLECONF_SPEC, u8, CHIDLE15_A, 2, O>;
+impl<'a, const O: u8> CHIDLE15_W<'a, O> {
     #[doc = "Channel output is disabled in idle phase"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -1367,82 +1383,98 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle0(&mut self) -> CHIDLE0_W {
+    #[must_use]
+    pub fn chidle0(&mut self) -> CHIDLE0_W<0> {
         CHIDLE0_W::new(self)
     }
     #[doc = "Bits 2:3 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle1(&mut self) -> CHIDLE1_W {
+    #[must_use]
+    pub fn chidle1(&mut self) -> CHIDLE1_W<2> {
         CHIDLE1_W::new(self)
     }
     #[doc = "Bits 4:5 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle2(&mut self) -> CHIDLE2_W {
+    #[must_use]
+    pub fn chidle2(&mut self) -> CHIDLE2_W<4> {
         CHIDLE2_W::new(self)
     }
     #[doc = "Bits 6:7 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle3(&mut self) -> CHIDLE3_W {
+    #[must_use]
+    pub fn chidle3(&mut self) -> CHIDLE3_W<6> {
         CHIDLE3_W::new(self)
     }
     #[doc = "Bits 8:9 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle4(&mut self) -> CHIDLE4_W {
+    #[must_use]
+    pub fn chidle4(&mut self) -> CHIDLE4_W<8> {
         CHIDLE4_W::new(self)
     }
     #[doc = "Bits 10:11 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle5(&mut self) -> CHIDLE5_W {
+    #[must_use]
+    pub fn chidle5(&mut self) -> CHIDLE5_W<10> {
         CHIDLE5_W::new(self)
     }
     #[doc = "Bits 12:13 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle6(&mut self) -> CHIDLE6_W {
+    #[must_use]
+    pub fn chidle6(&mut self) -> CHIDLE6_W<12> {
         CHIDLE6_W::new(self)
     }
     #[doc = "Bits 14:15 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle7(&mut self) -> CHIDLE7_W {
+    #[must_use]
+    pub fn chidle7(&mut self) -> CHIDLE7_W<14> {
         CHIDLE7_W::new(self)
     }
     #[doc = "Bits 16:17 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle8(&mut self) -> CHIDLE8_W {
+    #[must_use]
+    pub fn chidle8(&mut self) -> CHIDLE8_W<16> {
         CHIDLE8_W::new(self)
     }
     #[doc = "Bits 18:19 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle9(&mut self) -> CHIDLE9_W {
+    #[must_use]
+    pub fn chidle9(&mut self) -> CHIDLE9_W<18> {
         CHIDLE9_W::new(self)
     }
     #[doc = "Bits 20:21 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle10(&mut self) -> CHIDLE10_W {
+    #[must_use]
+    pub fn chidle10(&mut self) -> CHIDLE10_W<20> {
         CHIDLE10_W::new(self)
     }
     #[doc = "Bits 22:23 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle11(&mut self) -> CHIDLE11_W {
+    #[must_use]
+    pub fn chidle11(&mut self) -> CHIDLE11_W<22> {
         CHIDLE11_W::new(self)
     }
     #[doc = "Bits 24:25 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle12(&mut self) -> CHIDLE12_W {
+    #[must_use]
+    pub fn chidle12(&mut self) -> CHIDLE12_W<24> {
         CHIDLE12_W::new(self)
     }
     #[doc = "Bits 26:27 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle13(&mut self) -> CHIDLE13_W {
+    #[must_use]
+    pub fn chidle13(&mut self) -> CHIDLE13_W<26> {
         CHIDLE13_W::new(self)
     }
     #[doc = "Bits 28:29 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle14(&mut self) -> CHIDLE14_W {
+    #[must_use]
+    pub fn chidle14(&mut self) -> CHIDLE14_W<28> {
         CHIDLE14_W::new(self)
     }
     #[doc = "Bits 30:31 - Channel IDLE configuration"]
     #[inline(always)]
-    pub fn chidle15(&mut self) -> CHIDLE15_W {
+    #[must_use]
+    pub fn chidle15(&mut self) -> CHIDLE15_W<30> {
         CHIDLE15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -1464,11 +1496,10 @@ impl crate::Readable for IDLECONF_SPEC {
 #[doc = "`write(|w| ..)` method takes [idleconf::W](W) writer structure"]
 impl crate::Writable for IDLECONF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IDLECONF to value 0"]
 impl crate::Resettable for IDLECONF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

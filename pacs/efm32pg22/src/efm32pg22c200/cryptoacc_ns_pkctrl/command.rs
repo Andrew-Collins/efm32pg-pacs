@@ -37,9 +37,11 @@ impl From<crate::W<COMMAND_SPEC>> for W {
 #[doc = "Field `OPERATION` reader - Type of Operation"]
 pub type OPERATION_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OPERATION` writer - Type of Operation"]
-pub type OPERATION_W<'a> = crate::FieldWriter<'a, u32, COMMAND_SPEC, u8, u8, 7, 0>;
+pub type OPERATION_W<'a, const O: u8> = crate::FieldWriter<'a, u32, COMMAND_SPEC, u8, u8, 7, O>;
+#[doc = "Field `FIELD` reader - Field"]
+pub type FIELD_R = crate::BitReader<FIELD_A>;
 #[doc = "Field\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIELD_A {
     #[doc = "0: Field is GF(p)"]
     GFP = 0,
@@ -52,8 +54,6 @@ impl From<FIELD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIELD` reader - Field"]
-pub type FIELD_R = crate::BitReader<FIELD_A>;
 impl FIELD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -75,8 +75,8 @@ impl FIELD_R {
     }
 }
 #[doc = "Field `FIELD` writer - Field"]
-pub type FIELD_W<'a> = crate::BitWriter<'a, u32, COMMAND_SPEC, FIELD_A, 7>;
-impl<'a> FIELD_W<'a> {
+pub type FIELD_W<'a, const O: u8> = crate::BitWriter<'a, u32, COMMAND_SPEC, FIELD_A, O>;
+impl<'a, const O: u8> FIELD_W<'a, O> {
     #[doc = "Field is GF(p)"]
     #[inline(always)]
     pub fn gfp(self) -> &'a mut W {
@@ -91,9 +91,11 @@ impl<'a> FIELD_W<'a> {
 #[doc = "Field `SIZE` reader - Size of Operands in data memory"]
 pub type SIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SIZE` writer - Size of Operands in data memory"]
-pub type SIZE_W<'a> = crate::FieldWriter<'a, u32, COMMAND_SPEC, u16, u16, 11, 8>;
+pub type SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, COMMAND_SPEC, u16, u16, 11, O>;
+#[doc = "Field `SELCURVE` reader - Select Curve"]
+pub type SELCURVE_R = crate::FieldReader<u8, SELCURVE_A>;
 #[doc = "Select Curve\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SELCURVE_A {
     #[doc = "0: No acceleration"]
@@ -109,8 +111,6 @@ impl From<SELCURVE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SELCURVE` reader - Select Curve"]
-pub type SELCURVE_R = crate::FieldReader<u8, SELCURVE_A>;
 impl SELCURVE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -139,8 +139,9 @@ impl SELCURVE_R {
     }
 }
 #[doc = "Field `SELCURVE` writer - Select Curve"]
-pub type SELCURVE_W<'a> = crate::FieldWriter<'a, u32, COMMAND_SPEC, u8, SELCURVE_A, 3, 20>;
-impl<'a> SELCURVE_W<'a> {
+pub type SELCURVE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, COMMAND_SPEC, u8, SELCURVE_A, 3, O>;
+impl<'a, const O: u8> SELCURVE_W<'a, O> {
     #[doc = "No acceleration"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -160,9 +161,11 @@ impl<'a> SELCURVE_W<'a> {
 #[doc = "Field `EDWARDS` reader - Edwards Curve Enable"]
 pub type EDWARDS_R = crate::BitReader<bool>;
 #[doc = "Field `EDWARDS` writer - Edwards Curve Enable"]
-pub type EDWARDS_W<'a> = crate::BitWriter<'a, u32, COMMAND_SPEC, bool, 26>;
+pub type EDWARDS_W<'a, const O: u8> = crate::BitWriter<'a, u32, COMMAND_SPEC, bool, O>;
+#[doc = "Field `BUFSEL` reader - Buffer Select"]
+pub type BUFSEL_R = crate::BitReader<BUFSEL_A>;
 #[doc = "Buffer Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BUFSEL_A {
     #[doc = "0: use data in data memory 0"]
     MEM0 = 0,
@@ -173,8 +176,6 @@ impl From<BUFSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BUFSEL` reader - Buffer Select"]
-pub type BUFSEL_R = crate::BitReader<BUFSEL_A>;
 impl BUFSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -191,16 +192,18 @@ impl BUFSEL_R {
     }
 }
 #[doc = "Field `BUFSEL` writer - Buffer Select"]
-pub type BUFSEL_W<'a> = crate::BitWriter<'a, u32, COMMAND_SPEC, BUFSEL_A, 27>;
-impl<'a> BUFSEL_W<'a> {
+pub type BUFSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, COMMAND_SPEC, BUFSEL_A, O>;
+impl<'a, const O: u8> BUFSEL_W<'a, O> {
     #[doc = "use data in data memory 0"]
     #[inline(always)]
     pub fn mem0(self) -> &'a mut W {
         self.variant(BUFSEL_A::MEM0)
     }
 }
+#[doc = "Field `SWAPBYTES` reader - Swap bytes"]
+pub type SWAPBYTES_R = crate::BitReader<SWAPBYTES_A>;
 #[doc = "Swap bytes\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SWAPBYTES_A {
     #[doc = "0: Native format (little endian)"]
     NATIVE = 0,
@@ -213,8 +216,6 @@ impl From<SWAPBYTES_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SWAPBYTES` reader - Swap bytes"]
-pub type SWAPBYTES_R = crate::BitReader<SWAPBYTES_A>;
 impl SWAPBYTES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -236,8 +237,8 @@ impl SWAPBYTES_R {
     }
 }
 #[doc = "Field `SWAPBYTES` writer - Swap bytes"]
-pub type SWAPBYTES_W<'a> = crate::BitWriter<'a, u32, COMMAND_SPEC, SWAPBYTES_A, 28>;
-impl<'a> SWAPBYTES_W<'a> {
+pub type SWAPBYTES_W<'a, const O: u8> = crate::BitWriter<'a, u32, COMMAND_SPEC, SWAPBYTES_A, O>;
+impl<'a, const O: u8> SWAPBYTES_W<'a, O> {
     #[doc = "Native format (little endian)"]
     #[inline(always)]
     pub fn native(self) -> &'a mut W {
@@ -252,13 +253,15 @@ impl<'a> SWAPBYTES_W<'a> {
 #[doc = "Field `FLAGA` reader - Flag A"]
 pub type FLAGA_R = crate::BitReader<bool>;
 #[doc = "Field `FLAGA` writer - Flag A"]
-pub type FLAGA_W<'a> = crate::BitWriter<'a, u32, COMMAND_SPEC, bool, 29>;
+pub type FLAGA_W<'a, const O: u8> = crate::BitWriter<'a, u32, COMMAND_SPEC, bool, O>;
 #[doc = "Field `FLAGB` reader - Flag B"]
 pub type FLAGB_R = crate::BitReader<bool>;
 #[doc = "Field `FLAGB` writer - Flag B"]
-pub type FLAGB_W<'a> = crate::BitWriter<'a, u32, COMMAND_SPEC, bool, 30>;
+pub type FLAGB_W<'a, const O: u8> = crate::BitWriter<'a, u32, COMMAND_SPEC, bool, O>;
+#[doc = "Field `CALCR2` reader - Calculate R2"]
+pub type CALCR2_R = crate::BitReader<CALCR2_A>;
 #[doc = "Calculate R2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CALCR2_A {
     #[doc = "0: don't recalculate R² mod N"]
     FALSE = 0,
@@ -271,8 +274,6 @@ impl From<CALCR2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CALCR2` reader - Calculate R2"]
-pub type CALCR2_R = crate::BitReader<CALCR2_A>;
 impl CALCR2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -294,8 +295,8 @@ impl CALCR2_R {
     }
 }
 #[doc = "Field `CALCR2` writer - Calculate R2"]
-pub type CALCR2_W<'a> = crate::BitWriter<'a, u32, COMMAND_SPEC, CALCR2_A, 31>;
-impl<'a> CALCR2_W<'a> {
+pub type CALCR2_W<'a, const O: u8> = crate::BitWriter<'a, u32, COMMAND_SPEC, CALCR2_A, O>;
+impl<'a, const O: u8> CALCR2_W<'a, O> {
     #[doc = "don't recalculate R² mod N"]
     #[inline(always)]
     pub fn false_(self) -> &'a mut W {
@@ -362,52 +363,62 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - Type of Operation"]
     #[inline(always)]
-    pub fn operation(&mut self) -> OPERATION_W {
+    #[must_use]
+    pub fn operation(&mut self) -> OPERATION_W<0> {
         OPERATION_W::new(self)
     }
     #[doc = "Bit 7 - Field"]
     #[inline(always)]
-    pub fn field(&mut self) -> FIELD_W {
+    #[must_use]
+    pub fn field(&mut self) -> FIELD_W<7> {
         FIELD_W::new(self)
     }
     #[doc = "Bits 8:18 - Size of Operands in data memory"]
     #[inline(always)]
-    pub fn size(&mut self) -> SIZE_W {
+    #[must_use]
+    pub fn size(&mut self) -> SIZE_W<8> {
         SIZE_W::new(self)
     }
     #[doc = "Bits 20:22 - Select Curve"]
     #[inline(always)]
-    pub fn selcurve(&mut self) -> SELCURVE_W {
+    #[must_use]
+    pub fn selcurve(&mut self) -> SELCURVE_W<20> {
         SELCURVE_W::new(self)
     }
     #[doc = "Bit 26 - Edwards Curve Enable"]
     #[inline(always)]
-    pub fn edwards(&mut self) -> EDWARDS_W {
+    #[must_use]
+    pub fn edwards(&mut self) -> EDWARDS_W<26> {
         EDWARDS_W::new(self)
     }
     #[doc = "Bit 27 - Buffer Select"]
     #[inline(always)]
-    pub fn bufsel(&mut self) -> BUFSEL_W {
+    #[must_use]
+    pub fn bufsel(&mut self) -> BUFSEL_W<27> {
         BUFSEL_W::new(self)
     }
     #[doc = "Bit 28 - Swap bytes"]
     #[inline(always)]
-    pub fn swapbytes(&mut self) -> SWAPBYTES_W {
+    #[must_use]
+    pub fn swapbytes(&mut self) -> SWAPBYTES_W<28> {
         SWAPBYTES_W::new(self)
     }
     #[doc = "Bit 29 - Flag A"]
     #[inline(always)]
-    pub fn flaga(&mut self) -> FLAGA_W {
+    #[must_use]
+    pub fn flaga(&mut self) -> FLAGA_W<29> {
         FLAGA_W::new(self)
     }
     #[doc = "Bit 30 - Flag B"]
     #[inline(always)]
-    pub fn flagb(&mut self) -> FLAGB_W {
+    #[must_use]
+    pub fn flagb(&mut self) -> FLAGB_W<30> {
         FLAGB_W::new(self)
     }
     #[doc = "Bit 31 - Calculate R2"]
     #[inline(always)]
-    pub fn calcr2(&mut self) -> CALCR2_W {
+    #[must_use]
+    pub fn calcr2(&mut self) -> CALCR2_W<31> {
         CALCR2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -429,11 +440,10 @@ impl crate::Readable for COMMAND_SPEC {
 #[doc = "`write(|w| ..)` method takes [command::W](W) writer structure"]
 impl crate::Writable for COMMAND_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets COMMAND to value 0"]
 impl crate::Resettable for COMMAND_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

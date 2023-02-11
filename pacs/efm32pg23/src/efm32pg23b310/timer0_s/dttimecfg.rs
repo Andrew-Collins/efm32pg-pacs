@@ -37,15 +37,15 @@ impl From<crate::W<DTTIMECFG_SPEC>> for W {
 #[doc = "Field `DTPRESC` reader - DTI Prescaler Setting"]
 pub type DTPRESC_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DTPRESC` writer - DTI Prescaler Setting"]
-pub type DTPRESC_W<'a> = crate::FieldWriter<'a, u32, DTTIMECFG_SPEC, u16, u16, 10, 0>;
+pub type DTPRESC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTTIMECFG_SPEC, u16, u16, 10, O>;
 #[doc = "Field `DTRISET` reader - DTI Rise-time"]
 pub type DTRISET_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DTRISET` writer - DTI Rise-time"]
-pub type DTRISET_W<'a> = crate::FieldWriter<'a, u32, DTTIMECFG_SPEC, u8, u8, 6, 10>;
+pub type DTRISET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTTIMECFG_SPEC, u8, u8, 6, O>;
 #[doc = "Field `DTFALLT` reader - DTI Fall-time"]
 pub type DTFALLT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DTFALLT` writer - DTI Fall-time"]
-pub type DTFALLT_W<'a> = crate::FieldWriter<'a, u32, DTTIMECFG_SPEC, u8, u8, 6, 16>;
+pub type DTFALLT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTTIMECFG_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:9 - DTI Prescaler Setting"]
     #[inline(always)]
@@ -66,17 +66,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - DTI Prescaler Setting"]
     #[inline(always)]
-    pub fn dtpresc(&mut self) -> DTPRESC_W {
+    #[must_use]
+    pub fn dtpresc(&mut self) -> DTPRESC_W<0> {
         DTPRESC_W::new(self)
     }
     #[doc = "Bits 10:15 - DTI Rise-time"]
     #[inline(always)]
-    pub fn dtriset(&mut self) -> DTRISET_W {
+    #[must_use]
+    pub fn dtriset(&mut self) -> DTRISET_W<10> {
         DTRISET_W::new(self)
     }
     #[doc = "Bits 16:21 - DTI Fall-time"]
     #[inline(always)]
-    pub fn dtfallt(&mut self) -> DTFALLT_W {
+    #[must_use]
+    pub fn dtfallt(&mut self) -> DTFALLT_W<16> {
         DTFALLT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for DTTIMECFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [dttimecfg::W](W) writer structure"]
 impl crate::Writable for DTTIMECFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DTTIMECFG to value 0"]
 impl crate::Resettable for DTTIMECFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

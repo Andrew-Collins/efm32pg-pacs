@@ -37,11 +37,11 @@ impl From<crate::W<TEMPLIMITS_SPEC>> for W {
 #[doc = "Field `TEMPLOW` reader - Temp Low limit"]
 pub type TEMPLOW_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TEMPLOW` writer - Temp Low limit"]
-pub type TEMPLOW_W<'a> = crate::FieldWriter<'a, u32, TEMPLIMITS_SPEC, u16, u16, 9, 0>;
+pub type TEMPLOW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TEMPLIMITS_SPEC, u16, u16, 9, O>;
 #[doc = "Field `TEMPHIGH` reader - Temp High limit"]
 pub type TEMPHIGH_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TEMPHIGH` writer - Temp High limit"]
-pub type TEMPHIGH_W<'a> = crate::FieldWriter<'a, u32, TEMPLIMITS_SPEC, u16, u16, 9, 16>;
+pub type TEMPHIGH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TEMPLIMITS_SPEC, u16, u16, 9, O>;
 impl R {
     #[doc = "Bits 0:8 - Temp Low limit"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:8 - Temp Low limit"]
     #[inline(always)]
-    pub fn templow(&mut self) -> TEMPLOW_W {
+    #[must_use]
+    pub fn templow(&mut self) -> TEMPLOW_W<0> {
         TEMPLOW_W::new(self)
     }
     #[doc = "Bits 16:24 - Temp High limit"]
     #[inline(always)]
-    pub fn temphigh(&mut self) -> TEMPHIGH_W {
+    #[must_use]
+    pub fn temphigh(&mut self) -> TEMPHIGH_W<16> {
         TEMPHIGH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for TEMPLIMITS_SPEC {
 #[doc = "`write(|w| ..)` method takes [templimits::W](W) writer structure"]
 impl crate::Writable for TEMPLIMITS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TEMPLIMITS to value 0x01ff_0000"]
 impl crate::Resettable for TEMPLIMITS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01ff_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x01ff_0000;
 }

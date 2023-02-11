@@ -37,11 +37,11 @@ impl From<crate::W<CFG1_SPEC>> for W {
 #[doc = "Field `PRESC` reader - Prescalar Setting for PDM sample"]
 pub type PRESC_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PRESC` writer - Prescalar Setting for PDM sample"]
-pub type PRESC_W<'a> = crate::FieldWriter<'a, u32, CFG1_SPEC, u16, u16, 10, 0>;
+pub type PRESC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG1_SPEC, u16, u16, 10, O>;
 #[doc = "Field `DLYMUXSEL` reader - Data delay buffer mux selection"]
 pub type DLYMUXSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DLYMUXSEL` writer - Data delay buffer mux selection"]
-pub type DLYMUXSEL_W<'a> = crate::FieldWriter<'a, u32, CFG1_SPEC, u8, u8, 2, 24>;
+pub type DLYMUXSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG1_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:9 - Prescalar Setting for PDM sample"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Prescalar Setting for PDM sample"]
     #[inline(always)]
-    pub fn presc(&mut self) -> PRESC_W {
+    #[must_use]
+    pub fn presc(&mut self) -> PRESC_W<0> {
         PRESC_W::new(self)
     }
     #[doc = "Bits 24:25 - Data delay buffer mux selection"]
     #[inline(always)]
-    pub fn dlymuxsel(&mut self) -> DLYMUXSEL_W {
+    #[must_use]
+    pub fn dlymuxsel(&mut self) -> DLYMUXSEL_W<24> {
         DLYMUXSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for CFG1_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg1::W](W) writer structure"]
 impl crate::Writable for CFG1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG1 to value 0"]
 impl crate::Resettable for CFG1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

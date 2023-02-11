@@ -82,8 +82,5 @@ impl crate::Readable for HFRCODPLLCAL8_SPEC {
 }
 #[doc = "`reset()` method sets HFRCODPLLCAL8 to value 0"]
 impl crate::Resettable for HFRCODPLLCAL8_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

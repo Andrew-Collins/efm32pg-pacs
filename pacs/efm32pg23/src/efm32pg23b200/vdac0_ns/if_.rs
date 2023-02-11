@@ -37,43 +37,43 @@ impl From<crate::W<IF_SPEC>> for W {
 #[doc = "Field `CH0CD` reader - CH0 Conversion Done Interrupt Flag"]
 pub type CH0CD_R = crate::BitReader<bool>;
 #[doc = "Field `CH0CD` writer - CH0 Conversion Done Interrupt Flag"]
-pub type CH0CD_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 0>;
+pub type CH0CD_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH1CD` reader - CH1 Conversion Done Interrupt Flag"]
 pub type CH1CD_R = crate::BitReader<bool>;
 #[doc = "Field `CH1CD` writer - CH1 Conversion Done Interrupt Flag"]
-pub type CH1CD_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 1>;
+pub type CH1CD_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH0OF` reader - CH0 Data Overflow Interrupt Flag"]
 pub type CH0OF_R = crate::BitReader<bool>;
 #[doc = "Field `CH0OF` writer - CH0 Data Overflow Interrupt Flag"]
-pub type CH0OF_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 4>;
+pub type CH0OF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH1OF` reader - CH1 Data Overflow Interrupt Flag"]
 pub type CH1OF_R = crate::BitReader<bool>;
 #[doc = "Field `CH1OF` writer - CH1 Data Overflow Interrupt Flag"]
-pub type CH1OF_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 5>;
+pub type CH1OF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH0UF` reader - CH0 Data Underflow Interrupt Flag"]
 pub type CH0UF_R = crate::BitReader<bool>;
 #[doc = "Field `CH0UF` writer - CH0 Data Underflow Interrupt Flag"]
-pub type CH0UF_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 8>;
+pub type CH0UF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH1UF` reader - CH1 Data Underflow Interrupt Flag"]
 pub type CH1UF_R = crate::BitReader<bool>;
 #[doc = "Field `CH1UF` writer - CH1 Data Underflow Interrupt Flag"]
-pub type CH1UF_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 9>;
+pub type CH1UF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `ABUSALLOCERR` reader - ABUS Port Allocation Error Flag"]
 pub type ABUSALLOCERR_R = crate::BitReader<bool>;
 #[doc = "Field `ABUSALLOCERR` writer - ABUS Port Allocation Error Flag"]
-pub type ABUSALLOCERR_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 18>;
+pub type ABUSALLOCERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH0DVL` reader - CH0 Data Valid Level Interrupt Flag"]
 pub type CH0DVL_R = crate::BitReader<bool>;
 #[doc = "Field `CH0DVL` writer - CH0 Data Valid Level Interrupt Flag"]
-pub type CH0DVL_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 20>;
+pub type CH0DVL_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH1DVL` reader - CH1 Data Valid Level Interrupt Flag"]
 pub type CH1DVL_R = crate::BitReader<bool>;
 #[doc = "Field `CH1DVL` writer - CH1 Data Valid Level Interrupt Flag"]
-pub type CH1DVL_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 21>;
+pub type CH1DVL_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `ABUSINPUTCONFLICT` reader - ABUS Input Conflict Error Flag"]
 pub type ABUSINPUTCONFLICT_R = crate::BitReader<bool>;
 #[doc = "Field `ABUSINPUTCONFLICT` writer - ABUS Input Conflict Error Flag"]
-pub type ABUSINPUTCONFLICT_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 26>;
+pub type ABUSINPUTCONFLICT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - CH0 Conversion Done Interrupt Flag"]
     #[inline(always)]
@@ -129,52 +129,62 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CH0 Conversion Done Interrupt Flag"]
     #[inline(always)]
-    pub fn ch0cd(&mut self) -> CH0CD_W {
+    #[must_use]
+    pub fn ch0cd(&mut self) -> CH0CD_W<0> {
         CH0CD_W::new(self)
     }
     #[doc = "Bit 1 - CH1 Conversion Done Interrupt Flag"]
     #[inline(always)]
-    pub fn ch1cd(&mut self) -> CH1CD_W {
+    #[must_use]
+    pub fn ch1cd(&mut self) -> CH1CD_W<1> {
         CH1CD_W::new(self)
     }
     #[doc = "Bit 4 - CH0 Data Overflow Interrupt Flag"]
     #[inline(always)]
-    pub fn ch0of(&mut self) -> CH0OF_W {
+    #[must_use]
+    pub fn ch0of(&mut self) -> CH0OF_W<4> {
         CH0OF_W::new(self)
     }
     #[doc = "Bit 5 - CH1 Data Overflow Interrupt Flag"]
     #[inline(always)]
-    pub fn ch1of(&mut self) -> CH1OF_W {
+    #[must_use]
+    pub fn ch1of(&mut self) -> CH1OF_W<5> {
         CH1OF_W::new(self)
     }
     #[doc = "Bit 8 - CH0 Data Underflow Interrupt Flag"]
     #[inline(always)]
-    pub fn ch0uf(&mut self) -> CH0UF_W {
+    #[must_use]
+    pub fn ch0uf(&mut self) -> CH0UF_W<8> {
         CH0UF_W::new(self)
     }
     #[doc = "Bit 9 - CH1 Data Underflow Interrupt Flag"]
     #[inline(always)]
-    pub fn ch1uf(&mut self) -> CH1UF_W {
+    #[must_use]
+    pub fn ch1uf(&mut self) -> CH1UF_W<9> {
         CH1UF_W::new(self)
     }
     #[doc = "Bit 18 - ABUS Port Allocation Error Flag"]
     #[inline(always)]
-    pub fn abusallocerr(&mut self) -> ABUSALLOCERR_W {
+    #[must_use]
+    pub fn abusallocerr(&mut self) -> ABUSALLOCERR_W<18> {
         ABUSALLOCERR_W::new(self)
     }
     #[doc = "Bit 20 - CH0 Data Valid Level Interrupt Flag"]
     #[inline(always)]
-    pub fn ch0dvl(&mut self) -> CH0DVL_W {
+    #[must_use]
+    pub fn ch0dvl(&mut self) -> CH0DVL_W<20> {
         CH0DVL_W::new(self)
     }
     #[doc = "Bit 21 - CH1 Data Valid Level Interrupt Flag"]
     #[inline(always)]
-    pub fn ch1dvl(&mut self) -> CH1DVL_W {
+    #[must_use]
+    pub fn ch1dvl(&mut self) -> CH1DVL_W<21> {
         CH1DVL_W::new(self)
     }
     #[doc = "Bit 26 - ABUS Input Conflict Error Flag"]
     #[inline(always)]
-    pub fn abusinputconflict(&mut self) -> ABUSINPUTCONFLICT_W {
+    #[must_use]
+    pub fn abusinputconflict(&mut self) -> ABUSINPUTCONFLICT_W<26> {
         ABUSINPUTCONFLICT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -196,11 +206,10 @@ impl crate::Readable for IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_::W](W) writer structure"]
 impl crate::Writable for IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

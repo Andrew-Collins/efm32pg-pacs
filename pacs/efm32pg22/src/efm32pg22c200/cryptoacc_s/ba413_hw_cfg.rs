@@ -14,23 +14,23 @@ impl From<crate::R<BA413_HW_CFG_SPEC>> for R {
     }
 }
 #[doc = "Field `g_HashMaskFunc` reader - Generic g_HashMaskFunc value"]
-pub type G_HASHMASKFUNC_R = crate::FieldReader<u8, u8>;
+pub type G_HASH_MASK_FUNC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `g_HashPadding` reader - Generic g_HashPadding value"]
-pub type G_HASHPADDING_R = crate::BitReader<bool>;
+pub type G_HASH_PADDING_R = crate::BitReader<bool>;
 #[doc = "Field `g_HMAC_enabled` reader - Generic g_HMAC_enabled value"]
 pub type G_HMAC_ENABLED_R = crate::BitReader<bool>;
 #[doc = "Field `g_HashVerifyDigest` reader - Generic g_HashVerifyDigest value"]
-pub type G_HASHVERIFYDIGEST_R = crate::BitReader<bool>;
+pub type G_HASH_VERIFY_DIGEST_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bits 0:6 - Generic g_HashMaskFunc value"]
     #[inline(always)]
-    pub fn g_hash_mask_func(&self) -> G_HASHMASKFUNC_R {
-        G_HASHMASKFUNC_R::new((self.bits & 0x7f) as u8)
+    pub fn g_hash_mask_func(&self) -> G_HASH_MASK_FUNC_R {
+        G_HASH_MASK_FUNC_R::new((self.bits & 0x7f) as u8)
     }
     #[doc = "Bit 16 - Generic g_HashPadding value"]
     #[inline(always)]
-    pub fn g_hash_padding(&self) -> G_HASHPADDING_R {
-        G_HASHPADDING_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn g_hash_padding(&self) -> G_HASH_PADDING_R {
+        G_HASH_PADDING_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Generic g_HMAC_enabled value"]
     #[inline(always)]
@@ -39,8 +39,8 @@ impl R {
     }
     #[doc = "Bit 18 - Generic g_HashVerifyDigest value"]
     #[inline(always)]
-    pub fn g_hash_verify_digest(&self) -> G_HASHVERIFYDIGEST_R {
-        G_HASHVERIFYDIGEST_R::new(((self.bits >> 18) & 1) != 0)
+    pub fn g_hash_verify_digest(&self) -> G_HASH_VERIFY_DIGEST_R {
+        G_HASH_VERIFY_DIGEST_R::new(((self.bits >> 18) & 1) != 0)
     }
 }
 #[doc = "No Description\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ba413_hw_cfg](index.html) module"]
@@ -54,8 +54,5 @@ impl crate::Readable for BA413_HW_CFG_SPEC {
 }
 #[doc = "`reset()` method sets BA413_HW_CFG to value 0x0003_007f"]
 impl crate::Resettable for BA413_HW_CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0003_007f
-    }
+    const RESET_VALUE: Self::Ux = 0x0003_007f;
 }

@@ -37,7 +37,7 @@ impl From<crate::W<RET12_REG_SPEC>> for W {
 #[doc = "Field `RETREG` reader - Latch based Retention register"]
 pub type RETREG_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `RETREG` writer - Latch based Retention register"]
-pub type RETREG_W<'a> = crate::FieldWriter<'a, u32, RET12_REG_SPEC, u32, u32, 32, 0>;
+pub type RETREG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RET12_REG_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Latch based Retention register"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Latch based Retention register"]
     #[inline(always)]
-    pub fn retreg(&mut self) -> RETREG_W {
+    #[must_use]
+    pub fn retreg(&mut self) -> RETREG_W<0> {
         RETREG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for RET12_REG_SPEC {
 #[doc = "`write(|w| ..)` method takes [ret12_reg::W](W) writer structure"]
 impl crate::Writable for RET12_REG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RET12_REG to value 0"]
 impl crate::Resettable for RET12_REG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

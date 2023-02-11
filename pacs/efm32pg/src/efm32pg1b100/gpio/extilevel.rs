@@ -37,27 +37,27 @@ impl From<crate::W<EXTILEVEL_SPEC>> for W {
 #[doc = "Field `EM4WU0` reader - EM4 Wake Up Level for EM4WU0 Pin"]
 pub type EM4WU0_R = crate::BitReader<bool>;
 #[doc = "Field `EM4WU0` writer - EM4 Wake Up Level for EM4WU0 Pin"]
-pub type EM4WU0_W<'a> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, 16>;
+pub type EM4WU0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, O>;
 #[doc = "Field `EM4WU1` reader - EM4 Wake Up Level for EM4WU1 Pin"]
 pub type EM4WU1_R = crate::BitReader<bool>;
 #[doc = "Field `EM4WU1` writer - EM4 Wake Up Level for EM4WU1 Pin"]
-pub type EM4WU1_W<'a> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, 17>;
+pub type EM4WU1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, O>;
 #[doc = "Field `EM4WU4` reader - EM4 Wake Up Level for EM4WU4 Pin"]
 pub type EM4WU4_R = crate::BitReader<bool>;
 #[doc = "Field `EM4WU4` writer - EM4 Wake Up Level for EM4WU4 Pin"]
-pub type EM4WU4_W<'a> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, 20>;
+pub type EM4WU4_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, O>;
 #[doc = "Field `EM4WU8` reader - EM4 Wake Up Level for EM4WU8 Pin"]
 pub type EM4WU8_R = crate::BitReader<bool>;
 #[doc = "Field `EM4WU8` writer - EM4 Wake Up Level for EM4WU8 Pin"]
-pub type EM4WU8_W<'a> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, 24>;
+pub type EM4WU8_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, O>;
 #[doc = "Field `EM4WU9` reader - EM4 Wake Up Level for EM4WU9 Pin"]
 pub type EM4WU9_R = crate::BitReader<bool>;
 #[doc = "Field `EM4WU9` writer - EM4 Wake Up Level for EM4WU9 Pin"]
-pub type EM4WU9_W<'a> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, 25>;
+pub type EM4WU9_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, O>;
 #[doc = "Field `EM4WU12` reader - EM4 Wake Up Level for EM4WU12 Pin"]
 pub type EM4WU12_R = crate::BitReader<bool>;
 #[doc = "Field `EM4WU12` writer - EM4 Wake Up Level for EM4WU12 Pin"]
-pub type EM4WU12_W<'a> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, 28>;
+pub type EM4WU12_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 16 - EM4 Wake Up Level for EM4WU0 Pin"]
     #[inline(always)]
@@ -93,32 +93,38 @@ impl R {
 impl W {
     #[doc = "Bit 16 - EM4 Wake Up Level for EM4WU0 Pin"]
     #[inline(always)]
-    pub fn em4wu0(&mut self) -> EM4WU0_W {
+    #[must_use]
+    pub fn em4wu0(&mut self) -> EM4WU0_W<16> {
         EM4WU0_W::new(self)
     }
     #[doc = "Bit 17 - EM4 Wake Up Level for EM4WU1 Pin"]
     #[inline(always)]
-    pub fn em4wu1(&mut self) -> EM4WU1_W {
+    #[must_use]
+    pub fn em4wu1(&mut self) -> EM4WU1_W<17> {
         EM4WU1_W::new(self)
     }
     #[doc = "Bit 20 - EM4 Wake Up Level for EM4WU4 Pin"]
     #[inline(always)]
-    pub fn em4wu4(&mut self) -> EM4WU4_W {
+    #[must_use]
+    pub fn em4wu4(&mut self) -> EM4WU4_W<20> {
         EM4WU4_W::new(self)
     }
     #[doc = "Bit 24 - EM4 Wake Up Level for EM4WU8 Pin"]
     #[inline(always)]
-    pub fn em4wu8(&mut self) -> EM4WU8_W {
+    #[must_use]
+    pub fn em4wu8(&mut self) -> EM4WU8_W<24> {
         EM4WU8_W::new(self)
     }
     #[doc = "Bit 25 - EM4 Wake Up Level for EM4WU9 Pin"]
     #[inline(always)]
-    pub fn em4wu9(&mut self) -> EM4WU9_W {
+    #[must_use]
+    pub fn em4wu9(&mut self) -> EM4WU9_W<25> {
         EM4WU9_W::new(self)
     }
     #[doc = "Bit 28 - EM4 Wake Up Level for EM4WU12 Pin"]
     #[inline(always)]
-    pub fn em4wu12(&mut self) -> EM4WU12_W {
+    #[must_use]
+    pub fn em4wu12(&mut self) -> EM4WU12_W<28> {
         EM4WU12_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -140,11 +146,10 @@ impl crate::Readable for EXTILEVEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [extilevel::W](W) writer structure"]
 impl crate::Writable for EXTILEVEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EXTILEVEL to value 0"]
 impl crate::Resettable for EXTILEVEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

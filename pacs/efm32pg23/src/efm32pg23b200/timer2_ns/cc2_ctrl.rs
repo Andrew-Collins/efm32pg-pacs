@@ -37,9 +37,11 @@ impl From<crate::W<CC2_CTRL_SPEC>> for W {
 #[doc = "Field `OUTINV` reader - Output Invert"]
 pub type OUTINV_R = crate::BitReader<bool>;
 #[doc = "Field `OUTINV` writer - Output Invert"]
-pub type OUTINV_W<'a> = crate::BitWriter<'a, u32, CC2_CTRL_SPEC, bool, 2>;
+pub type OUTINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CC2_CTRL_SPEC, bool, O>;
+#[doc = "Field `CMOA` reader - Compare Match Output Action"]
+pub type CMOA_R = crate::FieldReader<u8, CMOA_A>;
 #[doc = "Compare Match Output Action\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CMOA_A {
     #[doc = "0: No action on compare match"]
@@ -57,8 +59,6 @@ impl From<CMOA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CMOA` reader - Compare Match Output Action"]
-pub type CMOA_R = crate::FieldReader<u8, CMOA_A>;
 impl CMOA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -93,8 +93,8 @@ impl CMOA_R {
     }
 }
 #[doc = "Field `CMOA` writer - Compare Match Output Action"]
-pub type CMOA_W<'a> = crate::FieldWriterSafe<'a, u32, CC2_CTRL_SPEC, u8, CMOA_A, 2, 8>;
-impl<'a> CMOA_W<'a> {
+pub type CMOA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CC2_CTRL_SPEC, u8, CMOA_A, 2, O>;
+impl<'a, const O: u8> CMOA_W<'a, O> {
     #[doc = "No action on compare match"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -116,8 +116,10 @@ impl<'a> CMOA_W<'a> {
         self.variant(CMOA_A::SET)
     }
 }
+#[doc = "Field `COFOA` reader - Counter Overflow Output Action"]
+pub type COFOA_R = crate::FieldReader<u8, COFOA_A>;
 #[doc = "Counter Overflow Output Action\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum COFOA_A {
     #[doc = "0: No action on counter overflow"]
@@ -135,8 +137,6 @@ impl From<COFOA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `COFOA` reader - Counter Overflow Output Action"]
-pub type COFOA_R = crate::FieldReader<u8, COFOA_A>;
 impl COFOA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -171,8 +171,9 @@ impl COFOA_R {
     }
 }
 #[doc = "Field `COFOA` writer - Counter Overflow Output Action"]
-pub type COFOA_W<'a> = crate::FieldWriterSafe<'a, u32, CC2_CTRL_SPEC, u8, COFOA_A, 2, 10>;
-impl<'a> COFOA_W<'a> {
+pub type COFOA_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CC2_CTRL_SPEC, u8, COFOA_A, 2, O>;
+impl<'a, const O: u8> COFOA_W<'a, O> {
     #[doc = "No action on counter overflow"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -194,8 +195,10 @@ impl<'a> COFOA_W<'a> {
         self.variant(COFOA_A::SET)
     }
 }
+#[doc = "Field `CUFOA` reader - Counter Underflow Output Action"]
+pub type CUFOA_R = crate::FieldReader<u8, CUFOA_A>;
 #[doc = "Counter Underflow Output Action\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CUFOA_A {
     #[doc = "0: No action on counter underflow"]
@@ -213,8 +216,6 @@ impl From<CUFOA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CUFOA` reader - Counter Underflow Output Action"]
-pub type CUFOA_R = crate::FieldReader<u8, CUFOA_A>;
 impl CUFOA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -249,8 +250,9 @@ impl CUFOA_R {
     }
 }
 #[doc = "Field `CUFOA` writer - Counter Underflow Output Action"]
-pub type CUFOA_W<'a> = crate::FieldWriterSafe<'a, u32, CC2_CTRL_SPEC, u8, CUFOA_A, 2, 12>;
-impl<'a> CUFOA_W<'a> {
+pub type CUFOA_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CC2_CTRL_SPEC, u8, CUFOA_A, 2, O>;
+impl<'a, const O: u8> CUFOA_W<'a, O> {
     #[doc = "No action on counter underflow"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -272,8 +274,10 @@ impl<'a> CUFOA_W<'a> {
         self.variant(CUFOA_A::SET)
     }
 }
+#[doc = "Field `ICEDGE` reader - Input Capture Edge Select"]
+pub type ICEDGE_R = crate::FieldReader<u8, ICEDGE_A>;
 #[doc = "Input Capture Edge Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ICEDGE_A {
     #[doc = "0: Rising edges detected"]
@@ -291,8 +295,6 @@ impl From<ICEDGE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ICEDGE` reader - Input Capture Edge Select"]
-pub type ICEDGE_R = crate::FieldReader<u8, ICEDGE_A>;
 impl ICEDGE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -327,8 +329,9 @@ impl ICEDGE_R {
     }
 }
 #[doc = "Field `ICEDGE` writer - Input Capture Edge Select"]
-pub type ICEDGE_W<'a> = crate::FieldWriterSafe<'a, u32, CC2_CTRL_SPEC, u8, ICEDGE_A, 2, 24>;
-impl<'a> ICEDGE_W<'a> {
+pub type ICEDGE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CC2_CTRL_SPEC, u8, ICEDGE_A, 2, O>;
+impl<'a, const O: u8> ICEDGE_W<'a, O> {
     #[doc = "Rising edges detected"]
     #[inline(always)]
     pub fn rising(self) -> &'a mut W {
@@ -350,8 +353,10 @@ impl<'a> ICEDGE_W<'a> {
         self.variant(ICEDGE_A::NONE)
     }
 }
+#[doc = "Field `ICEVCTRL` reader - Input Capture Event Control"]
+pub type ICEVCTRL_R = crate::FieldReader<u8, ICEVCTRL_A>;
 #[doc = "Input Capture Event Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ICEVCTRL_A {
     #[doc = "0: PRS output pulse and interrupt flag set on every capture"]
@@ -369,8 +374,6 @@ impl From<ICEVCTRL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ICEVCTRL` reader - Input Capture Event Control"]
-pub type ICEVCTRL_R = crate::FieldReader<u8, ICEVCTRL_A>;
 impl ICEVCTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -405,8 +408,9 @@ impl ICEVCTRL_R {
     }
 }
 #[doc = "Field `ICEVCTRL` writer - Input Capture Event Control"]
-pub type ICEVCTRL_W<'a> = crate::FieldWriterSafe<'a, u32, CC2_CTRL_SPEC, u8, ICEVCTRL_A, 2, 26>;
-impl<'a> ICEVCTRL_W<'a> {
+pub type ICEVCTRL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CC2_CTRL_SPEC, u8, ICEVCTRL_A, 2, O>;
+impl<'a, const O: u8> ICEVCTRL_W<'a, O> {
     #[doc = "PRS output pulse and interrupt flag set on every capture"]
     #[inline(always)]
     pub fn everyedge(self) -> &'a mut W {
@@ -463,32 +467,38 @@ impl R {
 impl W {
     #[doc = "Bit 2 - Output Invert"]
     #[inline(always)]
-    pub fn outinv(&mut self) -> OUTINV_W {
+    #[must_use]
+    pub fn outinv(&mut self) -> OUTINV_W<2> {
         OUTINV_W::new(self)
     }
     #[doc = "Bits 8:9 - Compare Match Output Action"]
     #[inline(always)]
-    pub fn cmoa(&mut self) -> CMOA_W {
+    #[must_use]
+    pub fn cmoa(&mut self) -> CMOA_W<8> {
         CMOA_W::new(self)
     }
     #[doc = "Bits 10:11 - Counter Overflow Output Action"]
     #[inline(always)]
-    pub fn cofoa(&mut self) -> COFOA_W {
+    #[must_use]
+    pub fn cofoa(&mut self) -> COFOA_W<10> {
         COFOA_W::new(self)
     }
     #[doc = "Bits 12:13 - Counter Underflow Output Action"]
     #[inline(always)]
-    pub fn cufoa(&mut self) -> CUFOA_W {
+    #[must_use]
+    pub fn cufoa(&mut self) -> CUFOA_W<12> {
         CUFOA_W::new(self)
     }
     #[doc = "Bits 24:25 - Input Capture Edge Select"]
     #[inline(always)]
-    pub fn icedge(&mut self) -> ICEDGE_W {
+    #[must_use]
+    pub fn icedge(&mut self) -> ICEDGE_W<24> {
         ICEDGE_W::new(self)
     }
     #[doc = "Bits 26:27 - Input Capture Event Control"]
     #[inline(always)]
-    pub fn icevctrl(&mut self) -> ICEVCTRL_W {
+    #[must_use]
+    pub fn icevctrl(&mut self) -> ICEVCTRL_W<26> {
         ICEVCTRL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -510,11 +520,10 @@ impl crate::Readable for CC2_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [cc2_ctrl::W](W) writer structure"]
 impl crate::Writable for CC2_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CC2_CTRL to value 0"]
 impl crate::Resettable for CC2_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

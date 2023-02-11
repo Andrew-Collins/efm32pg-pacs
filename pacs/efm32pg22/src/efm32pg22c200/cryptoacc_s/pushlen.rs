@@ -37,24 +37,24 @@ impl From<crate::W<PUSHLEN_SPEC>> for W {
 #[doc = "Field `LENGTH` reader - Start address of data block"]
 pub type LENGTH_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `LENGTH` writer - Start address of data block"]
-pub type LENGTH_W<'a> = crate::FieldWriter<'a, u32, PUSHLEN_SPEC, u32, u32, 28, 0>;
+pub type LENGTH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PUSHLEN_SPEC, u32, u32, 28, O>;
 #[doc = "Field `CONSTADDR` reader - Constant address"]
 pub type CONSTADDR_R = crate::BitReader<bool>;
 #[doc = "Field `CONSTADDR` writer - Constant address"]
-pub type CONSTADDR_W<'a> = crate::BitWriter<'a, u32, PUSHLEN_SPEC, bool, 28>;
+pub type CONSTADDR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PUSHLEN_SPEC, bool, O>;
 #[doc = "Field `REALIGN` reader - Realign length"]
 pub type REALIGN_R = crate::BitReader<bool>;
 #[doc = "Field `REALIGN` writer - Realign length"]
-pub type REALIGN_W<'a> = crate::BitWriter<'a, u32, PUSHLEN_SPEC, bool, 29>;
+pub type REALIGN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PUSHLEN_SPEC, bool, O>;
 #[doc = "Field `DISCARD` reader - Discard data"]
 pub type DISCARD_R = crate::BitReader<bool>;
 #[doc = "Field `DISCARD` writer - Discard data"]
-pub type DISCARD_W<'a> = crate::BitWriter<'a, u32, PUSHLEN_SPEC, bool, 30>;
+pub type DISCARD_W<'a, const O: u8> = crate::BitWriter<'a, u32, PUSHLEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:27 - Start address of data block"]
     #[inline(always)]
     pub fn length(&self) -> LENGTH_R {
-        LENGTH_R::new((self.bits & 0x0fff_ffff) as u32)
+        LENGTH_R::new(self.bits & 0x0fff_ffff)
     }
     #[doc = "Bit 28 - Constant address"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:27 - Start address of data block"]
     #[inline(always)]
-    pub fn length(&mut self) -> LENGTH_W {
+    #[must_use]
+    pub fn length(&mut self) -> LENGTH_W<0> {
         LENGTH_W::new(self)
     }
     #[doc = "Bit 28 - Constant address"]
     #[inline(always)]
-    pub fn constaddr(&mut self) -> CONSTADDR_W {
+    #[must_use]
+    pub fn constaddr(&mut self) -> CONSTADDR_W<28> {
         CONSTADDR_W::new(self)
     }
     #[doc = "Bit 29 - Realign length"]
     #[inline(always)]
-    pub fn realign(&mut self) -> REALIGN_W {
+    #[must_use]
+    pub fn realign(&mut self) -> REALIGN_W<29> {
         REALIGN_W::new(self)
     }
     #[doc = "Bit 30 - Discard data"]
     #[inline(always)]
-    pub fn discard(&mut self) -> DISCARD_W {
+    #[must_use]
+    pub fn discard(&mut self) -> DISCARD_W<30> {
         DISCARD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for PUSHLEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [pushlen::W](W) writer structure"]
 impl crate::Writable for PUSHLEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PUSHLEN to value 0"]
 impl crate::Resettable for PUSHLEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

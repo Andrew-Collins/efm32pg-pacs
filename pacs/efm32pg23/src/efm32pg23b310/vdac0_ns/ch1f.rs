@@ -20,11 +20,12 @@ impl From<crate::W<CH1F_SPEC>> for W {
     }
 }
 #[doc = "Field `DATA` writer - Channel 1 Data"]
-pub type DATA_W<'a> = crate::FieldWriter<'a, u32, CH1F_SPEC, u16, u16, 12, 0>;
+pub type DATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH1F_SPEC, u16, u16, 12, O>;
 impl W {
     #[doc = "Bits 0:11 - Channel 1 Data"]
     #[inline(always)]
-    pub fn data(&mut self) -> DATA_W {
+    #[must_use]
+    pub fn data(&mut self) -> DATA_W<0> {
         DATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -42,11 +43,10 @@ impl crate::RegisterSpec for CH1F_SPEC {
 #[doc = "`write(|w| ..)` method takes [ch1f::W](W) writer structure"]
 impl crate::Writable for CH1F_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CH1F to value 0"]
 impl crate::Resettable for CH1F_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

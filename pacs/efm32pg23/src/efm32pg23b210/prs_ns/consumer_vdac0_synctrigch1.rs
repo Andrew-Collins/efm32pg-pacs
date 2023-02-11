@@ -37,7 +37,8 @@ impl From<crate::W<CONSUMER_VDAC0_SYNCTRIGCH1_SPEC>> for W {
 #[doc = "Field `SPRSSEL` reader - SYNCTRIG sync channel select"]
 pub type SPRSSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SPRSSEL` writer - SYNCTRIG sync channel select"]
-pub type SPRSSEL_W<'a> = crate::FieldWriter<'a, u32, CONSUMER_VDAC0_SYNCTRIGCH1_SPEC, u8, u8, 2, 8>;
+pub type SPRSSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CONSUMER_VDAC0_SYNCTRIGCH1_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 8:9 - SYNCTRIG sync channel select"]
     #[inline(always)]
@@ -48,7 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 8:9 - SYNCTRIG sync channel select"]
     #[inline(always)]
-    pub fn sprssel(&mut self) -> SPRSSEL_W {
+    #[must_use]
+    pub fn sprssel(&mut self) -> SPRSSEL_W<8> {
         SPRSSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +72,10 @@ impl crate::Readable for CONSUMER_VDAC0_SYNCTRIGCH1_SPEC {
 #[doc = "`write(|w| ..)` method takes [consumer_vdac0_synctrigch1::W](W) writer structure"]
 impl crate::Writable for CONSUMER_VDAC0_SYNCTRIGCH1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CONSUMER_VDAC0_SYNCTRIGCH1 to value 0"]
 impl crate::Resettable for CONSUMER_VDAC0_SYNCTRIGCH1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

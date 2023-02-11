@@ -37,17 +37,19 @@ impl From<crate::W<GRP0_CTRL_SPEC>> for W {
 #[doc = "Field `CMP0EN` reader - Compare 0 Enable"]
 pub type CMP0EN_R = crate::BitReader<bool>;
 #[doc = "Field `CMP0EN` writer - Compare 0 Enable"]
-pub type CMP0EN_W<'a> = crate::BitWriter<'a, u32, GRP0_CTRL_SPEC, bool, 0>;
+pub type CMP0EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GRP0_CTRL_SPEC, bool, O>;
 #[doc = "Field `CMP1EN` reader - Compare 1 Enable"]
 pub type CMP1EN_R = crate::BitReader<bool>;
 #[doc = "Field `CMP1EN` writer - Compare 1 Enable"]
-pub type CMP1EN_W<'a> = crate::BitWriter<'a, u32, GRP0_CTRL_SPEC, bool, 1>;
+pub type CMP1EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GRP0_CTRL_SPEC, bool, O>;
 #[doc = "Field `CAP0EN` reader - Capture 0 Enable"]
 pub type CAP0EN_R = crate::BitReader<bool>;
 #[doc = "Field `CAP0EN` writer - Capture 0 Enable"]
-pub type CAP0EN_W<'a> = crate::BitWriter<'a, u32, GRP0_CTRL_SPEC, bool, 2>;
+pub type CAP0EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GRP0_CTRL_SPEC, bool, O>;
+#[doc = "Field `CMP0CMOA` reader - Compare 0 Compare Match Output Action"]
+pub type CMP0CMOA_R = crate::FieldReader<u8, CMP0CMOA_A>;
 #[doc = "Compare 0 Compare Match Output Action\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CMP0CMOA_A {
     #[doc = "0: Cleared on the next cycle"]
@@ -67,8 +69,6 @@ impl From<CMP0CMOA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CMP0CMOA` reader - Compare 0 Compare Match Output Action"]
-pub type CMP0CMOA_R = crate::FieldReader<u8, CMP0CMOA_A>;
 impl CMP0CMOA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -109,8 +109,9 @@ impl CMP0CMOA_R {
     }
 }
 #[doc = "Field `CMP0CMOA` writer - Compare 0 Compare Match Output Action"]
-pub type CMP0CMOA_W<'a> = crate::FieldWriter<'a, u32, GRP0_CTRL_SPEC, u8, CMP0CMOA_A, 3, 3>;
-impl<'a> CMP0CMOA_W<'a> {
+pub type CMP0CMOA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, GRP0_CTRL_SPEC, u8, CMP0CMOA_A, 3, O>;
+impl<'a, const O: u8> CMP0CMOA_W<'a, O> {
     #[doc = "Cleared on the next cycle"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
@@ -137,8 +138,10 @@ impl<'a> CMP0CMOA_W<'a> {
         self.variant(CMP0CMOA_A::CMPIF)
     }
 }
+#[doc = "Field `CMP1CMOA` reader - Compare 1 Compare Match Output Action"]
+pub type CMP1CMOA_R = crate::FieldReader<u8, CMP1CMOA_A>;
 #[doc = "Compare 1 Compare Match Output Action\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CMP1CMOA_A {
     #[doc = "0: Cleared on the next cycle"]
@@ -158,8 +161,6 @@ impl From<CMP1CMOA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CMP1CMOA` reader - Compare 1 Compare Match Output Action"]
-pub type CMP1CMOA_R = crate::FieldReader<u8, CMP1CMOA_A>;
 impl CMP1CMOA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -200,8 +201,9 @@ impl CMP1CMOA_R {
     }
 }
 #[doc = "Field `CMP1CMOA` writer - Compare 1 Compare Match Output Action"]
-pub type CMP1CMOA_W<'a> = crate::FieldWriter<'a, u32, GRP0_CTRL_SPEC, u8, CMP1CMOA_A, 3, 6>;
-impl<'a> CMP1CMOA_W<'a> {
+pub type CMP1CMOA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, GRP0_CTRL_SPEC, u8, CMP1CMOA_A, 3, O>;
+impl<'a, const O: u8> CMP1CMOA_W<'a, O> {
     #[doc = "Cleared on the next cycle"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
@@ -228,8 +230,10 @@ impl<'a> CMP1CMOA_W<'a> {
         self.variant(CMP1CMOA_A::CMPIF)
     }
 }
+#[doc = "Field `CAP0EDGE` reader - Capture 0 Edge Select"]
+pub type CAP0EDGE_R = crate::FieldReader<u8, CAP0EDGE_A>;
 #[doc = "Capture 0 Edge Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CAP0EDGE_A {
     #[doc = "0: Rising edges detected"]
@@ -245,8 +249,6 @@ impl From<CAP0EDGE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CAP0EDGE` reader - Capture 0 Edge Select"]
-pub type CAP0EDGE_R = crate::FieldReader<u8, CAP0EDGE_A>;
 impl CAP0EDGE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -275,8 +277,9 @@ impl CAP0EDGE_R {
     }
 }
 #[doc = "Field `CAP0EDGE` writer - Capture 0 Edge Select"]
-pub type CAP0EDGE_W<'a> = crate::FieldWriter<'a, u32, GRP0_CTRL_SPEC, u8, CAP0EDGE_A, 2, 9>;
-impl<'a> CAP0EDGE_W<'a> {
+pub type CAP0EDGE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, GRP0_CTRL_SPEC, u8, CAP0EDGE_A, 2, O>;
+impl<'a, const O: u8> CAP0EDGE_W<'a, O> {
     #[doc = "Rising edges detected"]
     #[inline(always)]
     pub fn rising(self) -> &'a mut W {
@@ -328,32 +331,38 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Compare 0 Enable"]
     #[inline(always)]
-    pub fn cmp0en(&mut self) -> CMP0EN_W {
+    #[must_use]
+    pub fn cmp0en(&mut self) -> CMP0EN_W<0> {
         CMP0EN_W::new(self)
     }
     #[doc = "Bit 1 - Compare 1 Enable"]
     #[inline(always)]
-    pub fn cmp1en(&mut self) -> CMP1EN_W {
+    #[must_use]
+    pub fn cmp1en(&mut self) -> CMP1EN_W<1> {
         CMP1EN_W::new(self)
     }
     #[doc = "Bit 2 - Capture 0 Enable"]
     #[inline(always)]
-    pub fn cap0en(&mut self) -> CAP0EN_W {
+    #[must_use]
+    pub fn cap0en(&mut self) -> CAP0EN_W<2> {
         CAP0EN_W::new(self)
     }
     #[doc = "Bits 3:5 - Compare 0 Compare Match Output Action"]
     #[inline(always)]
-    pub fn cmp0cmoa(&mut self) -> CMP0CMOA_W {
+    #[must_use]
+    pub fn cmp0cmoa(&mut self) -> CMP0CMOA_W<3> {
         CMP0CMOA_W::new(self)
     }
     #[doc = "Bits 6:8 - Compare 1 Compare Match Output Action"]
     #[inline(always)]
-    pub fn cmp1cmoa(&mut self) -> CMP1CMOA_W {
+    #[must_use]
+    pub fn cmp1cmoa(&mut self) -> CMP1CMOA_W<6> {
         CMP1CMOA_W::new(self)
     }
     #[doc = "Bits 9:10 - Capture 0 Edge Select"]
     #[inline(always)]
-    pub fn cap0edge(&mut self) -> CAP0EDGE_W {
+    #[must_use]
+    pub fn cap0edge(&mut self) -> CAP0EDGE_W<9> {
         CAP0EDGE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -375,11 +384,10 @@ impl crate::Readable for GRP0_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [grp0_ctrl::W](W) writer structure"]
 impl crate::Writable for GRP0_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GRP0_CTRL to value 0"]
 impl crate::Resettable for GRP0_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

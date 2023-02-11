@@ -37,19 +37,19 @@ impl From<crate::W<IEN_SPEC>> for W {
 #[doc = "Field `MBOXIEN0` reader - Mailbox Interrupt Enable"]
 pub type MBOXIEN0_R = crate::BitReader<bool>;
 #[doc = "Field `MBOXIEN0` writer - Mailbox Interrupt Enable"]
-pub type MBOXIEN0_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 0>;
+pub type MBOXIEN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `MBOXIEN1` reader - Mailbox Interrupt Enable"]
 pub type MBOXIEN1_R = crate::BitReader<bool>;
 #[doc = "Field `MBOXIEN1` writer - Mailbox Interrupt Enable"]
-pub type MBOXIEN1_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 1>;
+pub type MBOXIEN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `MBOXIEN2` reader - Mailbox Interrupt Enable"]
 pub type MBOXIEN2_R = crate::BitReader<bool>;
 #[doc = "Field `MBOXIEN2` writer - Mailbox Interrupt Enable"]
-pub type MBOXIEN2_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 2>;
+pub type MBOXIEN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `MBOXIEN3` reader - Mailbox Interrupt Enable"]
 pub type MBOXIEN3_R = crate::BitReader<bool>;
 #[doc = "Field `MBOXIEN3` writer - Mailbox Interrupt Enable"]
-pub type MBOXIEN3_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 3>;
+pub type MBOXIEN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Mailbox Interrupt Enable"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Mailbox Interrupt Enable"]
     #[inline(always)]
-    pub fn mboxien0(&mut self) -> MBOXIEN0_W {
+    #[must_use]
+    pub fn mboxien0(&mut self) -> MBOXIEN0_W<0> {
         MBOXIEN0_W::new(self)
     }
     #[doc = "Bit 1 - Mailbox Interrupt Enable"]
     #[inline(always)]
-    pub fn mboxien1(&mut self) -> MBOXIEN1_W {
+    #[must_use]
+    pub fn mboxien1(&mut self) -> MBOXIEN1_W<1> {
         MBOXIEN1_W::new(self)
     }
     #[doc = "Bit 2 - Mailbox Interrupt Enable"]
     #[inline(always)]
-    pub fn mboxien2(&mut self) -> MBOXIEN2_W {
+    #[must_use]
+    pub fn mboxien2(&mut self) -> MBOXIEN2_W<2> {
         MBOXIEN2_W::new(self)
     }
     #[doc = "Bit 3 - Mailbox Interrupt Enable"]
     #[inline(always)]
-    pub fn mboxien3(&mut self) -> MBOXIEN3_W {
+    #[must_use]
+    pub fn mboxien3(&mut self) -> MBOXIEN3_W<3> {
         MBOXIEN3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for IEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IEN to value 0"]
 impl crate::Resettable for IEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

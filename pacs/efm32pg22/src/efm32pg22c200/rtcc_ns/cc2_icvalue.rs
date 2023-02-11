@@ -33,8 +33,5 @@ impl crate::Readable for CC2_ICVALUE_SPEC {
 }
 #[doc = "`reset()` method sets CC2_ICVALUE to value 0"]
 impl crate::Resettable for CC2_ICVALUE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

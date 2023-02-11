@@ -13,8 +13,10 @@ impl From<crate::R<STATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `LOCK` reader - Lock status"]
+pub type LOCK_R = crate::BitReader<LOCK_A>;
 #[doc = "Lock status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOCK_A {
     #[doc = "0: All EMU lockable registers are unlocked."]
     UNLOCKED = 0,
@@ -27,8 +29,6 @@ impl From<LOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOCK` reader - Lock status"]
-pub type LOCK_R = crate::BitReader<LOCK_A>;
 impl LOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -59,8 +59,10 @@ pub type TEMPAVGACTIVE_R = crate::BitReader<bool>;
 pub type VSCALEBUSY_R = crate::BitReader<bool>;
 #[doc = "Field `VSCALEFAILED` reader - Vscale failed"]
 pub type VSCALEFAILED_R = crate::BitReader<bool>;
+#[doc = "Field `VSCALE` reader - Vscale status"]
+pub type VSCALE_R = crate::FieldReader<u8, VSCALE_A>;
 #[doc = "Vscale status\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum VSCALE_A {
     #[doc = "0: Voltage scaling set to 0.9v"]
@@ -76,8 +78,6 @@ impl From<VSCALE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `VSCALE` reader - Vscale status"]
-pub type VSCALE_R = crate::FieldReader<u8, VSCALE_A>;
 impl VSCALE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -167,8 +167,5 @@ impl crate::Readable for STATUS_SPEC {
 }
 #[doc = "`reset()` method sets STATUS to value 0x80"]
 impl crate::Resettable for STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x80
-    }
+    const RESET_VALUE: Self::Ux = 0x80;
 }

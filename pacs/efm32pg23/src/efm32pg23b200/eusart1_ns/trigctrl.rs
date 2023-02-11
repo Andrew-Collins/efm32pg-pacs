@@ -37,15 +37,15 @@ impl From<crate::W<TRIGCTRL_SPEC>> for W {
 #[doc = "Field `RXTEN` reader - Receive Trigger Enable"]
 pub type RXTEN_R = crate::BitReader<bool>;
 #[doc = "Field `RXTEN` writer - Receive Trigger Enable"]
-pub type RXTEN_W<'a> = crate::BitWriter<'a, u32, TRIGCTRL_SPEC, bool, 0>;
+pub type RXTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRIGCTRL_SPEC, bool, O>;
 #[doc = "Field `TXTEN` reader - Transmit Trigger Enable"]
 pub type TXTEN_R = crate::BitReader<bool>;
 #[doc = "Field `TXTEN` writer - Transmit Trigger Enable"]
-pub type TXTEN_W<'a> = crate::BitWriter<'a, u32, TRIGCTRL_SPEC, bool, 1>;
+pub type TXTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRIGCTRL_SPEC, bool, O>;
 #[doc = "Field `AUTOTXTEN` reader - AUTOTX Trigger Enable"]
 pub type AUTOTXTEN_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOTXTEN` writer - AUTOTX Trigger Enable"]
-pub type AUTOTXTEN_W<'a> = crate::BitWriter<'a, u32, TRIGCTRL_SPEC, bool, 2>;
+pub type AUTOTXTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRIGCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Receive Trigger Enable"]
     #[inline(always)]
@@ -66,17 +66,20 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Receive Trigger Enable"]
     #[inline(always)]
-    pub fn rxten(&mut self) -> RXTEN_W {
+    #[must_use]
+    pub fn rxten(&mut self) -> RXTEN_W<0> {
         RXTEN_W::new(self)
     }
     #[doc = "Bit 1 - Transmit Trigger Enable"]
     #[inline(always)]
-    pub fn txten(&mut self) -> TXTEN_W {
+    #[must_use]
+    pub fn txten(&mut self) -> TXTEN_W<1> {
         TXTEN_W::new(self)
     }
     #[doc = "Bit 2 - AUTOTX Trigger Enable"]
     #[inline(always)]
-    pub fn autotxten(&mut self) -> AUTOTXTEN_W {
+    #[must_use]
+    pub fn autotxten(&mut self) -> AUTOTXTEN_W<2> {
         AUTOTXTEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for TRIGCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [trigctrl::W](W) writer structure"]
 impl crate::Writable for TRIGCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TRIGCTRL to value 0"]
 impl crate::Resettable for TRIGCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

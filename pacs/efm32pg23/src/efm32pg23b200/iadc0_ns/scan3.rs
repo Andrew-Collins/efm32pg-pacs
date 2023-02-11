@@ -37,9 +37,11 @@ impl From<crate::W<SCAN3_SPEC>> for W {
 #[doc = "Field `PINNEG` reader - Negative Pin Select"]
 pub type PINNEG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PINNEG` writer - Negative Pin Select"]
-pub type PINNEG_W<'a> = crate::FieldWriter<'a, u32, SCAN3_SPEC, u8, u8, 4, 0>;
+pub type PINNEG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCAN3_SPEC, u8, u8, 4, O>;
+#[doc = "Field `PORTNEG` reader - Negative Port Select"]
+pub type PORTNEG_R = crate::FieldReader<u8, PORTNEG_A>;
 #[doc = "Negative Port Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PORTNEG_A {
     #[doc = "0: Ground (single-ended)"]
@@ -61,8 +63,6 @@ impl From<PORTNEG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PORTNEG` reader - Negative Port Select"]
-pub type PORTNEG_R = crate::FieldReader<u8, PORTNEG_A>;
 impl PORTNEG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -109,8 +109,8 @@ impl PORTNEG_R {
     }
 }
 #[doc = "Field `PORTNEG` writer - Negative Port Select"]
-pub type PORTNEG_W<'a> = crate::FieldWriter<'a, u32, SCAN3_SPEC, u8, PORTNEG_A, 4, 4>;
-impl<'a> PORTNEG_W<'a> {
+pub type PORTNEG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCAN3_SPEC, u8, PORTNEG_A, 4, O>;
+impl<'a, const O: u8> PORTNEG_W<'a, O> {
     #[doc = "Ground (single-ended)"]
     #[inline(always)]
     pub fn gnd(self) -> &'a mut W {
@@ -145,9 +145,11 @@ impl<'a> PORTNEG_W<'a> {
 #[doc = "Field `PINPOS` reader - Positive Pin Select"]
 pub type PINPOS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PINPOS` writer - Positive Pin Select"]
-pub type PINPOS_W<'a> = crate::FieldWriter<'a, u32, SCAN3_SPEC, u8, u8, 4, 8>;
+pub type PINPOS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCAN3_SPEC, u8, u8, 4, O>;
+#[doc = "Field `PORTPOS` reader - Positive Port Select"]
+pub type PORTPOS_R = crate::FieldReader<u8, PORTPOS_A>;
 #[doc = "Positive Port Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PORTPOS_A {
     #[doc = "0: Ground"]
@@ -171,8 +173,6 @@ impl From<PORTPOS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PORTPOS` reader - Positive Port Select"]
-pub type PORTPOS_R = crate::FieldReader<u8, PORTPOS_A>;
 impl PORTPOS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -225,8 +225,8 @@ impl PORTPOS_R {
     }
 }
 #[doc = "Field `PORTPOS` writer - Positive Port Select"]
-pub type PORTPOS_W<'a> = crate::FieldWriter<'a, u32, SCAN3_SPEC, u8, PORTPOS_A, 4, 12>;
-impl<'a> PORTPOS_W<'a> {
+pub type PORTPOS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCAN3_SPEC, u8, PORTPOS_A, 4, O>;
+impl<'a, const O: u8> PORTPOS_W<'a, O> {
     #[doc = "Ground"]
     #[inline(always)]
     pub fn gnd(self) -> &'a mut W {
@@ -263,8 +263,10 @@ impl<'a> PORTPOS_W<'a> {
         self.variant(PORTPOS_A::PORTD)
     }
 }
+#[doc = "Field `CFG` reader - Configuration Group Select"]
+pub type CFG_R = crate::BitReader<CFG_A>;
 #[doc = "Configuration Group Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CFG_A {
     #[doc = "0: Use configuration group 0"]
     CONFIG0 = 0,
@@ -277,8 +279,6 @@ impl From<CFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CFG` reader - Configuration Group Select"]
-pub type CFG_R = crate::BitReader<CFG_A>;
 impl CFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -300,8 +300,8 @@ impl CFG_R {
     }
 }
 #[doc = "Field `CFG` writer - Configuration Group Select"]
-pub type CFG_W<'a> = crate::BitWriter<'a, u32, SCAN3_SPEC, CFG_A, 16>;
-impl<'a> CFG_W<'a> {
+pub type CFG_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCAN3_SPEC, CFG_A, O>;
+impl<'a, const O: u8> CFG_W<'a, O> {
     #[doc = "Use configuration group 0"]
     #[inline(always)]
     pub fn config0(self) -> &'a mut W {
@@ -316,7 +316,7 @@ impl<'a> CFG_W<'a> {
 #[doc = "Field `CMP` reader - Comparison Enable"]
 pub type CMP_R = crate::BitReader<bool>;
 #[doc = "Field `CMP` writer - Comparison Enable"]
-pub type CMP_W<'a> = crate::BitWriter<'a, u32, SCAN3_SPEC, bool, 17>;
+pub type CMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCAN3_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:3 - Negative Pin Select"]
     #[inline(always)]
@@ -352,32 +352,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Negative Pin Select"]
     #[inline(always)]
-    pub fn pinneg(&mut self) -> PINNEG_W {
+    #[must_use]
+    pub fn pinneg(&mut self) -> PINNEG_W<0> {
         PINNEG_W::new(self)
     }
     #[doc = "Bits 4:7 - Negative Port Select"]
     #[inline(always)]
-    pub fn portneg(&mut self) -> PORTNEG_W {
+    #[must_use]
+    pub fn portneg(&mut self) -> PORTNEG_W<4> {
         PORTNEG_W::new(self)
     }
     #[doc = "Bits 8:11 - Positive Pin Select"]
     #[inline(always)]
-    pub fn pinpos(&mut self) -> PINPOS_W {
+    #[must_use]
+    pub fn pinpos(&mut self) -> PINPOS_W<8> {
         PINPOS_W::new(self)
     }
     #[doc = "Bits 12:15 - Positive Port Select"]
     #[inline(always)]
-    pub fn portpos(&mut self) -> PORTPOS_W {
+    #[must_use]
+    pub fn portpos(&mut self) -> PORTPOS_W<12> {
         PORTPOS_W::new(self)
     }
     #[doc = "Bit 16 - Configuration Group Select"]
     #[inline(always)]
-    pub fn cfg(&mut self) -> CFG_W {
+    #[must_use]
+    pub fn cfg(&mut self) -> CFG_W<16> {
         CFG_W::new(self)
     }
     #[doc = "Bit 17 - Comparison Enable"]
     #[inline(always)]
-    pub fn cmp(&mut self) -> CMP_W {
+    #[must_use]
+    pub fn cmp(&mut self) -> CMP_W<17> {
         CMP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -399,11 +405,10 @@ impl crate::Readable for SCAN3_SPEC {
 #[doc = "`write(|w| ..)` method takes [scan3::W](W) writer structure"]
 impl crate::Writable for SCAN3_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCAN3 to value 0"]
 impl crate::Resettable for SCAN3_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

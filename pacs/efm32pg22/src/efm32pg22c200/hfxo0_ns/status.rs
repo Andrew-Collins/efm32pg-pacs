@@ -23,8 +23,10 @@ pub type ENS_R = crate::BitReader<bool>;
 pub type HWREQ_R = crate::BitReader<bool>;
 #[doc = "Field `ISWARM` reader - Oscillator Is Kept Warm"]
 pub type ISWARM_R = crate::BitReader<bool>;
+#[doc = "Field `FSMLOCK` reader - FSM Lock Status"]
+pub type FSMLOCK_R = crate::BitReader<FSMLOCK_A>;
 #[doc = "FSM Lock Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FSMLOCK_A {
     #[doc = "0: FSM lock is unlocked"]
     UNLOCKED = 0,
@@ -37,8 +39,6 @@ impl From<FSMLOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FSMLOCK` reader - FSM Lock Status"]
-pub type FSMLOCK_R = crate::BitReader<FSMLOCK_A>;
 impl FSMLOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -59,8 +59,10 @@ impl FSMLOCK_R {
         *self == FSMLOCK_A::LOCKED
     }
 }
+#[doc = "Field `LOCK` reader - Configuration Lock Status"]
+pub type LOCK_R = crate::BitReader<LOCK_A>;
 #[doc = "Configuration Lock Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOCK_A {
     #[doc = "0: Configuration lock is unlocked"]
     UNLOCKED = 0,
@@ -73,8 +75,6 @@ impl From<LOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOCK` reader - Configuration Lock Status"]
-pub type LOCK_R = crate::BitReader<LOCK_A>;
 impl LOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -143,8 +143,5 @@ impl crate::Readable for STATUS_SPEC {
 }
 #[doc = "`reset()` method sets STATUS to value 0"]
 impl crate::Resettable for STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

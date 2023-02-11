@@ -37,13 +37,15 @@ impl From<crate::W<CFG_SPEC>> for W {
 #[doc = "Field `AGC` reader - LFXO AGC Enable"]
 pub type AGC_R = crate::BitReader<bool>;
 #[doc = "Field `AGC` writer - LFXO AGC Enable"]
-pub type AGC_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 0>;
+pub type AGC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 #[doc = "Field `HIGHAMPL` reader - LFXO High Amplitude Enable"]
 pub type HIGHAMPL_R = crate::BitReader<bool>;
 #[doc = "Field `HIGHAMPL` writer - LFXO High Amplitude Enable"]
-pub type HIGHAMPL_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 1>;
+pub type HIGHAMPL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
+#[doc = "Field `MODE` reader - LFXO Mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "LFXO Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: A 32768Hz crystal should be connected to the LF crystal pads. Voltage must not exceed VDDIO."]
@@ -59,8 +61,6 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - LFXO Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - LFXO Mode"]
-pub type MODE_W<'a> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, MODE_A, 2, 4>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, MODE_A, 2, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "A 32768Hz crystal should be connected to the LF crystal pads. Voltage must not exceed VDDIO."]
     #[inline(always)]
     pub fn xtal(self) -> &'a mut W {
@@ -107,8 +107,10 @@ impl<'a> MODE_W<'a> {
         self.variant(MODE_A::DIGEXTCLK)
     }
 }
+#[doc = "Field `TIMEOUT` reader - LFXO Start-up Delay"]
+pub type TIMEOUT_R = crate::FieldReader<u8, TIMEOUT_A>;
 #[doc = "LFXO Start-up Delay\n\nValue on reset: 7"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TIMEOUT_A {
     #[doc = "0: Timeout period of 2 cycles"]
@@ -134,8 +136,6 @@ impl From<TIMEOUT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TIMEOUT` reader - LFXO Start-up Delay"]
-pub type TIMEOUT_R = crate::FieldReader<u8, TIMEOUT_A>;
 impl TIMEOUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -194,8 +194,9 @@ impl TIMEOUT_R {
     }
 }
 #[doc = "Field `TIMEOUT` writer - LFXO Start-up Delay"]
-pub type TIMEOUT_W<'a> = crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, TIMEOUT_A, 3, 8>;
-impl<'a> TIMEOUT_W<'a> {
+pub type TIMEOUT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, TIMEOUT_A, 3, O>;
+impl<'a, const O: u8> TIMEOUT_W<'a, O> {
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]
     pub fn cycles2(self) -> &'a mut W {
@@ -262,22 +263,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - LFXO AGC Enable"]
     #[inline(always)]
-    pub fn agc(&mut self) -> AGC_W {
+    #[must_use]
+    pub fn agc(&mut self) -> AGC_W<0> {
         AGC_W::new(self)
     }
     #[doc = "Bit 1 - LFXO High Amplitude Enable"]
     #[inline(always)]
-    pub fn highampl(&mut self) -> HIGHAMPL_W {
+    #[must_use]
+    pub fn highampl(&mut self) -> HIGHAMPL_W<1> {
         HIGHAMPL_W::new(self)
     }
     #[doc = "Bits 4:5 - LFXO Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<4> {
         MODE_W::new(self)
     }
     #[doc = "Bits 8:10 - LFXO Start-up Delay"]
     #[inline(always)]
-    pub fn timeout(&mut self) -> TIMEOUT_W {
+    #[must_use]
+    pub fn timeout(&mut self) -> TIMEOUT_W<8> {
         TIMEOUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -299,11 +304,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0x0701"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0701
-    }
+    const RESET_VALUE: Self::Ux = 0x0701;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<ROUTELOC1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ETMTCLKLOC` reader - I/O Location"]
+pub type ETMTCLKLOC_R = crate::FieldReader<u8, ETMTCLKLOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ETMTCLKLOC_A {
     #[doc = "0: Location 0"]
@@ -53,8 +55,6 @@ impl From<ETMTCLKLOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ETMTCLKLOC` reader - I/O Location"]
-pub type ETMTCLKLOC_R = crate::FieldReader<u8, ETMTCLKLOC_A>;
 impl ETMTCLKLOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,9 @@ impl ETMTCLKLOC_R {
     }
 }
 #[doc = "Field `ETMTCLKLOC` writer - I/O Location"]
-pub type ETMTCLKLOC_W<'a> = crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, ETMTCLKLOC_A, 6, 0>;
-impl<'a> ETMTCLKLOC_W<'a> {
+pub type ETMTCLKLOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, ETMTCLKLOC_A, 6, O>;
+impl<'a, const O: u8> ETMTCLKLOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -112,8 +113,10 @@ impl<'a> ETMTCLKLOC_W<'a> {
         self.variant(ETMTCLKLOC_A::LOC3)
     }
 }
+#[doc = "Field `ETMTD0LOC` reader - I/O Location"]
+pub type ETMTD0LOC_R = crate::FieldReader<u8, ETMTD0LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ETMTD0LOC_A {
     #[doc = "0: Location 0"]
@@ -131,8 +134,6 @@ impl From<ETMTD0LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ETMTD0LOC` reader - I/O Location"]
-pub type ETMTD0LOC_R = crate::FieldReader<u8, ETMTD0LOC_A>;
 impl ETMTD0LOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -167,8 +168,9 @@ impl ETMTD0LOC_R {
     }
 }
 #[doc = "Field `ETMTD0LOC` writer - I/O Location"]
-pub type ETMTD0LOC_W<'a> = crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, ETMTD0LOC_A, 6, 8>;
-impl<'a> ETMTD0LOC_W<'a> {
+pub type ETMTD0LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, ETMTD0LOC_A, 6, O>;
+impl<'a, const O: u8> ETMTD0LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -190,8 +192,10 @@ impl<'a> ETMTD0LOC_W<'a> {
         self.variant(ETMTD0LOC_A::LOC3)
     }
 }
+#[doc = "Field `ETMTD1LOC` reader - I/O Location"]
+pub type ETMTD1LOC_R = crate::FieldReader<u8, ETMTD1LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ETMTD1LOC_A {
     #[doc = "0: Location 0"]
@@ -209,8 +213,6 @@ impl From<ETMTD1LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ETMTD1LOC` reader - I/O Location"]
-pub type ETMTD1LOC_R = crate::FieldReader<u8, ETMTD1LOC_A>;
 impl ETMTD1LOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -245,8 +247,9 @@ impl ETMTD1LOC_R {
     }
 }
 #[doc = "Field `ETMTD1LOC` writer - I/O Location"]
-pub type ETMTD1LOC_W<'a> = crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, ETMTD1LOC_A, 6, 14>;
-impl<'a> ETMTD1LOC_W<'a> {
+pub type ETMTD1LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, ETMTD1LOC_A, 6, O>;
+impl<'a, const O: u8> ETMTD1LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -268,8 +271,10 @@ impl<'a> ETMTD1LOC_W<'a> {
         self.variant(ETMTD1LOC_A::LOC3)
     }
 }
+#[doc = "Field `ETMTD2LOC` reader - I/O Location"]
+pub type ETMTD2LOC_R = crate::FieldReader<u8, ETMTD2LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ETMTD2LOC_A {
     #[doc = "0: Location 0"]
@@ -287,8 +292,6 @@ impl From<ETMTD2LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ETMTD2LOC` reader - I/O Location"]
-pub type ETMTD2LOC_R = crate::FieldReader<u8, ETMTD2LOC_A>;
 impl ETMTD2LOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -323,8 +326,9 @@ impl ETMTD2LOC_R {
     }
 }
 #[doc = "Field `ETMTD2LOC` writer - I/O Location"]
-pub type ETMTD2LOC_W<'a> = crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, ETMTD2LOC_A, 6, 20>;
-impl<'a> ETMTD2LOC_W<'a> {
+pub type ETMTD2LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, ETMTD2LOC_A, 6, O>;
+impl<'a, const O: u8> ETMTD2LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -346,8 +350,10 @@ impl<'a> ETMTD2LOC_W<'a> {
         self.variant(ETMTD2LOC_A::LOC3)
     }
 }
+#[doc = "Field `ETMTD3LOC` reader - I/O Location"]
+pub type ETMTD3LOC_R = crate::FieldReader<u8, ETMTD3LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ETMTD3LOC_A {
     #[doc = "0: Location 0"]
@@ -365,8 +371,6 @@ impl From<ETMTD3LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ETMTD3LOC` reader - I/O Location"]
-pub type ETMTD3LOC_R = crate::FieldReader<u8, ETMTD3LOC_A>;
 impl ETMTD3LOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -401,8 +405,9 @@ impl ETMTD3LOC_R {
     }
 }
 #[doc = "Field `ETMTD3LOC` writer - I/O Location"]
-pub type ETMTD3LOC_W<'a> = crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, ETMTD3LOC_A, 6, 26>;
-impl<'a> ETMTD3LOC_W<'a> {
+pub type ETMTD3LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, ETMTD3LOC_A, 6, O>;
+impl<'a, const O: u8> ETMTD3LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -454,27 +459,32 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
-    pub fn etmtclkloc(&mut self) -> ETMTCLKLOC_W {
+    #[must_use]
+    pub fn etmtclkloc(&mut self) -> ETMTCLKLOC_W<0> {
         ETMTCLKLOC_W::new(self)
     }
     #[doc = "Bits 8:13 - I/O Location"]
     #[inline(always)]
-    pub fn etmtd0loc(&mut self) -> ETMTD0LOC_W {
+    #[must_use]
+    pub fn etmtd0loc(&mut self) -> ETMTD0LOC_W<8> {
         ETMTD0LOC_W::new(self)
     }
     #[doc = "Bits 14:19 - I/O Location"]
     #[inline(always)]
-    pub fn etmtd1loc(&mut self) -> ETMTD1LOC_W {
+    #[must_use]
+    pub fn etmtd1loc(&mut self) -> ETMTD1LOC_W<14> {
         ETMTD1LOC_W::new(self)
     }
     #[doc = "Bits 20:25 - I/O Location"]
     #[inline(always)]
-    pub fn etmtd2loc(&mut self) -> ETMTD2LOC_W {
+    #[must_use]
+    pub fn etmtd2loc(&mut self) -> ETMTD2LOC_W<20> {
         ETMTD2LOC_W::new(self)
     }
     #[doc = "Bits 26:31 - I/O Location"]
     #[inline(always)]
-    pub fn etmtd3loc(&mut self) -> ETMTD3LOC_W {
+    #[must_use]
+    pub fn etmtd3loc(&mut self) -> ETMTD3LOC_W<26> {
         ETMTD3LOC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -496,11 +506,10 @@ impl crate::Readable for ROUTELOC1_SPEC {
 #[doc = "`write(|w| ..)` method takes [routeloc1::W](W) writer structure"]
 impl crate::Writable for ROUTELOC1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ROUTELOC1 to value 0"]
 impl crate::Resettable for ROUTELOC1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

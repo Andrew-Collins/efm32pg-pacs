@@ -37,21 +37,23 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `EN` reader - Current DAC Enable"]
 pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - Current DAC Enable"]
-pub type EN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 0>;
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `CURSINK` reader - Current Sink Enable"]
 pub type CURSINK_R = crate::BitReader<bool>;
 #[doc = "Field `CURSINK` writer - Current Sink Enable"]
-pub type CURSINK_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 1>;
+pub type CURSINK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `MINOUTTRANS` reader - Minimum Output Transition Enable"]
 pub type MINOUTTRANS_R = crate::BitReader<bool>;
 #[doc = "Field `MINOUTTRANS` writer - Minimum Output Transition Enable"]
-pub type MINOUTTRANS_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 2>;
+pub type MINOUTTRANS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `APORTOUTEN` reader - APORT Output Enable"]
 pub type APORTOUTEN_R = crate::BitReader<bool>;
 #[doc = "Field `APORTOUTEN` writer - APORT Output Enable"]
-pub type APORTOUTEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 3>;
+pub type APORTOUTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `APORTOUTSEL` reader - APORT Output Select"]
+pub type APORTOUTSEL_R = crate::FieldReader<u8, APORTOUTSEL_A>;
 #[doc = "APORT Output Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum APORTOUTSEL_A {
     #[doc = "32: APORT1X Channel 0"]
@@ -125,8 +127,6 @@ impl From<APORTOUTSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `APORTOUTSEL` reader - APORT Output Select"]
-pub type APORTOUTSEL_R = crate::FieldReader<u8, APORTOUTSEL_A>;
 impl APORTOUTSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -329,8 +329,9 @@ impl APORTOUTSEL_R {
     }
 }
 #[doc = "Field `APORTOUTSEL` writer - APORT Output Select"]
-pub type APORTOUTSEL_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, APORTOUTSEL_A, 8, 4>;
-impl<'a> APORTOUTSEL_W<'a> {
+pub type APORTOUTSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, APORTOUTSEL_A, 8, O>;
+impl<'a, const O: u8> APORTOUTSEL_W<'a, O> {
     #[doc = "APORT1X Channel 0"]
     #[inline(always)]
     pub fn aport1xch0(self) -> &'a mut W {
@@ -495,29 +496,31 @@ impl<'a> APORTOUTSEL_W<'a> {
 #[doc = "Field `PWRSEL` reader - Power Select"]
 pub type PWRSEL_R = crate::BitReader<bool>;
 #[doc = "Field `PWRSEL` writer - Power Select"]
-pub type PWRSEL_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 12>;
+pub type PWRSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `EM2DELAY` reader - EM2 Delay"]
 pub type EM2DELAY_R = crate::BitReader<bool>;
 #[doc = "Field `EM2DELAY` writer - EM2 Delay"]
-pub type EM2DELAY_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 13>;
+pub type EM2DELAY_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `APORTMASTERDIS` reader - APORT Bus Master Disable"]
 pub type APORTMASTERDIS_R = crate::BitReader<bool>;
 #[doc = "Field `APORTMASTERDIS` writer - APORT Bus Master Disable"]
-pub type APORTMASTERDIS_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 14>;
+pub type APORTMASTERDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `APORTOUTENPRS` reader - PRS Controlled APORT Output Enable"]
 pub type APORTOUTENPRS_R = crate::BitReader<bool>;
 #[doc = "Field `APORTOUTENPRS` writer - PRS Controlled APORT Output Enable"]
-pub type APORTOUTENPRS_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 16>;
+pub type APORTOUTENPRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `MAINOUTEN` reader - Output Enable"]
 pub type MAINOUTEN_R = crate::BitReader<bool>;
 #[doc = "Field `MAINOUTEN` writer - Output Enable"]
-pub type MAINOUTEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 18>;
+pub type MAINOUTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `MAINOUTENPRS` reader - PRS Controlled Main Pad Output Enable"]
 pub type MAINOUTENPRS_R = crate::BitReader<bool>;
 #[doc = "Field `MAINOUTENPRS` writer - PRS Controlled Main Pad Output Enable"]
-pub type MAINOUTENPRS_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 19>;
+pub type MAINOUTENPRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `PRSSEL` reader - IDAC Output Enable PRS Channel Select"]
+pub type PRSSEL_R = crate::FieldReader<u8, PRSSEL_A>;
 #[doc = "IDAC Output Enable PRS Channel Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSEL_A {
     #[doc = "0: PRS Channel 0 selected."]
@@ -551,8 +554,6 @@ impl From<PRSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRSSEL` reader - IDAC Output Enable PRS Channel Select"]
-pub type PRSSEL_R = crate::FieldReader<u8, PRSSEL_A>;
 impl PRSSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -635,8 +636,8 @@ impl PRSSEL_R {
     }
 }
 #[doc = "Field `PRSSEL` writer - IDAC Output Enable PRS Channel Select"]
-pub type PRSSEL_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, PRSSEL_A, 4, 20>;
-impl<'a> PRSSEL_W<'a> {
+pub type PRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, PRSSEL_A, 4, O>;
+impl<'a, const O: u8> PRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected."]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut W {
@@ -763,62 +764,74 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Current DAC Enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
+    #[must_use]
+    pub fn en(&mut self) -> EN_W<0> {
         EN_W::new(self)
     }
     #[doc = "Bit 1 - Current Sink Enable"]
     #[inline(always)]
-    pub fn cursink(&mut self) -> CURSINK_W {
+    #[must_use]
+    pub fn cursink(&mut self) -> CURSINK_W<1> {
         CURSINK_W::new(self)
     }
     #[doc = "Bit 2 - Minimum Output Transition Enable"]
     #[inline(always)]
-    pub fn minouttrans(&mut self) -> MINOUTTRANS_W {
+    #[must_use]
+    pub fn minouttrans(&mut self) -> MINOUTTRANS_W<2> {
         MINOUTTRANS_W::new(self)
     }
     #[doc = "Bit 3 - APORT Output Enable"]
     #[inline(always)]
-    pub fn aportouten(&mut self) -> APORTOUTEN_W {
+    #[must_use]
+    pub fn aportouten(&mut self) -> APORTOUTEN_W<3> {
         APORTOUTEN_W::new(self)
     }
     #[doc = "Bits 4:11 - APORT Output Select"]
     #[inline(always)]
-    pub fn aportoutsel(&mut self) -> APORTOUTSEL_W {
+    #[must_use]
+    pub fn aportoutsel(&mut self) -> APORTOUTSEL_W<4> {
         APORTOUTSEL_W::new(self)
     }
     #[doc = "Bit 12 - Power Select"]
     #[inline(always)]
-    pub fn pwrsel(&mut self) -> PWRSEL_W {
+    #[must_use]
+    pub fn pwrsel(&mut self) -> PWRSEL_W<12> {
         PWRSEL_W::new(self)
     }
     #[doc = "Bit 13 - EM2 Delay"]
     #[inline(always)]
-    pub fn em2delay(&mut self) -> EM2DELAY_W {
+    #[must_use]
+    pub fn em2delay(&mut self) -> EM2DELAY_W<13> {
         EM2DELAY_W::new(self)
     }
     #[doc = "Bit 14 - APORT Bus Master Disable"]
     #[inline(always)]
-    pub fn aportmasterdis(&mut self) -> APORTMASTERDIS_W {
+    #[must_use]
+    pub fn aportmasterdis(&mut self) -> APORTMASTERDIS_W<14> {
         APORTMASTERDIS_W::new(self)
     }
     #[doc = "Bit 16 - PRS Controlled APORT Output Enable"]
     #[inline(always)]
-    pub fn aportoutenprs(&mut self) -> APORTOUTENPRS_W {
+    #[must_use]
+    pub fn aportoutenprs(&mut self) -> APORTOUTENPRS_W<16> {
         APORTOUTENPRS_W::new(self)
     }
     #[doc = "Bit 18 - Output Enable"]
     #[inline(always)]
-    pub fn mainouten(&mut self) -> MAINOUTEN_W {
+    #[must_use]
+    pub fn mainouten(&mut self) -> MAINOUTEN_W<18> {
         MAINOUTEN_W::new(self)
     }
     #[doc = "Bit 19 - PRS Controlled Main Pad Output Enable"]
     #[inline(always)]
-    pub fn mainoutenprs(&mut self) -> MAINOUTENPRS_W {
+    #[must_use]
+    pub fn mainoutenprs(&mut self) -> MAINOUTENPRS_W<19> {
         MAINOUTENPRS_W::new(self)
     }
     #[doc = "Bits 20:23 - IDAC Output Enable PRS Channel Select"]
     #[inline(always)]
-    pub fn prssel(&mut self) -> PRSSEL_W {
+    #[must_use]
+    pub fn prssel(&mut self) -> PRSSEL_W<20> {
         PRSSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -840,11 +853,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

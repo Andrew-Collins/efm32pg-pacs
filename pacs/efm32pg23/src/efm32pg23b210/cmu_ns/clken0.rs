@@ -37,127 +37,127 @@ impl From<crate::W<CLKEN0_SPEC>> for W {
 #[doc = "Field `LDMA` reader - Enable Bus Clock"]
 pub type LDMA_R = crate::BitReader<bool>;
 #[doc = "Field `LDMA` writer - Enable Bus Clock"]
-pub type LDMA_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 0>;
+pub type LDMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `LDMAXBAR` reader - Enable Bus Clock"]
 pub type LDMAXBAR_R = crate::BitReader<bool>;
 #[doc = "Field `LDMAXBAR` writer - Enable Bus Clock"]
-pub type LDMAXBAR_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 1>;
+pub type LDMAXBAR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `GPCRC` reader - Enable Bus Clock"]
 pub type GPCRC_R = crate::BitReader<bool>;
 #[doc = "Field `GPCRC` writer - Enable Bus Clock"]
-pub type GPCRC_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 3>;
+pub type GPCRC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `TIMER0` reader - Enable Bus Clock"]
 pub type TIMER0_R = crate::BitReader<bool>;
 #[doc = "Field `TIMER0` writer - Enable Bus Clock"]
-pub type TIMER0_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 4>;
+pub type TIMER0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `TIMER1` reader - Enable Bus Clock"]
 pub type TIMER1_R = crate::BitReader<bool>;
 #[doc = "Field `TIMER1` writer - Enable Bus Clock"]
-pub type TIMER1_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 5>;
+pub type TIMER1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `TIMER2` reader - Enable Bus Clock"]
 pub type TIMER2_R = crate::BitReader<bool>;
 #[doc = "Field `TIMER2` writer - Enable Bus Clock"]
-pub type TIMER2_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 6>;
+pub type TIMER2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `TIMER3` reader - Enable Bus Clock"]
 pub type TIMER3_R = crate::BitReader<bool>;
 #[doc = "Field `TIMER3` writer - Enable Bus Clock"]
-pub type TIMER3_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 7>;
+pub type TIMER3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `TIMER4` reader - Enable Bus Clock"]
 pub type TIMER4_R = crate::BitReader<bool>;
 #[doc = "Field `TIMER4` writer - Enable Bus Clock"]
-pub type TIMER4_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 8>;
+pub type TIMER4_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `USART0` reader - Enable Bus Clock"]
 pub type USART0_R = crate::BitReader<bool>;
 #[doc = "Field `USART0` writer - Enable Bus Clock"]
-pub type USART0_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 9>;
+pub type USART0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `IADC0` reader - Enable Bus Clock"]
 pub type IADC0_R = crate::BitReader<bool>;
 #[doc = "Field `IADC0` writer - Enable Bus Clock"]
-pub type IADC0_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 10>;
+pub type IADC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `AMUXCP0` reader - Enable Bus Clock"]
 pub type AMUXCP0_R = crate::BitReader<bool>;
 #[doc = "Field `AMUXCP0` writer - Enable Bus Clock"]
-pub type AMUXCP0_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 11>;
+pub type AMUXCP0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `LETIMER0` reader - Enable Bus Clock"]
 pub type LETIMER0_R = crate::BitReader<bool>;
 #[doc = "Field `LETIMER0` writer - Enable Bus Clock"]
-pub type LETIMER0_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 12>;
+pub type LETIMER0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `WDOG0` reader - Enable Bus Clock"]
 pub type WDOG0_R = crate::BitReader<bool>;
 #[doc = "Field `WDOG0` writer - Enable Bus Clock"]
-pub type WDOG0_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 13>;
+pub type WDOG0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `I2C0` reader - Enable Bus Clock"]
 pub type I2C0_R = crate::BitReader<bool>;
 #[doc = "Field `I2C0` writer - Enable Bus Clock"]
-pub type I2C0_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 14>;
+pub type I2C0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `I2C1` reader - Enable Bus Clock"]
 pub type I2C1_R = crate::BitReader<bool>;
 #[doc = "Field `I2C1` writer - Enable Bus Clock"]
-pub type I2C1_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 15>;
+pub type I2C1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `SYSCFG` reader - Enable Bus Clock"]
 pub type SYSCFG_R = crate::BitReader<bool>;
 #[doc = "Field `SYSCFG` writer - Enable Bus Clock"]
-pub type SYSCFG_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 16>;
+pub type SYSCFG_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `DPLL0` reader - Enable Bus Clock"]
 pub type DPLL0_R = crate::BitReader<bool>;
 #[doc = "Field `DPLL0` writer - Enable Bus Clock"]
-pub type DPLL0_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 17>;
+pub type DPLL0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `HFRCO0` reader - Enable Bus Clock"]
 pub type HFRCO0_R = crate::BitReader<bool>;
 #[doc = "Field `HFRCO0` writer - Enable Bus Clock"]
-pub type HFRCO0_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 18>;
+pub type HFRCO0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `HFRCOEM23` reader - Enable Bus Clock"]
 pub type HFRCOEM23_R = crate::BitReader<bool>;
 #[doc = "Field `HFRCOEM23` writer - Enable Bus Clock"]
-pub type HFRCOEM23_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 19>;
+pub type HFRCOEM23_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `HFXO0` reader - Enable Bus Clock"]
 pub type HFXO0_R = crate::BitReader<bool>;
 #[doc = "Field `HFXO0` writer - Enable Bus Clock"]
-pub type HFXO0_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 20>;
+pub type HFXO0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `FSRCO` reader - Enable Bus Clock"]
 pub type FSRCO_R = crate::BitReader<bool>;
 #[doc = "Field `FSRCO` writer - Enable Bus Clock"]
-pub type FSRCO_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 21>;
+pub type FSRCO_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `LFRCO` reader - Enable Bus Clock"]
 pub type LFRCO_R = crate::BitReader<bool>;
 #[doc = "Field `LFRCO` writer - Enable Bus Clock"]
-pub type LFRCO_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 22>;
+pub type LFRCO_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `LFXO` reader - Enable Bus Clock"]
 pub type LFXO_R = crate::BitReader<bool>;
 #[doc = "Field `LFXO` writer - Enable Bus Clock"]
-pub type LFXO_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 23>;
+pub type LFXO_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `ULFRCO` reader - Enable Bus Clock"]
 pub type ULFRCO_R = crate::BitReader<bool>;
 #[doc = "Field `ULFRCO` writer - Enable Bus Clock"]
-pub type ULFRCO_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 24>;
+pub type ULFRCO_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `LESENSE` reader - Enable Bus Clock"]
 pub type LESENSE_R = crate::BitReader<bool>;
 #[doc = "Field `LESENSE` writer - Enable Bus Clock"]
-pub type LESENSE_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 25>;
+pub type LESENSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `GPIO` reader - Enable Bus Clock"]
 pub type GPIO_R = crate::BitReader<bool>;
 #[doc = "Field `GPIO` writer - Enable Bus Clock"]
-pub type GPIO_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 26>;
+pub type GPIO_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `PRS` reader - Enable Bus Clock"]
 pub type PRS_R = crate::BitReader<bool>;
 #[doc = "Field `PRS` writer - Enable Bus Clock"]
-pub type PRS_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 27>;
+pub type PRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `BURAM` reader - Enable Bus Clock"]
 pub type BURAM_R = crate::BitReader<bool>;
 #[doc = "Field `BURAM` writer - Enable Bus Clock"]
-pub type BURAM_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 28>;
+pub type BURAM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `BURTC` reader - Enable Bus Clock"]
 pub type BURTC_R = crate::BitReader<bool>;
 #[doc = "Field `BURTC` writer - Enable Bus Clock"]
-pub type BURTC_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 29>;
+pub type BURTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `SYSRTC0` reader - Enable Bus Clock"]
 pub type SYSRTC0_R = crate::BitReader<bool>;
 #[doc = "Field `SYSRTC0` writer - Enable Bus Clock"]
-pub type SYSRTC0_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 30>;
+pub type SYSRTC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 #[doc = "Field `DCDC` reader - Enable Bus Clock"]
 pub type DCDC_R = crate::BitReader<bool>;
 #[doc = "Field `DCDC` writer - Enable Bus Clock"]
-pub type DCDC_W<'a> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, 31>;
+pub type DCDC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN0_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Enable Bus Clock"]
     #[inline(always)]
@@ -318,157 +318,188 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn ldma(&mut self) -> LDMA_W {
+    #[must_use]
+    pub fn ldma(&mut self) -> LDMA_W<0> {
         LDMA_W::new(self)
     }
     #[doc = "Bit 1 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn ldmaxbar(&mut self) -> LDMAXBAR_W {
+    #[must_use]
+    pub fn ldmaxbar(&mut self) -> LDMAXBAR_W<1> {
         LDMAXBAR_W::new(self)
     }
     #[doc = "Bit 3 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn gpcrc(&mut self) -> GPCRC_W {
+    #[must_use]
+    pub fn gpcrc(&mut self) -> GPCRC_W<3> {
         GPCRC_W::new(self)
     }
     #[doc = "Bit 4 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn timer0(&mut self) -> TIMER0_W {
+    #[must_use]
+    pub fn timer0(&mut self) -> TIMER0_W<4> {
         TIMER0_W::new(self)
     }
     #[doc = "Bit 5 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn timer1(&mut self) -> TIMER1_W {
+    #[must_use]
+    pub fn timer1(&mut self) -> TIMER1_W<5> {
         TIMER1_W::new(self)
     }
     #[doc = "Bit 6 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn timer2(&mut self) -> TIMER2_W {
+    #[must_use]
+    pub fn timer2(&mut self) -> TIMER2_W<6> {
         TIMER2_W::new(self)
     }
     #[doc = "Bit 7 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn timer3(&mut self) -> TIMER3_W {
+    #[must_use]
+    pub fn timer3(&mut self) -> TIMER3_W<7> {
         TIMER3_W::new(self)
     }
     #[doc = "Bit 8 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn timer4(&mut self) -> TIMER4_W {
+    #[must_use]
+    pub fn timer4(&mut self) -> TIMER4_W<8> {
         TIMER4_W::new(self)
     }
     #[doc = "Bit 9 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn usart0(&mut self) -> USART0_W {
+    #[must_use]
+    pub fn usart0(&mut self) -> USART0_W<9> {
         USART0_W::new(self)
     }
     #[doc = "Bit 10 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn iadc0(&mut self) -> IADC0_W {
+    #[must_use]
+    pub fn iadc0(&mut self) -> IADC0_W<10> {
         IADC0_W::new(self)
     }
     #[doc = "Bit 11 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn amuxcp0(&mut self) -> AMUXCP0_W {
+    #[must_use]
+    pub fn amuxcp0(&mut self) -> AMUXCP0_W<11> {
         AMUXCP0_W::new(self)
     }
     #[doc = "Bit 12 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn letimer0(&mut self) -> LETIMER0_W {
+    #[must_use]
+    pub fn letimer0(&mut self) -> LETIMER0_W<12> {
         LETIMER0_W::new(self)
     }
     #[doc = "Bit 13 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn wdog0(&mut self) -> WDOG0_W {
+    #[must_use]
+    pub fn wdog0(&mut self) -> WDOG0_W<13> {
         WDOG0_W::new(self)
     }
     #[doc = "Bit 14 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn i2c0(&mut self) -> I2C0_W {
+    #[must_use]
+    pub fn i2c0(&mut self) -> I2C0_W<14> {
         I2C0_W::new(self)
     }
     #[doc = "Bit 15 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn i2c1(&mut self) -> I2C1_W {
+    #[must_use]
+    pub fn i2c1(&mut self) -> I2C1_W<15> {
         I2C1_W::new(self)
     }
     #[doc = "Bit 16 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn syscfg(&mut self) -> SYSCFG_W {
+    #[must_use]
+    pub fn syscfg(&mut self) -> SYSCFG_W<16> {
         SYSCFG_W::new(self)
     }
     #[doc = "Bit 17 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn dpll0(&mut self) -> DPLL0_W {
+    #[must_use]
+    pub fn dpll0(&mut self) -> DPLL0_W<17> {
         DPLL0_W::new(self)
     }
     #[doc = "Bit 18 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn hfrco0(&mut self) -> HFRCO0_W {
+    #[must_use]
+    pub fn hfrco0(&mut self) -> HFRCO0_W<18> {
         HFRCO0_W::new(self)
     }
     #[doc = "Bit 19 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn hfrcoem23(&mut self) -> HFRCOEM23_W {
+    #[must_use]
+    pub fn hfrcoem23(&mut self) -> HFRCOEM23_W<19> {
         HFRCOEM23_W::new(self)
     }
     #[doc = "Bit 20 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn hfxo0(&mut self) -> HFXO0_W {
+    #[must_use]
+    pub fn hfxo0(&mut self) -> HFXO0_W<20> {
         HFXO0_W::new(self)
     }
     #[doc = "Bit 21 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn fsrco(&mut self) -> FSRCO_W {
+    #[must_use]
+    pub fn fsrco(&mut self) -> FSRCO_W<21> {
         FSRCO_W::new(self)
     }
     #[doc = "Bit 22 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn lfrco(&mut self) -> LFRCO_W {
+    #[must_use]
+    pub fn lfrco(&mut self) -> LFRCO_W<22> {
         LFRCO_W::new(self)
     }
     #[doc = "Bit 23 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn lfxo(&mut self) -> LFXO_W {
+    #[must_use]
+    pub fn lfxo(&mut self) -> LFXO_W<23> {
         LFXO_W::new(self)
     }
     #[doc = "Bit 24 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn ulfrco(&mut self) -> ULFRCO_W {
+    #[must_use]
+    pub fn ulfrco(&mut self) -> ULFRCO_W<24> {
         ULFRCO_W::new(self)
     }
     #[doc = "Bit 25 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn lesense(&mut self) -> LESENSE_W {
+    #[must_use]
+    pub fn lesense(&mut self) -> LESENSE_W<25> {
         LESENSE_W::new(self)
     }
     #[doc = "Bit 26 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn gpio(&mut self) -> GPIO_W {
+    #[must_use]
+    pub fn gpio(&mut self) -> GPIO_W<26> {
         GPIO_W::new(self)
     }
     #[doc = "Bit 27 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn prs(&mut self) -> PRS_W {
+    #[must_use]
+    pub fn prs(&mut self) -> PRS_W<27> {
         PRS_W::new(self)
     }
     #[doc = "Bit 28 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn buram(&mut self) -> BURAM_W {
+    #[must_use]
+    pub fn buram(&mut self) -> BURAM_W<28> {
         BURAM_W::new(self)
     }
     #[doc = "Bit 29 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn burtc(&mut self) -> BURTC_W {
+    #[must_use]
+    pub fn burtc(&mut self) -> BURTC_W<29> {
         BURTC_W::new(self)
     }
     #[doc = "Bit 30 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn sysrtc0(&mut self) -> SYSRTC0_W {
+    #[must_use]
+    pub fn sysrtc0(&mut self) -> SYSRTC0_W<30> {
         SYSRTC0_W::new(self)
     }
     #[doc = "Bit 31 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn dcdc(&mut self) -> DCDC_W {
+    #[must_use]
+    pub fn dcdc(&mut self) -> DCDC_W<31> {
         DCDC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -490,11 +521,10 @@ impl crate::Readable for CLKEN0_SPEC {
 #[doc = "`write(|w| ..)` method takes [clken0::W](W) writer structure"]
 impl crate::Writable for CLKEN0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CLKEN0 to value 0"]
 impl crate::Resettable for CLKEN0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

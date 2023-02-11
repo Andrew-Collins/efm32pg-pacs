@@ -34,8 +34,10 @@ impl From<crate::W<CH1CFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CONVMODE` reader - Channel 1 Conversion Mode"]
+pub type CONVMODE_R = crate::BitReader<CONVMODE_A>;
 #[doc = "Channel 1 Conversion Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CONVMODE_A {
     #[doc = "0: DAC channel 1 is set in continuous mode"]
     CONTINUOUS = 0,
@@ -48,8 +50,6 @@ impl From<CONVMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CONVMODE` reader - Channel 1 Conversion Mode"]
-pub type CONVMODE_R = crate::BitReader<CONVMODE_A>;
 impl CONVMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl CONVMODE_R {
     }
 }
 #[doc = "Field `CONVMODE` writer - Channel 1 Conversion Mode"]
-pub type CONVMODE_W<'a> = crate::BitWriter<'a, u32, CH1CFG_SPEC, CONVMODE_A, 0>;
-impl<'a> CONVMODE_W<'a> {
+pub type CONVMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH1CFG_SPEC, CONVMODE_A, O>;
+impl<'a, const O: u8> CONVMODE_W<'a, O> {
     #[doc = "DAC channel 1 is set in continuous mode"]
     #[inline(always)]
     pub fn continuous(self) -> &'a mut W {
@@ -84,8 +84,10 @@ impl<'a> CONVMODE_W<'a> {
         self.variant(CONVMODE_A::SAMPLEOFF)
     }
 }
+#[doc = "Field `POWERMODE` reader - Channel 1 Power Mode"]
+pub type POWERMODE_R = crate::BitReader<POWERMODE_A>;
 #[doc = "Channel 1 Power Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum POWERMODE_A {
     #[doc = "0: Default is High Power Mode"]
     HIGHPOWER = 0,
@@ -98,8 +100,6 @@ impl From<POWERMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `POWERMODE` reader - Channel 1 Power Mode"]
-pub type POWERMODE_R = crate::BitReader<POWERMODE_A>;
 impl POWERMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,8 @@ impl POWERMODE_R {
     }
 }
 #[doc = "Field `POWERMODE` writer - Channel 1 Power Mode"]
-pub type POWERMODE_W<'a> = crate::BitWriter<'a, u32, CH1CFG_SPEC, POWERMODE_A, 2>;
-impl<'a> POWERMODE_W<'a> {
+pub type POWERMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH1CFG_SPEC, POWERMODE_A, O>;
+impl<'a, const O: u8> POWERMODE_W<'a, O> {
     #[doc = "Default is High Power Mode"]
     #[inline(always)]
     pub fn highpower(self) -> &'a mut W {
@@ -134,8 +134,10 @@ impl<'a> POWERMODE_W<'a> {
         self.variant(POWERMODE_A::LOWPOWER)
     }
 }
+#[doc = "Field `TRIGMODE` reader - Channel 1 Trigger Mode"]
+pub type TRIGMODE_R = crate::FieldReader<u8, TRIGMODE_A>;
 #[doc = "Channel 1 Trigger Mode\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TRIGMODE_A {
     #[doc = "0: No Conversion Trigger Source Selected for Channel 1"]
@@ -155,8 +157,6 @@ impl From<TRIGMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TRIGMODE` reader - Channel 1 Trigger Mode"]
-pub type TRIGMODE_R = crate::FieldReader<u8, TRIGMODE_A>;
 impl TRIGMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -197,8 +197,9 @@ impl TRIGMODE_R {
     }
 }
 #[doc = "Field `TRIGMODE` writer - Channel 1 Trigger Mode"]
-pub type TRIGMODE_W<'a> = crate::FieldWriter<'a, u32, CH1CFG_SPEC, u8, TRIGMODE_A, 3, 4>;
-impl<'a> TRIGMODE_W<'a> {
+pub type TRIGMODE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CH1CFG_SPEC, u8, TRIGMODE_A, 3, O>;
+impl<'a, const O: u8> TRIGMODE_W<'a, O> {
     #[doc = "No Conversion Trigger Source Selected for Channel 1"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -225,8 +226,10 @@ impl<'a> TRIGMODE_W<'a> {
         self.variant(TRIGMODE_A::ASYNCPRS)
     }
 }
+#[doc = "Field `REFRESHSOURCE` reader - Channel 1 Refresh Source"]
+pub type REFRESHSOURCE_R = crate::FieldReader<u8, REFRESHSOURCE_A>;
 #[doc = "Channel 1 Refresh Source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum REFRESHSOURCE_A {
     #[doc = "0: No Refresh Source Selected"]
@@ -244,8 +247,6 @@ impl From<REFRESHSOURCE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `REFRESHSOURCE` reader - Channel 1 Refresh Source"]
-pub type REFRESHSOURCE_R = crate::FieldReader<u8, REFRESHSOURCE_A>;
 impl REFRESHSOURCE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -280,9 +281,9 @@ impl REFRESHSOURCE_R {
     }
 }
 #[doc = "Field `REFRESHSOURCE` writer - Channel 1 Refresh Source"]
-pub type REFRESHSOURCE_W<'a> =
-    crate::FieldWriterSafe<'a, u32, CH1CFG_SPEC, u8, REFRESHSOURCE_A, 2, 8>;
-impl<'a> REFRESHSOURCE_W<'a> {
+pub type REFRESHSOURCE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CH1CFG_SPEC, u8, REFRESHSOURCE_A, 2, O>;
+impl<'a, const O: u8> REFRESHSOURCE_W<'a, O> {
     #[doc = "No Refresh Source Selected"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -307,15 +308,15 @@ impl<'a> REFRESHSOURCE_W<'a> {
 #[doc = "Field `FIFODVL` reader - Channel 1 FIFO Low Watermark"]
 pub type FIFODVL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FIFODVL` writer - Channel 1 FIFO Low Watermark"]
-pub type FIFODVL_W<'a> = crate::FieldWriter<'a, u32, CH1CFG_SPEC, u8, u8, 2, 11>;
+pub type FIFODVL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH1CFG_SPEC, u8, u8, 2, O>;
 #[doc = "Field `HIGHCAPLOADEN` reader - Channel 1 High Cap Load Mode Enable"]
 pub type HIGHCAPLOADEN_R = crate::BitReader<bool>;
 #[doc = "Field `HIGHCAPLOADEN` writer - Channel 1 High Cap Load Mode Enable"]
-pub type HIGHCAPLOADEN_W<'a> = crate::BitWriter<'a, u32, CH1CFG_SPEC, bool, 14>;
+pub type HIGHCAPLOADEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH1CFG_SPEC, bool, O>;
 #[doc = "Field `KEEPWARM` reader - Channel 1 Keepwarm Mode Enable"]
 pub type KEEPWARM_R = crate::BitReader<bool>;
 #[doc = "Field `KEEPWARM` writer - Channel 1 Keepwarm Mode Enable"]
-pub type KEEPWARM_W<'a> = crate::BitWriter<'a, u32, CH1CFG_SPEC, bool, 16>;
+pub type KEEPWARM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH1CFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Channel 1 Conversion Mode"]
     #[inline(always)]
@@ -356,37 +357,44 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Channel 1 Conversion Mode"]
     #[inline(always)]
-    pub fn convmode(&mut self) -> CONVMODE_W {
+    #[must_use]
+    pub fn convmode(&mut self) -> CONVMODE_W<0> {
         CONVMODE_W::new(self)
     }
     #[doc = "Bit 2 - Channel 1 Power Mode"]
     #[inline(always)]
-    pub fn powermode(&mut self) -> POWERMODE_W {
+    #[must_use]
+    pub fn powermode(&mut self) -> POWERMODE_W<2> {
         POWERMODE_W::new(self)
     }
     #[doc = "Bits 4:6 - Channel 1 Trigger Mode"]
     #[inline(always)]
-    pub fn trigmode(&mut self) -> TRIGMODE_W {
+    #[must_use]
+    pub fn trigmode(&mut self) -> TRIGMODE_W<4> {
         TRIGMODE_W::new(self)
     }
     #[doc = "Bits 8:9 - Channel 1 Refresh Source"]
     #[inline(always)]
-    pub fn refreshsource(&mut self) -> REFRESHSOURCE_W {
+    #[must_use]
+    pub fn refreshsource(&mut self) -> REFRESHSOURCE_W<8> {
         REFRESHSOURCE_W::new(self)
     }
     #[doc = "Bits 11:12 - Channel 1 FIFO Low Watermark"]
     #[inline(always)]
-    pub fn fifodvl(&mut self) -> FIFODVL_W {
+    #[must_use]
+    pub fn fifodvl(&mut self) -> FIFODVL_W<11> {
         FIFODVL_W::new(self)
     }
     #[doc = "Bit 14 - Channel 1 High Cap Load Mode Enable"]
     #[inline(always)]
-    pub fn highcaploaden(&mut self) -> HIGHCAPLOADEN_W {
+    #[must_use]
+    pub fn highcaploaden(&mut self) -> HIGHCAPLOADEN_W<14> {
         HIGHCAPLOADEN_W::new(self)
     }
     #[doc = "Bit 16 - Channel 1 Keepwarm Mode Enable"]
     #[inline(always)]
-    pub fn keepwarm(&mut self) -> KEEPWARM_W {
+    #[must_use]
+    pub fn keepwarm(&mut self) -> KEEPWARM_W<16> {
         KEEPWARM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -408,11 +416,10 @@ impl crate::Readable for CH1CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [ch1cfg::W](W) writer structure"]
 impl crate::Writable for CH1CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CH1CFG to value 0x10"]
 impl crate::Resettable for CH1CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x10
-    }
+    const RESET_VALUE: Self::Ux = 0x10;
 }

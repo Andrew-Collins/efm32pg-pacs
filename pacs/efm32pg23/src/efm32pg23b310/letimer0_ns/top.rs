@@ -37,18 +37,19 @@ impl From<crate::W<TOP_SPEC>> for W {
 #[doc = "Field `TOP` reader - Counter TOP Value"]
 pub type TOP_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TOP` writer - Counter TOP Value"]
-pub type TOP_W<'a> = crate::FieldWriter<'a, u32, TOP_SPEC, u32, u32, 24, 0>;
+pub type TOP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TOP_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bits 0:23 - Counter TOP Value"]
     #[inline(always)]
     pub fn top(&self) -> TOP_R {
-        TOP_R::new((self.bits & 0x00ff_ffff) as u32)
+        TOP_R::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - Counter TOP Value"]
     #[inline(always)]
-    pub fn top(&mut self) -> TOP_W {
+    #[must_use]
+    pub fn top(&mut self) -> TOP_W<0> {
         TOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for TOP_SPEC {
 #[doc = "`write(|w| ..)` method takes [top::W](W) writer structure"]
 impl crate::Writable for TOP_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TOP to value 0"]
 impl crate::Resettable for TOP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

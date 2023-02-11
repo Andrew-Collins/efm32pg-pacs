@@ -13,8 +13,10 @@ impl From<crate::R<SWCAPA0_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `ZIGBEE` reader - Zigbee Capability"]
+pub type ZIGBEE_R = crate::FieldReader<u8, ZIGBEE_A>;
 #[doc = "Zigbee Capability\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ZIGBEE_A {
     #[doc = "0: ZigBee stack capability not available"]
@@ -32,8 +34,6 @@ impl From<ZIGBEE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ZIGBEE` reader - Zigbee Capability"]
-pub type ZIGBEE_R = crate::FieldReader<u8, ZIGBEE_A>;
 impl ZIGBEE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -67,8 +67,10 @@ impl ZIGBEE_R {
         *self == ZIGBEE_A::LEVEL3
     }
 }
+#[doc = "Field `THREAD` reader - Thread Capability"]
+pub type THREAD_R = crate::FieldReader<u8, THREAD_A>;
 #[doc = "Thread Capability\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum THREAD_A {
     #[doc = "0: RF4CE stack capability not available"]
@@ -86,8 +88,6 @@ impl From<THREAD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `THREAD` reader - Thread Capability"]
-pub type THREAD_R = crate::FieldReader<u8, THREAD_A>;
 impl THREAD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,10 @@ impl THREAD_R {
         *self == THREAD_A::LEVEL3
     }
 }
+#[doc = "Field `RF4CE` reader - RF4CE Capability"]
+pub type RF4CE_R = crate::FieldReader<u8, RF4CE_A>;
 #[doc = "RF4CE Capability\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RF4CE_A {
     #[doc = "0: Thread stack capability not available"]
@@ -140,8 +142,6 @@ impl From<RF4CE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RF4CE` reader - RF4CE Capability"]
-pub type RF4CE_R = crate::FieldReader<u8, RF4CE_A>;
 impl RF4CE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -175,8 +175,10 @@ impl RF4CE_R {
         *self == RF4CE_A::LEVEL3
     }
 }
+#[doc = "Field `BTSMART` reader - Bluetooth Smart Capability"]
+pub type BTSMART_R = crate::FieldReader<u8, BTSMART_A>;
 #[doc = "Bluetooth Smart Capability\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BTSMART_A {
     #[doc = "0: Bluetooth SMART stack capability not available"]
@@ -194,8 +196,6 @@ impl From<BTSMART_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BTSMART` reader - Bluetooth Smart Capability"]
-pub type BTSMART_R = crate::FieldReader<u8, BTSMART_A>;
 impl BTSMART_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -229,8 +229,10 @@ impl BTSMART_R {
         *self == BTSMART_A::LEVEL3
     }
 }
+#[doc = "Field `CONNECT` reader - Connect Capability"]
+pub type CONNECT_R = crate::FieldReader<u8, CONNECT_A>;
 #[doc = "Connect Capability\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CONNECT_A {
     #[doc = "0: Connect stack capability not available"]
@@ -248,8 +250,6 @@ impl From<CONNECT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CONNECT` reader - Connect Capability"]
-pub type CONNECT_R = crate::FieldReader<u8, CONNECT_A>;
 impl CONNECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -283,8 +283,10 @@ impl CONNECT_R {
         *self == CONNECT_A::LEVEL3
     }
 }
+#[doc = "Field `SRI` reader - RAIL Capability"]
+pub type SRI_R = crate::FieldReader<u8, SRI_A>;
 #[doc = "RAIL Capability\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SRI_A {
     #[doc = "0: RAIL capability not available"]
@@ -302,8 +304,6 @@ impl From<SRI_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SRI` reader - RAIL Capability"]
-pub type SRI_R = crate::FieldReader<u8, SRI_A>;
 impl SRI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -337,8 +337,10 @@ impl SRI_R {
         *self == SRI_A::LEVEL3
     }
 }
+#[doc = "Field `ZWAVE` reader - Z-Wave Capability"]
+pub type ZWAVE_R = crate::FieldReader<u8, ZWAVE_A>;
 #[doc = "Z-Wave Capability\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ZWAVE_A {
     #[doc = "0: Z-Wave stack capability not available"]
@@ -358,8 +360,6 @@ impl From<ZWAVE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ZWAVE` reader - Z-Wave Capability"]
-pub type ZWAVE_R = crate::FieldReader<u8, ZWAVE_A>;
 impl ZWAVE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -447,8 +447,5 @@ impl crate::Readable for SWCAPA0_SPEC {
 }
 #[doc = "`reset()` method sets SWCAPA0 to value 0"]
 impl crate::Resettable for SWCAPA0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -33,8 +33,5 @@ impl crate::Readable for SWFIX_SPEC {
 }
 #[doc = "`reset()` method sets SWFIX to value 0xffff_ffff"]
 impl crate::Resettable for SWFIX_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+    const RESET_VALUE: Self::Ux = 0xffff_ffff;
 }

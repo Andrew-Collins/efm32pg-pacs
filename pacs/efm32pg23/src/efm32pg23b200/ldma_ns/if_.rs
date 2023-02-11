@@ -37,39 +37,39 @@ impl From<crate::W<IF_SPEC>> for W {
 #[doc = "Field `DONE0` reader - DMA Structure Operation Done"]
 pub type DONE0_R = crate::BitReader<bool>;
 #[doc = "Field `DONE0` writer - DMA Structure Operation Done"]
-pub type DONE0_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 0>;
+pub type DONE0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `DONE1` reader - DMA Structure Operation Done"]
 pub type DONE1_R = crate::BitReader<bool>;
 #[doc = "Field `DONE1` writer - DMA Structure Operation Done"]
-pub type DONE1_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 1>;
+pub type DONE1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `DONE2` reader - DMA Structure Operation Done"]
 pub type DONE2_R = crate::BitReader<bool>;
 #[doc = "Field `DONE2` writer - DMA Structure Operation Done"]
-pub type DONE2_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 2>;
+pub type DONE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `DONE3` reader - DMA Structure Operation Done"]
 pub type DONE3_R = crate::BitReader<bool>;
 #[doc = "Field `DONE3` writer - DMA Structure Operation Done"]
-pub type DONE3_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 3>;
+pub type DONE3_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `DONE4` reader - DMA Structure Operation Done"]
 pub type DONE4_R = crate::BitReader<bool>;
 #[doc = "Field `DONE4` writer - DMA Structure Operation Done"]
-pub type DONE4_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 4>;
+pub type DONE4_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `DONE5` reader - DMA Structure Operation Done"]
 pub type DONE5_R = crate::BitReader<bool>;
 #[doc = "Field `DONE5` writer - DMA Structure Operation Done"]
-pub type DONE5_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 5>;
+pub type DONE5_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `DONE6` reader - DMA Structure Operation Done"]
 pub type DONE6_R = crate::BitReader<bool>;
 #[doc = "Field `DONE6` writer - DMA Structure Operation Done"]
-pub type DONE6_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 6>;
+pub type DONE6_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `DONE7` reader - DMA Structure Operation Done"]
 pub type DONE7_R = crate::BitReader<bool>;
 #[doc = "Field `DONE7` writer - DMA Structure Operation Done"]
-pub type DONE7_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 7>;
+pub type DONE7_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `ERROR` reader - Error Flag"]
 pub type ERROR_R = crate::BitReader<bool>;
 #[doc = "Field `ERROR` writer - Error Flag"]
-pub type ERROR_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 31>;
+pub type ERROR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - DMA Structure Operation Done"]
     #[inline(always)]
@@ -120,47 +120,56 @@ impl R {
 impl W {
     #[doc = "Bit 0 - DMA Structure Operation Done"]
     #[inline(always)]
-    pub fn done0(&mut self) -> DONE0_W {
+    #[must_use]
+    pub fn done0(&mut self) -> DONE0_W<0> {
         DONE0_W::new(self)
     }
     #[doc = "Bit 1 - DMA Structure Operation Done"]
     #[inline(always)]
-    pub fn done1(&mut self) -> DONE1_W {
+    #[must_use]
+    pub fn done1(&mut self) -> DONE1_W<1> {
         DONE1_W::new(self)
     }
     #[doc = "Bit 2 - DMA Structure Operation Done"]
     #[inline(always)]
-    pub fn done2(&mut self) -> DONE2_W {
+    #[must_use]
+    pub fn done2(&mut self) -> DONE2_W<2> {
         DONE2_W::new(self)
     }
     #[doc = "Bit 3 - DMA Structure Operation Done"]
     #[inline(always)]
-    pub fn done3(&mut self) -> DONE3_W {
+    #[must_use]
+    pub fn done3(&mut self) -> DONE3_W<3> {
         DONE3_W::new(self)
     }
     #[doc = "Bit 4 - DMA Structure Operation Done"]
     #[inline(always)]
-    pub fn done4(&mut self) -> DONE4_W {
+    #[must_use]
+    pub fn done4(&mut self) -> DONE4_W<4> {
         DONE4_W::new(self)
     }
     #[doc = "Bit 5 - DMA Structure Operation Done"]
     #[inline(always)]
-    pub fn done5(&mut self) -> DONE5_W {
+    #[must_use]
+    pub fn done5(&mut self) -> DONE5_W<5> {
         DONE5_W::new(self)
     }
     #[doc = "Bit 6 - DMA Structure Operation Done"]
     #[inline(always)]
-    pub fn done6(&mut self) -> DONE6_W {
+    #[must_use]
+    pub fn done6(&mut self) -> DONE6_W<6> {
         DONE6_W::new(self)
     }
     #[doc = "Bit 7 - DMA Structure Operation Done"]
     #[inline(always)]
-    pub fn done7(&mut self) -> DONE7_W {
+    #[must_use]
+    pub fn done7(&mut self) -> DONE7_W<7> {
         DONE7_W::new(self)
     }
     #[doc = "Bit 31 - Error Flag"]
     #[inline(always)]
-    pub fn error(&mut self) -> ERROR_W {
+    #[must_use]
+    pub fn error(&mut self) -> ERROR_W<31> {
         ERROR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -182,11 +191,10 @@ impl crate::Readable for IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_::W](W) writer structure"]
 impl crate::Writable for IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

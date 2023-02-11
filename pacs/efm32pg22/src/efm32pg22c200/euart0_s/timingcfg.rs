@@ -34,8 +34,10 @@ impl From<crate::W<TIMINGCFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TXDELAY` reader - TX Delay Transmission"]
+pub type TXDELAY_R = crate::FieldReader<u8, TXDELAY_A>;
 #[doc = "TX Delay Transmission\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TXDELAY_A {
     #[doc = "0: Frames are transmitted immediately."]
@@ -53,8 +55,6 @@ impl From<TXDELAY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TXDELAY` reader - TX Delay Transmission"]
-pub type TXDELAY_R = crate::FieldReader<u8, TXDELAY_A>;
 impl TXDELAY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,9 @@ impl TXDELAY_R {
     }
 }
 #[doc = "Field `TXDELAY` writer - TX Delay Transmission"]
-pub type TXDELAY_W<'a> = crate::FieldWriterSafe<'a, u32, TIMINGCFG_SPEC, u8, TXDELAY_A, 2, 0>;
-impl<'a> TXDELAY_W<'a> {
+pub type TXDELAY_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TIMINGCFG_SPEC, u8, TXDELAY_A, 2, O>;
+impl<'a, const O: u8> TXDELAY_W<'a, O> {
     #[doc = "Frames are transmitted immediately."]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -122,7 +123,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - TX Delay Transmission"]
     #[inline(always)]
-    pub fn txdelay(&mut self) -> TXDELAY_W {
+    #[must_use]
+    pub fn txdelay(&mut self) -> TXDELAY_W<0> {
         TXDELAY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -144,11 +146,10 @@ impl crate::Readable for TIMINGCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [timingcfg::W](W) writer structure"]
 impl crate::Writable for TIMINGCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TIMINGCFG to value 0"]
 impl crate::Resettable for TIMINGCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -33,8 +33,5 @@ impl crate::Readable for SINGLEFIFOSTAT_SPEC {
 }
 #[doc = "`reset()` method sets SINGLEFIFOSTAT to value 0"]
 impl crate::Resettable for SINGLEFIFOSTAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

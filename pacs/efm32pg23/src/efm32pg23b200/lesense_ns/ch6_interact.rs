@@ -37,9 +37,11 @@ impl From<crate::W<CH6_INTERACT_SPEC>> for W {
 #[doc = "Field `THRES` reader - ACMP threshold or DAC data"]
 pub type THRES_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `THRES` writer - ACMP threshold or DAC data"]
-pub type THRES_W<'a> = crate::FieldWriter<'a, u32, CH6_INTERACT_SPEC, u16, u16, 12, 0>;
+pub type THRES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH6_INTERACT_SPEC, u16, u16, 12, O>;
+#[doc = "Field `EXMODE` reader - Set GPIO mode"]
+pub type EXMODE_R = crate::FieldReader<u8, EXMODE_A>;
 #[doc = "Set GPIO mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EXMODE_A {
     #[doc = "0: Disabled"]
@@ -57,8 +59,6 @@ impl From<EXMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EXMODE` reader - Set GPIO mode"]
-pub type EXMODE_R = crate::FieldReader<u8, EXMODE_A>;
 impl EXMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -93,8 +93,9 @@ impl EXMODE_R {
     }
 }
 #[doc = "Field `EXMODE` writer - Set GPIO mode"]
-pub type EXMODE_W<'a> = crate::FieldWriterSafe<'a, u32, CH6_INTERACT_SPEC, u8, EXMODE_A, 2, 16>;
-impl<'a> EXMODE_W<'a> {
+pub type EXMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CH6_INTERACT_SPEC, u8, EXMODE_A, 2, O>;
+impl<'a, const O: u8> EXMODE_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -119,9 +120,11 @@ impl<'a> EXMODE_W<'a> {
 #[doc = "Field `ALTEX` reader - Use alternative excite pin"]
 pub type ALTEX_R = crate::BitReader<bool>;
 #[doc = "Field `ALTEX` writer - Use alternative excite pin"]
-pub type ALTEX_W<'a> = crate::BitWriter<'a, u32, CH6_INTERACT_SPEC, bool, 18>;
+pub type ALTEX_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH6_INTERACT_SPEC, bool, O>;
+#[doc = "Field `SAMPLECLK` reader - Select clock used for timing of sample d"]
+pub type SAMPLECLK_R = crate::BitReader<SAMPLECLK_A>;
 #[doc = "Select clock used for timing of sample d\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SAMPLECLK_A {
     #[doc = "0: LFACLK will be used for timing"]
     LFACLK = 0,
@@ -134,8 +137,6 @@ impl From<SAMPLECLK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SAMPLECLK` reader - Select clock used for timing of sample d"]
-pub type SAMPLECLK_R = crate::BitReader<SAMPLECLK_A>;
 impl SAMPLECLK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -157,8 +158,9 @@ impl SAMPLECLK_R {
     }
 }
 #[doc = "Field `SAMPLECLK` writer - Select clock used for timing of sample d"]
-pub type SAMPLECLK_W<'a> = crate::BitWriter<'a, u32, CH6_INTERACT_SPEC, SAMPLECLK_A, 19>;
-impl<'a> SAMPLECLK_W<'a> {
+pub type SAMPLECLK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CH6_INTERACT_SPEC, SAMPLECLK_A, O>;
+impl<'a, const O: u8> SAMPLECLK_W<'a, O> {
     #[doc = "LFACLK will be used for timing"]
     #[inline(always)]
     pub fn lfaclk(self) -> &'a mut W {
@@ -170,8 +172,10 @@ impl<'a> SAMPLECLK_W<'a> {
         self.variant(SAMPLECLK_A::AUXHFRCO)
     }
 }
+#[doc = "Field `EXCLK` reader - Select clock used for excitation timing"]
+pub type EXCLK_R = crate::BitReader<EXCLK_A>;
 #[doc = "Select clock used for excitation timing\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EXCLK_A {
     #[doc = "0: LFACLK will be used for timing"]
     LFACLK = 0,
@@ -184,8 +188,6 @@ impl From<EXCLK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EXCLK` reader - Select clock used for excitation timing"]
-pub type EXCLK_R = crate::BitReader<EXCLK_A>;
 impl EXCLK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -207,8 +209,8 @@ impl EXCLK_R {
     }
 }
 #[doc = "Field `EXCLK` writer - Select clock used for excitation timing"]
-pub type EXCLK_W<'a> = crate::BitWriter<'a, u32, CH6_INTERACT_SPEC, EXCLK_A, 20>;
-impl<'a> EXCLK_W<'a> {
+pub type EXCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH6_INTERACT_SPEC, EXCLK_A, O>;
+impl<'a, const O: u8> EXCLK_W<'a, O> {
     #[doc = "LFACLK will be used for timing"]
     #[inline(always)]
     pub fn lfaclk(self) -> &'a mut W {
@@ -220,8 +222,10 @@ impl<'a> EXCLK_W<'a> {
         self.variant(EXCLK_A::AUXHFRCO)
     }
 }
+#[doc = "Field `SETIF` reader - Enable interrupt generation"]
+pub type SETIF_R = crate::FieldReader<u8, SETIF_A>;
 #[doc = "Enable interrupt generation\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SETIF_A {
     #[doc = "0: No interrupt is generated"]
@@ -241,8 +245,6 @@ impl From<SETIF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SETIF` reader - Enable interrupt generation"]
-pub type SETIF_R = crate::FieldReader<u8, SETIF_A>;
 impl SETIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -283,8 +285,9 @@ impl SETIF_R {
     }
 }
 #[doc = "Field `SETIF` writer - Enable interrupt generation"]
-pub type SETIF_W<'a> = crate::FieldWriter<'a, u32, CH6_INTERACT_SPEC, u8, SETIF_A, 3, 21>;
-impl<'a> SETIF_W<'a> {
+pub type SETIF_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CH6_INTERACT_SPEC, u8, SETIF_A, 3, O>;
+impl<'a, const O: u8> SETIF_W<'a, O> {
     #[doc = "No interrupt is generated"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -314,9 +317,11 @@ impl<'a> SETIF_W<'a> {
 #[doc = "Field `OFFSET` reader - OFFSET for IADC/ACMP interaction"]
 pub type OFFSET_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OFFSET` writer - OFFSET for IADC/ACMP interaction"]
-pub type OFFSET_W<'a> = crate::FieldWriter<'a, u32, CH6_INTERACT_SPEC, u8, u8, 4, 24>;
+pub type OFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH6_INTERACT_SPEC, u8, u8, 4, O>;
+#[doc = "Field `SAMPLE` reader - Sample mode Selection"]
+pub type SAMPLE_R = crate::FieldReader<u8, SAMPLE_A>;
 #[doc = "Sample mode Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SAMPLE_A {
     #[doc = "0: ACMPCOUNT"]
@@ -334,8 +339,6 @@ impl From<SAMPLE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SAMPLE` reader - Sample mode Selection"]
-pub type SAMPLE_R = crate::FieldReader<u8, SAMPLE_A>;
 impl SAMPLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -370,8 +373,9 @@ impl SAMPLE_R {
     }
 }
 #[doc = "Field `SAMPLE` writer - Sample mode Selection"]
-pub type SAMPLE_W<'a> = crate::FieldWriterSafe<'a, u32, CH6_INTERACT_SPEC, u8, SAMPLE_A, 2, 28>;
-impl<'a> SAMPLE_W<'a> {
+pub type SAMPLE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CH6_INTERACT_SPEC, u8, SAMPLE_A, 2, O>;
+impl<'a, const O: u8> SAMPLE_W<'a, O> {
     #[doc = "ACMPCOUNT"]
     #[inline(always)]
     pub fn acmpcount(self) -> &'a mut W {
@@ -438,42 +442,50 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - ACMP threshold or DAC data"]
     #[inline(always)]
-    pub fn thres(&mut self) -> THRES_W {
+    #[must_use]
+    pub fn thres(&mut self) -> THRES_W<0> {
         THRES_W::new(self)
     }
     #[doc = "Bits 16:17 - Set GPIO mode"]
     #[inline(always)]
-    pub fn exmode(&mut self) -> EXMODE_W {
+    #[must_use]
+    pub fn exmode(&mut self) -> EXMODE_W<16> {
         EXMODE_W::new(self)
     }
     #[doc = "Bit 18 - Use alternative excite pin"]
     #[inline(always)]
-    pub fn altex(&mut self) -> ALTEX_W {
+    #[must_use]
+    pub fn altex(&mut self) -> ALTEX_W<18> {
         ALTEX_W::new(self)
     }
     #[doc = "Bit 19 - Select clock used for timing of sample d"]
     #[inline(always)]
-    pub fn sampleclk(&mut self) -> SAMPLECLK_W {
+    #[must_use]
+    pub fn sampleclk(&mut self) -> SAMPLECLK_W<19> {
         SAMPLECLK_W::new(self)
     }
     #[doc = "Bit 20 - Select clock used for excitation timing"]
     #[inline(always)]
-    pub fn exclk(&mut self) -> EXCLK_W {
+    #[must_use]
+    pub fn exclk(&mut self) -> EXCLK_W<20> {
         EXCLK_W::new(self)
     }
     #[doc = "Bits 21:23 - Enable interrupt generation"]
     #[inline(always)]
-    pub fn setif(&mut self) -> SETIF_W {
+    #[must_use]
+    pub fn setif(&mut self) -> SETIF_W<21> {
         SETIF_W::new(self)
     }
     #[doc = "Bits 24:27 - OFFSET for IADC/ACMP interaction"]
     #[inline(always)]
-    pub fn offset(&mut self) -> OFFSET_W {
+    #[must_use]
+    pub fn offset(&mut self) -> OFFSET_W<24> {
         OFFSET_W::new(self)
     }
     #[doc = "Bits 28:29 - Sample mode Selection"]
     #[inline(always)]
-    pub fn sample(&mut self) -> SAMPLE_W {
+    #[must_use]
+    pub fn sample(&mut self) -> SAMPLE_W<28> {
         SAMPLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -495,11 +507,10 @@ impl crate::Readable for CH6_INTERACT_SPEC {
 #[doc = "`write(|w| ..)` method takes [ch6_interact::W](W) writer structure"]
 impl crate::Writable for CH6_INTERACT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CH6_INTERACT to value 0"]
 impl crate::Resettable for CH6_INTERACT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

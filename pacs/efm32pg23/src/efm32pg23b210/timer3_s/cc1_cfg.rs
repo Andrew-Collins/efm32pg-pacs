@@ -34,8 +34,10 @@ impl From<crate::W<CC1_CFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - CC Channel Mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "CC Channel Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Compare/Capture channel turned off"]
@@ -53,8 +55,6 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - CC Channel Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - CC Channel Mode"]
-pub type MODE_W<'a> = crate::FieldWriterSafe<'a, u32, CC1_CFG_SPEC, u8, MODE_A, 2, 0>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CC1_CFG_SPEC, u8, MODE_A, 2, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Compare/Capture channel turned off"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -115,9 +115,11 @@ impl<'a> MODE_W<'a> {
 #[doc = "Field `COIST` reader - Compare Output Initial State"]
 pub type COIST_R = crate::BitReader<bool>;
 #[doc = "Field `COIST` writer - Compare Output Initial State"]
-pub type COIST_W<'a> = crate::BitWriter<'a, u32, CC1_CFG_SPEC, bool, 4>;
+pub type COIST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CC1_CFG_SPEC, bool, O>;
+#[doc = "Field `INSEL` reader - Input Selection"]
+pub type INSEL_R = crate::FieldReader<u8, INSEL_A>;
 #[doc = "Input Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INSEL_A {
     #[doc = "0: TIMERnCCx pin is selected"]
@@ -135,8 +137,6 @@ impl From<INSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `INSEL` reader - Input Selection"]
-pub type INSEL_R = crate::FieldReader<u8, INSEL_A>;
 impl INSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -171,8 +171,9 @@ impl INSEL_R {
     }
 }
 #[doc = "Field `INSEL` writer - Input Selection"]
-pub type INSEL_W<'a> = crate::FieldWriterSafe<'a, u32, CC1_CFG_SPEC, u8, INSEL_A, 2, 17>;
-impl<'a> INSEL_W<'a> {
+pub type INSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CC1_CFG_SPEC, u8, INSEL_A, 2, O>;
+impl<'a, const O: u8> INSEL_W<'a, O> {
     #[doc = "TIMERnCCx pin is selected"]
     #[inline(always)]
     pub fn pin(self) -> &'a mut W {
@@ -194,8 +195,10 @@ impl<'a> INSEL_W<'a> {
         self.variant(INSEL_A::PRSASYNCPULSE)
     }
 }
+#[doc = "Field `PRSCONF` reader - PRS Configuration"]
+pub type PRSCONF_R = crate::BitReader<PRSCONF_A>;
 #[doc = "PRS Configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PRSCONF_A {
     #[doc = "0: Each CC event will generate a one EM01GRPACLK cycle high pulse"]
     PULSE = 0,
@@ -208,8 +211,6 @@ impl From<PRSCONF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PRSCONF` reader - PRS Configuration"]
-pub type PRSCONF_R = crate::BitReader<PRSCONF_A>;
 impl PRSCONF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -231,8 +232,8 @@ impl PRSCONF_R {
     }
 }
 #[doc = "Field `PRSCONF` writer - PRS Configuration"]
-pub type PRSCONF_W<'a> = crate::BitWriter<'a, u32, CC1_CFG_SPEC, PRSCONF_A, 19>;
-impl<'a> PRSCONF_W<'a> {
+pub type PRSCONF_W<'a, const O: u8> = crate::BitWriter<'a, u32, CC1_CFG_SPEC, PRSCONF_A, O>;
+impl<'a, const O: u8> PRSCONF_W<'a, O> {
     #[doc = "Each CC event will generate a one EM01GRPACLK cycle high pulse"]
     #[inline(always)]
     pub fn pulse(self) -> &'a mut W {
@@ -244,8 +245,10 @@ impl<'a> PRSCONF_W<'a> {
         self.variant(PRSCONF_A::LEVEL)
     }
 }
+#[doc = "Field `FILT` reader - Digital Filter"]
+pub type FILT_R = crate::BitReader<FILT_A>;
 #[doc = "Digital Filter\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FILT_A {
     #[doc = "0: Digital Filter Disabled"]
     DISABLE = 0,
@@ -258,8 +261,6 @@ impl From<FILT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FILT` reader - Digital Filter"]
-pub type FILT_R = crate::BitReader<FILT_A>;
 impl FILT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -281,8 +282,8 @@ impl FILT_R {
     }
 }
 #[doc = "Field `FILT` writer - Digital Filter"]
-pub type FILT_W<'a> = crate::BitWriter<'a, u32, CC1_CFG_SPEC, FILT_A, 20>;
-impl<'a> FILT_W<'a> {
+pub type FILT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CC1_CFG_SPEC, FILT_A, O>;
+impl<'a, const O: u8> FILT_W<'a, O> {
     #[doc = "Digital Filter Disabled"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -297,7 +298,7 @@ impl<'a> FILT_W<'a> {
 #[doc = "Field `ICFWL` reader - Input Capture FIFO watermark level"]
 pub type ICFWL_R = crate::BitReader<bool>;
 #[doc = "Field `ICFWL` writer - Input Capture FIFO watermark level"]
-pub type ICFWL_W<'a> = crate::BitWriter<'a, u32, CC1_CFG_SPEC, bool, 21>;
+pub type ICFWL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CC1_CFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - CC Channel Mode"]
     #[inline(always)]
@@ -333,32 +334,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - CC Channel Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<0> {
         MODE_W::new(self)
     }
     #[doc = "Bit 4 - Compare Output Initial State"]
     #[inline(always)]
-    pub fn coist(&mut self) -> COIST_W {
+    #[must_use]
+    pub fn coist(&mut self) -> COIST_W<4> {
         COIST_W::new(self)
     }
     #[doc = "Bits 17:18 - Input Selection"]
     #[inline(always)]
-    pub fn insel(&mut self) -> INSEL_W {
+    #[must_use]
+    pub fn insel(&mut self) -> INSEL_W<17> {
         INSEL_W::new(self)
     }
     #[doc = "Bit 19 - PRS Configuration"]
     #[inline(always)]
-    pub fn prsconf(&mut self) -> PRSCONF_W {
+    #[must_use]
+    pub fn prsconf(&mut self) -> PRSCONF_W<19> {
         PRSCONF_W::new(self)
     }
     #[doc = "Bit 20 - Digital Filter"]
     #[inline(always)]
-    pub fn filt(&mut self) -> FILT_W {
+    #[must_use]
+    pub fn filt(&mut self) -> FILT_W<20> {
         FILT_W::new(self)
     }
     #[doc = "Bit 21 - Input Capture FIFO watermark level"]
     #[inline(always)]
-    pub fn icfwl(&mut self) -> ICFWL_W {
+    #[must_use]
+    pub fn icfwl(&mut self) -> ICFWL_W<21> {
         ICFWL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -380,11 +387,10 @@ impl crate::Readable for CC1_CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cc1_cfg::W](W) writer structure"]
 impl crate::Writable for CC1_CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CC1_CFG to value 0"]
 impl crate::Resettable for CC1_CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -20,11 +20,12 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `APORTCONFLICT` writer - Set APORTCONFLICT Interrupt Flag"]
-pub type APORTCONFLICT_W<'a> = crate::BitWriter<'a, u32, IFS_SPEC, bool, 1>;
+pub type APORTCONFLICT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 1 - Set APORTCONFLICT Interrupt Flag"]
     #[inline(always)]
-    pub fn aportconflict(&mut self) -> APORTCONFLICT_W {
+    #[must_use]
+    pub fn aportconflict(&mut self) -> APORTCONFLICT_W<1> {
         APORTCONFLICT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -42,11 +43,10 @@ impl crate::RegisterSpec for IFS_SPEC {
 #[doc = "`write(|w| ..)` method takes [ifs::W](W) writer structure"]
 impl crate::Writable for IFS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IFS to value 0"]
 impl crate::Resettable for IFS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

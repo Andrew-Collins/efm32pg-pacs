@@ -34,8 +34,10 @@ impl From<crate::W<CFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - Operating Mode Control"]
+pub type MODE_R = crate::BitReader<MODE_A>;
 #[doc = "Operating Mode Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MODE_A {
     #[doc = "0: Frequency Lock Mode"]
     FLL = 0,
@@ -48,8 +50,6 @@ impl From<MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MODE` reader - Operating Mode Control"]
-pub type MODE_R = crate::BitReader<MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Operating Mode Control"]
-pub type MODE_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, MODE_A, 0>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, MODE_A, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Frequency Lock Mode"]
     #[inline(always)]
     pub fn fll(self) -> &'a mut W {
@@ -87,15 +87,15 @@ impl<'a> MODE_W<'a> {
 #[doc = "Field `EDGESEL` reader - Reference Edge Select"]
 pub type EDGESEL_R = crate::BitReader<bool>;
 #[doc = "Field `EDGESEL` writer - Reference Edge Select"]
-pub type EDGESEL_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 1>;
+pub type EDGESEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 #[doc = "Field `AUTORECOVER` reader - Automatic Recovery Control"]
 pub type AUTORECOVER_R = crate::BitReader<bool>;
 #[doc = "Field `AUTORECOVER` writer - Automatic Recovery Control"]
-pub type AUTORECOVER_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 2>;
+pub type AUTORECOVER_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 #[doc = "Field `DITHEN` reader - Dither Enable Control"]
 pub type DITHEN_R = crate::BitReader<bool>;
 #[doc = "Field `DITHEN` writer - Dither Enable Control"]
-pub type DITHEN_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 6>;
+pub type DITHEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Operating Mode Control"]
     #[inline(always)]
@@ -121,22 +121,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Operating Mode Control"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<0> {
         MODE_W::new(self)
     }
     #[doc = "Bit 1 - Reference Edge Select"]
     #[inline(always)]
-    pub fn edgesel(&mut self) -> EDGESEL_W {
+    #[must_use]
+    pub fn edgesel(&mut self) -> EDGESEL_W<1> {
         EDGESEL_W::new(self)
     }
     #[doc = "Bit 2 - Automatic Recovery Control"]
     #[inline(always)]
-    pub fn autorecover(&mut self) -> AUTORECOVER_W {
+    #[must_use]
+    pub fn autorecover(&mut self) -> AUTORECOVER_W<2> {
         AUTORECOVER_W::new(self)
     }
     #[doc = "Bit 6 - Dither Enable Control"]
     #[inline(always)]
-    pub fn dithen(&mut self) -> DITHEN_W {
+    #[must_use]
+    pub fn dithen(&mut self) -> DITHEN_W<6> {
         DITHEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -158,11 +162,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

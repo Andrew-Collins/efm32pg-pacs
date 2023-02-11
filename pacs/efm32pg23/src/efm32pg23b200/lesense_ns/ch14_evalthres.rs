@@ -37,7 +37,8 @@ impl From<crate::W<CH14_EVALTHRES_SPEC>> for W {
 #[doc = "Field `EVALTHRES` reader - Threshold"]
 pub type EVALTHRES_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `EVALTHRES` writer - Threshold"]
-pub type EVALTHRES_W<'a> = crate::FieldWriter<'a, u32, CH14_EVALTHRES_SPEC, u16, u16, 16, 0>;
+pub type EVALTHRES_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CH14_EVALTHRES_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Threshold"]
     #[inline(always)]
@@ -48,7 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Threshold"]
     #[inline(always)]
-    pub fn evalthres(&mut self) -> EVALTHRES_W {
+    #[must_use]
+    pub fn evalthres(&mut self) -> EVALTHRES_W<0> {
         EVALTHRES_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +72,10 @@ impl crate::Readable for CH14_EVALTHRES_SPEC {
 #[doc = "`write(|w| ..)` method takes [ch14_evalthres::W](W) writer structure"]
 impl crate::Writable for CH14_EVALTHRES_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CH14_EVALTHRES to value 0"]
 impl crate::Resettable for CH14_EVALTHRES_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

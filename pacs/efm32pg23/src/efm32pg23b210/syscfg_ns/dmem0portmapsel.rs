@@ -37,23 +37,27 @@ impl From<crate::W<DMEM0PORTMAPSEL_SPEC>> for W {
 #[doc = "Field `LDMAPORTSEL` reader - LDMA portmap selection"]
 pub type LDMAPORTSEL_R = crate::BitReader<bool>;
 #[doc = "Field `LDMAPORTSEL` writer - LDMA portmap selection"]
-pub type LDMAPORTSEL_W<'a> = crate::BitWriter<'a, u32, DMEM0PORTMAPSEL_SPEC, bool, 0>;
+pub type LDMAPORTSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMEM0PORTMAPSEL_SPEC, bool, O>;
 #[doc = "Field `SRWAESPORTSEL` reader - SRWAES portmap selection"]
 pub type SRWAESPORTSEL_R = crate::BitReader<bool>;
 #[doc = "Field `SRWAESPORTSEL` writer - SRWAES portmap selection"]
-pub type SRWAESPORTSEL_W<'a> = crate::BitWriter<'a, u32, DMEM0PORTMAPSEL_SPEC, bool, 1>;
+pub type SRWAESPORTSEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMEM0PORTMAPSEL_SPEC, bool, O>;
 #[doc = "Field `AHBSRWPORTSEL` reader - AHBSRW portmap selection"]
 pub type AHBSRWPORTSEL_R = crate::BitReader<bool>;
 #[doc = "Field `AHBSRWPORTSEL` writer - AHBSRW portmap selection"]
-pub type AHBSRWPORTSEL_W<'a> = crate::BitWriter<'a, u32, DMEM0PORTMAPSEL_SPEC, bool, 2>;
+pub type AHBSRWPORTSEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMEM0PORTMAPSEL_SPEC, bool, O>;
 #[doc = "Field `SRWECA0PORTSEL` reader - SRWECA0 portmap selection"]
 pub type SRWECA0PORTSEL_R = crate::BitReader<bool>;
 #[doc = "Field `SRWECA0PORTSEL` writer - SRWECA0 portmap selection"]
-pub type SRWECA0PORTSEL_W<'a> = crate::BitWriter<'a, u32, DMEM0PORTMAPSEL_SPEC, bool, 3>;
+pub type SRWECA0PORTSEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMEM0PORTMAPSEL_SPEC, bool, O>;
 #[doc = "Field `SRWECA1PORTSEL` reader - SRWECA1 portmap selection"]
 pub type SRWECA1PORTSEL_R = crate::BitReader<bool>;
 #[doc = "Field `SRWECA1PORTSEL` writer - SRWECA1 portmap selection"]
-pub type SRWECA1PORTSEL_W<'a> = crate::BitWriter<'a, u32, DMEM0PORTMAPSEL_SPEC, bool, 4>;
+pub type SRWECA1PORTSEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMEM0PORTMAPSEL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - LDMA portmap selection"]
     #[inline(always)]
@@ -84,27 +88,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - LDMA portmap selection"]
     #[inline(always)]
-    pub fn ldmaportsel(&mut self) -> LDMAPORTSEL_W {
+    #[must_use]
+    pub fn ldmaportsel(&mut self) -> LDMAPORTSEL_W<0> {
         LDMAPORTSEL_W::new(self)
     }
     #[doc = "Bit 1 - SRWAES portmap selection"]
     #[inline(always)]
-    pub fn srwaesportsel(&mut self) -> SRWAESPORTSEL_W {
+    #[must_use]
+    pub fn srwaesportsel(&mut self) -> SRWAESPORTSEL_W<1> {
         SRWAESPORTSEL_W::new(self)
     }
     #[doc = "Bit 2 - AHBSRW portmap selection"]
     #[inline(always)]
-    pub fn ahbsrwportsel(&mut self) -> AHBSRWPORTSEL_W {
+    #[must_use]
+    pub fn ahbsrwportsel(&mut self) -> AHBSRWPORTSEL_W<2> {
         AHBSRWPORTSEL_W::new(self)
     }
     #[doc = "Bit 3 - SRWECA0 portmap selection"]
     #[inline(always)]
-    pub fn srweca0portsel(&mut self) -> SRWECA0PORTSEL_W {
+    #[must_use]
+    pub fn srweca0portsel(&mut self) -> SRWECA0PORTSEL_W<3> {
         SRWECA0PORTSEL_W::new(self)
     }
     #[doc = "Bit 4 - SRWECA1 portmap selection"]
     #[inline(always)]
-    pub fn srweca1portsel(&mut self) -> SRWECA1PORTSEL_W {
+    #[must_use]
+    pub fn srweca1portsel(&mut self) -> SRWECA1PORTSEL_W<4> {
         SRWECA1PORTSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -126,11 +135,10 @@ impl crate::Readable for DMEM0PORTMAPSEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [dmem0portmapsel::W](W) writer structure"]
 impl crate::Writable for DMEM0PORTMAPSEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DMEM0PORTMAPSEL to value 0x13"]
 impl crate::Resettable for DMEM0PORTMAPSEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x13
-    }
+    const RESET_VALUE: Self::Ux = 0x13;
 }

@@ -47,8 +47,5 @@ impl crate::Readable for INFO_SPEC {
 }
 #[doc = "`reset()` method sets INFO to value 0x0c00_0000"]
 impl crate::Resettable for INFO_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0c00_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0c00_0000;
 }

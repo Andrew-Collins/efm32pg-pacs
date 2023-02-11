@@ -33,8 +33,5 @@ impl crate::Readable for FIFOTHRESH_SPEC {
 }
 #[doc = "`reset()` method sets FIFOTHRESH to value 0x3f"]
 impl crate::Resettable for FIFOTHRESH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x3f
-    }
+    const RESET_VALUE: Self::Ux = 0x3f;
 }

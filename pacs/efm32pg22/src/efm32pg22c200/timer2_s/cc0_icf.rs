@@ -33,8 +33,5 @@ impl crate::Readable for CC0_ICF_SPEC {
 }
 #[doc = "`reset()` method sets CC0_ICF to value 0"]
 impl crate::Resettable for CC0_ICF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

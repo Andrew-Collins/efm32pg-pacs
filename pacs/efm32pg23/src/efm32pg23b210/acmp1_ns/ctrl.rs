@@ -34,8 +34,10 @@ impl From<crate::W<CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `NOTRDYVAL` reader - Not Ready Value"]
+pub type NOTRDYVAL_R = crate::BitReader<NOTRDYVAL_A>;
 #[doc = "Not Ready Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NOTRDYVAL_A {
     #[doc = "0: ACMP output is 0 when the ACMP is not ready."]
     LOW = 0,
@@ -48,8 +50,6 @@ impl From<NOTRDYVAL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `NOTRDYVAL` reader - Not Ready Value"]
-pub type NOTRDYVAL_R = crate::BitReader<NOTRDYVAL_A>;
 impl NOTRDYVAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl NOTRDYVAL_R {
     }
 }
 #[doc = "Field `NOTRDYVAL` writer - Not Ready Value"]
-pub type NOTRDYVAL_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, NOTRDYVAL_A, 0>;
-impl<'a> NOTRDYVAL_W<'a> {
+pub type NOTRDYVAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, NOTRDYVAL_A, O>;
+impl<'a, const O: u8> NOTRDYVAL_W<'a, O> {
     #[doc = "ACMP output is 0 when the ACMP is not ready."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -84,8 +84,10 @@ impl<'a> NOTRDYVAL_W<'a> {
         self.variant(NOTRDYVAL_A::HIGH)
     }
 }
+#[doc = "Field `GPIOINV` reader - Comparator GPIO Output Invert"]
+pub type GPIOINV_R = crate::BitReader<GPIOINV_A>;
 #[doc = "Comparator GPIO Output Invert\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GPIOINV_A {
     #[doc = "0: The comparator output to GPIO is not inverted"]
     NOTINV = 0,
@@ -98,8 +100,6 @@ impl From<GPIOINV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GPIOINV` reader - Comparator GPIO Output Invert"]
-pub type GPIOINV_R = crate::BitReader<GPIOINV_A>;
 impl GPIOINV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,8 @@ impl GPIOINV_R {
     }
 }
 #[doc = "Field `GPIOINV` writer - Comparator GPIO Output Invert"]
-pub type GPIOINV_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, GPIOINV_A, 1>;
-impl<'a> GPIOINV_W<'a> {
+pub type GPIOINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, GPIOINV_A, O>;
+impl<'a, const O: u8> GPIOINV_W<'a, O> {
     #[doc = "The comparator output to GPIO is not inverted"]
     #[inline(always)]
     pub fn notinv(self) -> &'a mut W {
@@ -149,12 +149,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Not Ready Value"]
     #[inline(always)]
-    pub fn notrdyval(&mut self) -> NOTRDYVAL_W {
+    #[must_use]
+    pub fn notrdyval(&mut self) -> NOTRDYVAL_W<0> {
         NOTRDYVAL_W::new(self)
     }
     #[doc = "Bit 1 - Comparator GPIO Output Invert"]
     #[inline(always)]
-    pub fn gpioinv(&mut self) -> GPIOINV_W {
+    #[must_use]
+    pub fn gpioinv(&mut self) -> GPIOINV_W<1> {
         GPIOINV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -176,11 +178,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,19 +37,19 @@ impl From<crate::W<DGIEN_SPEC>> for W {
 #[doc = "Field `EM23WAKEUPDGIEN` reader - EM23 Wake up Interrupt enable"]
 pub type EM23WAKEUPDGIEN_R = crate::BitReader<bool>;
 #[doc = "Field `EM23WAKEUPDGIEN` writer - EM23 Wake up Interrupt enable"]
-pub type EM23WAKEUPDGIEN_W<'a> = crate::BitWriter<'a, u32, DGIEN_SPEC, bool, 24>;
+pub type EM23WAKEUPDGIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DGIEN_SPEC, bool, O>;
 #[doc = "Field `TEMPDGIEN` reader - Temperature Interrupt enable"]
 pub type TEMPDGIEN_R = crate::BitReader<bool>;
 #[doc = "Field `TEMPDGIEN` writer - Temperature Interrupt enable"]
-pub type TEMPDGIEN_W<'a> = crate::BitWriter<'a, u32, DGIEN_SPEC, bool, 29>;
+pub type TEMPDGIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DGIEN_SPEC, bool, O>;
 #[doc = "Field `TEMPLOWDGIEN` reader - Temperature low Interrupt enable"]
 pub type TEMPLOWDGIEN_R = crate::BitReader<bool>;
 #[doc = "Field `TEMPLOWDGIEN` writer - Temperature low Interrupt enable"]
-pub type TEMPLOWDGIEN_W<'a> = crate::BitWriter<'a, u32, DGIEN_SPEC, bool, 30>;
+pub type TEMPLOWDGIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DGIEN_SPEC, bool, O>;
 #[doc = "Field `TEMPHIGHDGIEN` reader - Temperature high Interrupt enable"]
 pub type TEMPHIGHDGIEN_R = crate::BitReader<bool>;
 #[doc = "Field `TEMPHIGHDGIEN` writer - Temperature high Interrupt enable"]
-pub type TEMPHIGHDGIEN_W<'a> = crate::BitWriter<'a, u32, DGIEN_SPEC, bool, 31>;
+pub type TEMPHIGHDGIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DGIEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 24 - EM23 Wake up Interrupt enable"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 24 - EM23 Wake up Interrupt enable"]
     #[inline(always)]
-    pub fn em23wakeupdgien(&mut self) -> EM23WAKEUPDGIEN_W {
+    #[must_use]
+    pub fn em23wakeupdgien(&mut self) -> EM23WAKEUPDGIEN_W<24> {
         EM23WAKEUPDGIEN_W::new(self)
     }
     #[doc = "Bit 29 - Temperature Interrupt enable"]
     #[inline(always)]
-    pub fn tempdgien(&mut self) -> TEMPDGIEN_W {
+    #[must_use]
+    pub fn tempdgien(&mut self) -> TEMPDGIEN_W<29> {
         TEMPDGIEN_W::new(self)
     }
     #[doc = "Bit 30 - Temperature low Interrupt enable"]
     #[inline(always)]
-    pub fn templowdgien(&mut self) -> TEMPLOWDGIEN_W {
+    #[must_use]
+    pub fn templowdgien(&mut self) -> TEMPLOWDGIEN_W<30> {
         TEMPLOWDGIEN_W::new(self)
     }
     #[doc = "Bit 31 - Temperature high Interrupt enable"]
     #[inline(always)]
-    pub fn temphighdgien(&mut self) -> TEMPHIGHDGIEN_W {
+    #[must_use]
+    pub fn temphighdgien(&mut self) -> TEMPHIGHDGIEN_W<31> {
         TEMPHIGHDGIEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for DGIEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [dgien::W](W) writer structure"]
 impl crate::Writable for DGIEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DGIEN to value 0"]
 impl crate::Resettable for DGIEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

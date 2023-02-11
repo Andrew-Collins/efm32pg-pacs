@@ -37,15 +37,15 @@ impl From<crate::W<CHIPREVHW_SPEC>> for W {
 #[doc = "Field `MAJOR` reader - Hardwired Chip Revision Major value"]
 pub type MAJOR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MAJOR` writer - Hardwired Chip Revision Major value"]
-pub type MAJOR_W<'a> = crate::FieldWriter<'a, u32, CHIPREVHW_SPEC, u8, u8, 6, 0>;
+pub type MAJOR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHIPREVHW_SPEC, u8, u8, 6, O>;
 #[doc = "Field `FAMILY` reader - Hardwired Chip Family value"]
 pub type FAMILY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FAMILY` writer - Hardwired Chip Family value"]
-pub type FAMILY_W<'a> = crate::FieldWriter<'a, u32, CHIPREVHW_SPEC, u8, u8, 6, 6>;
+pub type FAMILY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHIPREVHW_SPEC, u8, u8, 6, O>;
 #[doc = "Field `MINOR` reader - Hardwired Chip Revision Minor value"]
 pub type MINOR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MINOR` writer - Hardwired Chip Revision Minor value"]
-pub type MINOR_W<'a> = crate::FieldWriter<'a, u32, CHIPREVHW_SPEC, u8, u8, 8, 12>;
+pub type MINOR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHIPREVHW_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:5 - Hardwired Chip Revision Major value"]
     #[inline(always)]
@@ -66,17 +66,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Hardwired Chip Revision Major value"]
     #[inline(always)]
-    pub fn major(&mut self) -> MAJOR_W {
+    #[must_use]
+    pub fn major(&mut self) -> MAJOR_W<0> {
         MAJOR_W::new(self)
     }
     #[doc = "Bits 6:11 - Hardwired Chip Family value"]
     #[inline(always)]
-    pub fn family(&mut self) -> FAMILY_W {
+    #[must_use]
+    pub fn family(&mut self) -> FAMILY_W<6> {
         FAMILY_W::new(self)
     }
     #[doc = "Bits 12:19 - Hardwired Chip Revision Minor value"]
     #[inline(always)]
-    pub fn minor(&mut self) -> MINOR_W {
+    #[must_use]
+    pub fn minor(&mut self) -> MINOR_W<12> {
         MINOR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for CHIPREVHW_SPEC {
 #[doc = "`write(|w| ..)` method takes [chiprevhw::W](W) writer structure"]
 impl crate::Writable for CHIPREVHW_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CHIPREVHW to value 0x0e01"]
 impl crate::Resettable for CHIPREVHW_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0e01
-    }
+    const RESET_VALUE: Self::Ux = 0x0e01;
 }

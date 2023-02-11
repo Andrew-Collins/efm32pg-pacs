@@ -37,9 +37,11 @@ impl From<crate::W<BACTRL_SPEC>> for W {
 #[doc = "Field `BLINKEN` reader - Blink Enable"]
 pub type BLINKEN_R = crate::BitReader<bool>;
 #[doc = "Field `BLINKEN` writer - Blink Enable"]
-pub type BLINKEN_W<'a> = crate::BitWriter<'a, u32, BACTRL_SPEC, bool, 0>;
+pub type BLINKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, BACTRL_SPEC, bool, O>;
+#[doc = "Field `BLANK` reader - Blank Display"]
+pub type BLANK_R = crate::BitReader<BLANK_A>;
 #[doc = "Blank Display\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BLANK_A {
     #[doc = "0: Display is not \"blanked\""]
     DISABLE = 0,
@@ -52,8 +54,6 @@ impl From<BLANK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BLANK` reader - Blank Display"]
-pub type BLANK_R = crate::BitReader<BLANK_A>;
 impl BLANK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -75,8 +75,8 @@ impl BLANK_R {
     }
 }
 #[doc = "Field `BLANK` writer - Blank Display"]
-pub type BLANK_W<'a> = crate::BitWriter<'a, u32, BACTRL_SPEC, BLANK_A, 1>;
-impl<'a> BLANK_W<'a> {
+pub type BLANK_W<'a, const O: u8> = crate::BitWriter<'a, u32, BACTRL_SPEC, BLANK_A, O>;
+impl<'a, const O: u8> BLANK_W<'a, O> {
     #[doc = "Display is not \"blanked\""]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -91,9 +91,11 @@ impl<'a> BLANK_W<'a> {
 #[doc = "Field `AEN` reader - Animation Enable"]
 pub type AEN_R = crate::BitReader<bool>;
 #[doc = "Field `AEN` writer - Animation Enable"]
-pub type AEN_W<'a> = crate::BitWriter<'a, u32, BACTRL_SPEC, bool, 2>;
+pub type AEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, BACTRL_SPEC, bool, O>;
+#[doc = "Field `AREGASC` reader - Animate Register A Shift Control"]
+pub type AREGASC_R = crate::FieldReader<u8, AREGASC_A>;
 #[doc = "Animate Register A Shift Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AREGASC_A {
     #[doc = "0: No Shift operation on Animation Register A"]
@@ -109,8 +111,6 @@ impl From<AREGASC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `AREGASC` reader - Animate Register A Shift Control"]
-pub type AREGASC_R = crate::FieldReader<u8, AREGASC_A>;
 impl AREGASC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -139,8 +139,8 @@ impl AREGASC_R {
     }
 }
 #[doc = "Field `AREGASC` writer - Animate Register A Shift Control"]
-pub type AREGASC_W<'a> = crate::FieldWriter<'a, u32, BACTRL_SPEC, u8, AREGASC_A, 2, 3>;
-impl<'a> AREGASC_W<'a> {
+pub type AREGASC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BACTRL_SPEC, u8, AREGASC_A, 2, O>;
+impl<'a, const O: u8> AREGASC_W<'a, O> {
     #[doc = "No Shift operation on Animation Register A"]
     #[inline(always)]
     pub fn noshift(self) -> &'a mut W {
@@ -157,8 +157,10 @@ impl<'a> AREGASC_W<'a> {
         self.variant(AREGASC_A::SHIFTRIGHT)
     }
 }
+#[doc = "Field `AREGBSC` reader - Animate Register B Shift Control"]
+pub type AREGBSC_R = crate::FieldReader<u8, AREGBSC_A>;
 #[doc = "Animate Register B Shift Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AREGBSC_A {
     #[doc = "0: No Shift operation on Animation Register B"]
@@ -174,8 +176,6 @@ impl From<AREGBSC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `AREGBSC` reader - Animate Register B Shift Control"]
-pub type AREGBSC_R = crate::FieldReader<u8, AREGBSC_A>;
 impl AREGBSC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -204,8 +204,8 @@ impl AREGBSC_R {
     }
 }
 #[doc = "Field `AREGBSC` writer - Animate Register B Shift Control"]
-pub type AREGBSC_W<'a> = crate::FieldWriter<'a, u32, BACTRL_SPEC, u8, AREGBSC_A, 2, 5>;
-impl<'a> AREGBSC_W<'a> {
+pub type AREGBSC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BACTRL_SPEC, u8, AREGBSC_A, 2, O>;
+impl<'a, const O: u8> AREGBSC_W<'a, O> {
     #[doc = "No Shift operation on Animation Register B"]
     #[inline(always)]
     pub fn noshift(self) -> &'a mut W {
@@ -222,8 +222,10 @@ impl<'a> AREGBSC_W<'a> {
         self.variant(AREGBSC_A::SHIFTRIGHT)
     }
 }
+#[doc = "Field `ALOGSEL` reader - Animate Logic Function Select"]
+pub type ALOGSEL_R = crate::BitReader<ALOGSEL_A>;
 #[doc = "Animate Logic Function Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ALOGSEL_A {
     #[doc = "0: AREGA and AREGB AND'ed"]
     AND = 0,
@@ -236,8 +238,6 @@ impl From<ALOGSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALOGSEL` reader - Animate Logic Function Select"]
-pub type ALOGSEL_R = crate::BitReader<ALOGSEL_A>;
 impl ALOGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -259,8 +259,8 @@ impl ALOGSEL_R {
     }
 }
 #[doc = "Field `ALOGSEL` writer - Animate Logic Function Select"]
-pub type ALOGSEL_W<'a> = crate::BitWriter<'a, u32, BACTRL_SPEC, ALOGSEL_A, 7>;
-impl<'a> ALOGSEL_W<'a> {
+pub type ALOGSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, BACTRL_SPEC, ALOGSEL_A, O>;
+impl<'a, const O: u8> ALOGSEL_W<'a, O> {
     #[doc = "AREGA and AREGB AND'ed"]
     #[inline(always)]
     pub fn and(self) -> &'a mut W {
@@ -275,9 +275,11 @@ impl<'a> ALOGSEL_W<'a> {
 #[doc = "Field `FCEN` reader - Frame Counter Enable"]
 pub type FCEN_R = crate::BitReader<bool>;
 #[doc = "Field `FCEN` writer - Frame Counter Enable"]
-pub type FCEN_W<'a> = crate::BitWriter<'a, u32, BACTRL_SPEC, bool, 8>;
+pub type FCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, BACTRL_SPEC, bool, O>;
+#[doc = "Field `DISPLAYCNTEN` reader - Display Counter Enable"]
+pub type DISPLAYCNTEN_R = crate::BitReader<DISPLAYCNTEN_A>;
 #[doc = "Display Counter Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DISPLAYCNTEN_A {
     #[doc = "0: Disable the display counter"]
     DISABLE = 0,
@@ -290,8 +292,6 @@ impl From<DISPLAYCNTEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DISPLAYCNTEN` reader - Display Counter Enable"]
-pub type DISPLAYCNTEN_R = crate::BitReader<DISPLAYCNTEN_A>;
 impl DISPLAYCNTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -313,8 +313,9 @@ impl DISPLAYCNTEN_R {
     }
 }
 #[doc = "Field `DISPLAYCNTEN` writer - Display Counter Enable"]
-pub type DISPLAYCNTEN_W<'a> = crate::BitWriter<'a, u32, BACTRL_SPEC, DISPLAYCNTEN_A, 9>;
-impl<'a> DISPLAYCNTEN_W<'a> {
+pub type DISPLAYCNTEN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, BACTRL_SPEC, DISPLAYCNTEN_A, O>;
+impl<'a, const O: u8> DISPLAYCNTEN_W<'a, O> {
     #[doc = "Disable the display counter"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -326,8 +327,10 @@ impl<'a> DISPLAYCNTEN_W<'a> {
         self.variant(DISPLAYCNTEN_A::ENABLE)
     }
 }
+#[doc = "Field `ALOC` reader - Animation Location"]
+pub type ALOC_R = crate::BitReader<ALOC_A>;
 #[doc = "Animation Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ALOC_A {
     #[doc = "0: Animation appears on segments 0 to 7"]
     SEG0TO7 = 0,
@@ -340,8 +343,6 @@ impl From<ALOC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALOC` reader - Animation Location"]
-pub type ALOC_R = crate::BitReader<ALOC_A>;
 impl ALOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -363,8 +364,8 @@ impl ALOC_R {
     }
 }
 #[doc = "Field `ALOC` writer - Animation Location"]
-pub type ALOC_W<'a> = crate::BitWriter<'a, u32, BACTRL_SPEC, ALOC_A, 28>;
-impl<'a> ALOC_W<'a> {
+pub type ALOC_W<'a, const O: u8> = crate::BitWriter<'a, u32, BACTRL_SPEC, ALOC_A, O>;
+impl<'a, const O: u8> ALOC_W<'a, O> {
     #[doc = "Animation appears on segments 0 to 7"]
     #[inline(always)]
     pub fn seg0to7(self) -> &'a mut W {
@@ -426,47 +427,56 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Blink Enable"]
     #[inline(always)]
-    pub fn blinken(&mut self) -> BLINKEN_W {
+    #[must_use]
+    pub fn blinken(&mut self) -> BLINKEN_W<0> {
         BLINKEN_W::new(self)
     }
     #[doc = "Bit 1 - Blank Display"]
     #[inline(always)]
-    pub fn blank(&mut self) -> BLANK_W {
+    #[must_use]
+    pub fn blank(&mut self) -> BLANK_W<1> {
         BLANK_W::new(self)
     }
     #[doc = "Bit 2 - Animation Enable"]
     #[inline(always)]
-    pub fn aen(&mut self) -> AEN_W {
+    #[must_use]
+    pub fn aen(&mut self) -> AEN_W<2> {
         AEN_W::new(self)
     }
     #[doc = "Bits 3:4 - Animate Register A Shift Control"]
     #[inline(always)]
-    pub fn aregasc(&mut self) -> AREGASC_W {
+    #[must_use]
+    pub fn aregasc(&mut self) -> AREGASC_W<3> {
         AREGASC_W::new(self)
     }
     #[doc = "Bits 5:6 - Animate Register B Shift Control"]
     #[inline(always)]
-    pub fn aregbsc(&mut self) -> AREGBSC_W {
+    #[must_use]
+    pub fn aregbsc(&mut self) -> AREGBSC_W<5> {
         AREGBSC_W::new(self)
     }
     #[doc = "Bit 7 - Animate Logic Function Select"]
     #[inline(always)]
-    pub fn alogsel(&mut self) -> ALOGSEL_W {
+    #[must_use]
+    pub fn alogsel(&mut self) -> ALOGSEL_W<7> {
         ALOGSEL_W::new(self)
     }
     #[doc = "Bit 8 - Frame Counter Enable"]
     #[inline(always)]
-    pub fn fcen(&mut self) -> FCEN_W {
+    #[must_use]
+    pub fn fcen(&mut self) -> FCEN_W<8> {
         FCEN_W::new(self)
     }
     #[doc = "Bit 9 - Display Counter Enable"]
     #[inline(always)]
-    pub fn displaycnten(&mut self) -> DISPLAYCNTEN_W {
+    #[must_use]
+    pub fn displaycnten(&mut self) -> DISPLAYCNTEN_W<9> {
         DISPLAYCNTEN_W::new(self)
     }
     #[doc = "Bit 28 - Animation Location"]
     #[inline(always)]
-    pub fn aloc(&mut self) -> ALOC_W {
+    #[must_use]
+    pub fn aloc(&mut self) -> ALOC_W<28> {
         ALOC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -488,11 +498,10 @@ impl crate::Readable for BACTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [bactrl::W](W) writer structure"]
 impl crate::Writable for BACTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BACTRL to value 0"]
 impl crate::Resettable for BACTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

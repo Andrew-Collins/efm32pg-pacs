@@ -33,8 +33,5 @@ impl crate::Readable for EMUTEMP_SPEC {
 }
 #[doc = "`reset()` method sets EMUTEMP to value 0"]
 impl crate::Resettable for EMUTEMP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

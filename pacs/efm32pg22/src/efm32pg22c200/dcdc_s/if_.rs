@@ -37,35 +37,35 @@ impl From<crate::W<IF_SPEC>> for W {
 #[doc = "Field `BYPSW` reader - Bypass Switch Enabled"]
 pub type BYPSW_R = crate::BitReader<bool>;
 #[doc = "Field `BYPSW` writer - Bypass Switch Enabled"]
-pub type BYPSW_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 0>;
+pub type BYPSW_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `WARM` reader - DCDC Warmup Time Done"]
 pub type WARM_R = crate::BitReader<bool>;
 #[doc = "Field `WARM` writer - DCDC Warmup Time Done"]
-pub type WARM_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 1>;
+pub type WARM_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `RUNNING` reader - DCDC Running"]
 pub type RUNNING_R = crate::BitReader<bool>;
 #[doc = "Field `RUNNING` writer - DCDC Running"]
-pub type RUNNING_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 2>;
+pub type RUNNING_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `VREGINLOW` reader - VREGVDD below threshold"]
 pub type VREGINLOW_R = crate::BitReader<bool>;
 #[doc = "Field `VREGINLOW` writer - VREGVDD below threshold"]
-pub type VREGINLOW_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 3>;
+pub type VREGINLOW_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `VREGINHIGH` reader - VREGVDD above threshold"]
 pub type VREGINHIGH_R = crate::BitReader<bool>;
 #[doc = "Field `VREGINHIGH` writer - VREGVDD above threshold"]
-pub type VREGINHIGH_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 4>;
+pub type VREGINHIGH_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `REGULATION` reader - DCDC in regulation"]
 pub type REGULATION_R = crate::BitReader<bool>;
 #[doc = "Field `REGULATION` writer - DCDC in regulation"]
-pub type REGULATION_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 5>;
+pub type REGULATION_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `TMAX` reader - Ton_max Timeout Reached"]
 pub type TMAX_R = crate::BitReader<bool>;
 #[doc = "Field `TMAX` writer - Ton_max Timeout Reached"]
-pub type TMAX_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 6>;
+pub type TMAX_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `EM4ERR` reader - EM4 Entry Request Error"]
 pub type EM4ERR_R = crate::BitReader<bool>;
 #[doc = "Field `EM4ERR` writer - EM4 Entry Request Error"]
-pub type EM4ERR_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 7>;
+pub type EM4ERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Bypass Switch Enabled"]
     #[inline(always)]
@@ -111,42 +111,50 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Bypass Switch Enabled"]
     #[inline(always)]
-    pub fn bypsw(&mut self) -> BYPSW_W {
+    #[must_use]
+    pub fn bypsw(&mut self) -> BYPSW_W<0> {
         BYPSW_W::new(self)
     }
     #[doc = "Bit 1 - DCDC Warmup Time Done"]
     #[inline(always)]
-    pub fn warm(&mut self) -> WARM_W {
+    #[must_use]
+    pub fn warm(&mut self) -> WARM_W<1> {
         WARM_W::new(self)
     }
     #[doc = "Bit 2 - DCDC Running"]
     #[inline(always)]
-    pub fn running(&mut self) -> RUNNING_W {
+    #[must_use]
+    pub fn running(&mut self) -> RUNNING_W<2> {
         RUNNING_W::new(self)
     }
     #[doc = "Bit 3 - VREGVDD below threshold"]
     #[inline(always)]
-    pub fn vreginlow(&mut self) -> VREGINLOW_W {
+    #[must_use]
+    pub fn vreginlow(&mut self) -> VREGINLOW_W<3> {
         VREGINLOW_W::new(self)
     }
     #[doc = "Bit 4 - VREGVDD above threshold"]
     #[inline(always)]
-    pub fn vreginhigh(&mut self) -> VREGINHIGH_W {
+    #[must_use]
+    pub fn vreginhigh(&mut self) -> VREGINHIGH_W<4> {
         VREGINHIGH_W::new(self)
     }
     #[doc = "Bit 5 - DCDC in regulation"]
     #[inline(always)]
-    pub fn regulation(&mut self) -> REGULATION_W {
+    #[must_use]
+    pub fn regulation(&mut self) -> REGULATION_W<5> {
         REGULATION_W::new(self)
     }
     #[doc = "Bit 6 - Ton_max Timeout Reached"]
     #[inline(always)]
-    pub fn tmax(&mut self) -> TMAX_W {
+    #[must_use]
+    pub fn tmax(&mut self) -> TMAX_W<6> {
         TMAX_W::new(self)
     }
     #[doc = "Bit 7 - EM4 Entry Request Error"]
     #[inline(always)]
-    pub fn em4err(&mut self) -> EM4ERR_W {
+    #[must_use]
+    pub fn em4err(&mut self) -> EM4ERR_W<7> {
         EM4ERR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -168,11 +176,10 @@ impl crate::Readable for IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_::W](W) writer structure"]
 impl crate::Writable for IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

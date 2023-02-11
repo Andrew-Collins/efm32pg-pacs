@@ -34,8 +34,10 @@ impl From<crate::W<RNGCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ENABLE` reader - TRNG Module Enable"]
+pub type ENABLE_R = crate::BitReader<ENABLE_A>;
 #[doc = "TRNG Module Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ENABLE_A {
     #[doc = "0: Module disabled"]
     DISABLED = 0,
@@ -48,8 +50,6 @@ impl From<ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ENABLE` reader - TRNG Module Enable"]
-pub type ENABLE_R = crate::BitReader<ENABLE_A>;
 impl ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl ENABLE_R {
     }
 }
 #[doc = "Field `ENABLE` writer - TRNG Module Enable"]
-pub type ENABLE_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, ENABLE_A, 0>;
-impl<'a> ENABLE_W<'a> {
+pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, ENABLE_A, O>;
+impl<'a, const O: u8> ENABLE_W<'a, O> {
     #[doc = "Module disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -84,8 +84,10 @@ impl<'a> ENABLE_W<'a> {
         self.variant(ENABLE_A::ENABLED)
     }
 }
+#[doc = "Field `TESTEN` reader - Test Enable"]
+pub type TESTEN_R = crate::BitReader<TESTEN_A>;
 #[doc = "Test Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TESTEN_A {
     #[doc = "0: Non-determinsitc random number generation"]
     NOISE = 0,
@@ -98,8 +100,6 @@ impl From<TESTEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TESTEN` reader - Test Enable"]
-pub type TESTEN_R = crate::BitReader<TESTEN_A>;
 impl TESTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,8 @@ impl TESTEN_R {
     }
 }
 #[doc = "Field `TESTEN` writer - Test Enable"]
-pub type TESTEN_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, TESTEN_A, 2>;
-impl<'a> TESTEN_W<'a> {
+pub type TESTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, TESTEN_A, O>;
+impl<'a, const O: u8> TESTEN_W<'a, O> {
     #[doc = "Non-determinsitc random number generation"]
     #[inline(always)]
     pub fn noise(self) -> &'a mut W {
@@ -134,8 +134,10 @@ impl<'a> TESTEN_W<'a> {
         self.variant(TESTEN_A::TESTDATA)
     }
 }
+#[doc = "Field `CONDBYPASS` reader - Conditioning Bypass"]
+pub type CONDBYPASS_R = crate::BitReader<CONDBYPASS_A>;
 #[doc = "Conditioning Bypass\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CONDBYPASS_A {
     #[doc = "0: The conditionig function is used"]
     NORMAL = 0,
@@ -148,8 +150,6 @@ impl From<CONDBYPASS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CONDBYPASS` reader - Conditioning Bypass"]
-pub type CONDBYPASS_R = crate::BitReader<CONDBYPASS_A>;
 impl CONDBYPASS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -171,8 +171,8 @@ impl CONDBYPASS_R {
     }
 }
 #[doc = "Field `CONDBYPASS` writer - Conditioning Bypass"]
-pub type CONDBYPASS_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, CONDBYPASS_A, 3>;
-impl<'a> CONDBYPASS_W<'a> {
+pub type CONDBYPASS_W<'a, const O: u8> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, CONDBYPASS_A, O>;
+impl<'a, const O: u8> CONDBYPASS_W<'a, O> {
     #[doc = "The conditionig function is used"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -187,21 +187,23 @@ impl<'a> CONDBYPASS_W<'a> {
 #[doc = "Field `REPCOUNTIEN` reader - IRQ enable for Repetition Count Test"]
 pub type REPCOUNTIEN_R = crate::BitReader<bool>;
 #[doc = "Field `REPCOUNTIEN` writer - IRQ enable for Repetition Count Test"]
-pub type REPCOUNTIEN_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, bool, 4>;
+pub type REPCOUNTIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, bool, O>;
 #[doc = "Field `APT64IEN` reader - IRQ enable for APT64IF"]
 pub type APT64IEN_R = crate::BitReader<bool>;
 #[doc = "Field `APT64IEN` writer - IRQ enable for APT64IF"]
-pub type APT64IEN_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, bool, 5>;
+pub type APT64IEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, bool, O>;
 #[doc = "Field `APT4096IEN` reader - IRQ enable for APT4096IF"]
 pub type APT4096IEN_R = crate::BitReader<bool>;
 #[doc = "Field `APT4096IEN` writer - IRQ enable for APT4096IF"]
-pub type APT4096IEN_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, bool, 6>;
+pub type APT4096IEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, bool, O>;
 #[doc = "Field `FULLIEN` reader - IRQ enable for FIFO full"]
 pub type FULLIEN_R = crate::BitReader<bool>;
 #[doc = "Field `FULLIEN` writer - IRQ enable for FIFO full"]
-pub type FULLIEN_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, bool, 7>;
+pub type FULLIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, bool, O>;
+#[doc = "Field `SOFTRESET` reader - Software Reset"]
+pub type SOFTRESET_R = crate::BitReader<SOFTRESET_A>;
 #[doc = "Software Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SOFTRESET_A {
     #[doc = "0: Module not in reset"]
     NORMAL = 0,
@@ -214,8 +216,6 @@ impl From<SOFTRESET_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SOFTRESET` reader - Software Reset"]
-pub type SOFTRESET_R = crate::BitReader<SOFTRESET_A>;
 impl SOFTRESET_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -237,8 +237,8 @@ impl SOFTRESET_R {
     }
 }
 #[doc = "Field `SOFTRESET` writer - Software Reset"]
-pub type SOFTRESET_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, SOFTRESET_A, 8>;
-impl<'a> SOFTRESET_W<'a> {
+pub type SOFTRESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, SOFTRESET_A, O>;
+impl<'a, const O: u8> SOFTRESET_W<'a, O> {
     #[doc = "Module not in reset"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -253,13 +253,15 @@ impl<'a> SOFTRESET_W<'a> {
 #[doc = "Field `PREIEN` reader - IRQ enable for AIS31 prelim. noise alarm"]
 pub type PREIEN_R = crate::BitReader<bool>;
 #[doc = "Field `PREIEN` writer - IRQ enable for AIS31 prelim. noise alarm"]
-pub type PREIEN_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, bool, 9>;
+pub type PREIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, bool, O>;
 #[doc = "Field `ALMIEN` reader - IRQ enable for AIS31 noise alarm"]
 pub type ALMIEN_R = crate::BitReader<bool>;
 #[doc = "Field `ALMIEN` writer - IRQ enable for AIS31 noise alarm"]
-pub type ALMIEN_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, bool, 10>;
+pub type ALMIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, bool, O>;
+#[doc = "Field `FORCERUN` reader - Oscillator Force Run"]
+pub type FORCERUN_R = crate::BitReader<FORCERUN_A>;
 #[doc = "Oscillator Force Run\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FORCERUN_A {
     #[doc = "0: Oscillators will shut down when FIFO is full"]
     NORMAL = 0,
@@ -272,8 +274,6 @@ impl From<FORCERUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FORCERUN` reader - Oscillator Force Run"]
-pub type FORCERUN_R = crate::BitReader<FORCERUN_A>;
 impl FORCERUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -295,8 +295,8 @@ impl FORCERUN_R {
     }
 }
 #[doc = "Field `FORCERUN` writer - Oscillator Force Run"]
-pub type FORCERUN_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, FORCERUN_A, 11>;
-impl<'a> FORCERUN_W<'a> {
+pub type FORCERUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, FORCERUN_A, O>;
+impl<'a, const O: u8> FORCERUN_W<'a, O> {
     #[doc = "Oscillators will shut down when FIFO is full"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -308,8 +308,10 @@ impl<'a> FORCERUN_W<'a> {
         self.variant(FORCERUN_A::RUN)
     }
 }
+#[doc = "Field `BYPNIST` reader - NIST Start-up Test Bypass."]
+pub type BYPNIST_R = crate::BitReader<BYPNIST_A>;
 #[doc = "NIST Start-up Test Bypass.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BYPNIST_A {
     #[doc = "0: NIST-800-90B startup test is applied. No data will be written to the FIFO until the test passes."]
     NORMAL = 0,
@@ -322,8 +324,6 @@ impl From<BYPNIST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BYPNIST` reader - NIST Start-up Test Bypass."]
-pub type BYPNIST_R = crate::BitReader<BYPNIST_A>;
 impl BYPNIST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -345,8 +345,8 @@ impl BYPNIST_R {
     }
 }
 #[doc = "Field `BYPNIST` writer - NIST Start-up Test Bypass."]
-pub type BYPNIST_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, BYPNIST_A, 12>;
-impl<'a> BYPNIST_W<'a> {
+pub type BYPNIST_W<'a, const O: u8> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, BYPNIST_A, O>;
+impl<'a, const O: u8> BYPNIST_W<'a, O> {
     #[doc = "NIST-800-90B startup test is applied. No data will be written to the FIFO until the test passes."]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -358,8 +358,10 @@ impl<'a> BYPNIST_W<'a> {
         self.variant(BYPNIST_A::BYPASS)
     }
 }
+#[doc = "Field `BYPAIS31` reader - AIS31 Start-up Test Bypass."]
+pub type BYPAIS31_R = crate::BitReader<BYPAIS31_A>;
 #[doc = "AIS31 Start-up Test Bypass.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BYPAIS31_A {
     #[doc = "0: AIS31 startup test is applied. No data will be written to the FIFO until the test passes."]
     NORMAL = 0,
@@ -372,8 +374,6 @@ impl From<BYPAIS31_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BYPAIS31` reader - AIS31 Start-up Test Bypass."]
-pub type BYPAIS31_R = crate::BitReader<BYPAIS31_A>;
 impl BYPAIS31_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -395,8 +395,8 @@ impl BYPAIS31_R {
     }
 }
 #[doc = "Field `BYPAIS31` writer - AIS31 Start-up Test Bypass."]
-pub type BYPAIS31_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, BYPAIS31_A, 13>;
-impl<'a> BYPAIS31_W<'a> {
+pub type BYPAIS31_W<'a, const O: u8> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, BYPAIS31_A, O>;
+impl<'a, const O: u8> BYPAIS31_W<'a, O> {
     #[doc = "AIS31 startup test is applied. No data will be written to the FIFO until the test passes."]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -408,8 +408,10 @@ impl<'a> BYPAIS31_W<'a> {
         self.variant(BYPAIS31_A::BYPASS)
     }
 }
+#[doc = "Field `HEALTHTESTSEL` reader - Health test input select"]
+pub type HEALTHTESTSEL_R = crate::BitReader<HEALTHTESTSEL_A>;
 #[doc = "Health test input select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HEALTHTESTSEL_A {
     #[doc = "0: Before conditioning"]
     BEFORE = 0,
@@ -422,8 +424,6 @@ impl From<HEALTHTESTSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HEALTHTESTSEL` reader - Health test input select"]
-pub type HEALTHTESTSEL_R = crate::BitReader<HEALTHTESTSEL_A>;
 impl HEALTHTESTSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -445,8 +445,9 @@ impl HEALTHTESTSEL_R {
     }
 }
 #[doc = "Field `HEALTHTESTSEL` writer - Health test input select"]
-pub type HEALTHTESTSEL_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, HEALTHTESTSEL_A, 14>;
-impl<'a> HEALTHTESTSEL_W<'a> {
+pub type HEALTHTESTSEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, RNGCTRL_SPEC, HEALTHTESTSEL_A, O>;
+impl<'a, const O: u8> HEALTHTESTSEL_W<'a, O> {
     #[doc = "Before conditioning"]
     #[inline(always)]
     pub fn before(self) -> &'a mut W {
@@ -458,8 +459,10 @@ impl<'a> HEALTHTESTSEL_W<'a> {
         self.variant(HEALTHTESTSEL_A::AFTER)
     }
 }
+#[doc = "Field `AIS31TESTSEL` reader - AIS31 test input select"]
+pub type AIS31TESTSEL_R = crate::BitReader<AIS31TESTSEL_A>;
 #[doc = "AIS31 test input select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AIS31TESTSEL_A {
     #[doc = "0: Before conditioning"]
     BEFORE = 0,
@@ -472,8 +475,6 @@ impl From<AIS31TESTSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AIS31TESTSEL` reader - AIS31 test input select"]
-pub type AIS31TESTSEL_R = crate::BitReader<AIS31TESTSEL_A>;
 impl AIS31TESTSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -495,8 +496,9 @@ impl AIS31TESTSEL_R {
     }
 }
 #[doc = "Field `AIS31TESTSEL` writer - AIS31 test input select"]
-pub type AIS31TESTSEL_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, AIS31TESTSEL_A, 15>;
-impl<'a> AIS31TESTSEL_W<'a> {
+pub type AIS31TESTSEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, RNGCTRL_SPEC, AIS31TESTSEL_A, O>;
+impl<'a, const O: u8> AIS31TESTSEL_W<'a, O> {
     #[doc = "Before conditioning"]
     #[inline(always)]
     pub fn before(self) -> &'a mut W {
@@ -511,11 +513,12 @@ impl<'a> AIS31TESTSEL_W<'a> {
 #[doc = "Field `NB128BITBLOCKS` reader - Number of 128b blocks in AES-CBCMAC"]
 pub type NB128BITBLOCKS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NB128BITBLOCKS` writer - Number of 128b blocks in AES-CBCMAC"]
-pub type NB128BITBLOCKS_W<'a> = crate::FieldWriter<'a, u32, RNGCTRL_SPEC, u8, u8, 4, 16>;
+pub type NB128BITBLOCKS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, RNGCTRL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `FIFOWRSTARTUP` reader - Fifo Write Start Up"]
 pub type FIFOWRSTARTUP_R = crate::BitReader<bool>;
 #[doc = "Field `FIFOWRSTARTUP` writer - Fifo Write Start Up"]
-pub type FIFOWRSTARTUP_W<'a> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, bool, 20>;
+pub type FIFOWRSTARTUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, RNGCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - TRNG Module Enable"]
     #[inline(always)]
@@ -606,87 +609,104 @@ impl R {
 impl W {
     #[doc = "Bit 0 - TRNG Module Enable"]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W {
+    #[must_use]
+    pub fn enable(&mut self) -> ENABLE_W<0> {
         ENABLE_W::new(self)
     }
     #[doc = "Bit 2 - Test Enable"]
     #[inline(always)]
-    pub fn testen(&mut self) -> TESTEN_W {
+    #[must_use]
+    pub fn testen(&mut self) -> TESTEN_W<2> {
         TESTEN_W::new(self)
     }
     #[doc = "Bit 3 - Conditioning Bypass"]
     #[inline(always)]
-    pub fn condbypass(&mut self) -> CONDBYPASS_W {
+    #[must_use]
+    pub fn condbypass(&mut self) -> CONDBYPASS_W<3> {
         CONDBYPASS_W::new(self)
     }
     #[doc = "Bit 4 - IRQ enable for Repetition Count Test"]
     #[inline(always)]
-    pub fn repcountien(&mut self) -> REPCOUNTIEN_W {
+    #[must_use]
+    pub fn repcountien(&mut self) -> REPCOUNTIEN_W<4> {
         REPCOUNTIEN_W::new(self)
     }
     #[doc = "Bit 5 - IRQ enable for APT64IF"]
     #[inline(always)]
-    pub fn apt64ien(&mut self) -> APT64IEN_W {
+    #[must_use]
+    pub fn apt64ien(&mut self) -> APT64IEN_W<5> {
         APT64IEN_W::new(self)
     }
     #[doc = "Bit 6 - IRQ enable for APT4096IF"]
     #[inline(always)]
-    pub fn apt4096ien(&mut self) -> APT4096IEN_W {
+    #[must_use]
+    pub fn apt4096ien(&mut self) -> APT4096IEN_W<6> {
         APT4096IEN_W::new(self)
     }
     #[doc = "Bit 7 - IRQ enable for FIFO full"]
     #[inline(always)]
-    pub fn fullien(&mut self) -> FULLIEN_W {
+    #[must_use]
+    pub fn fullien(&mut self) -> FULLIEN_W<7> {
         FULLIEN_W::new(self)
     }
     #[doc = "Bit 8 - Software Reset"]
     #[inline(always)]
-    pub fn softreset(&mut self) -> SOFTRESET_W {
+    #[must_use]
+    pub fn softreset(&mut self) -> SOFTRESET_W<8> {
         SOFTRESET_W::new(self)
     }
     #[doc = "Bit 9 - IRQ enable for AIS31 prelim. noise alarm"]
     #[inline(always)]
-    pub fn preien(&mut self) -> PREIEN_W {
+    #[must_use]
+    pub fn preien(&mut self) -> PREIEN_W<9> {
         PREIEN_W::new(self)
     }
     #[doc = "Bit 10 - IRQ enable for AIS31 noise alarm"]
     #[inline(always)]
-    pub fn almien(&mut self) -> ALMIEN_W {
+    #[must_use]
+    pub fn almien(&mut self) -> ALMIEN_W<10> {
         ALMIEN_W::new(self)
     }
     #[doc = "Bit 11 - Oscillator Force Run"]
     #[inline(always)]
-    pub fn forcerun(&mut self) -> FORCERUN_W {
+    #[must_use]
+    pub fn forcerun(&mut self) -> FORCERUN_W<11> {
         FORCERUN_W::new(self)
     }
     #[doc = "Bit 12 - NIST Start-up Test Bypass."]
     #[inline(always)]
-    pub fn bypnist(&mut self) -> BYPNIST_W {
+    #[must_use]
+    pub fn bypnist(&mut self) -> BYPNIST_W<12> {
         BYPNIST_W::new(self)
     }
     #[doc = "Bit 13 - AIS31 Start-up Test Bypass."]
     #[inline(always)]
-    pub fn bypais31(&mut self) -> BYPAIS31_W {
+    #[must_use]
+    pub fn bypais31(&mut self) -> BYPAIS31_W<13> {
         BYPAIS31_W::new(self)
     }
     #[doc = "Bit 14 - Health test input select"]
     #[inline(always)]
-    pub fn healthtestsel(&mut self) -> HEALTHTESTSEL_W {
+    #[must_use]
+    pub fn healthtestsel(&mut self) -> HEALTHTESTSEL_W<14> {
         HEALTHTESTSEL_W::new(self)
     }
     #[doc = "Bit 15 - AIS31 test input select"]
     #[inline(always)]
-    pub fn ais31testsel(&mut self) -> AIS31TESTSEL_W {
+    #[must_use]
+    pub fn ais31testsel(&mut self) -> AIS31TESTSEL_W<15> {
         AIS31TESTSEL_W::new(self)
     }
     #[doc = "Bits 16:19 - Number of 128b blocks in AES-CBCMAC"]
     #[inline(always)]
-    pub fn nb128bitblocks(&mut self) -> NB128BITBLOCKS_W {
+    #[must_use]
+    pub fn nb128bitblocks(&mut self) -> NB128BITBLOCKS_W<16> {
         NB128BITBLOCKS_W::new(self)
     }
     #[doc = "Bit 20 - Fifo Write Start Up"]
     #[inline(always)]
-    pub fn fifowrstartup(&mut self) -> FIFOWRSTARTUP_W {
+    #[must_use]
+    pub fn fifowrstartup(&mut self) -> FIFOWRSTARTUP_W<20> {
         FIFOWRSTARTUP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -708,11 +728,10 @@ impl crate::Readable for RNGCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [rngctrl::W](W) writer structure"]
 impl crate::Writable for RNGCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RNGCTRL to value 0x0004_0000"]
 impl crate::Resettable for RNGCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0004_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0004_0000;
 }

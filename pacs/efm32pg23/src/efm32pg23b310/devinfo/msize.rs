@@ -40,8 +40,5 @@ impl crate::Readable for MSIZE_SPEC {
 }
 #[doc = "`reset()` method sets MSIZE to value 0"]
 impl crate::Resettable for MSIZE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

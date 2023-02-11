@@ -37,23 +37,23 @@ impl From<crate::W<IF_SPEC>> for W {
 #[doc = "Field `ERASE` reader - Host Erase Done Interrupt Read Flag"]
 pub type ERASE_R = crate::BitReader<bool>;
 #[doc = "Field `ERASE` writer - Host Erase Done Interrupt Read Flag"]
-pub type ERASE_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 0>;
+pub type ERASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `WRITE` reader - Host Write Done Interrupt Read Flag"]
 pub type WRITE_R = crate::BitReader<bool>;
 #[doc = "Field `WRITE` writer - Host Write Done Interrupt Read Flag"]
-pub type WRITE_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 1>;
+pub type WRITE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `WDATAOV` reader - Host write buffer overflow"]
 pub type WDATAOV_R = crate::BitReader<bool>;
 #[doc = "Field `WDATAOV` writer - Host write buffer overflow"]
-pub type WDATAOV_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 2>;
+pub type WDATAOV_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `PWRUPF` reader - Flash Power Up Sequence Complete Flag"]
 pub type PWRUPF_R = crate::BitReader<bool>;
 #[doc = "Field `PWRUPF` writer - Flash Power Up Sequence Complete Flag"]
-pub type PWRUPF_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 8>;
+pub type PWRUPF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `PWROFF` reader - Flash Power Off Sequence Complete Flag"]
 pub type PWROFF_R = crate::BitReader<bool>;
 #[doc = "Field `PWROFF` writer - Flash Power Off Sequence Complete Flag"]
-pub type PWROFF_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 9>;
+pub type PWROFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Host Erase Done Interrupt Read Flag"]
     #[inline(always)]
@@ -84,27 +84,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Host Erase Done Interrupt Read Flag"]
     #[inline(always)]
-    pub fn erase(&mut self) -> ERASE_W {
+    #[must_use]
+    pub fn erase(&mut self) -> ERASE_W<0> {
         ERASE_W::new(self)
     }
     #[doc = "Bit 1 - Host Write Done Interrupt Read Flag"]
     #[inline(always)]
-    pub fn write(&mut self) -> WRITE_W {
+    #[must_use]
+    pub fn write(&mut self) -> WRITE_W<1> {
         WRITE_W::new(self)
     }
     #[doc = "Bit 2 - Host write buffer overflow"]
     #[inline(always)]
-    pub fn wdataov(&mut self) -> WDATAOV_W {
+    #[must_use]
+    pub fn wdataov(&mut self) -> WDATAOV_W<2> {
         WDATAOV_W::new(self)
     }
     #[doc = "Bit 8 - Flash Power Up Sequence Complete Flag"]
     #[inline(always)]
-    pub fn pwrupf(&mut self) -> PWRUPF_W {
+    #[must_use]
+    pub fn pwrupf(&mut self) -> PWRUPF_W<8> {
         PWRUPF_W::new(self)
     }
     #[doc = "Bit 9 - Flash Power Off Sequence Complete Flag"]
     #[inline(always)]
-    pub fn pwroff(&mut self) -> PWROFF_W {
+    #[must_use]
+    pub fn pwroff(&mut self) -> PWROFF_W<9> {
         PWROFF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -126,11 +131,10 @@ impl crate::Readable for IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_::W](W) writer structure"]
 impl crate::Writable for IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

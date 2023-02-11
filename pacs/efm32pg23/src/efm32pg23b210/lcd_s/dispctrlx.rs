@@ -37,7 +37,8 @@ impl From<crate::W<DISPCTRLX_SPEC>> for W {
 #[doc = "Field `DISPLAYDIV` reader - Display Divider"]
 pub type DISPLAYDIV_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DISPLAYDIV` writer - Display Divider"]
-pub type DISPLAYDIV_W<'a> = crate::FieldWriter<'a, u32, DISPCTRLX_SPEC, u16, u16, 10, 0>;
+pub type DISPLAYDIV_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DISPCTRLX_SPEC, u16, u16, 10, O>;
 impl R {
     #[doc = "Bits 0:9 - Display Divider"]
     #[inline(always)]
@@ -48,7 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Display Divider"]
     #[inline(always)]
-    pub fn displaydiv(&mut self) -> DISPLAYDIV_W {
+    #[must_use]
+    pub fn displaydiv(&mut self) -> DISPLAYDIV_W<0> {
         DISPLAYDIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +72,10 @@ impl crate::Readable for DISPCTRLX_SPEC {
 #[doc = "`write(|w| ..)` method takes [dispctrlx::W](W) writer structure"]
 impl crate::Writable for DISPCTRLX_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DISPCTRLX to value 0"]
 impl crate::Resettable for DISPCTRLX_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,91 +37,91 @@ impl From<crate::W<PPUSATD1_SPEC>> for W {
 #[doc = "Field `SYSRTC` reader - SYSRTC Secure Access"]
 pub type SYSRTC_R = crate::BitReader<bool>;
 #[doc = "Field `SYSRTC` writer - SYSRTC Secure Access"]
-pub type SYSRTC_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 0>;
+pub type SYSRTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `LCD` reader - LCD Secure Access"]
 pub type LCD_R = crate::BitReader<bool>;
 #[doc = "Field `LCD` writer - LCD Secure Access"]
-pub type LCD_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 1>;
+pub type LCD_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `KEYSCAN` reader - KEYSCAN Secure Access"]
 pub type KEYSCAN_R = crate::BitReader<bool>;
 #[doc = "Field `KEYSCAN` writer - KEYSCAN Secure Access"]
-pub type KEYSCAN_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 2>;
+pub type KEYSCAN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `DMEM` reader - DMEM Secure Access"]
 pub type DMEM_R = crate::BitReader<bool>;
 #[doc = "Field `DMEM` writer - DMEM Secure Access"]
-pub type DMEM_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 3>;
+pub type DMEM_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `LCDRF` reader - LCDRF Secure Access"]
 pub type LCDRF_R = crate::BitReader<bool>;
 #[doc = "Field `LCDRF` writer - LCDRF Secure Access"]
-pub type LCDRF_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 4>;
+pub type LCDRF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `SMU` reader - SMU Secure Access"]
 pub type SMU_R = crate::BitReader<bool>;
 #[doc = "Field `SMU` writer - SMU Secure Access"]
-pub type SMU_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 7>;
+pub type SMU_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `SMUCFGNS` reader - SMUCFGNS Secure Access"]
 pub type SMUCFGNS_R = crate::BitReader<bool>;
 #[doc = "Field `SMUCFGNS` writer - SMUCFGNS Secure Access"]
-pub type SMUCFGNS_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 8>;
+pub type SMUCFGNS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `LETIMER0` reader - LETIMER0 Secure Access"]
 pub type LETIMER0_R = crate::BitReader<bool>;
 #[doc = "Field `LETIMER0` writer - LETIMER0 Secure Access"]
-pub type LETIMER0_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 9>;
+pub type LETIMER0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `IADC0` reader - IADC0 Secure Access"]
 pub type IADC0_R = crate::BitReader<bool>;
 #[doc = "Field `IADC0` writer - IADC0 Secure Access"]
-pub type IADC0_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 10>;
+pub type IADC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `ACMP0` reader - ACMP0 Secure Access"]
 pub type ACMP0_R = crate::BitReader<bool>;
 #[doc = "Field `ACMP0` writer - ACMP0 Secure Access"]
-pub type ACMP0_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 11>;
+pub type ACMP0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `ACMP1` reader - ACMP1 Secure Access"]
 pub type ACMP1_R = crate::BitReader<bool>;
 #[doc = "Field `ACMP1` writer - ACMP1 Secure Access"]
-pub type ACMP1_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 12>;
+pub type ACMP1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `AMUXCP0` reader - AMUXCP0 Secure Access"]
 pub type AMUXCP0_R = crate::BitReader<bool>;
 #[doc = "Field `AMUXCP0` writer - AMUXCP0 Secure Access"]
-pub type AMUXCP0_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 13>;
+pub type AMUXCP0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `VDAC0` reader - VDAC0 Secure Access"]
 pub type VDAC0_R = crate::BitReader<bool>;
 #[doc = "Field `VDAC0` writer - VDAC0 Secure Access"]
-pub type VDAC0_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 14>;
+pub type VDAC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `PCNT` reader - PCNT Secure Access"]
 pub type PCNT_R = crate::BitReader<bool>;
 #[doc = "Field `PCNT` writer - PCNT Secure Access"]
-pub type PCNT_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 15>;
+pub type PCNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `LESENSE` reader - LESENSE Secure Access"]
 pub type LESENSE_R = crate::BitReader<bool>;
 #[doc = "Field `LESENSE` writer - LESENSE Secure Access"]
-pub type LESENSE_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 16>;
+pub type LESENSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `HFRCO1` reader - HFRCO1 Secure Access"]
 pub type HFRCO1_R = crate::BitReader<bool>;
 #[doc = "Field `HFRCO1` writer - HFRCO1 Secure Access"]
-pub type HFRCO1_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 17>;
+pub type HFRCO1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `HFXO0` reader - HFXO0 Secure Access"]
 pub type HFXO0_R = crate::BitReader<bool>;
 #[doc = "Field `HFXO0` writer - HFXO0 Secure Access"]
-pub type HFXO0_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 18>;
+pub type HFXO0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `I2C0` reader - I2C0 Secure Access"]
 pub type I2C0_R = crate::BitReader<bool>;
 #[doc = "Field `I2C0` writer - I2C0 Secure Access"]
-pub type I2C0_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 19>;
+pub type I2C0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `WDOG0` reader - WDOG0 Secure Access"]
 pub type WDOG0_R = crate::BitReader<bool>;
 #[doc = "Field `WDOG0` writer - WDOG0 Secure Access"]
-pub type WDOG0_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 20>;
+pub type WDOG0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `WDOG1` reader - WDOG1 Secure Access"]
 pub type WDOG1_R = crate::BitReader<bool>;
 #[doc = "Field `WDOG1` writer - WDOG1 Secure Access"]
-pub type WDOG1_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 21>;
+pub type WDOG1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `EUSART0` reader - EUSART0 Secure Access"]
 pub type EUSART0_R = crate::BitReader<bool>;
 #[doc = "Field `EUSART0` writer - EUSART0 Secure Access"]
-pub type EUSART0_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 22>;
+pub type EUSART0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 #[doc = "Field `SEMAILBOX` reader - SEMAILBOX Secure Access"]
 pub type SEMAILBOX_R = crate::BitReader<bool>;
 #[doc = "Field `SEMAILBOX` writer - SEMAILBOX Secure Access"]
-pub type SEMAILBOX_W<'a> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, 23>;
+pub type SEMAILBOX_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUSATD1_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - SYSRTC Secure Access"]
     #[inline(always)]
@@ -237,112 +237,134 @@ impl R {
 impl W {
     #[doc = "Bit 0 - SYSRTC Secure Access"]
     #[inline(always)]
-    pub fn sysrtc(&mut self) -> SYSRTC_W {
+    #[must_use]
+    pub fn sysrtc(&mut self) -> SYSRTC_W<0> {
         SYSRTC_W::new(self)
     }
     #[doc = "Bit 1 - LCD Secure Access"]
     #[inline(always)]
-    pub fn lcd(&mut self) -> LCD_W {
+    #[must_use]
+    pub fn lcd(&mut self) -> LCD_W<1> {
         LCD_W::new(self)
     }
     #[doc = "Bit 2 - KEYSCAN Secure Access"]
     #[inline(always)]
-    pub fn keyscan(&mut self) -> KEYSCAN_W {
+    #[must_use]
+    pub fn keyscan(&mut self) -> KEYSCAN_W<2> {
         KEYSCAN_W::new(self)
     }
     #[doc = "Bit 3 - DMEM Secure Access"]
     #[inline(always)]
-    pub fn dmem(&mut self) -> DMEM_W {
+    #[must_use]
+    pub fn dmem(&mut self) -> DMEM_W<3> {
         DMEM_W::new(self)
     }
     #[doc = "Bit 4 - LCDRF Secure Access"]
     #[inline(always)]
-    pub fn lcdrf(&mut self) -> LCDRF_W {
+    #[must_use]
+    pub fn lcdrf(&mut self) -> LCDRF_W<4> {
         LCDRF_W::new(self)
     }
     #[doc = "Bit 7 - SMU Secure Access"]
     #[inline(always)]
-    pub fn smu(&mut self) -> SMU_W {
+    #[must_use]
+    pub fn smu(&mut self) -> SMU_W<7> {
         SMU_W::new(self)
     }
     #[doc = "Bit 8 - SMUCFGNS Secure Access"]
     #[inline(always)]
-    pub fn smucfgns(&mut self) -> SMUCFGNS_W {
+    #[must_use]
+    pub fn smucfgns(&mut self) -> SMUCFGNS_W<8> {
         SMUCFGNS_W::new(self)
     }
     #[doc = "Bit 9 - LETIMER0 Secure Access"]
     #[inline(always)]
-    pub fn letimer0(&mut self) -> LETIMER0_W {
+    #[must_use]
+    pub fn letimer0(&mut self) -> LETIMER0_W<9> {
         LETIMER0_W::new(self)
     }
     #[doc = "Bit 10 - IADC0 Secure Access"]
     #[inline(always)]
-    pub fn iadc0(&mut self) -> IADC0_W {
+    #[must_use]
+    pub fn iadc0(&mut self) -> IADC0_W<10> {
         IADC0_W::new(self)
     }
     #[doc = "Bit 11 - ACMP0 Secure Access"]
     #[inline(always)]
-    pub fn acmp0(&mut self) -> ACMP0_W {
+    #[must_use]
+    pub fn acmp0(&mut self) -> ACMP0_W<11> {
         ACMP0_W::new(self)
     }
     #[doc = "Bit 12 - ACMP1 Secure Access"]
     #[inline(always)]
-    pub fn acmp1(&mut self) -> ACMP1_W {
+    #[must_use]
+    pub fn acmp1(&mut self) -> ACMP1_W<12> {
         ACMP1_W::new(self)
     }
     #[doc = "Bit 13 - AMUXCP0 Secure Access"]
     #[inline(always)]
-    pub fn amuxcp0(&mut self) -> AMUXCP0_W {
+    #[must_use]
+    pub fn amuxcp0(&mut self) -> AMUXCP0_W<13> {
         AMUXCP0_W::new(self)
     }
     #[doc = "Bit 14 - VDAC0 Secure Access"]
     #[inline(always)]
-    pub fn vdac0(&mut self) -> VDAC0_W {
+    #[must_use]
+    pub fn vdac0(&mut self) -> VDAC0_W<14> {
         VDAC0_W::new(self)
     }
     #[doc = "Bit 15 - PCNT Secure Access"]
     #[inline(always)]
-    pub fn pcnt(&mut self) -> PCNT_W {
+    #[must_use]
+    pub fn pcnt(&mut self) -> PCNT_W<15> {
         PCNT_W::new(self)
     }
     #[doc = "Bit 16 - LESENSE Secure Access"]
     #[inline(always)]
-    pub fn lesense(&mut self) -> LESENSE_W {
+    #[must_use]
+    pub fn lesense(&mut self) -> LESENSE_W<16> {
         LESENSE_W::new(self)
     }
     #[doc = "Bit 17 - HFRCO1 Secure Access"]
     #[inline(always)]
-    pub fn hfrco1(&mut self) -> HFRCO1_W {
+    #[must_use]
+    pub fn hfrco1(&mut self) -> HFRCO1_W<17> {
         HFRCO1_W::new(self)
     }
     #[doc = "Bit 18 - HFXO0 Secure Access"]
     #[inline(always)]
-    pub fn hfxo0(&mut self) -> HFXO0_W {
+    #[must_use]
+    pub fn hfxo0(&mut self) -> HFXO0_W<18> {
         HFXO0_W::new(self)
     }
     #[doc = "Bit 19 - I2C0 Secure Access"]
     #[inline(always)]
-    pub fn i2c0(&mut self) -> I2C0_W {
+    #[must_use]
+    pub fn i2c0(&mut self) -> I2C0_W<19> {
         I2C0_W::new(self)
     }
     #[doc = "Bit 20 - WDOG0 Secure Access"]
     #[inline(always)]
-    pub fn wdog0(&mut self) -> WDOG0_W {
+    #[must_use]
+    pub fn wdog0(&mut self) -> WDOG0_W<20> {
         WDOG0_W::new(self)
     }
     #[doc = "Bit 21 - WDOG1 Secure Access"]
     #[inline(always)]
-    pub fn wdog1(&mut self) -> WDOG1_W {
+    #[must_use]
+    pub fn wdog1(&mut self) -> WDOG1_W<21> {
         WDOG1_W::new(self)
     }
     #[doc = "Bit 22 - EUSART0 Secure Access"]
     #[inline(always)]
-    pub fn eusart0(&mut self) -> EUSART0_W {
+    #[must_use]
+    pub fn eusart0(&mut self) -> EUSART0_W<22> {
         EUSART0_W::new(self)
     }
     #[doc = "Bit 23 - SEMAILBOX Secure Access"]
     #[inline(always)]
-    pub fn semailbox(&mut self) -> SEMAILBOX_W {
+    #[must_use]
+    pub fn semailbox(&mut self) -> SEMAILBOX_W<23> {
         SEMAILBOX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -364,11 +386,10 @@ impl crate::Readable for PPUSATD1_SPEC {
 #[doc = "`write(|w| ..)` method takes [ppusatd1::W](W) writer structure"]
 impl crate::Writable for PPUSATD1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PPUSATD1 to value 0x01ff_ffff"]
 impl crate::Resettable for PPUSATD1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01ff_ffff
-    }
+    const RESET_VALUE: Self::Ux = 0x01ff_ffff;
 }

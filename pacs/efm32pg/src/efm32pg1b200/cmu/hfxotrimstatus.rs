@@ -40,8 +40,5 @@ impl crate::Readable for HFXOTRIMSTATUS_SPEC {
 }
 #[doc = "`reset()` method sets HFXOTRIMSTATUS to value 0x0500"]
 impl crate::Resettable for HFXOTRIMSTATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0500
-    }
+    const RESET_VALUE: Self::Ux = 0x0500;
 }

@@ -26,7 +26,7 @@ impl R {
     #[doc = "Bits 8:31 - OUI64"]
     #[inline(always)]
     pub fn oui64(&self) -> OUI64_R {
-        OUI64_R::new(((self.bits >> 8) & 0x00ff_ffff) as u32)
+        OUI64_R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
 #[doc = "MA-L compliant EUI64 OUI and Unique Identifier (high bits)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [eui64h](index.html) module"]
@@ -40,8 +40,5 @@ impl crate::Readable for EUI64H_SPEC {
 }
 #[doc = "`reset()` method sets EUI64H to value 0"]
 impl crate::Resettable for EUI64H_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

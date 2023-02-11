@@ -37,7 +37,8 @@ impl From<crate::W<ROOTSESWVERSION_SPEC>> for W {
 #[doc = "Field `SWVERSION` reader - SW Version"]
 pub type SWVERSION_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `SWVERSION` writer - SW Version"]
-pub type SWVERSION_W<'a> = crate::FieldWriter<'a, u32, ROOTSESWVERSION_SPEC, u32, u32, 32, 0>;
+pub type SWVERSION_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROOTSESWVERSION_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - SW Version"]
     #[inline(always)]
@@ -48,7 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - SW Version"]
     #[inline(always)]
-    pub fn swversion(&mut self) -> SWVERSION_W {
+    #[must_use]
+    pub fn swversion(&mut self) -> SWVERSION_W<0> {
         SWVERSION_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +72,10 @@ impl crate::Readable for ROOTSESWVERSION_SPEC {
 #[doc = "`write(|w| ..)` method takes [rootseswversion::W](W) writer structure"]
 impl crate::Writable for ROOTSESWVERSION_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ROOTSESWVERSION to value 0"]
 impl crate::Resettable for ROOTSESWVERSION_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

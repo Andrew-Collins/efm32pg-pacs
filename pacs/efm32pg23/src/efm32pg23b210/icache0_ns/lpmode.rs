@@ -34,8 +34,10 @@ impl From<crate::W<LPMODE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LPLEVEL` reader - Low Power Level"]
+pub type LPLEVEL_R = crate::FieldReader<u8, LPLEVEL_A>;
 #[doc = "Low Power Level\n\nValue on reset: 3"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LPLEVEL_A {
     #[doc = "0: Base instruction cache functionality"]
@@ -51,8 +53,6 @@ impl From<LPLEVEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LPLEVEL` reader - Low Power Level"]
-pub type LPLEVEL_R = crate::FieldReader<u8, LPLEVEL_A>;
 impl LPLEVEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -81,8 +81,8 @@ impl LPLEVEL_R {
     }
 }
 #[doc = "Field `LPLEVEL` writer - Low Power Level"]
-pub type LPLEVEL_W<'a> = crate::FieldWriter<'a, u32, LPMODE_SPEC, u8, LPLEVEL_A, 2, 0>;
-impl<'a> LPLEVEL_W<'a> {
+pub type LPLEVEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LPMODE_SPEC, u8, LPLEVEL_A, 2, O>;
+impl<'a, const O: u8> LPLEVEL_W<'a, O> {
     #[doc = "Base instruction cache functionality"]
     #[inline(always)]
     pub fn basic(self) -> &'a mut W {
@@ -102,7 +102,7 @@ impl<'a> LPLEVEL_W<'a> {
 #[doc = "Field `NESTFACTOR` reader - Low Power Nest Factor"]
 pub type NESTFACTOR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NESTFACTOR` writer - Low Power Nest Factor"]
-pub type NESTFACTOR_W<'a> = crate::FieldWriter<'a, u32, LPMODE_SPEC, u8, u8, 4, 4>;
+pub type NESTFACTOR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LPMODE_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:1 - Low Power Level"]
     #[inline(always)]
@@ -118,12 +118,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Low Power Level"]
     #[inline(always)]
-    pub fn lplevel(&mut self) -> LPLEVEL_W {
+    #[must_use]
+    pub fn lplevel(&mut self) -> LPLEVEL_W<0> {
         LPLEVEL_W::new(self)
     }
     #[doc = "Bits 4:7 - Low Power Nest Factor"]
     #[inline(always)]
-    pub fn nestfactor(&mut self) -> NESTFACTOR_W {
+    #[must_use]
+    pub fn nestfactor(&mut self) -> NESTFACTOR_W<4> {
         NESTFACTOR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -145,11 +147,10 @@ impl crate::Readable for LPMODE_SPEC {
 #[doc = "`write(|w| ..)` method takes [lpmode::W](W) writer structure"]
 impl crate::Writable for LPMODE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LPMODE to value 0x23"]
 impl crate::Resettable for LPMODE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x23
-    }
+    const RESET_VALUE: Self::Ux = 0x23;
 }

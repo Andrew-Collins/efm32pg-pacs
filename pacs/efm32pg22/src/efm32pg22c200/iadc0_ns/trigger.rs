@@ -34,8 +34,10 @@ impl From<crate::W<TRIGGER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SCANTRIGSEL` reader - Scan Trigger Select"]
+pub type SCANTRIGSEL_R = crate::FieldReader<u8, SCANTRIGSEL_A>;
 #[doc = "Scan Trigger Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SCANTRIGSEL_A {
     #[doc = "0: Immediate triggering. The scan queue will be disabled once all conversions in the scan table are complete, unless TRIGGERACTION is set to continuous."]
@@ -55,8 +57,6 @@ impl From<SCANTRIGSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SCANTRIGSEL` reader - Scan Trigger Select"]
-pub type SCANTRIGSEL_R = crate::FieldReader<u8, SCANTRIGSEL_A>;
 impl SCANTRIGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -97,8 +97,9 @@ impl SCANTRIGSEL_R {
     }
 }
 #[doc = "Field `SCANTRIGSEL` writer - Scan Trigger Select"]
-pub type SCANTRIGSEL_W<'a> = crate::FieldWriter<'a, u32, TRIGGER_SPEC, u8, SCANTRIGSEL_A, 3, 0>;
-impl<'a> SCANTRIGSEL_W<'a> {
+pub type SCANTRIGSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TRIGGER_SPEC, u8, SCANTRIGSEL_A, 3, O>;
+impl<'a, const O: u8> SCANTRIGSEL_W<'a, O> {
     #[doc = "Immediate triggering. The scan queue will be disabled once all conversions in the scan table are complete, unless TRIGGERACTION is set to continuous."]
     #[inline(always)]
     pub fn immediate(self) -> &'a mut W {
@@ -125,8 +126,10 @@ impl<'a> SCANTRIGSEL_W<'a> {
         self.variant(SCANTRIGSEL_A::PRSNEG)
     }
 }
+#[doc = "Field `SCANTRIGACTION` reader - Scan Trigger Action"]
+pub type SCANTRIGACTION_R = crate::BitReader<SCANTRIGACTION_A>;
 #[doc = "Scan Trigger Action\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SCANTRIGACTION_A {
     #[doc = "0: For TRIGSEL=IMMEDIATE, goes through the scan table once and disables queue. For TRIGSEL = TIMER, PRSCLKGRP, PRSPOS, PRSNEG, goes through the scan table once per trigger."]
     ONCE = 0,
@@ -139,8 +142,6 @@ impl From<SCANTRIGACTION_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SCANTRIGACTION` reader - Scan Trigger Action"]
-pub type SCANTRIGACTION_R = crate::BitReader<SCANTRIGACTION_A>;
 impl SCANTRIGACTION_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -162,8 +163,9 @@ impl SCANTRIGACTION_R {
     }
 }
 #[doc = "Field `SCANTRIGACTION` writer - Scan Trigger Action"]
-pub type SCANTRIGACTION_W<'a> = crate::BitWriter<'a, u32, TRIGGER_SPEC, SCANTRIGACTION_A, 4>;
-impl<'a> SCANTRIGACTION_W<'a> {
+pub type SCANTRIGACTION_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TRIGGER_SPEC, SCANTRIGACTION_A, O>;
+impl<'a, const O: u8> SCANTRIGACTION_W<'a, O> {
     #[doc = "For TRIGSEL=IMMEDIATE, goes through the scan table once and disables queue. For TRIGSEL = TIMER, PRSCLKGRP, PRSPOS, PRSNEG, goes through the scan table once per trigger."]
     #[inline(always)]
     pub fn once(self) -> &'a mut W {
@@ -175,8 +177,10 @@ impl<'a> SCANTRIGACTION_W<'a> {
         self.variant(SCANTRIGACTION_A::CONTINUOUS)
     }
 }
+#[doc = "Field `SINGLETRIGSEL` reader - Single Trigger Select"]
+pub type SINGLETRIGSEL_R = crate::FieldReader<u8, SINGLETRIGSEL_A>;
 #[doc = "Single Trigger Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SINGLETRIGSEL_A {
     #[doc = "0: Immediate triggering. The single queue will be disabled once the conversion is complete, unless TRIGGERACTION is set to continuous."]
@@ -196,8 +200,6 @@ impl From<SINGLETRIGSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SINGLETRIGSEL` reader - Single Trigger Select"]
-pub type SINGLETRIGSEL_R = crate::FieldReader<u8, SINGLETRIGSEL_A>;
 impl SINGLETRIGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -238,8 +240,9 @@ impl SINGLETRIGSEL_R {
     }
 }
 #[doc = "Field `SINGLETRIGSEL` writer - Single Trigger Select"]
-pub type SINGLETRIGSEL_W<'a> = crate::FieldWriter<'a, u32, TRIGGER_SPEC, u8, SINGLETRIGSEL_A, 3, 8>;
-impl<'a> SINGLETRIGSEL_W<'a> {
+pub type SINGLETRIGSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TRIGGER_SPEC, u8, SINGLETRIGSEL_A, 3, O>;
+impl<'a, const O: u8> SINGLETRIGSEL_W<'a, O> {
     #[doc = "Immediate triggering. The single queue will be disabled once the conversion is complete, unless TRIGGERACTION is set to continuous."]
     #[inline(always)]
     pub fn immediate(self) -> &'a mut W {
@@ -266,8 +269,10 @@ impl<'a> SINGLETRIGSEL_W<'a> {
         self.variant(SINGLETRIGSEL_A::PRSNEG)
     }
 }
+#[doc = "Field `SINGLETRIGACTION` reader - Single Trigger Action"]
+pub type SINGLETRIGACTION_R = crate::BitReader<SINGLETRIGACTION_A>;
 #[doc = "Single Trigger Action\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SINGLETRIGACTION_A {
     #[doc = "0: For TRIGSEL=IMMEDIATE, converts the single queue once and disables queue. For TRIGSEL = TIMER, PRSCLKGRP, PRSPOS, PRSNEG, converts the single queue once per trigger.ask."]
     ONCE = 0,
@@ -280,8 +285,6 @@ impl From<SINGLETRIGACTION_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SINGLETRIGACTION` reader - Single Trigger Action"]
-pub type SINGLETRIGACTION_R = crate::BitReader<SINGLETRIGACTION_A>;
 impl SINGLETRIGACTION_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -303,8 +306,9 @@ impl SINGLETRIGACTION_R {
     }
 }
 #[doc = "Field `SINGLETRIGACTION` writer - Single Trigger Action"]
-pub type SINGLETRIGACTION_W<'a> = crate::BitWriter<'a, u32, TRIGGER_SPEC, SINGLETRIGACTION_A, 12>;
-impl<'a> SINGLETRIGACTION_W<'a> {
+pub type SINGLETRIGACTION_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TRIGGER_SPEC, SINGLETRIGACTION_A, O>;
+impl<'a, const O: u8> SINGLETRIGACTION_W<'a, O> {
     #[doc = "For TRIGSEL=IMMEDIATE, converts the single queue once and disables queue. For TRIGSEL = TIMER, PRSCLKGRP, PRSPOS, PRSNEG, converts the single queue once per trigger.ask."]
     #[inline(always)]
     pub fn once(self) -> &'a mut W {
@@ -316,8 +320,10 @@ impl<'a> SINGLETRIGACTION_W<'a> {
         self.variant(SINGLETRIGACTION_A::CONTINUOUS)
     }
 }
+#[doc = "Field `SINGLETAILGATE` reader - Single Tailgate Enable"]
+pub type SINGLETAILGATE_R = crate::BitReader<SINGLETAILGATE_A>;
 #[doc = "Single Tailgate Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SINGLETAILGATE_A {
     #[doc = "0: The single queue is ready to start warming up and converting once the trigger had been detected."]
     TAILGATEOFF = 0,
@@ -330,8 +336,6 @@ impl From<SINGLETAILGATE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SINGLETAILGATE` reader - Single Tailgate Enable"]
-pub type SINGLETAILGATE_R = crate::BitReader<SINGLETAILGATE_A>;
 impl SINGLETAILGATE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -353,8 +357,9 @@ impl SINGLETAILGATE_R {
     }
 }
 #[doc = "Field `SINGLETAILGATE` writer - Single Tailgate Enable"]
-pub type SINGLETAILGATE_W<'a> = crate::BitWriter<'a, u32, TRIGGER_SPEC, SINGLETAILGATE_A, 16>;
-impl<'a> SINGLETAILGATE_W<'a> {
+pub type SINGLETAILGATE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TRIGGER_SPEC, SINGLETAILGATE_A, O>;
+impl<'a, const O: u8> SINGLETAILGATE_W<'a, O> {
     #[doc = "The single queue is ready to start warming up and converting once the trigger had been detected."]
     #[inline(always)]
     pub fn tailgateoff(self) -> &'a mut W {
@@ -396,27 +401,32 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Scan Trigger Select"]
     #[inline(always)]
-    pub fn scantrigsel(&mut self) -> SCANTRIGSEL_W {
+    #[must_use]
+    pub fn scantrigsel(&mut self) -> SCANTRIGSEL_W<0> {
         SCANTRIGSEL_W::new(self)
     }
     #[doc = "Bit 4 - Scan Trigger Action"]
     #[inline(always)]
-    pub fn scantrigaction(&mut self) -> SCANTRIGACTION_W {
+    #[must_use]
+    pub fn scantrigaction(&mut self) -> SCANTRIGACTION_W<4> {
         SCANTRIGACTION_W::new(self)
     }
     #[doc = "Bits 8:10 - Single Trigger Select"]
     #[inline(always)]
-    pub fn singletrigsel(&mut self) -> SINGLETRIGSEL_W {
+    #[must_use]
+    pub fn singletrigsel(&mut self) -> SINGLETRIGSEL_W<8> {
         SINGLETRIGSEL_W::new(self)
     }
     #[doc = "Bit 12 - Single Trigger Action"]
     #[inline(always)]
-    pub fn singletrigaction(&mut self) -> SINGLETRIGACTION_W {
+    #[must_use]
+    pub fn singletrigaction(&mut self) -> SINGLETRIGACTION_W<12> {
         SINGLETRIGACTION_W::new(self)
     }
     #[doc = "Bit 16 - Single Tailgate Enable"]
     #[inline(always)]
-    pub fn singletailgate(&mut self) -> SINGLETAILGATE_W {
+    #[must_use]
+    pub fn singletailgate(&mut self) -> SINGLETAILGATE_W<16> {
         SINGLETAILGATE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -438,11 +448,10 @@ impl crate::Readable for TRIGGER_SPEC {
 #[doc = "`write(|w| ..)` method takes [trigger::W](W) writer structure"]
 impl crate::Writable for TRIGGER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TRIGGER to value 0"]
 impl crate::Resettable for TRIGGER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

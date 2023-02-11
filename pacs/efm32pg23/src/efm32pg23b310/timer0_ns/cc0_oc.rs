@@ -37,7 +37,7 @@ impl From<crate::W<CC0_OC_SPEC>> for W {
 #[doc = "Field `OC` reader - Output Compare Value"]
 pub type OC_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `OC` writer - Output Compare Value"]
-pub type OC_W<'a> = crate::FieldWriter<'a, u32, CC0_OC_SPEC, u32, u32, 32, 0>;
+pub type OC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC0_OC_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Output Compare Value"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Output Compare Value"]
     #[inline(always)]
-    pub fn oc(&mut self) -> OC_W {
+    #[must_use]
+    pub fn oc(&mut self) -> OC_W<0> {
         OC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for CC0_OC_SPEC {
 #[doc = "`write(|w| ..)` method takes [cc0_oc::W](W) writer structure"]
 impl crate::Writable for CC0_OC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CC0_OC to value 0"]
 impl crate::Resettable for CC0_OC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

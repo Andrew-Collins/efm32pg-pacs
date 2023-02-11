@@ -34,8 +34,10 @@ impl From<crate::W<INPUTCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `POSSEL` reader - Positive Input Select"]
+pub type POSSEL_R = crate::FieldReader<u8, POSSEL_A>;
 #[doc = "Positive Input Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum POSSEL_A {
     #[doc = "0: VSS"]
@@ -207,8 +209,6 @@ impl From<POSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `POSSEL` reader - Positive Input Select"]
-pub type POSSEL_R = crate::FieldReader<u8, POSSEL_A>;
 impl POSSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -705,8 +705,9 @@ impl POSSEL_R {
     }
 }
 #[doc = "Field `POSSEL` writer - Positive Input Select"]
-pub type POSSEL_W<'a> = crate::FieldWriter<'a, u32, INPUTCTRL_SPEC, u8, POSSEL_A, 8, 0>;
-impl<'a> POSSEL_W<'a> {
+pub type POSSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, INPUTCTRL_SPEC, u8, POSSEL_A, 8, O>;
+impl<'a, const O: u8> POSSEL_W<'a, O> {
     #[doc = "VSS"]
     #[inline(always)]
     pub fn vss(self) -> &'a mut W {
@@ -1113,8 +1114,10 @@ impl<'a> POSSEL_W<'a> {
         self.variant(POSSEL_A::PD15)
     }
 }
+#[doc = "Field `NEGSEL` reader - Negative Input Select"]
+pub type NEGSEL_R = crate::FieldReader<u8, NEGSEL_A>;
 #[doc = "Negative Input Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum NEGSEL_A {
     #[doc = "0: VSS"]
@@ -1280,8 +1283,6 @@ impl From<NEGSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `NEGSEL` reader - Negative Input Select"]
-pub type NEGSEL_R = crate::FieldReader<u8, NEGSEL_A>;
 impl NEGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -1760,8 +1761,9 @@ impl NEGSEL_R {
     }
 }
 #[doc = "Field `NEGSEL` writer - Negative Input Select"]
-pub type NEGSEL_W<'a> = crate::FieldWriter<'a, u32, INPUTCTRL_SPEC, u8, NEGSEL_A, 8, 8>;
-impl<'a> NEGSEL_W<'a> {
+pub type NEGSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, INPUTCTRL_SPEC, u8, NEGSEL_A, 8, O>;
+impl<'a, const O: u8> NEGSEL_W<'a, O> {
     #[doc = "VSS"]
     #[inline(always)]
     pub fn vss(self) -> &'a mut W {
@@ -2156,9 +2158,11 @@ impl<'a> NEGSEL_W<'a> {
 #[doc = "Field `VREFDIV` reader - VREF division"]
 pub type VREFDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `VREFDIV` writer - VREF division"]
-pub type VREFDIV_W<'a> = crate::FieldWriter<'a, u32, INPUTCTRL_SPEC, u8, u8, 6, 16>;
+pub type VREFDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPUTCTRL_SPEC, u8, u8, 6, O>;
+#[doc = "Field `CSRESSEL` reader - Capacitive Sense Mode Internal Resistor"]
+pub type CSRESSEL_R = crate::FieldReader<u8, CSRESSEL_A>;
 #[doc = "Capacitive Sense Mode Internal Resistor\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CSRESSEL_A {
     #[doc = "0: Internal capacitive sense resistor value 0"]
@@ -2182,8 +2186,6 @@ impl From<CSRESSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CSRESSEL` reader - Capacitive Sense Mode Internal Resistor"]
-pub type CSRESSEL_R = crate::FieldReader<u8, CSRESSEL_A>;
 impl CSRESSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -2236,8 +2238,9 @@ impl CSRESSEL_R {
     }
 }
 #[doc = "Field `CSRESSEL` writer - Capacitive Sense Mode Internal Resistor"]
-pub type CSRESSEL_W<'a> = crate::FieldWriter<'a, u32, INPUTCTRL_SPEC, u8, CSRESSEL_A, 3, 28>;
-impl<'a> CSRESSEL_W<'a> {
+pub type CSRESSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, INPUTCTRL_SPEC, u8, CSRESSEL_A, 3, O>;
+impl<'a, const O: u8> CSRESSEL_W<'a, O> {
     #[doc = "Internal capacitive sense resistor value 0"]
     #[inline(always)]
     pub fn res0(self) -> &'a mut W {
@@ -2299,22 +2302,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Positive Input Select"]
     #[inline(always)]
-    pub fn possel(&mut self) -> POSSEL_W {
+    #[must_use]
+    pub fn possel(&mut self) -> POSSEL_W<0> {
         POSSEL_W::new(self)
     }
     #[doc = "Bits 8:15 - Negative Input Select"]
     #[inline(always)]
-    pub fn negsel(&mut self) -> NEGSEL_W {
+    #[must_use]
+    pub fn negsel(&mut self) -> NEGSEL_W<8> {
         NEGSEL_W::new(self)
     }
     #[doc = "Bits 16:21 - VREF division"]
     #[inline(always)]
-    pub fn vrefdiv(&mut self) -> VREFDIV_W {
+    #[must_use]
+    pub fn vrefdiv(&mut self) -> VREFDIV_W<16> {
         VREFDIV_W::new(self)
     }
     #[doc = "Bits 28:30 - Capacitive Sense Mode Internal Resistor"]
     #[inline(always)]
-    pub fn csressel(&mut self) -> CSRESSEL_W {
+    #[must_use]
+    pub fn csressel(&mut self) -> CSRESSEL_W<28> {
         CSRESSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -2336,11 +2343,10 @@ impl crate::Readable for INPUTCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [inputctrl::W](W) writer structure"]
 impl crate::Writable for INPUTCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets INPUTCTRL to value 0"]
 impl crate::Resettable for INPUTCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

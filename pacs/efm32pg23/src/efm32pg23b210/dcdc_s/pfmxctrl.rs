@@ -37,11 +37,11 @@ impl From<crate::W<PFMXCTRL_SPEC>> for W {
 #[doc = "Field `IPKVAL` reader - PFMX mode Peak Current Setting"]
 pub type IPKVAL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IPKVAL` writer - PFMX mode Peak Current Setting"]
-pub type IPKVAL_W<'a> = crate::FieldWriter<'a, u32, PFMXCTRL_SPEC, u8, u8, 4, 0>;
+pub type IPKVAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PFMXCTRL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `IPKTMAXCTRL` reader - Ton_max timeout control"]
 pub type IPKTMAXCTRL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IPKTMAXCTRL` writer - Ton_max timeout control"]
-pub type IPKTMAXCTRL_W<'a> = crate::FieldWriter<'a, u32, PFMXCTRL_SPEC, u8, u8, 5, 8>;
+pub type IPKTMAXCTRL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PFMXCTRL_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 0:3 - PFMX mode Peak Current Setting"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - PFMX mode Peak Current Setting"]
     #[inline(always)]
-    pub fn ipkval(&mut self) -> IPKVAL_W {
+    #[must_use]
+    pub fn ipkval(&mut self) -> IPKVAL_W<0> {
         IPKVAL_W::new(self)
     }
     #[doc = "Bits 8:12 - Ton_max timeout control"]
     #[inline(always)]
-    pub fn ipktmaxctrl(&mut self) -> IPKTMAXCTRL_W {
+    #[must_use]
+    pub fn ipktmaxctrl(&mut self) -> IPKTMAXCTRL_W<8> {
         IPKTMAXCTRL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for PFMXCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [pfmxctrl::W](W) writer structure"]
 impl crate::Writable for PFMXCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PFMXCTRL to value 0x0b0c"]
 impl crate::Resettable for PFMXCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0b0c
-    }
+    const RESET_VALUE: Self::Ux = 0x0b0c;
 }

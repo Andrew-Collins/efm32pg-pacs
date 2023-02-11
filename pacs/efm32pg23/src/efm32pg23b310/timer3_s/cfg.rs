@@ -34,8 +34,10 @@ impl From<crate::W<CFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - Timer Mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "Timer Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Up-count mode"]
@@ -53,8 +55,6 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - Timer Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Timer Mode"]
-pub type MODE_W<'a> = crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, MODE_A, 2, 0>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, MODE_A, 2, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Up-count mode"]
     #[inline(always)]
     pub fn up(self) -> &'a mut W {
@@ -112,8 +112,10 @@ impl<'a> MODE_W<'a> {
         self.variant(MODE_A::QDEC)
     }
 }
+#[doc = "Field `SYNC` reader - Timer Start/Stop/Reload Synchronization"]
+pub type SYNC_R = crate::BitReader<SYNC_A>;
 #[doc = "Timer Start/Stop/Reload Synchronization\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYNC_A {
     #[doc = "0: Timer operation is unaffected by other timers."]
     DISABLE = 0,
@@ -126,8 +128,6 @@ impl From<SYNC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SYNC` reader - Timer Start/Stop/Reload Synchronization"]
-pub type SYNC_R = crate::BitReader<SYNC_A>;
 impl SYNC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -149,8 +149,8 @@ impl SYNC_R {
     }
 }
 #[doc = "Field `SYNC` writer - Timer Start/Stop/Reload Synchronization"]
-pub type SYNC_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, SYNC_A, 3>;
-impl<'a> SYNC_W<'a> {
+pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, SYNC_A, O>;
+impl<'a, const O: u8> SYNC_W<'a, O> {
     #[doc = "Timer operation is unaffected by other timers."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -165,9 +165,11 @@ impl<'a> SYNC_W<'a> {
 #[doc = "Field `OSMEN` reader - One-shot Mode Enable"]
 pub type OSMEN_R = crate::BitReader<bool>;
 #[doc = "Field `OSMEN` writer - One-shot Mode Enable"]
-pub type OSMEN_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 4>;
+pub type OSMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
+#[doc = "Field `QDM` reader - Quadrature Decoder Mode Selection"]
+pub type QDM_R = crate::BitReader<QDM_A>;
 #[doc = "Quadrature Decoder Mode Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum QDM_A {
     #[doc = "0: X2 mode selected"]
     X2 = 0,
@@ -180,8 +182,6 @@ impl From<QDM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `QDM` reader - Quadrature Decoder Mode Selection"]
-pub type QDM_R = crate::BitReader<QDM_A>;
 impl QDM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -203,8 +203,8 @@ impl QDM_R {
     }
 }
 #[doc = "Field `QDM` writer - Quadrature Decoder Mode Selection"]
-pub type QDM_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, QDM_A, 5>;
-impl<'a> QDM_W<'a> {
+pub type QDM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, QDM_A, O>;
+impl<'a, const O: u8> QDM_W<'a, O> {
     #[doc = "X2 mode selected"]
     #[inline(always)]
     pub fn x2(self) -> &'a mut W {
@@ -216,8 +216,10 @@ impl<'a> QDM_W<'a> {
         self.variant(QDM_A::X4)
     }
 }
+#[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
+pub type DEBUGRUN_R = crate::BitReader<DEBUGRUN_A>;
 #[doc = "Debug Mode Run Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DEBUGRUN_A {
     #[doc = "0: Timer is halted in debug mode"]
     HALT = 0,
@@ -230,8 +232,6 @@ impl From<DEBUGRUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
-pub type DEBUGRUN_R = crate::BitReader<DEBUGRUN_A>;
 impl DEBUGRUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -253,8 +253,8 @@ impl DEBUGRUN_R {
     }
 }
 #[doc = "Field `DEBUGRUN` writer - Debug Mode Run Enable"]
-pub type DEBUGRUN_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, DEBUGRUN_A, 6>;
-impl<'a> DEBUGRUN_W<'a> {
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, DEBUGRUN_A, O>;
+impl<'a, const O: u8> DEBUGRUN_W<'a, O> {
     #[doc = "Timer is halted in debug mode"]
     #[inline(always)]
     pub fn halt(self) -> &'a mut W {
@@ -269,9 +269,11 @@ impl<'a> DEBUGRUN_W<'a> {
 #[doc = "Field `DMACLRACT` reader - DMA Request Clear on Active"]
 pub type DMACLRACT_R = crate::BitReader<bool>;
 #[doc = "Field `DMACLRACT` writer - DMA Request Clear on Active"]
-pub type DMACLRACT_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 7>;
+pub type DMACLRACT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
+#[doc = "Field `CLKSEL` reader - Clock Source Select"]
+pub type CLKSEL_R = crate::FieldReader<u8, CLKSEL_A>;
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKSEL_A {
     #[doc = "0: Prescaled EM01GRPACLK"]
@@ -287,8 +289,6 @@ impl From<CLKSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLKSEL` reader - Clock Source Select"]
-pub type CLKSEL_R = crate::FieldReader<u8, CLKSEL_A>;
 impl CLKSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -317,8 +317,8 @@ impl CLKSEL_R {
     }
 }
 #[doc = "Field `CLKSEL` writer - Clock Source Select"]
-pub type CLKSEL_W<'a> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, CLKSEL_A, 2, 8>;
-impl<'a> CLKSEL_W<'a> {
+pub type CLKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, CLKSEL_A, 2, O>;
+impl<'a, const O: u8> CLKSEL_W<'a, O> {
     #[doc = "Prescaled EM01GRPACLK"]
     #[inline(always)]
     pub fn prescem01grpaclk(self) -> &'a mut W {
@@ -335,8 +335,10 @@ impl<'a> CLKSEL_W<'a> {
         self.variant(CLKSEL_A::TIMEROUF)
     }
 }
+#[doc = "Field `RETIMEEN` reader - PWM output retimed enable"]
+pub type RETIMEEN_R = crate::BitReader<RETIMEEN_A>;
 #[doc = "PWM output retimed enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RETIMEEN_A {
     #[doc = "0: PWM outputs are not re-timed."]
     DISABLE = 0,
@@ -349,8 +351,6 @@ impl From<RETIMEEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RETIMEEN` reader - PWM output retimed enable"]
-pub type RETIMEEN_R = crate::BitReader<RETIMEEN_A>;
 impl RETIMEEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -372,8 +372,8 @@ impl RETIMEEN_R {
     }
 }
 #[doc = "Field `RETIMEEN` writer - PWM output retimed enable"]
-pub type RETIMEEN_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, RETIMEEN_A, 10>;
-impl<'a> RETIMEEN_W<'a> {
+pub type RETIMEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, RETIMEEN_A, O>;
+impl<'a, const O: u8> RETIMEEN_W<'a, O> {
     #[doc = "PWM outputs are not re-timed."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -385,8 +385,10 @@ impl<'a> RETIMEEN_W<'a> {
         self.variant(RETIMEEN_A::ENABLE)
     }
 }
+#[doc = "Field `DISSYNCOUT` reader - Disable Timer Start/Stop/Reload output"]
+pub type DISSYNCOUT_R = crate::BitReader<DISSYNCOUT_A>;
 #[doc = "Disable Timer Start/Stop/Reload output\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DISSYNCOUT_A {
     #[doc = "0: Timer can start/stop/reload other timers with SYNC bit set"]
     EN = 0,
@@ -399,8 +401,6 @@ impl From<DISSYNCOUT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DISSYNCOUT` reader - Disable Timer Start/Stop/Reload output"]
-pub type DISSYNCOUT_R = crate::BitReader<DISSYNCOUT_A>;
 impl DISSYNCOUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -422,8 +422,8 @@ impl DISSYNCOUT_R {
     }
 }
 #[doc = "Field `DISSYNCOUT` writer - Disable Timer Start/Stop/Reload output"]
-pub type DISSYNCOUT_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, DISSYNCOUT_A, 11>;
-impl<'a> DISSYNCOUT_W<'a> {
+pub type DISSYNCOUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, DISSYNCOUT_A, O>;
+impl<'a, const O: u8> DISSYNCOUT_W<'a, O> {
     #[doc = "Timer can start/stop/reload other timers with SYNC bit set"]
     #[inline(always)]
     pub fn en(self) -> &'a mut W {
@@ -438,13 +438,15 @@ impl<'a> DISSYNCOUT_W<'a> {
 #[doc = "Field `ATI` reader - Always Track Inputs"]
 pub type ATI_R = crate::BitReader<bool>;
 #[doc = "Field `ATI` writer - Always Track Inputs"]
-pub type ATI_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 16>;
+pub type ATI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 #[doc = "Field `RSSCOIST` reader - Reload-Start Sets COIST"]
 pub type RSSCOIST_R = crate::BitReader<bool>;
 #[doc = "Field `RSSCOIST` writer - Reload-Start Sets COIST"]
-pub type RSSCOIST_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 17>;
+pub type RSSCOIST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
+#[doc = "Field `PRESC` reader - Prescaler Setting"]
+pub type PRESC_R = crate::FieldReader<u16, PRESC_A>;
 #[doc = "Prescaler Setting\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum PRESC_A {
     #[doc = "0: No prescaling"]
@@ -476,8 +478,6 @@ impl From<PRESC_A> for u16 {
         variant as _
     }
 }
-#[doc = "Field `PRESC` reader - Prescaler Setting"]
-pub type PRESC_R = crate::FieldReader<u16, PRESC_A>;
 impl PRESC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -554,8 +554,8 @@ impl PRESC_R {
     }
 }
 #[doc = "Field `PRESC` writer - Prescaler Setting"]
-pub type PRESC_W<'a> = crate::FieldWriter<'a, u32, CFG_SPEC, u16, PRESC_A, 10, 18>;
-impl<'a> PRESC_W<'a> {
+pub type PRESC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u16, PRESC_A, 10, O>;
+impl<'a, const O: u8> PRESC_W<'a, O> {
     #[doc = "No prescaling"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -677,62 +677,74 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Timer Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<0> {
         MODE_W::new(self)
     }
     #[doc = "Bit 3 - Timer Start/Stop/Reload Synchronization"]
     #[inline(always)]
-    pub fn sync(&mut self) -> SYNC_W {
+    #[must_use]
+    pub fn sync(&mut self) -> SYNC_W<3> {
         SYNC_W::new(self)
     }
     #[doc = "Bit 4 - One-shot Mode Enable"]
     #[inline(always)]
-    pub fn osmen(&mut self) -> OSMEN_W {
+    #[must_use]
+    pub fn osmen(&mut self) -> OSMEN_W<4> {
         OSMEN_W::new(self)
     }
     #[doc = "Bit 5 - Quadrature Decoder Mode Selection"]
     #[inline(always)]
-    pub fn qdm(&mut self) -> QDM_W {
+    #[must_use]
+    pub fn qdm(&mut self) -> QDM_W<5> {
         QDM_W::new(self)
     }
     #[doc = "Bit 6 - Debug Mode Run Enable"]
     #[inline(always)]
-    pub fn debugrun(&mut self) -> DEBUGRUN_W {
+    #[must_use]
+    pub fn debugrun(&mut self) -> DEBUGRUN_W<6> {
         DEBUGRUN_W::new(self)
     }
     #[doc = "Bit 7 - DMA Request Clear on Active"]
     #[inline(always)]
-    pub fn dmaclract(&mut self) -> DMACLRACT_W {
+    #[must_use]
+    pub fn dmaclract(&mut self) -> DMACLRACT_W<7> {
         DMACLRACT_W::new(self)
     }
     #[doc = "Bits 8:9 - Clock Source Select"]
     #[inline(always)]
-    pub fn clksel(&mut self) -> CLKSEL_W {
+    #[must_use]
+    pub fn clksel(&mut self) -> CLKSEL_W<8> {
         CLKSEL_W::new(self)
     }
     #[doc = "Bit 10 - PWM output retimed enable"]
     #[inline(always)]
-    pub fn retimeen(&mut self) -> RETIMEEN_W {
+    #[must_use]
+    pub fn retimeen(&mut self) -> RETIMEEN_W<10> {
         RETIMEEN_W::new(self)
     }
     #[doc = "Bit 11 - Disable Timer Start/Stop/Reload output"]
     #[inline(always)]
-    pub fn dissyncout(&mut self) -> DISSYNCOUT_W {
+    #[must_use]
+    pub fn dissyncout(&mut self) -> DISSYNCOUT_W<11> {
         DISSYNCOUT_W::new(self)
     }
     #[doc = "Bit 16 - Always Track Inputs"]
     #[inline(always)]
-    pub fn ati(&mut self) -> ATI_W {
+    #[must_use]
+    pub fn ati(&mut self) -> ATI_W<16> {
         ATI_W::new(self)
     }
     #[doc = "Bit 17 - Reload-Start Sets COIST"]
     #[inline(always)]
-    pub fn rsscoist(&mut self) -> RSSCOIST_W {
+    #[must_use]
+    pub fn rsscoist(&mut self) -> RSSCOIST_W<17> {
         RSSCOIST_W::new(self)
     }
     #[doc = "Bits 18:27 - Prescaler Setting"]
     #[inline(always)]
-    pub fn presc(&mut self) -> PRESC_W {
+    #[must_use]
+    pub fn presc(&mut self) -> PRESC_W<18> {
         PRESC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -754,11 +766,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

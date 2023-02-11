@@ -29,8 +29,10 @@ pub type PENDING_R = crate::BitReader<bool>;
 pub type TIMEOUT_R = crate::BitReader<bool>;
 #[doc = "Field `RANGEPARTIAL` reader - EraseRange with skipped locked pages"]
 pub type RANGEPARTIAL_R = crate::BitReader<bool>;
+#[doc = "Field `REGLOCK` reader - Register Lock Status"]
+pub type REGLOCK_R = crate::BitReader<REGLOCK_A>;
 #[doc = "Register Lock Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum REGLOCK_A {
     #[doc = "0: UNLOCKED"]
     UNLOCKED = 0,
@@ -43,8 +45,6 @@ impl From<REGLOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REGLOCK` reader - Register Lock Status"]
-pub type REGLOCK_R = crate::BitReader<REGLOCK_A>;
 impl REGLOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -144,8 +144,5 @@ impl crate::Readable for STATUS_SPEC {
 }
 #[doc = "`reset()` method sets STATUS to value 0x0800_0008"]
 impl crate::Resettable for STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0800_0008
-    }
+    const RESET_VALUE: Self::Ux = 0x0800_0008;
 }

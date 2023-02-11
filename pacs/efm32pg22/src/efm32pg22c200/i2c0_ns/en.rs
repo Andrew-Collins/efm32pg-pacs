@@ -34,8 +34,10 @@ impl From<crate::W<EN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EN` reader - module enable"]
+pub type EN_R = crate::BitReader<EN_A>;
 #[doc = "module enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EN_A {
     #[doc = "0: Disable Peripheral Clock"]
     DISABLE = 0,
@@ -48,8 +50,6 @@ impl From<EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EN` reader - module enable"]
-pub type EN_R = crate::BitReader<EN_A>;
 impl EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl EN_R {
     }
 }
 #[doc = "Field `EN` writer - module enable"]
-pub type EN_W<'a> = crate::BitWriter<'a, u32, EN_SPEC, EN_A, 0>;
-impl<'a> EN_W<'a> {
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EN_SPEC, EN_A, O>;
+impl<'a, const O: u8> EN_W<'a, O> {
     #[doc = "Disable Peripheral Clock"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -94,7 +94,8 @@ impl R {
 impl W {
     #[doc = "Bit 0 - module enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
+    #[must_use]
+    pub fn en(&mut self) -> EN_W<0> {
         EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -116,11 +117,10 @@ impl crate::Readable for EN_SPEC {
 #[doc = "`write(|w| ..)` method takes [en::W](W) writer structure"]
 impl crate::Writable for EN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EN to value 0"]
 impl crate::Resettable for EN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

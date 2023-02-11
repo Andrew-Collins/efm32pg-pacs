@@ -34,8 +34,10 @@ impl From<crate::W<ICACHERAMRETNCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RAMRETNCTRL` reader - ICACHERAM Retention control"]
+pub type RAMRETNCTRL_R = crate::BitReader<RAMRETNCTRL_A>;
 #[doc = "ICACHERAM Retention control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RAMRETNCTRL_A {
     #[doc = "0: None of the Host ICACHE RAM blocks powered down"]
     ALLON = 0,
@@ -48,8 +50,6 @@ impl From<RAMRETNCTRL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RAMRETNCTRL` reader - ICACHERAM Retention control"]
-pub type RAMRETNCTRL_R = crate::BitReader<RAMRETNCTRL_A>;
 impl RAMRETNCTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,9 @@ impl RAMRETNCTRL_R {
     }
 }
 #[doc = "Field `RAMRETNCTRL` writer - ICACHERAM Retention control"]
-pub type RAMRETNCTRL_W<'a> = crate::BitWriter<'a, u32, ICACHERAMRETNCTRL_SPEC, RAMRETNCTRL_A, 0>;
-impl<'a> RAMRETNCTRL_W<'a> {
+pub type RAMRETNCTRL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ICACHERAMRETNCTRL_SPEC, RAMRETNCTRL_A, O>;
+impl<'a, const O: u8> RAMRETNCTRL_W<'a, O> {
     #[doc = "None of the Host ICACHE RAM blocks powered down"]
     #[inline(always)]
     pub fn allon(self) -> &'a mut W {
@@ -94,7 +95,8 @@ impl R {
 impl W {
     #[doc = "Bit 0 - ICACHERAM Retention control"]
     #[inline(always)]
-    pub fn ramretnctrl(&mut self) -> RAMRETNCTRL_W {
+    #[must_use]
+    pub fn ramretnctrl(&mut self) -> RAMRETNCTRL_W<0> {
         RAMRETNCTRL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -116,11 +118,10 @@ impl crate::Readable for ICACHERAMRETNCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [icacheramretnctrl::W](W) writer structure"]
 impl crate::Writable for ICACHERAMRETNCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ICACHERAMRETNCTRL to value 0"]
 impl crate::Resettable for ICACHERAMRETNCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

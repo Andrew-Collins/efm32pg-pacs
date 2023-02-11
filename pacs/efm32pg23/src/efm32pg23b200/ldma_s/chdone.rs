@@ -37,35 +37,35 @@ impl From<crate::W<CHDONE_SPEC>> for W {
 #[doc = "Field `CHDONE0` reader - DMA Channel Link done intr flag"]
 pub type CHDONE0_R = crate::BitReader<bool>;
 #[doc = "Field `CHDONE0` writer - DMA Channel Link done intr flag"]
-pub type CHDONE0_W<'a> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, 0>;
+pub type CHDONE0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, O>;
 #[doc = "Field `CHDONE1` reader - DMA Channel Link done intr flag"]
 pub type CHDONE1_R = crate::BitReader<bool>;
 #[doc = "Field `CHDONE1` writer - DMA Channel Link done intr flag"]
-pub type CHDONE1_W<'a> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, 1>;
+pub type CHDONE1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, O>;
 #[doc = "Field `CHDONE2` reader - DMA Channel Link done intr flag"]
 pub type CHDONE2_R = crate::BitReader<bool>;
 #[doc = "Field `CHDONE2` writer - DMA Channel Link done intr flag"]
-pub type CHDONE2_W<'a> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, 2>;
+pub type CHDONE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, O>;
 #[doc = "Field `CHDONE3` reader - DMA Channel Link done intr flag"]
 pub type CHDONE3_R = crate::BitReader<bool>;
 #[doc = "Field `CHDONE3` writer - DMA Channel Link done intr flag"]
-pub type CHDONE3_W<'a> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, 3>;
+pub type CHDONE3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, O>;
 #[doc = "Field `CHDONE4` reader - DMA Channel Link done intr flag"]
 pub type CHDONE4_R = crate::BitReader<bool>;
 #[doc = "Field `CHDONE4` writer - DMA Channel Link done intr flag"]
-pub type CHDONE4_W<'a> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, 4>;
+pub type CHDONE4_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, O>;
 #[doc = "Field `CHDONE5` reader - DMA Channel Link done intr flag"]
 pub type CHDONE5_R = crate::BitReader<bool>;
 #[doc = "Field `CHDONE5` writer - DMA Channel Link done intr flag"]
-pub type CHDONE5_W<'a> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, 5>;
+pub type CHDONE5_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, O>;
 #[doc = "Field `CHDONE6` reader - DMA Channel Link done intr flag"]
 pub type CHDONE6_R = crate::BitReader<bool>;
 #[doc = "Field `CHDONE6` writer - DMA Channel Link done intr flag"]
-pub type CHDONE6_W<'a> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, 6>;
+pub type CHDONE6_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, O>;
 #[doc = "Field `CHDONE7` reader - DMA Channel Link done intr flag"]
 pub type CHDONE7_R = crate::BitReader<bool>;
 #[doc = "Field `CHDONE7` writer - DMA Channel Link done intr flag"]
-pub type CHDONE7_W<'a> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, 7>;
+pub type CHDONE7_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHDONE_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - DMA Channel Link done intr flag"]
     #[inline(always)]
@@ -111,42 +111,50 @@ impl R {
 impl W {
     #[doc = "Bit 0 - DMA Channel Link done intr flag"]
     #[inline(always)]
-    pub fn chdone0(&mut self) -> CHDONE0_W {
+    #[must_use]
+    pub fn chdone0(&mut self) -> CHDONE0_W<0> {
         CHDONE0_W::new(self)
     }
     #[doc = "Bit 1 - DMA Channel Link done intr flag"]
     #[inline(always)]
-    pub fn chdone1(&mut self) -> CHDONE1_W {
+    #[must_use]
+    pub fn chdone1(&mut self) -> CHDONE1_W<1> {
         CHDONE1_W::new(self)
     }
     #[doc = "Bit 2 - DMA Channel Link done intr flag"]
     #[inline(always)]
-    pub fn chdone2(&mut self) -> CHDONE2_W {
+    #[must_use]
+    pub fn chdone2(&mut self) -> CHDONE2_W<2> {
         CHDONE2_W::new(self)
     }
     #[doc = "Bit 3 - DMA Channel Link done intr flag"]
     #[inline(always)]
-    pub fn chdone3(&mut self) -> CHDONE3_W {
+    #[must_use]
+    pub fn chdone3(&mut self) -> CHDONE3_W<3> {
         CHDONE3_W::new(self)
     }
     #[doc = "Bit 4 - DMA Channel Link done intr flag"]
     #[inline(always)]
-    pub fn chdone4(&mut self) -> CHDONE4_W {
+    #[must_use]
+    pub fn chdone4(&mut self) -> CHDONE4_W<4> {
         CHDONE4_W::new(self)
     }
     #[doc = "Bit 5 - DMA Channel Link done intr flag"]
     #[inline(always)]
-    pub fn chdone5(&mut self) -> CHDONE5_W {
+    #[must_use]
+    pub fn chdone5(&mut self) -> CHDONE5_W<5> {
         CHDONE5_W::new(self)
     }
     #[doc = "Bit 6 - DMA Channel Link done intr flag"]
     #[inline(always)]
-    pub fn chdone6(&mut self) -> CHDONE6_W {
+    #[must_use]
+    pub fn chdone6(&mut self) -> CHDONE6_W<6> {
         CHDONE6_W::new(self)
     }
     #[doc = "Bit 7 - DMA Channel Link done intr flag"]
     #[inline(always)]
-    pub fn chdone7(&mut self) -> CHDONE7_W {
+    #[must_use]
+    pub fn chdone7(&mut self) -> CHDONE7_W<7> {
         CHDONE7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -168,11 +176,10 @@ impl crate::Readable for CHDONE_SPEC {
 #[doc = "`write(|w| ..)` method takes [chdone::W](W) writer structure"]
 impl crate::Writable for CHDONE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CHDONE to value 0"]
 impl crate::Resettable for CHDONE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

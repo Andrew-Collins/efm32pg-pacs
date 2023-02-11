@@ -37,15 +37,15 @@ impl From<crate::W<IF_SPEC>> for W {
 #[doc = "Field `LOCK` reader - Lock Interrupt Flag"]
 pub type LOCK_R = crate::BitReader<bool>;
 #[doc = "Field `LOCK` writer - Lock Interrupt Flag"]
-pub type LOCK_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 0>;
+pub type LOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `LOCKFAILLOW` reader - Lock Failure Low Interrupt Flag"]
 pub type LOCKFAILLOW_R = crate::BitReader<bool>;
 #[doc = "Field `LOCKFAILLOW` writer - Lock Failure Low Interrupt Flag"]
-pub type LOCKFAILLOW_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 1>;
+pub type LOCKFAILLOW_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `LOCKFAILHIGH` reader - Lock Failure High Interrupt Flag"]
 pub type LOCKFAILHIGH_R = crate::BitReader<bool>;
 #[doc = "Field `LOCKFAILHIGH` writer - Lock Failure High Interrupt Flag"]
-pub type LOCKFAILHIGH_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 2>;
+pub type LOCKFAILHIGH_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Lock Interrupt Flag"]
     #[inline(always)]
@@ -66,17 +66,20 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Lock Interrupt Flag"]
     #[inline(always)]
-    pub fn lock(&mut self) -> LOCK_W {
+    #[must_use]
+    pub fn lock(&mut self) -> LOCK_W<0> {
         LOCK_W::new(self)
     }
     #[doc = "Bit 1 - Lock Failure Low Interrupt Flag"]
     #[inline(always)]
-    pub fn lockfaillow(&mut self) -> LOCKFAILLOW_W {
+    #[must_use]
+    pub fn lockfaillow(&mut self) -> LOCKFAILLOW_W<1> {
         LOCKFAILLOW_W::new(self)
     }
     #[doc = "Bit 2 - Lock Failure High Interrupt Flag"]
     #[inline(always)]
-    pub fn lockfailhigh(&mut self) -> LOCKFAILHIGH_W {
+    #[must_use]
+    pub fn lockfailhigh(&mut self) -> LOCKFAILHIGH_W<2> {
         LOCKFAILHIGH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_::W](W) writer structure"]
 impl crate::Writable for IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

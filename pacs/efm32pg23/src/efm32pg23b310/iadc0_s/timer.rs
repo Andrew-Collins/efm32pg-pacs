@@ -37,7 +37,7 @@ impl From<crate::W<TIMER_SPEC>> for W {
 #[doc = "Field `TIMER` reader - Timer Period"]
 pub type TIMER_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TIMER` writer - Timer Period"]
-pub type TIMER_W<'a> = crate::FieldWriter<'a, u32, TIMER_SPEC, u16, u16, 16, 0>;
+pub type TIMER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMER_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Timer Period"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Timer Period"]
     #[inline(always)]
-    pub fn timer(&mut self) -> TIMER_W {
+    #[must_use]
+    pub fn timer(&mut self) -> TIMER_W<0> {
         TIMER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for TIMER_SPEC {
 #[doc = "`write(|w| ..)` method takes [timer::W](W) writer structure"]
 impl crate::Writable for TIMER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TIMER to value 0"]
 impl crate::Resettable for TIMER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

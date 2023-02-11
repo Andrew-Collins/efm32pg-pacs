@@ -37,51 +37,51 @@ impl From<crate::W<PPUPATD1_SPEC>> for W {
 #[doc = "Field `DCDC` reader - DCDC Privileged Access"]
 pub type DCDC_R = crate::BitReader<bool>;
 #[doc = "Field `DCDC` writer - DCDC Privileged Access"]
-pub type DCDC_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 1>;
+pub type DCDC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 #[doc = "Field `PDM` reader - PDM Privileged Access"]
 pub type PDM_R = crate::BitReader<bool>;
 #[doc = "Field `PDM` writer - PDM Privileged Access"]
-pub type PDM_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 2>;
+pub type PDM_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 #[doc = "Field `SMU` reader - SMU Privileged Access"]
 pub type SMU_R = crate::BitReader<bool>;
 #[doc = "Field `SMU` writer - SMU Privileged Access"]
-pub type SMU_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 5>;
+pub type SMU_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 #[doc = "Field `SMUCFGNS` reader - SMUCFGNS Privileged Access"]
 pub type SMUCFGNS_R = crate::BitReader<bool>;
 #[doc = "Field `SMUCFGNS` writer - SMUCFGNS Privileged Access"]
-pub type SMUCFGNS_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 6>;
+pub type SMUCFGNS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 #[doc = "Field `RTCC` reader - RTCC Privileged Access"]
 pub type RTCC_R = crate::BitReader<bool>;
 #[doc = "Field `RTCC` writer - RTCC Privileged Access"]
-pub type RTCC_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 7>;
+pub type RTCC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 #[doc = "Field `LETIMER0` reader - LETIMER0 Privileged Access"]
 pub type LETIMER0_R = crate::BitReader<bool>;
 #[doc = "Field `LETIMER0` writer - LETIMER0 Privileged Access"]
-pub type LETIMER0_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 8>;
+pub type LETIMER0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 #[doc = "Field `IADC0` reader - IADC0 Privileged Access"]
 pub type IADC0_R = crate::BitReader<bool>;
 #[doc = "Field `IADC0` writer - IADC0 Privileged Access"]
-pub type IADC0_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 9>;
+pub type IADC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 #[doc = "Field `I2C0` reader - I2C0 Privileged Access"]
 pub type I2C0_R = crate::BitReader<bool>;
 #[doc = "Field `I2C0` writer - I2C0 Privileged Access"]
-pub type I2C0_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 10>;
+pub type I2C0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 #[doc = "Field `WDOG0` reader - WDOG0 Privileged Access"]
 pub type WDOG0_R = crate::BitReader<bool>;
 #[doc = "Field `WDOG0` writer - WDOG0 Privileged Access"]
-pub type WDOG0_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 11>;
+pub type WDOG0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 #[doc = "Field `AMUXCP0` reader - AMUXCP0 Privileged Access"]
 pub type AMUXCP0_R = crate::BitReader<bool>;
 #[doc = "Field `AMUXCP0` writer - AMUXCP0 Privileged Access"]
-pub type AMUXCP0_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 12>;
+pub type AMUXCP0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 #[doc = "Field `EUART0` reader - EUART0 Privileged Access"]
 pub type EUART0_R = crate::BitReader<bool>;
 #[doc = "Field `EUART0` writer - EUART0 Privileged Access"]
-pub type EUART0_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 13>;
+pub type EUART0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 #[doc = "Field `CRYPTOACC` reader - CRYPTOACC Privileged Access"]
 pub type CRYPTOACC_R = crate::BitReader<bool>;
 #[doc = "Field `CRYPTOACC` writer - CRYPTOACC Privileged Access"]
-pub type CRYPTOACC_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 14>;
+pub type CRYPTOACC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 1 - DCDC Privileged Access"]
     #[inline(always)]
@@ -147,62 +147,74 @@ impl R {
 impl W {
     #[doc = "Bit 1 - DCDC Privileged Access"]
     #[inline(always)]
-    pub fn dcdc(&mut self) -> DCDC_W {
+    #[must_use]
+    pub fn dcdc(&mut self) -> DCDC_W<1> {
         DCDC_W::new(self)
     }
     #[doc = "Bit 2 - PDM Privileged Access"]
     #[inline(always)]
-    pub fn pdm(&mut self) -> PDM_W {
+    #[must_use]
+    pub fn pdm(&mut self) -> PDM_W<2> {
         PDM_W::new(self)
     }
     #[doc = "Bit 5 - SMU Privileged Access"]
     #[inline(always)]
-    pub fn smu(&mut self) -> SMU_W {
+    #[must_use]
+    pub fn smu(&mut self) -> SMU_W<5> {
         SMU_W::new(self)
     }
     #[doc = "Bit 6 - SMUCFGNS Privileged Access"]
     #[inline(always)]
-    pub fn smucfgns(&mut self) -> SMUCFGNS_W {
+    #[must_use]
+    pub fn smucfgns(&mut self) -> SMUCFGNS_W<6> {
         SMUCFGNS_W::new(self)
     }
     #[doc = "Bit 7 - RTCC Privileged Access"]
     #[inline(always)]
-    pub fn rtcc(&mut self) -> RTCC_W {
+    #[must_use]
+    pub fn rtcc(&mut self) -> RTCC_W<7> {
         RTCC_W::new(self)
     }
     #[doc = "Bit 8 - LETIMER0 Privileged Access"]
     #[inline(always)]
-    pub fn letimer0(&mut self) -> LETIMER0_W {
+    #[must_use]
+    pub fn letimer0(&mut self) -> LETIMER0_W<8> {
         LETIMER0_W::new(self)
     }
     #[doc = "Bit 9 - IADC0 Privileged Access"]
     #[inline(always)]
-    pub fn iadc0(&mut self) -> IADC0_W {
+    #[must_use]
+    pub fn iadc0(&mut self) -> IADC0_W<9> {
         IADC0_W::new(self)
     }
     #[doc = "Bit 10 - I2C0 Privileged Access"]
     #[inline(always)]
-    pub fn i2c0(&mut self) -> I2C0_W {
+    #[must_use]
+    pub fn i2c0(&mut self) -> I2C0_W<10> {
         I2C0_W::new(self)
     }
     #[doc = "Bit 11 - WDOG0 Privileged Access"]
     #[inline(always)]
-    pub fn wdog0(&mut self) -> WDOG0_W {
+    #[must_use]
+    pub fn wdog0(&mut self) -> WDOG0_W<11> {
         WDOG0_W::new(self)
     }
     #[doc = "Bit 12 - AMUXCP0 Privileged Access"]
     #[inline(always)]
-    pub fn amuxcp0(&mut self) -> AMUXCP0_W {
+    #[must_use]
+    pub fn amuxcp0(&mut self) -> AMUXCP0_W<12> {
         AMUXCP0_W::new(self)
     }
     #[doc = "Bit 13 - EUART0 Privileged Access"]
     #[inline(always)]
-    pub fn euart0(&mut self) -> EUART0_W {
+    #[must_use]
+    pub fn euart0(&mut self) -> EUART0_W<13> {
         EUART0_W::new(self)
     }
     #[doc = "Bit 14 - CRYPTOACC Privileged Access"]
     #[inline(always)]
-    pub fn cryptoacc(&mut self) -> CRYPTOACC_W {
+    #[must_use]
+    pub fn cryptoacc(&mut self) -> CRYPTOACC_W<14> {
         CRYPTOACC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -224,11 +236,10 @@ impl crate::Readable for PPUPATD1_SPEC {
 #[doc = "`write(|w| ..)` method takes [ppupatd1::W](W) writer structure"]
 impl crate::Writable for PPUPATD1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PPUPATD1 to value 0xffff"]
 impl crate::Resettable for PPUPATD1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff
-    }
+    const RESET_VALUE: Self::Ux = 0xffff;
 }

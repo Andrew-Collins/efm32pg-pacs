@@ -20,39 +20,44 @@ impl From<crate::W<WRITECMD_SPEC>> for W {
     }
 }
 #[doc = "Field `ERASEPAGE` writer - Erase Page"]
-pub type ERASEPAGE_W<'a> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, 1>;
+pub type ERASEPAGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
 #[doc = "Field `WRITEEND` writer - End Write Mode"]
-pub type WRITEEND_W<'a> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, 2>;
+pub type WRITEEND_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
 #[doc = "Field `ERASEABORT` writer - Abort erase sequence"]
-pub type ERASEABORT_W<'a> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, 5>;
+pub type ERASEABORT_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
 #[doc = "Field `ERASEMAIN0` writer - Mass erase region 0"]
-pub type ERASEMAIN0_W<'a> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, 8>;
+pub type ERASEMAIN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
 #[doc = "Field `CLEARWDATA` writer - Clear WDATA state"]
-pub type CLEARWDATA_W<'a> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, 12>;
+pub type CLEARWDATA_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 1 - Erase Page"]
     #[inline(always)]
-    pub fn erasepage(&mut self) -> ERASEPAGE_W {
+    #[must_use]
+    pub fn erasepage(&mut self) -> ERASEPAGE_W<1> {
         ERASEPAGE_W::new(self)
     }
     #[doc = "Bit 2 - End Write Mode"]
     #[inline(always)]
-    pub fn writeend(&mut self) -> WRITEEND_W {
+    #[must_use]
+    pub fn writeend(&mut self) -> WRITEEND_W<2> {
         WRITEEND_W::new(self)
     }
     #[doc = "Bit 5 - Abort erase sequence"]
     #[inline(always)]
-    pub fn eraseabort(&mut self) -> ERASEABORT_W {
+    #[must_use]
+    pub fn eraseabort(&mut self) -> ERASEABORT_W<5> {
         ERASEABORT_W::new(self)
     }
     #[doc = "Bit 8 - Mass erase region 0"]
     #[inline(always)]
-    pub fn erasemain0(&mut self) -> ERASEMAIN0_W {
+    #[must_use]
+    pub fn erasemain0(&mut self) -> ERASEMAIN0_W<8> {
         ERASEMAIN0_W::new(self)
     }
     #[doc = "Bit 12 - Clear WDATA state"]
     #[inline(always)]
-    pub fn clearwdata(&mut self) -> CLEARWDATA_W {
+    #[must_use]
+    pub fn clearwdata(&mut self) -> CLEARWDATA_W<12> {
         CLEARWDATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +75,10 @@ impl crate::RegisterSpec for WRITECMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [writecmd::W](W) writer structure"]
 impl crate::Writable for WRITECMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets WRITECMD to value 0"]
 impl crate::Resettable for WRITECMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

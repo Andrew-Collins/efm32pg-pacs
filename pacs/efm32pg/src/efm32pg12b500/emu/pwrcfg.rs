@@ -34,8 +34,10 @@ impl From<crate::W<PWRCFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PWRCFG` reader - Power Configuration"]
+pub type PWRCFG_R = crate::FieldReader<u8, PWRCFG_A>;
 #[doc = "Power Configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PWRCFG_A {
     #[doc = "0: Power up configuration. Works with any external configuration."]
@@ -49,8 +51,6 @@ impl From<PWRCFG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PWRCFG` reader - Power Configuration"]
-pub type PWRCFG_R = crate::FieldReader<u8, PWRCFG_A>;
 impl PWRCFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -73,8 +73,8 @@ impl PWRCFG_R {
     }
 }
 #[doc = "Field `PWRCFG` writer - Power Configuration"]
-pub type PWRCFG_W<'a> = crate::FieldWriter<'a, u32, PWRCFG_SPEC, u8, PWRCFG_A, 4, 0>;
-impl<'a> PWRCFG_W<'a> {
+pub type PWRCFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PWRCFG_SPEC, u8, PWRCFG_A, 4, O>;
+impl<'a, const O: u8> PWRCFG_W<'a, O> {
     #[doc = "Power up configuration. Works with any external configuration."]
     #[inline(always)]
     pub fn unconfigured(self) -> &'a mut W {
@@ -96,7 +96,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Power Configuration"]
     #[inline(always)]
-    pub fn pwrcfg(&mut self) -> PWRCFG_W {
+    #[must_use]
+    pub fn pwrcfg(&mut self) -> PWRCFG_W<0> {
         PWRCFG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -118,11 +119,10 @@ impl crate::Readable for PWRCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [pwrcfg::W](W) writer structure"]
 impl crate::Writable for PWRCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PWRCFG to value 0"]
 impl crate::Resettable for PWRCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

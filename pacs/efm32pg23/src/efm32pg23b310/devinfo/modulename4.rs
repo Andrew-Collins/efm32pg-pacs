@@ -54,8 +54,5 @@ impl crate::Readable for MODULENAME4_SPEC {
 }
 #[doc = "`reset()` method sets MODULENAME4 to value 0xffff_ffff"]
 impl crate::Resettable for MODULENAME4_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+    const RESET_VALUE: Self::Ux = 0xffff_ffff;
 }

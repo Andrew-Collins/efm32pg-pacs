@@ -47,8 +47,5 @@ impl crate::Readable for MEMINFO_SPEC {
 }
 #[doc = "`reset()` method sets MEMINFO to value 0"]
 impl crate::Resettable for MEMINFO_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

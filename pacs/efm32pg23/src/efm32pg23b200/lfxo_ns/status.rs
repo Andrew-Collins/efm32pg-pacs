@@ -17,8 +17,10 @@ impl From<crate::R<STATUS_SPEC>> for R {
 pub type RDY_R = crate::BitReader<bool>;
 #[doc = "Field `ENS` reader - LFXO Enable Status"]
 pub type ENS_R = crate::BitReader<bool>;
+#[doc = "Field `LOCK` reader - LFXO Locked Status"]
+pub type LOCK_R = crate::BitReader<LOCK_A>;
 #[doc = "LFXO Locked Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOCK_A {
     #[doc = "0: LFXO lockable registers are not locked"]
     UNLOCKED = 0,
@@ -31,8 +33,6 @@ impl From<LOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOCK` reader - LFXO Locked Status"]
-pub type LOCK_R = crate::BitReader<LOCK_A>;
 impl LOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -81,8 +81,5 @@ impl crate::Readable for STATUS_SPEC {
 }
 #[doc = "`reset()` method sets STATUS to value 0"]
 impl crate::Resettable for STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

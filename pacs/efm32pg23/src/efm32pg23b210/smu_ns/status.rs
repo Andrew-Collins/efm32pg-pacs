@@ -13,8 +13,10 @@ impl From<crate::R<STATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `SMULOCK` reader - SMU Lock"]
+pub type SMULOCK_R = crate::BitReader<SMULOCK_A>;
 #[doc = "SMU Lock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SMULOCK_A {
     #[doc = "0: UNLOCKED"]
     UNLOCKED = 0,
@@ -27,8 +29,6 @@ impl From<SMULOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SMULOCK` reader - SMU Lock"]
-pub type SMULOCK_R = crate::BitReader<SMULOCK_A>;
 impl SMULOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -74,8 +74,5 @@ impl crate::Readable for STATUS_SPEC {
 }
 #[doc = "`reset()` method sets STATUS to value 0"]
 impl crate::Resettable for STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

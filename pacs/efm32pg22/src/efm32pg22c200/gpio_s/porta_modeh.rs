@@ -34,8 +34,10 @@ impl From<crate::W<PORTA_MODEH_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE0` reader - MODE n"]
+pub type MODE0_R = crate::FieldReader<u8, MODE0_A>;
 #[doc = "MODE n\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE0_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
@@ -77,8 +79,6 @@ impl From<MODE0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE0` reader - MODE n"]
-pub type MODE0_R = crate::FieldReader<u8, MODE0_A>;
 impl MODE0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -185,8 +185,9 @@ impl MODE0_R {
     }
 }
 #[doc = "Field `MODE0` writer - MODE n"]
-pub type MODE0_W<'a> = crate::FieldWriterSafe<'a, u32, PORTA_MODEH_SPEC, u8, MODE0_A, 4, 0>;
-impl<'a> MODE0_W<'a> {
+pub type MODE0_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PORTA_MODEH_SPEC, u8, MODE0_A, 4, O>;
+impl<'a, const O: u8> MODE0_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -278,7 +279,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - MODE n"]
     #[inline(always)]
-    pub fn mode0(&mut self) -> MODE0_W {
+    #[must_use]
+    pub fn mode0(&mut self) -> MODE0_W<0> {
         MODE0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -300,11 +302,10 @@ impl crate::Readable for PORTA_MODEH_SPEC {
 #[doc = "`write(|w| ..)` method takes [porta_modeh::W](W) writer structure"]
 impl crate::Writable for PORTA_MODEH_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PORTA_MODEH to value 0"]
 impl crate::Resettable for PORTA_MODEH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

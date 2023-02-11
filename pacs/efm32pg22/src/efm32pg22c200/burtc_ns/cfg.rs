@@ -34,8 +34,10 @@ impl From<crate::W<CFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
+pub type DEBUGRUN_R = crate::BitReader<DEBUGRUN_A>;
 #[doc = "Debug Mode Run Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DEBUGRUN_A {
     #[doc = "0: BURTC is frozen in debug mode"]
     DISABLE = 0,
@@ -48,8 +50,6 @@ impl From<DEBUGRUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
-pub type DEBUGRUN_R = crate::BitReader<DEBUGRUN_A>;
 impl DEBUGRUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl DEBUGRUN_R {
     }
 }
 #[doc = "Field `DEBUGRUN` writer - Debug Mode Run Enable"]
-pub type DEBUGRUN_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, DEBUGRUN_A, 0>;
-impl<'a> DEBUGRUN_W<'a> {
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, DEBUGRUN_A, O>;
+impl<'a, const O: u8> DEBUGRUN_W<'a, O> {
     #[doc = "BURTC is frozen in debug mode"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -84,8 +84,10 @@ impl<'a> DEBUGRUN_W<'a> {
         self.variant(DEBUGRUN_A::ENABLE)
     }
 }
+#[doc = "Field `COMPTOP` reader - Compare Channel is Top Value"]
+pub type COMPTOP_R = crate::BitReader<COMPTOP_A>;
 #[doc = "Compare Channel is Top Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum COMPTOP_A {
     #[doc = "0: The top value of the BURTC is 4294967295 (0xFFFFFFFF)"]
     DISABLE = 0,
@@ -98,8 +100,6 @@ impl From<COMPTOP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `COMPTOP` reader - Compare Channel is Top Value"]
-pub type COMPTOP_R = crate::BitReader<COMPTOP_A>;
 impl COMPTOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,8 @@ impl COMPTOP_R {
     }
 }
 #[doc = "Field `COMPTOP` writer - Compare Channel is Top Value"]
-pub type COMPTOP_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, COMPTOP_A, 1>;
-impl<'a> COMPTOP_W<'a> {
+pub type COMPTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, COMPTOP_A, O>;
+impl<'a, const O: u8> COMPTOP_W<'a, O> {
     #[doc = "The top value of the BURTC is 4294967295 (0xFFFFFFFF)"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -134,8 +134,10 @@ impl<'a> COMPTOP_W<'a> {
         self.variant(COMPTOP_A::ENABLE)
     }
 }
+#[doc = "Field `CNTPRESC` reader - Counter prescaler value."]
+pub type CNTPRESC_R = crate::FieldReader<u8, CNTPRESC_A>;
 #[doc = "Counter prescaler value.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CNTPRESC_A {
     #[doc = "0: CLK_CNT = (BURTC LF CLK)/1"]
@@ -177,8 +179,6 @@ impl From<CNTPRESC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CNTPRESC` reader - Counter prescaler value."]
-pub type CNTPRESC_R = crate::FieldReader<u8, CNTPRESC_A>;
 impl CNTPRESC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -285,8 +285,9 @@ impl CNTPRESC_R {
     }
 }
 #[doc = "Field `CNTPRESC` writer - Counter prescaler value."]
-pub type CNTPRESC_W<'a> = crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, CNTPRESC_A, 4, 4>;
-impl<'a> CNTPRESC_W<'a> {
+pub type CNTPRESC_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, CNTPRESC_A, 4, O>;
+impl<'a, const O: u8> CNTPRESC_W<'a, O> {
     #[doc = "CLK_CNT = (BURTC LF CLK)/1"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -388,17 +389,20 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Debug Mode Run Enable"]
     #[inline(always)]
-    pub fn debugrun(&mut self) -> DEBUGRUN_W {
+    #[must_use]
+    pub fn debugrun(&mut self) -> DEBUGRUN_W<0> {
         DEBUGRUN_W::new(self)
     }
     #[doc = "Bit 1 - Compare Channel is Top Value"]
     #[inline(always)]
-    pub fn comptop(&mut self) -> COMPTOP_W {
+    #[must_use]
+    pub fn comptop(&mut self) -> COMPTOP_W<1> {
         COMPTOP_W::new(self)
     }
     #[doc = "Bits 4:7 - Counter prescaler value."]
     #[inline(always)]
-    pub fn cntpresc(&mut self) -> CNTPRESC_W {
+    #[must_use]
+    pub fn cntpresc(&mut self) -> CNTPRESC_W<4> {
         CNTPRESC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -420,11 +424,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

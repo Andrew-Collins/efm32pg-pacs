@@ -14,12 +14,12 @@ impl From<crate::R<BA419_HW_CFG_SPEC>> for R {
     }
 }
 #[doc = "Field `g_SM4ModesPoss` reader - Generic g_SM4ModesPoss value"]
-pub type G_SM4MODESPOSS_R = crate::FieldReader<u8, u8>;
+pub type G_SM4MODES_POSS_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:6 - Generic g_SM4ModesPoss value"]
     #[inline(always)]
-    pub fn g_sm4modes_poss(&self) -> G_SM4MODESPOSS_R {
-        G_SM4MODESPOSS_R::new((self.bits & 0x7f) as u8)
+    pub fn g_sm4modes_poss(&self) -> G_SM4MODES_POSS_R {
+        G_SM4MODES_POSS_R::new((self.bits & 0x7f) as u8)
     }
 }
 #[doc = "No Description\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ba419_hw_cfg](index.html) module"]
@@ -33,8 +33,5 @@ impl crate::Readable for BA419_HW_CFG_SPEC {
 }
 #[doc = "`reset()` method sets BA419_HW_CFG to value 0x5f"]
 impl crate::Resettable for BA419_HW_CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x5f
-    }
+    const RESET_VALUE: Self::Ux = 0x5f;
 }

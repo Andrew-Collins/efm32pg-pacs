@@ -37,27 +37,27 @@ impl From<crate::W<TRACEROUTEPEN_SPEC>> for W {
 #[doc = "Field `SWVPEN` reader - Serial Wire Viewer Output Pin Enable"]
 pub type SWVPEN_R = crate::BitReader<bool>;
 #[doc = "Field `SWVPEN` writer - Serial Wire Viewer Output Pin Enable"]
-pub type SWVPEN_W<'a> = crate::BitWriter<'a, u32, TRACEROUTEPEN_SPEC, bool, 0>;
+pub type SWVPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRACEROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `TRACECLKPEN` reader - Trace Clk Pin Enable"]
 pub type TRACECLKPEN_R = crate::BitReader<bool>;
 #[doc = "Field `TRACECLKPEN` writer - Trace Clk Pin Enable"]
-pub type TRACECLKPEN_W<'a> = crate::BitWriter<'a, u32, TRACEROUTEPEN_SPEC, bool, 1>;
+pub type TRACECLKPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRACEROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `TRACEDATA0PEN` reader - Trace Data0 Pin Enable"]
 pub type TRACEDATA0PEN_R = crate::BitReader<bool>;
 #[doc = "Field `TRACEDATA0PEN` writer - Trace Data0 Pin Enable"]
-pub type TRACEDATA0PEN_W<'a> = crate::BitWriter<'a, u32, TRACEROUTEPEN_SPEC, bool, 2>;
+pub type TRACEDATA0PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRACEROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `TRACEDATA1PEN` reader - Trace Data1 Pin Enable"]
 pub type TRACEDATA1PEN_R = crate::BitReader<bool>;
 #[doc = "Field `TRACEDATA1PEN` writer - Trace Data1 Pin Enable"]
-pub type TRACEDATA1PEN_W<'a> = crate::BitWriter<'a, u32, TRACEROUTEPEN_SPEC, bool, 3>;
+pub type TRACEDATA1PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRACEROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `TRACEDATA2PEN` reader - Trace Data2 Pin Enable"]
 pub type TRACEDATA2PEN_R = crate::BitReader<bool>;
 #[doc = "Field `TRACEDATA2PEN` writer - Trace Data2 Pin Enable"]
-pub type TRACEDATA2PEN_W<'a> = crate::BitWriter<'a, u32, TRACEROUTEPEN_SPEC, bool, 4>;
+pub type TRACEDATA2PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRACEROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `TRACEDATA3PEN` reader - Trace Data3 Pin Enable"]
 pub type TRACEDATA3PEN_R = crate::BitReader<bool>;
 #[doc = "Field `TRACEDATA3PEN` writer - Trace Data3 Pin Enable"]
-pub type TRACEDATA3PEN_W<'a> = crate::BitWriter<'a, u32, TRACEROUTEPEN_SPEC, bool, 5>;
+pub type TRACEDATA3PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRACEROUTEPEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Serial Wire Viewer Output Pin Enable"]
     #[inline(always)]
@@ -93,32 +93,38 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Serial Wire Viewer Output Pin Enable"]
     #[inline(always)]
-    pub fn swvpen(&mut self) -> SWVPEN_W {
+    #[must_use]
+    pub fn swvpen(&mut self) -> SWVPEN_W<0> {
         SWVPEN_W::new(self)
     }
     #[doc = "Bit 1 - Trace Clk Pin Enable"]
     #[inline(always)]
-    pub fn traceclkpen(&mut self) -> TRACECLKPEN_W {
+    #[must_use]
+    pub fn traceclkpen(&mut self) -> TRACECLKPEN_W<1> {
         TRACECLKPEN_W::new(self)
     }
     #[doc = "Bit 2 - Trace Data0 Pin Enable"]
     #[inline(always)]
-    pub fn tracedata0pen(&mut self) -> TRACEDATA0PEN_W {
+    #[must_use]
+    pub fn tracedata0pen(&mut self) -> TRACEDATA0PEN_W<2> {
         TRACEDATA0PEN_W::new(self)
     }
     #[doc = "Bit 3 - Trace Data1 Pin Enable"]
     #[inline(always)]
-    pub fn tracedata1pen(&mut self) -> TRACEDATA1PEN_W {
+    #[must_use]
+    pub fn tracedata1pen(&mut self) -> TRACEDATA1PEN_W<3> {
         TRACEDATA1PEN_W::new(self)
     }
     #[doc = "Bit 4 - Trace Data2 Pin Enable"]
     #[inline(always)]
-    pub fn tracedata2pen(&mut self) -> TRACEDATA2PEN_W {
+    #[must_use]
+    pub fn tracedata2pen(&mut self) -> TRACEDATA2PEN_W<4> {
         TRACEDATA2PEN_W::new(self)
     }
     #[doc = "Bit 5 - Trace Data3 Pin Enable"]
     #[inline(always)]
-    pub fn tracedata3pen(&mut self) -> TRACEDATA3PEN_W {
+    #[must_use]
+    pub fn tracedata3pen(&mut self) -> TRACEDATA3PEN_W<5> {
         TRACEDATA3PEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -140,11 +146,10 @@ impl crate::Readable for TRACEROUTEPEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [traceroutepen::W](W) writer structure"]
 impl crate::Writable for TRACEROUTEPEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TRACEROUTEPEN to value 0"]
 impl crate::Resettable for TRACEROUTEPEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

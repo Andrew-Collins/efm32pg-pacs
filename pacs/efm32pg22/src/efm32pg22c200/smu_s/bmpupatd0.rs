@@ -37,11 +37,11 @@ impl From<crate::W<BMPUPATD0_SPEC>> for W {
 #[doc = "Field `CRYPTOACC` reader - CRYPTOACC DMA privileged mode"]
 pub type CRYPTOACC_R = crate::BitReader<bool>;
 #[doc = "Field `CRYPTOACC` writer - CRYPTOACC DMA privileged mode"]
-pub type CRYPTOACC_W<'a> = crate::BitWriter<'a, u32, BMPUPATD0_SPEC, bool, 1>;
+pub type CRYPTOACC_W<'a, const O: u8> = crate::BitWriter<'a, u32, BMPUPATD0_SPEC, bool, O>;
 #[doc = "Field `LDMA` reader - MCU LDMA privileged mode"]
 pub type LDMA_R = crate::BitReader<bool>;
 #[doc = "Field `LDMA` writer - MCU LDMA privileged mode"]
-pub type LDMA_W<'a> = crate::BitWriter<'a, u32, BMPUPATD0_SPEC, bool, 4>;
+pub type LDMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, BMPUPATD0_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 1 - CRYPTOACC DMA privileged mode"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 1 - CRYPTOACC DMA privileged mode"]
     #[inline(always)]
-    pub fn cryptoacc(&mut self) -> CRYPTOACC_W {
+    #[must_use]
+    pub fn cryptoacc(&mut self) -> CRYPTOACC_W<1> {
         CRYPTOACC_W::new(self)
     }
     #[doc = "Bit 4 - MCU LDMA privileged mode"]
     #[inline(always)]
-    pub fn ldma(&mut self) -> LDMA_W {
+    #[must_use]
+    pub fn ldma(&mut self) -> LDMA_W<4> {
         LDMA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for BMPUPATD0_SPEC {
 #[doc = "`write(|w| ..)` method takes [bmpupatd0::W](W) writer structure"]
 impl crate::Writable for BMPUPATD0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BMPUPATD0 to value 0x1f"]
 impl crate::Resettable for BMPUPATD0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1f
-    }
+    const RESET_VALUE: Self::Ux = 0x1f;
 }

@@ -37,7 +37,7 @@ impl From<crate::W<PORTC_DOUT_SPEC>> for W {
 #[doc = "Field `DOUT` reader - Data output"]
 pub type DOUT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DOUT` writer - Data output"]
-pub type DOUT_W<'a> = crate::FieldWriter<'a, u32, PORTC_DOUT_SPEC, u8, u8, 8, 0>;
+pub type DOUT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PORTC_DOUT_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Data output"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Data output"]
     #[inline(always)]
-    pub fn dout(&mut self) -> DOUT_W {
+    #[must_use]
+    pub fn dout(&mut self) -> DOUT_W<0> {
         DOUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for PORTC_DOUT_SPEC {
 #[doc = "`write(|w| ..)` method takes [portc_dout::W](W) writer structure"]
 impl crate::Writable for PORTC_DOUT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PORTC_DOUT to value 0"]
 impl crate::Resettable for PORTC_DOUT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

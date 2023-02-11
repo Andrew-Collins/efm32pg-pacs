@@ -33,8 +33,5 @@ impl crate::Readable for RTHERM_SPEC {
 }
 #[doc = "`reset()` method sets RTHERM to value 0"]
 impl crate::Resettable for RTHERM_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

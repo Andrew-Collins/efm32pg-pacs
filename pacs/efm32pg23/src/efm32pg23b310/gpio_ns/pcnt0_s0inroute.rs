@@ -37,11 +37,11 @@ impl From<crate::W<PCNT0_S0INROUTE_SPEC>> for W {
 #[doc = "Field `PORT` reader - S0IN port select register"]
 pub type PORT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PORT` writer - S0IN port select register"]
-pub type PORT_W<'a> = crate::FieldWriter<'a, u32, PCNT0_S0INROUTE_SPEC, u8, u8, 2, 0>;
+pub type PORT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCNT0_S0INROUTE_SPEC, u8, u8, 2, O>;
 #[doc = "Field `PIN` reader - S0IN pin select register"]
 pub type PIN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PIN` writer - S0IN pin select register"]
-pub type PIN_W<'a> = crate::FieldWriter<'a, u32, PCNT0_S0INROUTE_SPEC, u8, u8, 4, 16>;
+pub type PIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCNT0_S0INROUTE_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:1 - S0IN port select register"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - S0IN port select register"]
     #[inline(always)]
-    pub fn port(&mut self) -> PORT_W {
+    #[must_use]
+    pub fn port(&mut self) -> PORT_W<0> {
         PORT_W::new(self)
     }
     #[doc = "Bits 16:19 - S0IN pin select register"]
     #[inline(always)]
-    pub fn pin(&mut self) -> PIN_W {
+    #[must_use]
+    pub fn pin(&mut self) -> PIN_W<16> {
         PIN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for PCNT0_S0INROUTE_SPEC {
 #[doc = "`write(|w| ..)` method takes [pcnt0_s0inroute::W](W) writer structure"]
 impl crate::Writable for PCNT0_S0INROUTE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PCNT0_S0INROUTE to value 0"]
 impl crate::Resettable for PCNT0_S0INROUTE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

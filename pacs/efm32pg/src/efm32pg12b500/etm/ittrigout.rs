@@ -37,7 +37,7 @@ impl From<crate::W<ITTRIGOUT_SPEC>> for W {
 #[doc = "Field `TRIGGEROUT` reader - Trigger output value"]
 pub type TRIGGEROUT_R = crate::BitReader<bool>;
 #[doc = "Field `TRIGGEROUT` writer - Trigger output value"]
-pub type TRIGGEROUT_W<'a> = crate::BitWriter<'a, u32, ITTRIGOUT_SPEC, bool, 0>;
+pub type TRIGGEROUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, ITTRIGOUT_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Trigger output value"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Trigger output value"]
     #[inline(always)]
-    pub fn triggerout(&mut self) -> TRIGGEROUT_W {
+    #[must_use]
+    pub fn triggerout(&mut self) -> TRIGGEROUT_W<0> {
         TRIGGEROUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for ITTRIGOUT_SPEC {
 #[doc = "`write(|w| ..)` method takes [ittrigout::W](W) writer structure"]
 impl crate::Writable for ITTRIGOUT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ITTRIGOUT to value 0"]
 impl crate::Resettable for ITTRIGOUT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,17 +37,19 @@ impl From<crate::W<BIASCTRL_SPEC>> for W {
 #[doc = "Field `RESISTOR` reader - Resistor strength"]
 pub type RESISTOR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RESISTOR` writer - Resistor strength"]
-pub type RESISTOR_W<'a> = crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, u8, 4, 0>;
+pub type RESISTOR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `BUFDRV` reader - Buffer Drive Strength"]
 pub type BUFDRV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BUFDRV` writer - Buffer Drive Strength"]
-pub type BUFDRV_W<'a> = crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, u8, 3, 4>;
+pub type BUFDRV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, u8, 3, O>;
 #[doc = "Field `BUFBIAS` reader - Buffer Bias Setting"]
 pub type BUFBIAS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BUFBIAS` writer - Buffer Bias Setting"]
-pub type BUFBIAS_W<'a> = crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, u8, 2, 8>;
+pub type BUFBIAS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, u8, 2, O>;
+#[doc = "Field `MODE` reader - Mode Setting"]
+pub type MODE_R = crate::BitReader<MODE_A>;
 #[doc = "Mode Setting\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MODE_A {
     #[doc = "0: Use step down control with VLCD less than VDDX. Use VLCD\\[4:0\\]
 to control VLCD level, and use SPEED to adjust VLCD drive strength."]
@@ -61,8 +63,6 @@ impl From<MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MODE` reader - Mode Setting"]
-pub type MODE_R = crate::BitReader<MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,8 +84,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Mode Setting"]
-pub type MODE_W<'a> = crate::BitWriter<'a, u32, BIASCTRL_SPEC, MODE_A, 12>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCTRL_SPEC, MODE_A, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Use step down control with VLCD less than VDDX. Use VLCD\\[4:0\\]
 to control VLCD level, and use SPEED to adjust VLCD drive strength."]
     #[inline(always)]
@@ -101,9 +101,11 @@ to control VLCD level, and use SPEED to adjust VLCD drive strength."]
 #[doc = "Field `VLCD` reader - VLCD voltage level"]
 pub type VLCD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `VLCD` writer - VLCD voltage level"]
-pub type VLCD_W<'a> = crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, u8, 5, 16>;
+pub type VLCD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, u8, 5, O>;
+#[doc = "Field `VDDXSEL` reader - VDDX select"]
+pub type VDDXSEL_R = crate::BitReader<VDDXSEL_A>;
 #[doc = "VDDX select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VDDXSEL_A {
     #[doc = "0: Connect charge pump to digital DVDD supply"]
     DVDD = 0,
@@ -116,8 +118,6 @@ impl From<VDDXSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VDDXSEL` reader - VDDX select"]
-pub type VDDXSEL_R = crate::BitReader<VDDXSEL_A>;
 impl VDDXSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -139,8 +139,8 @@ impl VDDXSEL_R {
     }
 }
 #[doc = "Field `VDDXSEL` writer - VDDX select"]
-pub type VDDXSEL_W<'a> = crate::BitWriter<'a, u32, BIASCTRL_SPEC, VDDXSEL_A, 22>;
-impl<'a> VDDXSEL_W<'a> {
+pub type VDDXSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCTRL_SPEC, VDDXSEL_A, O>;
+impl<'a, const O: u8> VDDXSEL_W<'a, O> {
     #[doc = "Connect charge pump to digital DVDD supply"]
     #[inline(always)]
     pub fn dvdd(self) -> &'a mut W {
@@ -152,8 +152,10 @@ impl<'a> VDDXSEL_W<'a> {
         self.variant(VDDXSEL_A::AVDD)
     }
 }
+#[doc = "Field `LCDGATE` reader - LCD Gate"]
+pub type LCDGATE_R = crate::BitReader<LCDGATE_A>;
 #[doc = "LCD Gate\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCDGATE_A {
     #[doc = "0: LCD BIAS voltages driven onto pins."]
     UNGATE = 0,
@@ -166,8 +168,6 @@ impl From<LCDGATE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LCDGATE` reader - LCD Gate"]
-pub type LCDGATE_R = crate::BitReader<LCDGATE_A>;
 impl LCDGATE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -189,8 +189,8 @@ impl LCDGATE_R {
     }
 }
 #[doc = "Field `LCDGATE` writer - LCD Gate"]
-pub type LCDGATE_W<'a> = crate::BitWriter<'a, u32, BIASCTRL_SPEC, LCDGATE_A, 26>;
-impl<'a> LCDGATE_W<'a> {
+pub type LCDGATE_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCTRL_SPEC, LCDGATE_A, O>;
+impl<'a, const O: u8> LCDGATE_W<'a, O> {
     #[doc = "LCD BIAS voltages driven onto pins."]
     #[inline(always)]
     pub fn ungate(self) -> &'a mut W {
@@ -202,8 +202,10 @@ impl<'a> LCDGATE_W<'a> {
         self.variant(LCDGATE_A::GATE)
     }
 }
+#[doc = "Field `DMAMODE` reader - DMA Mode"]
+pub type DMAMODE_R = crate::FieldReader<u8, DMAMODE_A>;
 #[doc = "DMA Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DMAMODE_A {
     #[doc = "0: No DMA requests are generated"]
@@ -219,8 +221,6 @@ impl From<DMAMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DMAMODE` reader - DMA Mode"]
-pub type DMAMODE_R = crate::FieldReader<u8, DMAMODE_A>;
 impl DMAMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -249,8 +249,9 @@ impl DMAMODE_R {
     }
 }
 #[doc = "Field `DMAMODE` writer - DMA Mode"]
-pub type DMAMODE_W<'a> = crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, DMAMODE_A, 2, 30>;
-impl<'a> DMAMODE_W<'a> {
+pub type DMAMODE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, DMAMODE_A, 2, O>;
+impl<'a, const O: u8> DMAMODE_W<'a, O> {
     #[doc = "No DMA requests are generated"]
     #[inline(always)]
     pub fn dmadisable(self) -> &'a mut W {
@@ -312,42 +313,50 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Resistor strength"]
     #[inline(always)]
-    pub fn resistor(&mut self) -> RESISTOR_W {
+    #[must_use]
+    pub fn resistor(&mut self) -> RESISTOR_W<0> {
         RESISTOR_W::new(self)
     }
     #[doc = "Bits 4:6 - Buffer Drive Strength"]
     #[inline(always)]
-    pub fn bufdrv(&mut self) -> BUFDRV_W {
+    #[must_use]
+    pub fn bufdrv(&mut self) -> BUFDRV_W<4> {
         BUFDRV_W::new(self)
     }
     #[doc = "Bits 8:9 - Buffer Bias Setting"]
     #[inline(always)]
-    pub fn bufbias(&mut self) -> BUFBIAS_W {
+    #[must_use]
+    pub fn bufbias(&mut self) -> BUFBIAS_W<8> {
         BUFBIAS_W::new(self)
     }
     #[doc = "Bit 12 - Mode Setting"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<12> {
         MODE_W::new(self)
     }
     #[doc = "Bits 16:20 - VLCD voltage level"]
     #[inline(always)]
-    pub fn vlcd(&mut self) -> VLCD_W {
+    #[must_use]
+    pub fn vlcd(&mut self) -> VLCD_W<16> {
         VLCD_W::new(self)
     }
     #[doc = "Bit 22 - VDDX select"]
     #[inline(always)]
-    pub fn vddxsel(&mut self) -> VDDXSEL_W {
+    #[must_use]
+    pub fn vddxsel(&mut self) -> VDDXSEL_W<22> {
         VDDXSEL_W::new(self)
     }
     #[doc = "Bit 26 - LCD Gate"]
     #[inline(always)]
-    pub fn lcdgate(&mut self) -> LCDGATE_W {
+    #[must_use]
+    pub fn lcdgate(&mut self) -> LCDGATE_W<26> {
         LCDGATE_W::new(self)
     }
     #[doc = "Bits 30:31 - DMA Mode"]
     #[inline(always)]
-    pub fn dmamode(&mut self) -> DMAMODE_W {
+    #[must_use]
+    pub fn dmamode(&mut self) -> DMAMODE_W<30> {
         DMAMODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -369,11 +378,10 @@ impl crate::Readable for BIASCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [biasctrl::W](W) writer structure"]
 impl crate::Writable for BIASCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BIASCTRL to value 0x001f_0000"]
 impl crate::Resettable for BIASCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x001f_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x001f_0000;
 }

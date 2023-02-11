@@ -37,15 +37,15 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `CACHEDIS` reader - Cache Disable"]
 pub type CACHEDIS_R = crate::BitReader<bool>;
 #[doc = "Field `CACHEDIS` writer - Cache Disable"]
-pub type CACHEDIS_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 0>;
+pub type CACHEDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `USEMPU` reader - Use MPU"]
 pub type USEMPU_R = crate::BitReader<bool>;
 #[doc = "Field `USEMPU` writer - Use MPU"]
-pub type USEMPU_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 1>;
+pub type USEMPU_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `AUTOFLUSHDIS` reader - Automatic Flushing Disable"]
 pub type AUTOFLUSHDIS_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOFLUSHDIS` writer - Automatic Flushing Disable"]
-pub type AUTOFLUSHDIS_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 2>;
+pub type AUTOFLUSHDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Cache Disable"]
     #[inline(always)]
@@ -66,17 +66,20 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Cache Disable"]
     #[inline(always)]
-    pub fn cachedis(&mut self) -> CACHEDIS_W {
+    #[must_use]
+    pub fn cachedis(&mut self) -> CACHEDIS_W<0> {
         CACHEDIS_W::new(self)
     }
     #[doc = "Bit 1 - Use MPU"]
     #[inline(always)]
-    pub fn usempu(&mut self) -> USEMPU_W {
+    #[must_use]
+    pub fn usempu(&mut self) -> USEMPU_W<1> {
         USEMPU_W::new(self)
     }
     #[doc = "Bit 2 - Automatic Flushing Disable"]
     #[inline(always)]
-    pub fn autoflushdis(&mut self) -> AUTOFLUSHDIS_W {
+    #[must_use]
+    pub fn autoflushdis(&mut self) -> AUTOFLUSHDIS_W<2> {
         AUTOFLUSHDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

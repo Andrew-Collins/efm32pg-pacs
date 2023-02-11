@@ -37,23 +37,23 @@ impl From<crate::W<IEN_SPEC>> for W {
 #[doc = "Field `OF` reader - OF Interrupt Enable"]
 pub type OF_R = crate::BitReader<bool>;
 #[doc = "Field `OF` writer - OF Interrupt Enable"]
-pub type OF_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 0>;
+pub type OF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CNTTICK` reader - CNTTICK Interrupt Enable"]
 pub type CNTTICK_R = crate::BitReader<bool>;
 #[doc = "Field `CNTTICK` writer - CNTTICK Interrupt Enable"]
-pub type CNTTICK_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 1>;
+pub type CNTTICK_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CC0` reader - CC Channel n Interrupt Enable"]
 pub type CC0_R = crate::BitReader<bool>;
 #[doc = "Field `CC0` writer - CC Channel n Interrupt Enable"]
-pub type CC0_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 4>;
+pub type CC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CC1` reader - CC Channel n Interrupt Enable"]
 pub type CC1_R = crate::BitReader<bool>;
 #[doc = "Field `CC1` writer - CC Channel n Interrupt Enable"]
-pub type CC1_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 6>;
+pub type CC1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CC2` reader - CC Channel n Interrupt Enable"]
 pub type CC2_R = crate::BitReader<bool>;
 #[doc = "Field `CC2` writer - CC Channel n Interrupt Enable"]
-pub type CC2_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 8>;
+pub type CC2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - OF Interrupt Enable"]
     #[inline(always)]
@@ -84,27 +84,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - OF Interrupt Enable"]
     #[inline(always)]
-    pub fn of(&mut self) -> OF_W {
+    #[must_use]
+    pub fn of(&mut self) -> OF_W<0> {
         OF_W::new(self)
     }
     #[doc = "Bit 1 - CNTTICK Interrupt Enable"]
     #[inline(always)]
-    pub fn cnttick(&mut self) -> CNTTICK_W {
+    #[must_use]
+    pub fn cnttick(&mut self) -> CNTTICK_W<1> {
         CNTTICK_W::new(self)
     }
     #[doc = "Bit 4 - CC Channel n Interrupt Enable"]
     #[inline(always)]
-    pub fn cc0(&mut self) -> CC0_W {
+    #[must_use]
+    pub fn cc0(&mut self) -> CC0_W<4> {
         CC0_W::new(self)
     }
     #[doc = "Bit 6 - CC Channel n Interrupt Enable"]
     #[inline(always)]
-    pub fn cc1(&mut self) -> CC1_W {
+    #[must_use]
+    pub fn cc1(&mut self) -> CC1_W<6> {
         CC1_W::new(self)
     }
     #[doc = "Bit 8 - CC Channel n Interrupt Enable"]
     #[inline(always)]
-    pub fn cc2(&mut self) -> CC2_W {
+    #[must_use]
+    pub fn cc2(&mut self) -> CC2_W<8> {
         CC2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -126,11 +131,10 @@ impl crate::Readable for IEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IEN to value 0"]
 impl crate::Resettable for IEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

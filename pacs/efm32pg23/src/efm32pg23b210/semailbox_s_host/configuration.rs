@@ -37,11 +37,11 @@ impl From<crate::W<CONFIGURATION_SPEC>> for W {
 #[doc = "Field `TXINTEN` reader - TXINTEN"]
 pub type TXINTEN_R = crate::BitReader<bool>;
 #[doc = "Field `TXINTEN` writer - TXINTEN"]
-pub type TXINTEN_W<'a> = crate::BitWriter<'a, u32, CONFIGURATION_SPEC, bool, 0>;
+pub type TXINTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIGURATION_SPEC, bool, O>;
 #[doc = "Field `RXINTEN` reader - RXINTEN"]
 pub type RXINTEN_R = crate::BitReader<bool>;
 #[doc = "Field `RXINTEN` writer - RXINTEN"]
-pub type RXINTEN_W<'a> = crate::BitWriter<'a, u32, CONFIGURATION_SPEC, bool, 1>;
+pub type RXINTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIGURATION_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - TXINTEN"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - TXINTEN"]
     #[inline(always)]
-    pub fn txinten(&mut self) -> TXINTEN_W {
+    #[must_use]
+    pub fn txinten(&mut self) -> TXINTEN_W<0> {
         TXINTEN_W::new(self)
     }
     #[doc = "Bit 1 - RXINTEN"]
     #[inline(always)]
-    pub fn rxinten(&mut self) -> RXINTEN_W {
+    #[must_use]
+    pub fn rxinten(&mut self) -> RXINTEN_W<1> {
         RXINTEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for CONFIGURATION_SPEC {
 #[doc = "`write(|w| ..)` method takes [configuration::W](W) writer structure"]
 impl crate::Writable for CONFIGURATION_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CONFIGURATION to value 0"]
 impl crate::Resettable for CONFIGURATION_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

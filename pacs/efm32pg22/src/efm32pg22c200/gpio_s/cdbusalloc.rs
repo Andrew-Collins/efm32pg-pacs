@@ -34,8 +34,10 @@ impl From<crate::W<CDBUSALLOC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CDEVEN0` reader - CD Bus Even 0"]
+pub type CDEVEN0_R = crate::FieldReader<u8, CDEVEN0_A>;
 #[doc = "CD Bus Even 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CDEVEN0_A {
     #[doc = "0: The bus is not allocated"]
@@ -49,8 +51,6 @@ impl From<CDEVEN0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CDEVEN0` reader - CD Bus Even 0"]
-pub type CDEVEN0_R = crate::FieldReader<u8, CDEVEN0_A>;
 impl CDEVEN0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -73,8 +73,9 @@ impl CDEVEN0_R {
     }
 }
 #[doc = "Field `CDEVEN0` writer - CD Bus Even 0"]
-pub type CDEVEN0_W<'a> = crate::FieldWriter<'a, u32, CDBUSALLOC_SPEC, u8, CDEVEN0_A, 4, 0>;
-impl<'a> CDEVEN0_W<'a> {
+pub type CDEVEN0_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CDBUSALLOC_SPEC, u8, CDEVEN0_A, 4, O>;
+impl<'a, const O: u8> CDEVEN0_W<'a, O> {
     #[doc = "The bus is not allocated"]
     #[inline(always)]
     pub fn tristate(self) -> &'a mut W {
@@ -86,8 +87,10 @@ impl<'a> CDEVEN0_W<'a> {
         self.variant(CDEVEN0_A::ADC0)
     }
 }
+#[doc = "Field `CDEVEN1` reader - CD Bus Even 1"]
+pub type CDEVEN1_R = crate::FieldReader<u8, CDEVEN1_A>;
 #[doc = "CD Bus Even 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CDEVEN1_A {
     #[doc = "0: The bus is not allocated"]
@@ -101,8 +104,6 @@ impl From<CDEVEN1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CDEVEN1` reader - CD Bus Even 1"]
-pub type CDEVEN1_R = crate::FieldReader<u8, CDEVEN1_A>;
 impl CDEVEN1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -125,8 +126,9 @@ impl CDEVEN1_R {
     }
 }
 #[doc = "Field `CDEVEN1` writer - CD Bus Even 1"]
-pub type CDEVEN1_W<'a> = crate::FieldWriter<'a, u32, CDBUSALLOC_SPEC, u8, CDEVEN1_A, 4, 8>;
-impl<'a> CDEVEN1_W<'a> {
+pub type CDEVEN1_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CDBUSALLOC_SPEC, u8, CDEVEN1_A, 4, O>;
+impl<'a, const O: u8> CDEVEN1_W<'a, O> {
     #[doc = "The bus is not allocated"]
     #[inline(always)]
     pub fn tristate(self) -> &'a mut W {
@@ -138,8 +140,10 @@ impl<'a> CDEVEN1_W<'a> {
         self.variant(CDEVEN1_A::ADC0)
     }
 }
+#[doc = "Field `CDODD0` reader - CD Bus Odd 0"]
+pub type CDODD0_R = crate::FieldReader<u8, CDODD0_A>;
 #[doc = "CD Bus Odd 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CDODD0_A {
     #[doc = "0: The bus is not allocated"]
@@ -153,8 +157,6 @@ impl From<CDODD0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CDODD0` reader - CD Bus Odd 0"]
-pub type CDODD0_R = crate::FieldReader<u8, CDODD0_A>;
 impl CDODD0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -177,8 +179,9 @@ impl CDODD0_R {
     }
 }
 #[doc = "Field `CDODD0` writer - CD Bus Odd 0"]
-pub type CDODD0_W<'a> = crate::FieldWriter<'a, u32, CDBUSALLOC_SPEC, u8, CDODD0_A, 4, 16>;
-impl<'a> CDODD0_W<'a> {
+pub type CDODD0_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CDBUSALLOC_SPEC, u8, CDODD0_A, 4, O>;
+impl<'a, const O: u8> CDODD0_W<'a, O> {
     #[doc = "The bus is not allocated"]
     #[inline(always)]
     pub fn tristate(self) -> &'a mut W {
@@ -190,8 +193,10 @@ impl<'a> CDODD0_W<'a> {
         self.variant(CDODD0_A::ADC0)
     }
 }
+#[doc = "Field `CDODD1` reader - CD Bus Odd 1"]
+pub type CDODD1_R = crate::FieldReader<u8, CDODD1_A>;
 #[doc = "CD Bus Odd 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CDODD1_A {
     #[doc = "0: The bus is not allocated"]
@@ -205,8 +210,6 @@ impl From<CDODD1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CDODD1` reader - CD Bus Odd 1"]
-pub type CDODD1_R = crate::FieldReader<u8, CDODD1_A>;
 impl CDODD1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -229,8 +232,9 @@ impl CDODD1_R {
     }
 }
 #[doc = "Field `CDODD1` writer - CD Bus Odd 1"]
-pub type CDODD1_W<'a> = crate::FieldWriter<'a, u32, CDBUSALLOC_SPEC, u8, CDODD1_A, 4, 24>;
-impl<'a> CDODD1_W<'a> {
+pub type CDODD1_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CDBUSALLOC_SPEC, u8, CDODD1_A, 4, O>;
+impl<'a, const O: u8> CDODD1_W<'a, O> {
     #[doc = "The bus is not allocated"]
     #[inline(always)]
     pub fn tristate(self) -> &'a mut W {
@@ -267,22 +271,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - CD Bus Even 0"]
     #[inline(always)]
-    pub fn cdeven0(&mut self) -> CDEVEN0_W {
+    #[must_use]
+    pub fn cdeven0(&mut self) -> CDEVEN0_W<0> {
         CDEVEN0_W::new(self)
     }
     #[doc = "Bits 8:11 - CD Bus Even 1"]
     #[inline(always)]
-    pub fn cdeven1(&mut self) -> CDEVEN1_W {
+    #[must_use]
+    pub fn cdeven1(&mut self) -> CDEVEN1_W<8> {
         CDEVEN1_W::new(self)
     }
     #[doc = "Bits 16:19 - CD Bus Odd 0"]
     #[inline(always)]
-    pub fn cdodd0(&mut self) -> CDODD0_W {
+    #[must_use]
+    pub fn cdodd0(&mut self) -> CDODD0_W<16> {
         CDODD0_W::new(self)
     }
     #[doc = "Bits 24:27 - CD Bus Odd 1"]
     #[inline(always)]
-    pub fn cdodd1(&mut self) -> CDODD1_W {
+    #[must_use]
+    pub fn cdodd1(&mut self) -> CDODD1_W<24> {
         CDODD1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -304,11 +312,10 @@ impl crate::Readable for CDBUSALLOC_SPEC {
 #[doc = "`write(|w| ..)` method takes [cdbusalloc::W](W) writer structure"]
 impl crate::Writable for CDBUSALLOC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CDBUSALLOC to value 0"]
 impl crate::Resettable for CDBUSALLOC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

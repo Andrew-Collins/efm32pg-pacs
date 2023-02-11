@@ -20,7 +20,7 @@ impl From<crate::W<DTLOCK_SPEC>> for W {
     }
 }
 #[doc = "DTI Lock Key\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum DTILOCKKEY_AW {
     #[doc = "52864: Write to unlock TIMER DTI registers"]
@@ -33,8 +33,9 @@ impl From<DTILOCKKEY_AW> for u16 {
     }
 }
 #[doc = "Field `DTILOCKKEY` writer - DTI Lock Key"]
-pub type DTILOCKKEY_W<'a> = crate::FieldWriter<'a, u32, DTLOCK_SPEC, u16, DTILOCKKEY_AW, 16, 0>;
-impl<'a> DTILOCKKEY_W<'a> {
+pub type DTILOCKKEY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DTLOCK_SPEC, u16, DTILOCKKEY_AW, 16, O>;
+impl<'a, const O: u8> DTILOCKKEY_W<'a, O> {
     #[doc = "Write to unlock TIMER DTI registers"]
     #[inline(always)]
     pub fn unlock(self) -> &'a mut W {
@@ -44,7 +45,8 @@ impl<'a> DTILOCKKEY_W<'a> {
 impl W {
     #[doc = "Bits 0:15 - DTI Lock Key"]
     #[inline(always)]
-    pub fn dtilockkey(&mut self) -> DTILOCKKEY_W {
+    #[must_use]
+    pub fn dtilockkey(&mut self) -> DTILOCKKEY_W<0> {
         DTILOCKKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -62,11 +64,10 @@ impl crate::RegisterSpec for DTLOCK_SPEC {
 #[doc = "`write(|w| ..)` method takes [dtlock::W](W) writer structure"]
 impl crate::Writable for DTLOCK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DTLOCK to value 0"]
 impl crate::Resettable for DTLOCK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

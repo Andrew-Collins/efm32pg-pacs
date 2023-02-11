@@ -34,8 +34,10 @@ impl From<crate::W<FRAMECFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DATABITS` reader - Data-Bit Mode"]
+pub type DATABITS_R = crate::FieldReader<u8, DATABITS_A>;
 #[doc = "Data-Bit Mode\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DATABITS_A {
     #[doc = "1: Each frame contains 7 data bits"]
@@ -65,8 +67,6 @@ impl From<DATABITS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DATABITS` reader - Data-Bit Mode"]
-pub type DATABITS_R = crate::FieldReader<u8, DATABITS_A>;
 impl DATABITS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -137,8 +137,9 @@ impl DATABITS_R {
     }
 }
 #[doc = "Field `DATABITS` writer - Data-Bit Mode"]
-pub type DATABITS_W<'a> = crate::FieldWriter<'a, u32, FRAMECFG_SPEC, u8, DATABITS_A, 4, 0>;
-impl<'a> DATABITS_W<'a> {
+pub type DATABITS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, FRAMECFG_SPEC, u8, DATABITS_A, 4, O>;
+impl<'a, const O: u8> DATABITS_W<'a, O> {
     #[doc = "Each frame contains 7 data bits"]
     #[inline(always)]
     pub fn seven(self) -> &'a mut W {
@@ -190,8 +191,10 @@ impl<'a> DATABITS_W<'a> {
         self.variant(DATABITS_A::SIXTEEN)
     }
 }
+#[doc = "Field `PARITY` reader - Parity-Bit Mode"]
+pub type PARITY_R = crate::FieldReader<u8, PARITY_A>;
 #[doc = "Parity-Bit Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PARITY_A {
     #[doc = "0: Parity bits are not used"]
@@ -207,8 +210,6 @@ impl From<PARITY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PARITY` reader - Parity-Bit Mode"]
-pub type PARITY_R = crate::FieldReader<u8, PARITY_A>;
 impl PARITY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -237,8 +238,8 @@ impl PARITY_R {
     }
 }
 #[doc = "Field `PARITY` writer - Parity-Bit Mode"]
-pub type PARITY_W<'a> = crate::FieldWriter<'a, u32, FRAMECFG_SPEC, u8, PARITY_A, 2, 8>;
-impl<'a> PARITY_W<'a> {
+pub type PARITY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FRAMECFG_SPEC, u8, PARITY_A, 2, O>;
+impl<'a, const O: u8> PARITY_W<'a, O> {
     #[doc = "Parity bits are not used"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -255,8 +256,10 @@ impl<'a> PARITY_W<'a> {
         self.variant(PARITY_A::ODD)
     }
 }
+#[doc = "Field `STOPBITS` reader - Stop-Bit Mode"]
+pub type STOPBITS_R = crate::FieldReader<u8, STOPBITS_A>;
 #[doc = "Stop-Bit Mode\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STOPBITS_A {
     #[doc = "0: The transmitter generates a half stop bit. Stop-bits are not verified by receiver"]
@@ -274,8 +277,6 @@ impl From<STOPBITS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `STOPBITS` reader - Stop-Bit Mode"]
-pub type STOPBITS_R = crate::FieldReader<u8, STOPBITS_A>;
 impl STOPBITS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -310,8 +311,9 @@ impl STOPBITS_R {
     }
 }
 #[doc = "Field `STOPBITS` writer - Stop-Bit Mode"]
-pub type STOPBITS_W<'a> = crate::FieldWriterSafe<'a, u32, FRAMECFG_SPEC, u8, STOPBITS_A, 2, 12>;
-impl<'a> STOPBITS_W<'a> {
+pub type STOPBITS_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, FRAMECFG_SPEC, u8, STOPBITS_A, 2, O>;
+impl<'a, const O: u8> STOPBITS_W<'a, O> {
     #[doc = "The transmitter generates a half stop bit. Stop-bits are not verified by receiver"]
     #[inline(always)]
     pub fn half(self) -> &'a mut W {
@@ -353,17 +355,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Data-Bit Mode"]
     #[inline(always)]
-    pub fn databits(&mut self) -> DATABITS_W {
+    #[must_use]
+    pub fn databits(&mut self) -> DATABITS_W<0> {
         DATABITS_W::new(self)
     }
     #[doc = "Bits 8:9 - Parity-Bit Mode"]
     #[inline(always)]
-    pub fn parity(&mut self) -> PARITY_W {
+    #[must_use]
+    pub fn parity(&mut self) -> PARITY_W<8> {
         PARITY_W::new(self)
     }
     #[doc = "Bits 12:13 - Stop-Bit Mode"]
     #[inline(always)]
-    pub fn stopbits(&mut self) -> STOPBITS_W {
+    #[must_use]
+    pub fn stopbits(&mut self) -> STOPBITS_W<12> {
         STOPBITS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -385,11 +390,10 @@ impl crate::Readable for FRAMECFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [framecfg::W](W) writer structure"]
 impl crate::Writable for FRAMECFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FRAMECFG to value 0x1002"]
 impl crate::Resettable for FRAMECFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1002
-    }
+    const RESET_VALUE: Self::Ux = 0x1002;
 }

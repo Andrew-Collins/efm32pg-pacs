@@ -37,7 +37,7 @@ impl From<crate::W<ESAURTYPES0_SPEC>> for W {
 #[doc = "Field `ESAUR3NS` reader - Region 3 Non-Secure"]
 pub type ESAUR3NS_R = crate::BitReader<bool>;
 #[doc = "Field `ESAUR3NS` writer - Region 3 Non-Secure"]
-pub type ESAUR3NS_W<'a> = crate::BitWriter<'a, u32, ESAURTYPES0_SPEC, bool, 12>;
+pub type ESAUR3NS_W<'a, const O: u8> = crate::BitWriter<'a, u32, ESAURTYPES0_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 12 - Region 3 Non-Secure"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bit 12 - Region 3 Non-Secure"]
     #[inline(always)]
-    pub fn esaur3ns(&mut self) -> ESAUR3NS_W {
+    #[must_use]
+    pub fn esaur3ns(&mut self) -> ESAUR3NS_W<12> {
         ESAUR3NS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for ESAURTYPES0_SPEC {
 #[doc = "`write(|w| ..)` method takes [esaurtypes0::W](W) writer structure"]
 impl crate::Writable for ESAURTYPES0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ESAURTYPES0 to value 0"]
 impl crate::Resettable for ESAURTYPES0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

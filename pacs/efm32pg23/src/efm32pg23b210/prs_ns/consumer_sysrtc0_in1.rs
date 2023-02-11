@@ -37,7 +37,8 @@ impl From<crate::W<CONSUMER_SYSRTC0_IN1_SPEC>> for W {
 #[doc = "Field `PRSSEL` reader - IN1 async channel select"]
 pub type PRSSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PRSSEL` writer - IN1 async channel select"]
-pub type PRSSEL_W<'a> = crate::FieldWriter<'a, u32, CONSUMER_SYSRTC0_IN1_SPEC, u8, u8, 4, 0>;
+pub type PRSSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CONSUMER_SYSRTC0_IN1_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - IN1 async channel select"]
     #[inline(always)]
@@ -48,7 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - IN1 async channel select"]
     #[inline(always)]
-    pub fn prssel(&mut self) -> PRSSEL_W {
+    #[must_use]
+    pub fn prssel(&mut self) -> PRSSEL_W<0> {
         PRSSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +72,10 @@ impl crate::Readable for CONSUMER_SYSRTC0_IN1_SPEC {
 #[doc = "`write(|w| ..)` method takes [consumer_sysrtc0_in1::W](W) writer structure"]
 impl crate::Writable for CONSUMER_SYSRTC0_IN1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CONSUMER_SYSRTC0_IN1 to value 0"]
 impl crate::Resettable for CONSUMER_SYSRTC0_IN1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

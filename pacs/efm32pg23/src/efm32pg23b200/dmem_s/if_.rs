@@ -37,19 +37,19 @@ impl From<crate::W<IF_SPEC>> for W {
 #[doc = "Field `AHB0ERR1B` reader - AHB0 1-bit ECC Error Interrupt Flag"]
 pub type AHB0ERR1B_R = crate::BitReader<bool>;
 #[doc = "Field `AHB0ERR1B` writer - AHB0 1-bit ECC Error Interrupt Flag"]
-pub type AHB0ERR1B_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 0>;
+pub type AHB0ERR1B_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `AHB1ERR1B` reader - AHB1 1-bit ECC Error Interrupt Flag"]
 pub type AHB1ERR1B_R = crate::BitReader<bool>;
 #[doc = "Field `AHB1ERR1B` writer - AHB1 1-bit ECC Error Interrupt Flag"]
-pub type AHB1ERR1B_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 1>;
+pub type AHB1ERR1B_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `AHB0ERR2B` reader - AHB0 2-bit ECC Error Interrupt Flag"]
 pub type AHB0ERR2B_R = crate::BitReader<bool>;
 #[doc = "Field `AHB0ERR2B` writer - AHB0 2-bit ECC Error Interrupt Flag"]
-pub type AHB0ERR2B_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 4>;
+pub type AHB0ERR2B_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `AHB1ERR2B` reader - AHB1 2-bit ECC Error Interrupt Flag"]
 pub type AHB1ERR2B_R = crate::BitReader<bool>;
 #[doc = "Field `AHB1ERR2B` writer - AHB1 2-bit ECC Error Interrupt Flag"]
-pub type AHB1ERR2B_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 5>;
+pub type AHB1ERR2B_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - AHB0 1-bit ECC Error Interrupt Flag"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - AHB0 1-bit ECC Error Interrupt Flag"]
     #[inline(always)]
-    pub fn ahb0err1b(&mut self) -> AHB0ERR1B_W {
+    #[must_use]
+    pub fn ahb0err1b(&mut self) -> AHB0ERR1B_W<0> {
         AHB0ERR1B_W::new(self)
     }
     #[doc = "Bit 1 - AHB1 1-bit ECC Error Interrupt Flag"]
     #[inline(always)]
-    pub fn ahb1err1b(&mut self) -> AHB1ERR1B_W {
+    #[must_use]
+    pub fn ahb1err1b(&mut self) -> AHB1ERR1B_W<1> {
         AHB1ERR1B_W::new(self)
     }
     #[doc = "Bit 4 - AHB0 2-bit ECC Error Interrupt Flag"]
     #[inline(always)]
-    pub fn ahb0err2b(&mut self) -> AHB0ERR2B_W {
+    #[must_use]
+    pub fn ahb0err2b(&mut self) -> AHB0ERR2B_W<4> {
         AHB0ERR2B_W::new(self)
     }
     #[doc = "Bit 5 - AHB1 2-bit ECC Error Interrupt Flag"]
     #[inline(always)]
-    pub fn ahb1err2b(&mut self) -> AHB1ERR2B_W {
+    #[must_use]
+    pub fn ahb1err2b(&mut self) -> AHB1ERR2B_W<5> {
         AHB1ERR2B_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_::W](W) writer structure"]
 impl crate::Writable for IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,19 +37,19 @@ impl From<crate::W<DECBOD_SPEC>> for W {
 #[doc = "Field `DECBODEN` reader - DECBOD enable"]
 pub type DECBODEN_R = crate::BitReader<bool>;
 #[doc = "Field `DECBODEN` writer - DECBOD enable"]
-pub type DECBODEN_W<'a> = crate::BitWriter<'a, u32, DECBOD_SPEC, bool, 0>;
+pub type DECBODEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DECBOD_SPEC, bool, O>;
 #[doc = "Field `DECBODMASK` reader - DECBOD Mask"]
 pub type DECBODMASK_R = crate::BitReader<bool>;
 #[doc = "Field `DECBODMASK` writer - DECBOD Mask"]
-pub type DECBODMASK_W<'a> = crate::BitWriter<'a, u32, DECBOD_SPEC, bool, 1>;
+pub type DECBODMASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DECBOD_SPEC, bool, O>;
 #[doc = "Field `DECOVMBODEN` reader - Over Voltage Monitor enable"]
 pub type DECOVMBODEN_R = crate::BitReader<bool>;
 #[doc = "Field `DECOVMBODEN` writer - Over Voltage Monitor enable"]
-pub type DECOVMBODEN_W<'a> = crate::BitWriter<'a, u32, DECBOD_SPEC, bool, 4>;
+pub type DECOVMBODEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DECBOD_SPEC, bool, O>;
 #[doc = "Field `DECOVMBODMASK` reader - Over Voltage Monitor Mask"]
 pub type DECOVMBODMASK_R = crate::BitReader<bool>;
 #[doc = "Field `DECOVMBODMASK` writer - Over Voltage Monitor Mask"]
-pub type DECOVMBODMASK_W<'a> = crate::BitWriter<'a, u32, DECBOD_SPEC, bool, 5>;
+pub type DECOVMBODMASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DECBOD_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - DECBOD enable"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - DECBOD enable"]
     #[inline(always)]
-    pub fn decboden(&mut self) -> DECBODEN_W {
+    #[must_use]
+    pub fn decboden(&mut self) -> DECBODEN_W<0> {
         DECBODEN_W::new(self)
     }
     #[doc = "Bit 1 - DECBOD Mask"]
     #[inline(always)]
-    pub fn decbodmask(&mut self) -> DECBODMASK_W {
+    #[must_use]
+    pub fn decbodmask(&mut self) -> DECBODMASK_W<1> {
         DECBODMASK_W::new(self)
     }
     #[doc = "Bit 4 - Over Voltage Monitor enable"]
     #[inline(always)]
-    pub fn decovmboden(&mut self) -> DECOVMBODEN_W {
+    #[must_use]
+    pub fn decovmboden(&mut self) -> DECOVMBODEN_W<4> {
         DECOVMBODEN_W::new(self)
     }
     #[doc = "Bit 5 - Over Voltage Monitor Mask"]
     #[inline(always)]
-    pub fn decovmbodmask(&mut self) -> DECOVMBODMASK_W {
+    #[must_use]
+    pub fn decovmbodmask(&mut self) -> DECOVMBODMASK_W<5> {
         DECOVMBODMASK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for DECBOD_SPEC {
 #[doc = "`write(|w| ..)` method takes [decbod::W](W) writer structure"]
 impl crate::Writable for DECBOD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DECBOD to value 0x22"]
 impl crate::Resettable for DECBOD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x22
-    }
+    const RESET_VALUE: Self::Ux = 0x22;
 }

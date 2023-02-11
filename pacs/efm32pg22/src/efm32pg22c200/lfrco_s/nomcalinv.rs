@@ -37,18 +37,20 @@ impl From<crate::W<NOMCALINV_SPEC>> for W {
 #[doc = "Field `NOMCALCNTINV` reader - Nominal Calibration Count Inverted"]
 pub type NOMCALCNTINV_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `NOMCALCNTINV` writer - Nominal Calibration Count Inverted"]
-pub type NOMCALCNTINV_W<'a> = crate::FieldWriter<'a, u32, NOMCALINV_SPEC, u32, u32, 17, 0>;
+pub type NOMCALCNTINV_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, NOMCALINV_SPEC, u32, u32, 17, O>;
 impl R {
     #[doc = "Bits 0:16 - Nominal Calibration Count Inverted"]
     #[inline(always)]
     pub fn nomcalcntinv(&self) -> NOMCALCNTINV_R {
-        NOMCALCNTINV_R::new((self.bits & 0x0001_ffff) as u32)
+        NOMCALCNTINV_R::new(self.bits & 0x0001_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:16 - Nominal Calibration Count Inverted"]
     #[inline(always)]
-    pub fn nomcalcntinv(&mut self) -> NOMCALCNTINV_W {
+    #[must_use]
+    pub fn nomcalcntinv(&mut self) -> NOMCALCNTINV_W<0> {
         NOMCALCNTINV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +72,10 @@ impl crate::Readable for NOMCALINV_SPEC {
 #[doc = "`write(|w| ..)` method takes [nomcalinv::W](W) writer structure"]
 impl crate::Writable for NOMCALINV_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets NOMCALINV to value 0x597a"]
 impl crate::Resettable for NOMCALINV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x597a
-    }
+    const RESET_VALUE: Self::Ux = 0x597a;
 }

@@ -37,51 +37,51 @@ impl From<crate::W<IF_SPEC>> for W {
 #[doc = "Field `RDY` reader - Digital Clock Ready Interrupt"]
 pub type RDY_R = crate::BitReader<bool>;
 #[doc = "Field `RDY` writer - Digital Clock Ready Interrupt"]
-pub type RDY_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 0>;
+pub type RDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `COREBIASOPTRDY` reader - Core Bias Optimization Ready Interrupt"]
 pub type COREBIASOPTRDY_R = crate::BitReader<bool>;
 #[doc = "Field `COREBIASOPTRDY` writer - Core Bias Optimization Ready Interrupt"]
-pub type COREBIASOPTRDY_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 1>;
+pub type COREBIASOPTRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `PRSRDY` reader - PRS Ready Interrupt"]
 pub type PRSRDY_R = crate::BitReader<bool>;
 #[doc = "Field `PRSRDY` writer - PRS Ready Interrupt"]
-pub type PRSRDY_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 2>;
+pub type PRSRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `BUFOUTRDY` reader - BUFOUT Ready Interrupt"]
 pub type BUFOUTRDY_R = crate::BitReader<bool>;
 #[doc = "Field `BUFOUTRDY` writer - BUFOUT Ready Interrupt"]
-pub type BUFOUTRDY_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 3>;
+pub type BUFOUTRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `BUFOUTFROZEN` reader - BUFOUT FROZEN Interrupt"]
 pub type BUFOUTFROZEN_R = crate::BitReader<bool>;
 #[doc = "Field `BUFOUTFROZEN` writer - BUFOUT FROZEN Interrupt"]
-pub type BUFOUTFROZEN_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 15>;
+pub type BUFOUTFROZEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `PRSERR` reader - PRS Requset Error Interrupt"]
 pub type PRSERR_R = crate::BitReader<bool>;
 #[doc = "Field `PRSERR` writer - PRS Requset Error Interrupt"]
-pub type PRSERR_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 20>;
+pub type PRSERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `BUFOUTERR` reader - BUFOUT Request Error Interrupt"]
 pub type BUFOUTERR_R = crate::BitReader<bool>;
 #[doc = "Field `BUFOUTERR` writer - BUFOUT Request Error Interrupt"]
-pub type BUFOUTERR_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 21>;
+pub type BUFOUTERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `BUFOUTFREEZEERR` reader - BUFOUT Freeze Error Interrupt"]
 pub type BUFOUTFREEZEERR_R = crate::BitReader<bool>;
 #[doc = "Field `BUFOUTFREEZEERR` writer - BUFOUT Freeze Error Interrupt"]
-pub type BUFOUTFREEZEERR_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 27>;
+pub type BUFOUTFREEZEERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `BUFOUTDNSERR` reader - BUFOUT Did Not Start Error Interrupt"]
 pub type BUFOUTDNSERR_R = crate::BitReader<bool>;
 #[doc = "Field `BUFOUTDNSERR` writer - BUFOUT Did Not Start Error Interrupt"]
-pub type BUFOUTDNSERR_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 28>;
+pub type BUFOUTDNSERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `DNSERR` reader - Did Not Start Error Interrupt"]
 pub type DNSERR_R = crate::BitReader<bool>;
 #[doc = "Field `DNSERR` writer - Did Not Start Error Interrupt"]
-pub type DNSERR_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 29>;
+pub type DNSERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `LFTIMEOUTERR` reader - Low Frequency Timeout Error Interrupt"]
 pub type LFTIMEOUTERR_R = crate::BitReader<bool>;
 #[doc = "Field `LFTIMEOUTERR` writer - Low Frequency Timeout Error Interrupt"]
-pub type LFTIMEOUTERR_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 30>;
+pub type LFTIMEOUTERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `COREBIASOPTERR` reader - Core Bias Optimization Error Interrupt"]
 pub type COREBIASOPTERR_R = crate::BitReader<bool>;
 #[doc = "Field `COREBIASOPTERR` writer - Core Bias Optimization Error Interrupt"]
-pub type COREBIASOPTERR_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 31>;
+pub type COREBIASOPTERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Digital Clock Ready Interrupt"]
     #[inline(always)]
@@ -147,62 +147,74 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Digital Clock Ready Interrupt"]
     #[inline(always)]
-    pub fn rdy(&mut self) -> RDY_W {
+    #[must_use]
+    pub fn rdy(&mut self) -> RDY_W<0> {
         RDY_W::new(self)
     }
     #[doc = "Bit 1 - Core Bias Optimization Ready Interrupt"]
     #[inline(always)]
-    pub fn corebiasoptrdy(&mut self) -> COREBIASOPTRDY_W {
+    #[must_use]
+    pub fn corebiasoptrdy(&mut self) -> COREBIASOPTRDY_W<1> {
         COREBIASOPTRDY_W::new(self)
     }
     #[doc = "Bit 2 - PRS Ready Interrupt"]
     #[inline(always)]
-    pub fn prsrdy(&mut self) -> PRSRDY_W {
+    #[must_use]
+    pub fn prsrdy(&mut self) -> PRSRDY_W<2> {
         PRSRDY_W::new(self)
     }
     #[doc = "Bit 3 - BUFOUT Ready Interrupt"]
     #[inline(always)]
-    pub fn bufoutrdy(&mut self) -> BUFOUTRDY_W {
+    #[must_use]
+    pub fn bufoutrdy(&mut self) -> BUFOUTRDY_W<3> {
         BUFOUTRDY_W::new(self)
     }
     #[doc = "Bit 15 - BUFOUT FROZEN Interrupt"]
     #[inline(always)]
-    pub fn bufoutfrozen(&mut self) -> BUFOUTFROZEN_W {
+    #[must_use]
+    pub fn bufoutfrozen(&mut self) -> BUFOUTFROZEN_W<15> {
         BUFOUTFROZEN_W::new(self)
     }
     #[doc = "Bit 20 - PRS Requset Error Interrupt"]
     #[inline(always)]
-    pub fn prserr(&mut self) -> PRSERR_W {
+    #[must_use]
+    pub fn prserr(&mut self) -> PRSERR_W<20> {
         PRSERR_W::new(self)
     }
     #[doc = "Bit 21 - BUFOUT Request Error Interrupt"]
     #[inline(always)]
-    pub fn bufouterr(&mut self) -> BUFOUTERR_W {
+    #[must_use]
+    pub fn bufouterr(&mut self) -> BUFOUTERR_W<21> {
         BUFOUTERR_W::new(self)
     }
     #[doc = "Bit 27 - BUFOUT Freeze Error Interrupt"]
     #[inline(always)]
-    pub fn bufoutfreezeerr(&mut self) -> BUFOUTFREEZEERR_W {
+    #[must_use]
+    pub fn bufoutfreezeerr(&mut self) -> BUFOUTFREEZEERR_W<27> {
         BUFOUTFREEZEERR_W::new(self)
     }
     #[doc = "Bit 28 - BUFOUT Did Not Start Error Interrupt"]
     #[inline(always)]
-    pub fn bufoutdnserr(&mut self) -> BUFOUTDNSERR_W {
+    #[must_use]
+    pub fn bufoutdnserr(&mut self) -> BUFOUTDNSERR_W<28> {
         BUFOUTDNSERR_W::new(self)
     }
     #[doc = "Bit 29 - Did Not Start Error Interrupt"]
     #[inline(always)]
-    pub fn dnserr(&mut self) -> DNSERR_W {
+    #[must_use]
+    pub fn dnserr(&mut self) -> DNSERR_W<29> {
         DNSERR_W::new(self)
     }
     #[doc = "Bit 30 - Low Frequency Timeout Error Interrupt"]
     #[inline(always)]
-    pub fn lftimeouterr(&mut self) -> LFTIMEOUTERR_W {
+    #[must_use]
+    pub fn lftimeouterr(&mut self) -> LFTIMEOUTERR_W<30> {
         LFTIMEOUTERR_W::new(self)
     }
     #[doc = "Bit 31 - Core Bias Optimization Error Interrupt"]
     #[inline(always)]
-    pub fn corebiasopterr(&mut self) -> COREBIASOPTERR_W {
+    #[must_use]
+    pub fn corebiasopterr(&mut self) -> COREBIASOPTERR_W<31> {
         COREBIASOPTERR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -224,11 +236,10 @@ impl crate::Readable for IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_::W](W) writer structure"]
 impl crate::Writable for IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,19 +37,19 @@ impl From<crate::W<PWRCTRL_SPEC>> for W {
 #[doc = "Field `PWROFFONEM1ENTRY` reader - Power down Flash macro when enter EM1"]
 pub type PWROFFONEM1ENTRY_R = crate::BitReader<bool>;
 #[doc = "Field `PWROFFONEM1ENTRY` writer - Power down Flash macro when enter EM1"]
-pub type PWROFFONEM1ENTRY_W<'a> = crate::BitWriter<'a, u32, PWRCTRL_SPEC, bool, 0>;
+pub type PWROFFONEM1ENTRY_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWRCTRL_SPEC, bool, O>;
 #[doc = "Field `PWROFFONEM1PENTRY` reader - Power down Flash macro when enter EM1P"]
 pub type PWROFFONEM1PENTRY_R = crate::BitReader<bool>;
 #[doc = "Field `PWROFFONEM1PENTRY` writer - Power down Flash macro when enter EM1P"]
-pub type PWROFFONEM1PENTRY_W<'a> = crate::BitWriter<'a, u32, PWRCTRL_SPEC, bool, 1>;
+pub type PWROFFONEM1PENTRY_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWRCTRL_SPEC, bool, O>;
 #[doc = "Field `PWROFFENTRYAGAIN` reader - POWER down flash again in EM1/EM1p"]
 pub type PWROFFENTRYAGAIN_R = crate::BitReader<bool>;
 #[doc = "Field `PWROFFENTRYAGAIN` writer - POWER down flash again in EM1/EM1p"]
-pub type PWROFFENTRYAGAIN_W<'a> = crate::BitWriter<'a, u32, PWRCTRL_SPEC, bool, 4>;
+pub type PWROFFENTRYAGAIN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWRCTRL_SPEC, bool, O>;
 #[doc = "Field `PWROFFDLY` reader - Power down delay"]
 pub type PWROFFDLY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PWROFFDLY` writer - Power down delay"]
-pub type PWROFFDLY_W<'a> = crate::FieldWriter<'a, u32, PWRCTRL_SPEC, u8, u8, 8, 16>;
+pub type PWROFFDLY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PWRCTRL_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 0 - Power down Flash macro when enter EM1"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Power down Flash macro when enter EM1"]
     #[inline(always)]
-    pub fn pwroffonem1entry(&mut self) -> PWROFFONEM1ENTRY_W {
+    #[must_use]
+    pub fn pwroffonem1entry(&mut self) -> PWROFFONEM1ENTRY_W<0> {
         PWROFFONEM1ENTRY_W::new(self)
     }
     #[doc = "Bit 1 - Power down Flash macro when enter EM1P"]
     #[inline(always)]
-    pub fn pwroffonem1pentry(&mut self) -> PWROFFONEM1PENTRY_W {
+    #[must_use]
+    pub fn pwroffonem1pentry(&mut self) -> PWROFFONEM1PENTRY_W<1> {
         PWROFFONEM1PENTRY_W::new(self)
     }
     #[doc = "Bit 4 - POWER down flash again in EM1/EM1p"]
     #[inline(always)]
-    pub fn pwroffentryagain(&mut self) -> PWROFFENTRYAGAIN_W {
+    #[must_use]
+    pub fn pwroffentryagain(&mut self) -> PWROFFENTRYAGAIN_W<4> {
         PWROFFENTRYAGAIN_W::new(self)
     }
     #[doc = "Bits 16:23 - Power down delay"]
     #[inline(always)]
-    pub fn pwroffdly(&mut self) -> PWROFFDLY_W {
+    #[must_use]
+    pub fn pwroffdly(&mut self) -> PWROFFDLY_W<16> {
         PWROFFDLY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for PWRCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [pwrctrl::W](W) writer structure"]
 impl crate::Writable for PWRCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PWRCTRL to value 0x0010_0002"]
 impl crate::Resettable for PWRCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0010_0002
-    }
+    const RESET_VALUE: Self::Ux = 0x0010_0002;
 }

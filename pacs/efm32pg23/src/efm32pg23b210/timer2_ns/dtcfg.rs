@@ -37,9 +37,11 @@ impl From<crate::W<DTCFG_SPEC>> for W {
 #[doc = "Field `DTEN` reader - DTI Enable"]
 pub type DTEN_R = crate::BitReader<bool>;
 #[doc = "Field `DTEN` writer - DTI Enable"]
-pub type DTEN_W<'a> = crate::BitWriter<'a, u32, DTCFG_SPEC, bool, 0>;
+pub type DTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTCFG_SPEC, bool, O>;
+#[doc = "Field `DTDAS` reader - DTI Automatic Start-up Functionality"]
+pub type DTDAS_R = crate::BitReader<DTDAS_A>;
 #[doc = "DTI Automatic Start-up Functionality\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DTDAS_A {
     #[doc = "0: No DTI restart on debugger exit"]
     NORESTART = 0,
@@ -52,8 +54,6 @@ impl From<DTDAS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DTDAS` reader - DTI Automatic Start-up Functionality"]
-pub type DTDAS_R = crate::BitReader<DTDAS_A>;
 impl DTDAS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -75,8 +75,8 @@ impl DTDAS_R {
     }
 }
 #[doc = "Field `DTDAS` writer - DTI Automatic Start-up Functionality"]
-pub type DTDAS_W<'a> = crate::BitWriter<'a, u32, DTCFG_SPEC, DTDAS_A, 1>;
-impl<'a> DTDAS_W<'a> {
+pub type DTDAS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTCFG_SPEC, DTDAS_A, O>;
+impl<'a, const O: u8> DTDAS_W<'a, O> {
     #[doc = "No DTI restart on debugger exit"]
     #[inline(always)]
     pub fn norestart(self) -> &'a mut W {
@@ -91,15 +91,15 @@ impl<'a> DTDAS_W<'a> {
 #[doc = "Field `DTAR` reader - DTI Always Run"]
 pub type DTAR_R = crate::BitReader<bool>;
 #[doc = "Field `DTAR` writer - DTI Always Run"]
-pub type DTAR_W<'a> = crate::BitWriter<'a, u32, DTCFG_SPEC, bool, 9>;
+pub type DTAR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTCFG_SPEC, bool, O>;
 #[doc = "Field `DTFATS` reader - DTI Fault Action on Timer Stop"]
 pub type DTFATS_R = crate::BitReader<bool>;
 #[doc = "Field `DTFATS` writer - DTI Fault Action on Timer Stop"]
-pub type DTFATS_W<'a> = crate::BitWriter<'a, u32, DTCFG_SPEC, bool, 10>;
+pub type DTFATS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTCFG_SPEC, bool, O>;
 #[doc = "Field `DTPRSEN` reader - DTI PRS Source Enable"]
 pub type DTPRSEN_R = crate::BitReader<bool>;
 #[doc = "Field `DTPRSEN` writer - DTI PRS Source Enable"]
-pub type DTPRSEN_W<'a> = crate::BitWriter<'a, u32, DTCFG_SPEC, bool, 11>;
+pub type DTPRSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTCFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - DTI Enable"]
     #[inline(always)]
@@ -130,27 +130,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - DTI Enable"]
     #[inline(always)]
-    pub fn dten(&mut self) -> DTEN_W {
+    #[must_use]
+    pub fn dten(&mut self) -> DTEN_W<0> {
         DTEN_W::new(self)
     }
     #[doc = "Bit 1 - DTI Automatic Start-up Functionality"]
     #[inline(always)]
-    pub fn dtdas(&mut self) -> DTDAS_W {
+    #[must_use]
+    pub fn dtdas(&mut self) -> DTDAS_W<1> {
         DTDAS_W::new(self)
     }
     #[doc = "Bit 9 - DTI Always Run"]
     #[inline(always)]
-    pub fn dtar(&mut self) -> DTAR_W {
+    #[must_use]
+    pub fn dtar(&mut self) -> DTAR_W<9> {
         DTAR_W::new(self)
     }
     #[doc = "Bit 10 - DTI Fault Action on Timer Stop"]
     #[inline(always)]
-    pub fn dtfats(&mut self) -> DTFATS_W {
+    #[must_use]
+    pub fn dtfats(&mut self) -> DTFATS_W<10> {
         DTFATS_W::new(self)
     }
     #[doc = "Bit 11 - DTI PRS Source Enable"]
     #[inline(always)]
-    pub fn dtprsen(&mut self) -> DTPRSEN_W {
+    #[must_use]
+    pub fn dtprsen(&mut self) -> DTPRSEN_W<11> {
         DTPRSEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -172,11 +177,10 @@ impl crate::Readable for DTCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [dtcfg::W](W) writer structure"]
 impl crate::Writable for DTCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DTCFG to value 0"]
 impl crate::Resettable for DTCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -20,46 +20,52 @@ impl From<crate::W<IF_CLR_SPEC>> for W {
     }
 }
 #[doc = "Field `FETCHERENDOFBLOCK` writer - End of block interrupt flag clear"]
-pub type FETCHERENDOFBLOCK_W<'a> = crate::BitWriter<'a, u32, IF_CLR_SPEC, bool, 0>;
+pub type FETCHERENDOFBLOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_CLR_SPEC, bool, O>;
 #[doc = "Field `FETCHERSTOPPED` writer - Stopped interrupt flag clear"]
-pub type FETCHERSTOPPED_W<'a> = crate::BitWriter<'a, u32, IF_CLR_SPEC, bool, 1>;
+pub type FETCHERSTOPPED_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_CLR_SPEC, bool, O>;
 #[doc = "Field `FETCHERERROR` writer - Error interrupt flag clear"]
-pub type FETCHERERROR_W<'a> = crate::BitWriter<'a, u32, IF_CLR_SPEC, bool, 2>;
+pub type FETCHERERROR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_CLR_SPEC, bool, O>;
 #[doc = "Field `PUSHERENDOFBLOCK` writer - End of block interrupt flag clear"]
-pub type PUSHERENDOFBLOCK_W<'a> = crate::BitWriter<'a, u32, IF_CLR_SPEC, bool, 3>;
+pub type PUSHERENDOFBLOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_CLR_SPEC, bool, O>;
 #[doc = "Field `PUSHERSTOPPED` writer - Stopped interrupt flag clear"]
-pub type PUSHERSTOPPED_W<'a> = crate::BitWriter<'a, u32, IF_CLR_SPEC, bool, 4>;
+pub type PUSHERSTOPPED_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_CLR_SPEC, bool, O>;
 #[doc = "Field `PUSHERERROR` writer - Error interrupt flag clear"]
-pub type PUSHERERROR_W<'a> = crate::BitWriter<'a, u32, IF_CLR_SPEC, bool, 5>;
+pub type PUSHERERROR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_CLR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - End of block interrupt flag clear"]
     #[inline(always)]
-    pub fn fetcherendofblock(&mut self) -> FETCHERENDOFBLOCK_W {
+    #[must_use]
+    pub fn fetcherendofblock(&mut self) -> FETCHERENDOFBLOCK_W<0> {
         FETCHERENDOFBLOCK_W::new(self)
     }
     #[doc = "Bit 1 - Stopped interrupt flag clear"]
     #[inline(always)]
-    pub fn fetcherstopped(&mut self) -> FETCHERSTOPPED_W {
+    #[must_use]
+    pub fn fetcherstopped(&mut self) -> FETCHERSTOPPED_W<1> {
         FETCHERSTOPPED_W::new(self)
     }
     #[doc = "Bit 2 - Error interrupt flag clear"]
     #[inline(always)]
-    pub fn fetchererror(&mut self) -> FETCHERERROR_W {
+    #[must_use]
+    pub fn fetchererror(&mut self) -> FETCHERERROR_W<2> {
         FETCHERERROR_W::new(self)
     }
     #[doc = "Bit 3 - End of block interrupt flag clear"]
     #[inline(always)]
-    pub fn pusherendofblock(&mut self) -> PUSHERENDOFBLOCK_W {
+    #[must_use]
+    pub fn pusherendofblock(&mut self) -> PUSHERENDOFBLOCK_W<3> {
         PUSHERENDOFBLOCK_W::new(self)
     }
     #[doc = "Bit 4 - Stopped interrupt flag clear"]
     #[inline(always)]
-    pub fn pusherstopped(&mut self) -> PUSHERSTOPPED_W {
+    #[must_use]
+    pub fn pusherstopped(&mut self) -> PUSHERSTOPPED_W<4> {
         PUSHERSTOPPED_W::new(self)
     }
     #[doc = "Bit 5 - Error interrupt flag clear"]
     #[inline(always)]
-    pub fn pushererror(&mut self) -> PUSHERERROR_W {
+    #[must_use]
+    pub fn pushererror(&mut self) -> PUSHERERROR_W<5> {
         PUSHERERROR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -77,11 +83,10 @@ impl crate::RegisterSpec for IF_CLR_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_clr::W](W) writer structure"]
 impl crate::Writable for IF_CLR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF_CLR to value 0"]
 impl crate::Resettable for IF_CLR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

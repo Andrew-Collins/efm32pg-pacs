@@ -37,11 +37,11 @@ impl From<crate::W<BMPUNSPATD0_SPEC>> for W {
 #[doc = "Field `LDMA` reader - MCU LDMA privileged mode"]
 pub type LDMA_R = crate::BitReader<bool>;
 #[doc = "Field `LDMA` writer - MCU LDMA privileged mode"]
-pub type LDMA_W<'a> = crate::BitWriter<'a, u32, BMPUNSPATD0_SPEC, bool, 2>;
+pub type LDMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, BMPUNSPATD0_SPEC, bool, O>;
 #[doc = "Field `SEEXTDMA` reader - SEEXTDMA privileged mode"]
 pub type SEEXTDMA_R = crate::BitReader<bool>;
 #[doc = "Field `SEEXTDMA` writer - SEEXTDMA privileged mode"]
-pub type SEEXTDMA_W<'a> = crate::BitWriter<'a, u32, BMPUNSPATD0_SPEC, bool, 5>;
+pub type SEEXTDMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, BMPUNSPATD0_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 2 - MCU LDMA privileged mode"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 2 - MCU LDMA privileged mode"]
     #[inline(always)]
-    pub fn ldma(&mut self) -> LDMA_W {
+    #[must_use]
+    pub fn ldma(&mut self) -> LDMA_W<2> {
         LDMA_W::new(self)
     }
     #[doc = "Bit 5 - SEEXTDMA privileged mode"]
     #[inline(always)]
-    pub fn seextdma(&mut self) -> SEEXTDMA_W {
+    #[must_use]
+    pub fn seextdma(&mut self) -> SEEXTDMA_W<5> {
         SEEXTDMA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for BMPUNSPATD0_SPEC {
 #[doc = "`write(|w| ..)` method takes [bmpunspatd0::W](W) writer structure"]
 impl crate::Writable for BMPUNSPATD0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BMPUNSPATD0 to value 0"]
 impl crate::Resettable for BMPUNSPATD0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

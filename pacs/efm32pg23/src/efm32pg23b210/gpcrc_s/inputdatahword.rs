@@ -20,11 +20,13 @@ impl From<crate::W<INPUTDATAHWORD_SPEC>> for W {
     }
 }
 #[doc = "Field `INPUTDATAHWORD` writer - Input Data for 16-bit"]
-pub type INPUTDATAHWORD_W<'a> = crate::FieldWriter<'a, u32, INPUTDATAHWORD_SPEC, u16, u16, 16, 0>;
+pub type INPUTDATAHWORD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, INPUTDATAHWORD_SPEC, u16, u16, 16, O>;
 impl W {
     #[doc = "Bits 0:15 - Input Data for 16-bit"]
     #[inline(always)]
-    pub fn inputdatahword(&mut self) -> INPUTDATAHWORD_W {
+    #[must_use]
+    pub fn inputdatahword(&mut self) -> INPUTDATAHWORD_W<0> {
         INPUTDATAHWORD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -42,11 +44,10 @@ impl crate::RegisterSpec for INPUTDATAHWORD_SPEC {
 #[doc = "`write(|w| ..)` method takes [inputdatahword::W](W) writer structure"]
 impl crate::Writable for INPUTDATAHWORD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets INPUTDATAHWORD to value 0"]
 impl crate::Resettable for INPUTDATAHWORD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

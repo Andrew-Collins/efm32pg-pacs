@@ -37,19 +37,19 @@ impl From<crate::W<GRP0_IF_SPEC>> for W {
 #[doc = "Field `OVF` reader - Overflow Interrupt Flag"]
 pub type OVF_R = crate::BitReader<bool>;
 #[doc = "Field `OVF` writer - Overflow Interrupt Flag"]
-pub type OVF_W<'a> = crate::BitWriter<'a, u32, GRP0_IF_SPEC, bool, 0>;
+pub type OVF_W<'a, const O: u8> = crate::BitWriter<'a, u32, GRP0_IF_SPEC, bool, O>;
 #[doc = "Field `CMP0` reader - Compare 0 Interrupt Flag"]
 pub type CMP0_R = crate::BitReader<bool>;
 #[doc = "Field `CMP0` writer - Compare 0 Interrupt Flag"]
-pub type CMP0_W<'a> = crate::BitWriter<'a, u32, GRP0_IF_SPEC, bool, 1>;
+pub type CMP0_W<'a, const O: u8> = crate::BitWriter<'a, u32, GRP0_IF_SPEC, bool, O>;
 #[doc = "Field `CMP1` reader - Compare 1 Interrupt Flag"]
 pub type CMP1_R = crate::BitReader<bool>;
 #[doc = "Field `CMP1` writer - Compare 1 Interrupt Flag"]
-pub type CMP1_W<'a> = crate::BitWriter<'a, u32, GRP0_IF_SPEC, bool, 2>;
+pub type CMP1_W<'a, const O: u8> = crate::BitWriter<'a, u32, GRP0_IF_SPEC, bool, O>;
 #[doc = "Field `CAP0` reader - Capture 0 Interrupt Flag"]
 pub type CAP0_R = crate::BitReader<bool>;
 #[doc = "Field `CAP0` writer - Capture 0 Interrupt Flag"]
-pub type CAP0_W<'a> = crate::BitWriter<'a, u32, GRP0_IF_SPEC, bool, 3>;
+pub type CAP0_W<'a, const O: u8> = crate::BitWriter<'a, u32, GRP0_IF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Overflow Interrupt Flag"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Overflow Interrupt Flag"]
     #[inline(always)]
-    pub fn ovf(&mut self) -> OVF_W {
+    #[must_use]
+    pub fn ovf(&mut self) -> OVF_W<0> {
         OVF_W::new(self)
     }
     #[doc = "Bit 1 - Compare 0 Interrupt Flag"]
     #[inline(always)]
-    pub fn cmp0(&mut self) -> CMP0_W {
+    #[must_use]
+    pub fn cmp0(&mut self) -> CMP0_W<1> {
         CMP0_W::new(self)
     }
     #[doc = "Bit 2 - Compare 1 Interrupt Flag"]
     #[inline(always)]
-    pub fn cmp1(&mut self) -> CMP1_W {
+    #[must_use]
+    pub fn cmp1(&mut self) -> CMP1_W<2> {
         CMP1_W::new(self)
     }
     #[doc = "Bit 3 - Capture 0 Interrupt Flag"]
     #[inline(always)]
-    pub fn cap0(&mut self) -> CAP0_W {
+    #[must_use]
+    pub fn cap0(&mut self) -> CAP0_W<3> {
         CAP0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for GRP0_IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [grp0_if::W](W) writer structure"]
 impl crate::Writable for GRP0_IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GRP0_IF to value 0"]
 impl crate::Resettable for GRP0_IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

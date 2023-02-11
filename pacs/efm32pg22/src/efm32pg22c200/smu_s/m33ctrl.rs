@@ -37,23 +37,23 @@ impl From<crate::W<M33CTRL_SPEC>> for W {
 #[doc = "Field `LOCKSVTAIRCR` reader - LOCKSVTAIRCR control of M33 CPU"]
 pub type LOCKSVTAIRCR_R = crate::BitReader<bool>;
 #[doc = "Field `LOCKSVTAIRCR` writer - LOCKSVTAIRCR control of M33 CPU"]
-pub type LOCKSVTAIRCR_W<'a> = crate::BitWriter<'a, u32, M33CTRL_SPEC, bool, 0>;
+pub type LOCKSVTAIRCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, M33CTRL_SPEC, bool, O>;
 #[doc = "Field `LOCKNSVTOR` reader - LOCKNSVTOR control of M33 CPU"]
 pub type LOCKNSVTOR_R = crate::BitReader<bool>;
 #[doc = "Field `LOCKNSVTOR` writer - LOCKNSVTOR control of M33 CPU"]
-pub type LOCKNSVTOR_W<'a> = crate::BitWriter<'a, u32, M33CTRL_SPEC, bool, 1>;
+pub type LOCKNSVTOR_W<'a, const O: u8> = crate::BitWriter<'a, u32, M33CTRL_SPEC, bool, O>;
 #[doc = "Field `LOCKSMPU` reader - LOCKSMPU control of M33 CPU"]
 pub type LOCKSMPU_R = crate::BitReader<bool>;
 #[doc = "Field `LOCKSMPU` writer - LOCKSMPU control of M33 CPU"]
-pub type LOCKSMPU_W<'a> = crate::BitWriter<'a, u32, M33CTRL_SPEC, bool, 2>;
+pub type LOCKSMPU_W<'a, const O: u8> = crate::BitWriter<'a, u32, M33CTRL_SPEC, bool, O>;
 #[doc = "Field `LOCKNSMPU` reader - LOCKNSMPU control of M33 CPU"]
 pub type LOCKNSMPU_R = crate::BitReader<bool>;
 #[doc = "Field `LOCKNSMPU` writer - LOCKNSMPU control of M33 CPU"]
-pub type LOCKNSMPU_W<'a> = crate::BitWriter<'a, u32, M33CTRL_SPEC, bool, 3>;
+pub type LOCKNSMPU_W<'a, const O: u8> = crate::BitWriter<'a, u32, M33CTRL_SPEC, bool, O>;
 #[doc = "Field `LOCKSAU` reader - LOCKSAU control of M33 CPU"]
 pub type LOCKSAU_R = crate::BitReader<bool>;
 #[doc = "Field `LOCKSAU` writer - LOCKSAU control of M33 CPU"]
-pub type LOCKSAU_W<'a> = crate::BitWriter<'a, u32, M33CTRL_SPEC, bool, 4>;
+pub type LOCKSAU_W<'a, const O: u8> = crate::BitWriter<'a, u32, M33CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - LOCKSVTAIRCR control of M33 CPU"]
     #[inline(always)]
@@ -84,27 +84,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - LOCKSVTAIRCR control of M33 CPU"]
     #[inline(always)]
-    pub fn locksvtaircr(&mut self) -> LOCKSVTAIRCR_W {
+    #[must_use]
+    pub fn locksvtaircr(&mut self) -> LOCKSVTAIRCR_W<0> {
         LOCKSVTAIRCR_W::new(self)
     }
     #[doc = "Bit 1 - LOCKNSVTOR control of M33 CPU"]
     #[inline(always)]
-    pub fn locknsvtor(&mut self) -> LOCKNSVTOR_W {
+    #[must_use]
+    pub fn locknsvtor(&mut self) -> LOCKNSVTOR_W<1> {
         LOCKNSVTOR_W::new(self)
     }
     #[doc = "Bit 2 - LOCKSMPU control of M33 CPU"]
     #[inline(always)]
-    pub fn locksmpu(&mut self) -> LOCKSMPU_W {
+    #[must_use]
+    pub fn locksmpu(&mut self) -> LOCKSMPU_W<2> {
         LOCKSMPU_W::new(self)
     }
     #[doc = "Bit 3 - LOCKNSMPU control of M33 CPU"]
     #[inline(always)]
-    pub fn locknsmpu(&mut self) -> LOCKNSMPU_W {
+    #[must_use]
+    pub fn locknsmpu(&mut self) -> LOCKNSMPU_W<3> {
         LOCKNSMPU_W::new(self)
     }
     #[doc = "Bit 4 - LOCKSAU control of M33 CPU"]
     #[inline(always)]
-    pub fn locksau(&mut self) -> LOCKSAU_W {
+    #[must_use]
+    pub fn locksau(&mut self) -> LOCKSAU_W<4> {
         LOCKSAU_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -126,11 +131,10 @@ impl crate::Readable for M33CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [m33ctrl::W](W) writer structure"]
 impl crate::Writable for M33CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets M33CTRL to value 0"]
 impl crate::Resettable for M33CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

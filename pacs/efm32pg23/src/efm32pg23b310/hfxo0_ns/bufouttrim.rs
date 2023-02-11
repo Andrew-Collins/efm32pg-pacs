@@ -37,7 +37,7 @@ impl From<crate::W<BUFOUTTRIM_SPEC>> for W {
 #[doc = "Field `VTRTRIMANA` reader - BUFOUT Reference Trim"]
 pub type VTRTRIMANA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `VTRTRIMANA` writer - BUFOUT Reference Trim"]
-pub type VTRTRIMANA_W<'a> = crate::FieldWriter<'a, u32, BUFOUTTRIM_SPEC, u8, u8, 4, 0>;
+pub type VTRTRIMANA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BUFOUTTRIM_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - BUFOUT Reference Trim"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - BUFOUT Reference Trim"]
     #[inline(always)]
-    pub fn vtrtrimana(&mut self) -> VTRTRIMANA_W {
+    #[must_use]
+    pub fn vtrtrimana(&mut self) -> VTRTRIMANA_W<0> {
         VTRTRIMANA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for BUFOUTTRIM_SPEC {
 #[doc = "`write(|w| ..)` method takes [bufouttrim::W](W) writer structure"]
 impl crate::Writable for BUFOUTTRIM_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BUFOUTTRIM to value 0x08"]
 impl crate::Resettable for BUFOUTTRIM_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x08
-    }
+    const RESET_VALUE: Self::Ux = 0x08;
 }

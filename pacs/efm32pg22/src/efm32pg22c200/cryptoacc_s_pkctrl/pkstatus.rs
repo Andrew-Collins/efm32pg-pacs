@@ -31,8 +31,10 @@ pub type SIGNOTVALID_R = crate::BitReader<bool>;
 pub type PARAMABNOTVALID_R = crate::BitReader<bool>;
 #[doc = "Field `NOTINVERTIBLE` reader - Not invertible"]
 pub type NOTINVERTIBLE_R = crate::BitReader<bool>;
+#[doc = "Field `COMPOSITE` reader - Composite"]
+pub type COMPOSITE_R = crate::BitReader<COMPOSITE_A>;
 #[doc = "Composite\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum COMPOSITE_A {
     #[doc = "0: random number under test is probably prime"]
     FALSE = 0,
@@ -45,8 +47,6 @@ impl From<COMPOSITE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `COMPOSITE` reader - Composite"]
-pub type COMPOSITE_R = crate::BitReader<COMPOSITE_A>;
 impl COMPOSITE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -151,8 +151,5 @@ impl crate::Readable for PKSTATUS_SPEC {
 }
 #[doc = "`reset()` method sets PKSTATUS to value 0"]
 impl crate::Resettable for PKSTATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

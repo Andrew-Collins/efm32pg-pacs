@@ -37,27 +37,27 @@ impl From<crate::W<BIASCONF_SPEC>> for W {
 #[doc = "Field `NADUTYEM01` reader - NA DUTY in EM01"]
 pub type NADUTYEM01_R = crate::BitReader<bool>;
 #[doc = "Field `NADUTYEM01` writer - NA DUTY in EM01"]
-pub type NADUTYEM01_W<'a> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, 2>;
+pub type NADUTYEM01_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
 #[doc = "Field `LPEM01` reader - LP in EM01"]
 pub type LPEM01_R = crate::BitReader<bool>;
 #[doc = "Field `LPEM01` writer - LP in EM01"]
-pub type LPEM01_W<'a> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, 3>;
+pub type LPEM01_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
 #[doc = "Field `GMCEM23` reader - GMC in EM234"]
 pub type GMCEM23_R = crate::BitReader<bool>;
 #[doc = "Field `GMCEM23` writer - GMC in EM234"]
-pub type GMCEM23_W<'a> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, 4>;
+pub type GMCEM23_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
 #[doc = "Field `UADUTYEM23` reader - UADUTY in EM234"]
 pub type UADUTYEM23_R = crate::BitReader<bool>;
 #[doc = "Field `UADUTYEM23` writer - UADUTY in EM234"]
-pub type UADUTYEM23_W<'a> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, 5>;
+pub type UADUTYEM23_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
 #[doc = "Field `NADUTYEM23` reader - NA DUTY in EM234"]
 pub type NADUTYEM23_R = crate::BitReader<bool>;
 #[doc = "Field `NADUTYEM23` writer - NA DUTY in EM234"]
-pub type NADUTYEM23_W<'a> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, 6>;
+pub type NADUTYEM23_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
 #[doc = "Field `LPEM23` reader - LP in EM234"]
 pub type LPEM23_R = crate::BitReader<bool>;
 #[doc = "Field `LPEM23` writer - LP in EM234"]
-pub type LPEM23_W<'a> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, 7>;
+pub type LPEM23_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 2 - NA DUTY in EM01"]
     #[inline(always)]
@@ -93,32 +93,38 @@ impl R {
 impl W {
     #[doc = "Bit 2 - NA DUTY in EM01"]
     #[inline(always)]
-    pub fn nadutyem01(&mut self) -> NADUTYEM01_W {
+    #[must_use]
+    pub fn nadutyem01(&mut self) -> NADUTYEM01_W<2> {
         NADUTYEM01_W::new(self)
     }
     #[doc = "Bit 3 - LP in EM01"]
     #[inline(always)]
-    pub fn lpem01(&mut self) -> LPEM01_W {
+    #[must_use]
+    pub fn lpem01(&mut self) -> LPEM01_W<3> {
         LPEM01_W::new(self)
     }
     #[doc = "Bit 4 - GMC in EM234"]
     #[inline(always)]
-    pub fn gmcem23(&mut self) -> GMCEM23_W {
+    #[must_use]
+    pub fn gmcem23(&mut self) -> GMCEM23_W<4> {
         GMCEM23_W::new(self)
     }
     #[doc = "Bit 5 - UADUTY in EM234"]
     #[inline(always)]
-    pub fn uadutyem23(&mut self) -> UADUTYEM23_W {
+    #[must_use]
+    pub fn uadutyem23(&mut self) -> UADUTYEM23_W<5> {
         UADUTYEM23_W::new(self)
     }
     #[doc = "Bit 6 - NA DUTY in EM234"]
     #[inline(always)]
-    pub fn nadutyem23(&mut self) -> NADUTYEM23_W {
+    #[must_use]
+    pub fn nadutyem23(&mut self) -> NADUTYEM23_W<6> {
         NADUTYEM23_W::new(self)
     }
     #[doc = "Bit 7 - LP in EM234"]
     #[inline(always)]
-    pub fn lpem23(&mut self) -> LPEM23_W {
+    #[must_use]
+    pub fn lpem23(&mut self) -> LPEM23_W<7> {
         LPEM23_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -140,11 +146,10 @@ impl crate::Readable for BIASCONF_SPEC {
 #[doc = "`write(|w| ..)` method takes [biasconf::W](W) writer structure"]
 impl crate::Writable for BIASCONF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BIASCONF to value 0xf8"]
 impl crate::Resettable for BIASCONF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xf8
-    }
+    const RESET_VALUE: Self::Ux = 0xf8;
 }

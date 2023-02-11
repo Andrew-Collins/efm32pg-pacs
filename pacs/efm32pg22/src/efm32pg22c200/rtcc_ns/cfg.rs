@@ -34,8 +34,10 @@ impl From<crate::W<CFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
+pub type DEBUGRUN_R = crate::BitReader<DEBUGRUN_A>;
 #[doc = "Debug Mode Run Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DEBUGRUN_A {
     #[doc = "0: RTCC is frozen in debug mode"]
     X0 = 0,
@@ -48,8 +50,6 @@ impl From<DEBUGRUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
-pub type DEBUGRUN_R = crate::BitReader<DEBUGRUN_A>;
 impl DEBUGRUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl DEBUGRUN_R {
     }
 }
 #[doc = "Field `DEBUGRUN` writer - Debug Mode Run Enable"]
-pub type DEBUGRUN_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, DEBUGRUN_A, 0>;
-impl<'a> DEBUGRUN_W<'a> {
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, DEBUGRUN_A, O>;
+impl<'a, const O: u8> DEBUGRUN_W<'a, O> {
     #[doc = "RTCC is frozen in debug mode"]
     #[inline(always)]
     pub fn x0(self) -> &'a mut W {
@@ -87,13 +87,15 @@ impl<'a> DEBUGRUN_W<'a> {
 #[doc = "Field `PRECNTCCV0TOP` reader - Pre-counter CCV0 top value enable."]
 pub type PRECNTCCV0TOP_R = crate::BitReader<bool>;
 #[doc = "Field `PRECNTCCV0TOP` writer - Pre-counter CCV0 top value enable."]
-pub type PRECNTCCV0TOP_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 1>;
+pub type PRECNTCCV0TOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 #[doc = "Field `CNTCCV1TOP` reader - CCV1 top value enable"]
 pub type CNTCCV1TOP_R = crate::BitReader<bool>;
 #[doc = "Field `CNTCCV1TOP` writer - CCV1 top value enable"]
-pub type CNTCCV1TOP_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 2>;
+pub type CNTCCV1TOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
+#[doc = "Field `CNTTICK` reader - Counter prescaler mode."]
+pub type CNTTICK_R = crate::BitReader<CNTTICK_A>;
 #[doc = "Counter prescaler mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CNTTICK_A {
     #[doc = "0: CNT register ticks according to configuration in CNTPRESC."]
     PRESC = 0,
@@ -106,8 +108,6 @@ impl From<CNTTICK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CNTTICK` reader - Counter prescaler mode."]
-pub type CNTTICK_R = crate::BitReader<CNTTICK_A>;
 impl CNTTICK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -129,8 +129,8 @@ impl CNTTICK_R {
     }
 }
 #[doc = "Field `CNTTICK` writer - Counter prescaler mode."]
-pub type CNTTICK_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, CNTTICK_A, 3>;
-impl<'a> CNTTICK_W<'a> {
+pub type CNTTICK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, CNTTICK_A, O>;
+impl<'a, const O: u8> CNTTICK_W<'a, O> {
     #[doc = "CNT register ticks according to configuration in CNTPRESC."]
     #[inline(always)]
     pub fn presc(self) -> &'a mut W {
@@ -142,8 +142,10 @@ impl<'a> CNTTICK_W<'a> {
         self.variant(CNTTICK_A::CCV0MATCH)
     }
 }
+#[doc = "Field `CNTPRESC` reader - Counter prescaler value."]
+pub type CNTPRESC_R = crate::FieldReader<u8, CNTPRESC_A>;
 #[doc = "Counter prescaler value.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CNTPRESC_A {
     #[doc = "0: CLK_CNT = (RTCC LF CLK)/1"]
@@ -185,8 +187,6 @@ impl From<CNTPRESC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CNTPRESC` reader - Counter prescaler value."]
-pub type CNTPRESC_R = crate::FieldReader<u8, CNTPRESC_A>;
 impl CNTPRESC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -293,8 +293,9 @@ impl CNTPRESC_R {
     }
 }
 #[doc = "Field `CNTPRESC` writer - Counter prescaler value."]
-pub type CNTPRESC_W<'a> = crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, CNTPRESC_A, 4, 4>;
-impl<'a> CNTPRESC_W<'a> {
+pub type CNTPRESC_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, CNTPRESC_A, 4, O>;
+impl<'a, const O: u8> CNTPRESC_W<'a, O> {
     #[doc = "CLK_CNT = (RTCC LF CLK)/1"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -406,27 +407,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Debug Mode Run Enable"]
     #[inline(always)]
-    pub fn debugrun(&mut self) -> DEBUGRUN_W {
+    #[must_use]
+    pub fn debugrun(&mut self) -> DEBUGRUN_W<0> {
         DEBUGRUN_W::new(self)
     }
     #[doc = "Bit 1 - Pre-counter CCV0 top value enable."]
     #[inline(always)]
-    pub fn precntccv0top(&mut self) -> PRECNTCCV0TOP_W {
+    #[must_use]
+    pub fn precntccv0top(&mut self) -> PRECNTCCV0TOP_W<1> {
         PRECNTCCV0TOP_W::new(self)
     }
     #[doc = "Bit 2 - CCV1 top value enable"]
     #[inline(always)]
-    pub fn cntccv1top(&mut self) -> CNTCCV1TOP_W {
+    #[must_use]
+    pub fn cntccv1top(&mut self) -> CNTCCV1TOP_W<2> {
         CNTCCV1TOP_W::new(self)
     }
     #[doc = "Bit 3 - Counter prescaler mode."]
     #[inline(always)]
-    pub fn cnttick(&mut self) -> CNTTICK_W {
+    #[must_use]
+    pub fn cnttick(&mut self) -> CNTTICK_W<3> {
         CNTTICK_W::new(self)
     }
     #[doc = "Bits 4:7 - Counter prescaler value."]
     #[inline(always)]
-    pub fn cntpresc(&mut self) -> CNTPRESC_W {
+    #[must_use]
+    pub fn cntpresc(&mut self) -> CNTPRESC_W<4> {
         CNTPRESC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -448,11 +454,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

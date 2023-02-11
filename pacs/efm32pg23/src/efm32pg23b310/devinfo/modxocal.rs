@@ -47,8 +47,5 @@ impl crate::Readable for MODXOCAL_SPEC {
 }
 #[doc = "`reset()` method sets MODXOCAL to value 0x007f_ffff"]
 impl crate::Resettable for MODXOCAL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x007f_ffff
-    }
+    const RESET_VALUE: Self::Ux = 0x007f_ffff;
 }

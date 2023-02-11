@@ -20,7 +20,7 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "WDOG Timer Clear\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLEAR_AW {
     #[doc = "0: WDOG timer is unchanged."]
     UNCHANGED = 0,
@@ -34,8 +34,8 @@ impl From<CLEAR_AW> for bool {
     }
 }
 #[doc = "Field `CLEAR` writer - WDOG Timer Clear"]
-pub type CLEAR_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, CLEAR_AW, 0>;
-impl<'a> CLEAR_W<'a> {
+pub type CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, CLEAR_AW, O>;
+impl<'a, const O: u8> CLEAR_W<'a, O> {
     #[doc = "WDOG timer is unchanged."]
     #[inline(always)]
     pub fn unchanged(self) -> &'a mut W {
@@ -50,7 +50,8 @@ impl<'a> CLEAR_W<'a> {
 impl W {
     #[doc = "Bit 0 - WDOG Timer Clear"]
     #[inline(always)]
-    pub fn clear(&mut self) -> CLEAR_W {
+    #[must_use]
+    pub fn clear(&mut self) -> CLEAR_W<0> {
         CLEAR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -68,11 +69,10 @@ impl crate::RegisterSpec for CMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmd::W](W) writer structure"]
 impl crate::Writable for CMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMD to value 0"]
 impl crate::Resettable for CMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

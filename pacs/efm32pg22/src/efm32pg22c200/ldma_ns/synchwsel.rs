@@ -34,8 +34,10 @@ impl From<crate::W<SYNCHWSEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SYNCSETEDGE` reader - Hardware Sync Trigger Set Edge Select"]
+pub type SYNCSETEDGE_R = crate::FieldReader<u8, SYNCSETEDGE_A>;
 #[doc = "Hardware Sync Trigger Set Edge Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SYNCSETEDGE_A {
     #[doc = "0: Use rising edge detection"]
@@ -49,8 +51,6 @@ impl From<SYNCSETEDGE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SYNCSETEDGE` reader - Hardware Sync Trigger Set Edge Select"]
-pub type SYNCSETEDGE_R = crate::FieldReader<u8, SYNCSETEDGE_A>;
 impl SYNCSETEDGE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -73,8 +73,9 @@ impl SYNCSETEDGE_R {
     }
 }
 #[doc = "Field `SYNCSETEDGE` writer - Hardware Sync Trigger Set Edge Select"]
-pub type SYNCSETEDGE_W<'a> = crate::FieldWriter<'a, u32, SYNCHWSEL_SPEC, u8, SYNCSETEDGE_A, 8, 0>;
-impl<'a> SYNCSETEDGE_W<'a> {
+pub type SYNCSETEDGE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SYNCHWSEL_SPEC, u8, SYNCSETEDGE_A, 8, O>;
+impl<'a, const O: u8> SYNCSETEDGE_W<'a, O> {
     #[doc = "Use rising edge detection"]
     #[inline(always)]
     pub fn rise(self) -> &'a mut W {
@@ -86,8 +87,10 @@ impl<'a> SYNCSETEDGE_W<'a> {
         self.variant(SYNCSETEDGE_A::FALL)
     }
 }
+#[doc = "Field `SYNCCLREDGE` reader - Hardware Sync Trigger Clear Edge Select"]
+pub type SYNCCLREDGE_R = crate::FieldReader<u8, SYNCCLREDGE_A>;
 #[doc = "Hardware Sync Trigger Clear Edge Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SYNCCLREDGE_A {
     #[doc = "0: Use rising edge detection"]
@@ -101,8 +104,6 @@ impl From<SYNCCLREDGE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SYNCCLREDGE` reader - Hardware Sync Trigger Clear Edge Select"]
-pub type SYNCCLREDGE_R = crate::FieldReader<u8, SYNCCLREDGE_A>;
 impl SYNCCLREDGE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -125,8 +126,9 @@ impl SYNCCLREDGE_R {
     }
 }
 #[doc = "Field `SYNCCLREDGE` writer - Hardware Sync Trigger Clear Edge Select"]
-pub type SYNCCLREDGE_W<'a> = crate::FieldWriter<'a, u32, SYNCHWSEL_SPEC, u8, SYNCCLREDGE_A, 8, 16>;
-impl<'a> SYNCCLREDGE_W<'a> {
+pub type SYNCCLREDGE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SYNCHWSEL_SPEC, u8, SYNCCLREDGE_A, 8, O>;
+impl<'a, const O: u8> SYNCCLREDGE_W<'a, O> {
     #[doc = "Use rising edge detection"]
     #[inline(always)]
     pub fn rise(self) -> &'a mut W {
@@ -153,12 +155,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Hardware Sync Trigger Set Edge Select"]
     #[inline(always)]
-    pub fn syncsetedge(&mut self) -> SYNCSETEDGE_W {
+    #[must_use]
+    pub fn syncsetedge(&mut self) -> SYNCSETEDGE_W<0> {
         SYNCSETEDGE_W::new(self)
     }
     #[doc = "Bits 16:23 - Hardware Sync Trigger Clear Edge Select"]
     #[inline(always)]
-    pub fn syncclredge(&mut self) -> SYNCCLREDGE_W {
+    #[must_use]
+    pub fn syncclredge(&mut self) -> SYNCCLREDGE_W<16> {
         SYNCCLREDGE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -180,11 +184,10 @@ impl crate::Readable for SYNCHWSEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [synchwsel::W](W) writer structure"]
 impl crate::Writable for SYNCHWSEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SYNCHWSEL to value 0"]
 impl crate::Resettable for SYNCHWSEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

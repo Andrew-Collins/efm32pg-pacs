@@ -37,23 +37,23 @@ impl From<crate::W<CLKEN1_SPEC>> for W {
 #[doc = "Field `CRYPTOACC` reader - Enable Bus Clock"]
 pub type CRYPTOACC_R = crate::BitReader<bool>;
 #[doc = "Field `CRYPTOACC` writer - Enable Bus Clock"]
-pub type CRYPTOACC_W<'a> = crate::BitWriter<'a, u32, CLKEN1_SPEC, bool, 13>;
+pub type CRYPTOACC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN1_SPEC, bool, O>;
 #[doc = "Field `SMU` reader - Enable Bus Clock"]
 pub type SMU_R = crate::BitReader<bool>;
 #[doc = "Field `SMU` writer - Enable Bus Clock"]
-pub type SMU_W<'a> = crate::BitWriter<'a, u32, CLKEN1_SPEC, bool, 15>;
+pub type SMU_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN1_SPEC, bool, O>;
 #[doc = "Field `ICACHE0` reader - Enable Bus Clock"]
 pub type ICACHE0_R = crate::BitReader<bool>;
 #[doc = "Field `ICACHE0` writer - Enable Bus Clock"]
-pub type ICACHE0_W<'a> = crate::BitWriter<'a, u32, CLKEN1_SPEC, bool, 16>;
+pub type ICACHE0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN1_SPEC, bool, O>;
 #[doc = "Field `MSC` reader - Enable Bus Clock"]
 pub type MSC_R = crate::BitReader<bool>;
 #[doc = "Field `MSC` writer - Enable Bus Clock"]
-pub type MSC_W<'a> = crate::BitWriter<'a, u32, CLKEN1_SPEC, bool, 17>;
+pub type MSC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN1_SPEC, bool, O>;
 #[doc = "Field `TIMER4` reader - Enable Bus Clock"]
 pub type TIMER4_R = crate::BitReader<bool>;
 #[doc = "Field `TIMER4` writer - Enable Bus Clock"]
-pub type TIMER4_W<'a> = crate::BitWriter<'a, u32, CLKEN1_SPEC, bool, 18>;
+pub type TIMER4_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKEN1_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 13 - Enable Bus Clock"]
     #[inline(always)]
@@ -84,27 +84,32 @@ impl R {
 impl W {
     #[doc = "Bit 13 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn cryptoacc(&mut self) -> CRYPTOACC_W {
+    #[must_use]
+    pub fn cryptoacc(&mut self) -> CRYPTOACC_W<13> {
         CRYPTOACC_W::new(self)
     }
     #[doc = "Bit 15 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn smu(&mut self) -> SMU_W {
+    #[must_use]
+    pub fn smu(&mut self) -> SMU_W<15> {
         SMU_W::new(self)
     }
     #[doc = "Bit 16 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn icache0(&mut self) -> ICACHE0_W {
+    #[must_use]
+    pub fn icache0(&mut self) -> ICACHE0_W<16> {
         ICACHE0_W::new(self)
     }
     #[doc = "Bit 17 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn msc(&mut self) -> MSC_W {
+    #[must_use]
+    pub fn msc(&mut self) -> MSC_W<17> {
         MSC_W::new(self)
     }
     #[doc = "Bit 18 - Enable Bus Clock"]
     #[inline(always)]
-    pub fn timer4(&mut self) -> TIMER4_W {
+    #[must_use]
+    pub fn timer4(&mut self) -> TIMER4_W<18> {
         TIMER4_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -126,11 +131,10 @@ impl crate::Readable for CLKEN1_SPEC {
 #[doc = "`write(|w| ..)` method takes [clken1::W](W) writer structure"]
 impl crate::Writable for CLKEN1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CLKEN1 to value 0"]
 impl crate::Resettable for CLKEN1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

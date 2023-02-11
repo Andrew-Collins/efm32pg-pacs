@@ -37,7 +37,7 @@ impl From<crate::W<SADDRMASK_SPEC>> for W {
 #[doc = "Field `SADDRMASK` reader - Follower Address Mask"]
 pub type SADDRMASK_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SADDRMASK` writer - Follower Address Mask"]
-pub type SADDRMASK_W<'a> = crate::FieldWriter<'a, u32, SADDRMASK_SPEC, u8, u8, 7, 1>;
+pub type SADDRMASK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SADDRMASK_SPEC, u8, u8, 7, O>;
 impl R {
     #[doc = "Bits 1:7 - Follower Address Mask"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 1:7 - Follower Address Mask"]
     #[inline(always)]
-    pub fn saddrmask(&mut self) -> SADDRMASK_W {
+    #[must_use]
+    pub fn saddrmask(&mut self) -> SADDRMASK_W<1> {
         SADDRMASK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for SADDRMASK_SPEC {
 #[doc = "`write(|w| ..)` method takes [saddrmask::W](W) writer structure"]
 impl crate::Writable for SADDRMASK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SADDRMASK to value 0"]
 impl crate::Resettable for SADDRMASK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -13,8 +13,10 @@ impl From<crate::R<LEGACY_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `DEVICEFAMILY` reader - Device Family"]
+pub type DEVICEFAMILY_R = crate::FieldReader<u8, DEVICEFAMILY_A>;
 #[doc = "Device Family\n\nValue on reset: 128"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DEVICEFAMILY_A {
     #[doc = "16: EFR32 Mighty Gecko Family Series 1 Device Config 1"]
@@ -134,8 +136,6 @@ impl From<DEVICEFAMILY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DEVICEFAMILY` reader - Device Family"]
-pub type DEVICEFAMILY_R = crate::FieldReader<u8, DEVICEFAMILY_A>;
 impl DEVICEFAMILY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -493,8 +493,5 @@ impl crate::Readable for LEGACY_SPEC {
 }
 #[doc = "`reset()` method sets LEGACY to value 0x0080_0000"]
 impl crate::Resettable for LEGACY_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0080_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0080_0000;
 }

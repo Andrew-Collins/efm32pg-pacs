@@ -37,19 +37,19 @@ impl From<crate::W<IF_SPEC>> for W {
 #[doc = "Field `HITOF` reader - Hit Overflow Interrupt Flag"]
 pub type HITOF_R = crate::BitReader<bool>;
 #[doc = "Field `HITOF` writer - Hit Overflow Interrupt Flag"]
-pub type HITOF_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 0>;
+pub type HITOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `MISSOF` reader - Miss Overflow Interrupt Flag"]
 pub type MISSOF_R = crate::BitReader<bool>;
 #[doc = "Field `MISSOF` writer - Miss Overflow Interrupt Flag"]
-pub type MISSOF_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 1>;
+pub type MISSOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `AHITOF` reader - Advanced Hit Overflow Interrupt Flag"]
 pub type AHITOF_R = crate::BitReader<bool>;
 #[doc = "Field `AHITOF` writer - Advanced Hit Overflow Interrupt Flag"]
-pub type AHITOF_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 2>;
+pub type AHITOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `RAMERROR` reader - RAM error Interrupt Flag"]
 pub type RAMERROR_R = crate::BitReader<bool>;
 #[doc = "Field `RAMERROR` writer - RAM error Interrupt Flag"]
-pub type RAMERROR_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 8>;
+pub type RAMERROR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Hit Overflow Interrupt Flag"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Hit Overflow Interrupt Flag"]
     #[inline(always)]
-    pub fn hitof(&mut self) -> HITOF_W {
+    #[must_use]
+    pub fn hitof(&mut self) -> HITOF_W<0> {
         HITOF_W::new(self)
     }
     #[doc = "Bit 1 - Miss Overflow Interrupt Flag"]
     #[inline(always)]
-    pub fn missof(&mut self) -> MISSOF_W {
+    #[must_use]
+    pub fn missof(&mut self) -> MISSOF_W<1> {
         MISSOF_W::new(self)
     }
     #[doc = "Bit 2 - Advanced Hit Overflow Interrupt Flag"]
     #[inline(always)]
-    pub fn ahitof(&mut self) -> AHITOF_W {
+    #[must_use]
+    pub fn ahitof(&mut self) -> AHITOF_W<2> {
         AHITOF_W::new(self)
     }
     #[doc = "Bit 8 - RAM error Interrupt Flag"]
     #[inline(always)]
-    pub fn ramerror(&mut self) -> RAMERROR_W {
+    #[must_use]
+    pub fn ramerror(&mut self) -> RAMERROR_W<8> {
         RAMERROR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_::W](W) writer structure"]
 impl crate::Writable for IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

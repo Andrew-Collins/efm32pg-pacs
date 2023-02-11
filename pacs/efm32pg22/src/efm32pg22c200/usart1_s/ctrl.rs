@@ -34,8 +34,10 @@ impl From<crate::W<CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SYNC` reader - USART Synchronous Mode"]
+pub type SYNC_R = crate::BitReader<SYNC_A>;
 #[doc = "USART Synchronous Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYNC_A {
     #[doc = "0: The USART operates in asynchronous mode"]
     DISABLE = 0,
@@ -48,8 +50,6 @@ impl From<SYNC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SYNC` reader - USART Synchronous Mode"]
-pub type SYNC_R = crate::BitReader<SYNC_A>;
 impl SYNC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl SYNC_R {
     }
 }
 #[doc = "Field `SYNC` writer - USART Synchronous Mode"]
-pub type SYNC_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, SYNC_A, 0>;
-impl<'a> SYNC_W<'a> {
+pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, SYNC_A, O>;
+impl<'a, const O: u8> SYNC_W<'a, O> {
     #[doc = "The USART operates in asynchronous mode"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -84,8 +84,10 @@ impl<'a> SYNC_W<'a> {
         self.variant(SYNC_A::ENABLE)
     }
 }
+#[doc = "Field `LOOPBK` reader - Loopback Enable"]
+pub type LOOPBK_R = crate::BitReader<LOOPBK_A>;
 #[doc = "Loopback Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOOPBK_A {
     #[doc = "0: The receiver is connected to and receives data from U(S)n_RX"]
     DISABLE = 0,
@@ -98,8 +100,6 @@ impl From<LOOPBK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOOPBK` reader - Loopback Enable"]
-pub type LOOPBK_R = crate::BitReader<LOOPBK_A>;
 impl LOOPBK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,8 @@ impl LOOPBK_R {
     }
 }
 #[doc = "Field `LOOPBK` writer - Loopback Enable"]
-pub type LOOPBK_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, LOOPBK_A, 1>;
-impl<'a> LOOPBK_W<'a> {
+pub type LOOPBK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, LOOPBK_A, O>;
+impl<'a, const O: u8> LOOPBK_W<'a, O> {
     #[doc = "The receiver is connected to and receives data from U(S)n_RX"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -134,8 +134,10 @@ impl<'a> LOOPBK_W<'a> {
         self.variant(LOOPBK_A::ENABLE)
     }
 }
+#[doc = "Field `CCEN` reader - Collision Check Enable"]
+pub type CCEN_R = crate::BitReader<CCEN_A>;
 #[doc = "Collision Check Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CCEN_A {
     #[doc = "0: Collision check is disabled"]
     DISABLE = 0,
@@ -148,8 +150,6 @@ impl From<CCEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CCEN` reader - Collision Check Enable"]
-pub type CCEN_R = crate::BitReader<CCEN_A>;
 impl CCEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -171,8 +171,8 @@ impl CCEN_R {
     }
 }
 #[doc = "Field `CCEN` writer - Collision Check Enable"]
-pub type CCEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, CCEN_A, 2>;
-impl<'a> CCEN_W<'a> {
+pub type CCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, CCEN_A, O>;
+impl<'a, const O: u8> CCEN_W<'a, O> {
     #[doc = "Collision check is disabled"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -184,8 +184,10 @@ impl<'a> CCEN_W<'a> {
         self.variant(CCEN_A::ENABLE)
     }
 }
+#[doc = "Field `MPM` reader - Multi-Processor Mode"]
+pub type MPM_R = crate::BitReader<MPM_A>;
 #[doc = "Multi-Processor Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MPM_A {
     #[doc = "0: The 9th bit of incoming frames has no special function"]
     DISABLE = 0,
@@ -198,8 +200,6 @@ impl From<MPM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MPM` reader - Multi-Processor Mode"]
-pub type MPM_R = crate::BitReader<MPM_A>;
 impl MPM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -221,8 +221,8 @@ impl MPM_R {
     }
 }
 #[doc = "Field `MPM` writer - Multi-Processor Mode"]
-pub type MPM_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, MPM_A, 3>;
-impl<'a> MPM_W<'a> {
+pub type MPM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, MPM_A, O>;
+impl<'a, const O: u8> MPM_W<'a, O> {
     #[doc = "The 9th bit of incoming frames has no special function"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -237,9 +237,11 @@ impl<'a> MPM_W<'a> {
 #[doc = "Field `MPAB` reader - Multi-Processor Address-Bit"]
 pub type MPAB_R = crate::BitReader<bool>;
 #[doc = "Field `MPAB` writer - Multi-Processor Address-Bit"]
-pub type MPAB_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 4>;
+pub type MPAB_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `OVS` reader - Oversampling"]
+pub type OVS_R = crate::FieldReader<u8, OVS_A>;
 #[doc = "Oversampling\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OVS_A {
     #[doc = "0: Regular UART mode with 16X oversampling in asynchronous mode"]
@@ -257,8 +259,6 @@ impl From<OVS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OVS` reader - Oversampling"]
-pub type OVS_R = crate::FieldReader<u8, OVS_A>;
 impl OVS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -293,8 +293,8 @@ impl OVS_R {
     }
 }
 #[doc = "Field `OVS` writer - Oversampling"]
-pub type OVS_W<'a> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, OVS_A, 2, 5>;
-impl<'a> OVS_W<'a> {
+pub type OVS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, OVS_A, 2, O>;
+impl<'a, const O: u8> OVS_W<'a, O> {
     #[doc = "Regular UART mode with 16X oversampling in asynchronous mode"]
     #[inline(always)]
     pub fn x16(self) -> &'a mut W {
@@ -316,8 +316,10 @@ impl<'a> OVS_W<'a> {
         self.variant(OVS_A::X4)
     }
 }
+#[doc = "Field `CLKPOL` reader - Clock Polarity"]
+pub type CLKPOL_R = crate::BitReader<CLKPOL_A>;
 #[doc = "Clock Polarity\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLKPOL_A {
     #[doc = "0: The bus clock used in synchronous mode has a low base value"]
     IDLELOW = 0,
@@ -330,8 +332,6 @@ impl From<CLKPOL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLKPOL` reader - Clock Polarity"]
-pub type CLKPOL_R = crate::BitReader<CLKPOL_A>;
 impl CLKPOL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -353,8 +353,8 @@ impl CLKPOL_R {
     }
 }
 #[doc = "Field `CLKPOL` writer - Clock Polarity"]
-pub type CLKPOL_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, CLKPOL_A, 8>;
-impl<'a> CLKPOL_W<'a> {
+pub type CLKPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, CLKPOL_A, O>;
+impl<'a, const O: u8> CLKPOL_W<'a, O> {
     #[doc = "The bus clock used in synchronous mode has a low base value"]
     #[inline(always)]
     pub fn idlelow(self) -> &'a mut W {
@@ -366,8 +366,10 @@ impl<'a> CLKPOL_W<'a> {
         self.variant(CLKPOL_A::IDLEHIGH)
     }
 }
+#[doc = "Field `CLKPHA` reader - Clock Edge For Setup/Sample"]
+pub type CLKPHA_R = crate::BitReader<CLKPHA_A>;
 #[doc = "Clock Edge For Setup/Sample\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLKPHA_A {
     #[doc = "0: Data is sampled on the leading edge and set-up on the trailing edge of the bus clock in synchronous mode"]
     SAMPLELEADING = 0,
@@ -380,8 +382,6 @@ impl From<CLKPHA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLKPHA` reader - Clock Edge For Setup/Sample"]
-pub type CLKPHA_R = crate::BitReader<CLKPHA_A>;
 impl CLKPHA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -403,8 +403,8 @@ impl CLKPHA_R {
     }
 }
 #[doc = "Field `CLKPHA` writer - Clock Edge For Setup/Sample"]
-pub type CLKPHA_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, CLKPHA_A, 9>;
-impl<'a> CLKPHA_W<'a> {
+pub type CLKPHA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, CLKPHA_A, O>;
+impl<'a, const O: u8> CLKPHA_W<'a, O> {
     #[doc = "Data is sampled on the leading edge and set-up on the trailing edge of the bus clock in synchronous mode"]
     #[inline(always)]
     pub fn sampleleading(self) -> &'a mut W {
@@ -416,8 +416,10 @@ impl<'a> CLKPHA_W<'a> {
         self.variant(CLKPHA_A::SAMPLETRAILING)
     }
 }
+#[doc = "Field `MSBF` reader - Most Significant Bit First"]
+pub type MSBF_R = crate::BitReader<MSBF_A>;
 #[doc = "Most Significant Bit First\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MSBF_A {
     #[doc = "0: Data is sent with the least significant bit first"]
     DISABLE = 0,
@@ -430,8 +432,6 @@ impl From<MSBF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MSBF` reader - Most Significant Bit First"]
-pub type MSBF_R = crate::BitReader<MSBF_A>;
 impl MSBF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -453,8 +453,8 @@ impl MSBF_R {
     }
 }
 #[doc = "Field `MSBF` writer - Most Significant Bit First"]
-pub type MSBF_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, MSBF_A, 10>;
-impl<'a> MSBF_W<'a> {
+pub type MSBF_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, MSBF_A, O>;
+impl<'a, const O: u8> MSBF_W<'a, O> {
     #[doc = "Data is sent with the least significant bit first"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -466,8 +466,10 @@ impl<'a> MSBF_W<'a> {
         self.variant(MSBF_A::ENABLE)
     }
 }
+#[doc = "Field `CSMA` reader - Action On Chip Select In Main Mode"]
+pub type CSMA_R = crate::BitReader<CSMA_A>;
 #[doc = "Action On Chip Select In Main Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CSMA_A {
     #[doc = "0: No action taken"]
     NOACTION = 0,
@@ -480,8 +482,6 @@ impl From<CSMA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CSMA` reader - Action On Chip Select In Main Mode"]
-pub type CSMA_R = crate::BitReader<CSMA_A>;
 impl CSMA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -503,8 +503,8 @@ impl CSMA_R {
     }
 }
 #[doc = "Field `CSMA` writer - Action On Chip Select In Main Mode"]
-pub type CSMA_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, CSMA_A, 11>;
-impl<'a> CSMA_W<'a> {
+pub type CSMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, CSMA_A, O>;
+impl<'a, const O: u8> CSMA_W<'a, O> {
     #[doc = "No action taken"]
     #[inline(always)]
     pub fn noaction(self) -> &'a mut W {
@@ -516,8 +516,10 @@ impl<'a> CSMA_W<'a> {
         self.variant(CSMA_A::GOTOSLAVEMODE)
     }
 }
+#[doc = "Field `TXBIL` reader - TX Buffer Interrupt Level"]
+pub type TXBIL_R = crate::BitReader<TXBIL_A>;
 #[doc = "TX Buffer Interrupt Level\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TXBIL_A {
     #[doc = "0: TXBL and the TXBL interrupt flag are set when the transmit buffer becomes empty. TXBL is cleared when the buffer becomes nonempty."]
     EMPTY = 0,
@@ -530,8 +532,6 @@ impl From<TXBIL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXBIL` reader - TX Buffer Interrupt Level"]
-pub type TXBIL_R = crate::BitReader<TXBIL_A>;
 impl TXBIL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -553,8 +553,8 @@ impl TXBIL_R {
     }
 }
 #[doc = "Field `TXBIL` writer - TX Buffer Interrupt Level"]
-pub type TXBIL_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, TXBIL_A, 12>;
-impl<'a> TXBIL_W<'a> {
+pub type TXBIL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, TXBIL_A, O>;
+impl<'a, const O: u8> TXBIL_W<'a, O> {
     #[doc = "TXBL and the TXBL interrupt flag are set when the transmit buffer becomes empty. TXBL is cleared when the buffer becomes nonempty."]
     #[inline(always)]
     pub fn empty(self) -> &'a mut W {
@@ -566,8 +566,10 @@ impl<'a> TXBIL_W<'a> {
         self.variant(TXBIL_A::HALFFULL)
     }
 }
+#[doc = "Field `RXINV` reader - Receiver Input Invert"]
+pub type RXINV_R = crate::BitReader<RXINV_A>;
 #[doc = "Receiver Input Invert\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RXINV_A {
     #[doc = "0: Input is passed directly to the receiver"]
     DISABLE = 0,
@@ -580,8 +582,6 @@ impl From<RXINV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXINV` reader - Receiver Input Invert"]
-pub type RXINV_R = crate::BitReader<RXINV_A>;
 impl RXINV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -603,8 +603,8 @@ impl RXINV_R {
     }
 }
 #[doc = "Field `RXINV` writer - Receiver Input Invert"]
-pub type RXINV_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, RXINV_A, 13>;
-impl<'a> RXINV_W<'a> {
+pub type RXINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, RXINV_A, O>;
+impl<'a, const O: u8> RXINV_W<'a, O> {
     #[doc = "Input is passed directly to the receiver"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -616,8 +616,10 @@ impl<'a> RXINV_W<'a> {
         self.variant(RXINV_A::ENABLE)
     }
 }
+#[doc = "Field `TXINV` reader - Transmitter output Invert"]
+pub type TXINV_R = crate::BitReader<TXINV_A>;
 #[doc = "Transmitter output Invert\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TXINV_A {
     #[doc = "0: Output from the transmitter is passed unchanged to U(S)n_TX"]
     DISABLE = 0,
@@ -630,8 +632,6 @@ impl From<TXINV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXINV` reader - Transmitter output Invert"]
-pub type TXINV_R = crate::BitReader<TXINV_A>;
 impl TXINV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -653,8 +653,8 @@ impl TXINV_R {
     }
 }
 #[doc = "Field `TXINV` writer - Transmitter output Invert"]
-pub type TXINV_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, TXINV_A, 14>;
-impl<'a> TXINV_W<'a> {
+pub type TXINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, TXINV_A, O>;
+impl<'a, const O: u8> TXINV_W<'a, O> {
     #[doc = "Output from the transmitter is passed unchanged to U(S)n_TX"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -666,8 +666,10 @@ impl<'a> TXINV_W<'a> {
         self.variant(TXINV_A::ENABLE)
     }
 }
+#[doc = "Field `CSINV` reader - Chip Select Invert"]
+pub type CSINV_R = crate::BitReader<CSINV_A>;
 #[doc = "Chip Select Invert\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CSINV_A {
     #[doc = "0: Chip select is active low"]
     DISABLE = 0,
@@ -680,8 +682,6 @@ impl From<CSINV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CSINV` reader - Chip Select Invert"]
-pub type CSINV_R = crate::BitReader<CSINV_A>;
 impl CSINV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -703,8 +703,8 @@ impl CSINV_R {
     }
 }
 #[doc = "Field `CSINV` writer - Chip Select Invert"]
-pub type CSINV_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, CSINV_A, 15>;
-impl<'a> CSINV_W<'a> {
+pub type CSINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, CSINV_A, O>;
+impl<'a, const O: u8> CSINV_W<'a, O> {
     #[doc = "Chip select is active low"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -719,9 +719,11 @@ impl<'a> CSINV_W<'a> {
 #[doc = "Field `AUTOCS` reader - Automatic Chip Select"]
 pub type AUTOCS_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOCS` writer - Automatic Chip Select"]
-pub type AUTOCS_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 16>;
+pub type AUTOCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `AUTOTRI` reader - Automatic TX Tristate"]
+pub type AUTOTRI_R = crate::BitReader<AUTOTRI_A>;
 #[doc = "Automatic TX Tristate\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AUTOTRI_A {
     #[doc = "0: The output on U(S)n_TX when the transmitter is idle is defined by TXINV"]
     DISABLE = 0,
@@ -734,8 +736,6 @@ impl From<AUTOTRI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AUTOTRI` reader - Automatic TX Tristate"]
-pub type AUTOTRI_R = crate::BitReader<AUTOTRI_A>;
 impl AUTOTRI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -757,8 +757,8 @@ impl AUTOTRI_R {
     }
 }
 #[doc = "Field `AUTOTRI` writer - Automatic TX Tristate"]
-pub type AUTOTRI_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, AUTOTRI_A, 17>;
-impl<'a> AUTOTRI_W<'a> {
+pub type AUTOTRI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, AUTOTRI_A, O>;
+impl<'a, const O: u8> AUTOTRI_W<'a, O> {
     #[doc = "The output on U(S)n_TX when the transmitter is idle is defined by TXINV"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -773,21 +773,23 @@ impl<'a> AUTOTRI_W<'a> {
 #[doc = "Field `SCMODE` reader - SmartCard Mode"]
 pub type SCMODE_R = crate::BitReader<bool>;
 #[doc = "Field `SCMODE` writer - SmartCard Mode"]
-pub type SCMODE_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 18>;
+pub type SCMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `SCRETRANS` reader - SmartCard Retransmit"]
 pub type SCRETRANS_R = crate::BitReader<bool>;
 #[doc = "Field `SCRETRANS` writer - SmartCard Retransmit"]
-pub type SCRETRANS_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 19>;
+pub type SCRETRANS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `SKIPPERRF` reader - Skip Parity Error Frames"]
 pub type SKIPPERRF_R = crate::BitReader<bool>;
 #[doc = "Field `SKIPPERRF` writer - Skip Parity Error Frames"]
-pub type SKIPPERRF_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 20>;
+pub type SKIPPERRF_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `BIT8DV` reader - Bit 8 Default Value"]
 pub type BIT8DV_R = crate::BitReader<bool>;
 #[doc = "Field `BIT8DV` writer - Bit 8 Default Value"]
-pub type BIT8DV_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 21>;
+pub type BIT8DV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `ERRSDMA` reader - Halt DMA On Error"]
+pub type ERRSDMA_R = crate::BitReader<ERRSDMA_A>;
 #[doc = "Halt DMA On Error\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ERRSDMA_A {
     #[doc = "0: Framing and parity errors have no effect on DMA requests from the USART"]
     DISABLE = 0,
@@ -800,8 +802,6 @@ impl From<ERRSDMA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ERRSDMA` reader - Halt DMA On Error"]
-pub type ERRSDMA_R = crate::BitReader<ERRSDMA_A>;
 impl ERRSDMA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -823,8 +823,8 @@ impl ERRSDMA_R {
     }
 }
 #[doc = "Field `ERRSDMA` writer - Halt DMA On Error"]
-pub type ERRSDMA_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, ERRSDMA_A, 22>;
-impl<'a> ERRSDMA_W<'a> {
+pub type ERRSDMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, ERRSDMA_A, O>;
+impl<'a, const O: u8> ERRSDMA_W<'a, O> {
     #[doc = "Framing and parity errors have no effect on DMA requests from the USART"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -836,8 +836,10 @@ impl<'a> ERRSDMA_W<'a> {
         self.variant(ERRSDMA_A::ENABLE)
     }
 }
+#[doc = "Field `ERRSRX` reader - Disable RX On Error"]
+pub type ERRSRX_R = crate::BitReader<ERRSRX_A>;
 #[doc = "Disable RX On Error\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ERRSRX_A {
     #[doc = "0: Framing and parity errors have no effect on receiver"]
     DISABLE = 0,
@@ -850,8 +852,6 @@ impl From<ERRSRX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ERRSRX` reader - Disable RX On Error"]
-pub type ERRSRX_R = crate::BitReader<ERRSRX_A>;
 impl ERRSRX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -873,8 +873,8 @@ impl ERRSRX_R {
     }
 }
 #[doc = "Field `ERRSRX` writer - Disable RX On Error"]
-pub type ERRSRX_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, ERRSRX_A, 23>;
-impl<'a> ERRSRX_W<'a> {
+pub type ERRSRX_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, ERRSRX_A, O>;
+impl<'a, const O: u8> ERRSRX_W<'a, O> {
     #[doc = "Framing and parity errors have no effect on receiver"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -886,8 +886,10 @@ impl<'a> ERRSRX_W<'a> {
         self.variant(ERRSRX_A::ENABLE)
     }
 }
+#[doc = "Field `ERRSTX` reader - Disable TX On Error"]
+pub type ERRSTX_R = crate::BitReader<ERRSTX_A>;
 #[doc = "Disable TX On Error\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ERRSTX_A {
     #[doc = "0: Received framing and parity errors have no effect on transmitter"]
     DISABLE = 0,
@@ -900,8 +902,6 @@ impl From<ERRSTX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ERRSTX` reader - Disable TX On Error"]
-pub type ERRSTX_R = crate::BitReader<ERRSTX_A>;
 impl ERRSTX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -923,8 +923,8 @@ impl ERRSTX_R {
     }
 }
 #[doc = "Field `ERRSTX` writer - Disable TX On Error"]
-pub type ERRSTX_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, ERRSTX_A, 24>;
-impl<'a> ERRSTX_W<'a> {
+pub type ERRSTX_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, ERRSTX_A, O>;
+impl<'a, const O: u8> ERRSTX_W<'a, O> {
     #[doc = "Received framing and parity errors have no effect on transmitter"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -939,9 +939,11 @@ impl<'a> ERRSTX_W<'a> {
 #[doc = "Field `SSSEARLY` reader - Synchronous Secondary Setup Early"]
 pub type SSSEARLY_R = crate::BitReader<bool>;
 #[doc = "Field `SSSEARLY` writer - Synchronous Secondary Setup Early"]
-pub type SSSEARLY_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 25>;
+pub type SSSEARLY_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `BYTESWAP` reader - Byteswap In Double Accesses"]
+pub type BYTESWAP_R = crate::BitReader<BYTESWAP_A>;
 #[doc = "Byteswap In Double Accesses\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BYTESWAP_A {
     #[doc = "0: Normal byte order"]
     DISABLE = 0,
@@ -954,8 +956,6 @@ impl From<BYTESWAP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BYTESWAP` reader - Byteswap In Double Accesses"]
-pub type BYTESWAP_R = crate::BitReader<BYTESWAP_A>;
 impl BYTESWAP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -977,8 +977,8 @@ impl BYTESWAP_R {
     }
 }
 #[doc = "Field `BYTESWAP` writer - Byteswap In Double Accesses"]
-pub type BYTESWAP_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, BYTESWAP_A, 28>;
-impl<'a> BYTESWAP_W<'a> {
+pub type BYTESWAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, BYTESWAP_A, O>;
+impl<'a, const O: u8> BYTESWAP_W<'a, O> {
     #[doc = "Normal byte order"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -993,15 +993,15 @@ impl<'a> BYTESWAP_W<'a> {
 #[doc = "Field `AUTOTX` reader - Always Transmit When RX Not Full"]
 pub type AUTOTX_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOTX` writer - Always Transmit When RX Not Full"]
-pub type AUTOTX_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 29>;
+pub type AUTOTX_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `MVDIS` reader - Majority Vote Disable"]
 pub type MVDIS_R = crate::BitReader<bool>;
 #[doc = "Field `MVDIS` writer - Majority Vote Disable"]
-pub type MVDIS_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 30>;
+pub type MVDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `SMSDELAY` reader - Synchronous Main Sample Delay"]
 pub type SMSDELAY_R = crate::BitReader<bool>;
 #[doc = "Field `SMSDELAY` writer - Synchronous Main Sample Delay"]
-pub type SMSDELAY_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 31>;
+pub type SMSDELAY_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - USART Synchronous Mode"]
     #[inline(always)]
@@ -1147,142 +1147,170 @@ impl R {
 impl W {
     #[doc = "Bit 0 - USART Synchronous Mode"]
     #[inline(always)]
-    pub fn sync(&mut self) -> SYNC_W {
+    #[must_use]
+    pub fn sync(&mut self) -> SYNC_W<0> {
         SYNC_W::new(self)
     }
     #[doc = "Bit 1 - Loopback Enable"]
     #[inline(always)]
-    pub fn loopbk(&mut self) -> LOOPBK_W {
+    #[must_use]
+    pub fn loopbk(&mut self) -> LOOPBK_W<1> {
         LOOPBK_W::new(self)
     }
     #[doc = "Bit 2 - Collision Check Enable"]
     #[inline(always)]
-    pub fn ccen(&mut self) -> CCEN_W {
+    #[must_use]
+    pub fn ccen(&mut self) -> CCEN_W<2> {
         CCEN_W::new(self)
     }
     #[doc = "Bit 3 - Multi-Processor Mode"]
     #[inline(always)]
-    pub fn mpm(&mut self) -> MPM_W {
+    #[must_use]
+    pub fn mpm(&mut self) -> MPM_W<3> {
         MPM_W::new(self)
     }
     #[doc = "Bit 4 - Multi-Processor Address-Bit"]
     #[inline(always)]
-    pub fn mpab(&mut self) -> MPAB_W {
+    #[must_use]
+    pub fn mpab(&mut self) -> MPAB_W<4> {
         MPAB_W::new(self)
     }
     #[doc = "Bits 5:6 - Oversampling"]
     #[inline(always)]
-    pub fn ovs(&mut self) -> OVS_W {
+    #[must_use]
+    pub fn ovs(&mut self) -> OVS_W<5> {
         OVS_W::new(self)
     }
     #[doc = "Bit 8 - Clock Polarity"]
     #[inline(always)]
-    pub fn clkpol(&mut self) -> CLKPOL_W {
+    #[must_use]
+    pub fn clkpol(&mut self) -> CLKPOL_W<8> {
         CLKPOL_W::new(self)
     }
     #[doc = "Bit 9 - Clock Edge For Setup/Sample"]
     #[inline(always)]
-    pub fn clkpha(&mut self) -> CLKPHA_W {
+    #[must_use]
+    pub fn clkpha(&mut self) -> CLKPHA_W<9> {
         CLKPHA_W::new(self)
     }
     #[doc = "Bit 10 - Most Significant Bit First"]
     #[inline(always)]
-    pub fn msbf(&mut self) -> MSBF_W {
+    #[must_use]
+    pub fn msbf(&mut self) -> MSBF_W<10> {
         MSBF_W::new(self)
     }
     #[doc = "Bit 11 - Action On Chip Select In Main Mode"]
     #[inline(always)]
-    pub fn csma(&mut self) -> CSMA_W {
+    #[must_use]
+    pub fn csma(&mut self) -> CSMA_W<11> {
         CSMA_W::new(self)
     }
     #[doc = "Bit 12 - TX Buffer Interrupt Level"]
     #[inline(always)]
-    pub fn txbil(&mut self) -> TXBIL_W {
+    #[must_use]
+    pub fn txbil(&mut self) -> TXBIL_W<12> {
         TXBIL_W::new(self)
     }
     #[doc = "Bit 13 - Receiver Input Invert"]
     #[inline(always)]
-    pub fn rxinv(&mut self) -> RXINV_W {
+    #[must_use]
+    pub fn rxinv(&mut self) -> RXINV_W<13> {
         RXINV_W::new(self)
     }
     #[doc = "Bit 14 - Transmitter output Invert"]
     #[inline(always)]
-    pub fn txinv(&mut self) -> TXINV_W {
+    #[must_use]
+    pub fn txinv(&mut self) -> TXINV_W<14> {
         TXINV_W::new(self)
     }
     #[doc = "Bit 15 - Chip Select Invert"]
     #[inline(always)]
-    pub fn csinv(&mut self) -> CSINV_W {
+    #[must_use]
+    pub fn csinv(&mut self) -> CSINV_W<15> {
         CSINV_W::new(self)
     }
     #[doc = "Bit 16 - Automatic Chip Select"]
     #[inline(always)]
-    pub fn autocs(&mut self) -> AUTOCS_W {
+    #[must_use]
+    pub fn autocs(&mut self) -> AUTOCS_W<16> {
         AUTOCS_W::new(self)
     }
     #[doc = "Bit 17 - Automatic TX Tristate"]
     #[inline(always)]
-    pub fn autotri(&mut self) -> AUTOTRI_W {
+    #[must_use]
+    pub fn autotri(&mut self) -> AUTOTRI_W<17> {
         AUTOTRI_W::new(self)
     }
     #[doc = "Bit 18 - SmartCard Mode"]
     #[inline(always)]
-    pub fn scmode(&mut self) -> SCMODE_W {
+    #[must_use]
+    pub fn scmode(&mut self) -> SCMODE_W<18> {
         SCMODE_W::new(self)
     }
     #[doc = "Bit 19 - SmartCard Retransmit"]
     #[inline(always)]
-    pub fn scretrans(&mut self) -> SCRETRANS_W {
+    #[must_use]
+    pub fn scretrans(&mut self) -> SCRETRANS_W<19> {
         SCRETRANS_W::new(self)
     }
     #[doc = "Bit 20 - Skip Parity Error Frames"]
     #[inline(always)]
-    pub fn skipperrf(&mut self) -> SKIPPERRF_W {
+    #[must_use]
+    pub fn skipperrf(&mut self) -> SKIPPERRF_W<20> {
         SKIPPERRF_W::new(self)
     }
     #[doc = "Bit 21 - Bit 8 Default Value"]
     #[inline(always)]
-    pub fn bit8dv(&mut self) -> BIT8DV_W {
+    #[must_use]
+    pub fn bit8dv(&mut self) -> BIT8DV_W<21> {
         BIT8DV_W::new(self)
     }
     #[doc = "Bit 22 - Halt DMA On Error"]
     #[inline(always)]
-    pub fn errsdma(&mut self) -> ERRSDMA_W {
+    #[must_use]
+    pub fn errsdma(&mut self) -> ERRSDMA_W<22> {
         ERRSDMA_W::new(self)
     }
     #[doc = "Bit 23 - Disable RX On Error"]
     #[inline(always)]
-    pub fn errsrx(&mut self) -> ERRSRX_W {
+    #[must_use]
+    pub fn errsrx(&mut self) -> ERRSRX_W<23> {
         ERRSRX_W::new(self)
     }
     #[doc = "Bit 24 - Disable TX On Error"]
     #[inline(always)]
-    pub fn errstx(&mut self) -> ERRSTX_W {
+    #[must_use]
+    pub fn errstx(&mut self) -> ERRSTX_W<24> {
         ERRSTX_W::new(self)
     }
     #[doc = "Bit 25 - Synchronous Secondary Setup Early"]
     #[inline(always)]
-    pub fn sssearly(&mut self) -> SSSEARLY_W {
+    #[must_use]
+    pub fn sssearly(&mut self) -> SSSEARLY_W<25> {
         SSSEARLY_W::new(self)
     }
     #[doc = "Bit 28 - Byteswap In Double Accesses"]
     #[inline(always)]
-    pub fn byteswap(&mut self) -> BYTESWAP_W {
+    #[must_use]
+    pub fn byteswap(&mut self) -> BYTESWAP_W<28> {
         BYTESWAP_W::new(self)
     }
     #[doc = "Bit 29 - Always Transmit When RX Not Full"]
     #[inline(always)]
-    pub fn autotx(&mut self) -> AUTOTX_W {
+    #[must_use]
+    pub fn autotx(&mut self) -> AUTOTX_W<29> {
         AUTOTX_W::new(self)
     }
     #[doc = "Bit 30 - Majority Vote Disable"]
     #[inline(always)]
-    pub fn mvdis(&mut self) -> MVDIS_W {
+    #[must_use]
+    pub fn mvdis(&mut self) -> MVDIS_W<30> {
         MVDIS_W::new(self)
     }
     #[doc = "Bit 31 - Synchronous Main Sample Delay"]
     #[inline(always)]
-    pub fn smsdelay(&mut self) -> SMSDELAY_W {
+    #[must_use]
+    pub fn smsdelay(&mut self) -> SMSDELAY_W<31> {
         SMSDELAY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -1304,11 +1332,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,7 +37,7 @@ impl From<crate::W<MASKREQ_SPEC>> for W {
 #[doc = "Field `MASKREQ` reader - Scan Queue Mask Request"]
 pub type MASKREQ_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MASKREQ` writer - Scan Queue Mask Request"]
-pub type MASKREQ_W<'a> = crate::FieldWriter<'a, u32, MASKREQ_SPEC, u16, u16, 16, 0>;
+pub type MASKREQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MASKREQ_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Scan Queue Mask Request"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Scan Queue Mask Request"]
     #[inline(always)]
-    pub fn maskreq(&mut self) -> MASKREQ_W {
+    #[must_use]
+    pub fn maskreq(&mut self) -> MASKREQ_W<0> {
         MASKREQ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for MASKREQ_SPEC {
 #[doc = "`write(|w| ..)` method takes [maskreq::W](W) writer structure"]
 impl crate::Writable for MASKREQ_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MASKREQ to value 0"]
 impl crate::Resettable for MASKREQ_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

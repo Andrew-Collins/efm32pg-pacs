@@ -20,60 +20,68 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `CORERST` writer - PCNT Clock Domain Reset"]
-pub type CORERST_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 0>;
+pub type CORERST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `CNTRST` writer - CNT Reset"]
-pub type CNTRST_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 1>;
+pub type CNTRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `AUXCNTRST` writer - AUXCNT Reset"]
-pub type AUXCNTRST_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 2>;
+pub type AUXCNTRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `LCNTIM` writer - Load CNT Immediately"]
-pub type LCNTIM_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 4>;
+pub type LCNTIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `STARTCNT` writer - Start Main Counter"]
-pub type STARTCNT_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 8>;
+pub type STARTCNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `STARTAUXCNT` writer - Start Aux Counter"]
-pub type STARTAUXCNT_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 9>;
+pub type STARTAUXCNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `STOPCNT` writer - Stop Main Counter"]
-pub type STOPCNT_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 10>;
+pub type STOPCNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `STOPAUXCNT` writer - Stop Aux Counter"]
-pub type STOPAUXCNT_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 11>;
+pub type STOPAUXCNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - PCNT Clock Domain Reset"]
     #[inline(always)]
-    pub fn corerst(&mut self) -> CORERST_W {
+    #[must_use]
+    pub fn corerst(&mut self) -> CORERST_W<0> {
         CORERST_W::new(self)
     }
     #[doc = "Bit 1 - CNT Reset"]
     #[inline(always)]
-    pub fn cntrst(&mut self) -> CNTRST_W {
+    #[must_use]
+    pub fn cntrst(&mut self) -> CNTRST_W<1> {
         CNTRST_W::new(self)
     }
     #[doc = "Bit 2 - AUXCNT Reset"]
     #[inline(always)]
-    pub fn auxcntrst(&mut self) -> AUXCNTRST_W {
+    #[must_use]
+    pub fn auxcntrst(&mut self) -> AUXCNTRST_W<2> {
         AUXCNTRST_W::new(self)
     }
     #[doc = "Bit 4 - Load CNT Immediately"]
     #[inline(always)]
-    pub fn lcntim(&mut self) -> LCNTIM_W {
+    #[must_use]
+    pub fn lcntim(&mut self) -> LCNTIM_W<4> {
         LCNTIM_W::new(self)
     }
     #[doc = "Bit 8 - Start Main Counter"]
     #[inline(always)]
-    pub fn startcnt(&mut self) -> STARTCNT_W {
+    #[must_use]
+    pub fn startcnt(&mut self) -> STARTCNT_W<8> {
         STARTCNT_W::new(self)
     }
     #[doc = "Bit 9 - Start Aux Counter"]
     #[inline(always)]
-    pub fn startauxcnt(&mut self) -> STARTAUXCNT_W {
+    #[must_use]
+    pub fn startauxcnt(&mut self) -> STARTAUXCNT_W<9> {
         STARTAUXCNT_W::new(self)
     }
     #[doc = "Bit 10 - Stop Main Counter"]
     #[inline(always)]
-    pub fn stopcnt(&mut self) -> STOPCNT_W {
+    #[must_use]
+    pub fn stopcnt(&mut self) -> STOPCNT_W<10> {
         STOPCNT_W::new(self)
     }
     #[doc = "Bit 11 - Stop Aux Counter"]
     #[inline(always)]
-    pub fn stopauxcnt(&mut self) -> STOPAUXCNT_W {
+    #[must_use]
+    pub fn stopauxcnt(&mut self) -> STOPAUXCNT_W<11> {
         STOPAUXCNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -91,11 +99,10 @@ impl crate::RegisterSpec for CMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmd::W](W) writer structure"]
 impl crate::Writable for CMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMD to value 0"]
 impl crate::Resettable for CMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

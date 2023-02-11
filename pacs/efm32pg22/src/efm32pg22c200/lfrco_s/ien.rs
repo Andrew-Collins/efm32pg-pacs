@@ -37,39 +37,39 @@ impl From<crate::W<IEN_SPEC>> for W {
 #[doc = "Field `RDY` reader - Ready Enable"]
 pub type RDY_R = crate::BitReader<bool>;
 #[doc = "Field `RDY` writer - Ready Enable"]
-pub type RDY_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 0>;
+pub type RDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `POSEDGE` reader - Rising Edge Enable"]
 pub type POSEDGE_R = crate::BitReader<bool>;
 #[doc = "Field `POSEDGE` writer - Rising Edge Enable"]
-pub type POSEDGE_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 1>;
+pub type POSEDGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `NEGEDGE` reader - Falling Edge Enable"]
 pub type NEGEDGE_R = crate::BitReader<bool>;
 #[doc = "Field `NEGEDGE` writer - Falling Edge Enable"]
-pub type NEGEDGE_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 2>;
+pub type NEGEDGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `TCDONE` reader - Temperature Check Done Enable"]
 pub type TCDONE_R = crate::BitReader<bool>;
 #[doc = "Field `TCDONE` writer - Temperature Check Done Enable"]
-pub type TCDONE_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 8>;
+pub type TCDONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CALDONE` reader - Calibration Done Enable"]
 pub type CALDONE_R = crate::BitReader<bool>;
 #[doc = "Field `CALDONE` writer - Calibration Done Enable"]
-pub type CALDONE_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 9>;
+pub type CALDONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `TEMPCHANGE` reader - Temperature Change Enable"]
 pub type TEMPCHANGE_R = crate::BitReader<bool>;
 #[doc = "Field `TEMPCHANGE` writer - Temperature Change Enable"]
-pub type TEMPCHANGE_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 10>;
+pub type TEMPCHANGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `SCHEDERR` reader - Scheduling Error Enable"]
 pub type SCHEDERR_R = crate::BitReader<bool>;
 #[doc = "Field `SCHEDERR` writer - Scheduling Error Enable"]
-pub type SCHEDERR_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 16>;
+pub type SCHEDERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `TCOOR` reader - Temperature Check Out Of Range Enable"]
 pub type TCOOR_R = crate::BitReader<bool>;
 #[doc = "Field `TCOOR` writer - Temperature Check Out Of Range Enable"]
-pub type TCOOR_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 17>;
+pub type TCOOR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CALOOR` reader - Calibration Out Of Range Enable"]
 pub type CALOOR_R = crate::BitReader<bool>;
 #[doc = "Field `CALOOR` writer - Calibration Out Of Range Enable"]
-pub type CALOOR_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 18>;
+pub type CALOOR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Ready Enable"]
     #[inline(always)]
@@ -120,47 +120,56 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Ready Enable"]
     #[inline(always)]
-    pub fn rdy(&mut self) -> RDY_W {
+    #[must_use]
+    pub fn rdy(&mut self) -> RDY_W<0> {
         RDY_W::new(self)
     }
     #[doc = "Bit 1 - Rising Edge Enable"]
     #[inline(always)]
-    pub fn posedge(&mut self) -> POSEDGE_W {
+    #[must_use]
+    pub fn posedge(&mut self) -> POSEDGE_W<1> {
         POSEDGE_W::new(self)
     }
     #[doc = "Bit 2 - Falling Edge Enable"]
     #[inline(always)]
-    pub fn negedge(&mut self) -> NEGEDGE_W {
+    #[must_use]
+    pub fn negedge(&mut self) -> NEGEDGE_W<2> {
         NEGEDGE_W::new(self)
     }
     #[doc = "Bit 8 - Temperature Check Done Enable"]
     #[inline(always)]
-    pub fn tcdone(&mut self) -> TCDONE_W {
+    #[must_use]
+    pub fn tcdone(&mut self) -> TCDONE_W<8> {
         TCDONE_W::new(self)
     }
     #[doc = "Bit 9 - Calibration Done Enable"]
     #[inline(always)]
-    pub fn caldone(&mut self) -> CALDONE_W {
+    #[must_use]
+    pub fn caldone(&mut self) -> CALDONE_W<9> {
         CALDONE_W::new(self)
     }
     #[doc = "Bit 10 - Temperature Change Enable"]
     #[inline(always)]
-    pub fn tempchange(&mut self) -> TEMPCHANGE_W {
+    #[must_use]
+    pub fn tempchange(&mut self) -> TEMPCHANGE_W<10> {
         TEMPCHANGE_W::new(self)
     }
     #[doc = "Bit 16 - Scheduling Error Enable"]
     #[inline(always)]
-    pub fn schederr(&mut self) -> SCHEDERR_W {
+    #[must_use]
+    pub fn schederr(&mut self) -> SCHEDERR_W<16> {
         SCHEDERR_W::new(self)
     }
     #[doc = "Bit 17 - Temperature Check Out Of Range Enable"]
     #[inline(always)]
-    pub fn tcoor(&mut self) -> TCOOR_W {
+    #[must_use]
+    pub fn tcoor(&mut self) -> TCOOR_W<17> {
         TCOOR_W::new(self)
     }
     #[doc = "Bit 18 - Calibration Out Of Range Enable"]
     #[inline(always)]
-    pub fn caloor(&mut self) -> CALOOR_W {
+    #[must_use]
+    pub fn caloor(&mut self) -> CALOOR_W<18> {
         CALOOR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -182,11 +191,10 @@ impl crate::Readable for IEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IEN to value 0"]
 impl crate::Resettable for IEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

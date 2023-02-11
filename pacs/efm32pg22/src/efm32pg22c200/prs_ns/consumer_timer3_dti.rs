@@ -37,7 +37,8 @@ impl From<crate::W<CONSUMER_TIMER3_DTI_SPEC>> for W {
 #[doc = "Field `PRSSEL` reader - DTI async channel select"]
 pub type PRSSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PRSSEL` writer - DTI async channel select"]
-pub type PRSSEL_W<'a> = crate::FieldWriter<'a, u32, CONSUMER_TIMER3_DTI_SPEC, u8, u8, 4, 0>;
+pub type PRSSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CONSUMER_TIMER3_DTI_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - DTI async channel select"]
     #[inline(always)]
@@ -48,7 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - DTI async channel select"]
     #[inline(always)]
-    pub fn prssel(&mut self) -> PRSSEL_W {
+    #[must_use]
+    pub fn prssel(&mut self) -> PRSSEL_W<0> {
         PRSSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +72,10 @@ impl crate::Readable for CONSUMER_TIMER3_DTI_SPEC {
 #[doc = "`write(|w| ..)` method takes [consumer_timer3_dti::W](W) writer structure"]
 impl crate::Writable for CONSUMER_TIMER3_DTI_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CONSUMER_TIMER3_DTI to value 0"]
 impl crate::Resettable for CONSUMER_TIMER3_DTI_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

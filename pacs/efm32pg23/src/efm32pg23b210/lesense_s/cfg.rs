@@ -34,8 +34,10 @@ impl From<crate::W<CFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SCANMODE` reader - Configure scan mode"]
+pub type SCANMODE_R = crate::FieldReader<u8, SCANMODE_A>;
 #[doc = "Configure scan mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SCANMODE_A {
     #[doc = "0: A new scan is started each time the period counter overflows"]
@@ -51,8 +53,6 @@ impl From<SCANMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SCANMODE` reader - Configure scan mode"]
-pub type SCANMODE_R = crate::FieldReader<u8, SCANMODE_A>;
 impl SCANMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -81,8 +81,8 @@ impl SCANMODE_R {
     }
 }
 #[doc = "Field `SCANMODE` writer - Configure scan mode"]
-pub type SCANMODE_W<'a> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, SCANMODE_A, 2, 0>;
-impl<'a> SCANMODE_W<'a> {
+pub type SCANMODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, SCANMODE_A, 2, O>;
+impl<'a, const O: u8> SCANMODE_W<'a, O> {
     #[doc = "A new scan is started each time the period counter overflows"]
     #[inline(always)]
     pub fn periodic(self) -> &'a mut W {
@@ -99,8 +99,10 @@ impl<'a> SCANMODE_W<'a> {
         self.variant(SCANMODE_A::PRS)
     }
 }
+#[doc = "Field `SCANCONF` reader - Select scan configuration"]
+pub type SCANCONF_R = crate::FieldReader<u8, SCANCONF_A>;
 #[doc = "Select scan configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SCANCONF_A {
     #[doc = "0: The channel configuration register registers used are directly mapped to the channel number."]
@@ -118,8 +120,6 @@ impl From<SCANCONF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SCANCONF` reader - Select scan configuration"]
-pub type SCANCONF_R = crate::FieldReader<u8, SCANCONF_A>;
 impl SCANCONF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -154,8 +154,9 @@ impl SCANCONF_R {
     }
 }
 #[doc = "Field `SCANCONF` writer - Select scan configuration"]
-pub type SCANCONF_W<'a> = crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, SCANCONF_A, 2, 2>;
-impl<'a> SCANCONF_W<'a> {
+pub type SCANCONF_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CFG_SPEC, u8, SCANCONF_A, 2, O>;
+impl<'a, const O: u8> SCANCONF_W<'a, O> {
     #[doc = "The channel configuration register registers used are directly mapped to the channel number."]
     #[inline(always)]
     pub fn dirmap(self) -> &'a mut W {
@@ -180,13 +181,15 @@ impl<'a> SCANCONF_W<'a> {
 #[doc = "Field `DUALSAMPLE` reader - Enable dual sample mode"]
 pub type DUALSAMPLE_R = crate::BitReader<bool>;
 #[doc = "Field `DUALSAMPLE` writer - Enable dual sample mode"]
-pub type DUALSAMPLE_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 5>;
+pub type DUALSAMPLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 #[doc = "Field `STRSCANRES` reader - Enable storing of SCANRES"]
 pub type STRSCANRES_R = crate::BitReader<bool>;
 #[doc = "Field `STRSCANRES` writer - Enable storing of SCANRES"]
-pub type STRSCANRES_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 6>;
+pub type STRSCANRES_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
+#[doc = "Field `DMAWU` reader - DMA wake-up from EM2"]
+pub type DMAWU_R = crate::BitReader<DMAWU_A>;
 #[doc = "DMA wake-up from EM2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMAWU_A {
     #[doc = "0: No DMA wake-up from EM2"]
     DISABLE = 0,
@@ -199,8 +202,6 @@ impl From<DMAWU_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMAWU` reader - DMA wake-up from EM2"]
-pub type DMAWU_R = crate::BitReader<DMAWU_A>;
 impl DMAWU_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -222,8 +223,8 @@ impl DMAWU_R {
     }
 }
 #[doc = "Field `DMAWU` writer - DMA wake-up from EM2"]
-pub type DMAWU_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, DMAWU_A, 7>;
-impl<'a> DMAWU_W<'a> {
+pub type DMAWU_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, DMAWU_A, O>;
+impl<'a, const O: u8> DMAWU_W<'a, O> {
     #[doc = "No DMA wake-up from EM2"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -238,9 +239,11 @@ impl<'a> DMAWU_W<'a> {
 #[doc = "Field `RESFIDL` reader - Result FIFO level"]
 pub type RESFIDL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RESFIDL` writer - Result FIFO level"]
-pub type RESFIDL_W<'a> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, u8, 4, 8>;
+pub type RESFIDL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, u8, 4, O>;
+#[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
+pub type DEBUGRUN_R = crate::BitReader<DEBUGRUN_A>;
 #[doc = "Debug Mode Run Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DEBUGRUN_A {
     #[doc = "0: LESENSE can not start new scans in debug mode"]
     X0 = 0,
@@ -253,8 +256,6 @@ impl From<DEBUGRUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
-pub type DEBUGRUN_R = crate::BitReader<DEBUGRUN_A>;
 impl DEBUGRUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -276,8 +277,8 @@ impl DEBUGRUN_R {
     }
 }
 #[doc = "Field `DEBUGRUN` writer - Debug Mode Run Enable"]
-pub type DEBUGRUN_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, DEBUGRUN_A, 17>;
-impl<'a> DEBUGRUN_W<'a> {
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, DEBUGRUN_A, O>;
+impl<'a, const O: u8> DEBUGRUN_W<'a, O> {
     #[doc = "LESENSE can not start new scans in debug mode"]
     #[inline(always)]
     pub fn x0(self) -> &'a mut W {
@@ -329,37 +330,44 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Configure scan mode"]
     #[inline(always)]
-    pub fn scanmode(&mut self) -> SCANMODE_W {
+    #[must_use]
+    pub fn scanmode(&mut self) -> SCANMODE_W<0> {
         SCANMODE_W::new(self)
     }
     #[doc = "Bits 2:3 - Select scan configuration"]
     #[inline(always)]
-    pub fn scanconf(&mut self) -> SCANCONF_W {
+    #[must_use]
+    pub fn scanconf(&mut self) -> SCANCONF_W<2> {
         SCANCONF_W::new(self)
     }
     #[doc = "Bit 5 - Enable dual sample mode"]
     #[inline(always)]
-    pub fn dualsample(&mut self) -> DUALSAMPLE_W {
+    #[must_use]
+    pub fn dualsample(&mut self) -> DUALSAMPLE_W<5> {
         DUALSAMPLE_W::new(self)
     }
     #[doc = "Bit 6 - Enable storing of SCANRES"]
     #[inline(always)]
-    pub fn strscanres(&mut self) -> STRSCANRES_W {
+    #[must_use]
+    pub fn strscanres(&mut self) -> STRSCANRES_W<6> {
         STRSCANRES_W::new(self)
     }
     #[doc = "Bit 7 - DMA wake-up from EM2"]
     #[inline(always)]
-    pub fn dmawu(&mut self) -> DMAWU_W {
+    #[must_use]
+    pub fn dmawu(&mut self) -> DMAWU_W<7> {
         DMAWU_W::new(self)
     }
     #[doc = "Bits 8:11 - Result FIFO level"]
     #[inline(always)]
-    pub fn resfidl(&mut self) -> RESFIDL_W {
+    #[must_use]
+    pub fn resfidl(&mut self) -> RESFIDL_W<8> {
         RESFIDL_W::new(self)
     }
     #[doc = "Bit 17 - Debug Mode Run Enable"]
     #[inline(always)]
-    pub fn debugrun(&mut self) -> DEBUGRUN_W {
+    #[must_use]
+    pub fn debugrun(&mut self) -> DEBUGRUN_W<17> {
         DEBUGRUN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -381,11 +389,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

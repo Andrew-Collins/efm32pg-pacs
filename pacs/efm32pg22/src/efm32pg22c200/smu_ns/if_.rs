@@ -37,19 +37,19 @@ impl From<crate::W<IF_SPEC>> for W {
 #[doc = "Field `PPUPRIV` reader - PPU Privilege Interrupt Flag"]
 pub type PPUPRIV_R = crate::BitReader<bool>;
 #[doc = "Field `PPUPRIV` writer - PPU Privilege Interrupt Flag"]
-pub type PPUPRIV_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 0>;
+pub type PPUPRIV_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `PPUINST` reader - PPU Instruction Interrupt Flag"]
 pub type PPUINST_R = crate::BitReader<bool>;
 #[doc = "Field `PPUINST` writer - PPU Instruction Interrupt Flag"]
-pub type PPUINST_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 2>;
+pub type PPUINST_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `PPUSEC` reader - PPU Security Interrupt Flag"]
 pub type PPUSEC_R = crate::BitReader<bool>;
 #[doc = "Field `PPUSEC` writer - PPU Security Interrupt Flag"]
-pub type PPUSEC_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 16>;
+pub type PPUSEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `BMPUSEC` reader - BMPU Security Interrupt Flag"]
 pub type BMPUSEC_R = crate::BitReader<bool>;
 #[doc = "Field `BMPUSEC` writer - BMPU Security Interrupt Flag"]
-pub type BMPUSEC_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 17>;
+pub type BMPUSEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - PPU Privilege Interrupt Flag"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - PPU Privilege Interrupt Flag"]
     #[inline(always)]
-    pub fn ppupriv(&mut self) -> PPUPRIV_W {
+    #[must_use]
+    pub fn ppupriv(&mut self) -> PPUPRIV_W<0> {
         PPUPRIV_W::new(self)
     }
     #[doc = "Bit 2 - PPU Instruction Interrupt Flag"]
     #[inline(always)]
-    pub fn ppuinst(&mut self) -> PPUINST_W {
+    #[must_use]
+    pub fn ppuinst(&mut self) -> PPUINST_W<2> {
         PPUINST_W::new(self)
     }
     #[doc = "Bit 16 - PPU Security Interrupt Flag"]
     #[inline(always)]
-    pub fn ppusec(&mut self) -> PPUSEC_W {
+    #[must_use]
+    pub fn ppusec(&mut self) -> PPUSEC_W<16> {
         PPUSEC_W::new(self)
     }
     #[doc = "Bit 17 - BMPU Security Interrupt Flag"]
     #[inline(always)]
-    pub fn bmpusec(&mut self) -> BMPUSEC_W {
+    #[must_use]
+    pub fn bmpusec(&mut self) -> BMPUSEC_W<17> {
         BMPUSEC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_::W](W) writer structure"]
 impl crate::Writable for IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

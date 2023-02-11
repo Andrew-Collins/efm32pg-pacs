@@ -20,18 +20,20 @@ impl From<crate::W<PKCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `PKSTART` writer - PK Start"]
-pub type PKSTART_W<'a> = crate::BitWriter<'a, u32, PKCTRL_SPEC, bool, 0>;
+pub type PKSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, PKCTRL_SPEC, bool, O>;
 #[doc = "Field `IFC` writer - ClearIRQ"]
-pub type IFC_W<'a> = crate::BitWriter<'a, u32, PKCTRL_SPEC, bool, 1>;
+pub type IFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PKCTRL_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - PK Start"]
     #[inline(always)]
-    pub fn pkstart(&mut self) -> PKSTART_W {
+    #[must_use]
+    pub fn pkstart(&mut self) -> PKSTART_W<0> {
         PKSTART_W::new(self)
     }
     #[doc = "Bit 1 - ClearIRQ"]
     #[inline(always)]
-    pub fn ifc(&mut self) -> IFC_W {
+    #[must_use]
+    pub fn ifc(&mut self) -> IFC_W<1> {
         IFC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -49,11 +51,10 @@ impl crate::RegisterSpec for PKCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [pkctrl::W](W) writer structure"]
 impl crate::Writable for PKCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PKCTRL to value 0"]
 impl crate::Resettable for PKCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,15 +37,15 @@ impl From<crate::W<HFXOCTRL1_SPEC>> for W {
 #[doc = "Field `PEAKDETTHR` reader - Sets the Peak Detector amplitude detection threshold levels"]
 pub type PEAKDETTHR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PEAKDETTHR` writer - Sets the Peak Detector amplitude detection threshold levels"]
-pub type PEAKDETTHR_W<'a> = crate::FieldWriter<'a, u32, HFXOCTRL1_SPEC, u8, u8, 3, 0>;
+pub type PEAKDETTHR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFXOCTRL1_SPEC, u8, u8, 3, O>;
 #[doc = "Field `REGLVL` reader - Reserved for internal use. Do not change."]
 pub type REGLVL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `REGLVL` writer - Reserved for internal use. Do not change."]
-pub type REGLVL_W<'a> = crate::FieldWriter<'a, u32, HFXOCTRL1_SPEC, u8, u8, 3, 4>;
+pub type REGLVL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFXOCTRL1_SPEC, u8, u8, 3, O>;
 #[doc = "Field `XTIBIASEN` reader - Reserved for internal use. Do not change."]
 pub type XTIBIASEN_R = crate::BitReader<bool>;
 #[doc = "Field `XTIBIASEN` writer - Reserved for internal use. Do not change."]
-pub type XTIBIASEN_W<'a> = crate::BitWriter<'a, u32, HFXOCTRL1_SPEC, bool, 9>;
+pub type XTIBIASEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFXOCTRL1_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - Sets the Peak Detector amplitude detection threshold levels"]
     #[inline(always)]
@@ -66,17 +66,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Sets the Peak Detector amplitude detection threshold levels"]
     #[inline(always)]
-    pub fn peakdetthr(&mut self) -> PEAKDETTHR_W {
+    #[must_use]
+    pub fn peakdetthr(&mut self) -> PEAKDETTHR_W<0> {
         PEAKDETTHR_W::new(self)
     }
     #[doc = "Bits 4:6 - Reserved for internal use. Do not change."]
     #[inline(always)]
-    pub fn reglvl(&mut self) -> REGLVL_W {
+    #[must_use]
+    pub fn reglvl(&mut self) -> REGLVL_W<4> {
         REGLVL_W::new(self)
     }
     #[doc = "Bit 9 - Reserved for internal use. Do not change."]
     #[inline(always)]
-    pub fn xtibiasen(&mut self) -> XTIBIASEN_W {
+    #[must_use]
+    pub fn xtibiasen(&mut self) -> XTIBIASEN_W<9> {
         XTIBIASEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for HFXOCTRL1_SPEC {
 #[doc = "`write(|w| ..)` method takes [hfxoctrl1::W](W) writer structure"]
 impl crate::Writable for HFXOCTRL1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HFXOCTRL1 to value 0x0240"]
 impl crate::Resettable for HFXOCTRL1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0240
-    }
+    const RESET_VALUE: Self::Ux = 0x0240;
 }

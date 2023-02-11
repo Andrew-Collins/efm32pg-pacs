@@ -33,8 +33,5 @@ impl crate::Readable for GRP0_CAP0VALUE_SPEC {
 }
 #[doc = "`reset()` method sets GRP0_CAP0VALUE to value 0"]
 impl crate::Resettable for GRP0_CAP0VALUE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - DCDC/Bypass Mode Control"]
+pub type MODE_R = crate::BitReader<MODE_A>;
 #[doc = "DCDC/Bypass Mode Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MODE_A {
     #[doc = "0: DCDC is OFF, bypass switch is enabled"]
     BYPASS = 0,
@@ -48,8 +50,6 @@ impl From<MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MODE` reader - DCDC/Bypass Mode Control"]
-pub type MODE_R = crate::BitReader<MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - DCDC/Bypass Mode Control"]
-pub type MODE_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, MODE_A, 0>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, MODE_A, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "DCDC is OFF, bypass switch is enabled"]
     #[inline(always)]
     pub fn bypass(self) -> &'a mut W {
@@ -84,8 +84,10 @@ impl<'a> MODE_W<'a> {
         self.variant(MODE_A::DCDCREGULATION)
     }
 }
+#[doc = "Field `DCMONLYEN` reader - DCDC DCM Only Enable"]
+pub type DCMONLYEN_R = crate::BitReader<DCMONLYEN_A>;
 #[doc = "DCDC DCM Only Enable\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DCMONLYEN_A {
     #[doc = "0: Support higher load current at lower battery voltage by working in CCM mode"]
     DUALMODE = 0,
@@ -98,8 +100,6 @@ impl From<DCMONLYEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DCMONLYEN` reader - DCDC DCM Only Enable"]
-pub type DCMONLYEN_R = crate::BitReader<DCMONLYEN_A>;
 impl DCMONLYEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,8 @@ impl DCMONLYEN_R {
     }
 }
 #[doc = "Field `DCMONLYEN` writer - DCDC DCM Only Enable"]
-pub type DCMONLYEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, DCMONLYEN_A, 2>;
-impl<'a> DCMONLYEN_W<'a> {
+pub type DCMONLYEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, DCMONLYEN_A, O>;
+impl<'a, const O: u8> DCMONLYEN_W<'a, O> {
     #[doc = "Support higher load current at lower battery voltage by working in CCM mode"]
     #[inline(always)]
     pub fn dualmode(self) -> &'a mut W {
@@ -134,8 +134,10 @@ impl<'a> DCMONLYEN_W<'a> {
         self.variant(DCMONLYEN_A::DCMONLYEN)
     }
 }
+#[doc = "Field `IPKTMAXCTRL` reader - Peak Current Timeout Control"]
+pub type IPKTMAXCTRL_R = crate::FieldReader<u8, IPKTMAXCTRL_A>;
 #[doc = "Peak Current Timeout Control\n\nValue on reset: 4"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum IPKTMAXCTRL_A {
     #[doc = "0: Ton_max disabled"]
@@ -161,8 +163,6 @@ impl From<IPKTMAXCTRL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `IPKTMAXCTRL` reader - Peak Current Timeout Control"]
-pub type IPKTMAXCTRL_R = crate::FieldReader<u8, IPKTMAXCTRL_A>;
 impl IPKTMAXCTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -221,8 +221,9 @@ impl IPKTMAXCTRL_R {
     }
 }
 #[doc = "Field `IPKTMAXCTRL` writer - Peak Current Timeout Control"]
-pub type IPKTMAXCTRL_W<'a> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, IPKTMAXCTRL_A, 3, 4>;
-impl<'a> IPKTMAXCTRL_W<'a> {
+pub type IPKTMAXCTRL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, IPKTMAXCTRL_A, 3, O>;
+impl<'a, const O: u8> IPKTMAXCTRL_W<'a, O> {
     #[doc = "Ton_max disabled"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -284,17 +285,20 @@ impl R {
 impl W {
     #[doc = "Bit 0 - DCDC/Bypass Mode Control"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<0> {
         MODE_W::new(self)
     }
     #[doc = "Bit 2 - DCDC DCM Only Enable"]
     #[inline(always)]
-    pub fn dcmonlyen(&mut self) -> DCMONLYEN_W {
+    #[must_use]
+    pub fn dcmonlyen(&mut self) -> DCMONLYEN_W<2> {
         DCMONLYEN_W::new(self)
     }
     #[doc = "Bits 4:6 - Peak Current Timeout Control"]
     #[inline(always)]
-    pub fn ipktmaxctrl(&mut self) -> IPKTMAXCTRL_W {
+    #[must_use]
+    pub fn ipktmaxctrl(&mut self) -> IPKTMAXCTRL_W<4> {
         IPKTMAXCTRL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -316,11 +320,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x44"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x44
-    }
+    const RESET_VALUE: Self::Ux = 0x44;
 }

@@ -37,19 +37,19 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `FORCEHP` reader - Force High Power"]
 pub type FORCEHP_R = crate::BitReader<bool>;
 #[doc = "Field `FORCEHP` writer - Force High Power"]
-pub type FORCEHP_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 0>;
+pub type FORCEHP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `FORCELP` reader - Force Low Power"]
 pub type FORCELP_R = crate::BitReader<bool>;
 #[doc = "Field `FORCELP` writer - Force Low Power"]
-pub type FORCELP_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 1>;
+pub type FORCELP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `FORCERUN` reader - Force run"]
 pub type FORCERUN_R = crate::BitReader<bool>;
 #[doc = "Field `FORCERUN` writer - Force run"]
-pub type FORCERUN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 4>;
+pub type FORCERUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `FORCESTOP` reader - Force stop"]
 pub type FORCESTOP_R = crate::BitReader<bool>;
 #[doc = "Field `FORCESTOP` writer - Force stop"]
-pub type FORCESTOP_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 5>;
+pub type FORCESTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Force High Power"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Force High Power"]
     #[inline(always)]
-    pub fn forcehp(&mut self) -> FORCEHP_W {
+    #[must_use]
+    pub fn forcehp(&mut self) -> FORCEHP_W<0> {
         FORCEHP_W::new(self)
     }
     #[doc = "Bit 1 - Force Low Power"]
     #[inline(always)]
-    pub fn forcelp(&mut self) -> FORCELP_W {
+    #[must_use]
+    pub fn forcelp(&mut self) -> FORCELP_W<1> {
         FORCELP_W::new(self)
     }
     #[doc = "Bit 4 - Force run"]
     #[inline(always)]
-    pub fn forcerun(&mut self) -> FORCERUN_W {
+    #[must_use]
+    pub fn forcerun(&mut self) -> FORCERUN_W<4> {
         FORCERUN_W::new(self)
     }
     #[doc = "Bit 5 - Force stop"]
     #[inline(always)]
-    pub fn forcestop(&mut self) -> FORCESTOP_W {
+    #[must_use]
+    pub fn forcestop(&mut self) -> FORCESTOP_W<5> {
         FORCESTOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

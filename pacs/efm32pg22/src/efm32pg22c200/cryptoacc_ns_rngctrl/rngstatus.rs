@@ -34,8 +34,10 @@ impl From<crate::W<RNGSTATUS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TESTDATABUSY` reader - Test Data Busy"]
+pub type TESTDATABUSY_R = crate::BitReader<TESTDATABUSY_A>;
 #[doc = "Test Data Busy\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TESTDATABUSY_A {
     #[doc = "0: TESTDATA write is finished processing or no test in progress."]
     IDLE = 0,
@@ -48,8 +50,6 @@ impl From<TESTDATABUSY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TESTDATABUSY` reader - Test Data Busy"]
-pub type TESTDATABUSY_R = crate::BitReader<TESTDATABUSY_A>;
 impl TESTDATABUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -70,8 +70,10 @@ impl TESTDATABUSY_R {
         *self == TESTDATABUSY_A::BUSY
     }
 }
+#[doc = "Field `STATE` reader - State of the control FSM"]
+pub type STATE_R = crate::FieldReader<u8, STATE_A>;
 #[doc = "State of the control FSM\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STATE_A {
     #[doc = "0: RESET State"]
@@ -97,8 +99,6 @@ impl From<STATE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `STATE` reader - State of the control FSM"]
-pub type STATE_R = crate::FieldReader<u8, STATE_A>;
 impl STATE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -167,7 +167,7 @@ pub type FULLIF_R = crate::BitReader<bool>;
 #[doc = "Field `PREIF` reader - AIS31 Preliminary Noise Alarm IF"]
 pub type PREIF_R = crate::BitReader<bool>;
 #[doc = "Field `PREIF` writer - AIS31 Preliminary Noise Alarm IF"]
-pub type PREIF_W<'a> = crate::BitWriter<'a, u32, RNGSTATUS_SPEC, bool, 8>;
+pub type PREIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, RNGSTATUS_SPEC, bool, O>;
 #[doc = "Field `ALMIF` reader - AIS31 Noise Alarm interrupt status"]
 pub type ALMIF_R = crate::BitReader<bool>;
 impl R {
@@ -215,7 +215,8 @@ impl R {
 impl W {
     #[doc = "Bit 8 - AIS31 Preliminary Noise Alarm IF"]
     #[inline(always)]
-    pub fn preif(&mut self) -> PREIF_W {
+    #[must_use]
+    pub fn preif(&mut self) -> PREIF_W<8> {
         PREIF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -237,11 +238,10 @@ impl crate::Readable for RNGSTATUS_SPEC {
 #[doc = "`write(|w| ..)` method takes [rngstatus::W](W) writer structure"]
 impl crate::Writable for RNGSTATUS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RNGSTATUS to value 0"]
 impl crate::Resettable for RNGSTATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

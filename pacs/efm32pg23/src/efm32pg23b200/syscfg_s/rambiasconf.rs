@@ -34,8 +34,10 @@ impl From<crate::W<RAMBIASCONF_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RAMBIASCTRL` reader - RAM Bias Control"]
+pub type RAMBIASCTRL_R = crate::FieldReader<u8, RAMBIASCTRL_A>;
 #[doc = "RAM Bias Control\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RAMBIASCTRL_A {
     #[doc = "0: None"]
@@ -55,8 +57,6 @@ impl From<RAMBIASCTRL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RAMBIASCTRL` reader - RAM Bias Control"]
-pub type RAMBIASCTRL_R = crate::FieldReader<u8, RAMBIASCTRL_A>;
 impl RAMBIASCTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -97,8 +97,9 @@ impl RAMBIASCTRL_R {
     }
 }
 #[doc = "Field `RAMBIASCTRL` writer - RAM Bias Control"]
-pub type RAMBIASCTRL_W<'a> = crate::FieldWriter<'a, u32, RAMBIASCONF_SPEC, u8, RAMBIASCTRL_A, 4, 0>;
-impl<'a> RAMBIASCTRL_W<'a> {
+pub type RAMBIASCTRL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, RAMBIASCONF_SPEC, u8, RAMBIASCTRL_A, 4, O>;
+impl<'a, const O: u8> RAMBIASCTRL_W<'a, O> {
     #[doc = "None"]
     #[inline(always)]
     pub fn no(self) -> &'a mut W {
@@ -135,7 +136,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - RAM Bias Control"]
     #[inline(always)]
-    pub fn rambiasctrl(&mut self) -> RAMBIASCTRL_W {
+    #[must_use]
+    pub fn rambiasctrl(&mut self) -> RAMBIASCTRL_W<0> {
         RAMBIASCTRL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -157,11 +159,10 @@ impl crate::Readable for RAMBIASCONF_SPEC {
 #[doc = "`write(|w| ..)` method takes [rambiasconf::W](W) writer structure"]
 impl crate::Writable for RAMBIASCONF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RAMBIASCONF to value 0x02"]
 impl crate::Resettable for RAMBIASCONF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x02
-    }
+    const RESET_VALUE: Self::Ux = 0x02;
 }

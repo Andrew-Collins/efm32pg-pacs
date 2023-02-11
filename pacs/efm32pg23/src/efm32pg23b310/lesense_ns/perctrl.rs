@@ -34,8 +34,10 @@ impl From<crate::W<PERCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DACCH0DATA` reader - DAC CH0 data selection."]
+pub type DACCH0DATA_R = crate::BitReader<DACCH0DATA_A>;
 #[doc = "DAC CH0 data selection.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DACCH0DATA_A {
     #[doc = "0: DAC data is defined by CH0DATA in the DAC interface."]
     DACDATA = 0,
@@ -48,8 +50,6 @@ impl From<DACCH0DATA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DACCH0DATA` reader - DAC CH0 data selection."]
-pub type DACCH0DATA_R = crate::BitReader<DACCH0DATA_A>;
 impl DACCH0DATA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl DACCH0DATA_R {
     }
 }
 #[doc = "Field `DACCH0DATA` writer - DAC CH0 data selection."]
-pub type DACCH0DATA_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, DACCH0DATA_A, 2>;
-impl<'a> DACCH0DATA_W<'a> {
+pub type DACCH0DATA_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, DACCH0DATA_A, O>;
+impl<'a, const O: u8> DACCH0DATA_W<'a, O> {
     #[doc = "DAC data is defined by CH0DATA in the DAC interface."]
     #[inline(always)]
     pub fn dacdata(self) -> &'a mut W {
@@ -84,8 +84,10 @@ impl<'a> DACCH0DATA_W<'a> {
         self.variant(DACCH0DATA_A::THRES)
     }
 }
+#[doc = "Field `DACSTARTUP` reader - DAC startup configuration"]
+pub type DACSTARTUP_R = crate::BitReader<DACSTARTUP_A>;
 #[doc = "DAC startup configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DACSTARTUP_A {
     #[doc = "0: DAC is started a full LESENSECLK before sensor interaction starts."]
     FULLCYCLE = 0,
@@ -98,8 +100,6 @@ impl From<DACSTARTUP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DACSTARTUP` reader - DAC startup configuration"]
-pub type DACSTARTUP_R = crate::BitReader<DACSTARTUP_A>;
 impl DACSTARTUP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,8 @@ impl DACSTARTUP_R {
     }
 }
 #[doc = "Field `DACSTARTUP` writer - DAC startup configuration"]
-pub type DACSTARTUP_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, DACSTARTUP_A, 6>;
-impl<'a> DACSTARTUP_W<'a> {
+pub type DACSTARTUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, DACSTARTUP_A, O>;
+impl<'a, const O: u8> DACSTARTUP_W<'a, O> {
     #[doc = "DAC is started a full LESENSECLK before sensor interaction starts."]
     #[inline(always)]
     pub fn fullcycle(self) -> &'a mut W {
@@ -134,8 +134,10 @@ impl<'a> DACSTARTUP_W<'a> {
         self.variant(DACSTARTUP_A::HALFCYCLE)
     }
 }
+#[doc = "Field `DACCONVTRIG` reader - DAC conversion trigger configuration"]
+pub type DACCONVTRIG_R = crate::BitReader<DACCONVTRIG_A>;
 #[doc = "DAC conversion trigger configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DACCONVTRIG_A {
     #[doc = "0: DAC is enabled before every LESENSE channle measurement."]
     CHANNELSTART = 0,
@@ -148,8 +150,6 @@ impl From<DACCONVTRIG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DACCONVTRIG` reader - DAC conversion trigger configuration"]
-pub type DACCONVTRIG_R = crate::BitReader<DACCONVTRIG_A>;
 impl DACCONVTRIG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -171,8 +171,8 @@ impl DACCONVTRIG_R {
     }
 }
 #[doc = "Field `DACCONVTRIG` writer - DAC conversion trigger configuration"]
-pub type DACCONVTRIG_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, DACCONVTRIG_A, 8>;
-impl<'a> DACCONVTRIG_W<'a> {
+pub type DACCONVTRIG_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, DACCONVTRIG_A, O>;
+impl<'a, const O: u8> DACCONVTRIG_W<'a, O> {
     #[doc = "DAC is enabled before every LESENSE channle measurement."]
     #[inline(always)]
     pub fn channelstart(self) -> &'a mut W {
@@ -184,8 +184,10 @@ impl<'a> DACCONVTRIG_W<'a> {
         self.variant(DACCONVTRIG_A::SCANSTART)
     }
 }
+#[doc = "Field `ACMP0MODE` reader - ACMP0 mode"]
+pub type ACMP0MODE_R = crate::BitReader<ACMP0MODE_A>;
 #[doc = "ACMP0 mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ACMP0MODE_A {
     #[doc = "0: LESENSE controls POSSEL of ACMP0"]
     MUX = 0,
@@ -198,8 +200,6 @@ impl From<ACMP0MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ACMP0MODE` reader - ACMP0 mode"]
-pub type ACMP0MODE_R = crate::BitReader<ACMP0MODE_A>;
 impl ACMP0MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -221,8 +221,8 @@ impl ACMP0MODE_R {
     }
 }
 #[doc = "Field `ACMP0MODE` writer - ACMP0 mode"]
-pub type ACMP0MODE_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, ACMP0MODE_A, 20>;
-impl<'a> ACMP0MODE_W<'a> {
+pub type ACMP0MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, ACMP0MODE_A, O>;
+impl<'a, const O: u8> ACMP0MODE_W<'a, O> {
     #[doc = "LESENSE controls POSSEL of ACMP0"]
     #[inline(always)]
     pub fn mux(self) -> &'a mut W {
@@ -234,8 +234,10 @@ impl<'a> ACMP0MODE_W<'a> {
         self.variant(ACMP0MODE_A::MUXTHRES)
     }
 }
+#[doc = "Field `ACMP1MODE` reader - ACMP1 mode"]
+pub type ACMP1MODE_R = crate::BitReader<ACMP1MODE_A>;
 #[doc = "ACMP1 mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ACMP1MODE_A {
     #[doc = "0: LESENSE controls the POSSEL of ACMP1"]
     MUX = 0,
@@ -248,8 +250,6 @@ impl From<ACMP1MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ACMP1MODE` reader - ACMP1 mode"]
-pub type ACMP1MODE_R = crate::BitReader<ACMP1MODE_A>;
 impl ACMP1MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -271,8 +271,8 @@ impl ACMP1MODE_R {
     }
 }
 #[doc = "Field `ACMP1MODE` writer - ACMP1 mode"]
-pub type ACMP1MODE_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, ACMP1MODE_A, 22>;
-impl<'a> ACMP1MODE_W<'a> {
+pub type ACMP1MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, ACMP1MODE_A, O>;
+impl<'a, const O: u8> ACMP1MODE_W<'a, O> {
     #[doc = "LESENSE controls the POSSEL of ACMP1"]
     #[inline(always)]
     pub fn mux(self) -> &'a mut W {
@@ -287,11 +287,11 @@ impl<'a> ACMP1MODE_W<'a> {
 #[doc = "Field `ACMP0INV` reader - Invert analog comparator 0 output"]
 pub type ACMP0INV_R = crate::BitReader<bool>;
 #[doc = "Field `ACMP0INV` writer - Invert analog comparator 0 output"]
-pub type ACMP0INV_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, 24>;
+pub type ACMP0INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, O>;
 #[doc = "Field `ACMP1INV` reader - Invert analog comparator 1 output"]
 pub type ACMP1INV_R = crate::BitReader<bool>;
 #[doc = "Field `ACMP1INV` writer - Invert analog comparator 1 output"]
-pub type ACMP1INV_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, 25>;
+pub type ACMP1INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 2 - DAC CH0 data selection."]
     #[inline(always)]
@@ -332,37 +332,44 @@ impl R {
 impl W {
     #[doc = "Bit 2 - DAC CH0 data selection."]
     #[inline(always)]
-    pub fn dacch0data(&mut self) -> DACCH0DATA_W {
+    #[must_use]
+    pub fn dacch0data(&mut self) -> DACCH0DATA_W<2> {
         DACCH0DATA_W::new(self)
     }
     #[doc = "Bit 6 - DAC startup configuration"]
     #[inline(always)]
-    pub fn dacstartup(&mut self) -> DACSTARTUP_W {
+    #[must_use]
+    pub fn dacstartup(&mut self) -> DACSTARTUP_W<6> {
         DACSTARTUP_W::new(self)
     }
     #[doc = "Bit 8 - DAC conversion trigger configuration"]
     #[inline(always)]
-    pub fn dacconvtrig(&mut self) -> DACCONVTRIG_W {
+    #[must_use]
+    pub fn dacconvtrig(&mut self) -> DACCONVTRIG_W<8> {
         DACCONVTRIG_W::new(self)
     }
     #[doc = "Bit 20 - ACMP0 mode"]
     #[inline(always)]
-    pub fn acmp0mode(&mut self) -> ACMP0MODE_W {
+    #[must_use]
+    pub fn acmp0mode(&mut self) -> ACMP0MODE_W<20> {
         ACMP0MODE_W::new(self)
     }
     #[doc = "Bit 22 - ACMP1 mode"]
     #[inline(always)]
-    pub fn acmp1mode(&mut self) -> ACMP1MODE_W {
+    #[must_use]
+    pub fn acmp1mode(&mut self) -> ACMP1MODE_W<22> {
         ACMP1MODE_W::new(self)
     }
     #[doc = "Bit 24 - Invert analog comparator 0 output"]
     #[inline(always)]
-    pub fn acmp0inv(&mut self) -> ACMP0INV_W {
+    #[must_use]
+    pub fn acmp0inv(&mut self) -> ACMP0INV_W<24> {
         ACMP0INV_W::new(self)
     }
     #[doc = "Bit 25 - Invert analog comparator 1 output"]
     #[inline(always)]
-    pub fn acmp1inv(&mut self) -> ACMP1INV_W {
+    #[must_use]
+    pub fn acmp1inv(&mut self) -> ACMP1INV_W<25> {
         ACMP1INV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -384,11 +391,10 @@ impl crate::Readable for PERCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [perctrl::W](W) writer structure"]
 impl crate::Writable for PERCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PERCTRL to value 0"]
 impl crate::Resettable for PERCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

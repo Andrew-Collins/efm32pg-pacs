@@ -37,11 +37,11 @@ impl From<crate::W<CH5_REQSEL_SPEC>> for W {
 #[doc = "Field `SIGSEL` reader - Signal Select"]
 pub type SIGSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SIGSEL` writer - Signal Select"]
-pub type SIGSEL_W<'a> = crate::FieldWriter<'a, u32, CH5_REQSEL_SPEC, u8, u8, 4, 0>;
+pub type SIGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH5_REQSEL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `SOURCESEL` reader - Source Select"]
 pub type SOURCESEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SOURCESEL` writer - Source Select"]
-pub type SOURCESEL_W<'a> = crate::FieldWriter<'a, u32, CH5_REQSEL_SPEC, u8, u8, 6, 16>;
+pub type SOURCESEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH5_REQSEL_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:3 - Signal Select"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Signal Select"]
     #[inline(always)]
-    pub fn sigsel(&mut self) -> SIGSEL_W {
+    #[must_use]
+    pub fn sigsel(&mut self) -> SIGSEL_W<0> {
         SIGSEL_W::new(self)
     }
     #[doc = "Bits 16:21 - Source Select"]
     #[inline(always)]
-    pub fn sourcesel(&mut self) -> SOURCESEL_W {
+    #[must_use]
+    pub fn sourcesel(&mut self) -> SOURCESEL_W<16> {
         SOURCESEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for CH5_REQSEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ch5_reqsel::W](W) writer structure"]
 impl crate::Writable for CH5_REQSEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CH5_REQSEL to value 0"]
 impl crate::Resettable for CH5_REQSEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

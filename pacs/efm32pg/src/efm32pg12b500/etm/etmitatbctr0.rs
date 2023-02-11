@@ -37,7 +37,7 @@ impl From<crate::W<ETMITATBCTR0_SPEC>> for W {
 #[doc = "Field `ATVALID` reader - ATVALID Output Value"]
 pub type ATVALID_R = crate::BitReader<bool>;
 #[doc = "Field `ATVALID` writer - ATVALID Output Value"]
-pub type ATVALID_W<'a> = crate::BitWriter<'a, u32, ETMITATBCTR0_SPEC, bool, 0>;
+pub type ATVALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, ETMITATBCTR0_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - ATVALID Output Value"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bit 0 - ATVALID Output Value"]
     #[inline(always)]
-    pub fn atvalid(&mut self) -> ATVALID_W {
+    #[must_use]
+    pub fn atvalid(&mut self) -> ATVALID_W<0> {
         ATVALID_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for ETMITATBCTR0_SPEC {
 #[doc = "`write(|w| ..)` method takes [etmitatbctr0::W](W) writer structure"]
 impl crate::Writable for ETMITATBCTR0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ETMITATBCTR0 to value 0"]
 impl crate::Resettable for ETMITATBCTR0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

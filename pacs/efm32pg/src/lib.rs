@@ -1,9 +1,9 @@
 //! Peripheral access API for EFM32PG microcontrollers
 //! (generated using [svd2rust](https://github.com/rust-embedded/svd2rust)
-//! 0.24.0)
+//! 0.28.0)
 //!
 //! You can find an overview of the API here:
-//! [svd2rust/#peripheral-api](https://docs.rs/svd2rust/0.24.0/svd2rust/#peripheral-api)
+//! [svd2rust/#peripheral-api](https://docs.rs/svd2rust/0.28.0/svd2rust/#peripheral-api)
 //!
 //! For more details see the README here:
 //! [efm32-rs](https://github.com/efm32-rs/efm32pg-pacs)
@@ -20,9 +20,9 @@ pub use self::generic::*;
 
 #[cfg(feature = "efm32pg12b500")]
 pub mod efm32pg12b500;
-
+
 #[cfg(feature = "efm32pg1b100")]
 pub mod efm32pg1b100;
-
+
 #[cfg(feature = "efm32pg1b200")]
 pub mod efm32pg1b200;

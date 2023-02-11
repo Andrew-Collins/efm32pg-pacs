@@ -15,8 +15,10 @@ impl From<crate::R<STATUS_SPEC>> for R {
 }
 #[doc = "Field `RUNNING` reader - Running"]
 pub type RUNNING_R = crate::BitReader<bool>;
+#[doc = "Field `DIR` reader - Direction"]
+pub type DIR_R = crate::BitReader<DIR_A>;
 #[doc = "Direction\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DIR_A {
     #[doc = "0: Counting up"]
     UP = 0,
@@ -29,8 +31,6 @@ impl From<DIR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DIR` reader - Direction"]
-pub type DIR_R = crate::BitReader<DIR_A>;
 impl DIR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -53,8 +53,10 @@ impl DIR_R {
 }
 #[doc = "Field `TOPBV` reader - TOP Buffer Valid"]
 pub type TOPBV_R = crate::BitReader<bool>;
+#[doc = "Field `TIMERLOCKSTATUS` reader - Timer lock status"]
+pub type TIMERLOCKSTATUS_R = crate::BitReader<TIMERLOCKSTATUS_A>;
 #[doc = "Timer lock status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TIMERLOCKSTATUS_A {
     #[doc = "0: TIMER registers are unlocked"]
     UNLOCKED = 0,
@@ -67,8 +69,6 @@ impl From<TIMERLOCKSTATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TIMERLOCKSTATUS` reader - Timer lock status"]
-pub type TIMERLOCKSTATUS_R = crate::BitReader<TIMERLOCKSTATUS_A>;
 impl TIMERLOCKSTATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,10 @@ impl TIMERLOCKSTATUS_R {
         *self == TIMERLOCKSTATUS_A::LOCKED
     }
 }
+#[doc = "Field `DTILOCKSTATUS` reader - DTI lock status"]
+pub type DTILOCKSTATUS_R = crate::BitReader<DTILOCKSTATUS_A>;
 #[doc = "DTI lock status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DTILOCKSTATUS_A {
     #[doc = "0: DTI registers are unlocked"]
     UNLOCKED = 0,
@@ -103,8 +105,6 @@ impl From<DTILOCKSTATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DTILOCKSTATUS` reader - DTI lock status"]
-pub type DTILOCKSTATUS_R = crate::BitReader<DTILOCKSTATUS_A>;
 impl DTILOCKSTATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -139,8 +139,10 @@ pub type ICFEMPTY0_R = crate::BitReader<bool>;
 pub type ICFEMPTY1_R = crate::BitReader<bool>;
 #[doc = "Field `ICFEMPTY2` reader - Input capture fifo empty"]
 pub type ICFEMPTY2_R = crate::BitReader<bool>;
+#[doc = "Field `CCPOL0` reader - Compare/Capture Polarity"]
+pub type CCPOL0_R = crate::BitReader<CCPOL0_A>;
 #[doc = "Compare/Capture Polarity\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CCPOL0_A {
     #[doc = "0: CCx polarity low level/rising edge"]
     LOWRISE = 0,
@@ -153,8 +155,6 @@ impl From<CCPOL0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CCPOL0` reader - Compare/Capture Polarity"]
-pub type CCPOL0_R = crate::BitReader<CCPOL0_A>;
 impl CCPOL0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -175,8 +175,10 @@ impl CCPOL0_R {
         *self == CCPOL0_A::HIGHFALL
     }
 }
+#[doc = "Field `CCPOL1` reader - Compare/Capture Polarity"]
+pub type CCPOL1_R = crate::BitReader<CCPOL1_A>;
 #[doc = "Compare/Capture Polarity\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CCPOL1_A {
     #[doc = "0: CCx polarity low level/rising edge"]
     LOWRISE = 0,
@@ -189,8 +191,6 @@ impl From<CCPOL1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CCPOL1` reader - Compare/Capture Polarity"]
-pub type CCPOL1_R = crate::BitReader<CCPOL1_A>;
 impl CCPOL1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -211,8 +211,10 @@ impl CCPOL1_R {
         *self == CCPOL1_A::HIGHFALL
     }
 }
+#[doc = "Field `CCPOL2` reader - Compare/Capture Polarity"]
+pub type CCPOL2_R = crate::BitReader<CCPOL2_A>;
 #[doc = "Compare/Capture Polarity\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CCPOL2_A {
     #[doc = "0: CCx polarity low level/rising edge"]
     LOWRISE = 0,
@@ -225,8 +227,6 @@ impl From<CCPOL2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CCPOL2` reader - Compare/Capture Polarity"]
-pub type CCPOL2_R = crate::BitReader<CCPOL2_A>;
 impl CCPOL2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -335,8 +335,5 @@ impl crate::Readable for STATUS_SPEC {
 }
 #[doc = "`reset()` method sets STATUS to value 0"]
 impl crate::Resettable for STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

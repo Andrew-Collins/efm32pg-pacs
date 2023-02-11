@@ -34,8 +34,10 @@ impl From<crate::W<RSTCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `WDOG0RMODE` reader - Enable WDOG0 reset"]
+pub type WDOG0RMODE_R = crate::BitReader<WDOG0RMODE_A>;
 #[doc = "Enable WDOG0 reset\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WDOG0RMODE_A {
     #[doc = "0: Reset request is blocked"]
     DISABLED = 0,
@@ -48,8 +50,6 @@ impl From<WDOG0RMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WDOG0RMODE` reader - Enable WDOG0 reset"]
-pub type WDOG0RMODE_R = crate::BitReader<WDOG0RMODE_A>;
 impl WDOG0RMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl WDOG0RMODE_R {
     }
 }
 #[doc = "Field `WDOG0RMODE` writer - Enable WDOG0 reset"]
-pub type WDOG0RMODE_W<'a> = crate::BitWriter<'a, u32, RSTCTRL_SPEC, WDOG0RMODE_A, 0>;
-impl<'a> WDOG0RMODE_W<'a> {
+pub type WDOG0RMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTRL_SPEC, WDOG0RMODE_A, O>;
+impl<'a, const O: u8> WDOG0RMODE_W<'a, O> {
     #[doc = "Reset request is blocked"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -84,8 +84,10 @@ impl<'a> WDOG0RMODE_W<'a> {
         self.variant(WDOG0RMODE_A::ENABLED)
     }
 }
+#[doc = "Field `SYSRMODE` reader - Enable M33 System reset"]
+pub type SYSRMODE_R = crate::BitReader<SYSRMODE_A>;
 #[doc = "Enable M33 System reset\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYSRMODE_A {
     #[doc = "0: Reset request is blocked"]
     DISABLED = 0,
@@ -98,8 +100,6 @@ impl From<SYSRMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SYSRMODE` reader - Enable M33 System reset"]
-pub type SYSRMODE_R = crate::BitReader<SYSRMODE_A>;
 impl SYSRMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,8 @@ impl SYSRMODE_R {
     }
 }
 #[doc = "Field `SYSRMODE` writer - Enable M33 System reset"]
-pub type SYSRMODE_W<'a> = crate::BitWriter<'a, u32, RSTCTRL_SPEC, SYSRMODE_A, 2>;
-impl<'a> SYSRMODE_W<'a> {
+pub type SYSRMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTRL_SPEC, SYSRMODE_A, O>;
+impl<'a, const O: u8> SYSRMODE_W<'a, O> {
     #[doc = "Reset request is blocked"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -134,8 +134,10 @@ impl<'a> SYSRMODE_W<'a> {
         self.variant(SYSRMODE_A::ENABLED)
     }
 }
+#[doc = "Field `LOCKUPRMODE` reader - Enable M33 Lockup reset"]
+pub type LOCKUPRMODE_R = crate::BitReader<LOCKUPRMODE_A>;
 #[doc = "Enable M33 Lockup reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOCKUPRMODE_A {
     #[doc = "0: Reset Request is Block"]
     DISABLED = 0,
@@ -148,8 +150,6 @@ impl From<LOCKUPRMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOCKUPRMODE` reader - Enable M33 Lockup reset"]
-pub type LOCKUPRMODE_R = crate::BitReader<LOCKUPRMODE_A>;
 impl LOCKUPRMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -171,8 +171,8 @@ impl LOCKUPRMODE_R {
     }
 }
 #[doc = "Field `LOCKUPRMODE` writer - Enable M33 Lockup reset"]
-pub type LOCKUPRMODE_W<'a> = crate::BitWriter<'a, u32, RSTCTRL_SPEC, LOCKUPRMODE_A, 3>;
-impl<'a> LOCKUPRMODE_W<'a> {
+pub type LOCKUPRMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTRL_SPEC, LOCKUPRMODE_A, O>;
+impl<'a, const O: u8> LOCKUPRMODE_W<'a, O> {
     #[doc = "Reset Request is Block"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -184,8 +184,10 @@ impl<'a> LOCKUPRMODE_W<'a> {
         self.variant(LOCKUPRMODE_A::ENABLED)
     }
 }
+#[doc = "Field `AVDDBODRMODE` reader - Enable AVDD BOD reset"]
+pub type AVDDBODRMODE_R = crate::BitReader<AVDDBODRMODE_A>;
 #[doc = "Enable AVDD BOD reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AVDDBODRMODE_A {
     #[doc = "0: Reset Request is block"]
     DISABLED = 0,
@@ -198,8 +200,6 @@ impl From<AVDDBODRMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AVDDBODRMODE` reader - Enable AVDD BOD reset"]
-pub type AVDDBODRMODE_R = crate::BitReader<AVDDBODRMODE_A>;
 impl AVDDBODRMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -221,8 +221,9 @@ impl AVDDBODRMODE_R {
     }
 }
 #[doc = "Field `AVDDBODRMODE` writer - Enable AVDD BOD reset"]
-pub type AVDDBODRMODE_W<'a> = crate::BitWriter<'a, u32, RSTCTRL_SPEC, AVDDBODRMODE_A, 6>;
-impl<'a> AVDDBODRMODE_W<'a> {
+pub type AVDDBODRMODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, RSTCTRL_SPEC, AVDDBODRMODE_A, O>;
+impl<'a, const O: u8> AVDDBODRMODE_W<'a, O> {
     #[doc = "Reset Request is block"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -234,8 +235,10 @@ impl<'a> AVDDBODRMODE_W<'a> {
         self.variant(AVDDBODRMODE_A::ENABLED)
     }
 }
+#[doc = "Field `IOVDD0BODRMODE` reader - Enable VDDIO0 BOD reset"]
+pub type IOVDD0BODRMODE_R = crate::BitReader<IOVDD0BODRMODE_A>;
 #[doc = "Enable VDDIO0 BOD reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IOVDD0BODRMODE_A {
     #[doc = "0: Reset request is blocked"]
     DISABLED = 0,
@@ -248,8 +251,6 @@ impl From<IOVDD0BODRMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IOVDD0BODRMODE` reader - Enable VDDIO0 BOD reset"]
-pub type IOVDD0BODRMODE_R = crate::BitReader<IOVDD0BODRMODE_A>;
 impl IOVDD0BODRMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -271,8 +272,9 @@ impl IOVDD0BODRMODE_R {
     }
 }
 #[doc = "Field `IOVDD0BODRMODE` writer - Enable VDDIO0 BOD reset"]
-pub type IOVDD0BODRMODE_W<'a> = crate::BitWriter<'a, u32, RSTCTRL_SPEC, IOVDD0BODRMODE_A, 7>;
-impl<'a> IOVDD0BODRMODE_W<'a> {
+pub type IOVDD0BODRMODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, RSTCTRL_SPEC, IOVDD0BODRMODE_A, O>;
+impl<'a, const O: u8> IOVDD0BODRMODE_W<'a, O> {
     #[doc = "Reset request is blocked"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -284,8 +286,10 @@ impl<'a> IOVDD0BODRMODE_W<'a> {
         self.variant(IOVDD0BODRMODE_A::ENABLED)
     }
 }
+#[doc = "Field `DECBODRMODE` reader - Enable DECBOD reset"]
+pub type DECBODRMODE_R = crate::BitReader<DECBODRMODE_A>;
 #[doc = "Enable DECBOD reset\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DECBODRMODE_A {
     #[doc = "0: Reset request is blocked"]
     DISABLED = 0,
@@ -298,8 +302,6 @@ impl From<DECBODRMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DECBODRMODE` reader - Enable DECBOD reset"]
-pub type DECBODRMODE_R = crate::BitReader<DECBODRMODE_A>;
 impl DECBODRMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -321,8 +323,8 @@ impl DECBODRMODE_R {
     }
 }
 #[doc = "Field `DECBODRMODE` writer - Enable DECBOD reset"]
-pub type DECBODRMODE_W<'a> = crate::BitWriter<'a, u32, RSTCTRL_SPEC, DECBODRMODE_A, 10>;
-impl<'a> DECBODRMODE_W<'a> {
+pub type DECBODRMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTRL_SPEC, DECBODRMODE_A, O>;
+impl<'a, const O: u8> DECBODRMODE_W<'a, O> {
     #[doc = "Reset request is blocked"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -369,32 +371,38 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable WDOG0 reset"]
     #[inline(always)]
-    pub fn wdog0rmode(&mut self) -> WDOG0RMODE_W {
+    #[must_use]
+    pub fn wdog0rmode(&mut self) -> WDOG0RMODE_W<0> {
         WDOG0RMODE_W::new(self)
     }
     #[doc = "Bit 2 - Enable M33 System reset"]
     #[inline(always)]
-    pub fn sysrmode(&mut self) -> SYSRMODE_W {
+    #[must_use]
+    pub fn sysrmode(&mut self) -> SYSRMODE_W<2> {
         SYSRMODE_W::new(self)
     }
     #[doc = "Bit 3 - Enable M33 Lockup reset"]
     #[inline(always)]
-    pub fn lockuprmode(&mut self) -> LOCKUPRMODE_W {
+    #[must_use]
+    pub fn lockuprmode(&mut self) -> LOCKUPRMODE_W<3> {
         LOCKUPRMODE_W::new(self)
     }
     #[doc = "Bit 6 - Enable AVDD BOD reset"]
     #[inline(always)]
-    pub fn avddbodrmode(&mut self) -> AVDDBODRMODE_W {
+    #[must_use]
+    pub fn avddbodrmode(&mut self) -> AVDDBODRMODE_W<6> {
         AVDDBODRMODE_W::new(self)
     }
     #[doc = "Bit 7 - Enable VDDIO0 BOD reset"]
     #[inline(always)]
-    pub fn iovdd0bodrmode(&mut self) -> IOVDD0BODRMODE_W {
+    #[must_use]
+    pub fn iovdd0bodrmode(&mut self) -> IOVDD0BODRMODE_W<7> {
         IOVDD0BODRMODE_W::new(self)
     }
     #[doc = "Bit 10 - Enable DECBOD reset"]
     #[inline(always)]
-    pub fn decbodrmode(&mut self) -> DECBODRMODE_W {
+    #[must_use]
+    pub fn decbodrmode(&mut self) -> DECBODRMODE_W<10> {
         DECBODRMODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -416,11 +424,10 @@ impl crate::Readable for RSTCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [rstctrl::W](W) writer structure"]
 impl crate::Writable for RSTCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RSTCTRL to value 0x0006_0407"]
 impl crate::Resettable for RSTCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0006_0407
-    }
+    const RESET_VALUE: Self::Ux = 0x0006_0407;
 }

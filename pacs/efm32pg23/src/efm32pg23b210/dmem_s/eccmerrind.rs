@@ -40,8 +40,5 @@ impl crate::Readable for ECCMERRIND_SPEC {
 }
 #[doc = "`reset()` method sets ECCMERRIND to value 0"]
 impl crate::Resettable for ECCMERRIND_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

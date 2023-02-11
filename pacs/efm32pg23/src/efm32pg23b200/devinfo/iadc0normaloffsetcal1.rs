@@ -33,8 +33,5 @@ impl crate::Readable for IADC0NORMALOFFSETCAL1_SPEC {
 }
 #[doc = "`reset()` method sets IADC0NORMALOFFSETCAL1 to value 0"]
 impl crate::Resettable for IADC0NORMALOFFSETCAL1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

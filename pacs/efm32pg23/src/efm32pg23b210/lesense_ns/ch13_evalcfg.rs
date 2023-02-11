@@ -37,9 +37,11 @@ impl From<crate::W<CH13_EVALCFG_SPEC>> for W {
 #[doc = "Field `DECODE` reader - Send result to decoder"]
 pub type DECODE_R = crate::BitReader<bool>;
 #[doc = "Field `DECODE` writer - Send result to decoder"]
-pub type DECODE_W<'a> = crate::BitWriter<'a, u32, CH13_EVALCFG_SPEC, bool, 2>;
+pub type DECODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH13_EVALCFG_SPEC, bool, O>;
+#[doc = "Field `COMP` reader - Select mode for threshold comparison"]
+pub type COMP_R = crate::BitReader<COMP_A>;
 #[doc = "Select mode for threshold comparison\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum COMP_A {
     #[doc = "0: Comparison evaluates to 1 if sensor data is less than CTRTHRESHOLD, or if the ACMP output is 0"]
     LESS = 0,
@@ -52,8 +54,6 @@ impl From<COMP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `COMP` reader - Select mode for threshold comparison"]
-pub type COMP_R = crate::BitReader<COMP_A>;
 impl COMP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -75,8 +75,8 @@ impl COMP_R {
     }
 }
 #[doc = "Field `COMP` writer - Select mode for threshold comparison"]
-pub type COMP_W<'a> = crate::BitWriter<'a, u32, CH13_EVALCFG_SPEC, COMP_A, 3>;
-impl<'a> COMP_W<'a> {
+pub type COMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH13_EVALCFG_SPEC, COMP_A, O>;
+impl<'a, const O: u8> COMP_W<'a, O> {
     #[doc = "Comparison evaluates to 1 if sensor data is less than CTRTHRESHOLD, or if the ACMP output is 0"]
     #[inline(always)]
     pub fn less(self) -> &'a mut W {
@@ -88,8 +88,10 @@ impl<'a> COMP_W<'a> {
         self.variant(COMP_A::GE)
     }
 }
+#[doc = "Field `STRSAMPLE` reader - Enable storing of sensor sample in resul"]
+pub type STRSAMPLE_R = crate::FieldReader<u8, STRSAMPLE_A>;
 #[doc = "Enable storing of sensor sample in resul\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STRSAMPLE_A {
     #[doc = "0: Nothing will be stored in the result buffer."]
@@ -105,8 +107,6 @@ impl From<STRSAMPLE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `STRSAMPLE` reader - Enable storing of sensor sample in resul"]
-pub type STRSAMPLE_R = crate::FieldReader<u8, STRSAMPLE_A>;
 impl STRSAMPLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -135,8 +135,9 @@ impl STRSAMPLE_R {
     }
 }
 #[doc = "Field `STRSAMPLE` writer - Enable storing of sensor sample in resul"]
-pub type STRSAMPLE_W<'a> = crate::FieldWriter<'a, u32, CH13_EVALCFG_SPEC, u8, STRSAMPLE_A, 2, 4>;
-impl<'a> STRSAMPLE_W<'a> {
+pub type STRSAMPLE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CH13_EVALCFG_SPEC, u8, STRSAMPLE_A, 2, O>;
+impl<'a, const O: u8> STRSAMPLE_W<'a, O> {
     #[doc = "Nothing will be stored in the result buffer."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -156,9 +157,11 @@ impl<'a> STRSAMPLE_W<'a> {
 #[doc = "Field `SCANRESINV` reader - Enable inversion of result"]
 pub type SCANRESINV_R = crate::BitReader<bool>;
 #[doc = "Field `SCANRESINV` writer - Enable inversion of result"]
-pub type SCANRESINV_W<'a> = crate::BitWriter<'a, u32, CH13_EVALCFG_SPEC, bool, 6>;
+pub type SCANRESINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH13_EVALCFG_SPEC, bool, O>;
+#[doc = "Field `MODE` reader - Configure evaluation mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "Configure evaluation mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Threshold comparison is used to evaluate sensor result"]
@@ -174,8 +177,6 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - Configure evaluation mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -204,8 +205,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Configure evaluation mode"]
-pub type MODE_W<'a> = crate::FieldWriter<'a, u32, CH13_EVALCFG_SPEC, u8, MODE_A, 2, 8>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH13_EVALCFG_SPEC, u8, MODE_A, 2, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Threshold comparison is used to evaluate sensor result"]
     #[inline(always)]
     pub fn thres(self) -> &'a mut W {
@@ -252,27 +253,32 @@ impl R {
 impl W {
     #[doc = "Bit 2 - Send result to decoder"]
     #[inline(always)]
-    pub fn decode(&mut self) -> DECODE_W {
+    #[must_use]
+    pub fn decode(&mut self) -> DECODE_W<2> {
         DECODE_W::new(self)
     }
     #[doc = "Bit 3 - Select mode for threshold comparison"]
     #[inline(always)]
-    pub fn comp(&mut self) -> COMP_W {
+    #[must_use]
+    pub fn comp(&mut self) -> COMP_W<3> {
         COMP_W::new(self)
     }
     #[doc = "Bits 4:5 - Enable storing of sensor sample in resul"]
     #[inline(always)]
-    pub fn strsample(&mut self) -> STRSAMPLE_W {
+    #[must_use]
+    pub fn strsample(&mut self) -> STRSAMPLE_W<4> {
         STRSAMPLE_W::new(self)
     }
     #[doc = "Bit 6 - Enable inversion of result"]
     #[inline(always)]
-    pub fn scanresinv(&mut self) -> SCANRESINV_W {
+    #[must_use]
+    pub fn scanresinv(&mut self) -> SCANRESINV_W<6> {
         SCANRESINV_W::new(self)
     }
     #[doc = "Bits 8:9 - Configure evaluation mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<8> {
         MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -294,11 +300,10 @@ impl crate::Readable for CH13_EVALCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [ch13_evalcfg::W](W) writer structure"]
 impl crate::Writable for CH13_EVALCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CH13_EVALCFG to value 0"]
 impl crate::Resettable for CH13_EVALCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

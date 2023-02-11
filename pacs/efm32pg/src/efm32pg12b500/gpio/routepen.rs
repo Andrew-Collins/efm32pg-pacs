@@ -37,43 +37,43 @@ impl From<crate::W<ROUTEPEN_SPEC>> for W {
 #[doc = "Field `SWCLKTCKPEN` reader - Serial Wire Clock and JTAG Test Clock Pin Enable"]
 pub type SWCLKTCKPEN_R = crate::BitReader<bool>;
 #[doc = "Field `SWCLKTCKPEN` writer - Serial Wire Clock and JTAG Test Clock Pin Enable"]
-pub type SWCLKTCKPEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 0>;
+pub type SWCLKTCKPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `SWDIOTMSPEN` reader - Serial Wire Data and JTAG Test Mode Select Pin Enable"]
 pub type SWDIOTMSPEN_R = crate::BitReader<bool>;
 #[doc = "Field `SWDIOTMSPEN` writer - Serial Wire Data and JTAG Test Mode Select Pin Enable"]
-pub type SWDIOTMSPEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 1>;
+pub type SWDIOTMSPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `TDOPEN` reader - JTAG Test Debug Output Pin Enable"]
 pub type TDOPEN_R = crate::BitReader<bool>;
 #[doc = "Field `TDOPEN` writer - JTAG Test Debug Output Pin Enable"]
-pub type TDOPEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 2>;
+pub type TDOPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `TDIPEN` reader - JTAG Test Debug Input Pin Enable"]
 pub type TDIPEN_R = crate::BitReader<bool>;
 #[doc = "Field `TDIPEN` writer - JTAG Test Debug Input Pin Enable"]
-pub type TDIPEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 3>;
+pub type TDIPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `SWVPEN` reader - Serial Wire Viewer Output Pin Enable"]
 pub type SWVPEN_R = crate::BitReader<bool>;
 #[doc = "Field `SWVPEN` writer - Serial Wire Viewer Output Pin Enable"]
-pub type SWVPEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 4>;
+pub type SWVPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `ETMTCLKPEN` reader - ETM Trace Clock Pin Enable"]
 pub type ETMTCLKPEN_R = crate::BitReader<bool>;
 #[doc = "Field `ETMTCLKPEN` writer - ETM Trace Clock Pin Enable"]
-pub type ETMTCLKPEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 16>;
+pub type ETMTCLKPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `ETMTD0PEN` reader - ETM Trace Data Pin Enable"]
 pub type ETMTD0PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ETMTD0PEN` writer - ETM Trace Data Pin Enable"]
-pub type ETMTD0PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 17>;
+pub type ETMTD0PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `ETMTD1PEN` reader - ETM Trace Data Pin Enable"]
 pub type ETMTD1PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ETMTD1PEN` writer - ETM Trace Data Pin Enable"]
-pub type ETMTD1PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 18>;
+pub type ETMTD1PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `ETMTD2PEN` reader - ETM Trace Data Pin Enable"]
 pub type ETMTD2PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ETMTD2PEN` writer - ETM Trace Data Pin Enable"]
-pub type ETMTD2PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 19>;
+pub type ETMTD2PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `ETMTD3PEN` reader - ETM Trace Data Pin Enable"]
 pub type ETMTD3PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ETMTD3PEN` writer - ETM Trace Data Pin Enable"]
-pub type ETMTD3PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 20>;
+pub type ETMTD3PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Serial Wire Clock and JTAG Test Clock Pin Enable"]
     #[inline(always)]
@@ -129,52 +129,62 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Serial Wire Clock and JTAG Test Clock Pin Enable"]
     #[inline(always)]
-    pub fn swclktckpen(&mut self) -> SWCLKTCKPEN_W {
+    #[must_use]
+    pub fn swclktckpen(&mut self) -> SWCLKTCKPEN_W<0> {
         SWCLKTCKPEN_W::new(self)
     }
     #[doc = "Bit 1 - Serial Wire Data and JTAG Test Mode Select Pin Enable"]
     #[inline(always)]
-    pub fn swdiotmspen(&mut self) -> SWDIOTMSPEN_W {
+    #[must_use]
+    pub fn swdiotmspen(&mut self) -> SWDIOTMSPEN_W<1> {
         SWDIOTMSPEN_W::new(self)
     }
     #[doc = "Bit 2 - JTAG Test Debug Output Pin Enable"]
     #[inline(always)]
-    pub fn tdopen(&mut self) -> TDOPEN_W {
+    #[must_use]
+    pub fn tdopen(&mut self) -> TDOPEN_W<2> {
         TDOPEN_W::new(self)
     }
     #[doc = "Bit 3 - JTAG Test Debug Input Pin Enable"]
     #[inline(always)]
-    pub fn tdipen(&mut self) -> TDIPEN_W {
+    #[must_use]
+    pub fn tdipen(&mut self) -> TDIPEN_W<3> {
         TDIPEN_W::new(self)
     }
     #[doc = "Bit 4 - Serial Wire Viewer Output Pin Enable"]
     #[inline(always)]
-    pub fn swvpen(&mut self) -> SWVPEN_W {
+    #[must_use]
+    pub fn swvpen(&mut self) -> SWVPEN_W<4> {
         SWVPEN_W::new(self)
     }
     #[doc = "Bit 16 - ETM Trace Clock Pin Enable"]
     #[inline(always)]
-    pub fn etmtclkpen(&mut self) -> ETMTCLKPEN_W {
+    #[must_use]
+    pub fn etmtclkpen(&mut self) -> ETMTCLKPEN_W<16> {
         ETMTCLKPEN_W::new(self)
     }
     #[doc = "Bit 17 - ETM Trace Data Pin Enable"]
     #[inline(always)]
-    pub fn etmtd0pen(&mut self) -> ETMTD0PEN_W {
+    #[must_use]
+    pub fn etmtd0pen(&mut self) -> ETMTD0PEN_W<17> {
         ETMTD0PEN_W::new(self)
     }
     #[doc = "Bit 18 - ETM Trace Data Pin Enable"]
     #[inline(always)]
-    pub fn etmtd1pen(&mut self) -> ETMTD1PEN_W {
+    #[must_use]
+    pub fn etmtd1pen(&mut self) -> ETMTD1PEN_W<18> {
         ETMTD1PEN_W::new(self)
     }
     #[doc = "Bit 19 - ETM Trace Data Pin Enable"]
     #[inline(always)]
-    pub fn etmtd2pen(&mut self) -> ETMTD2PEN_W {
+    #[must_use]
+    pub fn etmtd2pen(&mut self) -> ETMTD2PEN_W<19> {
         ETMTD2PEN_W::new(self)
     }
     #[doc = "Bit 20 - ETM Trace Data Pin Enable"]
     #[inline(always)]
-    pub fn etmtd3pen(&mut self) -> ETMTD3PEN_W {
+    #[must_use]
+    pub fn etmtd3pen(&mut self) -> ETMTD3PEN_W<20> {
         ETMTD3PEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -196,11 +206,10 @@ impl crate::Readable for ROUTEPEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [routepen::W](W) writer structure"]
 impl crate::Writable for ROUTEPEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ROUTEPEN to value 0x0f"]
 impl crate::Resettable for ROUTEPEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0f
-    }
+    const RESET_VALUE: Self::Ux = 0x0f;
 }

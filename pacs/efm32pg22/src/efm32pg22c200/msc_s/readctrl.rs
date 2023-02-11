@@ -37,9 +37,11 @@ impl From<crate::W<READCTRL_SPEC>> for W {
 #[doc = "Field `DOUTBUFEN` reader - Flash dout pipeline buffer enable"]
 pub type DOUTBUFEN_R = crate::BitReader<bool>;
 #[doc = "Field `DOUTBUFEN` writer - Flash dout pipeline buffer enable"]
-pub type DOUTBUFEN_W<'a> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, 12>;
+pub type DOUTBUFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
+#[doc = "Field `MODE` reader - Read Mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "Read Mode\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Zero wait-states inserted in fetch or read transfers"]
@@ -57,8 +59,6 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - Read Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -93,8 +93,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Read Mode"]
-pub type MODE_W<'a> = crate::FieldWriterSafe<'a, u32, READCTRL_SPEC, u8, MODE_A, 2, 20>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, READCTRL_SPEC, u8, MODE_A, 2, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Zero wait-states inserted in fetch or read transfers"]
     #[inline(always)]
     pub fn ws0(self) -> &'a mut W {
@@ -131,12 +131,14 @@ impl R {
 impl W {
     #[doc = "Bit 12 - Flash dout pipeline buffer enable"]
     #[inline(always)]
-    pub fn doutbufen(&mut self) -> DOUTBUFEN_W {
+    #[must_use]
+    pub fn doutbufen(&mut self) -> DOUTBUFEN_W<12> {
         DOUTBUFEN_W::new(self)
     }
     #[doc = "Bits 20:21 - Read Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<20> {
         MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -158,11 +160,10 @@ impl crate::Readable for READCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [readctrl::W](W) writer structure"]
 impl crate::Writable for READCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets READCTRL to value 0x0020_0000"]
 impl crate::Resettable for READCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0020_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0020_0000;
 }

@@ -33,8 +33,5 @@ impl crate::Readable for IPVERSION_SPEC {
 }
 #[doc = "`reset()` method sets IPVERSION to value 0"]
 impl crate::Resettable for IPVERSION_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

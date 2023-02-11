@@ -37,19 +37,19 @@ impl From<crate::W<IF_SPEC>> for W {
 #[doc = "Field `MBOXIF0` reader - Mailbox Interupt Flag"]
 pub type MBOXIF0_R = crate::BitReader<bool>;
 #[doc = "Field `MBOXIF0` writer - Mailbox Interupt Flag"]
-pub type MBOXIF0_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 0>;
+pub type MBOXIF0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `MBOXIF1` reader - Mailbox Interupt Flag"]
 pub type MBOXIF1_R = crate::BitReader<bool>;
 #[doc = "Field `MBOXIF1` writer - Mailbox Interupt Flag"]
-pub type MBOXIF1_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 1>;
+pub type MBOXIF1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `MBOXIF2` reader - Mailbox Interupt Flag"]
 pub type MBOXIF2_R = crate::BitReader<bool>;
 #[doc = "Field `MBOXIF2` writer - Mailbox Interupt Flag"]
-pub type MBOXIF2_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 2>;
+pub type MBOXIF2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `MBOXIF3` reader - Mailbox Interupt Flag"]
 pub type MBOXIF3_R = crate::BitReader<bool>;
 #[doc = "Field `MBOXIF3` writer - Mailbox Interupt Flag"]
-pub type MBOXIF3_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 3>;
+pub type MBOXIF3_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Mailbox Interupt Flag"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Mailbox Interupt Flag"]
     #[inline(always)]
-    pub fn mboxif0(&mut self) -> MBOXIF0_W {
+    #[must_use]
+    pub fn mboxif0(&mut self) -> MBOXIF0_W<0> {
         MBOXIF0_W::new(self)
     }
     #[doc = "Bit 1 - Mailbox Interupt Flag"]
     #[inline(always)]
-    pub fn mboxif1(&mut self) -> MBOXIF1_W {
+    #[must_use]
+    pub fn mboxif1(&mut self) -> MBOXIF1_W<1> {
         MBOXIF1_W::new(self)
     }
     #[doc = "Bit 2 - Mailbox Interupt Flag"]
     #[inline(always)]
-    pub fn mboxif2(&mut self) -> MBOXIF2_W {
+    #[must_use]
+    pub fn mboxif2(&mut self) -> MBOXIF2_W<2> {
         MBOXIF2_W::new(self)
     }
     #[doc = "Bit 3 - Mailbox Interupt Flag"]
     #[inline(always)]
-    pub fn mboxif3(&mut self) -> MBOXIF3_W {
+    #[must_use]
+    pub fn mboxif3(&mut self) -> MBOXIF3_W<3> {
         MBOXIF3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_::W](W) writer structure"]
 impl crate::Writable for IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

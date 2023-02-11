@@ -37,15 +37,18 @@ impl From<crate::W<AIS31STATUS_SPEC>> for W {
 #[doc = "Field `NUMPRELIMALARMS` reader - Number of preliminary alarms"]
 pub type NUMPRELIMALARMS_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `NUMPRELIMALARMS` writer - Number of preliminary alarms"]
-pub type NUMPRELIMALARMS_W<'a> = crate::FieldWriter<'a, u32, AIS31STATUS_SPEC, u16, u16, 16, 0>;
+pub type NUMPRELIMALARMS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AIS31STATUS_SPEC, u16, u16, 16, O>;
 #[doc = "Field `PRELIMNOISEALARMRNG` reader - Preliminary noise alarm RNG"]
 pub type PRELIMNOISEALARMRNG_R = crate::BitReader<bool>;
 #[doc = "Field `PRELIMNOISEALARMRNG` writer - Preliminary noise alarm RNG"]
-pub type PRELIMNOISEALARMRNG_W<'a> = crate::BitWriter<'a, u32, AIS31STATUS_SPEC, bool, 16>;
+pub type PRELIMNOISEALARMRNG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, AIS31STATUS_SPEC, bool, O>;
 #[doc = "Field `PRELIMNOISEALARMREP` reader - Preliminary noise alarm Rep"]
 pub type PRELIMNOISEALARMREP_R = crate::BitReader<bool>;
 #[doc = "Field `PRELIMNOISEALARMREP` writer - Preliminary noise alarm Rep"]
-pub type PRELIMNOISEALARMREP_W<'a> = crate::BitWriter<'a, u32, AIS31STATUS_SPEC, bool, 17>;
+pub type PRELIMNOISEALARMREP_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, AIS31STATUS_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:15 - Number of preliminary alarms"]
     #[inline(always)]
@@ -66,17 +69,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Number of preliminary alarms"]
     #[inline(always)]
-    pub fn numprelimalarms(&mut self) -> NUMPRELIMALARMS_W {
+    #[must_use]
+    pub fn numprelimalarms(&mut self) -> NUMPRELIMALARMS_W<0> {
         NUMPRELIMALARMS_W::new(self)
     }
     #[doc = "Bit 16 - Preliminary noise alarm RNG"]
     #[inline(always)]
-    pub fn prelimnoisealarmrng(&mut self) -> PRELIMNOISEALARMRNG_W {
+    #[must_use]
+    pub fn prelimnoisealarmrng(&mut self) -> PRELIMNOISEALARMRNG_W<16> {
         PRELIMNOISEALARMRNG_W::new(self)
     }
     #[doc = "Bit 17 - Preliminary noise alarm Rep"]
     #[inline(always)]
-    pub fn prelimnoisealarmrep(&mut self) -> PRELIMNOISEALARMREP_W {
+    #[must_use]
+    pub fn prelimnoisealarmrep(&mut self) -> PRELIMNOISEALARMREP_W<17> {
         PRELIMNOISEALARMREP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +104,10 @@ impl crate::Readable for AIS31STATUS_SPEC {
 #[doc = "`write(|w| ..)` method takes [ais31status::W](W) writer structure"]
 impl crate::Writable for AIS31STATUS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets AIS31STATUS to value 0"]
 impl crate::Resettable for AIS31STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

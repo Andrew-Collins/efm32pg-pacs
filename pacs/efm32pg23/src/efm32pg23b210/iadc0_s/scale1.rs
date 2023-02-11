@@ -37,13 +37,15 @@ impl From<crate::W<SCALE1_SPEC>> for W {
 #[doc = "Field `OFFSET` reader - Offset"]
 pub type OFFSET_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `OFFSET` writer - Offset"]
-pub type OFFSET_W<'a> = crate::FieldWriter<'a, u32, SCALE1_SPEC, u32, u32, 18, 0>;
+pub type OFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCALE1_SPEC, u32, u32, 18, O>;
 #[doc = "Field `GAIN13LSB` reader - Gain 13 LSBs"]
 pub type GAIN13LSB_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `GAIN13LSB` writer - Gain 13 LSBs"]
-pub type GAIN13LSB_W<'a> = crate::FieldWriter<'a, u32, SCALE1_SPEC, u16, u16, 13, 18>;
+pub type GAIN13LSB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCALE1_SPEC, u16, u16, 13, O>;
+#[doc = "Field `GAIN3MSB` reader - Gain 3 MSBs"]
+pub type GAIN3MSB_R = crate::BitReader<GAIN3MSB_A>;
 #[doc = "Gain 3 MSBs\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GAIN3MSB_A {
     #[doc = "0: Upper 3 bits of gain = 011 (0.75x)"]
     GAIN011 = 0,
@@ -56,8 +58,6 @@ impl From<GAIN3MSB_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GAIN3MSB` reader - Gain 3 MSBs"]
-pub type GAIN3MSB_R = crate::BitReader<GAIN3MSB_A>;
 impl GAIN3MSB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -79,8 +79,8 @@ impl GAIN3MSB_R {
     }
 }
 #[doc = "Field `GAIN3MSB` writer - Gain 3 MSBs"]
-pub type GAIN3MSB_W<'a> = crate::BitWriter<'a, u32, SCALE1_SPEC, GAIN3MSB_A, 31>;
-impl<'a> GAIN3MSB_W<'a> {
+pub type GAIN3MSB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCALE1_SPEC, GAIN3MSB_A, O>;
+impl<'a, const O: u8> GAIN3MSB_W<'a, O> {
     #[doc = "Upper 3 bits of gain = 011 (0.75x)"]
     #[inline(always)]
     pub fn gain011(self) -> &'a mut W {
@@ -96,7 +96,7 @@ impl R {
     #[doc = "Bits 0:17 - Offset"]
     #[inline(always)]
     pub fn offset(&self) -> OFFSET_R {
-        OFFSET_R::new((self.bits & 0x0003_ffff) as u32)
+        OFFSET_R::new(self.bits & 0x0003_ffff)
     }
     #[doc = "Bits 18:30 - Gain 13 LSBs"]
     #[inline(always)]
@@ -112,17 +112,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:17 - Offset"]
     #[inline(always)]
-    pub fn offset(&mut self) -> OFFSET_W {
+    #[must_use]
+    pub fn offset(&mut self) -> OFFSET_W<0> {
         OFFSET_W::new(self)
     }
     #[doc = "Bits 18:30 - Gain 13 LSBs"]
     #[inline(always)]
-    pub fn gain13lsb(&mut self) -> GAIN13LSB_W {
+    #[must_use]
+    pub fn gain13lsb(&mut self) -> GAIN13LSB_W<18> {
         GAIN13LSB_W::new(self)
     }
     #[doc = "Bit 31 - Gain 3 MSBs"]
     #[inline(always)]
-    pub fn gain3msb(&mut self) -> GAIN3MSB_W {
+    #[must_use]
+    pub fn gain3msb(&mut self) -> GAIN3MSB_W<31> {
         GAIN3MSB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -144,11 +147,10 @@ impl crate::Readable for SCALE1_SPEC {
 #[doc = "`write(|w| ..)` method takes [scale1::W](W) writer structure"]
 impl crate::Writable for SCALE1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCALE1 to value 0x8002_c000"]
 impl crate::Resettable for SCALE1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x8002_c000
-    }
+    const RESET_VALUE: Self::Ux = 0x8002_c000;
 }

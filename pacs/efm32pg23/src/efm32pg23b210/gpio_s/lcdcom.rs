@@ -37,7 +37,7 @@ impl From<crate::W<LCDCOM_SPEC>> for W {
 #[doc = "Field `LCDCOMALLOC` reader - LCD Common Allocation"]
 pub type LCDCOMALLOC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LCDCOMALLOC` writer - LCD Common Allocation"]
-pub type LCDCOMALLOC_W<'a> = crate::FieldWriter<'a, u32, LCDCOM_SPEC, u8, u8, 4, 0>;
+pub type LCDCOMALLOC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCDCOM_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - LCD Common Allocation"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - LCD Common Allocation"]
     #[inline(always)]
-    pub fn lcdcomalloc(&mut self) -> LCDCOMALLOC_W {
+    #[must_use]
+    pub fn lcdcomalloc(&mut self) -> LCDCOMALLOC_W<0> {
         LCDCOMALLOC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for LCDCOM_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcdcom::W](W) writer structure"]
 impl crate::Writable for LCDCOM_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LCDCOM to value 0"]
 impl crate::Resettable for LCDCOM_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

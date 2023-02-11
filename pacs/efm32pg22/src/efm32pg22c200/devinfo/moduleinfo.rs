@@ -15,8 +15,10 @@ impl From<crate::R<MODULEINFO_SPEC>> for R {
 }
 #[doc = "Field `HWREV` reader - No Description"]
 pub type HWREV_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `ANTENNA` reader - No Description"]
+pub type ANTENNA_R = crate::FieldReader<u8, ANTENNA_A>;
 #[doc = "No Description\n\nValue on reset: 7"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ANTENNA_A {
     #[doc = "0: Built-in Antenna"]
@@ -34,8 +36,6 @@ impl From<ANTENNA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ANTENNA` reader - No Description"]
-pub type ANTENNA_R = crate::FieldReader<u8, ANTENNA_A>;
 impl ANTENNA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,10 @@ impl ANTENNA_R {
 }
 #[doc = "Field `MODNUMBER` reader - No Description"]
 pub type MODNUMBER_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `TYPE` reader - No Description"]
+pub type TYPE_R = crate::BitReader<TYPE_A>;
 #[doc = "No Description\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TYPE_A {
     #[doc = "0: PCB"]
     PCB = 0,
@@ -85,8 +87,6 @@ impl From<TYPE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TYPE` reader - No Description"]
-pub type TYPE_R = crate::BitReader<TYPE_A>;
 impl TYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -107,8 +107,10 @@ impl TYPE_R {
         *self == TYPE_A::SIP
     }
 }
+#[doc = "Field `LFXO` reader - No Description"]
+pub type LFXO_R = crate::BitReader<LFXO_A>;
 #[doc = "No Description\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LFXO_A {
     #[doc = "0: LFXO is not installed"]
     NONE = 0,
@@ -121,8 +123,6 @@ impl From<LFXO_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LFXO` reader - No Description"]
-pub type LFXO_R = crate::BitReader<LFXO_A>;
 impl LFXO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -143,8 +143,10 @@ impl LFXO_R {
         *self == LFXO_A::PRESENT
     }
 }
+#[doc = "Field `EXPRESS` reader - No Description"]
+pub type EXPRESS_R = crate::BitReader<EXPRESS_A>;
 #[doc = "No Description\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EXPRESS_A {
     #[doc = "0: Blue Gecko Express is supported"]
     SUPPORTED = 0,
@@ -157,8 +159,6 @@ impl From<EXPRESS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EXPRESS` reader - No Description"]
-pub type EXPRESS_R = crate::BitReader<EXPRESS_A>;
 impl EXPRESS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -179,8 +179,10 @@ impl EXPRESS_R {
         *self == EXPRESS_A::NONE
     }
 }
+#[doc = "Field `LFXOCALVAL` reader - No Description"]
+pub type LFXOCALVAL_R = crate::BitReader<LFXOCALVAL_A>;
 #[doc = "No Description\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LFXOCALVAL_A {
     #[doc = "0: LFXO Tuning in MODXOCAL is valid"]
     VALID = 0,
@@ -193,8 +195,6 @@ impl From<LFXOCALVAL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LFXOCALVAL` reader - No Description"]
-pub type LFXOCALVAL_R = crate::BitReader<LFXOCALVAL_A>;
 impl LFXOCALVAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -215,8 +215,10 @@ impl LFXOCALVAL_R {
         *self == LFXOCALVAL_A::NOTVALID
     }
 }
+#[doc = "Field `HFXOCALVAL` reader - No Description"]
+pub type HFXOCALVAL_R = crate::BitReader<HFXOCALVAL_A>;
 #[doc = "No Description\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HFXOCALVAL_A {
     #[doc = "0: HFXO calibration in MODXOCAL is valid"]
     VALID = 0,
@@ -229,8 +231,6 @@ impl From<HFXOCALVAL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HFXOCALVAL` reader - No Description"]
-pub type HFXOCALVAL_R = crate::BitReader<HFXOCALVAL_A>;
 impl HFXOCALVAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -253,8 +253,10 @@ impl HFXOCALVAL_R {
 }
 #[doc = "Field `MODNUMBERMSB` reader - No Description"]
 pub type MODNUMBERMSB_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `PADCDC` reader - No Description"]
+pub type PADCDC_R = crate::BitReader<PADCDC_A>;
 #[doc = "No Description\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PADCDC_A {
     #[doc = "0: PAVDD connected to Vdcdc"]
     VDCDC = 0,
@@ -267,8 +269,6 @@ impl From<PADCDC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PADCDC` reader - No Description"]
-pub type PADCDC_R = crate::BitReader<PADCDC_A>;
 impl PADCDC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -289,8 +289,10 @@ impl PADCDC_R {
         *self == PADCDC_A::OTHER
     }
 }
+#[doc = "Field `PHYLIMITED` reader - No Description"]
+pub type PHYLIMITED_R = crate::BitReader<PHYLIMITED_A>;
 #[doc = "No Description\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PHYLIMITED_A {
     #[doc = "0: LIMITED"]
     LIMITED = 0,
@@ -303,8 +305,6 @@ impl From<PHYLIMITED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PHYLIMITED` reader - No Description"]
-pub type PHYLIMITED_R = crate::BitReader<PHYLIMITED_A>;
 impl PHYLIMITED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -325,8 +325,10 @@ impl PHYLIMITED_R {
         *self == PHYLIMITED_A::UNLIMITED
     }
 }
+#[doc = "Field `EXTVALID` reader - No Description"]
+pub type EXTVALID_R = crate::BitReader<EXTVALID_A>;
 #[doc = "No Description\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EXTVALID_A {
     #[doc = "0: EXT used"]
     EXTUSED = 0,
@@ -339,8 +341,6 @@ impl From<EXTVALID_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EXTVALID` reader - No Description"]
-pub type EXTVALID_R = crate::BitReader<EXTVALID_A>;
 impl EXTVALID_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -434,8 +434,5 @@ impl crate::Readable for MODULEINFO_SPEC {
 }
 #[doc = "`reset()` method sets MODULEINFO to value 0xffff_ffff"]
 impl crate::Resettable for MODULEINFO_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ffff
-    }
+    const RESET_VALUE: Self::Ux = 0xffff_ffff;
 }

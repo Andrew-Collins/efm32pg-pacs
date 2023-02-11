@@ -13,8 +13,10 @@ impl From<crate::R<HFXOCAL_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `SHUNTBIASANA` reader - No Description"]
+pub type SHUNTBIASANA_R = crate::FieldReader<u8, SHUNTBIASANA_A>;
 #[doc = "No Description\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SHUNTBIASANA_A {
     #[doc = "0: I20UA"]
@@ -56,8 +58,6 @@ impl From<SHUNTBIASANA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SHUNTBIASANA` reader - No Description"]
-pub type SHUNTBIASANA_R = crate::FieldReader<u8, SHUNTBIASANA_A>;
 impl SHUNTBIASANA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -188,8 +188,5 @@ impl crate::Readable for HFXOCAL_SPEC {
 }
 #[doc = "`reset()` method sets HFXOCAL to value 0xffff_ff00"]
 impl crate::Resettable for HFXOCAL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_ff00
-    }
+    const RESET_VALUE: Self::Ux = 0xffff_ff00;
 }

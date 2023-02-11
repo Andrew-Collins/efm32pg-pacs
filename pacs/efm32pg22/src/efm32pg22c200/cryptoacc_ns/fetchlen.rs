@@ -37,20 +37,20 @@ impl From<crate::W<FETCHLEN_SPEC>> for W {
 #[doc = "Field `LENGTH` reader - Length of data block"]
 pub type LENGTH_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `LENGTH` writer - Length of data block"]
-pub type LENGTH_W<'a> = crate::FieldWriter<'a, u32, FETCHLEN_SPEC, u32, u32, 28, 0>;
+pub type LENGTH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FETCHLEN_SPEC, u32, u32, 28, O>;
 #[doc = "Field `CONSTADDR` reader - Constant address"]
 pub type CONSTADDR_R = crate::BitReader<bool>;
 #[doc = "Field `CONSTADDR` writer - Constant address"]
-pub type CONSTADDR_W<'a> = crate::BitWriter<'a, u32, FETCHLEN_SPEC, bool, 28>;
+pub type CONSTADDR_W<'a, const O: u8> = crate::BitWriter<'a, u32, FETCHLEN_SPEC, bool, O>;
 #[doc = "Field `REALIGN` reader - Realign length"]
 pub type REALIGN_R = crate::BitReader<bool>;
 #[doc = "Field `REALIGN` writer - Realign length"]
-pub type REALIGN_W<'a> = crate::BitWriter<'a, u32, FETCHLEN_SPEC, bool, 29>;
+pub type REALIGN_W<'a, const O: u8> = crate::BitWriter<'a, u32, FETCHLEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:27 - Length of data block"]
     #[inline(always)]
     pub fn length(&self) -> LENGTH_R {
-        LENGTH_R::new((self.bits & 0x0fff_ffff) as u32)
+        LENGTH_R::new(self.bits & 0x0fff_ffff)
     }
     #[doc = "Bit 28 - Constant address"]
     #[inline(always)]
@@ -66,17 +66,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:27 - Length of data block"]
     #[inline(always)]
-    pub fn length(&mut self) -> LENGTH_W {
+    #[must_use]
+    pub fn length(&mut self) -> LENGTH_W<0> {
         LENGTH_W::new(self)
     }
     #[doc = "Bit 28 - Constant address"]
     #[inline(always)]
-    pub fn constaddr(&mut self) -> CONSTADDR_W {
+    #[must_use]
+    pub fn constaddr(&mut self) -> CONSTADDR_W<28> {
         CONSTADDR_W::new(self)
     }
     #[doc = "Bit 29 - Realign length"]
     #[inline(always)]
-    pub fn realign(&mut self) -> REALIGN_W {
+    #[must_use]
+    pub fn realign(&mut self) -> REALIGN_W<29> {
         REALIGN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for FETCHLEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [fetchlen::W](W) writer structure"]
 impl crate::Writable for FETCHLEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FETCHLEN to value 0"]
 impl crate::Resettable for FETCHLEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

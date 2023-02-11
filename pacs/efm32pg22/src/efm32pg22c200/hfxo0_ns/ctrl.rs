@@ -37,17 +37,19 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `FORCEEN` reader - Force Enable"]
 pub type FORCEEN_R = crate::BitReader<bool>;
 #[doc = "Field `FORCEEN` writer - Force Enable"]
-pub type FORCEEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 0>;
+pub type FORCEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `DISONDEMAND` reader - Disable On-demand Mode"]
 pub type DISONDEMAND_R = crate::BitReader<bool>;
 #[doc = "Field `DISONDEMAND` writer - Disable On-demand Mode"]
-pub type DISONDEMAND_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 1>;
+pub type DISONDEMAND_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `KEEPWARM` reader - Keep Warm"]
 pub type KEEPWARM_R = crate::BitReader<bool>;
 #[doc = "Field `KEEPWARM` writer - Keep Warm"]
-pub type KEEPWARM_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 2>;
+pub type KEEPWARM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `FORCEXI2GNDANA` reader - Force XI Pin to Ground"]
+pub type FORCEXI2GNDANA_R = crate::BitReader<FORCEXI2GNDANA_A>;
 #[doc = "Force XI Pin to Ground\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FORCEXI2GNDANA_A {
     #[doc = "0: Disabled (not pulled)"]
     DISABLE = 0,
@@ -60,8 +62,6 @@ impl From<FORCEXI2GNDANA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FORCEXI2GNDANA` reader - Force XI Pin to Ground"]
-pub type FORCEXI2GNDANA_R = crate::BitReader<FORCEXI2GNDANA_A>;
 impl FORCEXI2GNDANA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -83,8 +83,9 @@ impl FORCEXI2GNDANA_R {
     }
 }
 #[doc = "Field `FORCEXI2GNDANA` writer - Force XI Pin to Ground"]
-pub type FORCEXI2GNDANA_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, FORCEXI2GNDANA_A, 4>;
-impl<'a> FORCEXI2GNDANA_W<'a> {
+pub type FORCEXI2GNDANA_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CTRL_SPEC, FORCEXI2GNDANA_A, O>;
+impl<'a, const O: u8> FORCEXI2GNDANA_W<'a, O> {
     #[doc = "Disabled (not pulled)"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -96,8 +97,10 @@ impl<'a> FORCEXI2GNDANA_W<'a> {
         self.variant(FORCEXI2GNDANA_A::ENABLE)
     }
 }
+#[doc = "Field `FORCEXO2GNDANA` reader - Force XO Pin to Ground"]
+pub type FORCEXO2GNDANA_R = crate::BitReader<FORCEXO2GNDANA_A>;
 #[doc = "Force XO Pin to Ground\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FORCEXO2GNDANA_A {
     #[doc = "0: Disabled (not pulled)"]
     DISABLE = 0,
@@ -110,8 +113,6 @@ impl From<FORCEXO2GNDANA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FORCEXO2GNDANA` reader - Force XO Pin to Ground"]
-pub type FORCEXO2GNDANA_R = crate::BitReader<FORCEXO2GNDANA_A>;
 impl FORCEXO2GNDANA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -133,8 +134,9 @@ impl FORCEXO2GNDANA_R {
     }
 }
 #[doc = "Field `FORCEXO2GNDANA` writer - Force XO Pin to Ground"]
-pub type FORCEXO2GNDANA_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, FORCEXO2GNDANA_A, 5>;
-impl<'a> FORCEXO2GNDANA_W<'a> {
+pub type FORCEXO2GNDANA_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CTRL_SPEC, FORCEXO2GNDANA_A, O>;
+impl<'a, const O: u8> FORCEXO2GNDANA_W<'a, O> {
     #[doc = "Disabled (not pulled)"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -176,27 +178,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Force Enable"]
     #[inline(always)]
-    pub fn forceen(&mut self) -> FORCEEN_W {
+    #[must_use]
+    pub fn forceen(&mut self) -> FORCEEN_W<0> {
         FORCEEN_W::new(self)
     }
     #[doc = "Bit 1 - Disable On-demand Mode"]
     #[inline(always)]
-    pub fn disondemand(&mut self) -> DISONDEMAND_W {
+    #[must_use]
+    pub fn disondemand(&mut self) -> DISONDEMAND_W<1> {
         DISONDEMAND_W::new(self)
     }
     #[doc = "Bit 2 - Keep Warm"]
     #[inline(always)]
-    pub fn keepwarm(&mut self) -> KEEPWARM_W {
+    #[must_use]
+    pub fn keepwarm(&mut self) -> KEEPWARM_W<2> {
         KEEPWARM_W::new(self)
     }
     #[doc = "Bit 4 - Force XI Pin to Ground"]
     #[inline(always)]
-    pub fn forcexi2gndana(&mut self) -> FORCEXI2GNDANA_W {
+    #[must_use]
+    pub fn forcexi2gndana(&mut self) -> FORCEXI2GNDANA_W<4> {
         FORCEXI2GNDANA_W::new(self)
     }
     #[doc = "Bit 5 - Force XO Pin to Ground"]
     #[inline(always)]
-    pub fn forcexo2gndana(&mut self) -> FORCEXO2GNDANA_W {
+    #[must_use]
+    pub fn forcexo2gndana(&mut self) -> FORCEXO2GNDANA_W<5> {
         FORCEXO2GNDANA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -218,11 +225,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x02"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x02
-    }
+    const RESET_VALUE: Self::Ux = 0x02;
 }

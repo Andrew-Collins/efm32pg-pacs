@@ -37,7 +37,7 @@ impl From<crate::W<CFGSYSTIC_SPEC>> for W {
 #[doc = "Field `SYSTICEXTCLKEN` reader - SysTick External Clock Enable"]
 pub type SYSTICEXTCLKEN_R = crate::BitReader<bool>;
 #[doc = "Field `SYSTICEXTCLKEN` writer - SysTick External Clock Enable"]
-pub type SYSTICEXTCLKEN_W<'a> = crate::BitWriter<'a, u32, CFGSYSTIC_SPEC, bool, 0>;
+pub type SYSTICEXTCLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGSYSTIC_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - SysTick External Clock Enable"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bit 0 - SysTick External Clock Enable"]
     #[inline(always)]
-    pub fn systicextclken(&mut self) -> SYSTICEXTCLKEN_W {
+    #[must_use]
+    pub fn systicextclken(&mut self) -> SYSTICEXTCLKEN_W<0> {
         SYSTICEXTCLKEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for CFGSYSTIC_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfgsystic::W](W) writer structure"]
 impl crate::Writable for CFGSYSTIC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFGSYSTIC to value 0"]
 impl crate::Resettable for CFGSYSTIC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

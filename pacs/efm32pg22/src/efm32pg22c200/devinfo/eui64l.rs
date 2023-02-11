@@ -33,8 +33,5 @@ impl crate::Readable for EUI64L_SPEC {
 }
 #[doc = "`reset()` method sets EUI64L to value 0"]
 impl crate::Resettable for EUI64L_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

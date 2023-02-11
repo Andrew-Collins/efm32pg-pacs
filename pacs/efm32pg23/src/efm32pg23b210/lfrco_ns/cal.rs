@@ -37,7 +37,7 @@ impl From<crate::W<CAL_SPEC>> for W {
 #[doc = "Field `FREQTRIM` reader - Frequency Trim"]
 pub type FREQTRIM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FREQTRIM` writer - Frequency Trim"]
-pub type FREQTRIM_W<'a> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 8, 0>;
+pub type FREQTRIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Frequency Trim"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Frequency Trim"]
     #[inline(always)]
-    pub fn freqtrim(&mut self) -> FREQTRIM_W {
+    #[must_use]
+    pub fn freqtrim(&mut self) -> FREQTRIM_W<0> {
         FREQTRIM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for CAL_SPEC {
 #[doc = "`write(|w| ..)` method takes [cal::W](W) writer structure"]
 impl crate::Writable for CAL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CAL to value 0xa5"]
 impl crate::Resettable for CAL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xa5
-    }
+    const RESET_VALUE: Self::Ux = 0xa5;
 }

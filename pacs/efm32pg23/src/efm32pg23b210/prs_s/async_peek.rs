@@ -110,8 +110,5 @@ impl crate::Readable for ASYNC_PEEK_SPEC {
 }
 #[doc = "`reset()` method sets ASYNC_PEEK to value 0"]
 impl crate::Resettable for ASYNC_PEEK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

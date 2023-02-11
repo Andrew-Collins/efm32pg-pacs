@@ -34,8 +34,10 @@ impl From<crate::W<DELAY_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SCANDLY` reader - Scan Delay"]
+pub type SCANDLY_R = crate::FieldReader<u8, SCANDLY_A>;
 #[doc = "Scan Delay\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SCANDLY_A {
     #[doc = "0: 2ms Scan Delay"]
@@ -77,8 +79,6 @@ impl From<SCANDLY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SCANDLY` reader - Scan Delay"]
-pub type SCANDLY_R = crate::FieldReader<u8, SCANDLY_A>;
 impl SCANDLY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -185,8 +185,9 @@ impl SCANDLY_R {
     }
 }
 #[doc = "Field `SCANDLY` writer - Scan Delay"]
-pub type SCANDLY_W<'a> = crate::FieldWriterSafe<'a, u32, DELAY_SPEC, u8, SCANDLY_A, 4, 8>;
-impl<'a> SCANDLY_W<'a> {
+pub type SCANDLY_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, DELAY_SPEC, u8, SCANDLY_A, 4, O>;
+impl<'a, const O: u8> SCANDLY_W<'a, O> {
     #[doc = "2ms Scan Delay"]
     #[inline(always)]
     pub fn scandly2(self) -> &'a mut W {
@@ -268,8 +269,10 @@ impl<'a> SCANDLY_W<'a> {
         self.variant(SCANDLY_A::SCANDLY32)
     }
 }
+#[doc = "Field `DEBDLY` reader - Debounce Delay"]
+pub type DEBDLY_R = crate::FieldReader<u8, DEBDLY_A>;
 #[doc = "Debounce Delay\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DEBDLY_A {
     #[doc = "0: 2ms Debounce Delay"]
@@ -311,8 +314,6 @@ impl From<DEBDLY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DEBDLY` reader - Debounce Delay"]
-pub type DEBDLY_R = crate::FieldReader<u8, DEBDLY_A>;
 impl DEBDLY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -419,8 +420,9 @@ impl DEBDLY_R {
     }
 }
 #[doc = "Field `DEBDLY` writer - Debounce Delay"]
-pub type DEBDLY_W<'a> = crate::FieldWriterSafe<'a, u32, DELAY_SPEC, u8, DEBDLY_A, 4, 16>;
-impl<'a> DEBDLY_W<'a> {
+pub type DEBDLY_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, DELAY_SPEC, u8, DEBDLY_A, 4, O>;
+impl<'a, const O: u8> DEBDLY_W<'a, O> {
     #[doc = "2ms Debounce Delay"]
     #[inline(always)]
     pub fn debdly2(self) -> &'a mut W {
@@ -502,8 +504,10 @@ impl<'a> DEBDLY_W<'a> {
         self.variant(DEBDLY_A::DEBDLY32)
     }
 }
+#[doc = "Field `STABDLY` reader - Row stable Delay"]
+pub type STABDLY_R = crate::FieldReader<u8, STABDLY_A>;
 #[doc = "Row stable Delay\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STABDLY_A {
     #[doc = "0: 2ms Row Stable Delay"]
@@ -545,8 +549,6 @@ impl From<STABDLY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `STABDLY` reader - Row stable Delay"]
-pub type STABDLY_R = crate::FieldReader<u8, STABDLY_A>;
 impl STABDLY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -653,8 +655,9 @@ impl STABDLY_R {
     }
 }
 #[doc = "Field `STABDLY` writer - Row stable Delay"]
-pub type STABDLY_W<'a> = crate::FieldWriterSafe<'a, u32, DELAY_SPEC, u8, STABDLY_A, 4, 24>;
-impl<'a> STABDLY_W<'a> {
+pub type STABDLY_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, DELAY_SPEC, u8, STABDLY_A, 4, O>;
+impl<'a, const O: u8> STABDLY_W<'a, O> {
     #[doc = "2ms Row Stable Delay"]
     #[inline(always)]
     pub fn stabdly2(self) -> &'a mut W {
@@ -756,17 +759,20 @@ impl R {
 impl W {
     #[doc = "Bits 8:11 - Scan Delay"]
     #[inline(always)]
-    pub fn scandly(&mut self) -> SCANDLY_W {
+    #[must_use]
+    pub fn scandly(&mut self) -> SCANDLY_W<8> {
         SCANDLY_W::new(self)
     }
     #[doc = "Bits 16:19 - Debounce Delay"]
     #[inline(always)]
-    pub fn debdly(&mut self) -> DEBDLY_W {
+    #[must_use]
+    pub fn debdly(&mut self) -> DEBDLY_W<16> {
         DEBDLY_W::new(self)
     }
     #[doc = "Bits 24:27 - Row stable Delay"]
     #[inline(always)]
-    pub fn stabdly(&mut self) -> STABDLY_W {
+    #[must_use]
+    pub fn stabdly(&mut self) -> STABDLY_W<24> {
         STABDLY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -788,11 +794,10 @@ impl crate::Readable for DELAY_SPEC {
 #[doc = "`write(|w| ..)` method takes [delay::W](W) writer structure"]
 impl crate::Writable for DELAY_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DELAY to value 0"]
 impl crate::Resettable for DELAY_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

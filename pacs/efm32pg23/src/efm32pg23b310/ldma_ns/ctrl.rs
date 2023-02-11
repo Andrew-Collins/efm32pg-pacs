@@ -37,11 +37,11 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `NUMFIXED` reader - Number of Fixed Priority Channels"]
 pub type NUMFIXED_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NUMFIXED` writer - Number of Fixed Priority Channels"]
-pub type NUMFIXED_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 5, 24>;
+pub type NUMFIXED_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 5, O>;
 #[doc = "Field `CORERST` reader - Reset DMA controller"]
 pub type CORERST_R = crate::BitReader<bool>;
 #[doc = "Field `CORERST` writer - Reset DMA controller"]
-pub type CORERST_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 31>;
+pub type CORERST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 24:28 - Number of Fixed Priority Channels"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 24:28 - Number of Fixed Priority Channels"]
     #[inline(always)]
-    pub fn numfixed(&mut self) -> NUMFIXED_W {
+    #[must_use]
+    pub fn numfixed(&mut self) -> NUMFIXED_W<24> {
         NUMFIXED_W::new(self)
     }
     #[doc = "Bit 31 - Reset DMA controller"]
     #[inline(always)]
-    pub fn corerst(&mut self) -> CORERST_W {
+    #[must_use]
+    pub fn corerst(&mut self) -> CORERST_W<31> {
         CORERST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x1e00_0000"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1e00_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x1e00_0000;
 }

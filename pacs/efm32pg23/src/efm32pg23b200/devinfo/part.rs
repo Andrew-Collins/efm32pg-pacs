@@ -17,8 +17,10 @@ impl From<crate::R<PART_SPEC>> for R {
 pub type DEVICENUM_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `FAMILYNUM` reader - Device Family"]
 pub type FAMILYNUM_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `FAMILY` reader - Device Family"]
+pub type FAMILY_R = crate::FieldReader<u8, FAMILY_A>;
 #[doc = "Device Family\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FAMILY_A {
     #[doc = "0: Flex Gecko"]
@@ -34,8 +36,6 @@ impl From<FAMILY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FAMILY` reader - Device Family"]
-pub type FAMILY_R = crate::FieldReader<u8, FAMILY_A>;
 impl FAMILY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -91,8 +91,5 @@ impl crate::Readable for PART_SPEC {
 }
 #[doc = "`reset()` method sets PART to value 0"]
 impl crate::Resettable for PART_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

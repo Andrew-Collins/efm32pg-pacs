@@ -37,23 +37,23 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `FETCHERSCATTERGATHER` reader - Fetcher scatter/gather"]
 pub type FETCHERSCATTERGATHER_R = crate::BitReader<bool>;
 #[doc = "Field `FETCHERSCATTERGATHER` writer - Fetcher scatter/gather"]
-pub type FETCHERSCATTERGATHER_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 0>;
+pub type FETCHERSCATTERGATHER_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `PUSHERSCATTERGATHER` reader - Pusher scatter/gather"]
 pub type PUSHERSCATTERGATHER_R = crate::BitReader<bool>;
 #[doc = "Field `PUSHERSCATTERGATHER` writer - Pusher scatter/gather"]
-pub type PUSHERSCATTERGATHER_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 1>;
+pub type PUSHERSCATTERGATHER_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `STOPFETCHER` reader - Stop fetcher"]
 pub type STOPFETCHER_R = crate::BitReader<bool>;
 #[doc = "Field `STOPFETCHER` writer - Stop fetcher"]
-pub type STOPFETCHER_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 2>;
+pub type STOPFETCHER_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `STOPPUSHER` reader - Stop pusher"]
 pub type STOPPUSHER_R = crate::BitReader<bool>;
 #[doc = "Field `STOPPUSHER` writer - Stop pusher"]
-pub type STOPPUSHER_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 3>;
+pub type STOPPUSHER_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `SWRESET` reader - Software reset"]
 pub type SWRESET_R = crate::BitReader<bool>;
 #[doc = "Field `SWRESET` writer - Software reset"]
-pub type SWRESET_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 4>;
+pub type SWRESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Fetcher scatter/gather"]
     #[inline(always)]
@@ -84,27 +84,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Fetcher scatter/gather"]
     #[inline(always)]
-    pub fn fetcherscattergather(&mut self) -> FETCHERSCATTERGATHER_W {
+    #[must_use]
+    pub fn fetcherscattergather(&mut self) -> FETCHERSCATTERGATHER_W<0> {
         FETCHERSCATTERGATHER_W::new(self)
     }
     #[doc = "Bit 1 - Pusher scatter/gather"]
     #[inline(always)]
-    pub fn pusherscattergather(&mut self) -> PUSHERSCATTERGATHER_W {
+    #[must_use]
+    pub fn pusherscattergather(&mut self) -> PUSHERSCATTERGATHER_W<1> {
         PUSHERSCATTERGATHER_W::new(self)
     }
     #[doc = "Bit 2 - Stop fetcher"]
     #[inline(always)]
-    pub fn stopfetcher(&mut self) -> STOPFETCHER_W {
+    #[must_use]
+    pub fn stopfetcher(&mut self) -> STOPFETCHER_W<2> {
         STOPFETCHER_W::new(self)
     }
     #[doc = "Bit 3 - Stop pusher"]
     #[inline(always)]
-    pub fn stoppusher(&mut self) -> STOPPUSHER_W {
+    #[must_use]
+    pub fn stoppusher(&mut self) -> STOPPUSHER_W<3> {
         STOPPUSHER_W::new(self)
     }
     #[doc = "Bit 4 - Software reset"]
     #[inline(always)]
-    pub fn swreset(&mut self) -> SWRESET_W {
+    #[must_use]
+    pub fn swreset(&mut self) -> SWRESET_W<4> {
         SWRESET_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -126,11 +131,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

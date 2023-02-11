@@ -34,8 +34,10 @@ impl From<crate::W<SINGLEFIFOCFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ALIGNMENT` reader - Alignment"]
+pub type ALIGNMENT_R = crate::FieldReader<u8, ALIGNMENT_A>;
 #[doc = "Alignment\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ALIGNMENT_A {
     #[doc = "0: ID\\[7:0\\], SIGN_EXT, DATA\\[11:0\\]"]
@@ -57,8 +59,6 @@ impl From<ALIGNMENT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ALIGNMENT` reader - Alignment"]
-pub type ALIGNMENT_R = crate::FieldReader<u8, ALIGNMENT_A>;
 impl ALIGNMENT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -105,8 +105,9 @@ impl ALIGNMENT_R {
     }
 }
 #[doc = "Field `ALIGNMENT` writer - Alignment"]
-pub type ALIGNMENT_W<'a> = crate::FieldWriter<'a, u32, SINGLEFIFOCFG_SPEC, u8, ALIGNMENT_A, 3, 0>;
-impl<'a> ALIGNMENT_W<'a> {
+pub type ALIGNMENT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SINGLEFIFOCFG_SPEC, u8, ALIGNMENT_A, 3, O>;
+impl<'a, const O: u8> ALIGNMENT_W<'a, O> {
     #[doc = "ID\\[7:0\\], SIGN_EXT, DATA\\[11:0\\]"]
     #[inline(always)]
     pub fn right12(self) -> &'a mut W {
@@ -141,9 +142,11 @@ impl<'a> ALIGNMENT_W<'a> {
 #[doc = "Field `SHOWID` reader - Show ID"]
 pub type SHOWID_R = crate::BitReader<bool>;
 #[doc = "Field `SHOWID` writer - Show ID"]
-pub type SHOWID_W<'a> = crate::BitWriter<'a, u32, SINGLEFIFOCFG_SPEC, bool, 3>;
+pub type SHOWID_W<'a, const O: u8> = crate::BitWriter<'a, u32, SINGLEFIFOCFG_SPEC, bool, O>;
+#[doc = "Field `DVL` reader - Data Valid Level"]
+pub type DVL_R = crate::FieldReader<u8, DVL_A>;
 #[doc = "Data Valid Level\n\nValue on reset: 3"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DVL_A {
     #[doc = "0: When 1 entry in the single FIFO is valid, set the SINGLEFIFODVL interrupt and request DMA."]
@@ -161,8 +164,6 @@ impl From<DVL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DVL` reader - Data Valid Level"]
-pub type DVL_R = crate::FieldReader<u8, DVL_A>;
 impl DVL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -197,8 +198,9 @@ impl DVL_R {
     }
 }
 #[doc = "Field `DVL` writer - Data Valid Level"]
-pub type DVL_W<'a> = crate::FieldWriterSafe<'a, u32, SINGLEFIFOCFG_SPEC, u8, DVL_A, 2, 4>;
-impl<'a> DVL_W<'a> {
+pub type DVL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, SINGLEFIFOCFG_SPEC, u8, DVL_A, 2, O>;
+impl<'a, const O: u8> DVL_W<'a, O> {
     #[doc = "When 1 entry in the single FIFO is valid, set the SINGLEFIFODVL interrupt and request DMA."]
     #[inline(always)]
     pub fn valid1(self) -> &'a mut W {
@@ -220,8 +222,10 @@ impl<'a> DVL_W<'a> {
         self.variant(DVL_A::VALID4)
     }
 }
+#[doc = "Field `DMAWUFIFOSINGLE` reader - Single FIFO DMA wakeup."]
+pub type DMAWUFIFOSINGLE_R = crate::BitReader<DMAWUFIFOSINGLE_A>;
 #[doc = "Single FIFO DMA wakeup.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMAWUFIFOSINGLE_A {
     #[doc = "0: While in EM2 or EM3, the DMA controller will not be requested."]
     DISABLED = 0,
@@ -234,8 +238,6 @@ impl From<DMAWUFIFOSINGLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMAWUFIFOSINGLE` reader - Single FIFO DMA wakeup."]
-pub type DMAWUFIFOSINGLE_R = crate::BitReader<DMAWUFIFOSINGLE_A>;
 impl DMAWUFIFOSINGLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -257,9 +259,9 @@ impl DMAWUFIFOSINGLE_R {
     }
 }
 #[doc = "Field `DMAWUFIFOSINGLE` writer - Single FIFO DMA wakeup."]
-pub type DMAWUFIFOSINGLE_W<'a> =
-    crate::BitWriter<'a, u32, SINGLEFIFOCFG_SPEC, DMAWUFIFOSINGLE_A, 8>;
-impl<'a> DMAWUFIFOSINGLE_W<'a> {
+pub type DMAWUFIFOSINGLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SINGLEFIFOCFG_SPEC, DMAWUFIFOSINGLE_A, O>;
+impl<'a, const O: u8> DMAWUFIFOSINGLE_W<'a, O> {
     #[doc = "While in EM2 or EM3, the DMA controller will not be requested."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -296,22 +298,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Alignment"]
     #[inline(always)]
-    pub fn alignment(&mut self) -> ALIGNMENT_W {
+    #[must_use]
+    pub fn alignment(&mut self) -> ALIGNMENT_W<0> {
         ALIGNMENT_W::new(self)
     }
     #[doc = "Bit 3 - Show ID"]
     #[inline(always)]
-    pub fn showid(&mut self) -> SHOWID_W {
+    #[must_use]
+    pub fn showid(&mut self) -> SHOWID_W<3> {
         SHOWID_W::new(self)
     }
     #[doc = "Bits 4:5 - Data Valid Level"]
     #[inline(always)]
-    pub fn dvl(&mut self) -> DVL_W {
+    #[must_use]
+    pub fn dvl(&mut self) -> DVL_W<4> {
         DVL_W::new(self)
     }
     #[doc = "Bit 8 - Single FIFO DMA wakeup."]
     #[inline(always)]
-    pub fn dmawufifosingle(&mut self) -> DMAWUFIFOSINGLE_W {
+    #[must_use]
+    pub fn dmawufifosingle(&mut self) -> DMAWUFIFOSINGLE_W<8> {
         DMAWUFIFOSINGLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -333,11 +339,10 @@ impl crate::Readable for SINGLEFIFOCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [singlefifocfg::W](W) writer structure"]
 impl crate::Writable for SINGLEFIFOCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SINGLEFIFOCFG to value 0x30"]
 impl crate::Resettable for SINGLEFIFOCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x30
-    }
+    const RESET_VALUE: Self::Ux = 0x30;
 }

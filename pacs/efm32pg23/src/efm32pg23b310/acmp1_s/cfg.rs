@@ -37,9 +37,11 @@ impl From<crate::W<CFG_SPEC>> for W {
 #[doc = "Field `BIAS` reader - Bias Configuration"]
 pub type BIAS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BIAS` writer - Bias Configuration"]
-pub type BIAS_W<'a> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, u8, 3, 0>;
+pub type BIAS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, u8, 3, O>;
+#[doc = "Field `HYST` reader - Hysteresis mode"]
+pub type HYST_R = crate::FieldReader<u8, HYST_A>;
 #[doc = "Hysteresis mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HYST_A {
     #[doc = "0: Hysteresis disabled"]
@@ -69,8 +71,6 @@ impl From<HYST_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HYST` reader - Hysteresis mode"]
-pub type HYST_R = crate::FieldReader<u8, HYST_A>;
 impl HYST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -141,8 +141,8 @@ impl HYST_R {
     }
 }
 #[doc = "Field `HYST` writer - Hysteresis mode"]
-pub type HYST_W<'a> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, HYST_A, 4, 8>;
-impl<'a> HYST_W<'a> {
+pub type HYST_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, HYST_A, 4, O>;
+impl<'a, const O: u8> HYST_W<'a, O> {
     #[doc = "Hysteresis disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -194,8 +194,10 @@ impl<'a> HYST_W<'a> {
         self.variant(HYST_A::NEG30MV)
     }
 }
+#[doc = "Field `INPUTRANGE` reader - Input Range"]
+pub type INPUTRANGE_R = crate::BitReader<INPUTRANGE_A>;
 #[doc = "Input Range\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum INPUTRANGE_A {
     #[doc = "0: Use this setting when the input to the comparator core can be from 0 to AVDD."]
     FULL = 0,
@@ -208,8 +210,6 @@ impl From<INPUTRANGE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INPUTRANGE` reader - Input Range"]
-pub type INPUTRANGE_R = crate::BitReader<INPUTRANGE_A>;
 impl INPUTRANGE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -231,8 +231,8 @@ impl INPUTRANGE_R {
     }
 }
 #[doc = "Field `INPUTRANGE` writer - Input Range"]
-pub type INPUTRANGE_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, INPUTRANGE_A, 16>;
-impl<'a> INPUTRANGE_W<'a> {
+pub type INPUTRANGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, INPUTRANGE_A, O>;
+impl<'a, const O: u8> INPUTRANGE_W<'a, O> {
     #[doc = "Use this setting when the input to the comparator core can be from 0 to AVDD."]
     #[inline(always)]
     pub fn full(self) -> &'a mut W {
@@ -244,8 +244,10 @@ impl<'a> INPUTRANGE_W<'a> {
         self.variant(INPUTRANGE_A::REDUCED)
     }
 }
+#[doc = "Field `ACCURACY` reader - ACMP accuracy mode"]
+pub type ACCURACY_R = crate::BitReader<ACCURACY_A>;
 #[doc = "ACMP accuracy mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ACCURACY_A {
     #[doc = "0: ACMP operates in low-accuracy mode but consumes less current."]
     LOW = 0,
@@ -258,8 +260,6 @@ impl From<ACCURACY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ACCURACY` reader - ACMP accuracy mode"]
-pub type ACCURACY_R = crate::BitReader<ACCURACY_A>;
 impl ACCURACY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -281,8 +281,8 @@ impl ACCURACY_R {
     }
 }
 #[doc = "Field `ACCURACY` writer - ACMP accuracy mode"]
-pub type ACCURACY_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, ACCURACY_A, 17>;
-impl<'a> ACCURACY_W<'a> {
+pub type ACCURACY_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, ACCURACY_A, O>;
+impl<'a, const O: u8> ACCURACY_W<'a, O> {
     #[doc = "ACMP operates in low-accuracy mode but consumes less current."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -319,22 +319,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Bias Configuration"]
     #[inline(always)]
-    pub fn bias(&mut self) -> BIAS_W {
+    #[must_use]
+    pub fn bias(&mut self) -> BIAS_W<0> {
         BIAS_W::new(self)
     }
     #[doc = "Bits 8:11 - Hysteresis mode"]
     #[inline(always)]
-    pub fn hyst(&mut self) -> HYST_W {
+    #[must_use]
+    pub fn hyst(&mut self) -> HYST_W<8> {
         HYST_W::new(self)
     }
     #[doc = "Bit 16 - Input Range"]
     #[inline(always)]
-    pub fn inputrange(&mut self) -> INPUTRANGE_W {
+    #[must_use]
+    pub fn inputrange(&mut self) -> INPUTRANGE_W<16> {
         INPUTRANGE_W::new(self)
     }
     #[doc = "Bit 17 - ACMP accuracy mode"]
     #[inline(always)]
-    pub fn accuracy(&mut self) -> ACCURACY_W {
+    #[must_use]
+    pub fn accuracy(&mut self) -> ACCURACY_W<17> {
         ACCURACY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -356,11 +360,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0x04"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x04
-    }
+    const RESET_VALUE: Self::Ux = 0x04;
 }

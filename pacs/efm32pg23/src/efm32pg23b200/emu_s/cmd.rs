@@ -20,39 +20,44 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `EM4UNLATCH` writer - EM4 unlatch"]
-pub type EM4UNLATCH_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 1>;
+pub type EM4UNLATCH_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `TEMPAVGREQ` writer - Temperature Average Request"]
-pub type TEMPAVGREQ_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 4>;
+pub type TEMPAVGREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `EM01VSCALE1` writer - Scale voltage to Vscale1"]
-pub type EM01VSCALE1_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 10>;
+pub type EM01VSCALE1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `EM01VSCALE2` writer - Scale voltage to Vscale2"]
-pub type EM01VSCALE2_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 11>;
+pub type EM01VSCALE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `RSTCAUSECLR` writer - Reset Cause Clear"]
-pub type RSTCAUSECLR_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 17>;
+pub type RSTCAUSECLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 1 - EM4 unlatch"]
     #[inline(always)]
-    pub fn em4unlatch(&mut self) -> EM4UNLATCH_W {
+    #[must_use]
+    pub fn em4unlatch(&mut self) -> EM4UNLATCH_W<1> {
         EM4UNLATCH_W::new(self)
     }
     #[doc = "Bit 4 - Temperature Average Request"]
     #[inline(always)]
-    pub fn tempavgreq(&mut self) -> TEMPAVGREQ_W {
+    #[must_use]
+    pub fn tempavgreq(&mut self) -> TEMPAVGREQ_W<4> {
         TEMPAVGREQ_W::new(self)
     }
     #[doc = "Bit 10 - Scale voltage to Vscale1"]
     #[inline(always)]
-    pub fn em01vscale1(&mut self) -> EM01VSCALE1_W {
+    #[must_use]
+    pub fn em01vscale1(&mut self) -> EM01VSCALE1_W<10> {
         EM01VSCALE1_W::new(self)
     }
     #[doc = "Bit 11 - Scale voltage to Vscale2"]
     #[inline(always)]
-    pub fn em01vscale2(&mut self) -> EM01VSCALE2_W {
+    #[must_use]
+    pub fn em01vscale2(&mut self) -> EM01VSCALE2_W<11> {
         EM01VSCALE2_W::new(self)
     }
     #[doc = "Bit 17 - Reset Cause Clear"]
     #[inline(always)]
-    pub fn rstcauseclr(&mut self) -> RSTCAUSECLR_W {
+    #[must_use]
+    pub fn rstcauseclr(&mut self) -> RSTCAUSECLR_W<17> {
         RSTCAUSECLR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +75,10 @@ impl crate::RegisterSpec for CMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmd::W](W) writer structure"]
 impl crate::Writable for CMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMD to value 0"]
 impl crate::Resettable for CMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

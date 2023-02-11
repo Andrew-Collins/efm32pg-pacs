@@ -37,11 +37,12 @@ impl From<crate::W<VREGVDDCMPCTRL_SPEC>> for W {
 #[doc = "Field `VREGINCMPEN` reader - VREGVDD comparator enable"]
 pub type VREGINCMPEN_R = crate::BitReader<bool>;
 #[doc = "Field `VREGINCMPEN` writer - VREGVDD comparator enable"]
-pub type VREGINCMPEN_W<'a> = crate::BitWriter<'a, u32, VREGVDDCMPCTRL_SPEC, bool, 0>;
+pub type VREGINCMPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, VREGVDDCMPCTRL_SPEC, bool, O>;
 #[doc = "Field `THRESSEL` reader - VREGVDD comparator threshold programming"]
 pub type THRESSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `THRESSEL` writer - VREGVDD comparator threshold programming"]
-pub type THRESSEL_W<'a> = crate::FieldWriter<'a, u32, VREGVDDCMPCTRL_SPEC, u8, u8, 2, 1>;
+pub type THRESSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, VREGVDDCMPCTRL_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bit 0 - VREGVDD comparator enable"]
     #[inline(always)]
@@ -57,12 +58,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - VREGVDD comparator enable"]
     #[inline(always)]
-    pub fn vregincmpen(&mut self) -> VREGINCMPEN_W {
+    #[must_use]
+    pub fn vregincmpen(&mut self) -> VREGINCMPEN_W<0> {
         VREGINCMPEN_W::new(self)
     }
     #[doc = "Bits 1:2 - VREGVDD comparator threshold programming"]
     #[inline(always)]
-    pub fn thressel(&mut self) -> THRESSEL_W {
+    #[must_use]
+    pub fn thressel(&mut self) -> THRESSEL_W<1> {
         THRESSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +87,10 @@ impl crate::Readable for VREGVDDCMPCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [vregvddcmpctrl::W](W) writer structure"]
 impl crate::Writable for VREGVDDCMPCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets VREGVDDCMPCTRL to value 0x06"]
 impl crate::Resettable for VREGVDDCMPCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x06
-    }
+    const RESET_VALUE: Self::Ux = 0x06;
 }

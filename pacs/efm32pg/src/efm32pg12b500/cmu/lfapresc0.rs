@@ -34,8 +34,10 @@ impl From<crate::W<LFAPRESC0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LETIMER0` reader - Low Energy Timer 0 Prescaler"]
+pub type LETIMER0_R = crate::FieldReader<u8, LETIMER0_A>;
 #[doc = "Low Energy Timer 0 Prescaler\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LETIMER0_A {
     #[doc = "0: LFACLKLETIMER0 = LFACLK"]
@@ -77,8 +79,6 @@ impl From<LETIMER0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LETIMER0` reader - Low Energy Timer 0 Prescaler"]
-pub type LETIMER0_R = crate::FieldReader<u8, LETIMER0_A>;
 impl LETIMER0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -185,8 +185,9 @@ impl LETIMER0_R {
     }
 }
 #[doc = "Field `LETIMER0` writer - Low Energy Timer 0 Prescaler"]
-pub type LETIMER0_W<'a> = crate::FieldWriterSafe<'a, u32, LFAPRESC0_SPEC, u8, LETIMER0_A, 4, 0>;
-impl<'a> LETIMER0_W<'a> {
+pub type LETIMER0_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, LFAPRESC0_SPEC, u8, LETIMER0_A, 4, O>;
+impl<'a, const O: u8> LETIMER0_W<'a, O> {
     #[doc = "LFACLKLETIMER0 = LFACLK"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -268,8 +269,10 @@ impl<'a> LETIMER0_W<'a> {
         self.variant(LETIMER0_A::DIV32768)
     }
 }
+#[doc = "Field `LESENSE` reader - Low Energy Sensor Interface Prescaler"]
+pub type LESENSE_R = crate::FieldReader<u8, LESENSE_A>;
 #[doc = "Low Energy Sensor Interface Prescaler\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LESENSE_A {
     #[doc = "0: LFACLKLESENSE = LFACLK"]
@@ -287,8 +290,6 @@ impl From<LESENSE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LESENSE` reader - Low Energy Sensor Interface Prescaler"]
-pub type LESENSE_R = crate::FieldReader<u8, LESENSE_A>;
 impl LESENSE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -323,8 +324,9 @@ impl LESENSE_R {
     }
 }
 #[doc = "Field `LESENSE` writer - Low Energy Sensor Interface Prescaler"]
-pub type LESENSE_W<'a> = crate::FieldWriterSafe<'a, u32, LFAPRESC0_SPEC, u8, LESENSE_A, 2, 4>;
-impl<'a> LESENSE_W<'a> {
+pub type LESENSE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, LFAPRESC0_SPEC, u8, LESENSE_A, 2, O>;
+impl<'a, const O: u8> LESENSE_W<'a, O> {
     #[doc = "LFACLKLESENSE = LFACLK"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -361,12 +363,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Low Energy Timer 0 Prescaler"]
     #[inline(always)]
-    pub fn letimer0(&mut self) -> LETIMER0_W {
+    #[must_use]
+    pub fn letimer0(&mut self) -> LETIMER0_W<0> {
         LETIMER0_W::new(self)
     }
     #[doc = "Bits 4:5 - Low Energy Sensor Interface Prescaler"]
     #[inline(always)]
-    pub fn lesense(&mut self) -> LESENSE_W {
+    #[must_use]
+    pub fn lesense(&mut self) -> LESENSE_W<4> {
         LESENSE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -388,11 +392,10 @@ impl crate::Readable for LFAPRESC0_SPEC {
 #[doc = "`write(|w| ..)` method takes [lfapresc0::W](W) writer structure"]
 impl crate::Writable for LFAPRESC0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LFAPRESC0 to value 0"]
 impl crate::Resettable for LFAPRESC0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

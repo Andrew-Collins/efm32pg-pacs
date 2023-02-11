@@ -37,67 +37,67 @@ impl From<crate::W<LESENSE_ROUTEEN_SPEC>> for W {
 #[doc = "Field `CH0OUTPEN` reader - CH0OUT pin enable control bit"]
 pub type CH0OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH0OUTPEN` writer - CH0OUT pin enable control bit"]
-pub type CH0OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 0>;
+pub type CH0OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CH1OUTPEN` reader - CH1OUT pin enable control bit"]
 pub type CH1OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH1OUTPEN` writer - CH1OUT pin enable control bit"]
-pub type CH1OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 1>;
+pub type CH1OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CH2OUTPEN` reader - CH2OUT pin enable control bit"]
 pub type CH2OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH2OUTPEN` writer - CH2OUT pin enable control bit"]
-pub type CH2OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 2>;
+pub type CH2OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CH3OUTPEN` reader - CH3OUT pin enable control bit"]
 pub type CH3OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH3OUTPEN` writer - CH3OUT pin enable control bit"]
-pub type CH3OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 3>;
+pub type CH3OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CH4OUTPEN` reader - CH4OUT pin enable control bit"]
 pub type CH4OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH4OUTPEN` writer - CH4OUT pin enable control bit"]
-pub type CH4OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 4>;
+pub type CH4OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CH5OUTPEN` reader - CH5OUT pin enable control bit"]
 pub type CH5OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH5OUTPEN` writer - CH5OUT pin enable control bit"]
-pub type CH5OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 5>;
+pub type CH5OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CH6OUTPEN` reader - CH6OUT pin enable control bit"]
 pub type CH6OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH6OUTPEN` writer - CH6OUT pin enable control bit"]
-pub type CH6OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 6>;
+pub type CH6OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CH7OUTPEN` reader - CH7OUT pin enable control bit"]
 pub type CH7OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH7OUTPEN` writer - CH7OUT pin enable control bit"]
-pub type CH7OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 7>;
+pub type CH7OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CH8OUTPEN` reader - CH8OUT pin enable control bit"]
 pub type CH8OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH8OUTPEN` writer - CH8OUT pin enable control bit"]
-pub type CH8OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 8>;
+pub type CH8OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CH9OUTPEN` reader - CH9OUT pin enable control bit"]
 pub type CH9OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH9OUTPEN` writer - CH9OUT pin enable control bit"]
-pub type CH9OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 9>;
+pub type CH9OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CH10OUTPEN` reader - CH10OUT pin enable control bit"]
 pub type CH10OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH10OUTPEN` writer - CH10OUT pin enable control bit"]
-pub type CH10OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 10>;
+pub type CH10OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CH11OUTPEN` reader - CH11OUT pin enable control bit"]
 pub type CH11OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH11OUTPEN` writer - CH11OUT pin enable control bit"]
-pub type CH11OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 11>;
+pub type CH11OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CH12OUTPEN` reader - CH12OUT pin enable control bit"]
 pub type CH12OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH12OUTPEN` writer - CH12OUT pin enable control bit"]
-pub type CH12OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 12>;
+pub type CH12OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CH13OUTPEN` reader - CH13OUT pin enable control bit"]
 pub type CH13OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH13OUTPEN` writer - CH13OUT pin enable control bit"]
-pub type CH13OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 13>;
+pub type CH13OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CH14OUTPEN` reader - CH14OUT pin enable control bit"]
 pub type CH14OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH14OUTPEN` writer - CH14OUT pin enable control bit"]
-pub type CH14OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 14>;
+pub type CH14OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `CH15OUTPEN` reader - CH15OUT pin enable control bit"]
 pub type CH15OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH15OUTPEN` writer - CH15OUT pin enable control bit"]
-pub type CH15OUTPEN_W<'a> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, 15>;
+pub type CH15OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LESENSE_ROUTEEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - CH0OUT pin enable control bit"]
     #[inline(always)]
@@ -183,82 +183,98 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CH0OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch0outpen(&mut self) -> CH0OUTPEN_W {
+    #[must_use]
+    pub fn ch0outpen(&mut self) -> CH0OUTPEN_W<0> {
         CH0OUTPEN_W::new(self)
     }
     #[doc = "Bit 1 - CH1OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch1outpen(&mut self) -> CH1OUTPEN_W {
+    #[must_use]
+    pub fn ch1outpen(&mut self) -> CH1OUTPEN_W<1> {
         CH1OUTPEN_W::new(self)
     }
     #[doc = "Bit 2 - CH2OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch2outpen(&mut self) -> CH2OUTPEN_W {
+    #[must_use]
+    pub fn ch2outpen(&mut self) -> CH2OUTPEN_W<2> {
         CH2OUTPEN_W::new(self)
     }
     #[doc = "Bit 3 - CH3OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch3outpen(&mut self) -> CH3OUTPEN_W {
+    #[must_use]
+    pub fn ch3outpen(&mut self) -> CH3OUTPEN_W<3> {
         CH3OUTPEN_W::new(self)
     }
     #[doc = "Bit 4 - CH4OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch4outpen(&mut self) -> CH4OUTPEN_W {
+    #[must_use]
+    pub fn ch4outpen(&mut self) -> CH4OUTPEN_W<4> {
         CH4OUTPEN_W::new(self)
     }
     #[doc = "Bit 5 - CH5OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch5outpen(&mut self) -> CH5OUTPEN_W {
+    #[must_use]
+    pub fn ch5outpen(&mut self) -> CH5OUTPEN_W<5> {
         CH5OUTPEN_W::new(self)
     }
     #[doc = "Bit 6 - CH6OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch6outpen(&mut self) -> CH6OUTPEN_W {
+    #[must_use]
+    pub fn ch6outpen(&mut self) -> CH6OUTPEN_W<6> {
         CH6OUTPEN_W::new(self)
     }
     #[doc = "Bit 7 - CH7OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch7outpen(&mut self) -> CH7OUTPEN_W {
+    #[must_use]
+    pub fn ch7outpen(&mut self) -> CH7OUTPEN_W<7> {
         CH7OUTPEN_W::new(self)
     }
     #[doc = "Bit 8 - CH8OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch8outpen(&mut self) -> CH8OUTPEN_W {
+    #[must_use]
+    pub fn ch8outpen(&mut self) -> CH8OUTPEN_W<8> {
         CH8OUTPEN_W::new(self)
     }
     #[doc = "Bit 9 - CH9OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch9outpen(&mut self) -> CH9OUTPEN_W {
+    #[must_use]
+    pub fn ch9outpen(&mut self) -> CH9OUTPEN_W<9> {
         CH9OUTPEN_W::new(self)
     }
     #[doc = "Bit 10 - CH10OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch10outpen(&mut self) -> CH10OUTPEN_W {
+    #[must_use]
+    pub fn ch10outpen(&mut self) -> CH10OUTPEN_W<10> {
         CH10OUTPEN_W::new(self)
     }
     #[doc = "Bit 11 - CH11OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch11outpen(&mut self) -> CH11OUTPEN_W {
+    #[must_use]
+    pub fn ch11outpen(&mut self) -> CH11OUTPEN_W<11> {
         CH11OUTPEN_W::new(self)
     }
     #[doc = "Bit 12 - CH12OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch12outpen(&mut self) -> CH12OUTPEN_W {
+    #[must_use]
+    pub fn ch12outpen(&mut self) -> CH12OUTPEN_W<12> {
         CH12OUTPEN_W::new(self)
     }
     #[doc = "Bit 13 - CH13OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch13outpen(&mut self) -> CH13OUTPEN_W {
+    #[must_use]
+    pub fn ch13outpen(&mut self) -> CH13OUTPEN_W<13> {
         CH13OUTPEN_W::new(self)
     }
     #[doc = "Bit 14 - CH14OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch14outpen(&mut self) -> CH14OUTPEN_W {
+    #[must_use]
+    pub fn ch14outpen(&mut self) -> CH14OUTPEN_W<14> {
         CH14OUTPEN_W::new(self)
     }
     #[doc = "Bit 15 - CH15OUT pin enable control bit"]
     #[inline(always)]
-    pub fn ch15outpen(&mut self) -> CH15OUTPEN_W {
+    #[must_use]
+    pub fn ch15outpen(&mut self) -> CH15OUTPEN_W<15> {
         CH15OUTPEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -280,11 +296,10 @@ impl crate::Readable for LESENSE_ROUTEEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [lesense_routeen::W](W) writer structure"]
 impl crate::Writable for LESENSE_ROUTEEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LESENSE_ROUTEEN to value 0"]
 impl crate::Resettable for LESENSE_ROUTEEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -20,116 +20,148 @@ impl From<crate::W<EM23PERNORETAINCMD_SPEC>> for W {
     }
 }
 #[doc = "Field `ACMP0UNLOCK` writer - Clears Status Bit of ACMP0 and Unlocks Access to It"]
-pub type ACMP0UNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 0>;
+pub type ACMP0UNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 #[doc = "Field `ACMP1UNLOCK` writer - Clears Status Bit of ACMP1 and Unlocks Access to It"]
-pub type ACMP1UNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 1>;
+pub type ACMP1UNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 #[doc = "Field `PCNT0UNLOCK` writer - Clears Status Bit of PCNT0 and Unlocks Access to It"]
-pub type PCNT0UNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 2>;
+pub type PCNT0UNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 #[doc = "Field `PCNT1UNLOCK` writer - Clears Status Bit of PCNT1 and Unlocks Access to It"]
-pub type PCNT1UNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 3>;
+pub type PCNT1UNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 #[doc = "Field `PCNT2UNLOCK` writer - Clears Status Bit of PCNT2 and Unlocks Access to It"]
-pub type PCNT2UNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 4>;
+pub type PCNT2UNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 #[doc = "Field `I2C0UNLOCK` writer - Clears Status Bit of I2C0 and Unlocks Access to It"]
-pub type I2C0UNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 5>;
+pub type I2C0UNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 #[doc = "Field `I2C1UNLOCK` writer - Clears Status Bit of I2C1 and Unlocks Access to It"]
-pub type I2C1UNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 6>;
+pub type I2C1UNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 #[doc = "Field `DAC0UNLOCK` writer - Clears Status Bit of DAC0 and Unlocks Access to It"]
-pub type DAC0UNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 7>;
+pub type DAC0UNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 #[doc = "Field `IDAC0UNLOCK` writer - Clears Status Bit of IDAC0 and Unlocks Access to It"]
-pub type IDAC0UNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 8>;
+pub type IDAC0UNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 #[doc = "Field `ADC0UNLOCK` writer - Clears Status Bit of ADC0 and Unlocks Access to It"]
-pub type ADC0UNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 9>;
+pub type ADC0UNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 #[doc = "Field `LETIMER0UNLOCK` writer - Clears Status Bit of LETIMER0 and Unlocks Access to It"]
-pub type LETIMER0UNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 10>;
+pub type LETIMER0UNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 #[doc = "Field `WDOG0UNLOCK` writer - Clears Status Bit of WDOG0 and Unlocks Access to It"]
-pub type WDOG0UNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 11>;
+pub type WDOG0UNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 #[doc = "Field `WDOG1UNLOCK` writer - Clears Status Bit of WDOG1 and Unlocks Access to It"]
-pub type WDOG1UNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 12>;
+pub type WDOG1UNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 #[doc = "Field `LESENSE0UNLOCK` writer - Clears Status Bit of LESENSE0 and Unlocks Access to It"]
-pub type LESENSE0UNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 13>;
+pub type LESENSE0UNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 #[doc = "Field `CSENUNLOCK` writer - Clears Status Bit of CSEN and Unlocks Access to It"]
-pub type CSENUNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 14>;
+pub type CSENUNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 #[doc = "Field `LEUART0UNLOCK` writer - Clears Status Bit of LEUART0 and Unlocks Access to It"]
-pub type LEUART0UNLOCK_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, 15>;
+pub type LEUART0UNLOCK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Clears Status Bit of ACMP0 and Unlocks Access to It"]
     #[inline(always)]
-    pub fn acmp0unlock(&mut self) -> ACMP0UNLOCK_W {
+    #[must_use]
+    pub fn acmp0unlock(&mut self) -> ACMP0UNLOCK_W<0> {
         ACMP0UNLOCK_W::new(self)
     }
     #[doc = "Bit 1 - Clears Status Bit of ACMP1 and Unlocks Access to It"]
     #[inline(always)]
-    pub fn acmp1unlock(&mut self) -> ACMP1UNLOCK_W {
+    #[must_use]
+    pub fn acmp1unlock(&mut self) -> ACMP1UNLOCK_W<1> {
         ACMP1UNLOCK_W::new(self)
     }
     #[doc = "Bit 2 - Clears Status Bit of PCNT0 and Unlocks Access to It"]
     #[inline(always)]
-    pub fn pcnt0unlock(&mut self) -> PCNT0UNLOCK_W {
+    #[must_use]
+    pub fn pcnt0unlock(&mut self) -> PCNT0UNLOCK_W<2> {
         PCNT0UNLOCK_W::new(self)
     }
     #[doc = "Bit 3 - Clears Status Bit of PCNT1 and Unlocks Access to It"]
     #[inline(always)]
-    pub fn pcnt1unlock(&mut self) -> PCNT1UNLOCK_W {
+    #[must_use]
+    pub fn pcnt1unlock(&mut self) -> PCNT1UNLOCK_W<3> {
         PCNT1UNLOCK_W::new(self)
     }
     #[doc = "Bit 4 - Clears Status Bit of PCNT2 and Unlocks Access to It"]
     #[inline(always)]
-    pub fn pcnt2unlock(&mut self) -> PCNT2UNLOCK_W {
+    #[must_use]
+    pub fn pcnt2unlock(&mut self) -> PCNT2UNLOCK_W<4> {
         PCNT2UNLOCK_W::new(self)
     }
     #[doc = "Bit 5 - Clears Status Bit of I2C0 and Unlocks Access to It"]
     #[inline(always)]
-    pub fn i2c0unlock(&mut self) -> I2C0UNLOCK_W {
+    #[must_use]
+    pub fn i2c0unlock(&mut self) -> I2C0UNLOCK_W<5> {
         I2C0UNLOCK_W::new(self)
     }
     #[doc = "Bit 6 - Clears Status Bit of I2C1 and Unlocks Access to It"]
     #[inline(always)]
-    pub fn i2c1unlock(&mut self) -> I2C1UNLOCK_W {
+    #[must_use]
+    pub fn i2c1unlock(&mut self) -> I2C1UNLOCK_W<6> {
         I2C1UNLOCK_W::new(self)
     }
     #[doc = "Bit 7 - Clears Status Bit of DAC0 and Unlocks Access to It"]
     #[inline(always)]
-    pub fn dac0unlock(&mut self) -> DAC0UNLOCK_W {
+    #[must_use]
+    pub fn dac0unlock(&mut self) -> DAC0UNLOCK_W<7> {
         DAC0UNLOCK_W::new(self)
     }
     #[doc = "Bit 8 - Clears Status Bit of IDAC0 and Unlocks Access to It"]
     #[inline(always)]
-    pub fn idac0unlock(&mut self) -> IDAC0UNLOCK_W {
+    #[must_use]
+    pub fn idac0unlock(&mut self) -> IDAC0UNLOCK_W<8> {
         IDAC0UNLOCK_W::new(self)
     }
     #[doc = "Bit 9 - Clears Status Bit of ADC0 and Unlocks Access to It"]
     #[inline(always)]
-    pub fn adc0unlock(&mut self) -> ADC0UNLOCK_W {
+    #[must_use]
+    pub fn adc0unlock(&mut self) -> ADC0UNLOCK_W<9> {
         ADC0UNLOCK_W::new(self)
     }
     #[doc = "Bit 10 - Clears Status Bit of LETIMER0 and Unlocks Access to It"]
     #[inline(always)]
-    pub fn letimer0unlock(&mut self) -> LETIMER0UNLOCK_W {
+    #[must_use]
+    pub fn letimer0unlock(&mut self) -> LETIMER0UNLOCK_W<10> {
         LETIMER0UNLOCK_W::new(self)
     }
     #[doc = "Bit 11 - Clears Status Bit of WDOG0 and Unlocks Access to It"]
     #[inline(always)]
-    pub fn wdog0unlock(&mut self) -> WDOG0UNLOCK_W {
+    #[must_use]
+    pub fn wdog0unlock(&mut self) -> WDOG0UNLOCK_W<11> {
         WDOG0UNLOCK_W::new(self)
     }
     #[doc = "Bit 12 - Clears Status Bit of WDOG1 and Unlocks Access to It"]
     #[inline(always)]
-    pub fn wdog1unlock(&mut self) -> WDOG1UNLOCK_W {
+    #[must_use]
+    pub fn wdog1unlock(&mut self) -> WDOG1UNLOCK_W<12> {
         WDOG1UNLOCK_W::new(self)
     }
     #[doc = "Bit 13 - Clears Status Bit of LESENSE0 and Unlocks Access to It"]
     #[inline(always)]
-    pub fn lesense0unlock(&mut self) -> LESENSE0UNLOCK_W {
+    #[must_use]
+    pub fn lesense0unlock(&mut self) -> LESENSE0UNLOCK_W<13> {
         LESENSE0UNLOCK_W::new(self)
     }
     #[doc = "Bit 14 - Clears Status Bit of CSEN and Unlocks Access to It"]
     #[inline(always)]
-    pub fn csenunlock(&mut self) -> CSENUNLOCK_W {
+    #[must_use]
+    pub fn csenunlock(&mut self) -> CSENUNLOCK_W<14> {
         CSENUNLOCK_W::new(self)
     }
     #[doc = "Bit 15 - Clears Status Bit of LEUART0 and Unlocks Access to It"]
     #[inline(always)]
-    pub fn leuart0unlock(&mut self) -> LEUART0UNLOCK_W {
+    #[must_use]
+    pub fn leuart0unlock(&mut self) -> LEUART0UNLOCK_W<15> {
         LEUART0UNLOCK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -147,11 +179,10 @@ impl crate::RegisterSpec for EM23PERNORETAINCMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [em23pernoretaincmd::W](W) writer structure"]
 impl crate::Writable for EM23PERNORETAINCMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EM23PERNORETAINCMD to value 0"]
 impl crate::Resettable for EM23PERNORETAINCMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,9 +37,11 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `S1CDIR` reader - Count Direction Determined By S1"]
 pub type S1CDIR_R = crate::BitReader<bool>;
 #[doc = "Field `S1CDIR` writer - Count Direction Determined By S1"]
-pub type S1CDIR_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 0>;
+pub type S1CDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `CNTDIR` reader - Non-Quadrature Mode Counter Direction Co"]
+pub type CNTDIR_R = crate::BitReader<CNTDIR_A>;
 #[doc = "Non-Quadrature Mode Counter Direction Co\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CNTDIR_A {
     #[doc = "0: Up counter mode."]
     UP = 0,
@@ -52,8 +54,6 @@ impl From<CNTDIR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CNTDIR` reader - Non-Quadrature Mode Counter Direction Co"]
-pub type CNTDIR_R = crate::BitReader<CNTDIR_A>;
 impl CNTDIR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -75,8 +75,8 @@ impl CNTDIR_R {
     }
 }
 #[doc = "Field `CNTDIR` writer - Non-Quadrature Mode Counter Direction Co"]
-pub type CNTDIR_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, CNTDIR_A, 1>;
-impl<'a> CNTDIR_W<'a> {
+pub type CNTDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, CNTDIR_A, O>;
+impl<'a, const O: u8> CNTDIR_W<'a, O> {
     #[doc = "Up counter mode."]
     #[inline(always)]
     pub fn up(self) -> &'a mut W {
@@ -88,8 +88,10 @@ impl<'a> CNTDIR_W<'a> {
         self.variant(CNTDIR_A::DOWN)
     }
 }
+#[doc = "Field `EDGE` reader - Edge Select"]
+pub type EDGE_R = crate::BitReader<EDGE_A>;
 #[doc = "Edge Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EDGE_A {
     #[doc = "0: Positive edges on the PCNTn_S0IN inputs are counted in OVSSINGLE mode. Does not invert PCNTn_S1IN input in OVSSINGLE and EXTCLKSINGLE modes"]
     POS = 0,
@@ -102,8 +104,6 @@ impl From<EDGE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EDGE` reader - Edge Select"]
-pub type EDGE_R = crate::BitReader<EDGE_A>;
 impl EDGE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -125,8 +125,8 @@ impl EDGE_R {
     }
 }
 #[doc = "Field `EDGE` writer - Edge Select"]
-pub type EDGE_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, EDGE_A, 2>;
-impl<'a> EDGE_W<'a> {
+pub type EDGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, EDGE_A, O>;
+impl<'a, const O: u8> EDGE_W<'a, O> {
     #[doc = "Positive edges on the PCNTn_S0IN inputs are counted in OVSSINGLE mode. Does not invert PCNTn_S1IN input in OVSSINGLE and EXTCLKSINGLE modes"]
     #[inline(always)]
     pub fn pos(self) -> &'a mut W {
@@ -138,8 +138,10 @@ impl<'a> EDGE_W<'a> {
         self.variant(EDGE_A::NEG)
     }
 }
+#[doc = "Field `CNTEV` reader - Controls When the Counter Counts"]
+pub type CNTEV_R = crate::FieldReader<u8, CNTEV_A>;
 #[doc = "Controls When the Counter Counts\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CNTEV_A {
     #[doc = "0: Counts up on up-count and down on down-count events."]
@@ -155,8 +157,6 @@ impl From<CNTEV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CNTEV` reader - Controls When the Counter Counts"]
-pub type CNTEV_R = crate::FieldReader<u8, CNTEV_A>;
 impl CNTEV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -185,8 +185,8 @@ impl CNTEV_R {
     }
 }
 #[doc = "Field `CNTEV` writer - Controls When the Counter Counts"]
-pub type CNTEV_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CNTEV_A, 2, 4>;
-impl<'a> CNTEV_W<'a> {
+pub type CNTEV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CNTEV_A, 2, O>;
+impl<'a, const O: u8> CNTEV_W<'a, O> {
     #[doc = "Counts up on up-count and down on down-count events."]
     #[inline(always)]
     pub fn both(self) -> &'a mut W {
@@ -203,8 +203,10 @@ impl<'a> CNTEV_W<'a> {
         self.variant(CNTEV_A::DOWN)
     }
 }
+#[doc = "Field `AUXCNTEV` reader - Controls When the Aux Counter Counts"]
+pub type AUXCNTEV_R = crate::FieldReader<u8, AUXCNTEV_A>;
 #[doc = "Controls When the Aux Counter Counts\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AUXCNTEV_A {
     #[doc = "0: Counts up on both up-count and down-count events."]
@@ -220,8 +222,6 @@ impl From<AUXCNTEV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `AUXCNTEV` reader - Controls When the Aux Counter Counts"]
-pub type AUXCNTEV_R = crate::FieldReader<u8, AUXCNTEV_A>;
 impl AUXCNTEV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -250,8 +250,8 @@ impl AUXCNTEV_R {
     }
 }
 #[doc = "Field `AUXCNTEV` writer - Controls When the Aux Counter Counts"]
-pub type AUXCNTEV_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, AUXCNTEV_A, 2, 6>;
-impl<'a> AUXCNTEV_W<'a> {
+pub type AUXCNTEV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, AUXCNTEV_A, 2, O>;
+impl<'a, const O: u8> AUXCNTEV_W<'a, O> {
     #[doc = "Counts up on both up-count and down-count events."]
     #[inline(always)]
     pub fn both(self) -> &'a mut W {
@@ -298,27 +298,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Count Direction Determined By S1"]
     #[inline(always)]
-    pub fn s1cdir(&mut self) -> S1CDIR_W {
+    #[must_use]
+    pub fn s1cdir(&mut self) -> S1CDIR_W<0> {
         S1CDIR_W::new(self)
     }
     #[doc = "Bit 1 - Non-Quadrature Mode Counter Direction Co"]
     #[inline(always)]
-    pub fn cntdir(&mut self) -> CNTDIR_W {
+    #[must_use]
+    pub fn cntdir(&mut self) -> CNTDIR_W<1> {
         CNTDIR_W::new(self)
     }
     #[doc = "Bit 2 - Edge Select"]
     #[inline(always)]
-    pub fn edge(&mut self) -> EDGE_W {
+    #[must_use]
+    pub fn edge(&mut self) -> EDGE_W<2> {
         EDGE_W::new(self)
     }
     #[doc = "Bits 4:5 - Controls When the Counter Counts"]
     #[inline(always)]
-    pub fn cntev(&mut self) -> CNTEV_W {
+    #[must_use]
+    pub fn cntev(&mut self) -> CNTEV_W<4> {
         CNTEV_W::new(self)
     }
     #[doc = "Bits 6:7 - Controls When the Aux Counter Counts"]
     #[inline(always)]
-    pub fn auxcntev(&mut self) -> AUXCNTEV_W {
+    #[must_use]
+    pub fn auxcntev(&mut self) -> AUXCNTEV_W<6> {
         AUXCNTEV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -340,11 +345,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

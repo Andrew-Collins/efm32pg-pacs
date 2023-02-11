@@ -82,8 +82,5 @@ impl crate::Readable for HFRCOEM23CAL14_SPEC {
 }
 #[doc = "`reset()` method sets HFRCOEM23CAL14 to value 0"]
 impl crate::Resettable for HFRCOEM23CAL14_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

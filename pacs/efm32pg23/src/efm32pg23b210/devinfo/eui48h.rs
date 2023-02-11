@@ -33,8 +33,5 @@ impl crate::Readable for EUI48H_SPEC {
 }
 #[doc = "`reset()` method sets EUI48H to value 0xffff_0000"]
 impl crate::Resettable for EUI48H_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff_0000
-    }
+    const RESET_VALUE: Self::Ux = 0xffff_0000;
 }

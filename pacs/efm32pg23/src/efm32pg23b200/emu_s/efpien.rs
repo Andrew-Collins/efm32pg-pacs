@@ -37,7 +37,7 @@ impl From<crate::W<EFPIEN_SPEC>> for W {
 #[doc = "Field `EFPIEN` reader - EFP Interrupt enable"]
 pub type EFPIEN_R = crate::BitReader<bool>;
 #[doc = "Field `EFPIEN` writer - EFP Interrupt enable"]
-pub type EFPIEN_W<'a> = crate::BitWriter<'a, u32, EFPIEN_SPEC, bool, 0>;
+pub type EFPIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EFPIEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - EFP Interrupt enable"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bit 0 - EFP Interrupt enable"]
     #[inline(always)]
-    pub fn efpien(&mut self) -> EFPIEN_W {
+    #[must_use]
+    pub fn efpien(&mut self) -> EFPIEN_W<0> {
         EFPIEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for EFPIEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [efpien::W](W) writer structure"]
 impl crate::Writable for EFPIEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EFPIEN to value 0"]
 impl crate::Resettable for EFPIEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -47,8 +47,5 @@ impl crate::Readable for GRP0_SYNCBUSY_SPEC {
 }
 #[doc = "`reset()` method sets GRP0_SYNCBUSY to value 0"]
 impl crate::Resettable for GRP0_SYNCBUSY_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

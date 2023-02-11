@@ -33,8 +33,5 @@ impl crate::Readable for USERDATASIZE_SPEC {
 }
 #[doc = "`reset()` method sets USERDATASIZE to value 0x04"]
 impl crate::Resettable for USERDATASIZE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x04
-    }
+    const RESET_VALUE: Self::Ux = 0x04;
 }

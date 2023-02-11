@@ -33,8 +33,5 @@ impl crate::Readable for SENSORSTATE_SPEC {
 }
 #[doc = "`reset()` method sets SENSORSTATE to value 0"]
 impl crate::Resettable for SENSORSTATE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

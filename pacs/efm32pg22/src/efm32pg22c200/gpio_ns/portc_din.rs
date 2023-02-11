@@ -33,8 +33,5 @@ impl crate::Readable for PORTC_DIN_SPEC {
 }
 #[doc = "`reset()` method sets PORTC_DIN to value 0"]
 impl crate::Resettable for PORTC_DIN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

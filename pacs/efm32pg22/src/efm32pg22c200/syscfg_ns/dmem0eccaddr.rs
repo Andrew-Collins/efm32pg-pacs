@@ -33,8 +33,5 @@ impl crate::Readable for DMEM0ECCADDR_SPEC {
 }
 #[doc = "`reset()` method sets DMEM0ECCADDR to value 0"]
 impl crate::Resettable for DMEM0ECCADDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

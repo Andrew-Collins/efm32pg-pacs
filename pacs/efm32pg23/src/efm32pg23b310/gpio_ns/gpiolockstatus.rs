@@ -13,8 +13,10 @@ impl From<crate::R<GPIOLOCKSTATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `LOCK` reader - GPIO LOCK status"]
+pub type LOCK_R = crate::BitReader<LOCK_A>;
 #[doc = "GPIO LOCK status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOCK_A {
     #[doc = "0: Registers are unlocked"]
     UNLOCKED = 0,
@@ -27,8 +29,6 @@ impl From<LOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOCK` reader - GPIO LOCK status"]
-pub type LOCK_R = crate::BitReader<LOCK_A>;
 impl LOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -67,8 +67,5 @@ impl crate::Readable for GPIOLOCKSTATUS_SPEC {
 }
 #[doc = "`reset()` method sets GPIOLOCKSTATUS to value 0"]
 impl crate::Resettable for GPIOLOCKSTATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

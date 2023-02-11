@@ -37,11 +37,11 @@ impl From<crate::W<AIS31CONF2_SPEC>> for W {
 #[doc = "Field `HMIN` reader - Minimum Allowed History Value"]
 pub type HMIN_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `HMIN` writer - Minimum Allowed History Value"]
-pub type HMIN_W<'a> = crate::FieldWriter<'a, u32, AIS31CONF2_SPEC, u16, u16, 15, 0>;
+pub type HMIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AIS31CONF2_SPEC, u16, u16, 15, O>;
 #[doc = "Field `HMAX` reader - Maximum Allowed History Value"]
 pub type HMAX_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `HMAX` writer - Maximum Allowed History Value"]
-pub type HMAX_W<'a> = crate::FieldWriter<'a, u32, AIS31CONF2_SPEC, u16, u16, 15, 16>;
+pub type HMAX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AIS31CONF2_SPEC, u16, u16, 15, O>;
 impl R {
     #[doc = "Bits 0:14 - Minimum Allowed History Value"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:14 - Minimum Allowed History Value"]
     #[inline(always)]
-    pub fn hmin(&mut self) -> HMIN_W {
+    #[must_use]
+    pub fn hmin(&mut self) -> HMIN_W<0> {
         HMIN_W::new(self)
     }
     #[doc = "Bits 16:30 - Maximum Allowed History Value"]
     #[inline(always)]
-    pub fn hmax(&mut self) -> HMAX_W {
+    #[must_use]
+    pub fn hmax(&mut self) -> HMAX_W<16> {
         HMAX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for AIS31CONF2_SPEC {
 #[doc = "`write(|w| ..)` method takes [ais31conf2::W](W) writer structure"]
 impl crate::Writable for AIS31CONF2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets AIS31CONF2 to value 0x0440_0340"]
 impl crate::Resettable for AIS31CONF2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0440_0340
-    }
+    const RESET_VALUE: Self::Ux = 0x0440_0340;
 }

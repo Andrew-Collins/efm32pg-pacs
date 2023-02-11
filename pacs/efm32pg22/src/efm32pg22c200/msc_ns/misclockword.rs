@@ -37,11 +37,11 @@ impl From<crate::W<MISCLOCKWORD_SPEC>> for W {
 #[doc = "Field `MELOCKBIT` reader - Mass Erase Lock"]
 pub type MELOCKBIT_R = crate::BitReader<bool>;
 #[doc = "Field `MELOCKBIT` writer - Mass Erase Lock"]
-pub type MELOCKBIT_W<'a> = crate::BitWriter<'a, u32, MISCLOCKWORD_SPEC, bool, 0>;
+pub type MELOCKBIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, MISCLOCKWORD_SPEC, bool, O>;
 #[doc = "Field `UDLOCKBIT` reader - User Data Lock"]
 pub type UDLOCKBIT_R = crate::BitReader<bool>;
 #[doc = "Field `UDLOCKBIT` writer - User Data Lock"]
-pub type UDLOCKBIT_W<'a> = crate::BitWriter<'a, u32, MISCLOCKWORD_SPEC, bool, 4>;
+pub type UDLOCKBIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, MISCLOCKWORD_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Mass Erase Lock"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Mass Erase Lock"]
     #[inline(always)]
-    pub fn melockbit(&mut self) -> MELOCKBIT_W {
+    #[must_use]
+    pub fn melockbit(&mut self) -> MELOCKBIT_W<0> {
         MELOCKBIT_W::new(self)
     }
     #[doc = "Bit 4 - User Data Lock"]
     #[inline(always)]
-    pub fn udlockbit(&mut self) -> UDLOCKBIT_W {
+    #[must_use]
+    pub fn udlockbit(&mut self) -> UDLOCKBIT_W<4> {
         UDLOCKBIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for MISCLOCKWORD_SPEC {
 #[doc = "`write(|w| ..)` method takes [misclockword::W](W) writer structure"]
 impl crate::Writable for MISCLOCKWORD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MISCLOCKWORD to value 0x11"]
 impl crate::Resettable for MISCLOCKWORD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x11
-    }
+    const RESET_VALUE: Self::Ux = 0x11;
 }

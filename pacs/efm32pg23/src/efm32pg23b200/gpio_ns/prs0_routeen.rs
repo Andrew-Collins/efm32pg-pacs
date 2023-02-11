@@ -37,67 +37,67 @@ impl From<crate::W<PRS0_ROUTEEN_SPEC>> for W {
 #[doc = "Field `ASYNCH0PEN` reader - ASYNCH0 pin enable control bit"]
 pub type ASYNCH0PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ASYNCH0PEN` writer - ASYNCH0 pin enable control bit"]
-pub type ASYNCH0PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 0>;
+pub type ASYNCH0PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `ASYNCH1PEN` reader - ASYNCH1 pin enable control bit"]
 pub type ASYNCH1PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ASYNCH1PEN` writer - ASYNCH1 pin enable control bit"]
-pub type ASYNCH1PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 1>;
+pub type ASYNCH1PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `ASYNCH2PEN` reader - ASYNCH2 pin enable control bit"]
 pub type ASYNCH2PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ASYNCH2PEN` writer - ASYNCH2 pin enable control bit"]
-pub type ASYNCH2PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 2>;
+pub type ASYNCH2PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `ASYNCH3PEN` reader - ASYNCH3 pin enable control bit"]
 pub type ASYNCH3PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ASYNCH3PEN` writer - ASYNCH3 pin enable control bit"]
-pub type ASYNCH3PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 3>;
+pub type ASYNCH3PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `ASYNCH4PEN` reader - ASYNCH4 pin enable control bit"]
 pub type ASYNCH4PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ASYNCH4PEN` writer - ASYNCH4 pin enable control bit"]
-pub type ASYNCH4PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 4>;
+pub type ASYNCH4PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `ASYNCH5PEN` reader - ASYNCH5 pin enable control bit"]
 pub type ASYNCH5PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ASYNCH5PEN` writer - ASYNCH5 pin enable control bit"]
-pub type ASYNCH5PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 5>;
+pub type ASYNCH5PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `ASYNCH6PEN` reader - ASYNCH6 pin enable control bit"]
 pub type ASYNCH6PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ASYNCH6PEN` writer - ASYNCH6 pin enable control bit"]
-pub type ASYNCH6PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 6>;
+pub type ASYNCH6PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `ASYNCH7PEN` reader - ASYNCH7 pin enable control bit"]
 pub type ASYNCH7PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ASYNCH7PEN` writer - ASYNCH7 pin enable control bit"]
-pub type ASYNCH7PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 7>;
+pub type ASYNCH7PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `ASYNCH8PEN` reader - ASYNCH8 pin enable control bit"]
 pub type ASYNCH8PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ASYNCH8PEN` writer - ASYNCH8 pin enable control bit"]
-pub type ASYNCH8PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 8>;
+pub type ASYNCH8PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `ASYNCH9PEN` reader - ASYNCH9 pin enable control bit"]
 pub type ASYNCH9PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ASYNCH9PEN` writer - ASYNCH9 pin enable control bit"]
-pub type ASYNCH9PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 9>;
+pub type ASYNCH9PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `ASYNCH10PEN` reader - ASYNCH10 pin enable control bit"]
 pub type ASYNCH10PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ASYNCH10PEN` writer - ASYNCH10 pin enable control bit"]
-pub type ASYNCH10PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 10>;
+pub type ASYNCH10PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `ASYNCH11PEN` reader - ASYNCH11 pin enable control bit"]
 pub type ASYNCH11PEN_R = crate::BitReader<bool>;
 #[doc = "Field `ASYNCH11PEN` writer - ASYNCH11 pin enable control bit"]
-pub type ASYNCH11PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 11>;
+pub type ASYNCH11PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `SYNCH0PEN` reader - SYNCH0 pin enable control bit"]
 pub type SYNCH0PEN_R = crate::BitReader<bool>;
 #[doc = "Field `SYNCH0PEN` writer - SYNCH0 pin enable control bit"]
-pub type SYNCH0PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 12>;
+pub type SYNCH0PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `SYNCH1PEN` reader - SYNCH1 pin enable control bit"]
 pub type SYNCH1PEN_R = crate::BitReader<bool>;
 #[doc = "Field `SYNCH1PEN` writer - SYNCH1 pin enable control bit"]
-pub type SYNCH1PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 13>;
+pub type SYNCH1PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `SYNCH2PEN` reader - SYNCH2 pin enable control bit"]
 pub type SYNCH2PEN_R = crate::BitReader<bool>;
 #[doc = "Field `SYNCH2PEN` writer - SYNCH2 pin enable control bit"]
-pub type SYNCH2PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 14>;
+pub type SYNCH2PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 #[doc = "Field `SYNCH3PEN` reader - SYNCH3 pin enable control bit"]
 pub type SYNCH3PEN_R = crate::BitReader<bool>;
 #[doc = "Field `SYNCH3PEN` writer - SYNCH3 pin enable control bit"]
-pub type SYNCH3PEN_W<'a> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, 15>;
+pub type SYNCH3PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS0_ROUTEEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - ASYNCH0 pin enable control bit"]
     #[inline(always)]
@@ -183,82 +183,98 @@ impl R {
 impl W {
     #[doc = "Bit 0 - ASYNCH0 pin enable control bit"]
     #[inline(always)]
-    pub fn asynch0pen(&mut self) -> ASYNCH0PEN_W {
+    #[must_use]
+    pub fn asynch0pen(&mut self) -> ASYNCH0PEN_W<0> {
         ASYNCH0PEN_W::new(self)
     }
     #[doc = "Bit 1 - ASYNCH1 pin enable control bit"]
     #[inline(always)]
-    pub fn asynch1pen(&mut self) -> ASYNCH1PEN_W {
+    #[must_use]
+    pub fn asynch1pen(&mut self) -> ASYNCH1PEN_W<1> {
         ASYNCH1PEN_W::new(self)
     }
     #[doc = "Bit 2 - ASYNCH2 pin enable control bit"]
     #[inline(always)]
-    pub fn asynch2pen(&mut self) -> ASYNCH2PEN_W {
+    #[must_use]
+    pub fn asynch2pen(&mut self) -> ASYNCH2PEN_W<2> {
         ASYNCH2PEN_W::new(self)
     }
     #[doc = "Bit 3 - ASYNCH3 pin enable control bit"]
     #[inline(always)]
-    pub fn asynch3pen(&mut self) -> ASYNCH3PEN_W {
+    #[must_use]
+    pub fn asynch3pen(&mut self) -> ASYNCH3PEN_W<3> {
         ASYNCH3PEN_W::new(self)
     }
     #[doc = "Bit 4 - ASYNCH4 pin enable control bit"]
     #[inline(always)]
-    pub fn asynch4pen(&mut self) -> ASYNCH4PEN_W {
+    #[must_use]
+    pub fn asynch4pen(&mut self) -> ASYNCH4PEN_W<4> {
         ASYNCH4PEN_W::new(self)
     }
     #[doc = "Bit 5 - ASYNCH5 pin enable control bit"]
     #[inline(always)]
-    pub fn asynch5pen(&mut self) -> ASYNCH5PEN_W {
+    #[must_use]
+    pub fn asynch5pen(&mut self) -> ASYNCH5PEN_W<5> {
         ASYNCH5PEN_W::new(self)
     }
     #[doc = "Bit 6 - ASYNCH6 pin enable control bit"]
     #[inline(always)]
-    pub fn asynch6pen(&mut self) -> ASYNCH6PEN_W {
+    #[must_use]
+    pub fn asynch6pen(&mut self) -> ASYNCH6PEN_W<6> {
         ASYNCH6PEN_W::new(self)
     }
     #[doc = "Bit 7 - ASYNCH7 pin enable control bit"]
     #[inline(always)]
-    pub fn asynch7pen(&mut self) -> ASYNCH7PEN_W {
+    #[must_use]
+    pub fn asynch7pen(&mut self) -> ASYNCH7PEN_W<7> {
         ASYNCH7PEN_W::new(self)
     }
     #[doc = "Bit 8 - ASYNCH8 pin enable control bit"]
     #[inline(always)]
-    pub fn asynch8pen(&mut self) -> ASYNCH8PEN_W {
+    #[must_use]
+    pub fn asynch8pen(&mut self) -> ASYNCH8PEN_W<8> {
         ASYNCH8PEN_W::new(self)
     }
     #[doc = "Bit 9 - ASYNCH9 pin enable control bit"]
     #[inline(always)]
-    pub fn asynch9pen(&mut self) -> ASYNCH9PEN_W {
+    #[must_use]
+    pub fn asynch9pen(&mut self) -> ASYNCH9PEN_W<9> {
         ASYNCH9PEN_W::new(self)
     }
     #[doc = "Bit 10 - ASYNCH10 pin enable control bit"]
     #[inline(always)]
-    pub fn asynch10pen(&mut self) -> ASYNCH10PEN_W {
+    #[must_use]
+    pub fn asynch10pen(&mut self) -> ASYNCH10PEN_W<10> {
         ASYNCH10PEN_W::new(self)
     }
     #[doc = "Bit 11 - ASYNCH11 pin enable control bit"]
     #[inline(always)]
-    pub fn asynch11pen(&mut self) -> ASYNCH11PEN_W {
+    #[must_use]
+    pub fn asynch11pen(&mut self) -> ASYNCH11PEN_W<11> {
         ASYNCH11PEN_W::new(self)
     }
     #[doc = "Bit 12 - SYNCH0 pin enable control bit"]
     #[inline(always)]
-    pub fn synch0pen(&mut self) -> SYNCH0PEN_W {
+    #[must_use]
+    pub fn synch0pen(&mut self) -> SYNCH0PEN_W<12> {
         SYNCH0PEN_W::new(self)
     }
     #[doc = "Bit 13 - SYNCH1 pin enable control bit"]
     #[inline(always)]
-    pub fn synch1pen(&mut self) -> SYNCH1PEN_W {
+    #[must_use]
+    pub fn synch1pen(&mut self) -> SYNCH1PEN_W<13> {
         SYNCH1PEN_W::new(self)
     }
     #[doc = "Bit 14 - SYNCH2 pin enable control bit"]
     #[inline(always)]
-    pub fn synch2pen(&mut self) -> SYNCH2PEN_W {
+    #[must_use]
+    pub fn synch2pen(&mut self) -> SYNCH2PEN_W<14> {
         SYNCH2PEN_W::new(self)
     }
     #[doc = "Bit 15 - SYNCH3 pin enable control bit"]
     #[inline(always)]
-    pub fn synch3pen(&mut self) -> SYNCH3PEN_W {
+    #[must_use]
+    pub fn synch3pen(&mut self) -> SYNCH3PEN_W<15> {
         SYNCH3PEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -280,11 +296,10 @@ impl crate::Readable for PRS0_ROUTEEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [prs0_routeen::W](W) writer structure"]
 impl crate::Writable for PRS0_ROUTEEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PRS0_ROUTEEN to value 0"]
 impl crate::Resettable for PRS0_ROUTEEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

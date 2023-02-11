@@ -34,8 +34,10 @@ impl From<crate::W<CTRLX_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DBGHALT` reader - Debug halt"]
+pub type DBGHALT_R = crate::BitReader<DBGHALT_A>;
 #[doc = "Debug halt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DBGHALT_A {
     #[doc = "0: Continue to transmit until TX buffer is empty"]
     DISABLE = 0,
@@ -48,8 +50,6 @@ impl From<DBGHALT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBGHALT` reader - Debug halt"]
-pub type DBGHALT_R = crate::BitReader<DBGHALT_A>;
 impl DBGHALT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl DBGHALT_R {
     }
 }
 #[doc = "Field `DBGHALT` writer - Debug halt"]
-pub type DBGHALT_W<'a> = crate::BitWriter<'a, u32, CTRLX_SPEC, DBGHALT_A, 0>;
-impl<'a> DBGHALT_W<'a> {
+pub type DBGHALT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLX_SPEC, DBGHALT_A, O>;
+impl<'a, const O: u8> DBGHALT_W<'a, O> {
     #[doc = "Continue to transmit until TX buffer is empty"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -84,8 +84,10 @@ impl<'a> DBGHALT_W<'a> {
         self.variant(DBGHALT_A::ENABLE)
     }
 }
+#[doc = "Field `CTSINV` reader - CTS Pin Inversion"]
+pub type CTSINV_R = crate::BitReader<CTSINV_A>;
 #[doc = "CTS Pin Inversion\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CTSINV_A {
     #[doc = "0: The USn_CTS pin is low true"]
     DISABLE = 0,
@@ -98,8 +100,6 @@ impl From<CTSINV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CTSINV` reader - CTS Pin Inversion"]
-pub type CTSINV_R = crate::BitReader<CTSINV_A>;
 impl CTSINV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,8 @@ impl CTSINV_R {
     }
 }
 #[doc = "Field `CTSINV` writer - CTS Pin Inversion"]
-pub type CTSINV_W<'a> = crate::BitWriter<'a, u32, CTRLX_SPEC, CTSINV_A, 1>;
-impl<'a> CTSINV_W<'a> {
+pub type CTSINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLX_SPEC, CTSINV_A, O>;
+impl<'a, const O: u8> CTSINV_W<'a, O> {
     #[doc = "The USn_CTS pin is low true"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -134,8 +134,10 @@ impl<'a> CTSINV_W<'a> {
         self.variant(CTSINV_A::ENABLE)
     }
 }
+#[doc = "Field `CTSEN` reader - CTS Function enabled"]
+pub type CTSEN_R = crate::BitReader<CTSEN_A>;
 #[doc = "CTS Function enabled\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CTSEN_A {
     #[doc = "0: Ingore CTS"]
     DISABLE = 0,
@@ -148,8 +150,6 @@ impl From<CTSEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CTSEN` reader - CTS Function enabled"]
-pub type CTSEN_R = crate::BitReader<CTSEN_A>;
 impl CTSEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -171,8 +171,8 @@ impl CTSEN_R {
     }
 }
 #[doc = "Field `CTSEN` writer - CTS Function enabled"]
-pub type CTSEN_W<'a> = crate::BitWriter<'a, u32, CTRLX_SPEC, CTSEN_A, 2>;
-impl<'a> CTSEN_W<'a> {
+pub type CTSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLX_SPEC, CTSEN_A, O>;
+impl<'a, const O: u8> CTSEN_W<'a, O> {
     #[doc = "Ingore CTS"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -184,8 +184,10 @@ impl<'a> CTSEN_W<'a> {
         self.variant(CTSEN_A::ENABLE)
     }
 }
+#[doc = "Field `RTSINV` reader - RTS Pin Inversion"]
+pub type RTSINV_R = crate::BitReader<RTSINV_A>;
 #[doc = "RTS Pin Inversion\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RTSINV_A {
     #[doc = "0: The USn_RTS pin is low true"]
     DISABLE = 0,
@@ -198,8 +200,6 @@ impl From<RTSINV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RTSINV` reader - RTS Pin Inversion"]
-pub type RTSINV_R = crate::BitReader<RTSINV_A>;
 impl RTSINV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -221,8 +221,8 @@ impl RTSINV_R {
     }
 }
 #[doc = "Field `RTSINV` writer - RTS Pin Inversion"]
-pub type RTSINV_W<'a> = crate::BitWriter<'a, u32, CTRLX_SPEC, RTSINV_A, 3>;
-impl<'a> RTSINV_W<'a> {
+pub type RTSINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLX_SPEC, RTSINV_A, O>;
+impl<'a, const O: u8> RTSINV_W<'a, O> {
     #[doc = "The USn_RTS pin is low true"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -237,11 +237,11 @@ impl<'a> RTSINV_W<'a> {
 #[doc = "Field `RXPRSEN` reader - PRS RX Enable"]
 pub type RXPRSEN_R = crate::BitReader<bool>;
 #[doc = "Field `RXPRSEN` writer - PRS RX Enable"]
-pub type RXPRSEN_W<'a> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, 7>;
+pub type RXPRSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, O>;
 #[doc = "Field `CLKPRSEN` reader - PRS CLK Enable"]
 pub type CLKPRSEN_R = crate::BitReader<bool>;
 #[doc = "Field `CLKPRSEN` writer - PRS CLK Enable"]
-pub type CLKPRSEN_W<'a> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, 15>;
+pub type CLKPRSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Debug halt"]
     #[inline(always)]
@@ -277,32 +277,38 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Debug halt"]
     #[inline(always)]
-    pub fn dbghalt(&mut self) -> DBGHALT_W {
+    #[must_use]
+    pub fn dbghalt(&mut self) -> DBGHALT_W<0> {
         DBGHALT_W::new(self)
     }
     #[doc = "Bit 1 - CTS Pin Inversion"]
     #[inline(always)]
-    pub fn ctsinv(&mut self) -> CTSINV_W {
+    #[must_use]
+    pub fn ctsinv(&mut self) -> CTSINV_W<1> {
         CTSINV_W::new(self)
     }
     #[doc = "Bit 2 - CTS Function enabled"]
     #[inline(always)]
-    pub fn ctsen(&mut self) -> CTSEN_W {
+    #[must_use]
+    pub fn ctsen(&mut self) -> CTSEN_W<2> {
         CTSEN_W::new(self)
     }
     #[doc = "Bit 3 - RTS Pin Inversion"]
     #[inline(always)]
-    pub fn rtsinv(&mut self) -> RTSINV_W {
+    #[must_use]
+    pub fn rtsinv(&mut self) -> RTSINV_W<3> {
         RTSINV_W::new(self)
     }
     #[doc = "Bit 7 - PRS RX Enable"]
     #[inline(always)]
-    pub fn rxprsen(&mut self) -> RXPRSEN_W {
+    #[must_use]
+    pub fn rxprsen(&mut self) -> RXPRSEN_W<7> {
         RXPRSEN_W::new(self)
     }
     #[doc = "Bit 15 - PRS CLK Enable"]
     #[inline(always)]
-    pub fn clkprsen(&mut self) -> CLKPRSEN_W {
+    #[must_use]
+    pub fn clkprsen(&mut self) -> CLKPRSEN_W<15> {
         CLKPRSEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -324,11 +330,10 @@ impl crate::Readable for CTRLX_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrlx::W](W) writer structure"]
 impl crate::Writable for CTRLX_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRLX to value 0"]
 impl crate::Resettable for CTRLX_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

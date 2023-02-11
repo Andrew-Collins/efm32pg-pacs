@@ -20,60 +20,68 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0EN` writer - DAC Channel 0 Enable"]
-pub type CH0EN_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 0>;
+pub type CH0EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `CH0DIS` writer - DAC Channel 0 Disable"]
-pub type CH0DIS_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 1>;
+pub type CH0DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `CH1EN` writer - DAC Channel 1 Enable"]
-pub type CH1EN_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 4>;
+pub type CH1EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `CH1DIS` writer - DAC Channel 1 Disable"]
-pub type CH1DIS_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 5>;
+pub type CH1DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `CH0FIFOFLUSH` writer - CH0 WFIFO Flush"]
-pub type CH0FIFOFLUSH_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 8>;
+pub type CH0FIFOFLUSH_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `CH1FIFOFLUSH` writer - CH1 WFIFO Flush"]
-pub type CH1FIFOFLUSH_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 9>;
+pub type CH1FIFOFLUSH_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `SINEMODESTART` writer - Start Sine Wave Generation"]
-pub type SINEMODESTART_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 10>;
+pub type SINEMODESTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `SINEMODESTOP` writer - Stop Sine Wave Generation"]
-pub type SINEMODESTOP_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 11>;
+pub type SINEMODESTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - DAC Channel 0 Enable"]
     #[inline(always)]
-    pub fn ch0en(&mut self) -> CH0EN_W {
+    #[must_use]
+    pub fn ch0en(&mut self) -> CH0EN_W<0> {
         CH0EN_W::new(self)
     }
     #[doc = "Bit 1 - DAC Channel 0 Disable"]
     #[inline(always)]
-    pub fn ch0dis(&mut self) -> CH0DIS_W {
+    #[must_use]
+    pub fn ch0dis(&mut self) -> CH0DIS_W<1> {
         CH0DIS_W::new(self)
     }
     #[doc = "Bit 4 - DAC Channel 1 Enable"]
     #[inline(always)]
-    pub fn ch1en(&mut self) -> CH1EN_W {
+    #[must_use]
+    pub fn ch1en(&mut self) -> CH1EN_W<4> {
         CH1EN_W::new(self)
     }
     #[doc = "Bit 5 - DAC Channel 1 Disable"]
     #[inline(always)]
-    pub fn ch1dis(&mut self) -> CH1DIS_W {
+    #[must_use]
+    pub fn ch1dis(&mut self) -> CH1DIS_W<5> {
         CH1DIS_W::new(self)
     }
     #[doc = "Bit 8 - CH0 WFIFO Flush"]
     #[inline(always)]
-    pub fn ch0fifoflush(&mut self) -> CH0FIFOFLUSH_W {
+    #[must_use]
+    pub fn ch0fifoflush(&mut self) -> CH0FIFOFLUSH_W<8> {
         CH0FIFOFLUSH_W::new(self)
     }
     #[doc = "Bit 9 - CH1 WFIFO Flush"]
     #[inline(always)]
-    pub fn ch1fifoflush(&mut self) -> CH1FIFOFLUSH_W {
+    #[must_use]
+    pub fn ch1fifoflush(&mut self) -> CH1FIFOFLUSH_W<9> {
         CH1FIFOFLUSH_W::new(self)
     }
     #[doc = "Bit 10 - Start Sine Wave Generation"]
     #[inline(always)]
-    pub fn sinemodestart(&mut self) -> SINEMODESTART_W {
+    #[must_use]
+    pub fn sinemodestart(&mut self) -> SINEMODESTART_W<10> {
         SINEMODESTART_W::new(self)
     }
     #[doc = "Bit 11 - Stop Sine Wave Generation"]
     #[inline(always)]
-    pub fn sinemodestop(&mut self) -> SINEMODESTOP_W {
+    #[must_use]
+    pub fn sinemodestop(&mut self) -> SINEMODESTOP_W<11> {
         SINEMODESTOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -91,11 +99,10 @@ impl crate::RegisterSpec for CMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmd::W](W) writer structure"]
 impl crate::Writable for CMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMD to value 0"]
 impl crate::Resettable for CMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

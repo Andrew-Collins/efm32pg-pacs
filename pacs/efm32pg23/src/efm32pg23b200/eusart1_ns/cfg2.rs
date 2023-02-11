@@ -34,8 +34,10 @@ impl From<crate::W<CFG2_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MASTER` reader - Main mode"]
+pub type MASTER_R = crate::BitReader<MASTER_A>;
 #[doc = "Main mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MASTER_A {
     #[doc = "0: Secondary mode"]
     SLAVE = 0,
@@ -48,8 +50,6 @@ impl From<MASTER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MASTER` reader - Main mode"]
-pub type MASTER_R = crate::BitReader<MASTER_A>;
 impl MASTER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl MASTER_R {
     }
 }
 #[doc = "Field `MASTER` writer - Main mode"]
-pub type MASTER_W<'a> = crate::BitWriter<'a, u32, CFG2_SPEC, MASTER_A, 0>;
-impl<'a> MASTER_W<'a> {
+pub type MASTER_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG2_SPEC, MASTER_A, O>;
+impl<'a, const O: u8> MASTER_W<'a, O> {
     #[doc = "Secondary mode"]
     #[inline(always)]
     pub fn slave(self) -> &'a mut W {
@@ -84,8 +84,10 @@ impl<'a> MASTER_W<'a> {
         self.variant(MASTER_A::MASTER)
     }
 }
+#[doc = "Field `CLKPOL` reader - Clock Polarity"]
+pub type CLKPOL_R = crate::BitReader<CLKPOL_A>;
 #[doc = "Clock Polarity\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLKPOL_A {
     #[doc = "0: The bus clock used in synchronous mode has a low base value"]
     IDLELOW = 0,
@@ -98,8 +100,6 @@ impl From<CLKPOL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLKPOL` reader - Clock Polarity"]
-pub type CLKPOL_R = crate::BitReader<CLKPOL_A>;
 impl CLKPOL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,8 @@ impl CLKPOL_R {
     }
 }
 #[doc = "Field `CLKPOL` writer - Clock Polarity"]
-pub type CLKPOL_W<'a> = crate::BitWriter<'a, u32, CFG2_SPEC, CLKPOL_A, 1>;
-impl<'a> CLKPOL_W<'a> {
+pub type CLKPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG2_SPEC, CLKPOL_A, O>;
+impl<'a, const O: u8> CLKPOL_W<'a, O> {
     #[doc = "The bus clock used in synchronous mode has a low base value"]
     #[inline(always)]
     pub fn idlelow(self) -> &'a mut W {
@@ -134,8 +134,10 @@ impl<'a> CLKPOL_W<'a> {
         self.variant(CLKPOL_A::IDLEHIGH)
     }
 }
+#[doc = "Field `CLKPHA` reader - Clock Edge for Setup/Sample"]
+pub type CLKPHA_R = crate::BitReader<CLKPHA_A>;
 #[doc = "Clock Edge for Setup/Sample\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLKPHA_A {
     #[doc = "0: Data is sampled on the leading edge and set-up on the trailing edge of the bus clock in synchronous mode"]
     SAMPLELEADING = 0,
@@ -148,8 +150,6 @@ impl From<CLKPHA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLKPHA` reader - Clock Edge for Setup/Sample"]
-pub type CLKPHA_R = crate::BitReader<CLKPHA_A>;
 impl CLKPHA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -171,8 +171,8 @@ impl CLKPHA_R {
     }
 }
 #[doc = "Field `CLKPHA` writer - Clock Edge for Setup/Sample"]
-pub type CLKPHA_W<'a> = crate::BitWriter<'a, u32, CFG2_SPEC, CLKPHA_A, 2>;
-impl<'a> CLKPHA_W<'a> {
+pub type CLKPHA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG2_SPEC, CLKPHA_A, O>;
+impl<'a, const O: u8> CLKPHA_W<'a, O> {
     #[doc = "Data is sampled on the leading edge and set-up on the trailing edge of the bus clock in synchronous mode"]
     #[inline(always)]
     pub fn sampleleading(self) -> &'a mut W {
@@ -184,8 +184,10 @@ impl<'a> CLKPHA_W<'a> {
         self.variant(CLKPHA_A::SAMPLETRAILING)
     }
 }
+#[doc = "Field `CSINV` reader - Chip Select Invert"]
+pub type CSINV_R = crate::BitReader<CSINV_A>;
 #[doc = "Chip Select Invert\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CSINV_A {
     #[doc = "0: Chip select is active low"]
     AL = 0,
@@ -198,8 +200,6 @@ impl From<CSINV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CSINV` reader - Chip Select Invert"]
-pub type CSINV_R = crate::BitReader<CSINV_A>;
 impl CSINV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -221,8 +221,8 @@ impl CSINV_R {
     }
 }
 #[doc = "Field `CSINV` writer - Chip Select Invert"]
-pub type CSINV_W<'a> = crate::BitWriter<'a, u32, CFG2_SPEC, CSINV_A, 3>;
-impl<'a> CSINV_W<'a> {
+pub type CSINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG2_SPEC, CSINV_A, O>;
+impl<'a, const O: u8> CSINV_W<'a, O> {
     #[doc = "Chip select is active low"]
     #[inline(always)]
     pub fn al(self) -> &'a mut W {
@@ -237,23 +237,23 @@ impl<'a> CSINV_W<'a> {
 #[doc = "Field `AUTOTX` reader - Always Transmit When RXFIFO Not Full"]
 pub type AUTOTX_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOTX` writer - Always Transmit When RXFIFO Not Full"]
-pub type AUTOTX_W<'a> = crate::BitWriter<'a, u32, CFG2_SPEC, bool, 4>;
+pub type AUTOTX_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG2_SPEC, bool, O>;
 #[doc = "Field `AUTOCS` reader - Automatic Chip Select"]
 pub type AUTOCS_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOCS` writer - Automatic Chip Select"]
-pub type AUTOCS_W<'a> = crate::BitWriter<'a, u32, CFG2_SPEC, bool, 5>;
+pub type AUTOCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG2_SPEC, bool, O>;
 #[doc = "Field `CLKPRSEN` reader - PRS CLK Enable"]
 pub type CLKPRSEN_R = crate::BitReader<bool>;
 #[doc = "Field `CLKPRSEN` writer - PRS CLK Enable"]
-pub type CLKPRSEN_W<'a> = crate::BitWriter<'a, u32, CFG2_SPEC, bool, 6>;
+pub type CLKPRSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG2_SPEC, bool, O>;
 #[doc = "Field `FORCELOAD` reader - Force Load to Shift Register"]
 pub type FORCELOAD_R = crate::BitReader<bool>;
 #[doc = "Field `FORCELOAD` writer - Force Load to Shift Register"]
-pub type FORCELOAD_W<'a> = crate::BitWriter<'a, u32, CFG2_SPEC, bool, 7>;
+pub type FORCELOAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG2_SPEC, bool, O>;
 #[doc = "Field `SDIV` reader - Sync Clock Div"]
 pub type SDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SDIV` writer - Sync Clock Div"]
-pub type SDIV_W<'a> = crate::FieldWriter<'a, u32, CFG2_SPEC, u8, u8, 8, 24>;
+pub type SDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG2_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 0 - Main mode"]
     #[inline(always)]
@@ -304,47 +304,56 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Main mode"]
     #[inline(always)]
-    pub fn master(&mut self) -> MASTER_W {
+    #[must_use]
+    pub fn master(&mut self) -> MASTER_W<0> {
         MASTER_W::new(self)
     }
     #[doc = "Bit 1 - Clock Polarity"]
     #[inline(always)]
-    pub fn clkpol(&mut self) -> CLKPOL_W {
+    #[must_use]
+    pub fn clkpol(&mut self) -> CLKPOL_W<1> {
         CLKPOL_W::new(self)
     }
     #[doc = "Bit 2 - Clock Edge for Setup/Sample"]
     #[inline(always)]
-    pub fn clkpha(&mut self) -> CLKPHA_W {
+    #[must_use]
+    pub fn clkpha(&mut self) -> CLKPHA_W<2> {
         CLKPHA_W::new(self)
     }
     #[doc = "Bit 3 - Chip Select Invert"]
     #[inline(always)]
-    pub fn csinv(&mut self) -> CSINV_W {
+    #[must_use]
+    pub fn csinv(&mut self) -> CSINV_W<3> {
         CSINV_W::new(self)
     }
     #[doc = "Bit 4 - Always Transmit When RXFIFO Not Full"]
     #[inline(always)]
-    pub fn autotx(&mut self) -> AUTOTX_W {
+    #[must_use]
+    pub fn autotx(&mut self) -> AUTOTX_W<4> {
         AUTOTX_W::new(self)
     }
     #[doc = "Bit 5 - Automatic Chip Select"]
     #[inline(always)]
-    pub fn autocs(&mut self) -> AUTOCS_W {
+    #[must_use]
+    pub fn autocs(&mut self) -> AUTOCS_W<5> {
         AUTOCS_W::new(self)
     }
     #[doc = "Bit 6 - PRS CLK Enable"]
     #[inline(always)]
-    pub fn clkprsen(&mut self) -> CLKPRSEN_W {
+    #[must_use]
+    pub fn clkprsen(&mut self) -> CLKPRSEN_W<6> {
         CLKPRSEN_W::new(self)
     }
     #[doc = "Bit 7 - Force Load to Shift Register"]
     #[inline(always)]
-    pub fn forceload(&mut self) -> FORCELOAD_W {
+    #[must_use]
+    pub fn forceload(&mut self) -> FORCELOAD_W<7> {
         FORCELOAD_W::new(self)
     }
     #[doc = "Bits 24:31 - Sync Clock Div"]
     #[inline(always)]
-    pub fn sdiv(&mut self) -> SDIV_W {
+    #[must_use]
+    pub fn sdiv(&mut self) -> SDIV_W<24> {
         SDIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -366,11 +375,10 @@ impl crate::Readable for CFG2_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg2::W](W) writer structure"]
 impl crate::Writable for CFG2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG2 to value 0x20"]
 impl crate::Resettable for CFG2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x20
-    }
+    const RESET_VALUE: Self::Ux = 0x20;
 }

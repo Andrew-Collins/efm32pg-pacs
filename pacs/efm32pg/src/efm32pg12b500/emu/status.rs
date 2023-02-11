@@ -25,8 +25,10 @@ pub type VMONDVDD_R = crate::BitReader<bool>;
 pub type VMONIO0_R = crate::BitReader<bool>;
 #[doc = "Field `VMONFVDD` reader - VMON VDDFLASH Channel"]
 pub type VMONFVDD_R = crate::BitReader<bool>;
+#[doc = "Field `VSCALE` reader - Current Voltage Scale Value"]
+pub type VSCALE_R = crate::FieldReader<u8, VSCALE_A>;
 #[doc = "Current Voltage Scale Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum VSCALE_A {
     #[doc = "0: Voltage Scale Level 2"]
@@ -42,8 +44,6 @@ impl From<VSCALE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `VSCALE` reader - Current Voltage Scale Value"]
-pub type VSCALE_R = crate::FieldReader<u8, VSCALE_A>;
 impl VSCALE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -140,8 +140,5 @@ impl crate::Readable for STATUS_SPEC {
 }
 #[doc = "`reset()` method sets STATUS to value 0"]
 impl crate::Resettable for STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

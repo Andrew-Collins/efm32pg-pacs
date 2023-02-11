@@ -34,24 +34,26 @@ impl From<crate::W<EM01CTRL0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `IPKVAL` reader - EM01 Peak Current Setting"]
+pub type IPKVAL_R = crate::FieldReader<u8, IPKVAL_A>;
 #[doc = "EM01 Peak Current Setting\n\nValue on reset: 9"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum IPKVAL_A {
     #[doc = "3: Ipeak = 90mA, Iload = 36mA"]
-    LOAD36MA = 3,
+    LOAD36M_A = 3,
     #[doc = "4: Ipeak = 100mA, Iload = 40mA"]
-    LOAD40MA = 4,
+    LOAD40M_A = 4,
     #[doc = "5: Ipeak = 110mA, Iload = 44mA"]
-    LOAD44MA = 5,
+    LOAD44M_A = 5,
     #[doc = "6: Ipeak = 120mA, Iload = 48mA"]
-    LOAD48MA = 6,
+    LOAD48M_A = 6,
     #[doc = "7: Ipeak = 130mA, Iload = 52mA"]
-    LOAD52MA = 7,
+    LOAD52M_A = 7,
     #[doc = "8: Ipeak = 140mA, Iload = 56mA"]
-    LOAD56MA = 8,
+    LOAD56M_A = 8,
     #[doc = "9: Ipeak = 150mA, Iload = 60mA"]
-    LOAD60MA = 9,
+    LOAD60M_A = 9,
 }
 impl From<IPKVAL_A> for u8 {
     #[inline(always)]
@@ -59,100 +61,101 @@ impl From<IPKVAL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `IPKVAL` reader - EM01 Peak Current Setting"]
-pub type IPKVAL_R = crate::FieldReader<u8, IPKVAL_A>;
 impl IPKVAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<IPKVAL_A> {
         match self.bits {
-            3 => Some(IPKVAL_A::LOAD36MA),
-            4 => Some(IPKVAL_A::LOAD40MA),
-            5 => Some(IPKVAL_A::LOAD44MA),
-            6 => Some(IPKVAL_A::LOAD48MA),
-            7 => Some(IPKVAL_A::LOAD52MA),
-            8 => Some(IPKVAL_A::LOAD56MA),
-            9 => Some(IPKVAL_A::LOAD60MA),
+            3 => Some(IPKVAL_A::LOAD36M_A),
+            4 => Some(IPKVAL_A::LOAD40M_A),
+            5 => Some(IPKVAL_A::LOAD44M_A),
+            6 => Some(IPKVAL_A::LOAD48M_A),
+            7 => Some(IPKVAL_A::LOAD52M_A),
+            8 => Some(IPKVAL_A::LOAD56M_A),
+            9 => Some(IPKVAL_A::LOAD60M_A),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `LOAD36MA`"]
+    #[doc = "Checks if the value of the field is `LOAD36M_A`"]
     #[inline(always)]
     pub fn is_load36m_a(&self) -> bool {
-        *self == IPKVAL_A::LOAD36MA
+        *self == IPKVAL_A::LOAD36M_A
     }
-    #[doc = "Checks if the value of the field is `LOAD40MA`"]
+    #[doc = "Checks if the value of the field is `LOAD40M_A`"]
     #[inline(always)]
     pub fn is_load40m_a(&self) -> bool {
-        *self == IPKVAL_A::LOAD40MA
+        *self == IPKVAL_A::LOAD40M_A
     }
-    #[doc = "Checks if the value of the field is `LOAD44MA`"]
+    #[doc = "Checks if the value of the field is `LOAD44M_A`"]
     #[inline(always)]
     pub fn is_load44m_a(&self) -> bool {
-        *self == IPKVAL_A::LOAD44MA
+        *self == IPKVAL_A::LOAD44M_A
     }
-    #[doc = "Checks if the value of the field is `LOAD48MA`"]
+    #[doc = "Checks if the value of the field is `LOAD48M_A`"]
     #[inline(always)]
     pub fn is_load48m_a(&self) -> bool {
-        *self == IPKVAL_A::LOAD48MA
+        *self == IPKVAL_A::LOAD48M_A
     }
-    #[doc = "Checks if the value of the field is `LOAD52MA`"]
+    #[doc = "Checks if the value of the field is `LOAD52M_A`"]
     #[inline(always)]
     pub fn is_load52m_a(&self) -> bool {
-        *self == IPKVAL_A::LOAD52MA
+        *self == IPKVAL_A::LOAD52M_A
     }
-    #[doc = "Checks if the value of the field is `LOAD56MA`"]
+    #[doc = "Checks if the value of the field is `LOAD56M_A`"]
     #[inline(always)]
     pub fn is_load56m_a(&self) -> bool {
-        *self == IPKVAL_A::LOAD56MA
+        *self == IPKVAL_A::LOAD56M_A
     }
-    #[doc = "Checks if the value of the field is `LOAD60MA`"]
+    #[doc = "Checks if the value of the field is `LOAD60M_A`"]
     #[inline(always)]
     pub fn is_load60m_a(&self) -> bool {
-        *self == IPKVAL_A::LOAD60MA
+        *self == IPKVAL_A::LOAD60M_A
     }
 }
 #[doc = "Field `IPKVAL` writer - EM01 Peak Current Setting"]
-pub type IPKVAL_W<'a> = crate::FieldWriter<'a, u32, EM01CTRL0_SPEC, u8, IPKVAL_A, 4, 0>;
-impl<'a> IPKVAL_W<'a> {
+pub type IPKVAL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EM01CTRL0_SPEC, u8, IPKVAL_A, 4, O>;
+impl<'a, const O: u8> IPKVAL_W<'a, O> {
     #[doc = "Ipeak = 90mA, Iload = 36mA"]
     #[inline(always)]
     pub fn load36m_a(self) -> &'a mut W {
-        self.variant(IPKVAL_A::LOAD36MA)
+        self.variant(IPKVAL_A::LOAD36M_A)
     }
     #[doc = "Ipeak = 100mA, Iload = 40mA"]
     #[inline(always)]
     pub fn load40m_a(self) -> &'a mut W {
-        self.variant(IPKVAL_A::LOAD40MA)
+        self.variant(IPKVAL_A::LOAD40M_A)
     }
     #[doc = "Ipeak = 110mA, Iload = 44mA"]
     #[inline(always)]
     pub fn load44m_a(self) -> &'a mut W {
-        self.variant(IPKVAL_A::LOAD44MA)
+        self.variant(IPKVAL_A::LOAD44M_A)
     }
     #[doc = "Ipeak = 120mA, Iload = 48mA"]
     #[inline(always)]
     pub fn load48m_a(self) -> &'a mut W {
-        self.variant(IPKVAL_A::LOAD48MA)
+        self.variant(IPKVAL_A::LOAD48M_A)
     }
     #[doc = "Ipeak = 130mA, Iload = 52mA"]
     #[inline(always)]
     pub fn load52m_a(self) -> &'a mut W {
-        self.variant(IPKVAL_A::LOAD52MA)
+        self.variant(IPKVAL_A::LOAD52M_A)
     }
     #[doc = "Ipeak = 140mA, Iload = 56mA"]
     #[inline(always)]
     pub fn load56m_a(self) -> &'a mut W {
-        self.variant(IPKVAL_A::LOAD56MA)
+        self.variant(IPKVAL_A::LOAD56M_A)
     }
     #[doc = "Ipeak = 150mA, Iload = 60mA"]
     #[inline(always)]
     pub fn load60m_a(self) -> &'a mut W {
-        self.variant(IPKVAL_A::LOAD60MA)
+        self.variant(IPKVAL_A::LOAD60M_A)
     }
 }
+#[doc = "Field `DRVSPEED` reader - EM01 Drive Speed Setting"]
+pub type DRVSPEED_R = crate::FieldReader<u8, DRVSPEED_A>;
 #[doc = "EM01 Drive Speed Setting\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DRVSPEED_A {
     #[doc = "0: Lowest Efficiency, Lowest EMI.. Small decrease in efficiency from default setting"]
@@ -170,8 +173,6 @@ impl From<DRVSPEED_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DRVSPEED` reader - EM01 Drive Speed Setting"]
-pub type DRVSPEED_R = crate::FieldReader<u8, DRVSPEED_A>;
 impl DRVSPEED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -206,8 +207,9 @@ impl DRVSPEED_R {
     }
 }
 #[doc = "Field `DRVSPEED` writer - EM01 Drive Speed Setting"]
-pub type DRVSPEED_W<'a> = crate::FieldWriterSafe<'a, u32, EM01CTRL0_SPEC, u8, DRVSPEED_A, 2, 8>;
-impl<'a> DRVSPEED_W<'a> {
+pub type DRVSPEED_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, EM01CTRL0_SPEC, u8, DRVSPEED_A, 2, O>;
+impl<'a, const O: u8> DRVSPEED_W<'a, O> {
     #[doc = "Lowest Efficiency, Lowest EMI.. Small decrease in efficiency from default setting"]
     #[inline(always)]
     pub fn best_emi(self) -> &'a mut W {
@@ -244,12 +246,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - EM01 Peak Current Setting"]
     #[inline(always)]
-    pub fn ipkval(&mut self) -> IPKVAL_W {
+    #[must_use]
+    pub fn ipkval(&mut self) -> IPKVAL_W<0> {
         IPKVAL_W::new(self)
     }
     #[doc = "Bits 8:9 - EM01 Drive Speed Setting"]
     #[inline(always)]
-    pub fn drvspeed(&mut self) -> DRVSPEED_W {
+    #[must_use]
+    pub fn drvspeed(&mut self) -> DRVSPEED_W<8> {
         DRVSPEED_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -271,11 +275,10 @@ impl crate::Readable for EM01CTRL0_SPEC {
 #[doc = "`write(|w| ..)` method takes [em01ctrl0::W](W) writer structure"]
 impl crate::Writable for EM01CTRL0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EM01CTRL0 to value 0x0109"]
 impl crate::Resettable for EM01CTRL0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0109
-    }
+    const RESET_VALUE: Self::Ux = 0x0109;
 }

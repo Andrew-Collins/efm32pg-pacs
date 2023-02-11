@@ -37,27 +37,27 @@ impl From<crate::W<IF_SPEC>> for W {
 #[doc = "Field `SW0` reader - Software Interrupt 0"]
 pub type SW0_R = crate::BitReader<bool>;
 #[doc = "Field `SW0` writer - Software Interrupt 0"]
-pub type SW0_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 0>;
+pub type SW0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `SW1` reader - Software Interrupt 1"]
 pub type SW1_R = crate::BitReader<bool>;
 #[doc = "Field `SW1` writer - Software Interrupt 1"]
-pub type SW1_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 1>;
+pub type SW1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `SW2` reader - Software Interrupt 2"]
 pub type SW2_R = crate::BitReader<bool>;
 #[doc = "Field `SW2` writer - Software Interrupt 2"]
-pub type SW2_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 2>;
+pub type SW2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `SW3` reader - Software Interrupt 3"]
 pub type SW3_R = crate::BitReader<bool>;
 #[doc = "Field `SW3` writer - Software Interrupt 3"]
-pub type SW3_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 3>;
+pub type SW3_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `RAMERR1B` reader - RAM 1-Bit Error Interrupt Flag"]
 pub type RAMERR1B_R = crate::BitReader<bool>;
 #[doc = "Field `RAMERR1B` writer - RAM 1-Bit Error Interrupt Flag"]
-pub type RAMERR1B_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 16>;
+pub type RAMERR1B_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `RAMERR2B` reader - RAM 2-Bit Error Interrupt Flag"]
 pub type RAMERR2B_R = crate::BitReader<bool>;
 #[doc = "Field `RAMERR2B` writer - RAM 2-Bit Error Interrupt Flag"]
-pub type RAMERR2B_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 17>;
+pub type RAMERR2B_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Software Interrupt 0"]
     #[inline(always)]
@@ -93,32 +93,38 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Software Interrupt 0"]
     #[inline(always)]
-    pub fn sw0(&mut self) -> SW0_W {
+    #[must_use]
+    pub fn sw0(&mut self) -> SW0_W<0> {
         SW0_W::new(self)
     }
     #[doc = "Bit 1 - Software Interrupt 1"]
     #[inline(always)]
-    pub fn sw1(&mut self) -> SW1_W {
+    #[must_use]
+    pub fn sw1(&mut self) -> SW1_W<1> {
         SW1_W::new(self)
     }
     #[doc = "Bit 2 - Software Interrupt 2"]
     #[inline(always)]
-    pub fn sw2(&mut self) -> SW2_W {
+    #[must_use]
+    pub fn sw2(&mut self) -> SW2_W<2> {
         SW2_W::new(self)
     }
     #[doc = "Bit 3 - Software Interrupt 3"]
     #[inline(always)]
-    pub fn sw3(&mut self) -> SW3_W {
+    #[must_use]
+    pub fn sw3(&mut self) -> SW3_W<3> {
         SW3_W::new(self)
     }
     #[doc = "Bit 16 - RAM 1-Bit Error Interrupt Flag"]
     #[inline(always)]
-    pub fn ramerr1b(&mut self) -> RAMERR1B_W {
+    #[must_use]
+    pub fn ramerr1b(&mut self) -> RAMERR1B_W<16> {
         RAMERR1B_W::new(self)
     }
     #[doc = "Bit 17 - RAM 2-Bit Error Interrupt Flag"]
     #[inline(always)]
-    pub fn ramerr2b(&mut self) -> RAMERR2B_W {
+    #[must_use]
+    pub fn ramerr2b(&mut self) -> RAMERR2B_W<17> {
         RAMERR2B_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -140,11 +146,10 @@ impl crate::Readable for IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_::W](W) writer structure"]
 impl crate::Writable for IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

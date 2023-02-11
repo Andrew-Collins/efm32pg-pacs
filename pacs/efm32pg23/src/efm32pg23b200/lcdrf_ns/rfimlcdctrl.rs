@@ -37,9 +37,11 @@ impl From<crate::W<RFIMLCDCTRL_SPEC>> for W {
 #[doc = "Field `LCDCPXOEN` reader - LCD Charge Pump XO Clock Enable"]
 pub type LCDCPXOEN_R = crate::BitReader<bool>;
 #[doc = "Field `LCDCPXOEN` writer - LCD Charge Pump XO Clock Enable"]
-pub type LCDCPXOEN_W<'a> = crate::BitWriter<'a, u32, RFIMLCDCTRL_SPEC, bool, 0>;
+pub type LCDCPXOEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RFIMLCDCTRL_SPEC, bool, O>;
+#[doc = "Field `LCDCPXOSEL` reader - LCD Charge Pump XO Select"]
+pub type LCDCPXOSEL_R = crate::BitReader<LCDCPXOSEL_A>;
 #[doc = "LCD Charge Pump XO Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCDCPXOSEL_A {
     #[doc = "0: Internal LCD CP 10Mhz RC oscillator"]
     INTRCO = 0,
@@ -52,8 +54,6 @@ impl From<LCDCPXOSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LCDCPXOSEL` reader - LCD Charge Pump XO Select"]
-pub type LCDCPXOSEL_R = crate::BitReader<LCDCPXOSEL_A>;
 impl LCDCPXOSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -75,8 +75,9 @@ impl LCDCPXOSEL_R {
     }
 }
 #[doc = "Field `LCDCPXOSEL` writer - LCD Charge Pump XO Select"]
-pub type LCDCPXOSEL_W<'a> = crate::BitWriter<'a, u32, RFIMLCDCTRL_SPEC, LCDCPXOSEL_A, 1>;
-impl<'a> LCDCPXOSEL_W<'a> {
+pub type LCDCPXOSEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, RFIMLCDCTRL_SPEC, LCDCPXOSEL_A, O>;
+impl<'a, const O: u8> LCDCPXOSEL_W<'a, O> {
     #[doc = "Internal LCD CP 10Mhz RC oscillator"]
     #[inline(always)]
     pub fn intrco(self) -> &'a mut W {
@@ -91,9 +92,11 @@ impl<'a> LCDCPXOSEL_W<'a> {
 #[doc = "Field `LCDCPXORETIMEEN` reader - LCD Charge Pump XO Retime Enable"]
 pub type LCDCPXORETIMEEN_R = crate::BitReader<bool>;
 #[doc = "Field `LCDCPXORETIMEEN` writer - LCD Charge Pump XO Retime Enable"]
-pub type LCDCPXORETIMEEN_W<'a> = crate::BitWriter<'a, u32, RFIMLCDCTRL_SPEC, bool, 2>;
+pub type LCDCPXORETIMEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RFIMLCDCTRL_SPEC, bool, O>;
+#[doc = "Field `LCDLOWNOISE` reader - LCD Low Noise"]
+pub type LCDLOWNOISE_R = crate::BitReader<LCDLOWNOISE_A>;
 #[doc = "LCD Low Noise\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCDLOWNOISE_A {
     #[doc = "0: Normal operation"]
     NORMAL = 0,
@@ -106,8 +109,6 @@ impl From<LCDLOWNOISE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LCDLOWNOISE` reader - LCD Low Noise"]
-pub type LCDLOWNOISE_R = crate::BitReader<LCDLOWNOISE_A>;
 impl LCDLOWNOISE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -129,8 +130,9 @@ impl LCDLOWNOISE_R {
     }
 }
 #[doc = "Field `LCDLOWNOISE` writer - LCD Low Noise"]
-pub type LCDLOWNOISE_W<'a> = crate::BitWriter<'a, u32, RFIMLCDCTRL_SPEC, LCDLOWNOISE_A, 3>;
-impl<'a> LCDLOWNOISE_W<'a> {
+pub type LCDLOWNOISE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, RFIMLCDCTRL_SPEC, LCDLOWNOISE_A, O>;
+impl<'a, const O: u8> LCDLOWNOISE_W<'a, O> {
     #[doc = "Normal operation"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -145,7 +147,7 @@ impl<'a> LCDLOWNOISE_W<'a> {
 #[doc = "Field `LCDCMPDOUT` reader - LCD Comparator Dout"]
 pub type LCDCMPDOUT_R = crate::BitReader<bool>;
 #[doc = "Field `LCDCMPDOUT` writer - LCD Comparator Dout"]
-pub type LCDCMPDOUT_W<'a> = crate::BitWriter<'a, u32, RFIMLCDCTRL_SPEC, bool, 4>;
+pub type LCDCMPDOUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, RFIMLCDCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - LCD Charge Pump XO Clock Enable"]
     #[inline(always)]
@@ -176,27 +178,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - LCD Charge Pump XO Clock Enable"]
     #[inline(always)]
-    pub fn lcdcpxoen(&mut self) -> LCDCPXOEN_W {
+    #[must_use]
+    pub fn lcdcpxoen(&mut self) -> LCDCPXOEN_W<0> {
         LCDCPXOEN_W::new(self)
     }
     #[doc = "Bit 1 - LCD Charge Pump XO Select"]
     #[inline(always)]
-    pub fn lcdcpxosel(&mut self) -> LCDCPXOSEL_W {
+    #[must_use]
+    pub fn lcdcpxosel(&mut self) -> LCDCPXOSEL_W<1> {
         LCDCPXOSEL_W::new(self)
     }
     #[doc = "Bit 2 - LCD Charge Pump XO Retime Enable"]
     #[inline(always)]
-    pub fn lcdcpxoretimeen(&mut self) -> LCDCPXORETIMEEN_W {
+    #[must_use]
+    pub fn lcdcpxoretimeen(&mut self) -> LCDCPXORETIMEEN_W<2> {
         LCDCPXORETIMEEN_W::new(self)
     }
     #[doc = "Bit 3 - LCD Low Noise"]
     #[inline(always)]
-    pub fn lcdlownoise(&mut self) -> LCDLOWNOISE_W {
+    #[must_use]
+    pub fn lcdlownoise(&mut self) -> LCDLOWNOISE_W<3> {
         LCDLOWNOISE_W::new(self)
     }
     #[doc = "Bit 4 - LCD Comparator Dout"]
     #[inline(always)]
-    pub fn lcdcmpdout(&mut self) -> LCDCMPDOUT_W {
+    #[must_use]
+    pub fn lcdcmpdout(&mut self) -> LCDCMPDOUT_W<4> {
         LCDCMPDOUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -218,11 +225,10 @@ impl crate::Readable for RFIMLCDCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [rfimlcdctrl::W](W) writer structure"]
 impl crate::Writable for RFIMLCDCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RFIMLCDCTRL to value 0"]
 impl crate::Resettable for RFIMLCDCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

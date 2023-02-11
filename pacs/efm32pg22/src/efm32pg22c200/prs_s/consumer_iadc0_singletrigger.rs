@@ -37,13 +37,13 @@ impl From<crate::W<CONSUMER_IADC0_SINGLETRIGGER_SPEC>> for W {
 #[doc = "Field `PRSSEL` reader - SINGLE async channel select"]
 pub type PRSSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PRSSEL` writer - SINGLE async channel select"]
-pub type PRSSEL_W<'a> =
-    crate::FieldWriter<'a, u32, CONSUMER_IADC0_SINGLETRIGGER_SPEC, u8, u8, 4, 0>;
+pub type PRSSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CONSUMER_IADC0_SINGLETRIGGER_SPEC, u8, u8, 4, O>;
 #[doc = "Field `SPRSSEL` reader - SINGLE sync channel select"]
 pub type SPRSSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SPRSSEL` writer - SINGLE sync channel select"]
-pub type SPRSSEL_W<'a> =
-    crate::FieldWriter<'a, u32, CONSUMER_IADC0_SINGLETRIGGER_SPEC, u8, u8, 2, 8>;
+pub type SPRSSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CONSUMER_IADC0_SINGLETRIGGER_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:3 - SINGLE async channel select"]
     #[inline(always)]
@@ -59,12 +59,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - SINGLE async channel select"]
     #[inline(always)]
-    pub fn prssel(&mut self) -> PRSSEL_W {
+    #[must_use]
+    pub fn prssel(&mut self) -> PRSSEL_W<0> {
         PRSSEL_W::new(self)
     }
     #[doc = "Bits 8:9 - SINGLE sync channel select"]
     #[inline(always)]
-    pub fn sprssel(&mut self) -> SPRSSEL_W {
+    #[must_use]
+    pub fn sprssel(&mut self) -> SPRSSEL_W<8> {
         SPRSSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -86,11 +88,10 @@ impl crate::Readable for CONSUMER_IADC0_SINGLETRIGGER_SPEC {
 #[doc = "`write(|w| ..)` method takes [consumer_iadc0_singletrigger::W](W) writer structure"]
 impl crate::Writable for CONSUMER_IADC0_SINGLETRIGGER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CONSUMER_IADC0_SINGLETRIGGER to value 0"]
 impl crate::Resettable for CONSUMER_IADC0_SINGLETRIGGER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

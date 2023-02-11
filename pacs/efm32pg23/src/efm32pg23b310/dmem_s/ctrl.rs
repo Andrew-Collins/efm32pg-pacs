@@ -37,17 +37,19 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `ECCEN` reader - Enable ECC functionality"]
 pub type ECCEN_R = crate::BitReader<bool>;
 #[doc = "Field `ECCEN` writer - Enable ECC functionality"]
-pub type ECCEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 0>;
+pub type ECCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `ECCWEN` reader - Enable ECC syndrome writes"]
 pub type ECCWEN_R = crate::BitReader<bool>;
 #[doc = "Field `ECCWEN` writer - Enable ECC syndrome writes"]
-pub type ECCWEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 1>;
+pub type ECCWEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `ECCERRFAULTEN` reader - ECC Error bus fault enable"]
 pub type ECCERRFAULTEN_R = crate::BitReader<bool>;
 #[doc = "Field `ECCERRFAULTEN` writer - ECC Error bus fault enable"]
-pub type ECCERRFAULTEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 2>;
+pub type ECCERRFAULTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `AHBPORTPRIORITY` reader - AHB port arbitration priority"]
+pub type AHBPORTPRIORITY_R = crate::FieldReader<u8, AHBPORTPRIORITY_A>;
 #[doc = "AHB port arbitration priority\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AHBPORTPRIORITY_A {
     #[doc = "0: No AHB port have raised priority."]
@@ -63,8 +65,6 @@ impl From<AHBPORTPRIORITY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `AHBPORTPRIORITY` reader - AHB port arbitration priority"]
-pub type AHBPORTPRIORITY_R = crate::FieldReader<u8, AHBPORTPRIORITY_A>;
 impl AHBPORTPRIORITY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -93,9 +93,9 @@ impl AHBPORTPRIORITY_R {
     }
 }
 #[doc = "Field `AHBPORTPRIORITY` writer - AHB port arbitration priority"]
-pub type AHBPORTPRIORITY_W<'a> =
-    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, AHBPORTPRIORITY_A, 3, 3>;
-impl<'a> AHBPORTPRIORITY_W<'a> {
+pub type AHBPORTPRIORITY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, AHBPORTPRIORITY_A, 3, O>;
+impl<'a, const O: u8> AHBPORTPRIORITY_W<'a, O> {
     #[doc = "No AHB port have raised priority."]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -115,7 +115,7 @@ impl<'a> AHBPORTPRIORITY_W<'a> {
 #[doc = "Field `ADDRFAULTEN` reader - Address fault bus fault enable"]
 pub type ADDRFAULTEN_R = crate::BitReader<bool>;
 #[doc = "Field `ADDRFAULTEN` writer - Address fault bus fault enable"]
-pub type ADDRFAULTEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 6>;
+pub type ADDRFAULTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Enable ECC functionality"]
     #[inline(always)]
@@ -146,27 +146,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable ECC functionality"]
     #[inline(always)]
-    pub fn eccen(&mut self) -> ECCEN_W {
+    #[must_use]
+    pub fn eccen(&mut self) -> ECCEN_W<0> {
         ECCEN_W::new(self)
     }
     #[doc = "Bit 1 - Enable ECC syndrome writes"]
     #[inline(always)]
-    pub fn eccwen(&mut self) -> ECCWEN_W {
+    #[must_use]
+    pub fn eccwen(&mut self) -> ECCWEN_W<1> {
         ECCWEN_W::new(self)
     }
     #[doc = "Bit 2 - ECC Error bus fault enable"]
     #[inline(always)]
-    pub fn eccerrfaulten(&mut self) -> ECCERRFAULTEN_W {
+    #[must_use]
+    pub fn eccerrfaulten(&mut self) -> ECCERRFAULTEN_W<2> {
         ECCERRFAULTEN_W::new(self)
     }
     #[doc = "Bits 3:5 - AHB port arbitration priority"]
     #[inline(always)]
-    pub fn ahbportpriority(&mut self) -> AHBPORTPRIORITY_W {
+    #[must_use]
+    pub fn ahbportpriority(&mut self) -> AHBPORTPRIORITY_W<3> {
         AHBPORTPRIORITY_W::new(self)
     }
     #[doc = "Bit 6 - Address fault bus fault enable"]
     #[inline(always)]
-    pub fn addrfaulten(&mut self) -> ADDRFAULTEN_W {
+    #[must_use]
+    pub fn addrfaulten(&mut self) -> ADDRFAULTEN_W<6> {
         ADDRFAULTEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -188,11 +193,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x40"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x40
-    }
+    const RESET_VALUE: Self::Ux = 0x40;
 }

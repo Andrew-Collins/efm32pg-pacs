@@ -37,18 +37,19 @@ impl From<crate::W<SEGD1_SPEC>> for W {
 #[doc = "Field `SEGD1` reader - COM1 Segment Data Low"]
 pub type SEGD1_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `SEGD1` writer - COM1 Segment Data Low"]
-pub type SEGD1_W<'a> = crate::FieldWriter<'a, u32, SEGD1_SPEC, u32, u32, 20, 0>;
+pub type SEGD1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEGD1_SPEC, u32, u32, 20, O>;
 impl R {
     #[doc = "Bits 0:19 - COM1 Segment Data Low"]
     #[inline(always)]
     pub fn segd1(&self) -> SEGD1_R {
-        SEGD1_R::new((self.bits & 0x000f_ffff) as u32)
+        SEGD1_R::new(self.bits & 0x000f_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:19 - COM1 Segment Data Low"]
     #[inline(always)]
-    pub fn segd1(&mut self) -> SEGD1_W {
+    #[must_use]
+    pub fn segd1(&mut self) -> SEGD1_W<0> {
         SEGD1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for SEGD1_SPEC {
 #[doc = "`write(|w| ..)` method takes [segd1::W](W) writer structure"]
 impl crate::Writable for SEGD1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SEGD1 to value 0"]
 impl crate::Resettable for SEGD1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

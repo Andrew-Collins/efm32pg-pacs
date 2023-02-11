@@ -37,7 +37,7 @@ impl From<crate::W<PAGELOCK1_SPEC>> for W {
 #[doc = "Field `LOCKBIT` reader - page lock bit"]
 pub type LOCKBIT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `LOCKBIT` writer - page lock bit"]
-pub type LOCKBIT_W<'a> = crate::FieldWriter<'a, u32, PAGELOCK1_SPEC, u32, u32, 32, 0>;
+pub type LOCKBIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PAGELOCK1_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - page lock bit"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - page lock bit"]
     #[inline(always)]
-    pub fn lockbit(&mut self) -> LOCKBIT_W {
+    #[must_use]
+    pub fn lockbit(&mut self) -> LOCKBIT_W<0> {
         LOCKBIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for PAGELOCK1_SPEC {
 #[doc = "`write(|w| ..)` method takes [pagelock1::W](W) writer structure"]
 impl crate::Writable for PAGELOCK1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PAGELOCK1 to value 0"]
 impl crate::Resettable for PAGELOCK1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

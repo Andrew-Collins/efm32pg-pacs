@@ -20,7 +20,7 @@ impl From<crate::W<LOCK_SPEC>> for W {
     }
 }
 #[doc = "Configuration Lock Key\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum LETIMERLOCKKEY_AW {
     #[doc = "52476: Write to unock LETIMER lockable registers"]
@@ -33,9 +33,9 @@ impl From<LETIMERLOCKKEY_AW> for u16 {
     }
 }
 #[doc = "Field `LETIMERLOCKKEY` writer - Configuration Lock Key"]
-pub type LETIMERLOCKKEY_W<'a> =
-    crate::FieldWriter<'a, u32, LOCK_SPEC, u16, LETIMERLOCKKEY_AW, 16, 0>;
-impl<'a> LETIMERLOCKKEY_W<'a> {
+pub type LETIMERLOCKKEY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LOCK_SPEC, u16, LETIMERLOCKKEY_AW, 16, O>;
+impl<'a, const O: u8> LETIMERLOCKKEY_W<'a, O> {
     #[doc = "Write to unock LETIMER lockable registers"]
     #[inline(always)]
     pub fn unlock(self) -> &'a mut W {
@@ -45,7 +45,8 @@ impl<'a> LETIMERLOCKKEY_W<'a> {
 impl W {
     #[doc = "Bits 0:15 - Configuration Lock Key"]
     #[inline(always)]
-    pub fn letimerlockkey(&mut self) -> LETIMERLOCKKEY_W {
+    #[must_use]
+    pub fn letimerlockkey(&mut self) -> LETIMERLOCKKEY_W<0> {
         LETIMERLOCKKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -63,11 +64,10 @@ impl crate::RegisterSpec for LOCK_SPEC {
 #[doc = "`write(|w| ..)` method takes [lock::W](W) writer structure"]
 impl crate::Writable for LOCK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LOCK to value 0"]
 impl crate::Resettable for LOCK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

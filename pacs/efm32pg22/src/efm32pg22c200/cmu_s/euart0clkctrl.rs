@@ -34,8 +34,10 @@ impl From<crate::W<EUART0CLKCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CLKSEL` reader - Clock Select"]
+pub type CLKSEL_R = crate::FieldReader<u8, CLKSEL_A>;
 #[doc = "Clock Select\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKSEL_A {
     #[doc = "0: UART is not clocked"]
@@ -51,8 +53,6 @@ impl From<CLKSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLKSEL` reader - Clock Select"]
-pub type CLKSEL_R = crate::FieldReader<u8, CLKSEL_A>;
 impl CLKSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -81,8 +81,9 @@ impl CLKSEL_R {
     }
 }
 #[doc = "Field `CLKSEL` writer - Clock Select"]
-pub type CLKSEL_W<'a> = crate::FieldWriter<'a, u32, EUART0CLKCTRL_SPEC, u8, CLKSEL_A, 2, 0>;
-impl<'a> CLKSEL_W<'a> {
+pub type CLKSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EUART0CLKCTRL_SPEC, u8, CLKSEL_A, 2, O>;
+impl<'a, const O: u8> CLKSEL_W<'a, O> {
     #[doc = "UART is not clocked"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -109,7 +110,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Clock Select"]
     #[inline(always)]
-    pub fn clksel(&mut self) -> CLKSEL_W {
+    #[must_use]
+    pub fn clksel(&mut self) -> CLKSEL_W<0> {
         CLKSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -131,11 +133,10 @@ impl crate::Readable for EUART0CLKCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [euart0clkctrl::W](W) writer structure"]
 impl crate::Writable for EUART0CLKCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EUART0CLKCTRL to value 0x01"]
 impl crate::Resettable for EUART0CLKCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

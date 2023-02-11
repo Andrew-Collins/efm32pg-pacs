@@ -37,9 +37,11 @@ impl From<crate::W<HFXOCTRL_SPEC>> for W {
 #[doc = "Field `MODE` reader - HFXO Mode"]
 pub type MODE_R = crate::BitReader<bool>;
 #[doc = "Field `MODE` writer - HFXO Mode"]
-pub type MODE_W<'a> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, 0>;
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, O>;
+#[doc = "Field `PEAKDETSHUNTOPTMODE` reader - HFXO Automatic Peak Detection and Shunt Current Optimization Mode"]
+pub type PEAKDETSHUNTOPTMODE_R = crate::FieldReader<u8, PEAKDETSHUNTOPTMODE_A>;
 #[doc = "HFXO Automatic Peak Detection and Shunt Current Optimization Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PEAKDETSHUNTOPTMODE_A {
     #[doc = "0: Automatic control of HFXO peak detection and shunt optimization sequences. CMU_CMD HFXOPEAKDETSTART and HFXOSHUNTOPTSTART can also be used."]
@@ -55,8 +57,6 @@ impl From<PEAKDETSHUNTOPTMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PEAKDETSHUNTOPTMODE` reader - HFXO Automatic Peak Detection and Shunt Current Optimization Mode"]
-pub type PEAKDETSHUNTOPTMODE_R = crate::FieldReader<u8, PEAKDETSHUNTOPTMODE_A>;
 impl PEAKDETSHUNTOPTMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -85,9 +85,9 @@ impl PEAKDETSHUNTOPTMODE_R {
     }
 }
 #[doc = "Field `PEAKDETSHUNTOPTMODE` writer - HFXO Automatic Peak Detection and Shunt Current Optimization Mode"]
-pub type PEAKDETSHUNTOPTMODE_W<'a> =
-    crate::FieldWriter<'a, u32, HFXOCTRL_SPEC, u8, PEAKDETSHUNTOPTMODE_A, 2, 4>;
-impl<'a> PEAKDETSHUNTOPTMODE_W<'a> {
+pub type PEAKDETSHUNTOPTMODE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HFXOCTRL_SPEC, u8, PEAKDETSHUNTOPTMODE_A, 2, O>;
+impl<'a, const O: u8> PEAKDETSHUNTOPTMODE_W<'a, O> {
     #[doc = "Automatic control of HFXO peak detection and shunt optimization sequences. CMU_CMD HFXOPEAKDETSTART and HFXOSHUNTOPTSTART can also be used."]
     #[inline(always)]
     pub fn autocmd(self) -> &'a mut W {
@@ -107,17 +107,19 @@ impl<'a> PEAKDETSHUNTOPTMODE_W<'a> {
 #[doc = "Field `LOWPOWER` reader - Low Power Mode Control"]
 pub type LOWPOWER_R = crate::BitReader<bool>;
 #[doc = "Field `LOWPOWER` writer - Low Power Mode Control"]
-pub type LOWPOWER_W<'a> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, 8>;
+pub type LOWPOWER_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, O>;
 #[doc = "Field `XTI2GND` reader - Clamp HFXTAL_N Pin to Ground When HFXO Oscillator is Off"]
 pub type XTI2GND_R = crate::BitReader<bool>;
 #[doc = "Field `XTI2GND` writer - Clamp HFXTAL_N Pin to Ground When HFXO Oscillator is Off"]
-pub type XTI2GND_W<'a> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, 9>;
+pub type XTI2GND_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, O>;
 #[doc = "Field `XTO2GND` reader - Clamp HFXTAL_P Pin to Ground When HFXO Oscillator is Off"]
 pub type XTO2GND_R = crate::BitReader<bool>;
 #[doc = "Field `XTO2GND` writer - Clamp HFXTAL_P Pin to Ground When HFXO Oscillator is Off"]
-pub type XTO2GND_W<'a> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, 10>;
+pub type XTO2GND_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, O>;
+#[doc = "Field `LFTIMEOUT` reader - HFXO Low Frequency Timeout"]
+pub type LFTIMEOUT_R = crate::FieldReader<u8, LFTIMEOUT_A>;
 #[doc = "HFXO Low Frequency Timeout\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LFTIMEOUT_A {
     #[doc = "0: Timeout period of 0 cycles (disabled)"]
@@ -143,8 +145,6 @@ impl From<LFTIMEOUT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LFTIMEOUT` reader - HFXO Low Frequency Timeout"]
-pub type LFTIMEOUT_R = crate::FieldReader<u8, LFTIMEOUT_A>;
 impl LFTIMEOUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -203,8 +203,9 @@ impl LFTIMEOUT_R {
     }
 }
 #[doc = "Field `LFTIMEOUT` writer - HFXO Low Frequency Timeout"]
-pub type LFTIMEOUT_W<'a> = crate::FieldWriterSafe<'a, u32, HFXOCTRL_SPEC, u8, LFTIMEOUT_A, 3, 24>;
-impl<'a> LFTIMEOUT_W<'a> {
+pub type LFTIMEOUT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, HFXOCTRL_SPEC, u8, LFTIMEOUT_A, 3, O>;
+impl<'a, const O: u8> LFTIMEOUT_W<'a, O> {
     #[doc = "Timeout period of 0 cycles (disabled)"]
     #[inline(always)]
     pub fn _0cycles(self) -> &'a mut W {
@@ -249,11 +250,11 @@ impl<'a> LFTIMEOUT_W<'a> {
 #[doc = "Field `AUTOSTARTEM0EM1` reader - Automatically Start of HFXO Upon EM0/EM1 Entry From EM2/EM3"]
 pub type AUTOSTARTEM0EM1_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOSTARTEM0EM1` writer - Automatically Start of HFXO Upon EM0/EM1 Entry From EM2/EM3"]
-pub type AUTOSTARTEM0EM1_W<'a> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, 28>;
+pub type AUTOSTARTEM0EM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, O>;
 #[doc = "Field `AUTOSTARTSELEM0EM1` reader - Automatically Start and Select of HFXO Upon EM0/EM1 Entry From EM2/EM3"]
 pub type AUTOSTARTSELEM0EM1_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOSTARTSELEM0EM1` writer - Automatically Start and Select of HFXO Upon EM0/EM1 Entry From EM2/EM3"]
-pub type AUTOSTARTSELEM0EM1_W<'a> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, 29>;
+pub type AUTOSTARTSELEM0EM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - HFXO Mode"]
     #[inline(always)]
@@ -299,42 +300,50 @@ impl R {
 impl W {
     #[doc = "Bit 0 - HFXO Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<0> {
         MODE_W::new(self)
     }
     #[doc = "Bits 4:5 - HFXO Automatic Peak Detection and Shunt Current Optimization Mode"]
     #[inline(always)]
-    pub fn peakdetshuntoptmode(&mut self) -> PEAKDETSHUNTOPTMODE_W {
+    #[must_use]
+    pub fn peakdetshuntoptmode(&mut self) -> PEAKDETSHUNTOPTMODE_W<4> {
         PEAKDETSHUNTOPTMODE_W::new(self)
     }
     #[doc = "Bit 8 - Low Power Mode Control"]
     #[inline(always)]
-    pub fn lowpower(&mut self) -> LOWPOWER_W {
+    #[must_use]
+    pub fn lowpower(&mut self) -> LOWPOWER_W<8> {
         LOWPOWER_W::new(self)
     }
     #[doc = "Bit 9 - Clamp HFXTAL_N Pin to Ground When HFXO Oscillator is Off"]
     #[inline(always)]
-    pub fn xti2gnd(&mut self) -> XTI2GND_W {
+    #[must_use]
+    pub fn xti2gnd(&mut self) -> XTI2GND_W<9> {
         XTI2GND_W::new(self)
     }
     #[doc = "Bit 10 - Clamp HFXTAL_P Pin to Ground When HFXO Oscillator is Off"]
     #[inline(always)]
-    pub fn xto2gnd(&mut self) -> XTO2GND_W {
+    #[must_use]
+    pub fn xto2gnd(&mut self) -> XTO2GND_W<10> {
         XTO2GND_W::new(self)
     }
     #[doc = "Bits 24:26 - HFXO Low Frequency Timeout"]
     #[inline(always)]
-    pub fn lftimeout(&mut self) -> LFTIMEOUT_W {
+    #[must_use]
+    pub fn lftimeout(&mut self) -> LFTIMEOUT_W<24> {
         LFTIMEOUT_W::new(self)
     }
     #[doc = "Bit 28 - Automatically Start of HFXO Upon EM0/EM1 Entry From EM2/EM3"]
     #[inline(always)]
-    pub fn autostartem0em1(&mut self) -> AUTOSTARTEM0EM1_W {
+    #[must_use]
+    pub fn autostartem0em1(&mut self) -> AUTOSTARTEM0EM1_W<28> {
         AUTOSTARTEM0EM1_W::new(self)
     }
     #[doc = "Bit 29 - Automatically Start and Select of HFXO Upon EM0/EM1 Entry From EM2/EM3"]
     #[inline(always)]
-    pub fn autostartselem0em1(&mut self) -> AUTOSTARTSELEM0EM1_W {
+    #[must_use]
+    pub fn autostartselem0em1(&mut self) -> AUTOSTARTSELEM0EM1_W<29> {
         AUTOSTARTSELEM0EM1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -356,11 +365,10 @@ impl crate::Readable for HFXOCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [hfxoctrl::W](W) writer structure"]
 impl crate::Writable for HFXOCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HFXOCTRL to value 0"]
 impl crate::Resettable for HFXOCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

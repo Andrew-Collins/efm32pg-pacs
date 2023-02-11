@@ -34,8 +34,10 @@ impl From<crate::W<CFG1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DBGHALT` reader - Debug halt"]
+pub type DBGHALT_R = crate::BitReader<DBGHALT_A>;
 #[doc = "Debug halt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DBGHALT_A {
     #[doc = "0: Continue normal EUSART operation even if core is halted"]
     DISABLE = 0,
@@ -48,8 +50,6 @@ impl From<DBGHALT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBGHALT` reader - Debug halt"]
-pub type DBGHALT_R = crate::BitReader<DBGHALT_A>;
 impl DBGHALT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl DBGHALT_R {
     }
 }
 #[doc = "Field `DBGHALT` writer - Debug halt"]
-pub type DBGHALT_W<'a> = crate::BitWriter<'a, u32, CFG1_SPEC, DBGHALT_A, 0>;
-impl<'a> DBGHALT_W<'a> {
+pub type DBGHALT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG1_SPEC, DBGHALT_A, O>;
+impl<'a, const O: u8> DBGHALT_W<'a, O> {
     #[doc = "Continue normal EUSART operation even if core is halted"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -84,8 +84,10 @@ impl<'a> DBGHALT_W<'a> {
         self.variant(DBGHALT_A::ENABLE)
     }
 }
+#[doc = "Field `CTSINV` reader - Clear-to-send Invert Enable"]
+pub type CTSINV_R = crate::BitReader<CTSINV_A>;
 #[doc = "Clear-to-send Invert Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CTSINV_A {
     #[doc = "0: The CTS pin is active low"]
     DISABLE = 0,
@@ -98,8 +100,6 @@ impl From<CTSINV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CTSINV` reader - Clear-to-send Invert Enable"]
-pub type CTSINV_R = crate::BitReader<CTSINV_A>;
 impl CTSINV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,8 @@ impl CTSINV_R {
     }
 }
 #[doc = "Field `CTSINV` writer - Clear-to-send Invert Enable"]
-pub type CTSINV_W<'a> = crate::BitWriter<'a, u32, CFG1_SPEC, CTSINV_A, 1>;
-impl<'a> CTSINV_W<'a> {
+pub type CTSINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG1_SPEC, CTSINV_A, O>;
+impl<'a, const O: u8> CTSINV_W<'a, O> {
     #[doc = "The CTS pin is active low"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -134,8 +134,10 @@ impl<'a> CTSINV_W<'a> {
         self.variant(CTSINV_A::ENABLE)
     }
 }
+#[doc = "Field `CTSEN` reader - Clear-to-send Enable"]
+pub type CTSEN_R = crate::BitReader<CTSEN_A>;
 #[doc = "Clear-to-send Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CTSEN_A {
     #[doc = "0: Ignore CTS"]
     DISABLE = 0,
@@ -148,8 +150,6 @@ impl From<CTSEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CTSEN` reader - Clear-to-send Enable"]
-pub type CTSEN_R = crate::BitReader<CTSEN_A>;
 impl CTSEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -171,8 +171,8 @@ impl CTSEN_R {
     }
 }
 #[doc = "Field `CTSEN` writer - Clear-to-send Enable"]
-pub type CTSEN_W<'a> = crate::BitWriter<'a, u32, CFG1_SPEC, CTSEN_A, 2>;
-impl<'a> CTSEN_W<'a> {
+pub type CTSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG1_SPEC, CTSEN_A, O>;
+impl<'a, const O: u8> CTSEN_W<'a, O> {
     #[doc = "Ignore CTS"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -184,8 +184,10 @@ impl<'a> CTSEN_W<'a> {
         self.variant(CTSEN_A::ENABLE)
     }
 }
+#[doc = "Field `RTSINV` reader - Request-to-send Invert Enable"]
+pub type RTSINV_R = crate::BitReader<RTSINV_A>;
 #[doc = "Request-to-send Invert Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RTSINV_A {
     #[doc = "0: The RTS pin is active low"]
     DISABLE = 0,
@@ -198,8 +200,6 @@ impl From<RTSINV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RTSINV` reader - Request-to-send Invert Enable"]
-pub type RTSINV_R = crate::BitReader<RTSINV_A>;
 impl RTSINV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -221,8 +221,8 @@ impl RTSINV_R {
     }
 }
 #[doc = "Field `RTSINV` writer - Request-to-send Invert Enable"]
-pub type RTSINV_W<'a> = crate::BitWriter<'a, u32, CFG1_SPEC, RTSINV_A, 3>;
-impl<'a> RTSINV_W<'a> {
+pub type RTSINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG1_SPEC, RTSINV_A, O>;
+impl<'a, const O: u8> RTSINV_W<'a, O> {
     #[doc = "The RTS pin is active low"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -234,8 +234,10 @@ impl<'a> RTSINV_W<'a> {
         self.variant(RTSINV_A::ENABLE)
     }
 }
+#[doc = "Field `RXTIMEOUT` reader - RX Timeout"]
+pub type RXTIMEOUT_R = crate::FieldReader<u8, RXTIMEOUT_A>;
 #[doc = "RX Timeout\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RXTIMEOUT_A {
     #[doc = "0: DISABLED"]
@@ -261,8 +263,6 @@ impl From<RXTIMEOUT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RXTIMEOUT` reader - RX Timeout"]
-pub type RXTIMEOUT_R = crate::FieldReader<u8, RXTIMEOUT_A>;
 impl RXTIMEOUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -321,8 +321,9 @@ impl RXTIMEOUT_R {
     }
 }
 #[doc = "Field `RXTIMEOUT` writer - RX Timeout"]
-pub type RXTIMEOUT_W<'a> = crate::FieldWriterSafe<'a, u32, CFG1_SPEC, u8, RXTIMEOUT_A, 3, 4>;
-impl<'a> RXTIMEOUT_W<'a> {
+pub type RXTIMEOUT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CFG1_SPEC, u8, RXTIMEOUT_A, 3, O>;
+impl<'a, const O: u8> RXTIMEOUT_W<'a, O> {
     #[doc = "DISABLED"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -367,13 +368,15 @@ impl<'a> RXTIMEOUT_W<'a> {
 #[doc = "Field `SFUBRX` reader - Start Frame Unblock Receiver"]
 pub type SFUBRX_R = crate::BitReader<bool>;
 #[doc = "Field `SFUBRX` writer - Start Frame Unblock Receiver"]
-pub type SFUBRX_W<'a> = crate::BitWriter<'a, u32, CFG1_SPEC, bool, 11>;
+pub type SFUBRX_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG1_SPEC, bool, O>;
 #[doc = "Field `RXPRSEN` reader - PRS RX Enable"]
 pub type RXPRSEN_R = crate::BitReader<bool>;
 #[doc = "Field `RXPRSEN` writer - PRS RX Enable"]
-pub type RXPRSEN_W<'a> = crate::BitWriter<'a, u32, CFG1_SPEC, bool, 15>;
+pub type RXPRSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG1_SPEC, bool, O>;
+#[doc = "Field `TXFIW` reader - TX FIFO Interrupt Watermark"]
+pub type TXFIW_R = crate::FieldReader<u8, TXFIW_A>;
 #[doc = "TX FIFO Interrupt Watermark\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TXFIW_A {
     #[doc = "0: TXFL status flag and IF are set when the TX FIFO has space for at least one more frame."]
@@ -415,8 +418,6 @@ impl From<TXFIW_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TXFIW` reader - TX FIFO Interrupt Watermark"]
-pub type TXFIW_R = crate::FieldReader<u8, TXFIW_A>;
 impl TXFIW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -523,8 +524,8 @@ impl TXFIW_R {
     }
 }
 #[doc = "Field `TXFIW` writer - TX FIFO Interrupt Watermark"]
-pub type TXFIW_W<'a> = crate::FieldWriterSafe<'a, u32, CFG1_SPEC, u8, TXFIW_A, 4, 16>;
-impl<'a> TXFIW_W<'a> {
+pub type TXFIW_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CFG1_SPEC, u8, TXFIW_A, 4, O>;
+impl<'a, const O: u8> TXFIW_W<'a, O> {
     #[doc = "TXFL status flag and IF are set when the TX FIFO has space for at least one more frame."]
     #[inline(always)]
     pub fn oneframe(self) -> &'a mut W {
@@ -606,8 +607,10 @@ impl<'a> TXFIW_W<'a> {
         self.variant(TXFIW_A::SIXTEENFRAMES)
     }
 }
+#[doc = "Field `RTSRXFW` reader - Request-to-send RX FIFO Watermark"]
+pub type RTSRXFW_R = crate::FieldReader<u8, RTSRXFW_A>;
 #[doc = "Request-to-send RX FIFO Watermark\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RTSRXFW_A {
     #[doc = "0: RTS is set if there is space for at least one more frame in the RX FIFO."]
@@ -649,8 +652,6 @@ impl From<RTSRXFW_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RTSRXFW` reader - Request-to-send RX FIFO Watermark"]
-pub type RTSRXFW_R = crate::FieldReader<u8, RTSRXFW_A>;
 impl RTSRXFW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -757,8 +758,9 @@ impl RTSRXFW_R {
     }
 }
 #[doc = "Field `RTSRXFW` writer - Request-to-send RX FIFO Watermark"]
-pub type RTSRXFW_W<'a> = crate::FieldWriterSafe<'a, u32, CFG1_SPEC, u8, RTSRXFW_A, 4, 22>;
-impl<'a> RTSRXFW_W<'a> {
+pub type RTSRXFW_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CFG1_SPEC, u8, RTSRXFW_A, 4, O>;
+impl<'a, const O: u8> RTSRXFW_W<'a, O> {
     #[doc = "RTS is set if there is space for at least one more frame in the RX FIFO."]
     #[inline(always)]
     pub fn oneframe(self) -> &'a mut W {
@@ -840,8 +842,10 @@ impl<'a> RTSRXFW_W<'a> {
         self.variant(RTSRXFW_A::SIXTEENFRAMES)
     }
 }
+#[doc = "Field `RXFIW` reader - RX FIFO Interrupt Watermark"]
+pub type RXFIW_R = crate::FieldReader<u8, RXFIW_A>;
 #[doc = "RX FIFO Interrupt Watermark\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RXFIW_A {
     #[doc = "0: RXFL status flag and IF are set when the RX FIFO has at least one frame in it."]
@@ -883,8 +887,6 @@ impl From<RXFIW_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RXFIW` reader - RX FIFO Interrupt Watermark"]
-pub type RXFIW_R = crate::FieldReader<u8, RXFIW_A>;
 impl RXFIW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -991,8 +993,8 @@ impl RXFIW_R {
     }
 }
 #[doc = "Field `RXFIW` writer - RX FIFO Interrupt Watermark"]
-pub type RXFIW_W<'a> = crate::FieldWriterSafe<'a, u32, CFG1_SPEC, u8, RXFIW_A, 4, 27>;
-impl<'a> RXFIW_W<'a> {
+pub type RXFIW_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CFG1_SPEC, u8, RXFIW_A, 4, O>;
+impl<'a, const O: u8> RXFIW_W<'a, O> {
     #[doc = "RXFL status flag and IF are set when the RX FIFO has at least one frame in it."]
     #[inline(always)]
     pub fn oneframe(self) -> &'a mut W {
@@ -1129,52 +1131,62 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Debug halt"]
     #[inline(always)]
-    pub fn dbghalt(&mut self) -> DBGHALT_W {
+    #[must_use]
+    pub fn dbghalt(&mut self) -> DBGHALT_W<0> {
         DBGHALT_W::new(self)
     }
     #[doc = "Bit 1 - Clear-to-send Invert Enable"]
     #[inline(always)]
-    pub fn ctsinv(&mut self) -> CTSINV_W {
+    #[must_use]
+    pub fn ctsinv(&mut self) -> CTSINV_W<1> {
         CTSINV_W::new(self)
     }
     #[doc = "Bit 2 - Clear-to-send Enable"]
     #[inline(always)]
-    pub fn ctsen(&mut self) -> CTSEN_W {
+    #[must_use]
+    pub fn ctsen(&mut self) -> CTSEN_W<2> {
         CTSEN_W::new(self)
     }
     #[doc = "Bit 3 - Request-to-send Invert Enable"]
     #[inline(always)]
-    pub fn rtsinv(&mut self) -> RTSINV_W {
+    #[must_use]
+    pub fn rtsinv(&mut self) -> RTSINV_W<3> {
         RTSINV_W::new(self)
     }
     #[doc = "Bits 4:6 - RX Timeout"]
     #[inline(always)]
-    pub fn rxtimeout(&mut self) -> RXTIMEOUT_W {
+    #[must_use]
+    pub fn rxtimeout(&mut self) -> RXTIMEOUT_W<4> {
         RXTIMEOUT_W::new(self)
     }
     #[doc = "Bit 11 - Start Frame Unblock Receiver"]
     #[inline(always)]
-    pub fn sfubrx(&mut self) -> SFUBRX_W {
+    #[must_use]
+    pub fn sfubrx(&mut self) -> SFUBRX_W<11> {
         SFUBRX_W::new(self)
     }
     #[doc = "Bit 15 - PRS RX Enable"]
     #[inline(always)]
-    pub fn rxprsen(&mut self) -> RXPRSEN_W {
+    #[must_use]
+    pub fn rxprsen(&mut self) -> RXPRSEN_W<15> {
         RXPRSEN_W::new(self)
     }
     #[doc = "Bits 16:19 - TX FIFO Interrupt Watermark"]
     #[inline(always)]
-    pub fn txfiw(&mut self) -> TXFIW_W {
+    #[must_use]
+    pub fn txfiw(&mut self) -> TXFIW_W<16> {
         TXFIW_W::new(self)
     }
     #[doc = "Bits 22:25 - Request-to-send RX FIFO Watermark"]
     #[inline(always)]
-    pub fn rtsrxfw(&mut self) -> RTSRXFW_W {
+    #[must_use]
+    pub fn rtsrxfw(&mut self) -> RTSRXFW_W<22> {
         RTSRXFW_W::new(self)
     }
     #[doc = "Bits 27:30 - RX FIFO Interrupt Watermark"]
     #[inline(always)]
-    pub fn rxfiw(&mut self) -> RXFIW_W {
+    #[must_use]
+    pub fn rxfiw(&mut self) -> RXFIW_W<27> {
         RXFIW_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -1196,11 +1208,10 @@ impl crate::Readable for CFG1_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg1::W](W) writer structure"]
 impl crate::Writable for CFG1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG1 to value 0"]
 impl crate::Resettable for CFG1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<DTFCFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DTFA` reader - DTI Fault Action"]
+pub type DTFA_R = crate::FieldReader<u8, DTFA_A>;
 #[doc = "DTI Fault Action\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DTFA_A {
     #[doc = "0: No action on fault"]
@@ -53,8 +55,6 @@ impl From<DTFA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DTFA` reader - DTI Fault Action"]
-pub type DTFA_R = crate::FieldReader<u8, DTFA_A>;
 impl DTFA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,8 @@ impl DTFA_R {
     }
 }
 #[doc = "Field `DTFA` writer - DTI Fault Action"]
-pub type DTFA_W<'a> = crate::FieldWriterSafe<'a, u32, DTFCFG_SPEC, u8, DTFA_A, 2, 16>;
-impl<'a> DTFA_W<'a> {
+pub type DTFA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DTFCFG_SPEC, u8, DTFA_A, 2, O>;
+impl<'a, const O: u8> DTFA_W<'a, O> {
     #[doc = "No action on fault"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -115,23 +115,23 @@ impl<'a> DTFA_W<'a> {
 #[doc = "Field `DTPRS0FEN` reader - DTI PRS 0 Fault Enable"]
 pub type DTPRS0FEN_R = crate::BitReader<bool>;
 #[doc = "Field `DTPRS0FEN` writer - DTI PRS 0 Fault Enable"]
-pub type DTPRS0FEN_W<'a> = crate::BitWriter<'a, u32, DTFCFG_SPEC, bool, 24>;
+pub type DTPRS0FEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFCFG_SPEC, bool, O>;
 #[doc = "Field `DTPRS1FEN` reader - DTI PRS 1 Fault Enable"]
 pub type DTPRS1FEN_R = crate::BitReader<bool>;
 #[doc = "Field `DTPRS1FEN` writer - DTI PRS 1 Fault Enable"]
-pub type DTPRS1FEN_W<'a> = crate::BitWriter<'a, u32, DTFCFG_SPEC, bool, 25>;
+pub type DTPRS1FEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFCFG_SPEC, bool, O>;
 #[doc = "Field `DTDBGFEN` reader - DTI Debugger Fault Enable"]
 pub type DTDBGFEN_R = crate::BitReader<bool>;
 #[doc = "Field `DTDBGFEN` writer - DTI Debugger Fault Enable"]
-pub type DTDBGFEN_W<'a> = crate::BitWriter<'a, u32, DTFCFG_SPEC, bool, 26>;
+pub type DTDBGFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFCFG_SPEC, bool, O>;
 #[doc = "Field `DTLOCKUPFEN` reader - DTI Lockup Fault Enable"]
 pub type DTLOCKUPFEN_R = crate::BitReader<bool>;
 #[doc = "Field `DTLOCKUPFEN` writer - DTI Lockup Fault Enable"]
-pub type DTLOCKUPFEN_W<'a> = crate::BitWriter<'a, u32, DTFCFG_SPEC, bool, 27>;
+pub type DTLOCKUPFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFCFG_SPEC, bool, O>;
 #[doc = "Field `DTEM23FEN` reader - DTI EM23 Fault Enable"]
 pub type DTEM23FEN_R = crate::BitReader<bool>;
 #[doc = "Field `DTEM23FEN` writer - DTI EM23 Fault Enable"]
-pub type DTEM23FEN_W<'a> = crate::BitWriter<'a, u32, DTFCFG_SPEC, bool, 28>;
+pub type DTEM23FEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFCFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 16:17 - DTI Fault Action"]
     #[inline(always)]
@@ -167,32 +167,38 @@ impl R {
 impl W {
     #[doc = "Bits 16:17 - DTI Fault Action"]
     #[inline(always)]
-    pub fn dtfa(&mut self) -> DTFA_W {
+    #[must_use]
+    pub fn dtfa(&mut self) -> DTFA_W<16> {
         DTFA_W::new(self)
     }
     #[doc = "Bit 24 - DTI PRS 0 Fault Enable"]
     #[inline(always)]
-    pub fn dtprs0fen(&mut self) -> DTPRS0FEN_W {
+    #[must_use]
+    pub fn dtprs0fen(&mut self) -> DTPRS0FEN_W<24> {
         DTPRS0FEN_W::new(self)
     }
     #[doc = "Bit 25 - DTI PRS 1 Fault Enable"]
     #[inline(always)]
-    pub fn dtprs1fen(&mut self) -> DTPRS1FEN_W {
+    #[must_use]
+    pub fn dtprs1fen(&mut self) -> DTPRS1FEN_W<25> {
         DTPRS1FEN_W::new(self)
     }
     #[doc = "Bit 26 - DTI Debugger Fault Enable"]
     #[inline(always)]
-    pub fn dtdbgfen(&mut self) -> DTDBGFEN_W {
+    #[must_use]
+    pub fn dtdbgfen(&mut self) -> DTDBGFEN_W<26> {
         DTDBGFEN_W::new(self)
     }
     #[doc = "Bit 27 - DTI Lockup Fault Enable"]
     #[inline(always)]
-    pub fn dtlockupfen(&mut self) -> DTLOCKUPFEN_W {
+    #[must_use]
+    pub fn dtlockupfen(&mut self) -> DTLOCKUPFEN_W<27> {
         DTLOCKUPFEN_W::new(self)
     }
     #[doc = "Bit 28 - DTI EM23 Fault Enable"]
     #[inline(always)]
-    pub fn dtem23fen(&mut self) -> DTEM23FEN_W {
+    #[must_use]
+    pub fn dtem23fen(&mut self) -> DTEM23FEN_W<28> {
         DTEM23FEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -214,11 +220,10 @@ impl crate::Readable for DTFCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [dtfcfg::W](W) writer structure"]
 impl crate::Writable for DTFCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DTFCFG to value 0"]
 impl crate::Resettable for DTFCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

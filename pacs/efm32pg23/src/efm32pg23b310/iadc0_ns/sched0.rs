@@ -37,7 +37,7 @@ impl From<crate::W<SCHED0_SPEC>> for W {
 #[doc = "Field `PRESCALE` reader - Prescale"]
 pub type PRESCALE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PRESCALE` writer - Prescale"]
-pub type PRESCALE_W<'a> = crate::FieldWriter<'a, u32, SCHED0_SPEC, u16, u16, 10, 0>;
+pub type PRESCALE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCHED0_SPEC, u16, u16, 10, O>;
 impl R {
     #[doc = "Bits 0:9 - Prescale"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Prescale"]
     #[inline(always)]
-    pub fn prescale(&mut self) -> PRESCALE_W {
+    #[must_use]
+    pub fn prescale(&mut self) -> PRESCALE_W<0> {
         PRESCALE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for SCHED0_SPEC {
 #[doc = "`write(|w| ..)` method takes [sched0::W](W) writer structure"]
 impl crate::Writable for SCHED0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCHED0 to value 0"]
 impl crate::Resettable for SCHED0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

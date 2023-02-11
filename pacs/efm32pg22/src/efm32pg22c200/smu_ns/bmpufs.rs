@@ -33,8 +33,5 @@ impl crate::Readable for BMPUFS_SPEC {
 }
 #[doc = "`reset()` method sets BMPUFS to value 0"]
 impl crate::Resettable for BMPUFS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<WDOG0CLKCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CLKSEL` reader - Clock Select"]
+pub type CLKSEL_R = crate::FieldReader<u8, CLKSEL_A>;
 #[doc = "Clock Select\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKSEL_A {
     #[doc = "1: LFRCO is clocking WDOG0CLK"]
@@ -53,8 +55,6 @@ impl From<CLKSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLKSEL` reader - Clock Select"]
-pub type CLKSEL_R = crate::FieldReader<u8, CLKSEL_A>;
 impl CLKSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,9 @@ impl CLKSEL_R {
     }
 }
 #[doc = "Field `CLKSEL` writer - Clock Select"]
-pub type CLKSEL_W<'a> = crate::FieldWriter<'a, u32, WDOG0CLKCTRL_SPEC, u8, CLKSEL_A, 3, 0>;
-impl<'a> CLKSEL_W<'a> {
+pub type CLKSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, WDOG0CLKCTRL_SPEC, u8, CLKSEL_A, 3, O>;
+impl<'a, const O: u8> CLKSEL_W<'a, O> {
     #[doc = "LFRCO is clocking WDOG0CLK"]
     #[inline(always)]
     pub fn lfrco(self) -> &'a mut W {
@@ -122,7 +123,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Clock Select"]
     #[inline(always)]
-    pub fn clksel(&mut self) -> CLKSEL_W {
+    #[must_use]
+    pub fn clksel(&mut self) -> CLKSEL_W<0> {
         CLKSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -144,11 +146,10 @@ impl crate::Readable for WDOG0CLKCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [wdog0clkctrl::W](W) writer structure"]
 impl crate::Writable for WDOG0CLKCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets WDOG0CLKCTRL to value 0x01"]
 impl crate::Resettable for WDOG0CLKCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

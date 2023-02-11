@@ -37,7 +37,8 @@ impl From<crate::W<SWOFFTMRVAL_SPEC>> for W {
 #[doc = "Field `SWOFFTMRVAL` reader - Switch Off Timer Value"]
 pub type SWOFFTMRVAL_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SWOFFTMRVAL` writer - Switch Off Timer Value"]
-pub type SWOFFTMRVAL_W<'a> = crate::FieldWriter<'a, u32, SWOFFTMRVAL_SPEC, u16, u16, 16, 0>;
+pub type SWOFFTMRVAL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SWOFFTMRVAL_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Switch Off Timer Value"]
     #[inline(always)]
@@ -48,7 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Switch Off Timer Value"]
     #[inline(always)]
-    pub fn swofftmrval(&mut self) -> SWOFFTMRVAL_W {
+    #[must_use]
+    pub fn swofftmrval(&mut self) -> SWOFFTMRVAL_W<0> {
         SWOFFTMRVAL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +72,10 @@ impl crate::Readable for SWOFFTMRVAL_SPEC {
 #[doc = "`write(|w| ..)` method takes [swofftmrval::W](W) writer structure"]
 impl crate::Writable for SWOFFTMRVAL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SWOFFTMRVAL to value 0xffff"]
 impl crate::Resettable for SWOFFTMRVAL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff
-    }
+    const RESET_VALUE: Self::Ux = 0xffff;
 }

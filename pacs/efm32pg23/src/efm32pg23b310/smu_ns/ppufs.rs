@@ -33,8 +33,5 @@ impl crate::Readable for PPUFS_SPEC {
 }
 #[doc = "`reset()` method sets PPUFS to value 0"]
 impl crate::Resettable for PPUFS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

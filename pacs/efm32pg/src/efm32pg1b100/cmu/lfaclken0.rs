@@ -37,7 +37,7 @@ impl From<crate::W<LFACLKEN0_SPEC>> for W {
 #[doc = "Field `LETIMER0` reader - Low Energy Timer 0 Clock Enable"]
 pub type LETIMER0_R = crate::BitReader<bool>;
 #[doc = "Field `LETIMER0` writer - Low Energy Timer 0 Clock Enable"]
-pub type LETIMER0_W<'a> = crate::BitWriter<'a, u32, LFACLKEN0_SPEC, bool, 0>;
+pub type LETIMER0_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFACLKEN0_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Low Energy Timer 0 Clock Enable"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Low Energy Timer 0 Clock Enable"]
     #[inline(always)]
-    pub fn letimer0(&mut self) -> LETIMER0_W {
+    #[must_use]
+    pub fn letimer0(&mut self) -> LETIMER0_W<0> {
         LETIMER0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for LFACLKEN0_SPEC {
 #[doc = "`write(|w| ..)` method takes [lfaclken0::W](W) writer structure"]
 impl crate::Writable for LFACLKEN0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LFACLKEN0 to value 0"]
 impl crate::Resettable for LFACLKEN0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -13,8 +13,10 @@ impl From<crate::R<PKGINFO_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `TEMPGRADE` reader - Temperature Grade"]
+pub type TEMPGRADE_R = crate::FieldReader<u8, TEMPGRADE_A>;
 #[doc = "Temperature Grade\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TEMPGRADE_A {
     #[doc = "0: -40 to 85 degC"]
@@ -32,8 +34,6 @@ impl From<TEMPGRADE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TEMPGRADE` reader - Temperature Grade"]
-pub type TEMPGRADE_R = crate::FieldReader<u8, TEMPGRADE_A>;
 impl TEMPGRADE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -67,8 +67,10 @@ impl TEMPGRADE_R {
         *self == TEMPGRADE_A::N0TO70
     }
 }
+#[doc = "Field `PKGTYPE` reader - Package Type"]
+pub type PKGTYPE_R = crate::FieldReader<u8, PKGTYPE_A>;
 #[doc = "Package Type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PKGTYPE_A {
     #[doc = "74: WLCSP package"]
@@ -86,8 +88,6 @@ impl From<PKGTYPE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PKGTYPE` reader - Package Type"]
-pub type PKGTYPE_R = crate::FieldReader<u8, PKGTYPE_A>;
 impl PKGTYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -151,8 +151,5 @@ impl crate::Readable for PKGINFO_SPEC {
 }
 #[doc = "`reset()` method sets PKGINFO to value 0"]
 impl crate::Resettable for PKGINFO_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

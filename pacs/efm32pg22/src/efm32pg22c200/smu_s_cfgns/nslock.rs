@@ -20,7 +20,7 @@ impl From<crate::W<NSLOCK_SPEC>> for W {
     }
 }
 #[doc = "SMU Non-Secure Lock/Key\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum SMUNSLOCKKEY_AW {
     #[doc = "11325013: Unlocks Registers"]
@@ -33,8 +33,9 @@ impl From<SMUNSLOCKKEY_AW> for u32 {
     }
 }
 #[doc = "Field `SMUNSLOCKKEY` writer - SMU Non-Secure Lock/Key"]
-pub type SMUNSLOCKKEY_W<'a> = crate::FieldWriter<'a, u32, NSLOCK_SPEC, u32, SMUNSLOCKKEY_AW, 24, 0>;
-impl<'a> SMUNSLOCKKEY_W<'a> {
+pub type SMUNSLOCKKEY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, NSLOCK_SPEC, u32, SMUNSLOCKKEY_AW, 24, O>;
+impl<'a, const O: u8> SMUNSLOCKKEY_W<'a, O> {
     #[doc = "Unlocks Registers"]
     #[inline(always)]
     pub fn unlock(self) -> &'a mut W {
@@ -44,7 +45,8 @@ impl<'a> SMUNSLOCKKEY_W<'a> {
 impl W {
     #[doc = "Bits 0:23 - SMU Non-Secure Lock/Key"]
     #[inline(always)]
-    pub fn smunslockkey(&mut self) -> SMUNSLOCKKEY_W {
+    #[must_use]
+    pub fn smunslockkey(&mut self) -> SMUNSLOCKKEY_W<0> {
         SMUNSLOCKKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -62,11 +64,10 @@ impl crate::RegisterSpec for NSLOCK_SPEC {
 #[doc = "`write(|w| ..)` method takes [nslock::W](W) writer structure"]
 impl crate::Writable for NSLOCK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets NSLOCK to value 0"]
 impl crate::Resettable for NSLOCK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -20,11 +20,12 @@ impl From<crate::W<SYNCSWSET_SPEC>> for W {
     }
 }
 #[doc = "Field `SYNCSWSET` writer - DMA SYNC Software Trigger Set"]
-pub type SYNCSWSET_W<'a> = crate::FieldWriter<'a, u32, SYNCSWSET_SPEC, u8, u8, 8, 0>;
+pub type SYNCSWSET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYNCSWSET_SPEC, u8, u8, 8, O>;
 impl W {
     #[doc = "Bits 0:7 - DMA SYNC Software Trigger Set"]
     #[inline(always)]
-    pub fn syncswset(&mut self) -> SYNCSWSET_W {
+    #[must_use]
+    pub fn syncswset(&mut self) -> SYNCSWSET_W<0> {
         SYNCSWSET_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -42,11 +43,10 @@ impl crate::RegisterSpec for SYNCSWSET_SPEC {
 #[doc = "`write(|w| ..)` method takes [syncswset::W](W) writer structure"]
 impl crate::Writable for SYNCSWSET_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SYNCSWSET to value 0"]
 impl crate::Resettable for SYNCSWSET_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

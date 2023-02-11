@@ -13,8 +13,10 @@ impl From<crate::R<EXTINFO_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `TYPE` reader - Type"]
+pub type TYPE_R = crate::FieldReader<u8, TYPE_A>;
 #[doc = "Type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TYPE_A {
     #[doc = "255: NONE"]
@@ -26,8 +28,6 @@ impl From<TYPE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TYPE` reader - Type"]
-pub type TYPE_R = crate::FieldReader<u8, TYPE_A>;
 impl TYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -43,8 +43,10 @@ impl TYPE_R {
         *self == TYPE_A::NONE
     }
 }
+#[doc = "Field `CONNECTION` reader - Connection"]
+pub type CONNECTION_R = crate::FieldReader<u8, CONNECTION_A>;
 #[doc = "Connection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CONNECTION_A {
     #[doc = "0: SPI control interface"]
@@ -58,8 +60,6 @@ impl From<CONNECTION_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CONNECTION` reader - Connection"]
-pub type CONNECTION_R = crate::FieldReader<u8, CONNECTION_A>;
 impl CONNECTION_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -111,8 +111,5 @@ impl crate::Readable for EXTINFO_SPEC {
 }
 #[doc = "`reset()` method sets EXTINFO to value 0"]
 impl crate::Resettable for EXTINFO_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

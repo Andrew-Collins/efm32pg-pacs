@@ -20,18 +20,20 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `CLEARECCADDR0` writer - Clear ECCERRADDR0"]
-pub type CLEARECCADDR0_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 0>;
+pub type CLEARECCADDR0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `CLEARECCADDR1` writer - Clear ECCERRADDR1"]
-pub type CLEARECCADDR1_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 1>;
+pub type CLEARECCADDR1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Clear ECCERRADDR0"]
     #[inline(always)]
-    pub fn cleareccaddr0(&mut self) -> CLEARECCADDR0_W {
+    #[must_use]
+    pub fn cleareccaddr0(&mut self) -> CLEARECCADDR0_W<0> {
         CLEARECCADDR0_W::new(self)
     }
     #[doc = "Bit 1 - Clear ECCERRADDR1"]
     #[inline(always)]
-    pub fn cleareccaddr1(&mut self) -> CLEARECCADDR1_W {
+    #[must_use]
+    pub fn cleareccaddr1(&mut self) -> CLEARECCADDR1_W<1> {
         CLEARECCADDR1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -49,11 +51,10 @@ impl crate::RegisterSpec for CMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmd::W](W) writer structure"]
 impl crate::Writable for CMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMD to value 0"]
 impl crate::Resettable for CMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

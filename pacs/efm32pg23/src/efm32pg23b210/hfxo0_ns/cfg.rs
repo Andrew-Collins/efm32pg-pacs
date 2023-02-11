@@ -34,8 +34,10 @@ impl From<crate::W<CFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - Crystal Oscillator Mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "Crystal Oscillator Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: crystal oscillator"]
@@ -51,8 +53,6 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - Crystal Oscillator Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -81,8 +81,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Crystal Oscillator Mode"]
-pub type MODE_W<'a> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, MODE_A, 2, 0>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, MODE_A, 2, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "crystal oscillator"]
     #[inline(always)]
     pub fn xtal(self) -> &'a mut W {
@@ -102,9 +102,11 @@ impl<'a> MODE_W<'a> {
 #[doc = "Field `ENXIDCBIASANA` reader - Enable XI Internal DC Bias"]
 pub type ENXIDCBIASANA_R = crate::BitReader<bool>;
 #[doc = "Field `ENXIDCBIASANA` writer - Enable XI Internal DC Bias"]
-pub type ENXIDCBIASANA_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 2>;
+pub type ENXIDCBIASANA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
+#[doc = "Field `SQBUFSCHTRGANA` reader - Squaring Buffer Schmitt Trigger"]
+pub type SQBUFSCHTRGANA_R = crate::BitReader<SQBUFSCHTRGANA_A>;
 #[doc = "Squaring Buffer Schmitt Trigger\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SQBUFSCHTRGANA_A {
     #[doc = "0: Squaring buffer schmitt trigger is disabled"]
     DISABLE = 0,
@@ -117,8 +119,6 @@ impl From<SQBUFSCHTRGANA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SQBUFSCHTRGANA` reader - Squaring Buffer Schmitt Trigger"]
-pub type SQBUFSCHTRGANA_R = crate::BitReader<SQBUFSCHTRGANA_A>;
 impl SQBUFSCHTRGANA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -140,8 +140,9 @@ impl SQBUFSCHTRGANA_R {
     }
 }
 #[doc = "Field `SQBUFSCHTRGANA` writer - Squaring Buffer Schmitt Trigger"]
-pub type SQBUFSCHTRGANA_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, SQBUFSCHTRGANA_A, 3>;
-impl<'a> SQBUFSCHTRGANA_W<'a> {
+pub type SQBUFSCHTRGANA_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CFG_SPEC, SQBUFSCHTRGANA_A, O>;
+impl<'a, const O: u8> SQBUFSCHTRGANA_W<'a, O> {
     #[doc = "Squaring buffer schmitt trigger is disabled"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -156,7 +157,7 @@ impl<'a> SQBUFSCHTRGANA_W<'a> {
 #[doc = "Field `FORCELFTIMEOUT` reader - Force Low Frequency Timeout"]
 pub type FORCELFTIMEOUT_R = crate::BitReader<bool>;
 #[doc = "Field `FORCELFTIMEOUT` writer - Force Low Frequency Timeout"]
-pub type FORCELFTIMEOUT_W<'a> = crate::BitWriter<'a, u32, CFG_SPEC, bool, 28>;
+pub type FORCELFTIMEOUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - Crystal Oscillator Mode"]
     #[inline(always)]
@@ -182,22 +183,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Crystal Oscillator Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<0> {
         MODE_W::new(self)
     }
     #[doc = "Bit 2 - Enable XI Internal DC Bias"]
     #[inline(always)]
-    pub fn enxidcbiasana(&mut self) -> ENXIDCBIASANA_W {
+    #[must_use]
+    pub fn enxidcbiasana(&mut self) -> ENXIDCBIASANA_W<2> {
         ENXIDCBIASANA_W::new(self)
     }
     #[doc = "Bit 3 - Squaring Buffer Schmitt Trigger"]
     #[inline(always)]
-    pub fn sqbufschtrgana(&mut self) -> SQBUFSCHTRGANA_W {
+    #[must_use]
+    pub fn sqbufschtrgana(&mut self) -> SQBUFSCHTRGANA_W<3> {
         SQBUFSCHTRGANA_W::new(self)
     }
     #[doc = "Bit 28 - Force Low Frequency Timeout"]
     #[inline(always)]
-    pub fn forcelftimeout(&mut self) -> FORCELFTIMEOUT_W {
+    #[must_use]
+    pub fn forcelftimeout(&mut self) -> FORCELFTIMEOUT_W<28> {
         FORCELFTIMEOUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -219,11 +224,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0x1000_0000"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1000_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x1000_0000;
 }

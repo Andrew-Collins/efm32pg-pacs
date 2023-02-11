@@ -37,9 +37,11 @@ impl From<crate::W<BACFG_SPEC>> for W {
 #[doc = "Field `ASTATETOP` reader - ASTATE top cnt"]
 pub type ASTATETOP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ASTATETOP` writer - ASTATE top cnt"]
-pub type ASTATETOP_W<'a> = crate::FieldWriter<'a, u32, BACFG_SPEC, u8, u8, 3, 0>;
+pub type ASTATETOP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BACFG_SPEC, u8, u8, 3, O>;
+#[doc = "Field `FCPRESC` reader - Frame Counter Prescaler"]
+pub type FCPRESC_R = crate::FieldReader<u8, FCPRESC_A>;
 #[doc = "Frame Counter Prescaler\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FCPRESC_A {
     #[doc = "0: every frame clock"]
@@ -57,8 +59,6 @@ impl From<FCPRESC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FCPRESC` reader - Frame Counter Prescaler"]
-pub type FCPRESC_R = crate::FieldReader<u8, FCPRESC_A>;
 impl FCPRESC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -93,8 +93,9 @@ impl FCPRESC_R {
     }
 }
 #[doc = "Field `FCPRESC` writer - Frame Counter Prescaler"]
-pub type FCPRESC_W<'a> = crate::FieldWriterSafe<'a, u32, BACFG_SPEC, u8, FCPRESC_A, 2, 16>;
-impl<'a> FCPRESC_W<'a> {
+pub type FCPRESC_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, BACFG_SPEC, u8, FCPRESC_A, 2, O>;
+impl<'a, const O: u8> FCPRESC_W<'a, O> {
     #[doc = "every frame clock"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -119,7 +120,7 @@ impl<'a> FCPRESC_W<'a> {
 #[doc = "Field `FCTOP` reader - Frame Counter Top"]
 pub type FCTOP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FCTOP` writer - Frame Counter Top"]
-pub type FCTOP_W<'a> = crate::FieldWriter<'a, u32, BACFG_SPEC, u8, u8, 6, 18>;
+pub type FCTOP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BACFG_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:2 - ASTATE top cnt"]
     #[inline(always)]
@@ -140,17 +141,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - ASTATE top cnt"]
     #[inline(always)]
-    pub fn astatetop(&mut self) -> ASTATETOP_W {
+    #[must_use]
+    pub fn astatetop(&mut self) -> ASTATETOP_W<0> {
         ASTATETOP_W::new(self)
     }
     #[doc = "Bits 16:17 - Frame Counter Prescaler"]
     #[inline(always)]
-    pub fn fcpresc(&mut self) -> FCPRESC_W {
+    #[must_use]
+    pub fn fcpresc(&mut self) -> FCPRESC_W<16> {
         FCPRESC_W::new(self)
     }
     #[doc = "Bits 18:23 - Frame Counter Top"]
     #[inline(always)]
-    pub fn fctop(&mut self) -> FCTOP_W {
+    #[must_use]
+    pub fn fctop(&mut self) -> FCTOP_W<18> {
         FCTOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -172,11 +176,10 @@ impl crate::Readable for BACFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [bacfg::W](W) writer structure"]
 impl crate::Writable for BACFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BACFG to value 0x07"]
 impl crate::Resettable for BACFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x07
-    }
+    const RESET_VALUE: Self::Ux = 0x07;
 }

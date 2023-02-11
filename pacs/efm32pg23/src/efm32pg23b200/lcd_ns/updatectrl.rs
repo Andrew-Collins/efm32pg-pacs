@@ -34,8 +34,10 @@ impl From<crate::W<UPDATECTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `AUTOLOAD` reader - Auto Load"]
+pub type AUTOLOAD_R = crate::BitReader<AUTOLOAD_A>;
 #[doc = "Auto Load\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AUTOLOAD_A {
     #[doc = "0: CLK_BUS register to CLK_PER register loads must be done manually with a write to CMD.LOAD."]
     MANUAL = 0,
@@ -48,8 +50,6 @@ impl From<AUTOLOAD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AUTOLOAD` reader - Auto Load"]
-pub type AUTOLOAD_R = crate::BitReader<AUTOLOAD_A>;
 impl AUTOLOAD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -71,8 +71,8 @@ impl AUTOLOAD_R {
     }
 }
 #[doc = "Field `AUTOLOAD` writer - Auto Load"]
-pub type AUTOLOAD_W<'a> = crate::BitWriter<'a, u32, UPDATECTRL_SPEC, AUTOLOAD_A, 8>;
-impl<'a> AUTOLOAD_W<'a> {
+pub type AUTOLOAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPDATECTRL_SPEC, AUTOLOAD_A, O>;
+impl<'a, const O: u8> AUTOLOAD_W<'a, O> {
     #[doc = "CLK_BUS register to CLK_PER register loads must be done manually with a write to CMD.LOAD."]
     #[inline(always)]
     pub fn manual(self) -> &'a mut W {
@@ -84,8 +84,10 @@ impl<'a> AUTOLOAD_W<'a> {
         self.variant(AUTOLOAD_A::AUTO)
     }
 }
+#[doc = "Field `LOADADDR` reader - Load Address"]
+pub type LOADADDR_R = crate::FieldReader<u8, LOADADDR_A>;
 #[doc = "Load Address\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LOADADDR_A {
     #[doc = "0: Starts synchronizing registers from CLK_BUS to CLK_PER after a write to BACTRL. Use with UPDATECTRL.AUTOLOAD"]
@@ -109,8 +111,6 @@ impl From<LOADADDR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LOADADDR` reader - Load Address"]
-pub type LOADADDR_R = crate::FieldReader<u8, LOADADDR_A>;
 impl LOADADDR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -163,8 +163,9 @@ impl LOADADDR_R {
     }
 }
 #[doc = "Field `LOADADDR` writer - Load Address"]
-pub type LOADADDR_W<'a> = crate::FieldWriter<'a, u32, UPDATECTRL_SPEC, u8, LOADADDR_A, 4, 13>;
-impl<'a> LOADADDR_W<'a> {
+pub type LOADADDR_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, UPDATECTRL_SPEC, u8, LOADADDR_A, 4, O>;
+impl<'a, const O: u8> LOADADDR_W<'a, O> {
     #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to BACTRL. Use with UPDATECTRL.AUTOLOAD"]
     #[inline(always)]
     pub fn bactrlwr(self) -> &'a mut W {
@@ -216,12 +217,14 @@ impl R {
 impl W {
     #[doc = "Bit 8 - Auto Load"]
     #[inline(always)]
-    pub fn autoload(&mut self) -> AUTOLOAD_W {
+    #[must_use]
+    pub fn autoload(&mut self) -> AUTOLOAD_W<8> {
         AUTOLOAD_W::new(self)
     }
     #[doc = "Bits 13:16 - Load Address"]
     #[inline(always)]
-    pub fn loadaddr(&mut self) -> LOADADDR_W {
+    #[must_use]
+    pub fn loadaddr(&mut self) -> LOADADDR_W<13> {
         LOADADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -243,11 +246,10 @@ impl crate::Readable for UPDATECTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [updatectrl::W](W) writer structure"]
 impl crate::Writable for UPDATECTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets UPDATECTRL to value 0"]
 impl crate::Resettable for UPDATECTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

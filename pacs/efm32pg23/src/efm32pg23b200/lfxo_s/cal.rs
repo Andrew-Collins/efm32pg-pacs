@@ -37,11 +37,11 @@ impl From<crate::W<CAL_SPEC>> for W {
 #[doc = "Field `CAPTUNE` reader - Internal Capacitance Tuning"]
 pub type CAPTUNE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CAPTUNE` writer - Internal Capacitance Tuning"]
-pub type CAPTUNE_W<'a> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 7, 0>;
+pub type CAPTUNE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 7, O>;
 #[doc = "Field `GAIN` reader - LFXO Startup Gain"]
 pub type GAIN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `GAIN` writer - LFXO Startup Gain"]
-pub type GAIN_W<'a> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 2, 8>;
+pub type GAIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:6 - Internal Capacitance Tuning"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - Internal Capacitance Tuning"]
     #[inline(always)]
-    pub fn captune(&mut self) -> CAPTUNE_W {
+    #[must_use]
+    pub fn captune(&mut self) -> CAPTUNE_W<0> {
         CAPTUNE_W::new(self)
     }
     #[doc = "Bits 8:9 - LFXO Startup Gain"]
     #[inline(always)]
-    pub fn gain(&mut self) -> GAIN_W {
+    #[must_use]
+    pub fn gain(&mut self) -> GAIN_W<8> {
         GAIN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for CAL_SPEC {
 #[doc = "`write(|w| ..)` method takes [cal::W](W) writer structure"]
 impl crate::Writable for CAL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CAL to value 0x0200"]
 impl crate::Resettable for CAL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0200
-    }
+    const RESET_VALUE: Self::Ux = 0x0200;
 }

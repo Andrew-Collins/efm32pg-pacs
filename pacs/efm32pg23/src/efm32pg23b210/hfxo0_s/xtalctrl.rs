@@ -37,17 +37,19 @@ impl From<crate::W<XTALCTRL_SPEC>> for W {
 #[doc = "Field `COREBIASANA` reader - Core Bias Current"]
 pub type COREBIASANA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `COREBIASANA` writer - Core Bias Current"]
-pub type COREBIASANA_W<'a> = crate::FieldWriter<'a, u32, XTALCTRL_SPEC, u8, u8, 8, 0>;
+pub type COREBIASANA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, XTALCTRL_SPEC, u8, u8, 8, O>;
 #[doc = "Field `CTUNEXIANA` reader - Tuning Capacitance on XI"]
 pub type CTUNEXIANA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CTUNEXIANA` writer - Tuning Capacitance on XI"]
-pub type CTUNEXIANA_W<'a> = crate::FieldWriter<'a, u32, XTALCTRL_SPEC, u8, u8, 8, 8>;
+pub type CTUNEXIANA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, XTALCTRL_SPEC, u8, u8, 8, O>;
 #[doc = "Field `CTUNEXOANA` reader - Tuning Capacitance on XO"]
 pub type CTUNEXOANA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CTUNEXOANA` writer - Tuning Capacitance on XO"]
-pub type CTUNEXOANA_W<'a> = crate::FieldWriter<'a, u32, XTALCTRL_SPEC, u8, u8, 8, 16>;
+pub type CTUNEXOANA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, XTALCTRL_SPEC, u8, u8, 8, O>;
+#[doc = "Field `CTUNEFIXANA` reader - Fixed Tuning Capacitance"]
+pub type CTUNEFIXANA_R = crate::FieldReader<u8, CTUNEFIXANA_A>;
 #[doc = "Fixed Tuning Capacitance\n\nValue on reset: 3"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CTUNEFIXANA_A {
     #[doc = "0: Remove fixed capacitance on XI and XO nodes"]
@@ -65,8 +67,6 @@ impl From<CTUNEFIXANA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CTUNEFIXANA` reader - Fixed Tuning Capacitance"]
-pub type CTUNEFIXANA_R = crate::FieldReader<u8, CTUNEFIXANA_A>;
 impl CTUNEFIXANA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -101,9 +101,9 @@ impl CTUNEFIXANA_R {
     }
 }
 #[doc = "Field `CTUNEFIXANA` writer - Fixed Tuning Capacitance"]
-pub type CTUNEFIXANA_W<'a> =
-    crate::FieldWriterSafe<'a, u32, XTALCTRL_SPEC, u8, CTUNEFIXANA_A, 2, 24>;
-impl<'a> CTUNEFIXANA_W<'a> {
+pub type CTUNEFIXANA_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, XTALCTRL_SPEC, u8, CTUNEFIXANA_A, 2, O>;
+impl<'a, const O: u8> CTUNEFIXANA_W<'a, O> {
     #[doc = "Remove fixed capacitance on XI and XO nodes"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -125,8 +125,10 @@ impl<'a> CTUNEFIXANA_W<'a> {
         self.variant(CTUNEFIXANA_A::BOTH)
     }
 }
+#[doc = "Field `COREDGENANA` reader - Core Degeneration"]
+pub type COREDGENANA_R = crate::FieldReader<u8, COREDGENANA_A>;
 #[doc = "Core Degeneration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum COREDGENANA_A {
     #[doc = "0: Do not apply core degeneration resistence"]
@@ -144,8 +146,6 @@ impl From<COREDGENANA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `COREDGENANA` reader - Core Degeneration"]
-pub type COREDGENANA_R = crate::FieldReader<u8, COREDGENANA_A>;
 impl COREDGENANA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -180,9 +180,9 @@ impl COREDGENANA_R {
     }
 }
 #[doc = "Field `COREDGENANA` writer - Core Degeneration"]
-pub type COREDGENANA_W<'a> =
-    crate::FieldWriterSafe<'a, u32, XTALCTRL_SPEC, u8, COREDGENANA_A, 2, 26>;
-impl<'a> COREDGENANA_W<'a> {
+pub type COREDGENANA_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, XTALCTRL_SPEC, u8, COREDGENANA_A, 2, O>;
+impl<'a, const O: u8> COREDGENANA_W<'a, O> {
     #[doc = "Do not apply core degeneration resistence"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -207,7 +207,7 @@ impl<'a> COREDGENANA_W<'a> {
 #[doc = "Field `SKIPCOREBIASOPT` reader - Skip Core Bias Optimization"]
 pub type SKIPCOREBIASOPT_R = crate::BitReader<bool>;
 #[doc = "Field `SKIPCOREBIASOPT` writer - Skip Core Bias Optimization"]
-pub type SKIPCOREBIASOPT_W<'a> = crate::BitWriter<'a, u32, XTALCTRL_SPEC, bool, 31>;
+pub type SKIPCOREBIASOPT_W<'a, const O: u8> = crate::BitWriter<'a, u32, XTALCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:7 - Core Bias Current"]
     #[inline(always)]
@@ -243,32 +243,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Core Bias Current"]
     #[inline(always)]
-    pub fn corebiasana(&mut self) -> COREBIASANA_W {
+    #[must_use]
+    pub fn corebiasana(&mut self) -> COREBIASANA_W<0> {
         COREBIASANA_W::new(self)
     }
     #[doc = "Bits 8:15 - Tuning Capacitance on XI"]
     #[inline(always)]
-    pub fn ctunexiana(&mut self) -> CTUNEXIANA_W {
+    #[must_use]
+    pub fn ctunexiana(&mut self) -> CTUNEXIANA_W<8> {
         CTUNEXIANA_W::new(self)
     }
     #[doc = "Bits 16:23 - Tuning Capacitance on XO"]
     #[inline(always)]
-    pub fn ctunexoana(&mut self) -> CTUNEXOANA_W {
+    #[must_use]
+    pub fn ctunexoana(&mut self) -> CTUNEXOANA_W<16> {
         CTUNEXOANA_W::new(self)
     }
     #[doc = "Bits 24:25 - Fixed Tuning Capacitance"]
     #[inline(always)]
-    pub fn ctunefixana(&mut self) -> CTUNEFIXANA_W {
+    #[must_use]
+    pub fn ctunefixana(&mut self) -> CTUNEFIXANA_W<24> {
         CTUNEFIXANA_W::new(self)
     }
     #[doc = "Bits 26:27 - Core Degeneration"]
     #[inline(always)]
-    pub fn coredgenana(&mut self) -> COREDGENANA_W {
+    #[must_use]
+    pub fn coredgenana(&mut self) -> COREDGENANA_W<26> {
         COREDGENANA_W::new(self)
     }
     #[doc = "Bit 31 - Skip Core Bias Optimization"]
     #[inline(always)]
-    pub fn skipcorebiasopt(&mut self) -> SKIPCOREBIASOPT_W {
+    #[must_use]
+    pub fn skipcorebiasopt(&mut self) -> SKIPCOREBIASOPT_W<31> {
         SKIPCOREBIASOPT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -290,11 +296,10 @@ impl crate::Readable for XTALCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [xtalctrl::W](W) writer structure"]
 impl crate::Writable for XTALCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets XTALCTRL to value 0x033c_3c3c"]
 impl crate::Resettable for XTALCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x033c_3c3c
-    }
+    const RESET_VALUE: Self::Ux = 0x033c_3c3c;
 }

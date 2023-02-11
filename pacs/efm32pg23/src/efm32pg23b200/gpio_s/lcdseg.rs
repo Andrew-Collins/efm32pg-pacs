@@ -37,18 +37,19 @@ impl From<crate::W<LCDSEG_SPEC>> for W {
 #[doc = "Field `LCDSEGALLOC` reader - LCD Segment Allocation"]
 pub type LCDSEGALLOC_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `LCDSEGALLOC` writer - LCD Segment Allocation"]
-pub type LCDSEGALLOC_W<'a> = crate::FieldWriter<'a, u32, LCDSEG_SPEC, u32, u32, 20, 0>;
+pub type LCDSEGALLOC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCDSEG_SPEC, u32, u32, 20, O>;
 impl R {
     #[doc = "Bits 0:19 - LCD Segment Allocation"]
     #[inline(always)]
     pub fn lcdsegalloc(&self) -> LCDSEGALLOC_R {
-        LCDSEGALLOC_R::new((self.bits & 0x000f_ffff) as u32)
+        LCDSEGALLOC_R::new(self.bits & 0x000f_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:19 - LCD Segment Allocation"]
     #[inline(always)]
-    pub fn lcdsegalloc(&mut self) -> LCDSEGALLOC_W {
+    #[must_use]
+    pub fn lcdsegalloc(&mut self) -> LCDSEGALLOC_W<0> {
         LCDSEGALLOC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for LCDSEG_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcdseg::W](W) writer structure"]
 impl crate::Writable for LCDSEG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LCDSEG to value 0"]
 impl crate::Resettable for LCDSEG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

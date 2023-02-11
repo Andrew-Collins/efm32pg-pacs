@@ -37,11 +37,13 @@ impl From<crate::W<AIS31CONF0_SPEC>> for W {
 #[doc = "Field `STARTUPTHRES` reader - Start-up Threshold"]
 pub type STARTUPTHRES_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `STARTUPTHRES` writer - Start-up Threshold"]
-pub type STARTUPTHRES_W<'a> = crate::FieldWriter<'a, u32, AIS31CONF0_SPEC, u16, u16, 15, 0>;
+pub type STARTUPTHRES_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AIS31CONF0_SPEC, u16, u16, 15, O>;
 #[doc = "Field `ONLINETHRESH` reader - Online Threshold"]
 pub type ONLINETHRESH_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ONLINETHRESH` writer - Online Threshold"]
-pub type ONLINETHRESH_W<'a> = crate::FieldWriter<'a, u32, AIS31CONF0_SPEC, u16, u16, 15, 16>;
+pub type ONLINETHRESH_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AIS31CONF0_SPEC, u16, u16, 15, O>;
 impl R {
     #[doc = "Bits 0:14 - Start-up Threshold"]
     #[inline(always)]
@@ -57,12 +59,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:14 - Start-up Threshold"]
     #[inline(always)]
-    pub fn startupthres(&mut self) -> STARTUPTHRES_W {
+    #[must_use]
+    pub fn startupthres(&mut self) -> STARTUPTHRES_W<0> {
         STARTUPTHRES_W::new(self)
     }
     #[doc = "Bits 16:30 - Online Threshold"]
     #[inline(always)]
-    pub fn onlinethresh(&mut self) -> ONLINETHRESH_W {
+    #[must_use]
+    pub fn onlinethresh(&mut self) -> ONLINETHRESH_W<16> {
         ONLINETHRESH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +88,10 @@ impl crate::Readable for AIS31CONF0_SPEC {
 #[doc = "`write(|w| ..)` method takes [ais31conf0::W](W) writer structure"]
 impl crate::Writable for AIS31CONF0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets AIS31CONF0 to value 0x4340_1040"]
 impl crate::Resettable for AIS31CONF0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x4340_1040
-    }
+    const RESET_VALUE: Self::Ux = 0x4340_1040;
 }

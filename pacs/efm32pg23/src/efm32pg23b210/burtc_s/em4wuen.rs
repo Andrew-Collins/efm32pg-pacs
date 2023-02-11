@@ -37,11 +37,11 @@ impl From<crate::W<EM4WUEN_SPEC>> for W {
 #[doc = "Field `OFEM4WUEN` reader - Overflow EM4 Wakeup Enable"]
 pub type OFEM4WUEN_R = crate::BitReader<bool>;
 #[doc = "Field `OFEM4WUEN` writer - Overflow EM4 Wakeup Enable"]
-pub type OFEM4WUEN_W<'a> = crate::BitWriter<'a, u32, EM4WUEN_SPEC, bool, 0>;
+pub type OFEM4WUEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM4WUEN_SPEC, bool, O>;
 #[doc = "Field `COMPEM4WUEN` reader - Compare Match EM4 Wakeup Enable"]
 pub type COMPEM4WUEN_R = crate::BitReader<bool>;
 #[doc = "Field `COMPEM4WUEN` writer - Compare Match EM4 Wakeup Enable"]
-pub type COMPEM4WUEN_W<'a> = crate::BitWriter<'a, u32, EM4WUEN_SPEC, bool, 1>;
+pub type COMPEM4WUEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM4WUEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Overflow EM4 Wakeup Enable"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Overflow EM4 Wakeup Enable"]
     #[inline(always)]
-    pub fn ofem4wuen(&mut self) -> OFEM4WUEN_W {
+    #[must_use]
+    pub fn ofem4wuen(&mut self) -> OFEM4WUEN_W<0> {
         OFEM4WUEN_W::new(self)
     }
     #[doc = "Bit 1 - Compare Match EM4 Wakeup Enable"]
     #[inline(always)]
-    pub fn compem4wuen(&mut self) -> COMPEM4WUEN_W {
+    #[must_use]
+    pub fn compem4wuen(&mut self) -> COMPEM4WUEN_W<1> {
         COMPEM4WUEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for EM4WUEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [em4wuen::W](W) writer structure"]
 impl crate::Writable for EM4WUEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EM4WUEN to value 0"]
 impl crate::Resettable for EM4WUEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

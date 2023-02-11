@@ -33,8 +33,5 @@ impl crate::Readable for CUSTOMINFO_SPEC {
 }
 #[doc = "`reset()` method sets CUSTOMINFO to value 0"]
 impl crate::Resettable for CUSTOMINFO_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

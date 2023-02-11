@@ -37,9 +37,11 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `EM2DBGEN` reader - Enable debugging in EM2"]
 pub type EM2DBGEN_R = crate::BitReader<bool>;
 #[doc = "Field `EM2DBGEN` writer - Enable debugging in EM2"]
-pub type EM2DBGEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 0>;
+pub type EM2DBGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `TEMPAVGNUM` reader - Averaged Temperature samples num"]
+pub type TEMPAVGNUM_R = crate::BitReader<TEMPAVGNUM_A>;
 #[doc = "Averaged Temperature samples num\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TEMPAVGNUM_A {
     #[doc = "0: 16 measurements"]
     N16 = 0,
@@ -52,8 +54,6 @@ impl From<TEMPAVGNUM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TEMPAVGNUM` reader - Averaged Temperature samples num"]
-pub type TEMPAVGNUM_R = crate::BitReader<TEMPAVGNUM_A>;
 impl TEMPAVGNUM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -75,8 +75,8 @@ impl TEMPAVGNUM_R {
     }
 }
 #[doc = "Field `TEMPAVGNUM` writer - Averaged Temperature samples num"]
-pub type TEMPAVGNUM_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, TEMPAVGNUM_A, 3>;
-impl<'a> TEMPAVGNUM_W<'a> {
+pub type TEMPAVGNUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, TEMPAVGNUM_A, O>;
+impl<'a, const O: u8> TEMPAVGNUM_W<'a, O> {
     #[doc = "16 measurements"]
     #[inline(always)]
     pub fn n16(self) -> &'a mut W {
@@ -88,8 +88,10 @@ impl<'a> TEMPAVGNUM_W<'a> {
         self.variant(TEMPAVGNUM_A::N64)
     }
 }
+#[doc = "Field `EM23VSCALE` reader - EM2/EM3 Vscale"]
+pub type EM23VSCALE_R = crate::FieldReader<u8, EM23VSCALE_A>;
 #[doc = "EM2/EM3 Vscale\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EM23VSCALE_A {
     #[doc = "0: VSCALE0. 0.9v"]
@@ -105,8 +107,6 @@ impl From<EM23VSCALE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EM23VSCALE` reader - EM2/EM3 Vscale"]
-pub type EM23VSCALE_R = crate::FieldReader<u8, EM23VSCALE_A>;
 impl EM23VSCALE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -135,8 +135,9 @@ impl EM23VSCALE_R {
     }
 }
 #[doc = "Field `EM23VSCALE` writer - EM2/EM3 Vscale"]
-pub type EM23VSCALE_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, EM23VSCALE_A, 2, 8>;
-impl<'a> EM23VSCALE_W<'a> {
+pub type EM23VSCALE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, EM23VSCALE_A, 2, O>;
+impl<'a, const O: u8> EM23VSCALE_W<'a, O> {
     #[doc = "VSCALE0. 0.9v"]
     #[inline(always)]
     pub fn vscale0(self) -> &'a mut W {
@@ -156,19 +157,19 @@ impl<'a> EM23VSCALE_W<'a> {
 #[doc = "Field `FLASHPWRUPONDEMAND` reader - Enable flash on demand wakeup"]
 pub type FLASHPWRUPONDEMAND_R = crate::BitReader<bool>;
 #[doc = "Field `FLASHPWRUPONDEMAND` writer - Enable flash on demand wakeup"]
-pub type FLASHPWRUPONDEMAND_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 16>;
+pub type FLASHPWRUPONDEMAND_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `EFPDIRECTMODEEN` reader - EFP Direct Mode Enable"]
 pub type EFPDIRECTMODEEN_R = crate::BitReader<bool>;
 #[doc = "Field `EFPDIRECTMODEEN` writer - EFP Direct Mode Enable"]
-pub type EFPDIRECTMODEEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 29>;
+pub type EFPDIRECTMODEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `EFPDRVDECOUPLE` reader - EFP drives DECOUPLE"]
 pub type EFPDRVDECOUPLE_R = crate::BitReader<bool>;
 #[doc = "Field `EFPDRVDECOUPLE` writer - EFP drives DECOUPLE"]
-pub type EFPDRVDECOUPLE_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 30>;
+pub type EFPDRVDECOUPLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `EFPDRVDVDD` reader - EFP drives DVDD"]
 pub type EFPDRVDVDD_R = crate::BitReader<bool>;
 #[doc = "Field `EFPDRVDVDD` writer - EFP drives DVDD"]
-pub type EFPDRVDVDD_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 31>;
+pub type EFPDRVDVDD_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Enable debugging in EM2"]
     #[inline(always)]
@@ -209,37 +210,44 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable debugging in EM2"]
     #[inline(always)]
-    pub fn em2dbgen(&mut self) -> EM2DBGEN_W {
+    #[must_use]
+    pub fn em2dbgen(&mut self) -> EM2DBGEN_W<0> {
         EM2DBGEN_W::new(self)
     }
     #[doc = "Bit 3 - Averaged Temperature samples num"]
     #[inline(always)]
-    pub fn tempavgnum(&mut self) -> TEMPAVGNUM_W {
+    #[must_use]
+    pub fn tempavgnum(&mut self) -> TEMPAVGNUM_W<3> {
         TEMPAVGNUM_W::new(self)
     }
     #[doc = "Bits 8:9 - EM2/EM3 Vscale"]
     #[inline(always)]
-    pub fn em23vscale(&mut self) -> EM23VSCALE_W {
+    #[must_use]
+    pub fn em23vscale(&mut self) -> EM23VSCALE_W<8> {
         EM23VSCALE_W::new(self)
     }
     #[doc = "Bit 16 - Enable flash on demand wakeup"]
     #[inline(always)]
-    pub fn flashpwrupondemand(&mut self) -> FLASHPWRUPONDEMAND_W {
+    #[must_use]
+    pub fn flashpwrupondemand(&mut self) -> FLASHPWRUPONDEMAND_W<16> {
         FLASHPWRUPONDEMAND_W::new(self)
     }
     #[doc = "Bit 29 - EFP Direct Mode Enable"]
     #[inline(always)]
-    pub fn efpdirectmodeen(&mut self) -> EFPDIRECTMODEEN_W {
+    #[must_use]
+    pub fn efpdirectmodeen(&mut self) -> EFPDIRECTMODEEN_W<29> {
         EFPDIRECTMODEEN_W::new(self)
     }
     #[doc = "Bit 30 - EFP drives DECOUPLE"]
     #[inline(always)]
-    pub fn efpdrvdecouple(&mut self) -> EFPDRVDECOUPLE_W {
+    #[must_use]
+    pub fn efpdrvdecouple(&mut self) -> EFPDRVDECOUPLE_W<30> {
         EFPDRVDECOUPLE_W::new(self)
     }
     #[doc = "Bit 31 - EFP drives DVDD"]
     #[inline(always)]
-    pub fn efpdrvdvdd(&mut self) -> EFPDRVDVDD_W {
+    #[must_use]
+    pub fn efpdrvdvdd(&mut self) -> EFPDRVDVDD_W<31> {
         EFPDRVDVDD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -261,11 +269,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x0200"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0200
-    }
+    const RESET_VALUE: Self::Ux = 0x0200;
 }

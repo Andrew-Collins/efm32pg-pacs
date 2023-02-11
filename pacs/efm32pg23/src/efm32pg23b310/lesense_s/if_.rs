@@ -37,91 +37,91 @@ impl From<crate::W<IF_SPEC>> for W {
 #[doc = "Field `CH0` reader - Channel"]
 pub type CH0_R = crate::BitReader<bool>;
 #[doc = "Field `CH0` writer - Channel"]
-pub type CH0_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 0>;
+pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH1` reader - Channel"]
 pub type CH1_R = crate::BitReader<bool>;
 #[doc = "Field `CH1` writer - Channel"]
-pub type CH1_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 1>;
+pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH2` reader - Channel"]
 pub type CH2_R = crate::BitReader<bool>;
 #[doc = "Field `CH2` writer - Channel"]
-pub type CH2_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 2>;
+pub type CH2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH3` reader - Channel"]
 pub type CH3_R = crate::BitReader<bool>;
 #[doc = "Field `CH3` writer - Channel"]
-pub type CH3_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 3>;
+pub type CH3_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH4` reader - Channel"]
 pub type CH4_R = crate::BitReader<bool>;
 #[doc = "Field `CH4` writer - Channel"]
-pub type CH4_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 4>;
+pub type CH4_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH5` reader - Channel"]
 pub type CH5_R = crate::BitReader<bool>;
 #[doc = "Field `CH5` writer - Channel"]
-pub type CH5_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 5>;
+pub type CH5_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH6` reader - Channel"]
 pub type CH6_R = crate::BitReader<bool>;
 #[doc = "Field `CH6` writer - Channel"]
-pub type CH6_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 6>;
+pub type CH6_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH7` reader - Channel"]
 pub type CH7_R = crate::BitReader<bool>;
 #[doc = "Field `CH7` writer - Channel"]
-pub type CH7_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 7>;
+pub type CH7_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH8` reader - Channel"]
 pub type CH8_R = crate::BitReader<bool>;
 #[doc = "Field `CH8` writer - Channel"]
-pub type CH8_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 8>;
+pub type CH8_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH9` reader - Channel"]
 pub type CH9_R = crate::BitReader<bool>;
 #[doc = "Field `CH9` writer - Channel"]
-pub type CH9_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 9>;
+pub type CH9_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH10` reader - Channel"]
 pub type CH10_R = crate::BitReader<bool>;
 #[doc = "Field `CH10` writer - Channel"]
-pub type CH10_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 10>;
+pub type CH10_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH11` reader - Channel"]
 pub type CH11_R = crate::BitReader<bool>;
 #[doc = "Field `CH11` writer - Channel"]
-pub type CH11_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 11>;
+pub type CH11_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH12` reader - Channel"]
 pub type CH12_R = crate::BitReader<bool>;
 #[doc = "Field `CH12` writer - Channel"]
-pub type CH12_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 12>;
+pub type CH12_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH13` reader - Channel"]
 pub type CH13_R = crate::BitReader<bool>;
 #[doc = "Field `CH13` writer - Channel"]
-pub type CH13_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 13>;
+pub type CH13_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH14` reader - Channel"]
 pub type CH14_R = crate::BitReader<bool>;
 #[doc = "Field `CH14` writer - Channel"]
-pub type CH14_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 14>;
+pub type CH14_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CH15` reader - Channel"]
 pub type CH15_R = crate::BitReader<bool>;
 #[doc = "Field `CH15` writer - Channel"]
-pub type CH15_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 15>;
+pub type CH15_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `SCANDONE` reader - Scan Done"]
 pub type SCANDONE_R = crate::BitReader<bool>;
 #[doc = "Field `SCANDONE` writer - Scan Done"]
-pub type SCANDONE_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 16>;
+pub type SCANDONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `DEC` reader - Decoder"]
 pub type DEC_R = crate::BitReader<bool>;
 #[doc = "Field `DEC` writer - Decoder"]
-pub type DEC_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 17>;
+pub type DEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `RESWL` reader - Result Watermark Level"]
 pub type RESWL_R = crate::BitReader<bool>;
 #[doc = "Field `RESWL` writer - Result Watermark Level"]
-pub type RESWL_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 18>;
+pub type RESWL_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `RESOF` reader - Result Overflow"]
 pub type RESOF_R = crate::BitReader<bool>;
 #[doc = "Field `RESOF` writer - Result Overflow"]
-pub type RESOF_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 19>;
+pub type RESOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `CNTOF` reader - Counter Overflow"]
 pub type CNTOF_R = crate::BitReader<bool>;
 #[doc = "Field `CNTOF` writer - Counter Overflow"]
-pub type CNTOF_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 20>;
+pub type CNTOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 #[doc = "Field `RESUF` reader - Result Underflow"]
 pub type RESUF_R = crate::BitReader<bool>;
 #[doc = "Field `RESUF` writer - Result Underflow"]
-pub type RESUF_W<'a> = crate::BitWriter<'a, u32, IF_SPEC, bool, 21>;
+pub type RESUF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Channel"]
     #[inline(always)]
@@ -237,112 +237,134 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Channel"]
     #[inline(always)]
-    pub fn ch0(&mut self) -> CH0_W {
+    #[must_use]
+    pub fn ch0(&mut self) -> CH0_W<0> {
         CH0_W::new(self)
     }
     #[doc = "Bit 1 - Channel"]
     #[inline(always)]
-    pub fn ch1(&mut self) -> CH1_W {
+    #[must_use]
+    pub fn ch1(&mut self) -> CH1_W<1> {
         CH1_W::new(self)
     }
     #[doc = "Bit 2 - Channel"]
     #[inline(always)]
-    pub fn ch2(&mut self) -> CH2_W {
+    #[must_use]
+    pub fn ch2(&mut self) -> CH2_W<2> {
         CH2_W::new(self)
     }
     #[doc = "Bit 3 - Channel"]
     #[inline(always)]
-    pub fn ch3(&mut self) -> CH3_W {
+    #[must_use]
+    pub fn ch3(&mut self) -> CH3_W<3> {
         CH3_W::new(self)
     }
     #[doc = "Bit 4 - Channel"]
     #[inline(always)]
-    pub fn ch4(&mut self) -> CH4_W {
+    #[must_use]
+    pub fn ch4(&mut self) -> CH4_W<4> {
         CH4_W::new(self)
     }
     #[doc = "Bit 5 - Channel"]
     #[inline(always)]
-    pub fn ch5(&mut self) -> CH5_W {
+    #[must_use]
+    pub fn ch5(&mut self) -> CH5_W<5> {
         CH5_W::new(self)
     }
     #[doc = "Bit 6 - Channel"]
     #[inline(always)]
-    pub fn ch6(&mut self) -> CH6_W {
+    #[must_use]
+    pub fn ch6(&mut self) -> CH6_W<6> {
         CH6_W::new(self)
     }
     #[doc = "Bit 7 - Channel"]
     #[inline(always)]
-    pub fn ch7(&mut self) -> CH7_W {
+    #[must_use]
+    pub fn ch7(&mut self) -> CH7_W<7> {
         CH7_W::new(self)
     }
     #[doc = "Bit 8 - Channel"]
     #[inline(always)]
-    pub fn ch8(&mut self) -> CH8_W {
+    #[must_use]
+    pub fn ch8(&mut self) -> CH8_W<8> {
         CH8_W::new(self)
     }
     #[doc = "Bit 9 - Channel"]
     #[inline(always)]
-    pub fn ch9(&mut self) -> CH9_W {
+    #[must_use]
+    pub fn ch9(&mut self) -> CH9_W<9> {
         CH9_W::new(self)
     }
     #[doc = "Bit 10 - Channel"]
     #[inline(always)]
-    pub fn ch10(&mut self) -> CH10_W {
+    #[must_use]
+    pub fn ch10(&mut self) -> CH10_W<10> {
         CH10_W::new(self)
     }
     #[doc = "Bit 11 - Channel"]
     #[inline(always)]
-    pub fn ch11(&mut self) -> CH11_W {
+    #[must_use]
+    pub fn ch11(&mut self) -> CH11_W<11> {
         CH11_W::new(self)
     }
     #[doc = "Bit 12 - Channel"]
     #[inline(always)]
-    pub fn ch12(&mut self) -> CH12_W {
+    #[must_use]
+    pub fn ch12(&mut self) -> CH12_W<12> {
         CH12_W::new(self)
     }
     #[doc = "Bit 13 - Channel"]
     #[inline(always)]
-    pub fn ch13(&mut self) -> CH13_W {
+    #[must_use]
+    pub fn ch13(&mut self) -> CH13_W<13> {
         CH13_W::new(self)
     }
     #[doc = "Bit 14 - Channel"]
     #[inline(always)]
-    pub fn ch14(&mut self) -> CH14_W {
+    #[must_use]
+    pub fn ch14(&mut self) -> CH14_W<14> {
         CH14_W::new(self)
     }
     #[doc = "Bit 15 - Channel"]
     #[inline(always)]
-    pub fn ch15(&mut self) -> CH15_W {
+    #[must_use]
+    pub fn ch15(&mut self) -> CH15_W<15> {
         CH15_W::new(self)
     }
     #[doc = "Bit 16 - Scan Done"]
     #[inline(always)]
-    pub fn scandone(&mut self) -> SCANDONE_W {
+    #[must_use]
+    pub fn scandone(&mut self) -> SCANDONE_W<16> {
         SCANDONE_W::new(self)
     }
     #[doc = "Bit 17 - Decoder"]
     #[inline(always)]
-    pub fn dec(&mut self) -> DEC_W {
+    #[must_use]
+    pub fn dec(&mut self) -> DEC_W<17> {
         DEC_W::new(self)
     }
     #[doc = "Bit 18 - Result Watermark Level"]
     #[inline(always)]
-    pub fn reswl(&mut self) -> RESWL_W {
+    #[must_use]
+    pub fn reswl(&mut self) -> RESWL_W<18> {
         RESWL_W::new(self)
     }
     #[doc = "Bit 19 - Result Overflow"]
     #[inline(always)]
-    pub fn resof(&mut self) -> RESOF_W {
+    #[must_use]
+    pub fn resof(&mut self) -> RESOF_W<19> {
         RESOF_W::new(self)
     }
     #[doc = "Bit 20 - Counter Overflow"]
     #[inline(always)]
-    pub fn cntof(&mut self) -> CNTOF_W {
+    #[must_use]
+    pub fn cntof(&mut self) -> CNTOF_W<20> {
         CNTOF_W::new(self)
     }
     #[doc = "Bit 21 - Result Underflow"]
     #[inline(always)]
-    pub fn resuf(&mut self) -> RESUF_W {
+    #[must_use]
+    pub fn resuf(&mut self) -> RESUF_W<21> {
         RESUF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -364,11 +386,10 @@ impl crate::Readable for IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [if_::W](W) writer structure"]
 impl crate::Writable for IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

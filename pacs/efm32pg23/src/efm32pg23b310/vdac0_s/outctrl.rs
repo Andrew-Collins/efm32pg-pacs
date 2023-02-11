@@ -37,29 +37,31 @@ impl From<crate::W<OUTCTRL_SPEC>> for W {
 #[doc = "Field `MAINOUTENCH0` reader - CH0 Main Output Enable"]
 pub type MAINOUTENCH0_R = crate::BitReader<bool>;
 #[doc = "Field `MAINOUTENCH0` writer - CH0 Main Output Enable"]
-pub type MAINOUTENCH0_W<'a> = crate::BitWriter<'a, u32, OUTCTRL_SPEC, bool, 0>;
+pub type MAINOUTENCH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUTCTRL_SPEC, bool, O>;
 #[doc = "Field `MAINOUTENCH1` reader - CH1 Main Output Enable"]
 pub type MAINOUTENCH1_R = crate::BitReader<bool>;
 #[doc = "Field `MAINOUTENCH1` writer - CH1 Main Output Enable"]
-pub type MAINOUTENCH1_W<'a> = crate::BitWriter<'a, u32, OUTCTRL_SPEC, bool, 1>;
+pub type MAINOUTENCH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUTCTRL_SPEC, bool, O>;
 #[doc = "Field `AUXOUTENCH0` reader - CH0 Alternative Output Enable"]
 pub type AUXOUTENCH0_R = crate::BitReader<bool>;
 #[doc = "Field `AUXOUTENCH0` writer - CH0 Alternative Output Enable"]
-pub type AUXOUTENCH0_W<'a> = crate::BitWriter<'a, u32, OUTCTRL_SPEC, bool, 4>;
+pub type AUXOUTENCH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUTCTRL_SPEC, bool, O>;
 #[doc = "Field `AUXOUTENCH1` reader - CH1 Alternative Output Enable"]
 pub type AUXOUTENCH1_R = crate::BitReader<bool>;
 #[doc = "Field `AUXOUTENCH1` writer - CH1 Alternative Output Enable"]
-pub type AUXOUTENCH1_W<'a> = crate::BitWriter<'a, u32, OUTCTRL_SPEC, bool, 5>;
+pub type AUXOUTENCH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUTCTRL_SPEC, bool, O>;
 #[doc = "Field `SHORTCH0` reader - CH1 Main and Alternative Output Short"]
 pub type SHORTCH0_R = crate::BitReader<bool>;
 #[doc = "Field `SHORTCH0` writer - CH1 Main and Alternative Output Short"]
-pub type SHORTCH0_W<'a> = crate::BitWriter<'a, u32, OUTCTRL_SPEC, bool, 8>;
+pub type SHORTCH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUTCTRL_SPEC, bool, O>;
 #[doc = "Field `SHORTCH1` reader - CH0 Main and Alternative Output Short"]
 pub type SHORTCH1_R = crate::BitReader<bool>;
 #[doc = "Field `SHORTCH1` writer - CH0 Main and Alternative Output Short"]
-pub type SHORTCH1_W<'a> = crate::BitWriter<'a, u32, OUTCTRL_SPEC, bool, 9>;
+pub type SHORTCH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUTCTRL_SPEC, bool, O>;
+#[doc = "Field `ABUSPORTSELCH0` reader - CH0 ABUS Port Select"]
+pub type ABUSPORTSELCH0_R = crate::FieldReader<u8, ABUSPORTSELCH0_A>;
 #[doc = "CH0 ABUS Port Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ABUSPORTSELCH0_A {
     #[doc = "0: No GPIO Selected for CH0 ABUS Output"]
@@ -79,8 +81,6 @@ impl From<ABUSPORTSELCH0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ABUSPORTSELCH0` reader - CH0 ABUS Port Select"]
-pub type ABUSPORTSELCH0_R = crate::FieldReader<u8, ABUSPORTSELCH0_A>;
 impl ABUSPORTSELCH0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,9 +121,9 @@ impl ABUSPORTSELCH0_R {
     }
 }
 #[doc = "Field `ABUSPORTSELCH0` writer - CH0 ABUS Port Select"]
-pub type ABUSPORTSELCH0_W<'a> =
-    crate::FieldWriter<'a, u32, OUTCTRL_SPEC, u8, ABUSPORTSELCH0_A, 3, 12>;
-impl<'a> ABUSPORTSELCH0_W<'a> {
+pub type ABUSPORTSELCH0_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, OUTCTRL_SPEC, u8, ABUSPORTSELCH0_A, 3, O>;
+impl<'a, const O: u8> ABUSPORTSELCH0_W<'a, O> {
     #[doc = "No GPIO Selected for CH0 ABUS Output"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -153,9 +153,11 @@ impl<'a> ABUSPORTSELCH0_W<'a> {
 #[doc = "Field `ABUSPINSELCH0` reader - CH0 ABUS Pin Select"]
 pub type ABUSPINSELCH0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ABUSPINSELCH0` writer - CH0 ABUS Pin Select"]
-pub type ABUSPINSELCH0_W<'a> = crate::FieldWriter<'a, u32, OUTCTRL_SPEC, u8, u8, 6, 15>;
+pub type ABUSPINSELCH0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OUTCTRL_SPEC, u8, u8, 6, O>;
+#[doc = "Field `ABUSPORTSELCH1` reader - CH1 ABUS Port Select"]
+pub type ABUSPORTSELCH1_R = crate::FieldReader<u8, ABUSPORTSELCH1_A>;
 #[doc = "CH1 ABUS Port Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ABUSPORTSELCH1_A {
     #[doc = "0: No GPIO Selected for CH1 ABUS Output"]
@@ -175,8 +177,6 @@ impl From<ABUSPORTSELCH1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ABUSPORTSELCH1` reader - CH1 ABUS Port Select"]
-pub type ABUSPORTSELCH1_R = crate::FieldReader<u8, ABUSPORTSELCH1_A>;
 impl ABUSPORTSELCH1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -217,9 +217,9 @@ impl ABUSPORTSELCH1_R {
     }
 }
 #[doc = "Field `ABUSPORTSELCH1` writer - CH1 ABUS Port Select"]
-pub type ABUSPORTSELCH1_W<'a> =
-    crate::FieldWriter<'a, u32, OUTCTRL_SPEC, u8, ABUSPORTSELCH1_A, 3, 22>;
-impl<'a> ABUSPORTSELCH1_W<'a> {
+pub type ABUSPORTSELCH1_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, OUTCTRL_SPEC, u8, ABUSPORTSELCH1_A, 3, O>;
+impl<'a, const O: u8> ABUSPORTSELCH1_W<'a, O> {
     #[doc = "No GPIO Selected for CH1 ABUS Output"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -249,7 +249,7 @@ impl<'a> ABUSPORTSELCH1_W<'a> {
 #[doc = "Field `ABUSPINSELCH1` reader - CH1 ABUS Pin Select"]
 pub type ABUSPINSELCH1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ABUSPINSELCH1` writer - CH1 ABUS Pin Select"]
-pub type ABUSPINSELCH1_W<'a> = crate::FieldWriter<'a, u32, OUTCTRL_SPEC, u8, u8, 6, 25>;
+pub type ABUSPINSELCH1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OUTCTRL_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bit 0 - CH0 Main Output Enable"]
     #[inline(always)]
@@ -305,52 +305,62 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CH0 Main Output Enable"]
     #[inline(always)]
-    pub fn mainoutench0(&mut self) -> MAINOUTENCH0_W {
+    #[must_use]
+    pub fn mainoutench0(&mut self) -> MAINOUTENCH0_W<0> {
         MAINOUTENCH0_W::new(self)
     }
     #[doc = "Bit 1 - CH1 Main Output Enable"]
     #[inline(always)]
-    pub fn mainoutench1(&mut self) -> MAINOUTENCH1_W {
+    #[must_use]
+    pub fn mainoutench1(&mut self) -> MAINOUTENCH1_W<1> {
         MAINOUTENCH1_W::new(self)
     }
     #[doc = "Bit 4 - CH0 Alternative Output Enable"]
     #[inline(always)]
-    pub fn auxoutench0(&mut self) -> AUXOUTENCH0_W {
+    #[must_use]
+    pub fn auxoutench0(&mut self) -> AUXOUTENCH0_W<4> {
         AUXOUTENCH0_W::new(self)
     }
     #[doc = "Bit 5 - CH1 Alternative Output Enable"]
     #[inline(always)]
-    pub fn auxoutench1(&mut self) -> AUXOUTENCH1_W {
+    #[must_use]
+    pub fn auxoutench1(&mut self) -> AUXOUTENCH1_W<5> {
         AUXOUTENCH1_W::new(self)
     }
     #[doc = "Bit 8 - CH1 Main and Alternative Output Short"]
     #[inline(always)]
-    pub fn shortch0(&mut self) -> SHORTCH0_W {
+    #[must_use]
+    pub fn shortch0(&mut self) -> SHORTCH0_W<8> {
         SHORTCH0_W::new(self)
     }
     #[doc = "Bit 9 - CH0 Main and Alternative Output Short"]
     #[inline(always)]
-    pub fn shortch1(&mut self) -> SHORTCH1_W {
+    #[must_use]
+    pub fn shortch1(&mut self) -> SHORTCH1_W<9> {
         SHORTCH1_W::new(self)
     }
     #[doc = "Bits 12:14 - CH0 ABUS Port Select"]
     #[inline(always)]
-    pub fn abusportselch0(&mut self) -> ABUSPORTSELCH0_W {
+    #[must_use]
+    pub fn abusportselch0(&mut self) -> ABUSPORTSELCH0_W<12> {
         ABUSPORTSELCH0_W::new(self)
     }
     #[doc = "Bits 15:20 - CH0 ABUS Pin Select"]
     #[inline(always)]
-    pub fn abuspinselch0(&mut self) -> ABUSPINSELCH0_W {
+    #[must_use]
+    pub fn abuspinselch0(&mut self) -> ABUSPINSELCH0_W<15> {
         ABUSPINSELCH0_W::new(self)
     }
     #[doc = "Bits 22:24 - CH1 ABUS Port Select"]
     #[inline(always)]
-    pub fn abusportselch1(&mut self) -> ABUSPORTSELCH1_W {
+    #[must_use]
+    pub fn abusportselch1(&mut self) -> ABUSPORTSELCH1_W<22> {
         ABUSPORTSELCH1_W::new(self)
     }
     #[doc = "Bits 25:30 - CH1 ABUS Pin Select"]
     #[inline(always)]
-    pub fn abuspinselch1(&mut self) -> ABUSPINSELCH1_W {
+    #[must_use]
+    pub fn abuspinselch1(&mut self) -> ABUSPINSELCH1_W<25> {
         ABUSPINSELCH1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -372,11 +382,10 @@ impl crate::Readable for OUTCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [outctrl::W](W) writer structure"]
 impl crate::Writable for OUTCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets OUTCTRL to value 0"]
 impl crate::Resettable for OUTCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

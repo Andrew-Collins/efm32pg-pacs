@@ -37,7 +37,8 @@ impl From<crate::W<ESAUMRB01_SPEC>> for W {
 #[doc = "Field `ESAUMRB01` reader - Moveable Region Boundary"]
 pub type ESAUMRB01_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ESAUMRB01` writer - Moveable Region Boundary"]
-pub type ESAUMRB01_W<'a> = crate::FieldWriter<'a, u32, ESAUMRB01_SPEC, u16, u16, 16, 12>;
+pub type ESAUMRB01_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ESAUMRB01_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 12:27 - Moveable Region Boundary"]
     #[inline(always)]
@@ -48,7 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 12:27 - Moveable Region Boundary"]
     #[inline(always)]
-    pub fn esaumrb01(&mut self) -> ESAUMRB01_W {
+    #[must_use]
+    pub fn esaumrb01(&mut self) -> ESAUMRB01_W<12> {
         ESAUMRB01_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +72,10 @@ impl crate::Readable for ESAUMRB01_SPEC {
 #[doc = "`write(|w| ..)` method takes [esaumrb01::W](W) writer structure"]
 impl crate::Writable for ESAUMRB01_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ESAUMRB01 to value 0x0a00_0000"]
 impl crate::Resettable for ESAUMRB01_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0a00_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0a00_0000;
 }
