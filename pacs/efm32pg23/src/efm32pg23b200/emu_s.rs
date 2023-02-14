@@ -39,12 +39,14 @@ pub struct RegisterBlock {
     pub rstctrl: RSTCTRL,
     #[doc = "0x94 - No Description"]
     pub rstcause: RSTCAUSE,
-    _reserved16: [u8; 0x08],
+    #[doc = "0x98 - No Description"]
+    pub tamperrstcause: TAMPERRSTCAUSE,
+    _reserved17: [u8; 0x04],
     #[doc = "0xa0 - No Description"]
     pub dgif: DGIF,
     #[doc = "0xa4 - No Description"]
     pub dgien: DGIEN,
-    _reserved18: [u8; 0x58],
+    _reserved19: [u8; 0x58],
     #[doc = "0x100 - No Description"]
     pub efpif: EFPIF,
     #[doc = "0x104 - No Description"]
@@ -114,6 +116,10 @@ pub mod rstctrl;
 pub type RSTCAUSE = crate::Reg<rstcause::RSTCAUSE_SPEC>;
 #[doc = "No Description"]
 pub mod rstcause;
+#[doc = "TAMPERRSTCAUSE (r) register accessor: an alias for `Reg<TAMPERRSTCAUSE_SPEC>`"]
+pub type TAMPERRSTCAUSE = crate::Reg<tamperrstcause::TAMPERRSTCAUSE_SPEC>;
+#[doc = "No Description"]
+pub mod tamperrstcause;
 #[doc = "DGIF (rw) register accessor: an alias for `Reg<DGIF_SPEC>`"]
 pub type DGIF = crate::Reg<dgif::DGIF_SPEC>;
 #[doc = "No Description"]

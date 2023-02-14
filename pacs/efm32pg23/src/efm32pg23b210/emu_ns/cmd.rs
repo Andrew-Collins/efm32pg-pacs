@@ -29,6 +29,8 @@ pub type EM01VSCALE1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bo
 pub type EM01VSCALE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `RSTCAUSECLR` writer - Reset Cause Clear"]
 pub type RSTCAUSECLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+#[doc = "Field `TAMPERRCCLR` writer - Tamper Reset Cause Clear"]
+pub type TAMPERRCCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 1 - EM4 unlatch"]
     #[inline(always)]
@@ -59,6 +61,12 @@ impl W {
     #[must_use]
     pub fn rstcauseclr(&mut self) -> RSTCAUSECLR_W<17> {
         RSTCAUSECLR_W::new(self)
+    }
+    #[doc = "Bit 18 - Tamper Reset Cause Clear"]
+    #[inline(always)]
+    #[must_use]
+    pub fn tamperrcclr(&mut self) -> TAMPERRCCLR_W<18> {
+        TAMPERRCCLR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

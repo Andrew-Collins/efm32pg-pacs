@@ -37,6 +37,8 @@ pub type DECBOD_R = crate::BitReader<bool>;
 pub type AVDDBOD_R = crate::BitReader<bool>;
 #[doc = "Field `IOVDD0BOD` reader - LEBOD2 Reset"]
 pub type IOVDD0BOD_R = crate::BitReader<bool>;
+#[doc = "Field `SETAMPER` reader - SE Tamper event Reset"]
+pub type SETAMPER_R = crate::BitReader<bool>;
 #[doc = "Field `VREGIN` reader - DCDC VREGIN comparator"]
 pub type VREGIN_R = crate::BitReader<bool>;
 impl R {
@@ -99,6 +101,11 @@ impl R {
     #[inline(always)]
     pub fn iovdd0bod(&self) -> IOVDD0BOD_R {
         IOVDD0BOD_R::new(((self.bits >> 11) & 1) != 0)
+    }
+    #[doc = "Bit 13 - SE Tamper event Reset"]
+    #[inline(always)]
+    pub fn setamper(&self) -> SETAMPER_R {
+        SETAMPER_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 31 - DCDC VREGIN comparator"]
     #[inline(always)]

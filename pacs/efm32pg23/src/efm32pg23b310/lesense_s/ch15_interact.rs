@@ -127,9 +127,9 @@ pub type SAMPLECLK_R = crate::BitReader<SAMPLECLK_A>;
 #[doc = "Select clock used for timing of sample d\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SAMPLECLK_A {
-    #[doc = "0: LFACLK will be used for timing"]
+    #[doc = "0: Prescaled low-frequency LESENSECLK will be used for timing"]
     LFACLK = 0,
-    #[doc = "1: AUXHFRCO will be used for timing"]
+    #[doc = "1: Prescaled high-frequency LESENSEHFCLK will be used for timing"]
     AUXHFRCO = 1,
 }
 impl From<SAMPLECLK_A> for bool {
@@ -162,12 +162,12 @@ impl SAMPLECLK_R {
 pub type SAMPLECLK_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, CH15_INTERACT_SPEC, SAMPLECLK_A, O>;
 impl<'a, const O: u8> SAMPLECLK_W<'a, O> {
-    #[doc = "LFACLK will be used for timing"]
+    #[doc = "Prescaled low-frequency LESENSECLK will be used for timing"]
     #[inline(always)]
     pub fn lfaclk(self) -> &'a mut W {
         self.variant(SAMPLECLK_A::LFACLK)
     }
-    #[doc = "AUXHFRCO will be used for timing"]
+    #[doc = "Prescaled high-frequency LESENSEHFCLK will be used for timing"]
     #[inline(always)]
     pub fn auxhfrco(self) -> &'a mut W {
         self.variant(SAMPLECLK_A::AUXHFRCO)
@@ -178,9 +178,9 @@ pub type EXCLK_R = crate::BitReader<EXCLK_A>;
 #[doc = "Select clock used for excitation timing\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EXCLK_A {
-    #[doc = "0: LFACLK will be used for timing"]
+    #[doc = "0: Prescaled low-frequency LESENSECLK will be used for timing"]
     LFACLK = 0,
-    #[doc = "1: AUXHFRCO will be used for timing"]
+    #[doc = "1: Prescaled high-frequency LESENSEHFCLK will be used for timing"]
     AUXHFRCO = 1,
 }
 impl From<EXCLK_A> for bool {
@@ -212,12 +212,12 @@ impl EXCLK_R {
 #[doc = "Field `EXCLK` writer - Select clock used for excitation timing"]
 pub type EXCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH15_INTERACT_SPEC, EXCLK_A, O>;
 impl<'a, const O: u8> EXCLK_W<'a, O> {
-    #[doc = "LFACLK will be used for timing"]
+    #[doc = "Prescaled low-frequency LESENSECLK will be used for timing"]
     #[inline(always)]
     pub fn lfaclk(self) -> &'a mut W {
         self.variant(EXCLK_A::LFACLK)
     }
-    #[doc = "AUXHFRCO will be used for timing"]
+    #[doc = "Prescaled high-frequency LESENSEHFCLK will be used for timing"]
     #[inline(always)]
     pub fn auxhfrco(self) -> &'a mut W {
         self.variant(EXCLK_A::AUXHFRCO)
