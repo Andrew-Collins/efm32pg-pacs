@@ -1513,34 +1513,6 @@ impl core::fmt::Debug for PCNT0_S {
 }
 #[doc = "PCNT0_S Registers"]
 pub mod pcnt0_s;
-#[doc = "LESENSE_S Registers"]
-pub struct LESENSE_S {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for LESENSE_S {}
-impl LESENSE_S {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const lesense_s::RegisterBlock = 0x4903_8000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const lesense_s::RegisterBlock {
-        Self::PTR
-    }
-}
-impl Deref for LESENSE_S {
-    type Target = lesense_s::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for LESENSE_S {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("LESENSE_S").finish()
-    }
-}
-#[doc = "LESENSE_S Registers"]
-pub mod lesense_s;
 #[doc = "HFRCOEM23_S Registers"]
 pub struct HFRCOEM23_S {
     _marker: PhantomData<*const ()>,
@@ -2969,34 +2941,6 @@ impl core::fmt::Debug for PCNT0_NS {
 }
 #[doc = "PCNT0_NS Registers"]
 pub mod pcnt0_ns;
-#[doc = "LESENSE_NS Registers"]
-pub struct LESENSE_NS {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for LESENSE_NS {}
-impl LESENSE_NS {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const lesense_ns::RegisterBlock = 0x5903_8000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const lesense_ns::RegisterBlock {
-        Self::PTR
-    }
-}
-impl Deref for LESENSE_NS {
-    type Target = lesense_ns::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for LESENSE_NS {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("LESENSE_NS").finish()
-    }
-}
-#[doc = "LESENSE_NS Registers"]
-pub mod lesense_ns;
 #[doc = "HFRCOEM23_NS Registers"]
 pub struct HFRCOEM23_NS {
     _marker: PhantomData<*const ()>,
@@ -3314,8 +3258,6 @@ pub struct Peripherals {
     pub VDAC0_S: VDAC0_S,
     #[doc = "PCNT0_S"]
     pub PCNT0_S: PCNT0_S,
-    #[doc = "LESENSE_S"]
-    pub LESENSE_S: LESENSE_S,
     #[doc = "HFRCOEM23_S"]
     pub HFRCOEM23_S: HFRCOEM23_S,
     #[doc = "HFXO0_S"]
@@ -3418,8 +3360,6 @@ pub struct Peripherals {
     pub VDAC0_NS: VDAC0_NS,
     #[doc = "PCNT0_NS"]
     pub PCNT0_NS: PCNT0_NS,
-    #[doc = "LESENSE_NS"]
-    pub LESENSE_NS: LESENSE_NS,
     #[doc = "HFRCOEM23_NS"]
     pub HFRCOEM23_NS: HFRCOEM23_NS,
     #[doc = "HFXO0_NS"]
@@ -3590,9 +3530,6 @@ impl Peripherals {
             PCNT0_S: PCNT0_S {
                 _marker: PhantomData,
             },
-            LESENSE_S: LESENSE_S {
-                _marker: PhantomData,
-            },
             HFRCOEM23_S: HFRCOEM23_S {
                 _marker: PhantomData,
             },
@@ -3744,9 +3681,6 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             PCNT0_NS: PCNT0_NS {
-                _marker: PhantomData,
-            },
-            LESENSE_NS: LESENSE_NS {
                 _marker: PhantomData,
             },
             HFRCOEM23_NS: HFRCOEM23_NS {
